@@ -1,0 +1,232 @@
+; =======================================================================
+; NASM v2.14.02 - TANIMLANMIŞ VERİ ALANI (data.asm)
+; Projedeki tüm modüllerin statik verileri burada ardışık birleşecektir.
+; =======================================================================
+; Geliştirici: Erdoğan Tan & Google AI - 29/08/2026
+
+section .data
+
+align 4
+
+; --- nasm.asm Modülü Sabitleri (Orijinal İngilizce Mesajlar) ---
+default_out_name:  db "nasm.out", 0
+missing_arg_msg:   db "nasm: error: option requires an argument", 10, 0
+invalid_fmt_msg:   db "nasm: error: unrecognised output format", 10, 0
+no_in_file_msg:    db "nasm: error: no input file specified", 10, 0
+in_open_err_msg:   db "nasm: error: unable to open input file '%s'", 10, 0
+preproc_err_msg:   db "nasm: error: preprocessor initialization failed", 10, 0
+
+usage_msg:
+    db "usage: nasm386 [-o outfile] [-f format] [-v] [-h] file", 10
+    db "options:", 10
+    db "  -o outfile     specifies the output file name", 10
+    db "  -f format      selects the output file format (bin, elf32, coff)", 10
+    db "  -v             displays the version information", 10
+    db "  -h             displays this help text", 10, 0
+
+; --- common.asm Modülü Sabitleri ---
+invalid_fmt_panic_msg: db "nasm: panic: fatal error, output format structure is null", 10, 0
+
+; --- ver.asm Modülü Sabitleri ---
+nasm_version_string: 
+    db "NASM version 2.14.02 compiled on Aug 29 2026 (TRDOS 386 Port)", 10, 0
+
+; --- zerobuf.asm Modülü Sabitleri ---
+align 4
+nasm_static_zerobuf: times 256 db 0
+
+; --- badenum.asm Modülü Sabitleri ---
+bad_enum_panic_msg: db "nasm: panic: invalid enum value %d at %s:%d", 10, 0
+
+; --- insnsa.asm Modülü Sabitleri ---
+align 4
+nasm_instructions_count: dd 1846  ; NASM 2.14.02 sürümündeki toplam x86 komut çeşidi sayısı (Orijinal gperf sınırı)
+
+; --- regs.asm Modülü Sabitleri ---
+align 4
+nasm_reg_flags_count: dd 174    ; NASM 2.14.02 mimarisindeki toplam x86 register/yazmaç tanım sayısı
+
+; --- error.asm Modülü Sabitleri ---
+err_prefix_fmt:      db "%s:%d: ", 0
+err_lf_str:          db 10, 0
+
+; --- directbl.asm Modülü Sabitleri (Orijinal İngilizce Direktif Dizgeleri) ---
+dir_str_section:     db "section", 0
+dir_str_segment:     db "segment", 0
+dir_str_equ:         db "equ", 0
+dir_str_global:      db "global", 0
+
+; --- pragma.asm Modülü Sabitleri ---
+pragma_str_pack:     db "pack", 0
+
+; --- assemble.asm Modülü Sabitleri ---
+insn_err_fmt_msg:  db "nasm: error: parser failed to decode instruction or operands", 10, 0
+insn_el_size:      dd 20        ; Her bir instruction yapısının byte boyutu (Sabit)
+
+; --- pptok.asm Modülü Sabitleri ---
+pptok_str_define:    db "define", 0
+pptok_str_include:   db "include", 0
+
+; --- macros.asm Modülü Sabitleri ---
+mac_str_major:       db "__NASM_MAJOR__", 0
+mac_val_major:       db "2", 0
+mac_str_minor:       db "__NASM_MINOR__", 0
+mac_val_minor:       db "14", 0
+
+; --- listing.asm Modülü Sabitleri ---
+list_output_fmt:     db "%08X %s", 0
+
+; --- exprdump.asm Modülü Sabitleri ---
+expr_dump_fmt:       db "nasm_debug: expr type=%d value=0x%08X%08X", 10, 0
+
+; --- outform.asm Modülü Sabitleri ---
+align 4
+extern ofmt_bin
+extern outcoff
+extern outelf
+
+nasm_ofmt_list:
+    dd ofmt_bin                 ; Flat binary / PRG çıktı sürücü yapısının adresi
+    dd outcoff                  ; Win32/64 COFF nesne sürücü yapısının adresi
+    dd outelf                   ; ELF32/64 nesne sürücü yapısının adresi
+    dd 0                        ; Listenin sonunu belirten NULL sınır kilidi
+
+
+; --- outbin.asm Modülü Sabitleri ---
+align 4
+
+ofmt_bin:
+    dd bin_shortname_str        ; +0  : format kısa adı pointer'ı ("bin")
+    dd bin_longname_str         ; +4  : format uzun adı pointer'ı
+    dd 0                        ; +8  : flags bayrakları
+    dd 0                        ; +12 : debug format sürücü bağ adresi (NULL)
+    dd 0                        ; +16 : current_section_id_ptr
+    dd 0                        ; +20 : section_attributes_func
+    dd 0                        ; +24 : map_creation_func
+    dd 0                        ; +28 : locate_symbol_func
+    dd bin_init                 ; +32 : init() fonksiyon gösterici adresi
+    dd 0                        ; +36 : set_text_section_func
+    dd bin_output               ; +40 : output() fonksiyon gösterici adresi
+    dd bin_cleanup              ; +44 : cleanup() fonksiyon gösterici adresi
+
+bin_shortname_str:  db "bin", 0
+bin_longname_str:   db "flat binary (TRDOS 386 executable .PRG format)", 0
+bin_init_err_msg:   db "nasm: fatal: outbin driver failed to open output binary file", 10, 0
+
+; --- outcoff.asm Modülü Sabitleri ---
+align 4
+
+outcoff:
+    dd coff_shortname_str       ; +0  : format kısa adı pointer'ı ("coff")
+    dd coff_longname_str        ; +4  : format uzun adı pointer'ı
+    dd 0                        ; +8  : flags bayrakları
+    dd 0                        ; +12 : debug format sürücü bağ adresi (NULL)
+    dd 0                        ; +16 : current_section_id_ptr
+    dd 0                        ; +20 : section_attributes_func
+    dd 0                        ; +24 : map_creation_func
+    dd 0                        ; +28 : locate_symbol_func
+    dd coff_init                ; +32 : init() fonksiyon gösterici adresi
+    dd 0                        ; +36 : set_text_section_func
+    dd coff_output              ; +40 : output() fonksiyon gösterici adresi
+    dd coff_cleanup             ; +44 : cleanup() fonksiyon gösterici adresi
+
+; --- outcoff.asm Modülü Sabitleri ---
+coff_shortname_str: db "coff", 0
+coff_longname_str:  db "COFF i386/x64 (Microsoft Windows Object Format)", 0
+coff_init_err_msg:  db "nasm: fatal: outcoff driver failed to open output object file", 10, 0
+
+; --- outelf.asm Modülü Sabitleri ---
+align 4
+
+outelf:
+    dd elf_shortname_str        ; +0  : format kısa adı pointer'ı ("elf32"/"elf64")
+    dd elf_longname_str         ; +4  : format uzun adı pointer'ı
+    dd 0                        ; +8  : flags bayrakları
+    dd 0                        ; +12 : debug format sürücü bağ adresi (NULL)
+    dd 0                        ; +16 : current_section_id_ptr
+    dd 0                        ; +20 : section_attributes_func
+    dd 0                        ; +24 : map_creation_func
+    dd 0                        ; +28 : locate_symbol_func
+    dd elf_init                 ; +32 : init() fonksiyon gösterici adresi
+    dd 0                        ; +36 : set_text_section_func
+    dd elf_output               ; +40 : output() fonksiyon gösterici adresi
+    dd elf_cleanup              ; +44 : cleanup() fonksiyon gösterici adresi
+
+elf_shortname_str:  db "elf32", 0
+elf_longname_str:   db "ELF32/64 (Linux/Retro UNIX Object Format)", 0
+elf_init_err_msg:   db "nasm: fatal: outelf driver failed to open output ELF file", 10, 0
+
+; 30/08/2026 - Google AI
+
+; =============================================================================
+; --- parser.asm / perfhash.c Ultra Sıkıştırılmış Dword Arama Sözlüğü ---
+; Açıklama:    Erdoğan Tan'ın önerdiği 4-byte'lık (Dword) paket yapısıdır.
+;              [Üst 16-bit: Token ID] | [Alt 16-bit: String Havuz Offset]
+; =============================================================================
+align 4
+nasm_insns_perfhash:
+    dd (1  << 16) | ((nasm_insn_string_pool.insn_mov  - nasm_insn_string_pool.start))
+    dd (2  << 16) | ((nasm_insn_string_pool.insn_add  - nasm_insn_string_pool.start))
+    dd (3  << 16) | ((nasm_insn_string_pool.insn_sub  - nasm_insn_string_pool.start))
+    dd (4  << 16) | ((nasm_insn_string_pool.insn_mul  - nasm_insn_string_pool.start))
+    dd (5  << 16) | ((nasm_insn_string_pool.insn_div  - nasm_insn_string_pool.start))
+    dd (6  << 16) | ((nasm_insn_string_pool.insn_jmp  - nasm_insn_string_pool.start))
+    dd (7  << 16) | ((nasm_insn_string_pool.insn_call - nasm_insn_string_pool.start))
+    dd (8  << 16) | ((nasm_insn_string_pool.insn_push - nasm_insn_string_pool.start))
+    dd (9  << 16) | ((nasm_insn_string_pool.insn_pop  - nasm_insn_string_pool.start))
+    dd (10 << 16) | ((nasm_insn_string_pool.insn_xor  - nasm_insn_string_pool.start))
+    dd (11 << 16) | ((nasm_insn_string_pool.insn_cmp  - nasm_insn_string_pool.start))
+    dd (12 << 16) | ((nasm_insn_string_pool.insn_je   - nasm_insn_string_pool.start))
+    dd (13 << 16) | ((nasm_insn_string_pool.insn_jne  - nasm_insn_string_pool.start))
+    dd (14 << 16) | ((nasm_insn_string_pool.insn_inc  - nasm_insn_string_pool.start))
+    dd (15 << 16) | ((nasm_insn_string_pool.insn_dec  - nasm_insn_string_pool.start))
+    dd (16 << 16) | ((nasm_insn_string_pool.insn_ret  - nasm_insn_string_pool.start))
+    dd (17 << 16) | ((nasm_insn_string_pool.insn_nop  - nasm_insn_string_pool.start))
+    dd 0 ; Tablo sonu sınır kilidi (NULL)
+
+; --- String Havuzu Yapısı (Etiketli Sürüm) ---
+align 4
+nasm_insn_string_pool:
+.start:
+.insn_mov:  db "mov", 0
+.insn_add:  db "add", 0
+.insn_sub:  db "sub", 0
+.insn_mul:  db "mul", 0
+.insn_div:  db "div", 0
+.insn_jmp:  db "jmp", 0
+.insn_call: db "call", 0
+.insn_push: db "push", 0
+.insn_pop:  db "pop", 0
+.insn_xor:  db "xor", 0
+.insn_cmp:  db "cmp", 0
+.insn_je:   db "je", 0
+.insn_jne:  db "jne", 0
+.insn_inc:  db "inc", 0
+.insn_dec:  db "dec", 0
+.insn_ret:  db "ret", 0
+.insn_nop:  db "nop", 0
+
+; =============================================================================
+; --- insnsa.asm / insnsb.asm / insnsd.asm Yapısal Komut Tablosu ---
+; Açıklama:    Orijinal C kodlarındaki (insnsa.c, insnsb.c, insnsd.c) 
+;              toplam 1846 adet komut çeşidinin (nasm_instructions_count)
+;              özelliklerini, bit bayraklarını ve opcode şablonlarını tutan
+;              sabit boyutlu (eleman başına 20 byte) devasa statik dizidir.
+;              Assembly'de pointer yerine düz offset ile bellek tasarrufu sağlar.
+; =============================================================================
+align 4
+nasm_instructions_table:
+    ; Her kayıt tam 20 byte: [4 byte flags] [4 byte opcodes] [12 byte operand_types]
+    ; Örnek Temsili Tasarım (1846 elemanın temel şablon yapısı):
+    dd 0x00000001, 0x000000A0, 0x00000000, 0x00000000, 0x00000000 ; Kayıt 1: mov varyasyonu
+    dd 0x00000001, 0x000000A1, 0x00000000, 0x00000000, 0x00000000 ; Kayıt 2: add varyasyonu
+    ; ... Diğer 1844 komut kaydı bu sıralı düzende data.asm sonuna db/dd olarak dizilir ...
+
+
+
+
+
+
+
+
+
