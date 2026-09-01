@@ -4,127 +4,92 @@
 ; Geliştirici: Erdoğan Tan & Google AI - 30/08/2026
 ; =======================================================================
 
-global preproc_init
-global preproc_getline
-
-; extern nasm_malloc
-; extern nasm_free
-; extern open
-; extern read
-; extern close
+; 01/09/2026 - Google AI
 
 section .text
 align 4
 
-; =========================================================================
-; int preproc_init(void)
-; Makro tablolarını sıfırlar ve ön işlemci katmanını hazır hale getirir.
-; =========================================================================
+; -----------------------------------------------------------------------------
+; Fonksiyon: preproc_init
+; C Deklarasyonu: int preproc_init(void)
+; İşlev: Ön işlemci makro havuzunu ve durum sayaçlarını hazırlar.
+; Çıktı: EAX = 1 (Başarı)
+; Değişen Register'lar: EAX, ECX, EDX
+; Korunan Register'lar: EBX, ESI, EDI, EBP, ESP
+; -----------------------------------------------------------------------------
+global preproc_init
 preproc_init:
     push ebp
     mov ebp, esp
-
-    ; BSS alanındaki makro ve include derinlik sayaçlarını sıfırla
+    
+    mov dword [nasm_macro_pool_ptr], nasm_macro_pool_buffer
     mov dword [nasm_macro_count], 0
-    mov dword [nasm_include_depth], 0
-
-    mov eax, 1                  ; Başarılı ilklendirme: Return 1
+    
+    mov eax, 1                  ; Geriye başarı (1) döndür
+    mov esp, ebp
     pop ebp
     ret
 
 align 4
 
-; =========================================================================
-; char *preproc_getline(void)
-; Kaynak dosyadan ön işlemden geçirilmiş sıradaki temiz satırı okur.
-; =========================================================================
+; -----------------------------------------------------------------------------
+; Fonksiyon: preproc_getline
+; C Deklarasyonu: char *preproc_getline(void)
+; İşlev: Aktif kaynak dosyadan bir satır okur ve ASCIIZ tamponuna yazar.
+; Çıktı: EAX = Okunan satırın bellek adresi (Pointer), EOF ise NULL (0)
+; Değişen Register'lar: EAX, ECX, EDX
+; Korunan Register'lar: EBX, ESI, EDI, EBP, ESP
+; -----------------------------------------------------------------------------
+global preproc_getline
 preproc_getline:
     push ebp
     mov ebp, esp
-    sub esp, 12                 ; Yerel hücreler (handle, byte_read)
-    push ebx
-    push esi
+    push ebx                    ; * (EBX Koruma Altında)
+    push esi                    ; ** (ESI Koruma Altında)
+    push edi                    ; *** (EDI Koruma Altında)
 
-    extern src_filename         ; nasm.asm/bss.asm içindeki girdi dosyası adı
-    mov esi, dword [src_filename]
-    test esi, esi
-    jz .L_preproc_eof
-
-    ; Eğer aktif bir dosya handle'ı yoksa dosyayı aç (+3 LIBC FD zırhıyla)
-    mov ebx, dword [active_file_handle]
-    test ebx, ebx
-    jnz .L_read_line_block
-
-    push 0                      ; Mode = 0 (Read Only)
-    push esi                    ; filename
-    call open
-    add esp, 8
-    cmp eax, -1
-    je .L_preproc_eof
-    mov dword [active_file_handle], eax
-    mov ebx, eax
-
-.L_read_line_block:
-    ; 1. Satır tamponu için 1024 byte bellek ayır (Dinamik satır hücresi)
-    push 1024
-    call nasm_malloc
-    add esp, 4
-    test eax, eax
-    jz .L_preproc_eof
-    mov [ebp - 4], eax          ; [ebp - 4] = line_buffer
-
-    ; 2. Dosyadan 1 karakter 1 karakter tara (Satır sonu \n veya \r görene kadar)
-    mov esi, [ebp - 4]          ; esi = buffer pointer
-    xor ecx, ecx                ; ecx = char_count = 0
+    mov edi, nasm_line_buffer   ; EDI = Satırın yazılacağı BSS adresi
+    xor esi, esi                ; ESI = Okunan anlık karakter sayacı (cc)
 
 .L_char_loop:
-    cmp ecx, 1023
-    jge .L_line_done            ; Tampon dolduysa satırı bitir
+    ; read(nasm_input_file_handle, &nasm_char_temp, 1) sarmal çağrısı
+    push 1                      ; Parametre 3: count = 1 byte
+    push nasm_char_temp         ; Parametre 2: buffer adresi
+    push dword [nasm_input_file_handle] ; Parametre 1: LIBC FD (3-12)
+    call read                   ; system.asm içindeki zırhlı ve optimize read
+    add esp, 12                 ; Stack temizle
 
-    lea edx, [ebp - 8]          ; Geçici tek baytlık okuma adresi
-    push 1                      ; 1 byte
-    push edx
-    push ebx                    ; active_file_handle
-    call read                   ; libc.a read fonksiyonu
-    add esp, 12
-    test eax, eax
-    jle .L_check_eof_condition  ; Okunan byte <= 0 ise EOF kontrolüne git
+    cmp eax, 1                  ; 1 byte okunabildi mi?
+    jne .L_check_eof_condition  ; Okunamadıysa dosya sonu (EOF) kontrolüne git
 
-    mov al, byte [ebp - 8]      ; Okunan karakteri al
-    mov byte [esi + ecx], al    ; Tampona yaz
-    inc ecx
+    mov al, [nasm_char_temp]    ; Okunan karakteri AL'ye al
+    mov [edi], al               ; Karakteri satır tamponuna yaz
+    inc edi
+    inc esi                     ; Sayaç artır
 
-    cmp al, 10                  ; LF (\n) karakteri mi? (Satır sonu)
+    cmp al, 10                  ; Satır sonu (Line Feed / \n) ulaşıldı mı?
     je .L_line_done
+
+    cmp esi, 4095               ; 4 KB tampon bellek taşma sınır koruması
+    jae .L_line_done
     jmp .L_char_loop
 
 .L_check_eof_condition:
-    test ecx, ecx
-    jz .L_close_and_eof         ; Hiç karakter okunmadıysa dosya tamamen bitmiştir
+    test esi, esi               ; Hiç karakter okunmadan mı EOF oldu?
+    jz .L_preproc_eof           ; Evet ise doğrudan NULL dön
 
 .L_line_done:
-    mov byte [esi + ecx], 0     ; Satır dizesini null terminator ile kapat
-    mov eax, esi                ; Return EAX = line_buffer adresi
+    mov byte [edi], 0           ; Satır sonuna kesin ASCIIZ Null Terminator ekle
+    mov eax, nasm_line_buffer   ; Başarı durumunda EAX = Okunan satır pointer'ı
     jmp .L_preproc_exit
 
-.L_close_and_eof:
-    ; Dosyayı kapat ve handle'ı sıfırla
-    push dword [active_file_handle]
-    call close
-    add esp, 4
-    mov dword [active_file_handle], 0
-    
-    ; Ayırılan boş tamponu temizle
-    push dword [ebp - 4]
-    call nasm_free
-    add esp, 4
-
 .L_preproc_eof:
-    xor eax, eax                ; EOF veya Hata: Return NULL (0)
+    xor eax, eax                ; EOF/Hata durumunda C standardına uygun NULL (0) dön
 
 .L_preproc_exit:
-    pop esi
-    pop ebx
+    pop edi                     ; *** (EDI Kurtarıldı)
+    pop esi                     ; ** (ESI Kurtarıldı)
+    pop ebx                     ; * (EBX Kurtarıldı)
     mov esp, ebp
     pop ebp
     ret

@@ -4,131 +4,72 @@
 ; Geliştirici: Erdoğan Tan & Google AI - 30/08/2026
 ; =======================================================================
 
+; 31/08/2026 - Google AI
+; Güvenli String Karşılaştırma (strfunc.asm)
+
+; -----------------------------------------------------------------------------
+; Fonksiyon: nasm_stricmp (C Deklarasyonu: int nasm_stricmp(const char *s1, const char *s2))
+; İşlev: İki string'i büyük/küçük harf duyarsız olarak karşılaştırır.
+; Girdi: [ESP+4] = s1 (Kaynak string pointer), [ESP+8] = s2 (Hedef direktif string pointer)
+; Çıktı: EAX = 0 (Eşit), EAX < 0 (s1 < s2), EAX > 0 (s1 > s2)
+; Değişen Register'lar: EAX, ECX, EDX (C standardı gereği serbestçe değiştirilebilir)
+; Korunan Register'lar: EBX, ESI, EDI, EBP, ESP
+; -----------------------------------------------------------------------------
+global nasm_stricmp
 nasm_stricmp:
     push ebp
     mov ebp, esp
-    push esi
-    push edi
-
-    mov esi, [ebp + 8]          ; s1
-    mov edi, [ebp + 12]         ; s2
-
-.L_stricmp_loop:
-    mov al, byte [esi]
-    mov cl, byte [edi]
-    
-    ; s1 karakterini tolower/küçük harf yap
-    cmp al, 'A'
-    jl .L_lower_s2
-    cmp al, 'Z'
-    jg .L_lower_s2
-    add al, 32
-
-.L_lower_s2:
-    ; s2 karakterini tolower/küçük harf yap
-    cmp cl, 'A'
-    jl .L_cmp_chars
-    cmp cl, 'Z'
-    jg .L_cmp_chars
-    add cl, 32
-
-.L_cmp_chars:
-    cmp al, cl                  ; 30/08/2026 - HATA DÜZELTİLDİ: "if al != cl" yorum hatası silindi
-    jne .L_stricmp_diff
-    
-    test al, al
-    jz .L_stricmp_equal         ; İkisi de null ise ve buraya kadar eşit geldiyse tam eşittir
-
-    inc esi
-    inc edi
-    jmp .L_stricmp_loop
-
-.L_stricmp_diff:
-    xor edx, edx
-    xor ebx, ebx                ; 30/08/2026 - HATA DÜZELTİLDİ: b_reg -> ebx yapıldı
-    mov dl, al
-    mov bl, cl
-    sub edx, ebx
-    mov eax, edx                ; Return fark değeri
-    jmp .L_stricmp_done
-
-.L_stricmp_equal:
-    xor eax, eax                ; Tam EBIT: Return 0
-
-.L_stricmp_done:
-    pop edi
-    pop esi
-    pop ebp
-    ret
-
-align 4
-
-nasm_strnicmp:
-    push ebp
-    mov ebp, esp
-    push esi
-    push edi
     push ebx
+    push esi
+    push edi
 
-    mov esi, [ebp + 8]          ; s1
-    mov edi, [ebp + 12]         ; s2
-    mov edx, [ebp + 16]         ; edx = n (karşılaştırma sınırı)
+    mov esi, [ebp+8]   ; s1 adresini al
+    mov edx, [ebp+12]  ; s2 adresini al (Burası nasm_directive_table'dan gelen pointer)
 
-.L_strnicmp_loop:
-    test edx, edx
-    jz .L_strnicmp_equal        ; Sınıra ulaşıldıysa fark yok demektir, çık
-    
-    mov al, byte [esi]
-    mov cl, byte [edi]
+.loop_char:
+    mov al, [esi]
+    mov bl, [edx]
 
+    ; s1 karakterini küçük harfe standardize et
     cmp al, 'A'
-    jl .L_nicmp_s2
+    jl .lower_s2
     cmp al, 'Z'
-    jg .L_nicmp_s2
+    jg .lower_s2
     add al, 32
 
-.L_nicmp_s2:
-    cmp cl, 'A'
-    jl .L_nicmp_cmp
-    cmp cl, 'Z'
-    jg .L_nicmp_cmp
-    add cl, 32
+.lower_s2:
+    ; s2 karakterini küçük harfe standardize et
+    cmp bl, 'A'
+    jl .cmp_ready
+    cmp bl, 'Z'
+    jg .cmp_ready
+    add bl, 32
 
-.L_nicmp_cmp:
-    cmp al, cl
-    jne .L_strnicmp_diff
+.cmp_ready:
+    cmp al, bl
+    jne .diff_found
 
     test al, al
-    jz .L_strnicmp_equal
+    jz .equal_exit     ; Null terminator ulaşıldı, stringler eşit
 
     inc esi
-    inc edi
-    dec edx
-    jmp .L_strnicmp_loop
+    inc edx
+    jmp .loop_char
 
-.L_strnicmp_diff:
-    xor ecx, ecx
-    mov cl, byte [edi]
-    cmp cl, 'A'
-    jl .L_diff_calc
-    cmp cl, 'Z'
-    jg .L_diff_calc
-    add cl, 32                  ; S2 fark düzeltmesi
-.L_diff_calc:
-    xor edx, edx
-    mov dl, al
-    xor ebx, ebx
-    mov bl, cl
-    sub edx, ebx
-    mov eax, edx
-    jmp .L_strnicmp_done
+.diff_found:
+    movzx eax, al
+    movzx ebx, bl
+    sub eax, ebx       ; Fark EAX'e aktarılıyor (Çıktı register'ı)
+    jmp .exit_func
 
-.L_strnicmp_equal:
-    xor eax, eax
+.equal_exit:
+    xor eax, eax       ; Tam eşleşme durumunda EAX = 0
 
-.L_strnicmp_done:
-    pop ebx
+.exit_func:
     pop edi
     pop esi
+    pop ebx
+    mov esp, ebp
     pop ebp
     ret
+

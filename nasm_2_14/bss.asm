@@ -57,7 +57,7 @@ nasm_labels_root:  resd 1       ; Kırmızı-Siyah etiket ağacının kafa point
 ; --- preproc.asm Modülü Değişkenleri ---
 alignb 4
 active_file_handle: resd 1
-nasm_macro_count:   resd 1
+;nasm_macro_count:  resd 1
 nasm_include_depth: resd 1
 
 ; --- listing.asm Modülü Değişkenleri ---
@@ -70,7 +70,9 @@ eval_expr_result:    resb 12    ; 12 byte'lık statik ifade sarmal hücresi
 
 ; --- stdscan.asm Modülü Değişkenleri ---
 alignb 4
-scan_ptr_storage:  resd 1       ; Kelime tarayıcının imleç (pointer) hücresi
+;scan_ptr_storage:  resd 1      ; Kelime tarayıcının imleç (pointer) hücresi
+; --- nasm_stdscan_init - Tokenizer Anlık Satır Pozisyon Pointer'ı ---
+nasm_scan_line_ptr:  resd 1
 
 ; --- strtbl.asm Modülü Değişkenleri ---
 alignb 4
@@ -94,8 +96,77 @@ elf_symnum:         resd 1      ; ELF Sembol tablosu girdi sayısı
 
 ; 30/08/2026 - Google AI
 ; --- preproc.asm / preproc.c Geçici Satır Tamponları ---
-nasm_line_buffer:   resb 4096   ; Preprocessor için 4KB'lık satır okuma alanı
+;nasm_line_buffer:   resb 4096  ; Preprocessor için 4KB'lık satır okuma alanı
 nasm_token_buffer:  resb 1024   ; Parser token ayrıştırma alanı
+
+; 31/08/2026 - Google AI
+alignb 4
+
+; NASM'nin derleme esnasında kullanacağı global durum değişkenleri
+global_bits:         resd 1      ; 16, 32 veya 64 bit modu bilgisi
+current_pass:        resd 1      ; Pass 1 veya Pass 2 bilgisi
+
+; Maksimum sembol sınırı için statik bellek (Hız için dinamik malloc yerine)
+; alignb 4
+; symbol_table_start:  resb (16 * 10000) ; 10.000 sembol için yer (Her biri 16 byte: 4 byte ad, 4 byte değer...)
+; symbol_count:        resd 1
+
+; Preprocessor makro tampon belleği
+;alignb 4
+;macro_buffer_pool:   resb 65536  ; 64 KB makro depolama alanı
+;macro_pool_ptr:      resd 1
+
+alignb 4
+; --- parse_bits_value - Seçilen Mimari Mod Kayıt Alanı (16/32) ---
+global nasm_bits_mode
+nasm_global_state:   resd 1      ; Derleyicinin anlık durumu (Pass 1 / Pass 2)
+nasm_bits_mode:      resd 1      ; 16 veya 32 bit modu saklayıcı veri alanı
+
+; Tokenizer Buffer (stdscan.c işlevselliği için)
+alignb 4
+token_buffer:        resb 4096   ; Karakter analiz tamponu
+token_ptr:           resd 1
+
+; Sembol Tablosu Havuzu (labels.c işlevselliği için)
+; Dinamik malloc yerine 20.000 sembol kapasiteli statik bellek bloğu
+alignb 4
+symbol_pool_start:   resb (24 * 20000) ; Her sembol 24 byte (Ad pointer, değer, nitelikler)
+symbol_pool_end:
+symbol_pool_ptr:     resd 1
+symbol_count:        resd 1
+
+; Preprocessor Makro Depolama Alanı (preproc.c işlevselliği için)
+alignb 4
+macro_storage_pool:  resb 131072 ; 128 KB statik makro depolama tamponu
+macro_storage_ptr:   resd 1
+
+; --- parse_section_name - ELF/COFF/PE İçin Anlık Aktif Segment Pointer Kaydı ---
+alignb 4
+global nasm_current_section_ptr
+nasm_current_section_ptr: resd 1
+
+; 01/09/2026 - Google AI
+
+; --- preproc_init - Makro Havuz Bilgisi ve Sayaç Alanları ---
+alignb 4
+nasm_macro_pool_ptr:   resd 1
+nasm_macro_count:      resd 1
+nasm_macro_pool_buffer: resb 65536  ; 64 KB statik makro isim/değer deposu
+
+; --- preproc_getline - Karakter Okuma Hücresi ve Satır Tamponu ---
+alignb 4
+nasm_char_temp:        resb 4      ; Tekil karakter okuma tamponu
+alignb 4
+nasm_line_buffer:      resb 4096   ; 4 KB'lık anlık işlenen aktif satır havuzu
+
+; --- assemble_file - Giriş Dosyası LIBC FD Numarası ---
+alignb 4
+global nasm_input_file_handle
+nasm_input_file_handle: resd 1
+
+; --- assemble_file - Anlık Ayıklanan Kelime Geçici Tamponu ---
+alignb 4
+token_temp_buffer:     resb 512    ; 512 byte'lık anlık kelime hücresi
 
 ; =======================================================================
 ; NİHAİ BSS SINIRI (crt0.asm katmanına u.break kaydı için iletilir)

@@ -86,130 +86,149 @@ exit:
 
 align 4
 
-; =============================================================================
-; C Fonksiyonu: int open(const char *pathname, int flags, ...)
-; Açıklama:     Belirtilen yoldaki dosyayı okuma/yazma modunda açar.
-; Giriş (Stack):[ESP + 4] = Dosya yolu string adresi (pathname)
-;               [ESP + 8] = Açılış bayrakları (flags - O_RDONLY, O_WRONLY vb.)
-; Çıkış:        EAX = Dosya Tanımlayıcı (File Descriptor / Handle) veya Hata durumunda -1
-; Mimarisi:     TRDOS 386 Kesme Servisi (Int 40h - 5: Open File)
-; =============================================================================
+; 31/08/2026 - Google AI
+
+; -----------------------------------------------------------------------------
+; Fonksiyon: open (C Deklarasyonu: int open(const char *pathname, int flags))
+; İşlev: sysopen (Fn 5) çağrısını tetikler. Sadece mevcut dosyaları açar.
+; Girdi: [ESP+4] = pathname (EBX'e), [ESP+8] = flags/mode (ECX'e -> CL okunur)
+; Çıktı: EAX = LIBC Handle (3-12 arası zırhlı) veya Hata durumunda -1
+; -----------------------------------------------------------------------------
+global open
 open:
+    push ebp
+    mov ebp, esp
     push ebx
-    push esi
-    mov esi, [esp + 12]     ; pathname adresi (Push'lar sebebiyle +8 kaydı)
-    mov ecx, [esp + 16]     ; flags
-    ; TRDOS 386 Open dosya açma register standartları:
-    ; ESI = Dosya adı adresi, ECX = Erişim modu
-    mov eax, 5              ; TRDOS 386: Dosya Aç fonksiyon kodu
-    int 40h                 ; Kernel çağrısı
-    jnc .success            ; Carry bayrağı temizse (hata yoksa) ilerle
-    mov eax, -1             ; Hata durumunda C uyumlu -1 döndür
-    jmp .done
-.success:
-    ; EAX zaten dönen geçerli handle değerini içerir
-    ; 30/08/2026
+
+    mov ebx, [ebp+8]        ; EBX = pathname adresi (ASCIIZ)
+    mov ecx, [ebp+12]       ; ECX = open mode (Kernel sadece CL kullanır)
+
+    mov eax, 5              ; EAX = sysopen fonksiyon numarası
+    int 0x40                ; TRDOS Çekirdek Kesmesi
+    jc .L_open_err          ; CF=1 ise dosya bulunamadı veya erişim engellendi
+
     add eax, 3              ; Convert TRDOS FD (0-9) to LIBC FD (3-12)
-.done:
-    pop esi
+    jmp .L_open_done
+
+.L_open_err:
+    mov eax, -1             ; Başarısızlık durumunda C uyumlu -1
+
+.L_open_done:
     pop ebx
+    mov esp, ebp
+    pop ebp
     ret
 
 align 4
 
-; =============================================================================
-; C Fonksiyonu: int close(int fd)
-; Açıklama:     Açık olan bir dosya tanımlayıcısını (handle) kapatır.
-; Giriş (Stack):[ESP + 4] = Dosya Tanımlayıcı (fd)
-; Çıkış:        EAX = 0 (Başarılı), -1 (Hata)
-; Mimarisi:     TRDOS 386 Kesme Servisi (Int 40h - Fonksiyon 6: Close File)
-; =============================================================================
+; -----------------------------------------------------------------------------
+; Fonksiyon: close (C Deklarasyonu: int close(int fd))
+; İşlev: sysclose (Fn 6) çağrısını tetikler. Standart I/O (0,1,2) kapatmalarını engeller.
+; Girdi: [ESP+4] = fd (EBX'e aktarılır)
+; Çıktı: EAX = 0 (Başarı) veya Hata durumunda -1
+; -----------------------------------------------------------------------------
+global close
 close:
+    push ebp
+    mov ebp, esp
     push ebx
-    mov ebx, [esp + 8]      ; fd / handle değerini al (+4 kaydı)
 
-    ; 30/08/2026
-    sub ebx, 3              ; Convert LIBC FD (3-12) to Kernel FD (0-9)
-    jb .fail                ; If fd < 3, it's a stdio handle, ignore or fail
-
-    mov eax, 6              ; TRDOS 386: Dosya Kapat fonksiyon kodu
-    int 40h
-    jnc .success
-.fail:
-    mov eax, -1
-    jmp .done
-.success:
-    xor eax, eax            ; Başarı durumunda 0 döndür
-.done:
-    pop ebx
-    ret
-
-align 4
-
-; =============================================================================
-; C Fonksiyonu: ssize_t read(int fd, void *buf, size_t count)
-; Açıklama:     Dosyadan belirtilen miktarda veriyi bellek tamponuna okur.
-; Giriş (Stack):[ESP + 4] = Dosya Tanımlayıcı (fd)
-;               [ESP + 8] = Verinin yazılacağı tampon bellek adresi (buf)
-;               [ESP + 12] = Okunacak byte sayısı (count)
-; Çıkış:        EAX = Okunan byte sayısı, EOF durumunda 0, Hata durumunda -1
-; Mimarisi:     TRDOS 386 Kesme Servisi (Int 40h - Fonksiyon 3: Read File)
-; =============================================================================
-read:
-    ; 30/08/2026	
-    push ebx
-    mov ebx, [esp + 8]      ; fd / handle
-    mov ecx, [esp + 12]     ; buf adresi
-
+    mov ebx, [ebp+8]        ; EBX = LIBC FD (C dünyasından gelen)
+    
+    ; Zırh Koruması: Eğer gelen fd 0, 1 veya 2 ise (stdin, stdout, stderr)
+    ; Çekirdeğin dosya kapatma sistemini yormamak için kapatma işlemini simüle et ve çık
     cmp ebx, 3
-    jb .read_stdio          ; If fd < 3, route to sys_stdio
-    sub ebx, 3              ; Convert to Kernel FD
+    jl .L_close_simulate_success
 
-    mov edx, [esp + 16]     ; count
+    sub ebx, 3              ; Zırh sarmalını kır (TRDOS ham FD: 0-9)
+    mov eax, 6              ; EAX = sysclose fonksiyon numarası
+    int 0x40
+    jc .L_close_err
+    
+.L_close_simulate_success:
+    xor eax, eax            ; Başarı durumunda EAX = 0 döndür
+    jmp .L_close_done
 
-    mov eax, 3              ; TRDOS 386: Dosyadan Oku fonksiyon kodu
-    int 40h
-    jnc .done
-.read_fail:
-    mov eax, -1             ; Kesme carry döndürdüyse hata oluşmuştur
-.done:
+.L_close_err:
+    mov eax, -1
+
+.L_close_done:
     pop ebx
+    mov esp, ebp
+    pop ebp
     ret
 
 align 4
+
+; -----------------------------------------------------------------------------
+; Fonksiyon: read (C Deklarasyonu: int read(int fd, void *buf, unsigned int count))
+; İşlev: sysread (Fn 3) veya standard girdi durumunda konsol kesmesini tetikler.
+; TRDOS Düzeni: EBX = FD, ECX = Buffer Adresi, EDX = 32-bit Count
+; -----------------------------------------------------------------------------
+global read
+read:
+    push ebp
+    mov ebp, esp
+    push ebx
+
+    mov ebx, [ebp+8]       ; EBX = LIBC FD
+    mov ecx, [ebp+12]      ; ECX = Buffer Adresi
+    mov edx, [ebp+16]      ; EDX = 32-bit Byte Count
+
+    ; Zırh Koruması: Girdi stdin (0) mi kontrol et
+    cmp ebx, 0
+    je .L_read_stdin       ; Eğer stdin ise doğrudan klavye/konsol okuma rutin sarmalına dallan
+
+    sub ebx, 3             ; Convert to TRDOS ham FD (0-9)
+    jb .L_read_err
+
+    mov eax, 3             ; EAX = sysread fonksiyon numarası
+    int 0x40
+    jnc .L_read_done
+
+.L_read_err:
+    mov edx, -1 
+.L_read_ok:
+    ;mov eax, -1           ; Hata durumunda -1
+    mov eax, edx
+
+.L_read_done:
+    pop ebx
+    mov esp, ebp
+    pop ebp
+    ret
 
     ; Console Input (Keyboard) Read Loop (sys_stdio)
-.read_stdio:
-    cmp bl, 1              ; Check if fd is stdout(1) or stderr(2)
-    cmc
-    jc .read_fail          ; If fd >= 1, abort with error (-1)
-
+.L_read_stdin:
     xor edx, edx           ; Clear character counter
-    
-.read_stdio_next:
+
+.L_read_stdin_next:
     mov eax, 46            ; TRDOS 386 sys_stdio (BL=0 for STDIN)
-    int 40h
-    jc .read_ok
+    int 0x40
+    jc .L_read_ok
 
     mov [ecx], al
     and al, al
-    jz .read_ok
-    
+    jz .L_read_ok
+
     inc edx
     cmp edx, [ebp + 16]    ; Check against requested count limit
-    jnb .read_ok
-    
+    jnb .L_read_ok
+
     inc ecx
     cmp al, 27             ; ESC check
-    je .read_ok
+    je .L_read_ok
     cmp al, 13             ; Enter check
-    jne .read_stdio_next
+    je .L_read_ok
+    jmp .L_read_stdin_next
 
-.read_ok:
-    mov eax, edx           ; Return total read count
-.read_done:
-    pop ebx
-    ret
+;.L_read_ok:
+    ;mov eax, edx          ; Return total read count
+
+;.L_read_done:
+    ;pop ebx
+    ;pop ebp
+    ;ret
 
 align 4
 
@@ -222,89 +241,92 @@ align 4
 ; Çıkış:        EAX = Yazılan byte sayısı veya Hata durumunda -1
 ; Mimarisi:     TRDOS 386 Kesme Servisi (Int 40h - Fonksiyon 0008h: Write File)
 ; =============================================================================
+global write
 write:
-    ; 30/08/2026 
+    push ebp
+    mov ebp, esp
     push ebx
-    mov ebx, [esp + 8]      ; fd / handle (TRDOS konsol veya dosya handle)
-    mov ecx, [esp + 12]     ; buf adresi
-    mov edx, [esp + 16]     ; count
 
-    cmp ebx, 3
-    jb .write_stdio         ; If fd < 3 (0, 1, 2), route to console sys_stdio
-    sub ebx, 3              ; Convert C-FD to TRDOS-FD
+    mov ebx, [ebp+8]        ; EBX = LIBC FD (c_fd)
+    mov ecx, [ebp+12]       ; ECX = Buffer Adresi
+    mov edx, [ebp+16]       ; EDX = 32-bit Byte Count
 
-    mov eax, 4              ; TRDOS 386: Dosyaya Yaz fonksiyon kodu
-    int 40h
-    jnc .done
-.write_fail:
-    mov eax, -1
-.done:
+    cmp ebx, 3              ; Zırhı kır (c_fd - 3)
+    jb .L_write_stdio       ; c_fd < 3 ise (stdout/stderr), sysstdio çağrısına dallan
+    sub	ebx, 3
+
+    ; Gerçek dosya yazma adımı
+    mov eax, 4              ; EAX = syswrite fonksiyon numarası
+    int 0x40
+    jnc .L_write_done
+
+.L_write_error:
+    mov eax, -1             ; Yazma hatası
+
+.L_write_done:
     pop ebx
+    mov esp, ebp
+    pop ebp
     ret
 
-align 4
-
     ; Console Output (TTY) Write Loop (sys_stdio)
-.write_stdio:
+.L_write_stdio:
     cmp ebx, 0
-    je .write_fail        ; Writing to stdin (fd=0) is invalid
+    je .L_write_error       ; Writing to stdin (fd=0) is invalid
 
     ; Map C-FD to TRDOS sys_stdio BL codes
-    cmp ebx, 2
-    je .set_stderr
-    mov bl, 2             ; BL = 2 (stdout)
-    jmp .init_loop
-.set_stderr:
-    mov bl, 3             ; BL = 3 (stderr)
-
-.init_loop:
+    ; bl > 0 & bl < 3	    ; 1 = stdout, 2 = stderr	
+    inc	ebx                 ; BL = 2 (stdout)
+                            ; BL = 3 (stderr)
     push esi
     push edi
     mov esi, ecx
-    mov edi, edx	  ; count
-    xor edx, edx          ; EDX = Character counter (bytes written)
+    mov edi, edx	    ; count
+    xor edx, edx            ; EDX = Character counter (bytes written)
 
-.stdio_loop_next:
-    mov cl, [esi]         ; CL = ASCII character code
-    test cl, cl           ; Check for ASCIIZ null terminator
-    jz .skip_stdio_w
+.L_stdio_w_loop:
+    mov cl, [esi]           ; CL = ASCII character code
+    test cl, cl             ; Check for ASCIIZ null terminator
+    jz .L_skip_stdio_w
 
-    cmp cl, 10            ; LF
-    jne .skip_crlf
+    cmp cl, 10              ; LF
+    jne .L_skip_crlf
     cmp byte [_pchar_storage], 13 ; CR check
-    je .skip_crlf
+    je .L_skip_crlf
 
     mov ecx, 13
-    mov eax, 46           ; EAX = 46 (TRDOS 386 sys_stdio)
-    int 0x40              ; Call kernel to print a single character
-    jc .write_error
+    mov eax, 46             ; EAX = 46 (TRDOS 386 sys_stdio)
+    int 0x40                ; Call kernel to print a single character
+    jc .L_stdio_w_error
     mov cl, 10
 
-.skip_crlf:
+.L_skip_crlf:
     mov byte [_pchar_storage], cl
 
-    mov ch, 0             ; CH = 0 (No CGA color attribute)
-    mov eax, 46           ; EAX = 46 (TRDOS 386 sys_stdio)
-    int 0x40              ; Call kernel to print a single character
-    jc .write_error
-.skip_stdio_w:
-    inc edx               ; Increment processed characters counter
-    inc esi               ; Advance buffer pointer to the next character
-    cmp edx, edi          ; Sınır Kontrol : Sayaç (EDX) == İstenen byte (EDI) oldu mu?
-    jb .stdio_loop_next
+    mov ch, 0               ; CH = 0 (No CGA color attribute)
+    mov eax, 46             ; EAX = 46 (TRDOS 386 sys_stdio)
+    int 0x40                ; Call kernel to print a single character
+    jc .L_stdio_w_error
+.L_skip_stdio_w:
+    inc edx                 ; Increment processed characters counter
+    inc esi                 ; Advance buffer pointer to the next character
+    cmp edx, edi            ; Sınır Kontrol : Sayaç (EDX) == İstenen byte (EDI) oldu mu?
+    jb .L_stdio_w_loop
 
-.stdio_loop_ok:
-    mov eax, edx          ; Çağıran fonksiyona yazılan byte sayısını döndür
-    jmp .write_done
+.L_stdio_loop_ok:
+    mov eax, edx            ; Çağıran fonksiyona yazılan byte sayısını döndür
 
-.write_error:
-    mov eax, -1           ; Return -1 on error
-
-.write_done:
+.L_stdio_w_done:
     pop edi
     pop esi
     pop ebx
+    mov esp, ebp
+    pop ebp
     ret
+
+.L_stdio_w_error:
+    mov eax, -1             ; Return -1 on error
+    jmp .L_stdio_w_done
 
 ; Previous Character - CRLF check statik hafıza hücresi
 align 4
