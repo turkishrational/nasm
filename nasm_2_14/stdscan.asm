@@ -42,110 +42,95 @@ global nasm_stdscan_next
 nasm_stdscan_next:
     push ebp
     mov ebp, esp
-    push ebx                    ; * (EBX Koruma Altında)
-    push esi                    ; ** (ESI Koruma Altında)
-    push edi                    ; *** (EDI Koruma Altında)
+    push ebx
+    push esi
+    push edi
 
-    mov esi, [nasm_scan_line_ptr] ; ESI = Güncel satır okuma konumu
-    mov edi, [ebp+8]            ; EDI = Kelimenin kopyalanacağı hedef tampon
+    mov esi, [nasm_scan_line_ptr] ; ESI = Satır okuma pointer konumu
+    mov edi, [ebp+8]            ; EDI = parser_token_buf adresi
+    xor ecx, ecx                ; ECX = Taşma sayacı
 
-.L_skip_whitespace:
+.L_skip_ws:
     mov al, [esi]
     test al, al
-    jz .L_scan_eof              ; Null karakter, satır bitti
-    
-    ; Boşluk (Space = 32) veya Tab (9) ayıklama
-    cmp al, 32
-    je .L_next_char_ws
-    cmp al, 9
-    je .L_next_char_ws
-    
-    ; Yorum satırı (';') kontrolü. Satırın kalanını ıskarta et.
-    cmp al, ';'
+    jz .L_scan_eof              ; Satır bitti
+
+    cmp al, ' '                 ; Boşluk mu?
+    je .L_advance_ws
+    cmp al, 9                   ; Tab mı?
+    je .L_advance_ws
+    cmp al, ';'                 ; Yorum mu?
     je .L_scan_eof
-    jmp .L_determine_type
+    jmp .L_start_copy           ; Kelime başladı!
 
-.L_next_char_ws:
+.L_advance_ws:
     inc esi
-    jmp .L_skip_whitespace
+    jmp .L_skip_ws
 
-.L_determine_type:
-    ; Özel ayırıcı karakter kontrolleri (',', ':', '[', ']')
+.L_start_copy:
+    ; --- MİKRO BÖLÜCÜLER (ÖZEL KARAKTERLER) ---
+    ; Bu karakterler görüldüğü an kelime araması durur ve tekil basılırlar
     cmp al, ','
-    je .L_special_char
+    je .L_special
     cmp al, ':'
-    je .L_special_char
-    cmp al, '['
-    je .L_special_char
-    cmp al, ']'
-    je .L_special_char
+    je .L_special
+    cmp al, '['                 ; Köşeli parantez açılışı kelimeyi böler!
+    je .L_special
+    cmp al, ']'                 ; Köşeli parantez kapanışı kelimeyi böler!
+    je .L_special
 
-    ; Rakam kontrolü (0-9) -> Sayısal token işleme
-    cmp al, '0'
-    jl .L_alpha_token
-    cmp al, '9'
-    jle .L_numeric_token
+.L_copy_loop:
+    cmp ecx, 254                ; BSS Taşma Kalkanı
+    jae .L_copy_done
 
-.L_alpha_token:
-    ; Alfanumerik kelime / etiket ayıklama döngüsü
-    mov [edi], al
+    mov [edi], al               ; Karakteri kopyala
     inc edi
     inc esi
+    inc ecx
     
     mov al, [esi]
     test al, al
-    jz .L_alpha_done
-    
-    ; Boşluk veya özel karakter görene kadar kelimeyi kopyalamaya devam et
-    cmp al, 32
-    je .L_alpha_done
+    jz .L_copy_done
+
+    ; Sınır İşaretleri: Yeni karakter bir boşluk veya bölücü ise anlık kelime biter
+    cmp al, ' '
+    je .L_copy_done
     cmp al, 9
-    je .L_alpha_done
+    je .L_copy_done
     cmp al, ','
-    je .L_alpha_done
+    je .L_copy_done
     cmp al, ':'
-    je .L_alpha_done
-    jmp .L_alpha_token
+    je .L_copy_done
+    cmp al, '['                 ; Sonraki karakter parantez ise kelimeyi kes!
+    je .L_copy_done
+    cmp al, ']'                 ; Sonraki karakter parantez ise kelimeyi kes!
+    je .L_copy_done
+    cmp al, ';'                 ; Sonraki karakter yorum ise kes!
+    jne .L_copy_loop
 
-.L_alpha_done:
-    mov byte [edi], 0           ; Token stringini ASCIIZ yap
-    mov dword [nasm_scan_line_ptr], esi ; Güncel konumu güncelle
-    mov eax, 1                  ; TİP 1: Word / Identifier / Mnemonic
-    jmp .L_scan_exit
+.L_copy_done:
+    mov byte [edi], 0           ; Kesin Null Sonlandırma
+    mov [nasm_scan_line_ptr], esi
+    mov eax, 1                  ; Tip 1: Kelime / Mnemonic / Register
+    jmp .L_exit
 
-.L_numeric_token:
-    ; Basit sayısal değer yakalama döngüsü
-    mov [edi], al
-    inc edi
+.L_special:
+    mov [edi], al               ; Karakterin kendisini kopyala ([, ], , vs.)
+    mov byte [edi+1], 0         ; ASCIIZ yap
     inc esi
-    mov al, [esi]
-    cmp al, '0'
-    jl .L_numeric_done
-    cmp al, '9'
-    jle .L_numeric_token
-
-.L_numeric_done:
-    mov byte [edi], 0
-    mov dword [nasm_scan_line_ptr], esi
-    mov eax, 2                  ; TİP 2: Number / Numeric Constant
-    jmp .L_scan_exit
-
-.L_special_char:
-    mov [edi], al
-    mov byte [edi+1], 0         ; Tekil karakter ASCIIZ yap
-    inc esi
-    mov dword [nasm_scan_line_ptr], esi
-    mov eax, 3                  ; TİP 3: Special Character (Separator)
-    jmp .L_scan_exit
+    mov [nasm_scan_line_ptr], esi
+    mov eax, 3                  ; Tip 3: Özel Ayırıcı / Separatör
+    jmp .L_exit
 
 .L_scan_eof:
-    mov dword [nasm_scan_line_ptr], esi
-    xor eax, eax                ; TİP 0: End of Line / EOF
+    mov [nasm_scan_line_ptr], esi
+    xor eax, eax                ; Tip 0: Satır Sonu
 
-.L_scan_exit:
-    pop edi                     ; *** (EDI Kurtarıldı)
-    pop esi                     ; ** (ESI Kurtarıldı)
-    pop ebx                     ; * (EBX Kurtarıldı)
+.L_exit:
+    pop edi
+    pop esi
+    pop ebx
     mov esp, ebp
     pop ebp
     ret
+

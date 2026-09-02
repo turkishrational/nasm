@@ -124,7 +124,10 @@ rbtree_insert:
     call strcmp
     add esp, 8
     
-    js .L_ins_left
+    ; 01/09/2026 - Google AI
+    test eax, eax               ; EAX'in içindeki sayısal değere göre bayrakları (SF, ZF) yeniden tetikle!
+    js .L_ins_left              ; EAX < 0 ise (Sign Flag = 1) tam isabetle sola git!
+    jz .L_node_exists           ; EAX == 0 ise (Zero Flag = 1) sembol zaten var, çık!
     
     ; Sağa ekle
     mov ecx, [edx + 12]         ; parent->right
@@ -133,6 +136,7 @@ rbtree_insert:
     mov edx, ecx
     jmp .L_traverse_loop
 
+    ; Sola ekle
 .L_ins_left:
     mov ecx, [edx + 8]          ; parent->left
     test ecx, ecx
@@ -147,6 +151,7 @@ rbtree_insert:
 .L_set_left:
     mov [edx + 8], eax          ; parent->left = new_node
 
+.L_node_exists:
 .L_insert_done:
     pop edi
     pop esi

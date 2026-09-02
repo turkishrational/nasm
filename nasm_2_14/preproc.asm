@@ -44,52 +44,61 @@ global preproc_getline
 preproc_getline:
     push ebp
     mov ebp, esp
-    push ebx                    ; * (EBX Koruma Altında)
-    push esi                    ; ** (ESI Koruma Altında)
-    push edi                    ; *** (EDI Koruma Altında)
+    push ebx                    ; *
+    push esi                    ; **
+    push edi                    ; ***
 
-    mov edi, nasm_line_buffer   ; EDI = Satırın yazılacağı BSS adresi
-    xor esi, esi                ; ESI = Okunan anlık karakter sayacı (cc)
+    mov edi, nasm_line_buffer   ; EDI = Satır tamponu adresi
+    xor esi, esi                ; ESI = Karakter sayacı (cc)
 
 .L_char_loop:
-    ; read(nasm_input_file_handle, &nasm_char_temp, 1) sarmal çağrısı
-    push 1                      ; Parametre 3: count = 1 byte
-    push nasm_char_temp         ; Parametre 2: buffer adresi
-    push dword [nasm_input_file_handle] ; Parametre 1: LIBC FD (3-12)
-    call read                   ; system.asm içindeki zırhlı ve optimize read
+    push 1                      ; count = 1 byte
+    push nasm_char_temp         ; buffer ptr
+    push dword [nasm_input_file_handle] ; LIBC FD
+    call read
     add esp, 12                 ; Stack temizle
 
-    cmp eax, 1                  ; 1 byte okunabildi mi?
-    jne .L_check_eof_condition  ; Okunamadıysa dosya sonu (EOF) kontrolüne git
+    cmp eax, 1                  ; 1 byte okundu mu?
+    jne .L_check_eof_condition
 
-    mov al, [nasm_char_temp]    ; Okunan karakteri AL'ye al
-    mov [edi], al               ; Karakteri satır tamponuna yaz
+    mov al, [nasm_char_temp]    ; AL = Okunan karakter
+
+    cmp al, 13                  ; Carriage Return (\r) mu?
+    je .L_char_loop             ; \r karakterini tampona yazma, direkt atla!
+
+    cmp al, 10                  ; Line Feed (\n) mu?
+    je .L_line_completed        ; \n gördüysen satır bitti demektir
+
+    ; Normal karakterleri tampona yaz
+    mov [edi], al
     inc edi
-    inc esi                     ; Sayaç artır
+    inc esi
 
-    cmp al, 10                  ; Satır sonu (Line Feed / \n) ulaşıldı mı?
-    je .L_line_done
-
-    cmp esi, 4095               ; 4 KB tampon bellek taşma sınır koruması
-    jae .L_line_done
+    cmp esi, 4095               ; Taşma koruması
+    jae .L_line_completed
     jmp .L_char_loop
 
 .L_check_eof_condition:
     test esi, esi               ; Hiç karakter okunmadan mı EOF oldu?
-    jz .L_preproc_eof           ; Evet ise doğrudan NULL dön
+    jz .L_preproc_eof           ; Evet ise NULL dön
 
-.L_line_done:
-    mov byte [edi], 0           ; Satır sonuna kesin ASCIIZ Null Terminator ekle
-    mov eax, nasm_line_buffer   ; Başarı durumunda EAX = Okunan satır pointer'ı
+.L_line_completed:
+    mov byte [edi], 0           ; Satırı temiz bir ASCIIZ string yap (CRLF'ten arındırıldı!)
+    
+    ; --- HATA VERSE BİLE SATIR SAYACINI KOŞULSUZ ARTIRMA KURALI ---
+    inc dword [nasm_global_line_counter] ; Global satır sayacını (B) 1 artır
+    
+    mov eax, nasm_line_buffer   ; Geriye temiz satır pointer'ını döndür
     jmp .L_preproc_exit
 
 .L_preproc_eof:
-    xor eax, eax                ; EOF/Hata durumunda C standardına uygun NULL (0) dön
+    xor eax, eax                ; EOF durumunda NULL dön
 
 .L_preproc_exit:
-    pop edi                     ; *** (EDI Kurtarıldı)
-    pop esi                     ; ** (ESI Kurtarıldı)
-    pop ebx                     ; * (EBX Kurtarıldı)
+    pop edi                     ; ***
+    pop esi                     ; **
+    pop ebx                     ; *
     mov esp, ebp
     pop ebp
     ret
+

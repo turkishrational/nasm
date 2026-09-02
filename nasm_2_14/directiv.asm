@@ -44,14 +44,14 @@ nasm_directive_find:
     pop ebp
     ret
 
-; 31/08/2026 - Google AI
+; 01/09/2026 - Google AI
 
 ; -----------------------------------------------------------------------------
 ; Fonksiyon: nasm_process_directive
-; İşlev: ESI içindeki ayıklanan direktif string'ini tabloyla tarar ve dallanır.
-; Girdi: ESI = Ayıklanan direktif kelimesinin bellek adresi
-; Değişen Register'lar: EAX, ECX, EDX
-; Korunan Register'lar: EBX, ESI, EDI, EBP, ESP
+; Girdi (Stack): [EBP+8] = parser_token_buf ASCIIZ string bellek adresi
+; Çıktı: EAX = 1 (Direktif başarıyla işlendi), EAX = 0 (Tanınmadı)
+; Değişen Register'lar: EAX, ECX, EDX (Scratch Volatile)
+; Korunan Register'lar: EBX, ESI, EDI, EBP, ESP (Callee-saved)
 ; -----------------------------------------------------------------------------
 global nasm_process_directive
 nasm_process_directive:
@@ -59,6 +59,8 @@ nasm_process_directive:
     mov ebp, esp
     push edi
     push esi
+
+    mov esi, [ebp+8]        ; ESI = parser_token_buf string adresi
 
     mov edi, nasm_directive_table
 
@@ -69,7 +71,7 @@ nasm_process_directive:
 
     ; C uyumlu nasm_stricmp çağrısı için parametreleri stack'e basıyoruz
     push edx                ; [ESP+8] Parametre 2: Tablodaki direktif string adresi
-    push ESI                ; [ESP+4] Parametre 1: Ayıklanan anlık string adresi
+    push esi                ; [ESP+4] Parametre 1: Ayıklanan anlık string adresi
     call nasm_stricmp
     add esp, 8              ; Stack temizleme (C calling convention)
 
@@ -91,30 +93,49 @@ nasm_process_directive:
     cmp eax, 4
     je .do_extern
 
+    cmp eax, 5
+    je .do_data_define
+    cmp eax, 6
+    je .do_data_define
+    cmp eax, 7
+    je .do_data_define
+
     jmp .unknown_directive
 
 .do_bits:
     call parse_bits_value
+    mov eax, 1
     jmp .success_exit
 
 .do_section:
     call parse_section_name
+    mov eax, 2
     jmp .success_exit
 
 .do_global:
     call parse_global_symbol
+    mov eax, 3
     jmp .success_exit
 
 .do_extern:
     call parse_extern_symbol
+    mov eax, 4
+    jmp .success_exit
+
+; --- db, dw, dd İçin Geçici Pass 1 Hazırlık Gövdesi ---
+.do_data_define:
+    ; İleride outbin.asm / kod üretim katmanında byte çıktısı basacak olan alan.
+    ; Şimdilik sadece kelimeyi tanıdığımızı belirtmek için EAX'i 1 yapıp çıkıyoruz.
+    ; mov eax, 1                ; KESİN BAŞARI BAYRAĞI
+    mov eax, 5 ; 6, 7
     jmp .success_exit
 
 .unknown_directive:
-    call unknown_directive_error
-    jmp .success_exit
+    xor eax, eax                ; EAX = 0 (Direktif bulunamadı)
+    ;jmp .success_exit
 
 .success_exit:
-    pop esi
+    pop esi                     ; (Fonksiyonun en başında korunan orijinal registerlar)
     pop edi
     mov esp, ebp
     pop ebp
@@ -147,19 +168,6 @@ parse_bits_value:
     ret
 
 ; -----------------------------------------------------------------------------
-; Fonksiyon: parse_section_name
-; İşlev: Aktif segmenti (text, data, bss) bss alanına kaydeder (Çıktı formatları için)
-; -----------------------------------------------------------------------------
-parse_section_name:
-    push ebp
-    mov ebp, esp
-    ; İleride ELF ve COFF/PE için genişletilecek olan aktif segment adresi kaydı
-    mov [nasm_current_section_ptr], esi
-    mov esp, ebp
-    pop ebp
-    ret
-
-; -----------------------------------------------------------------------------
 ; Fonksiyon: parse_global_symbol
 ; -----------------------------------------------------------------------------
 parse_global_symbol:
@@ -181,16 +189,108 @@ parse_extern_symbol:
     pop ebp
     ret
 
+; 01/09/2026 - Google AI
+
 ; -----------------------------------------------------------------------------
 ; Fonksiyon: unknown_directive_error
-; İşlev: İstediğiniz gibi C tipi printf ve hata mesajı sarmalına bağlandı.
+; İşlev: NASM standardında (dosya:satır: error: ...) biçimlendirilmiş hata basar.
+; Girdi (Stack): [EBP+8] = Hata veren kelimenin ASCIIZ bellek adresi (Mnemonic/Directive)
+; Korunan Register'lar: EBX, ESI, EDI, EBP, ESP (İçeride değiştirilmedikleri için push/pop gereksiz!)
 ; -----------------------------------------------------------------------------
+global unknown_directive_error
 unknown_directive_error:
     push ebp
     mov ebp, esp
-    push unknown_directive_msg
-    call printf
-    add esp, 4
+
+    ; [ebp+8] = Stack üzerinden gelen bilinmeyen kelimenin adresi
+    mov ecx, [ebp+8]            ; ECX = Geçici joker olarak kelime adresini al
+
+    ; Matematiksel Satır Hesabı: Current_Line = B (global_line) - A (include_start)
+    mov eax, [nasm_global_line_counter]
+    sub eax, [nasm_include_start_line]
+    
+    ; printf(nasm_err_fmt, current_src_filename, current_line, unknown_word)
+    ; Sağdan sola doğru parametreleri stack'e diziyoruz:
+    push ecx                    ; Parametre 4: %s -> Bilinmeyen kelime adresi
+    push eax                    ; Parametre 3: %d -> Hesaplanan satır numarası
+    push dword [nasm_current_src_filename] ; Parametre 2: %s -> Aktif kaynak dosya adı
+    push nasm_err_fmt           ; Parametre 1: Biçimlendirme format şablonu
+    call printf                 ; libnasm.asm içindeki printf sarmalı
+    add esp, 16                 ; 4 adet dword parametreyi stack'ten temizle
+
     mov esp, ebp
     pop ebp
     ret
+
+; 01/09/2026 - Google AI
+
+; -----------------------------------------------------------------------------
+; Fonksiyon: parse_section_name
+; İşlev: Satırdaki segment adını (.text, .data) süzüp nasm_current_section_id alanını günceller.
+; Girdi: ESI = Segment adı string adresi (Ör: ".text" veya ".data")
+; Değişen Register'lar: EAX, ECX, EDX (Scratch)
+; Korunan Register'lar: EBX, ESI, EDI, EBP, ESP
+; -----------------------------------------------------------------------------
+global parse_section_name
+parse_section_name:
+    push ebp
+    mov ebp, esp
+    push ebx                    ; *
+    ;push esi                   ; **
+    ;push edi                   ; ***
+
+    ; Gelen segment adı pointer'ını (ESI) koruyarak tarama adımlarına geçiyoruz
+    mov ebx, esi                ; EBX = Aranan segment adı dizesi
+
+    ; --- 1. .text SEGMENT KONTROLÜ ---
+    push section_str_text       ; Tablodaki ".text" dizesi
+    push ebx                    ; Kaynak koddan gelen dize
+    call strcmp                 ; libnasm.asm veya libc içindeki strcmp
+    add esp, 8
+    or eax, eax
+    jz .L_set_text_id           ; Eşleştiyse TEXT segment ID'sini ata
+
+    ; --- 2. .data SEGMENT KONTROLÜ ---
+    push section_str_data       ; Tablodaki ".data" dizesi
+    push ebx
+    call strcmp
+    add esp, 8
+    or eax, eax
+    jz .L_set_data_id           ; Eşleştiyse DATA segment ID'sini ata
+
+    ; --- 3. .bss SEGMENT KONTROLÜ ---
+    push section_str_bss        ; Tablodaki ".bss" dizesi
+    push ebx
+    call strcmp
+    add esp, 8
+    or eax, eax
+    jz .L_set_bss_id            ; Eşleştiyse BSS segment ID'sini ata
+    jmp .L_unknown_section_done ; Bilinmeyen bir segment ise default değerde bırak
+
+.L_set_text_id:
+    mov eax, 1 ; ID = 1 (.text)
+    jmp .L_section_sync_done
+
+.L_set_data_id:
+    mov eax, 2 ; ID = 2 (.data)
+    jmp .L_section_sync_done
+
+.L_set_bss_id:
+    mov eax, 3 ; ID = 3 (.bss)
+    jmp .L_section_sync_done
+
+.L_unknown_section_done:
+    ; Eğer düz bir flat binary derlemesi yapılıyorsa ve standart dışı segment ismi 
+    ; girildiyse, geriye mutlak / absolute segment kodu (0) döndürerek emniyet sağla.
+    mov eax, 0
+
+.L_section_sync_done:
+    mov dword [nasm_current_section_id], eax
+    ;
+    ;pop edi                    ; ***
+    ;pop esi                    ; **
+    pop ebx                     ; *
+    mov esp, ebp
+    pop ebp
+    ret
+

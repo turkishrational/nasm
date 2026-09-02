@@ -51,10 +51,11 @@ err_prefix_fmt:      db "%s:%d: ", 0
 err_lf_str:          db 10, 0
 
 ; --- directbl.asm Modülü Sabitleri (Orijinal İngilizce Direktif Dizgeleri) ---
-dir_str_section:     db "section", 0
-dir_str_segment:     db "segment", 0
-dir_str_equ:         db "equ", 0
-dir_str_global:      db "global", 0
+dir_str_section:    db "section", 0
+dir_str_segment:    db "segment", 0
+dir_str_equ:        db "equ", 0
+dir_str_global:     db "global", 0
+dir_str_extern:     db "extern", 0
 
 ; --- pragma.asm Modülü Sabitleri ---
 pragma_str_pack:     db "pack", 0
@@ -219,7 +220,7 @@ nasm_insn_string_pool:
 ; TRDOS 386 - NASM Portu: Temel ve Çekirdek x86 Opkod Matrisi (data.asm)
 ; =============================================================================
 align 4
-global nasm_instruction_table
+global nasm_instructions_table
 nasm_instructions_table:
     ; Yapı Tasarımı: 
     ; dd Mnemonic_String_Address (4 Byte)
@@ -229,36 +230,34 @@ nasm_instructions_table:
     ; db Opcode_Length_Bytes    (1 Byte)
     ; Toplam = Kayıt başına 12 Byte (Sabit İndeksleme İçin İdeal)
 
-    dd .str_mov,   0x0000000C, 0x8900, 0x00, 2
-    dd .str_add,   0x0000000C, 0x0100, 0x00, 2
-    dd .str_sub,   0x0000000C, 0x2900, 0x00, 2
-    dd .str_jmp,   0x00000001, 0xE900, 0x00, 1
-    dd .str_jz,    0x00000001, 0x7400, 0x00, 1
-    dd .str_je,    0x00000001, 0x7400, 0x00, 1
-    dd .str_int,   0x00000002, 0xCD00, 0x00, 1
-    dd .str_push,  0x00000004, 0x5000, 0x00, 1
-    dd .str_pop,   0x00000004, 0x5800, 0x00, 1
-    dd .str_call,  0x00000001, 0xE800, 0x00, 1
-    dd .str_ret,   0x00000000, 0xC300, 0x00, 1
-    dd .str_cli,   0x00000000, 0xFA00, 0x00, 1
-    dd .str_sti,   0x00000000, 0xFB00, 0x00, 1
-    ; ... (TRDOS Kernel'ını derlemek için gereken diğer kritik komutlar buraya kurallı eklenir)
-    dd 0 ; Tablo Sonu Belirteci (Null Terminator)
+    dd op_str_mov,   0x0000000C, (0x8900 | (0x00 << 16) | (2 << 24))
+    dd op_str_add,   0x0000000C, (0x0100 | (0x00 << 16) | (2 << 24))
+    dd op_str_sub,   0x0000000C, (0x2900 | (0x00 << 16) | (2 << 24))
+    dd op_str_and,   0x0000000C, (0x2100 | (0x00 << 16) | (2 << 24))
+    dd op_str_jmp,   0x00000001, (0xE900 | (0x00 << 16) | (1 << 24))
+    dd op_str_int,   0x00000002, (0xCD00 | (0x00 << 16) | (1 << 24))
+    dd op_str_push,  0x00000004, (0x5000 | (0x00 << 16) | (1 << 24))
+    dd op_str_pop,   0x00000004, (0x5800 | (0x00 << 16) | (1 << 24))
+    dd op_str_call,  0x00000001, (0xE800 | (0x00 << 16) | (1 << 24))
+    dd op_str_ret,   0x00000000, (0xC300 | (0x00 << 16) | (1 << 24))
+    dd op_str_cli,   0x00000000, (0xFA00 | (0x00 << 16) | (1 << 24))
+    dd op_str_sti,   0x00000000, (0xFB00 | (0x00 << 16) | (1 << 24))
+    dd 0, 0, 0                                  ; <-- 3x DWORD STOP MARKER!
 
-; Mnemonic String Literalleri
-.str_mov:   db 'mov', 0
-.str_add:   db 'add', 0
-.str_sub:   db 'sub', 0
-.str_jmp:   db 'jmp', 0
-.str_jz:    db 'jz', 0
-.str_je:    db 'je', 0
-.str_int:   db 'int', 0
-.str_push:  db 'push', 0
-.str_pop:   db 'pop', 0
-.str_call:  db 'call', 0
-.str_ret:   db 'ret', 0
-.str_cli:   db 'cli', 0
-.str_sti:   db 'sti', 0
+align 4
+; --- nasm_lookup_instruction - Mnemonic String Katar Havuzu ---
+op_str_mov:   db 'mov', 0
+op_str_add:   db 'add', 0
+op_str_sub:   db 'sub', 0
+op_str_and:   db 'and', 0
+op_str_jmp:   db 'jmp', 0
+op_str_int:   db 'int', 0
+op_str_push:  db 'push', 0
+op_str_pop:   db 'pop', 0
+op_str_call:  db 'call', 0
+op_str_ret:   db 'ret', 0
+op_str_cli:   db 'cli', 0
+op_str_sti:   db 'sti', 0
 ; .....................
 
 ; 31/08/2026
@@ -269,30 +268,41 @@ nasm_instructions_table:
 align 4
 global nasm_directive_table
 nasm_directive_table:
-    dd .dir_bits,     1 ; BITS direktif kodu
-    dd .dir_section,  2 ; SECTION direktif kodu
-    dd .dir_segment,  2 ; SEGMENT (SECTION ile aynı)
-    dd .dir_global,   3 ; GLOBAL
-    dd .dir_extern,   4 ; EXTERN
+    dd dir_bits,      1 ; BITS direktif kodu
+    dd dir_section,   2 ; SECTION direktif kodu
+    dd dir_segment,   2 ; SEGMENT (SECTION ile aynı)
+    dd dir_global,    3 ; GLOBAL
+    dd dir_extern,    4 ; EXTERN
+    dd dir_str_db,    5 ; DB (Define Byte) kodu
+    dd dir_str_dw,    6 ; DW (Define Word) kodu
+    dd dir_str_dd,    7 ; DD (Define Doubleword) kodu
     dd 0
 
-.dir_bits:    db 'bits', 0
-.dir_section: db 'section', 0
-.dir_segment: db 'segment', 0
-.dir_global:  db 'global', 0
-.dir_extern:  db 'extern', 0
-
-; --- directiv.asm 'nasm_process_directive' fonksiyonu ---
-unknown_directive_msg: db 'error: unknown or unimplemented directive', 0x0D, 0x0A, 0
+dir_bits:      db 'bits', 0
+dir_section:   db 'section', 0
+dir_segment:   db 'segment', 0
+dir_global:    db 'global', 0
+dir_extern:    db 'extern', 0
+dir_str_db:    db 'db', 0
+dir_str_dw:    db 'dw', 0
+dir_str_dd:    db 'dd', 0
 
 ; 01/09/2026 - Google AI
+
+; --- directiv.asm 'nasm_process_directive' fonksiyonu ---
+; --- unknown_directive_error - Standart NASM Hata Formatı ---
+nasm_err_fmt: db '%s:%d: error: unknown or unimplemented directive "%s"', 0x0D, 0x0A, 0
 
 ; --- fopen - okuma modu dizesi ---
 nasm_mode_read: db 'r', 0
 
-; --- assemble_file - Token Test Baskı Formatı ---
-token_print_fmt: db 'Token Tip: %d | Icerik: %s', 0x0D, 0x0A, 0
+; --- parser.asm - Bilinmeyen Token Teşhis Formatı ---
+;parser_unknown_fmt: db '>>> BILINMEYEN TOKEN NE?: [%s]', 0x0D, 0x0A, 0
 
+; --- parse_section_name - Standart Nesne Dosyası Segment Katar İsimleri ---
+section_str_text: db '.text', 0
+section_str_data: db '.data', 0
+section_str_bss:  db '.bss', 0
 
 
 

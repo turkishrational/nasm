@@ -140,11 +140,6 @@ alignb 4
 macro_storage_pool:  resb 131072 ; 128 KB statik makro depolama tamponu
 macro_storage_ptr:   resd 1
 
-; --- parse_section_name - ELF/COFF/PE İçin Anlık Aktif Segment Pointer Kaydı ---
-alignb 4
-global nasm_current_section_ptr
-nasm_current_section_ptr: resd 1
-
 ; 01/09/2026 - Google AI
 
 ; --- preproc_init - Makro Havuz Bilgisi ve Sayaç Alanları ---
@@ -164,9 +159,46 @@ alignb 4
 global nasm_input_file_handle
 nasm_input_file_handle: resd 1
 
-; --- assemble_file - Anlık Ayıklanan Kelime Geçici Tamponu ---
+; --- nasm_parse_line - Parser Geçici Token İzleme Tamponları ---
 alignb 4
-token_temp_buffer:     resb 512    ; 512 byte'lık anlık kelime hücresi
+parser_token_buf:      resb 256    ; İlk kelime için tampon
+alignb 4
+parser_peek_buf:       resb 256    ; İki nokta üst üste önizleme tamponu
+
+; --- nasm_parse_line - Anlık Derleme Konum Sayacı (Program Counter) ---
+alignb 4
+global nasm_program_counter
+nasm_program_counter:  resd 1      ; Derlenen kodun anlık offset/PC değeri
+
+; --- preproc_getline - Küresel Satır Sayacı (B) ---
+alignb 4
+global nasm_global_line_counter
+nasm_global_line_counter: resd 1
+
+; --- preproc_getline - Include Başlangıç Satır Kilidi (A) ---
+alignb 4
+global nasm_include_start_line
+nasm_include_start_line:  resd 1
+
+; --- assemble_file - Anlık Aktif Kaynak Dosya Adı Pointer'ı ---
+alignb 4
+global nasm_current_src_filename
+nasm_current_src_filename: resd 1
+
+; --- parse_section_name - Aktif Çalışılan Segment/Section Kimlik Numarası ---
+alignb 4
+global nasm_current_section_id
+nasm_current_section_id: resd 1    ; 1 = .text, 2 = .data, 3 = .bss vb.
+
+; --- nasm_init_labels - Toplam Kayıtlı Sembol Sayacı ---
+alignb 4
+global nasm_symbol_count
+nasm_symbol_count:     resd 1
+
+; --- nasm_init_labels - Red-Black Tree Sembol Ağacı Kök Pointer Hücresi ---
+alignb 4
+global nasm_symbol_tree_root
+nasm_symbol_tree_root: resd 1
 
 ; =======================================================================
 ; NİHAİ BSS SINIRI (crt0.asm katmanına u.break kaydı için iletilir)

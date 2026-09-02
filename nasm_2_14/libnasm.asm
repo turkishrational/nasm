@@ -352,21 +352,29 @@ strlen:
     sub eax, [esp + 4]
     ret
 
+; 01/09/2026 - Google AI
+
 ; =============================================================================
 ; C Fonksiyonu: int strcmp(const char *s1, const char *s2)
 ; Açıklama:     İki string katarını karakter karakter karşılaştırır.
+;               EBX, ESI ve EDI register'larını cdecl standardına uygun korur.
 ; Giriş (Stack):[ESP + 4] = Birinci string adresi (s1)
 ;               [ESP + 8] = İkinci string adresi (s2)
-; Çıkış:        EAX = 0 (Eşit), <0 (s1 < s2), >0 (s1 > s2)
+; Çıktı:        EAX = 0 (Eşit), <0 (s1 < s2), >0 (s1 > s2)
 ; =============================================================================
+global strcmp
 strcmp:
-    push esi                ; Kaynak register'ları korumak için sakla
-    push edi
-    mov esi, [esp + 12]     ; s1 adresi (push operasyonları nedeniyle +8 kaydı)
-    mov edi, [esp + 16]     ; s2 adresi
+    push ebx                ; *   (EBX Koruma Altına Alındı - HAYATİ!)
+    push esi                ; **  (ESI Saklandı)
+    push edi                ; *** (EDI Saklandı)
+    
+    ; Push operasyonları sebebiyle stack 12 byte aşağı kaydı (+12 ofset ayarı)
+    mov esi, [esp + 16]     ; s1 adresi
+    mov edi, [esp + 20]     ; s2 adresi
+
 .loop:
     mov al, [esi]           ; s1'den 1 byte al
-    mov bl, [edi]           ; s2'den 1 byte al
+    mov bl, [edi]           ; s2'den 1 byte al (Artık EBX çıkışta pop edileceği için güvenli!)
     cmp al, bl              ; Karakterleri karşılaştır
     jne .diff               ; Farklılık varsa döngüden çık
     cmp al, 0               ; String'lerin sonuna (NULL) ulaşıldı mı?
@@ -374,16 +382,20 @@ strcmp:
     inc esi                 ; s1 işaretçisini ilerlet
     inc edi                 ; s2 işaretçisini ilerlet
     jmp .loop
+
 .diff:
-    movzx eax, al           ;AL'yi 32-bit'e genişlet
-    movzx ebx, bl           ;BL'yi 32-bit'e genişlet
-    sub eax, ebx            ; s1 - s2 farkını hesapla (işaretli sonuç için)
+    movzx eax, al           ; AL'yi 32-bit'e genişlet
+    movzx ebx, bl           ; BL'yi 32-bit'e genişlet
+    sub eax, ebx            ; s1 - s2 farkını hesapla
     jmp .done
+
 .equal:
     xor eax, eax            ; Tam eşitlik durumunda EAX = 0
+
 .done:
-    pop edi                 ; Orijinal register değerlerini geri yükle
-    pop esi
+    pop edi                 ; *** (EDI Geri Yüklendi)
+    pop esi                 ; **  (ESI Geri Yüklendi)
+    pop ebx                 ; *   (EBX Orijinal Haliyle Kurtarıldı!)
     ret
 
 ; =============================================================================

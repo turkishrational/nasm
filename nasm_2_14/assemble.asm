@@ -12,64 +12,57 @@ align 4
 ; -----------------------------------------------------------------------------
 ; Fonksiyon: assemble_file
 ; C Deklarasyonu: int assemble_file(const char *fname, void *ofmt)
-; İşlev: Ön işlemciden satırları çeker ve parser/output katmanlarına dağıtır.
+; İşlev: Ön işlemciden satırları çeker ve parser (sözdizimi) katmanına bağlar.
 ; Girdi: [EBP+8] = fname, [EBP+12] = ofmt
 ; Çıktı: EAX = 0 (Başarı), EAX = -1 (Hata)
+; Değişen Register'lar: EAX, ECX, EDX (Serbest Scratch)
+; Korunan Register'lar: EBX, ESI, EDI, EBP, ESP
 ; -----------------------------------------------------------------------------
 global assemble_file
 assemble_file:
     push ebp
     mov ebp, esp
-    push ebx
-    push esi
-    push edi
+    push ebx                    ; * (EBX Koruma Altında)
+    push esi                    ; ** (ESI Koruma Altında)
+    push edi                    ; *** (EDI Koruma Altında)
 
-    ; Kaynak dosyayı preprocessor katmanında işlemek üzere okuma modunda açıyoruz
-    ; fopen(fname, "r") -> Sağdan sola doğru stack'e itilir.
-    push nasm_mode_read         ; Parametre 2: mode string pointer ("r")
-    push dword [ebp+8]          ; fname string adresi
-    call fopen                  ; libnasm.asm fopen köprüsü
-    add esp, 8
-    
-    test eax, eax               ; Dosya handle pointer'ı geçerli mi?
+    ; fopen(fname, "r") çağrısı - Sağdan sola parametre itimi
+    push nasm_mode_read         ; Parametre 2: data.asm içindeki "r" string adresi
+    push dword [ebp+8]          ; Parametre 1: Dosya adı string adresi
+    call fopen
+    add esp, 8                  ; Stack temizle
+
+    test eax, eax               ; Dosya başarıyla açılabildi mi?
     jz .L_assemble_fail
     
-    ; Dönen handle değerini BSS üzerindeki genel izleme alanına kaydet
-    mov [nasm_input_file_handle], eax ; Geçerli LIBC FD (3-12) BSS alanına yazılıyor
+    mov [nasm_input_file_handle], eax ; LIBC Handle değerini BSS'e kaydet
 
-.L_pass_loop:
-    ; --- Birinci ve İkinci Pass Adımları Döngüsü ---
+    ; Derleme başlangıcında Program Counter (PC) ve Pass durumlarını sıfırla
+    mov dword [nasm_program_counter], 0
+
+    mov eax, [ebp + 8]          ; EAX = fname string adresi ("crt0.asm")
+    mov [nasm_current_src_filename], eax ; Küresel dosya adı pointer'ını güncelle!
+    mov dword [nasm_global_line_counter], 0 ; Sayaç ilk satır öncesi sıfırlanır
 
 .L_line_read_loop:
-    call preproc_getline        ; preproc.asm üzerinden bir satır oku
+    ; preproc.asm katmanından bir satır oku
+    call preproc_getline
     test eax, eax               ; EAX == NULL (EOF) oldu mu?
-    jz .L_assemble_success      ; Dosya bittiyse pass kontrolüne git
+    jz .L_assemble_success      ; Dosya bittiyse başarıyla çıkışa git
     
     mov esi, eax                ; ESI = Okunan satırın bellek adresi
 
-    ; Kelime tarayıcıyı (Tokenizer) bu satır adresiyle ilklendir
+    ; --- GERÇEK ÇÖZÜMLEME KATMANI (PARSER) ENTEGRASYONU ---
+    ; Okunan ham satır adresini doğrudan parser.asm motoruna gönderiyoruz
     push esi
-    call nasm_stdscan_init
-    add esp, 4
+    call nasm_parse_line        
+    add esp, 4                  ; Stack temizleme
 
-.L_token_parse_loop:
-    ; Her kelimeyi geçici olarak 'token_temp_buffer' içine ayıkla
-    push token_temp_buffer
-    call nasm_stdscan_next
-    add esp, 4
+    ; Eğer parser sözdizimi hatası döndürdüyse derlemeyi durdurabiliriz
+    ; cmp eax, -1
+    ; je .L_assemble_fail
 
-    test eax, eax               ; EAX == 0 (Satır bitti mi?)
-    jz .L_line_read_loop        ; Bittiyse bir sonraki satıra geç
-
-    ; --- Canlı Görsel Test Baskısı ---
-    ; Ayıklanan her kelimeyi/token'ı tip koduyla birlikte ekrana alt alta bas
-    push token_temp_buffer      ; %s için kelime adresi
-    push eax                    ; %d için token tip kodu (1, 2 veya 3)
-    push token_print_fmt        ; Format string adresi
-    call printf
-    add esp, 12                 ; Stack temizle
-
-    jmp .L_token_parse_loop
+    jmp .L_line_read_loop
 
 .L_assemble_success:
     ; Açık olan kaynak dosyayı kapat
