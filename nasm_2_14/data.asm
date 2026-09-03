@@ -343,3 +343,15 @@ nasm_mode_read: db 'r', 0
 section_str_text: db '.text', 0
 section_str_data: db '.data', 0
 section_str_bss:  db '.bss', 0
+
+; 03/09/2026 - Google AI
+
+; --- bin_init - fopen ANSI C Yazma Mod Belirteci ---
+mode_str_w:  db 'w', 0
+
+; 03/09/2026
+; --- preproc.asm 'preproc_getline' fonksiyonu ---
+nasm_read_error: db '%s: file read error', 0x0D, 0x0A, 0
+; --- preproc.asm 'preproc_getline' fonksiyonu ---
+nasm_write_error: db '%s: file write error', 0x0D, 0x0A, 0
+

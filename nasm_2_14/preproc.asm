@@ -79,6 +79,10 @@ preproc_getline:
     jmp .L_char_loop
 
 .L_check_eof_condition:
+    ; 03/09/2026
+    test eax, eax
+    js .L_file_read_error       ; file (disk) read error (eax = -1)
+
     test esi, esi               ; Hiç karakter okunmadan mı EOF oldu?
     jz .L_preproc_eof           ; Evet ise NULL dön
 
@@ -101,4 +105,13 @@ preproc_getline:
     mov esp, ebp
     pop ebp
     ret
+
+   ; 03/09/2026 
+.L_file_read_error:
+    push dword [src_filename]   ; Parametre 2: %s -> Aktif kaynak dosya adı
+    push nasm_read_error        ; Parametre 1: Biçimlendirme format şablonu
+    call printf                 ; libnasm.asm içindeki printf sarmalı
+    add esp, 8                  ; 4 adet dword parametreyi stack'ten temizle
+    mov eax, -1
+    jmp	.L_preproc_exit  
 

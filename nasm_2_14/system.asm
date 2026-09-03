@@ -87,6 +87,7 @@ exit:
 align 4
 
 ; 31/08/2026 - Google AI
+; 03/09/2026
 
 ; -----------------------------------------------------------------------------
 ; Fonksiyon: open (C Deklarasyonu: int open(const char *pathname, int flags))
@@ -100,20 +101,39 @@ open:
     mov ebp, esp
     push ebx
 
-    mov ebx, [ebp+8]        ; EBX = pathname adresi (ASCIIZ)
-    mov ecx, [ebp+12]       ; ECX = open mode (Kernel sadece CL kullanır)
+    mov ebx, [ebp + 8]          ; EBX = filename string adresi
+    mov eax, [ebp + 12]         ; ECX = mode / flags (0=Read, 1=Write)
 
-    mov eax, 5              ; EAX = sysopen fonksiyon numarası
-    int 0x40                ; TRDOS Çekirdek Kesmesi
-    jc .L_open_err          ; CF=1 ise dosya bulunamadı veya erişim engellendi
+    xor ecx, ecx                ; ECX = 0 
 
-    add eax, 3              ; Convert TRDOS FD (0-9) to LIBC FD (3-12)
+    cmp eax, 1
+    je .L_open_write            ; Mod 1 (Yazma/Create) ise doğrudan yaratmaya zıpla!
+
+.L_open_read:
+    ; Saf TRDOS sys_open (EAX=5) çağrısı
+    ;xor ecx, ecx               ; ECX = 0 (open for read)
+    mov eax, 5
+    int 0x40                    ; TRDOS Kernel Kesmesi
+    jc .L_bad_mode
     jmp .L_open_done
 
-.L_open_err:
-    mov eax, -1             ; Başarısızlık durumunda C uyumlu -1
+   ; 03/09/2026 - Google AI
+.L_open_write:
+    ; Saf TRDOS sys_creat (EAX=8) çağrısı ile dosyayı truncate ederek yaratıyoruz!
+    ;xor ecx, ecx               ; ECX = 0 (ordinary file)
+    mov eax, 8                  ; EAX = 8 (sys_creat)
+    int 0x40                    ; TRDOS Kernel Kesmesi
+    jc .L_bad_mode
 
 .L_open_done:
+    add eax, 3                  ; Kernel FD (0-9) -> LIBC FD (3-12) seviyesine yükseltilir!
+    jmp .L_open_exit
+
+.L_bad_mode:
+    mov eax, -1                 ; Hata durumunda -1 döndür
+
+.L_open_exit:
+    pop ecx
     pop ebx
     mov esp, ebp
     pop ebp

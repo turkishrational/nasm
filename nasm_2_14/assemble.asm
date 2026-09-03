@@ -4,81 +4,108 @@
 ; Geliştirici: Erdoğan Tan & Google AI - 30/08/2026
 ; =======================================================================
 
-; 01/09/2026 - Google AI
+; 03/09/2026 - Google AI
 
 section .text
 align 4
 
 ; -----------------------------------------------------------------------------
 ; Fonksiyon: assemble_file
-; C Deklarasyonu: int assemble_file(const char *fname, void *ofmt)
-; İşlev: Ön işlemciden satırları çeker ve parser (sözdizimi) katmanına bağlar.
-; Girdi: [EBP+8] = fname, [EBP+12] = ofmt
-; Çıktı: EAX = 0 (Başarı), EAX = -1 (Hata)
-; Değişen Register'lar: EAX, ECX, EDX (Serbest Scratch)
-; Korunan Register'lar: EBX, ESI, EDI, EBP, ESP
+; İşlev: Kaynak dosyayı satır satır işler, giriş ve çıkışta outbin zırhını tetikler.
+; Girdi: ESI = Giriş kaynak dosyası adı string adresi (Ör: "crt0.asm")
 ; -----------------------------------------------------------------------------
 global assemble_file
 assemble_file:
     push ebp
     mov ebp, esp
-    push ebx                    ; * (EBX Koruma Altında)
-    push esi                    ; ** (ESI Koruma Altında)
-    push edi                    ; *** (EDI Koruma Altında)
+    push ebx                    ; *
+    push esi                    ; **
+    push edi                    ; ***
+
+    mov esi, [ebp + 8]          ; ESI = Giriş dosya adı dize adresi
+
+    ; =============================================================================
+    ; 1. ADIM: KAYNAK DOSYASININ AÇILMASI
+    ; =============================================================================
 
     ; fopen(fname, "r") çağrısı - Sağdan sola parametre itimi
     push nasm_mode_read         ; Parametre 2: data.asm içindeki "r" string adresi
-    push dword [ebp+8]          ; Parametre 1: Dosya adı string adresi
+    push esi	                ; Parametre 1: Dosya adı string adresi
     call fopen
     add esp, 8                  ; Stack temizle
 
     test eax, eax               ; Dosya başarıyla açılabildi mi?
-    jz .L_assemble_fail
+    jz .L_assemble_failed
     
     mov [nasm_input_file_handle], eax ; LIBC Handle değerini BSS'e kaydet
 
-    ; Derleme başlangıcında Program Counter (PC) ve Pass durumlarını sıfırla
-    mov dword [nasm_program_counter], 0
+    ; =============================================================================
+    ; 2. ADIM: ÇIKTI DOSYASININ OLUŞTURULMASI 
+    ; =============================================================================
 
-    mov eax, [ebp + 8]          ; EAX = fname string adresi ("crt0.asm")
-    mov [nasm_current_src_filename], eax ; Küresel dosya adı pointer'ını güncelle!
-    mov dword [nasm_global_line_counter], 0 ; Sayaç ilk satır öncesi sıfırlanır
+    ; Çıktı dosyasını fopen("w") ile sıfırdan yaratıyoruz!
+    call bin_init               ; outbin.asm içeriği tetiklenir
+    ; 03/09/2026
+    cmp eax, -1
+    je .L_assemble_out_fail	; Error opening output binary file
 
-.L_line_read_loop:
-    ; preproc.asm katmanından bir satır oku
+    ; =============================================================================
+    ; 3. ADIM: DERLEME BAŞLANGIÇ ZIRHI (KÜRESEL SAYAÇLAR VE ÇIKTI DOSYASI İLKLEME)
+    ; =============================================================================
+
+    mov dword [nasm_global_line_counter], 0 ; Satır sayacını sıfırla
+    mov dword [nasm_program_counter], 0     ; Konum Sayacını (PC) sıfırla
+    mov dword [nasm_current_section_id], 1  ; Varsayılan olarak .text (Kod) segmentiyle başla
+
+    ; =============================================================================
+    ; 4. ADIM: SATIR OKUMA VE PARSER DÖNGÜSÜ (MAIN ASSEMBLY LOOP)
+    ; =============================================================================
+.L_main_assembly_loop:
+    ; Kaynak dosyadan bir satır oku
+    ; Her başarılı satır okunduğunda nasm_global_line_counter otomatik artar.
     call preproc_getline
     test eax, eax               ; EAX == NULL (EOF) oldu mu?
     jz .L_assemble_success      ; Dosya bittiyse başarıyla çıkışa git
+    ; 03/09/2026
+    js .L_assemble_out_fail 
     
-    mov esi, eax                ; ESI = Okunan satırın bellek adresi
-
-    ; --- GERÇEK ÇÖZÜMLEME KATMANI (PARSER) ENTEGRASYONU ---
-    ; Okunan ham satır adresini doğrudan parser.asm motoruna gönderiyoruz
-    push esi
-    call nasm_parse_line        
-    add esp, 4                  ; Stack temizleme
-
-    ; Eğer parser sözdizimi hatası döndürdüyse derlemeyi durdurabiliriz
-    ; cmp eax, -1
-    ; je .L_assemble_fail
-
-    jmp .L_line_read_loop
+    ; Satırı parser.asm süzgecine gönderiyoruz
+    push eax                    ; Okunan satırın bellek adresi
+    call nasm_parse_line        ; parser.asm ana sıralı hiyerarşi motoru
+    test eax, eax               ; EAX == -1 ise ölümcül bir hata veya taşma olmuştur!
+    ;js .L_loop_eof_break       ; Hata durumunda döngüyü güvenle kır
+    ;jmp .L_main_assembly_loop
+    jns .L_main_assembly_loop
 
 .L_assemble_success:
-    ; Açık olan kaynak dosyayı kapat
+    ; =============================================================================
+    ; 5. ADIM: KAYNAK DOSYASININ KAPATILMASI
+    ; =============================================================================
+
     push dword [nasm_input_file_handle]
-    call fclose
+    call close
     add esp, 4
-    xor eax, eax                ; Return 0 (Success)
-    jmp .L_assemble_done
 
-.L_assemble_fail:
-    mov eax, -1                 ; Return -1 (Fail)
+    ; =============================================================================
+    ; 6. ADIM: DERLEME BİTİŞ MÜHRÜ (EOF KALINTI DÖKÜMÜ VE ARŞİVLEME)
+    ; =============================================================================
+    ; Tüm satırlar başarıyla tarandı ve bitti! Şimdi tamponda biriken 
+    ; o son kalıntı byte'ları diske mühürlemesi için bitiş motorunu çağırıyoruz:
+    call bin_output             ; outbin.asm son kalıntıları basar ve dosyayı kapatır!
 
-.L_assemble_done:
-    pop edi                     ; *** (EDI Kurtarıldı)
-    pop esi                     ; ** (ESI Kurtarıldı)
-    pop ebx                     ; * (EBX Kurtarıldı)
+    mov eax, 1                  ; Derleme başarı kodu (1)
+    jmp .L_assemble_exit
+
+.L_assemble_failed:
+    call bin_cleanup            ; Hata durumunda çıktı tampon sayaçlarını temizle
+
+.L_assemble_out_fail:
+    xor eax, eax                ; Başarısızlık kodu (0)
+
+.L_assemble_exit:
+    pop edi                     ; ***
+    pop esi                     ; **
+    pop ebx                     ; *
     mov esp, ebp
     pop ebp
     ret

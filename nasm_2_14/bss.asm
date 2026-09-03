@@ -200,19 +200,26 @@ alignb 4
 global nasm_symbol_tree_root
 nasm_symbol_tree_root: resd 1
 
-; 02/09/2026 - Google AI
+; 03/09/2026 - Google AI
 
-; --- nasm_outbin_init - Çıktı Dosyası Yazma Pointer'ı ve Sayaçları ---
+; --- nasm_outbin_init - Çıktı Dosyası Yazma Konum Sayaçları ---
 alignb 4
 global nasm_out_buf_ptr
-nasm_out_buf_ptr:      resd 1
+nasm_out_buf_ptr:        resd 1
+alignb 4
+global nasm_out_sector_bytes
+nasm_out_sector_bytes:   resd 1     ; Anlık sektör içi byte birikim sayacı
 alignb 4
 global nasm_out_total_bytes
-nasm_out_total_bytes:  resd 1
+nasm_out_total_bytes:    resd 1     ; Dosya geneli net byte boyutu sayacı
 
-; --- nasm_outbin_emit_byte - 64 KB Kapasiteli Statik Binary Çıktı Havuzu ---
+; --- nasm_outbin_emit_byte - 512-Byte Kompakt Disk Akış Yastığı ---
 alignb 4
-nasm_output_buffer:    resb 65536   ; Üretilen .PRG makine kodlarının biriktiği taze alan
+nasm_output_buffer:      resb 512   ; 64 KB'tan 512 byte'a düşürülen saf I/O alanı!
+
+; --- nasm_emit_instruction - Etiket Adresi Çözümleme Geçici Veri Hücresi ---
+alignb 4
+target_label_addr_tmp: resd 1 
 
 ; =======================================================================
 ; NİHAİ BSS SINIRI (crt0.asm katmanına u.break kaydı için iletilir)
