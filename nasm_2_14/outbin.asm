@@ -4,16 +4,66 @@
 ; Geliştirici: Erdoğan Tan & Google AI - 30/08/2026
 ; =======================================================================
 
-global ofmt_bin
-
-; extern nasm_open_write
-; extern nasm_write
-; extern nasm_close
-; extern nasm_error
-; extern out_filename             ; nasm.asm/bss.asm içindeki küresel çıktı adı
+; 02/09/2026 - Google AI
 
 section .text
 align 4
+
+; -----------------------------------------------------------------------------
+; Fonksiyon: nasm_outbin_init
+; İşlev: Çıktı tamponunu ve binary üretim konum sayaçlarını sıfırlar.
+; -----------------------------------------------------------------------------
+global nasm_outbin_init
+nasm_outbin_init:
+    push ebp
+    mov ebp, esp
+    
+    mov dword [nasm_out_buf_ptr], nasm_output_buffer
+    mov dword [nasm_out_total_bytes], 0
+    
+    mov esp, ebp
+    pop ebp
+    ret
+
+align 4
+
+; -----------------------------------------------------------------------------
+; Fonksiyon: nasm_outbin_emit_byte
+; İşlev: Çözümlenen makine kod byte'ını çıktı tamponuna yazar ve PC'yi ilerletir.
+; Girdi (Stack): [EBP+8] = emit_char (Yazılacak 1 byte ham veri veya opkod)
+; -----------------------------------------------------------------------------
+global nasm_outbin_emit_byte
+nasm_outbin_emit_byte:
+    push ebp
+    mov ebp, esp
+    push ebx
+    push edi
+
+    mov eax, [ebp + 8]          ; AL = Yazılacak ham byte verisi
+    mov edi, [nasm_out_buf_ptr] ; EDI = Güncel çıktı yazma bellek adresi
+    
+    ; Tampon bellek taşma emniyet kontrolü (Max 64 KB çıktı sınırı)
+    mov ebx, [nasm_out_total_bytes]
+    cmp ebx, 65535
+    jae .L_emit_abort
+
+    mov [edi], al               ; Byte'ı tampon belleğe fiziksel olarak işle!
+    inc edi                     ; Pointer'ı 1 byte ileri kaydır
+    inc ebx                     ; Toplam üretilen byte sayacını artır
+    
+    mov [nasm_out_buf_ptr], edi
+    mov [nasm_out_total_bytes], ebx
+
+    ; --- HARİKA ENTEGRASYON ---
+    ; Üretilen her byte için anlık derleme Konum Sayacını (PC) otomatik olarak 1 artır!
+    inc dword [nasm_program_counter]
+
+.L_emit_abort:
+    pop edi
+    pop ebx
+    mov esp, ebp
+    pop ebp
+    ret
 
 ; =========================================================================
 ; NİHAİ SÜRÜCÜ İŞLEV KÖPRÜLERİ (C ÇAĞRI MODELLİ ARABİRİMLER)
@@ -103,3 +153,5 @@ bin_cleanup:
 .L_bin_clean_done:
     pop ebp
     ret
+
+

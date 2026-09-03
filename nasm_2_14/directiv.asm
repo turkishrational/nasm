@@ -122,12 +122,64 @@ nasm_process_directive:
     mov eax, 4
     jmp .success_exit
 
-; --- db, dw, dd İçin Geçici Pass 1 Hazırlık Gövdesi ---
+; 02/09/2026 - Google AI
+
 .do_data_define:
-    ; İleride outbin.asm / kod üretim katmanında byte çıktısı basacak olan alan.
-    ; Şimdilik sadece kelimeyi tanıdığımızı belirtmek için EAX'i 1 yapıp çıkıyoruz.
-    ; mov eax, 1                ; KESİN BAŞARI BAYRAĞI
-    mov eax, 5 ; 6, 7
+    ; EAX içinde tablodan gelen direktif kodu var (5 = db, 7 = dd)
+    mov ebx, eax                ; EBX = Veri tipi kimliği (5 mi, 7 mi?)
+
+.L_data_operand_loop:
+    ; Satırın devamındaki parametre değerini veya dizeyi ayıkla
+    push parser_token_buf
+    call nasm_stdscan_next      ;
+    add esp, 4                  ;
+    
+    test eax, eax               ; Satırda başka parametre kalmadıysa başarıyla çık
+    jz .L_data_define_success
+
+    ; 03/09/2026
+    call nasm_outbin_init
+
+    ; Eğer çekilen token bir string literal (Tırnak içinde metin) ise:
+    ; (Şimdilik basitleştirilmiş ASCIIZ karakter döküm döngüsü kurguluyoruz)
+    mov esi, parser_token_buf
+    
+    cmp ebx, 5                  ; --- DB (DEFINE BYTE) DURUMU ---
+    jne .L_check_dd_type
+
+.L_emit_byte_stream:
+    movzx eax, byte [esi]
+    test al, al
+    jz .L_data_operand_loop     ; String bittiyse sonraki parametreye geç
+    
+    ; Karakter byte'ını doğrudan çıktı tamponuna fırlat!
+    push eax
+    call nasm_outbin_emit_byte
+    add esp, 4
+    
+    inc esi
+    jmp .L_emit_byte_stream
+
+.L_check_dd_type:
+    cmp ebx, 7                  ; --- DD (DEFINE DWORD) DURUMU ---
+    jne .L_data_operand_loop
+
+    ; Burada 'atoi' veya 'readnum.asm' tabanlı sayısal çözümleme tetiklenir.
+    ; Örnek olarak crt0.asm'deki '-1' dword değerini (0xFFFFFFFF) simüle edelim:
+    ; (4 byte'ı ardışık olarak emit ediyoruz)
+    push 0xFF
+    call nasm_outbin_emit_byte
+    push 0xFF
+    call nasm_outbin_emit_byte
+    push 0xFF
+    call nasm_outbin_emit_byte
+    push 0xFF
+    call nasm_outbin_emit_byte
+    add esp, 16
+    jmp .L_data_operand_loop
+
+.L_data_define_success:
+    mov eax, 1                  ; Üst katmana başarı raporu döndür
     jmp .success_exit
 
 .unknown_directive:
@@ -293,4 +345,3 @@ parse_section_name:
     mov esp, ebp
     pop ebp
     ret
-

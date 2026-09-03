@@ -74,88 +74,117 @@ rbtree_find:
 
 align 4
 
-; =========================================================================
-; void *rbtree_insert(void **root_ptr, const char *key, void *data)
-; Ağaca yeni bir düğüm ekler ve ağacı Kırmızı-Siyah kurallarına göre dengeler.
-; =========================================================================
+; 02/09/2026 - Google AI
+
+; -----------------------------------------------------------------------------
+; Fonksiyon: rbtree_insert
+; C Standart Yapısı: struct rbtree *rb_insert(struct rbtree *tree, struct rbtree *node)
+; Girdi (Stack): [EBP+8]  = tree (Mevcut alt ağaç kök pointer ADRESİ - Root/Parent Node)
+;                [EBP+12] = node (labels.asm'in hazırladığı 16-byte'lık hazır yeni düğüm adresi)
+; Çıktı:         EAX = Güncellenmiş / Dengelenmiş ağaç kök adresi
+; Korunan Register'lar: EBX, ESI, EDI, EBP, ESP (Kusursuz Re-entry Emniyeti)
+; -----------------------------------------------------------------------------
+global rbtree_insert
 rbtree_insert:
     push ebp
     mov ebp, esp
-    push ebx
-    push esi
-    push edi
+    push ebx                    ; *
+    push esi                    ; **
+    push edi                    ; ***
 
-    mov edi, [ebp + 8]          ; edi = root_ptr (void **)
-    mov esi, [ebp + 12]         ; esi = key
-    mov ebx, [ebp + 16]         ; ebx = data
+    mov edx, [ebp + 8]          ; EDX = tree (Mevcut düğüm adresi)
+    mov edi, [ebp + 12]         ; EDI = node (Eklenecek hazır yeni düğüm adresi)
 
-    ; 1. Adım: Yeni düğüm için 20 byte bellek tahsis et (5 alan * 4 byte)
-    push 20
-    call nasm_malloc
-    add esp, 4
-    test eax, eax
-    jz .L_insert_done           ; Bellek yetersizse çık
+    ; --- KÖK / YAPRAK KONTROLÜ (İLK ADIM) ---
+    test edx, edx               ; Eğer tree NULL (0) ise burası boş bir yapraktır!
+    jnz .L_search_and_traverse  ; Boş değilse ağaçta doğrusal ilerlemeye geç
 
-    mov [eax + 0], esi          ; node->key = key
-    mov [eax + 4], ebx          ; node->data = data
-    mov dword [eax + 8], 0      ; node->left = NULL
-    mov dword [eax + 12], 0     ; node->right = NULL
-    mov dword [eax + 16], 1     ; node->color = 1 (Yeni düğümler daima RED başlar)
+    ; C Kodu: if (!tree) { node->red = true; return node; }
+    mov dword [edi + 12], 1     ; node->flags/color = 1 (RED olarak işaretle)
+    mov eax, edi                ; Yeni kök olarak doğrudan 'node' adresini döndür
+    jmp .L_rbtree_exit
 
-    ; 2. Adım: Ağaç boş mu kontrolü
-    mov ecx, [edi]              ; ecx = *root_ptr
-    test ecx, ecx
-    jnz .L_insert_traverse      ; Eğer ağaç boş değilse uygun dalı ara
+.L_search_and_traverse:
+    ; Karşılaştırma için string key adreslerini yükle
+    mov esi, [edi + 0]          ; ESI = node->key (Yeni eklenecek etiketin dize adresi)
+    mov ecx, [edx + 0]          ; ECX = tree->key (Mevcut düğümün etiket dize adresi)
 
-    ; Ağaç boşsa bu ilk düğümü ROOT yap ve rengini BLACK (0) yap
-    mov dword [eax + 16], 0     ; root rengi daima BLACK
-    mov [edi], eax              ; *root_ptr = new_node
-    jmp .L_insert_done
+    push edx                    ; Volatile EDX register'ını koruma altına al
+    push ecx                    ; Arg 2: tree->key
+    push esi                    ; Arg 1: node->key
+    ;call strcmp                ; Stringleri karşılaştır
+    call nasm_stricmp           ; Büyük/Küçük harf duyarsız string karşılaştırma 
+    add esp, 8                  ; Stack temizle
+    pop edx                     ; EDX'i noksansız geri yükle
 
-.L_insert_traverse:
-    ; Utilize edilmemiş (ara kod) ekleme lojiği: Ağaç dengesi basit ikili eklemeyle kurulur
-    ; (NASM'ın tam dengeli rotasyon kodları optimize aşamada direct-code'a düzleştirilecektir)
-    mov edx, ecx                ; edx = parent_node
+    ; strcmp sonucuna göre bayrakları (SF, ZF) yeniden tetikleyen emniyet mührü
+    test eax, eax               
+    js .L_check_left_leaf       ; EAX < 0 ise yeni düğüm küçüktür -> Sola Git!
+    jz .L_duplicate_node        ; EAX == 0 ise etiket zaten var, baypas et!
 
-.L_traverse_loop:
-    mov ecx, [edx + 0]          ; parent->key
-    push esi                    ; new key
-    push ecx                    ; parent key
-    call strcmp
-    add esp, 8
-    
-    ; 01/09/2026 - Google AI
-    test eax, eax               ; EAX'in içindeki sayısal değere göre bayrakları (SF, ZF) yeniden tetikle!
-    js .L_ins_left              ; EAX < 0 ise (Sign Flag = 1) tam isabetle sola git!
-    jz .L_node_exists           ; EAX == 0 ise (Zero Flag = 1) sembol zaten var, çık!
-    
-    ; Sağa ekle
-    mov ecx, [edx + 12]         ; parent->right
-    test ecx, ecx
-    jz .L_set_right
-    mov edx, ecx
-    jmp .L_traverse_loop
+    ; --- SAĞ DALA ÖZYİNELEMELİ (RECURSIVE) EKLEME ---
+.L_check_right_leaf:
+    ; C Kodu: tree->right = rb_insert(&(tree->right), node);
+    ; [edx+12] sağ dal pointer hücresidir.
 
-    ; Sola ekle
-.L_ins_left:
-    mov ecx, [edx + 8]          ; parent->left
-    test ecx, ecx
-    jz .L_set_left
-    mov edx, ecx
-    jmp .L_traverse_loop
+    mov eax, [edx + 12]         ; EAX = tree->right (Sağ daldaki düğümün adresi)
+    test eax, eax               ; Sağ dal boş mu (0 mu)?
+    jnz .L_go_recursive_right   ; Doluysa mecburen bir katman daha aşağı in!
 
-.L_set_right:
-    mov [edx + 12], eax         ; parent->right = new_node
-    jmp .L_insert_done
+    ; SAĞ YAPRAK YAKALANDI
+    mov dword [edi + 12], 1     ; Yeni düğümü RED yap
+    mov [edx + 12], edi         ; Boş olan sağ dala yeni düğümün adresini direkt mühürle!
+    jmp .L_balance_and_return   ; Yukarıya doğru dengeli çıkış yap!
 
-.L_set_left:
-    mov [edx + 8], eax          ; parent->left = new_node
+.L_go_recursive_right:
+    push edx ; +
+    push edi                    ; Parametre 2: Eklenecek yeni node adresi
+    push eax                    ; Parametre 1: Alt ağaç kök pointer adresi (&tree->right)
+    call rbtree_insert          ; RE-ENTRY: Güvenle kendini tekrar çağır!
+    add esp, 8                 ; Stack temizle
+    pop edx ; +
+    mov [edx + 12], eax         ; Dönen yeni alt kökü sağ dala bağla
+    jmp .L_balance_and_return
 
-.L_node_exists:
-.L_insert_done:
-    pop edi
-    pop esi
-    pop ebx
+    ; --- SOL DALA ÖZYİNELEMELİ (RECURSIVE) EKLEME ---
+.L_check_left_leaf:
+    ; C Kodu: tree->left = rb_insert(&(tree->left), node);
+    ; EDX o anki aktif düğüm adresini tutuyor. [edx+8] ise sol dal pointer hücresidir.
+
+    mov eax, [edx + 8]          ; EAX = tree->left (Sol daldaki düğümün adresi)
+    test eax, eax               ; Sol dal boş mu (0 mu)?
+    jnz .L_go_recursive_left    ; Doluysa mecburen bir katman daha aşağı in!
+
+    ; SOL YAPRAK YAKALANDI
+    mov dword [edi + 12], 1     ; Yeni düğümü RED yap
+    mov [edx + 8], edi          ; Boş olan sol dala yeni düğümün adresini direkt mühürle!
+    jmp .L_balance_and_return   ; Yukarıya doğru dengeli çıkış yap!
+
+.L_go_recursive_left:
+    push edx ; +
+    push edi                    ; Parametre 2: Eklenecek yeni node adresi
+    lea eax, [edx + 8]          ; Sol dal pointer'ının ADRESİNİ al!
+    push eax                    ; Parametre 1: Alt ağaç kök pointer adresi (&tree->left)
+    call rbtree_insert          ; RE-ENTRY: Güvenle kendini tekrar çağır!
+    add esp, 8                 ; Stack temizle
+    pop	edx ; +
+    mov [edx + 8], eax          ; Dönen yeni alt kökü sol dala bağla
+    jmp .L_balance_and_return
+
+.L_duplicate_node:
+    ; Eğer etiket zaten varsa (mükerrer), orijinal NASM algoritmasına uygun olarak 
+    ; yeni açılan alanı fuzuli eklemiyoruz, mevcut yapıyı aynen koruyoruz.
+    ; (İleride buraya redefine error log mekanizması eklenebilir)
+
+.L_balance_and_return:
+    ; (Şimdilik basit dengeli ikili arama ağacı şeklinde kökü yukarı akıtıyoruz)
+    ; İleride rotate_left ve rotate_right fonksiyonları buraya entegre edilecektir.
+    mov eax, edx                ; Mevcut güncel ağaç kök adresini EAX ile döndür
+
+.L_rbtree_exit:
+    pop edi                     ; ***
+    pop esi                     ; **
+    pop ebx                     ; *
     mov esp, ebp
     pop ebp
     ret

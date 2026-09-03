@@ -140,11 +140,12 @@ nasm_parse_line:
 
 align 4
 
+; 02/09/2026 - Google AI
+
 ; -----------------------------------------------------------------------------
 ; Fonksiyon: nasm_lookup_instruction
 ; İşlev: Verilen kelimeyi nasm_instructions_table içinde arar.
-; Girdi: [ESP+4] = mnemonic_str (Aranan komut adı string pointer'ı)
-; Çıktı: EAX = Tablodaki indeks numarası, Bulunamazsa -1
+; Girdi (Stack): [ESP+4] = parser_token_buf adresi (Ör: "mov", "MOV", "laBEL")
 ; -----------------------------------------------------------------------------
 global nasm_lookup_instruction
 nasm_lookup_instruction:
@@ -152,40 +153,73 @@ nasm_lookup_instruction:
     mov ebp, esp
     push ebx
     push esi
-    push edi
 
-    mov esi, [ebp+8]            ; ESI = Aranan talimat adı (Ör: "mov")
-    mov edi, nasm_instructions_table ; EDI = data.asm içindeki matris başlangıcı
-    xor ecx, ecx                ; ECX = Döngü/İndeks sayacı
+    mov esi, [ebp+8]            ; ESI = Orijinal harf nizamlı ham dize adresi
+    
+    ; =============================================================================
+    ; ANLIK REGISTER FİLTRESİ (BELLEKTEKİ STRING ASLA VE KAT'İYEN DEĞİŞMEZ!)
+    ; =============================================================================
+    xor ebx, ebx
+    mov bl, byte [esi]          ; BL = İlk karakterin saf ASCII kodu
+    test bl, bl
+    jz .not_a_valid_instruction ; Boş string emniyeti
 
-.L_search_loop:
-    mov edx, [edi]              ; EDX = Tablodaki kaydın string pointer adresi
-    test edx, edx
-    jz .L_not_found             ; Tablo sonu (Null Terminator)
+    ; --- BÜYÜK HARF SINIR DENETİMİ VE İNDEKSLEME ---
+    cmp bl, 'A'
+    jl .not_a_valid_instruction ; 'A' dan küçükse kesinlikle talimat olamaz
+    cmp bl, 'Z'
+    jg .L_check_lower           ; 'Z' den büyükse küçük harf kontrol alanına zıpla
+    
+    ; Karakter 'A' ile 'Z' arasında yakalandı!
+    sub bl, 'A'                 ; BL = 'M' (77) - 'A' (65) = 12 (Temiz İndeks!)
+    jmp .L_get_bucket_addr      ; Doğrudan matris adresleme alanına uç!
 
-    push ecx                    ; Sayaçları koru
-    push edx                    ; Parametre 2: Tablodaki string
-    push esi                    ; Parametre 1: Aranan string
-    call strcmp                 ; libnasm.asm içindeki strcmp
-    add esp, 8                  ;
-    pop ecx                     ;
+.L_check_lower:
+    ; --- KÜÇÜK HARF SINIR DENETİMİ VE İNDEKSLEME ---
+    cmp bl, 'a'
+    jl .not_a_valid_instruction ; 'a' dan küçükse kesinlikle talimat olamaz
+    cmp bl, 'z'
+    jg .not_a_valid_instruction ; 'z' den büyükse kesinlikle talimat olamaz
+
+   ; Karakter 'a' ile 'z' arasında yakalandı!
+    sub bl, 'a'                 ; BL = 'm' (109) - 'a' (97) = 12 (Temiz İndeks!)
+
+.L_get_bucket_addr:
+    shl ebx, 2                  ; EBX = Harf İndeksi (0-25) * 4 (Dword indeks çarpanı)
+    
+    ; MOV ile doğrudan 104-byte'lık kompakt matristeki kova pointer'ını ECX'e emiyoruz!
+    mov ecx, [nasm_instructions_table + ebx] 
+    
+    ; ECX sıfır (0) ise bu harfle başlayan hiçbir talimat yoktur, anında çık!
+    jecxz .not_a_valid_instruction
+
+    ; Meşru kova adresi tescillendi! Şimdi döngü için ESI register'ına aktarıyoruz
+    mov esi, ecx                ; ESI = Kovayı işaret eden meşru dize grubu adresi
+
+.L_bucket_search:
+    mov edx, [esi]              ; EDX = Kovadaki kayıtlı küçük harfli komut adı pointerı
+    test edx, edx               ; Kova sonu (0) veya stop marker yakalandı mı?
+    jz .not_a_valid_instruction ; Sıfır gördüysen bu harf grubunda bu komut yoktur!
+
+    push edx                    ; Arg 2: Tablodaki küçük harfli ad (Ör: "mov")
+    push dword [ebp+8]          ; Arg 1: Kullanıcının yazdığı orijinal kelime (Ör: "MoV")
+    call nasm_stricmp           ; Büyük-küçük harf duyarsız karşılaştırma
+    add esp, 8                  ; Yığın temizleme
 
     or eax, eax
-    jz .L_found                 ; EAX == 0 ise tam eşleşme bulundu!
+    jz .L_ins_matched           ; Sıfır fark bulundu, talimat tam isabetle yakalandı!
 
-    add edi, 12                 ; Sonraki 12-byte'lık kayda geç
-    inc ecx
-    jmp .L_search_loop
+    add esi, 12                 ; Stride: Sonraki 12-byte'lık kayda geç
+    jmp .L_bucket_search
 
-.L_found:
-    mov eax, ecx                ; Bulunan indeks numarasını döndür
+.L_ins_matched:
+    mov eax, [esi+8]            ; EAX = Bulunan talimatın Opkod / Flags dword paketi
     jmp .L_exit
 
-.L_not_found:
-    mov eax, -1                 ; Bulunamadıysa -1 dön
+.not_a_valid_instruction:
+    mov eax, -1                 ; Talimat değil veya bulunamadı kodu (-1)
 
 .L_exit:
-    pop edi
     pop esi
     pop ebx
     mov esp, ebp

@@ -122,13 +122,12 @@ nasm_define_label:
 
     ; 6. ADIM: DÜĞÜMÜ RED-BLACK TREE AĞACINA EKLE (rbtree_insert)
     push ebx                    ; Parametre 2: Yeni hazırlanan 16-byte'lık düğüm adresi
-    mov eax, [nasm_symbol_tree_root]
-    push eax                    ; Parametre 1: Güncel ağaç kök pointer adresi
+    push dword [nasm_symbol_tree_root] ; Parametre 1: Güncel ağaç kök pointer adresi
     call rbtree_insert          ; Ağaç motorunu tetikle (EBX ve EDI içeride korunur)
     add esp, 8                  ; Stack temizle
 
     mov [nasm_symbol_tree_root], eax ; Dönen yeni kök adresini kilit altında sakla
-    inc dword [nasm_symbol_count]     ; Kayıtlı sembol sayısını artır
+    inc dword [nasm_symbol_count]    ; Kayıtlı sembol sayısını artır
 
 .L_define_abort:
     pop edi                     ; *** (EDI Güvenle Kurtarıldı)

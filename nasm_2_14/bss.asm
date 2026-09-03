@@ -200,6 +200,20 @@ alignb 4
 global nasm_symbol_tree_root
 nasm_symbol_tree_root: resd 1
 
+; 02/09/2026 - Google AI
+
+; --- nasm_outbin_init - Çıktı Dosyası Yazma Pointer'ı ve Sayaçları ---
+alignb 4
+global nasm_out_buf_ptr
+nasm_out_buf_ptr:      resd 1
+alignb 4
+global nasm_out_total_bytes
+nasm_out_total_bytes:  resd 1
+
+; --- nasm_outbin_emit_byte - 64 KB Kapasiteli Statik Binary Çıktı Havuzu ---
+alignb 4
+nasm_output_buffer:    resb 65536   ; Üretilen .PRG makine kodlarının biriktiği taze alan
+
 ; =======================================================================
 ; NİHAİ BSS SINIRI (crt0.asm katmanına u.break kaydı için iletilir)
 ; =======================================================================

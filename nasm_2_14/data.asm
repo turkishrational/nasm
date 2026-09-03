@@ -222,6 +222,30 @@ nasm_insn_string_pool:
 align 4
 global nasm_instructions_table
 nasm_instructions_table:
+; 02/09/2026 - Erdogan Tan & Google AI
+; --- 26 Elemanlı Kompakt Harf Vektör Tablosu (4 * 26 = 104 Byte) ---
+    dd ins_bucket_A             ; 0:  'a' (add, and...)
+    dd ins_bucket_empty         ; 1:  'b'
+    dd ins_bucket_C             ; 2:  'c' (call, cli...)
+    dd ins_bucket_empty         ; 3:  'd'
+    dd ins_bucket_empty         ; 4:  'e'
+    dd ins_bucket_empty         ; 5:  'f'
+    dd ins_bucket_empty         ; 6:  'g'
+    dd ins_bucket_empty         ; 7:  'h'
+    dd ins_bucket_I             ; 8:  'i'
+    dd ins_bucket_J             ; 9:  'j' (jmp...)
+    dd ins_bucket_empty         ; 10: 'k'
+    dd ins_bucket_empty         ; 11: 'l'
+    dd ins_bucket_M             ; 12: 'm' (mov...)
+    dd ins_bucket_empty         ; 13: 'n'
+    dd ins_bucket_empty         ; 14: 'o'
+    dd ins_bucket_P             ; 15: 'p' (push, pop...)
+    dd ins_bucket_empty         ; 16: 'q'
+    dd ins_bucket_R             ; 17: 'r' (ret...)
+    dd ins_bucket_S             ; 18: 's' (sti...)
+    dd ins_bucket_empty         ; 19: 't'
+    times 7 dd ins_bucket_empty ; 20 - 25: 'u' ile 'z' arası kalan boş harf slotları
+
     ; Yapı Tasarımı: 
     ; dd Mnemonic_String_Address (4 Byte)
     ; dd Operand_Type_Flags     (4 Byte)
@@ -230,19 +254,35 @@ nasm_instructions_table:
     ; db Opcode_Length_Bytes    (1 Byte)
     ; Toplam = Kayıt başına 12 Byte (Sabit İndeksleme İçin İdeal)
 
+ins_bucket_M:
     dd op_str_mov,   0x0000000C, (0x8900 | (0x00 << 16) | (2 << 24))
+    dd 0, 0, 0
+ins_bucket_A:
     dd op_str_add,   0x0000000C, (0x0100 | (0x00 << 16) | (2 << 24))
-    dd op_str_sub,   0x0000000C, (0x2900 | (0x00 << 16) | (2 << 24))
     dd op_str_and,   0x0000000C, (0x2100 | (0x00 << 16) | (2 << 24))
+    dd 0, 0, 0
+ins_bucket_J: 
     dd op_str_jmp,   0x00000001, (0xE900 | (0x00 << 16) | (1 << 24))
+    dd 0, 0, 0
+ins_bucket_I: 
     dd op_str_int,   0x00000002, (0xCD00 | (0x00 << 16) | (1 << 24))
+    dd 0, 0, 0
+ins_bucket_P: 
     dd op_str_push,  0x00000004, (0x5000 | (0x00 << 16) | (1 << 24))
     dd op_str_pop,   0x00000004, (0x5800 | (0x00 << 16) | (1 << 24))
+    dd 0, 0, 0
+ins_bucket_C:
     dd op_str_call,  0x00000001, (0xE800 | (0x00 << 16) | (1 << 24))
-    dd op_str_ret,   0x00000000, (0xC300 | (0x00 << 16) | (1 << 24))
     dd op_str_cli,   0x00000000, (0xFA00 | (0x00 << 16) | (1 << 24))
+    dd 0, 0, 0
+ins_bucket_R:  
+    dd op_str_ret,   0x00000000, (0xC300 | (0x00 << 16) | (1 << 24))
+    dd 0, 0, 0
+ins_bucket_S:
+    dd op_str_sub,   0x0000000C, (0x2900 | (0x00 << 16) | (2 << 24))
     dd op_str_sti,   0x00000000, (0xFB00 | (0x00 << 16) | (1 << 24))
-    dd 0, 0, 0                                  ; <-- 3x DWORD STOP MARKER!
+ins_bucket_empty:
+    dd 0, 0, 0                              ; <-- 3x DWORD STOP MARKER!
 
 align 4
 ; --- nasm_lookup_instruction - Mnemonic String Katar Havuzu ---
@@ -303,7 +343,3 @@ nasm_mode_read: db 'r', 0
 section_str_text: db '.text', 0
 section_str_data: db '.data', 0
 section_str_bss:  db '.bss', 0
-
-
-
-

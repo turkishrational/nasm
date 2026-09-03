@@ -21,7 +21,6 @@ nasm_stricmp:
     mov ebp, esp
     push ebx
     push esi
-    push edi
 
     mov esi, [ebp+8]   ; s1 adresini al
     mov edx, [ebp+12]  ; s2 adresini al (Burası nasm_directive_table'dan gelen pointer)
@@ -66,7 +65,6 @@ nasm_stricmp:
     xor eax, eax       ; Tam eşleşme durumunda EAX = 0
 
 .exit_func:
-    pop edi
     pop esi
     pop ebx
     mov esp, ebp
