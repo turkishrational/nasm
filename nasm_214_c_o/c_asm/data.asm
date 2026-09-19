@@ -2,7 +2,7 @@
 ; NASM v2.14.02 - NETWIDE ASSEMBLER FOR TRDOS 386 - Erdogan Tan - 18/09/2026 
 ; Disassembled from "nasm.c" (Dissassembler: IDA)
 ; NASM Syntax: Erdogan Tan
-; Last Update: 18/09/2026
+; Last Update: 19/09/2026
 ; ===========================================================================
 ; data.asm
 ; --------
@@ -749,6 +749,10 @@ crc64_tab :     dd          0,         0  ; UINT64_C(0x0000000000000000)
                 dd 0EFEC8728h, 29B7D047h  ; UINT64_C(0x29b7d047efec8728)
 
 ; ---------------------------------------------------------------------------
+; malloc.asm (malloc.c)
+; ---------------------------------------------------------------------------
+
+L_180:          db 'out of memory (TRDOS 386 Memory Full!)',0 ; ...
 
 
 
