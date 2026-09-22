@@ -50,8 +50,8 @@
 ; Modified Registers: EAX, (ECX), (EDX)
 ; ---------------------------------------------------------------------------
 
-p               equ -4
-size            equ  8
+%assign p      -4
+%assign size    8
 
 nasm_malloc:
                 push    ebp
@@ -116,9 +116,9 @@ nm_4:                                   ; ...
 ; Modified Registers: EAX, (ECX), (EDX)
 ; ---------------------------------------------------------------------------
 
-p               equ -4
-q               equ  8
-size            equ  0Ch
+%assign p      -4
+%assign q       8
+%assign size    0Ch
 
 nasm_realloc:
                 push    ebp
@@ -228,10 +228,10 @@ nasm_free:
 ; Modified Registers: EAX, ECX, (EDX)
 ; ---------------------------------------------------------------------------
 
-p               equ -8
-size            equ -4
-nelem           equ  8
-elsize          equ  0Ch
+%assign p      -8
+%assign size   -4
+%assign nelem   8
+%assign elsize  0Ch
 
 nasm_calloc:
                 push    ebp
@@ -281,9 +281,9 @@ nc_1:                                   ; ...
 ; Modified Registers: EAX, (ECX), (EDX)
 ; ---------------------------------------------------------------------------
 
-p               equ -8
-len             equ -4
-s               equ  8
+%assign p      -8
+%assign len    -4
+%assign s       8
 
 nasm_strdup:
                 push    ebp
@@ -336,10 +336,10 @@ ns_1:                                   ; ...
 ; Modified Registers: EAX, ECX, (EDX)
 ; ---------------------------------------------------------------------------
 
-p               equ -8
-len             equ -4
-s               equ  8
-n               equ  0Ch
+%assign p      -8
+%assign len    -4
+%assign s       8
+%assign n       0Ch
 
 nasm_strndup:
                 push    ebp

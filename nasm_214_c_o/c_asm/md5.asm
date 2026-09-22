@@ -61,7 +61,7 @@
 ; Modified Registers: EAX, ECX
 ; ---------------------------------------------------------------------------
 
-ctx             equ  8
+%assign ctx	8
 
 MD5Init:
                 push    ebp
@@ -117,11 +117,11 @@ MD5Init:
 ; Modified Registers: EAX, ECX, EDX
 ; ---------------------------------------------------------------------------
 
-p               equ -8
-t               equ -4
-ctx             equ  8
-buf             equ  0Ch
-len             equ  10h
+%assign p      -8
+%assign t      -4
+%assign ctx     8
+%assign buf     0Ch
+%assign len     10h
 
 MD5Update:
                 push    ebp
@@ -279,10 +279,10 @@ mu_5:                                   ; ...
 ; Modified Registers: EAX, ECX, EDX
 ; ---------------------------------------------------------------------------
 
-p               equ -8
-count           equ -4
-digest          equ  8
-ctx             equ  0Ch
+%assign p      -8
+%assign countu -4
+%assign digest  8
+%assign ctx     0Ch
 
 MD5Final:
                 push    ebp
@@ -414,12 +414,12 @@ mf_2:                                   ; ...
 ; Modified Registers: EAX, ECX, EDX
 ; ---------------------------------------------------------------------------
 
-d               equ -10h
-c               equ -0Ch
-b               equ -8
-a               equ -4
-buf             equ  8
-in              equ  0Ch
+%assign d      -10h
+%assign c      -0Ch
+%assign b      -8
+%assign a      -4
+%assign buf     8
+%assign in      0Ch
 
 MD5Transform:
 

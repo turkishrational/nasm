@@ -51,8 +51,8 @@
 ; Modified Registers: EAX, ECX, (EDX)
 ; ---------------------------------------------------------------------------
 
-tlti            equ -8
-i               equ -4
+%assign tlti   -8
+%assign i      -4
 
 tolower_init:
                 push    ebp
@@ -113,11 +113,11 @@ tli_4:                                  ; ...
 ; Modified Registers: EAX, ECX
 ; ---------------------------------------------------------------------------
 
-d               equ -8
-c2              equ -2
-c1              equ -1
-s1              equ  8
-s2              equ  0Ch
+%assign d      -8
+%assign c2     -2
+%assign c1     -1
+%assign s1      8
+%assign s2      0Ch
 
 nasm_stricmp:
                 push    ebp
@@ -198,12 +198,12 @@ nsc_6:                                  ; ...
 ; Modified Registers: EAX, ECX
 ; ---------------------------------------------------------------------------
 
-d               equ -8
-c2              equ -2
-c1              equ -1
-s1              equ  8
-s2              equ  0Ch
-n               equ  10h
+%assign d      -8
+%assign c2     -2
+%assign c1     -1
+%assign s1      8
+%assign s2      0Ch
+%assign n       10h
 
 nasm_strnicmp:
                 push    ebp
@@ -290,12 +290,12 @@ nsnc_6:                                 ; ...
 ; Modified Registers: EAX, ECX
 ; ---------------------------------------------------------------------------
 
-d               equ -8
-c2              equ -2
-c1              equ -1
-s1              equ  8
-s2              equ  0Ch
-n               equ  10h
+%assign d      -8
+%assign c2     -2
+%assign c1     -1
+%assign s1      8
+%assign s2      0Ch
+%assign n       10h
 
 nasm_memicmp:
                 push    ebp
@@ -370,10 +370,10 @@ nmc_4:                                  ; ...
 ; Modified Registers: EAX, ECX, (EDX)
 ; ---------------------------------------------------------------------------
 
-e               equ -8
-s               equ -4
-stringp         equ  8
-delim           equ  0Ch
+%assign e       -8
+%assign s       -4
+%assign stringp  8
+%assign delim    0Ch
 
 nasm_strsep:
                 push    ebp
@@ -439,7 +439,7 @@ ns_4:                                   ; ...
 ; Modified Registers: EAX, ECX, (EDX)
 ; ---------------------------------------------------------------------------
 
-p               equ  8
+%assign p	8
 
 nasm_skip_spaces:
                 push    ebp
@@ -491,7 +491,7 @@ nss_2:                                  ; ...
 ; Modified Registers: EAX, ECX, (EDX)
 ; ---------------------------------------------------------------------------
 
-p               equ  8
+%assign p	8
 
 nasm_skip_word:
                 push    ebp
@@ -548,7 +548,7 @@ nsw_3:                                  ; ...
 ; Modified Registers: EAX, ECX, (EDX)
 ; ---------------------------------------------------------------------------
 
-p               equ  8
+%assign p	8
 
 nasm_zap_spaces_fwd:
                 push    ebp
@@ -603,7 +603,7 @@ nzsf_2:                                 ; ...
 ; Modified Registers: EAX, ECX, (EDX)
 ; ---------------------------------------------------------------------------
 
-p               equ  8
+%assign p	8
 
 nasm_zap_spaces_rev:
                 push    ebp
@@ -658,7 +658,7 @@ nzsr_2:                                 ; ...
 ; Modified Registers: EAX, (ECX), (EDX)
 ; ---------------------------------------------------------------------------
 
-p               equ  8
+%assign p	8
 
 nasm_trim_spaces:
                 push    ebp
@@ -699,10 +699,10 @@ nasm_trim_spaces:
 ; Modified Registers: EAX, ECX, (EDX)
 ; ---------------------------------------------------------------------------
 
-next            equ -8
-word            equ -4
-p               equ  8
-tail            equ  0Ch
+%assign next   -8
+%assign word   -4
+%assign p       8
+%assign tail    0Ch
 
 nasm_get_word:
                 push    ebp
@@ -772,11 +772,11 @@ ngw_3:                                  ; ...
 ; Modified Registers: EAX, ECX, EDX
 ; ---------------------------------------------------------------------------
 
-nxt             equ -8
-q               equ -4
-p               equ  8
-val             equ  0Ch
-next            equ  10h
+%assign nxt    -8
+%assign q      -4
+%assign p       8
+%assign val     0Ch
+%assign next    10h
 
 nasm_opt_val:
                 push    ebp

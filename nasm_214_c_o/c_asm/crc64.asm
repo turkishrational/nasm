@@ -54,13 +54,13 @@
 ; Modified Registers: EAX, ECX, EDX
 ; ---------------------------------------------------------------------------
 
-tmp3            equ -10h
-tmp2            equ -0Ch
-tmp1            equ -8
-c               equ -1
-crc             equ  8
-crc_h           equ  0Ch
-str             equ  10h
+%assign tmp3   -10h
+%assign tmp2   -0Ch
+%assign tmp1   -8
+%assign c      -1
+%assign crc     8
+%assign crc_h   0Ch
+%assign str     10h
 
 crc64:
                 push    ebp             ; #define UINT64_C(x) x
@@ -136,13 +136,13 @@ crc_2:                                  ; ...
 ; Modified Registers: EAX, ECX, EDX
 ; ---------------------------------------------------------------------------
 
-tmp3            equ -10h
-tmp2            equ -0Ch
-tmp1            equ -8
-c               equ -1
-crc             equ  8
-crc_h           equ  0Ch
-str             equ  10h
+%assign tmp3   -10h
+%assign tmp2   -0Ch
+%assign tmp1   -8
+%assign c      -1
+%assign crc     8
+%assign crc_h   0Ch
+%assign str     10h
 
 crc64i:
                 push    ebp             ; #define UINT64_C(x) x

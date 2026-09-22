@@ -53,8 +53,8 @@
 ; Modified Registers: EAX, ECX
 ; ---------------------------------------------------------------------------
 
-prefix          equ -4
-token           equ  8
+%assign prefix -4
+%assign token   8
 
 prefix_name:
                 push    ebp

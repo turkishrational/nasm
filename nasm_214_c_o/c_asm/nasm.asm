@@ -60,13 +60,13 @@ section .text
 ;    DIRR_BADPARAM             /* Print bad argument error message */
 ; };
 
-errlevel	equ -18h
-rn_error	equ -14h
-val		equ -10h
-val_h		equ -0Ch
-i		equ -4
-limit		equ  8
-valstr		equ  0Ch
+%assign errlevel -18h
+%assign rn_error -14h
+%assign val      -10h
+%assign val_h    -0Ch
+%assign i        -4
+%assign limit     8
+%assign valstr    0Ch
 
 nasm_set_limit:
                 push    ebp
@@ -272,7 +272,7 @@ nsl_20:                                 ; ...
 ; Modified Registers: EAX, ECX, EDX
 ; ---------------------------------------------------------------------------
 
-segment         equ 8
+%assign segment 8
 
 switch_segment:
                 push    ebp
@@ -329,8 +329,8 @@ ss_2:                                   ; ...
 ; Modified Registers: EAX, ECX, (EDX)
 ; ---------------------------------------------------------------------------
 
-l_off		equ  8
-l_off_h		equ  0Ch
+%assign l_off	8
+%assign l_off_h	0Ch
 
 set_curr_offs:
                 push    ebp
@@ -382,8 +382,8 @@ sco_2:                                  ; ...
 ; Modified Registers: EAX, ECX, EDX
 ; ---------------------------------------------------------------------------
 
-delta		equ  8
-delta_h		equ  0Ch
+%assign delta	8
+%assign delta_h 0Ch
 
 increment_offset:
                 push    ebp
@@ -445,8 +445,8 @@ io_4:                                   ; ...
 ; Modified Registers: EAX, (ECX), (EDX)
 ; ---------------------------------------------------------------------------
 
-line		equ  8
-outfile		equ  0Ch
+%assign line   8
+%assign outfil 0Ch
 
 nasm_fputs:
                 push    ebp
@@ -499,20 +499,20 @@ nf_2:                                   ; ...
 ; Modified Registers: EAX, ECX, EDX
 ; ---------------------------------------------------------------------------
 
-var_B4          equ -0B4h
-var_B0          equ -0B0h
-var_AC          equ -0ACh
-var_A8          equ -0A8h
-var_A4          equ -0A4h
-var_A0          equ -0A0h
-var_9C          equ -9Ch
-var_98          equ -98h
-var_94          equ -94h
-var_90          equ -90h
-pp_pre_def      equ -8Ch
-pp_predefine    equ -88h
-temp            equ -84h
-oct             equ -4
+%assign var_B4       -0B4h
+%assign var_B0       -0B0h
+%assign var_AC       -0ACh
+%assign var_A8       -0A8h
+%assign var_A4       -0A4h
+%assign var_A0       -0A0h
+%assign var_9C       -9Ch
+%assign var_98       -98h
+%assign var_94       -94h
+%assign var_90       -90h
+%assign pp_pre_def   -8Ch
+%assign pp_predefine -88h
+%assign temp         -84h
+%assign oct          -4
 
 define_macros:
                 push    ebp
@@ -833,10 +833,10 @@ dm_8:                                   ; ...
 ; Modified Registers: EAX, ECX, (EDX)
 ; ---------------------------------------------------------------------------
 
-tmp_2           equ -10h
-tmp_1           equ -0Ch
-_iptmp          equ -8
-_ip             equ -4
+%assign tmp_2	-10h
+%assign tmp_1	-0Ch
+%assign _iptmp	-8
+%assign _ip	-4
 
 preproc_init:
                 push    ebp             ; StrList *ip, *iptmp;
@@ -942,17 +942,17 @@ pi_10:                                  ; ...
 ; Modified Registers: EAX, ECX, (EDX)
 ; ---------------------------------------------------------------------------
 
-_file           equ -28h
-file            equ -24h
-nulltarget      equ -20h
-wrapstr         equ -1Ch
-wmake           equ -18h
-nl              equ -14h
-l               equ -10h
-len             equ -0Ch
-linepos         equ -8
-deps            equ -4
-list            equ  8
+%assign _file      -28h
+%assign file       -24h
+%assign nulltarget -20h
+%assign wrapstr    -1Ch
+%assign wmake      -18h
+%assign nl         -14h
+%assign l          -10h
+%assign len        -0Ch
+%assign linepos    -8
+%assign deps       -4
+%assign list        8
 
 emit_dependencies:
                 push    ebp
@@ -1245,29 +1245,29 @@ ed_27:                                  ; ...
 ; Modified Registers: EAX, ECX, EDX
 ; ---------------------------------------------------------------------------
 
-var_5C          equ -5Ch
-var_58          equ -58h
-var_54          equ -54h
-var_50          equ -50h
-var_4C          equ -4Ch
-var_48          equ -48h
-var_44          equ -44h
-var_40          equ -40h
-var_3C          equ -3Ch
-var_38          equ -38h
-var_34          equ -34h
-var_30          equ -30h
-var_2C          equ -2Ch
-var_28          equ -28h
-var_24          equ -24h
-tmp             equ -1Ch
-temp            equ -18h
-temp_h          equ -14h
-y               equ -10h
-y_h             equ -0Ch
-t_h             equ -8
-t               equ -4
-tm              equ  8
+%assign var_5C	-5Ch
+%assign var_58	-58h
+%assign var_54	-54h
+%assign var_50	-50h
+%assign var_4C	-4Ch
+%assign var_48	-48h
+%assign var_44	-44h
+%assign var_40	-40h
+%assign var_3C	-3Ch
+%assign var_38	-38h
+%assign var_34	-34h
+%assign var_30	-30h
+%assign var_2C	-2Ch
+%assign var_28	-28h
+%assign var_24	-24h
+%assign tmp	-1Ch
+%assign temp	-18h
+%assign temp_h	-14h
+%assign y	-10h
+%assign y_h	-0Ch
+%assign t_h	-8
+%assign t	-4
+%assign tm	 8
 
 make_posix_time:
                 push    ebp
@@ -1461,14 +1461,14 @@ make_posix_time:
 ; Modified Registers: EAX, ECX, EDX
 ; ---------------------------------------------------------------------------
 
-tmp             equ -20h
-tmp_4           equ -1Ch
-tmp_8           equ -18h
-tmp_12          equ -14h
-tmp_16          equ -10h
-best_gm         equ -0Ch
-tp              equ -8
-oct             equ -4
+%assign tmp	-20h
+%assign tmp_4	-1Ch
+%assign tmp_8	-18h
+%assign tmp_12	-14h
+%assign tmp_16	-10h
+%assign best_gm	-0Ch
+%assign tp	-8
+%assign oct	-4
 
 timestamp:
                 push    ebp
@@ -1617,27 +1617,27 @@ ts_6:                                   ; ...
 
 ; int __cdecl main(int argc, const char **argv, const char **envp)
 
-tmp10           equ -48h
-tmp9            equ -44h
-tmp8            equ -40h
-tmp7            equ -3Ch
-altline         equ -38h
-linnum          equ -34h
-tmp6            equ -30h
-tmp5            equ -2Ch
-lineinc         equ -28h
-prior_linnum    equ -24h
-file_name       equ -20h
-_line           equ -1Ch
-tmp4            equ -18h
-tmp3            equ -14h
-tmp2            equ -10h
-tmp1            equ -0Ch
-line            equ -8
-depend_ptr      equ -4
-argc            equ  8
-argv            equ  0Ch
-;envp           equ  10h
+%assign tmp10	     -48h
+%assign tmp9	     -44h
+%assign tmp8	     -40h
+%assign tmp7	     -3Ch
+%assign altline	     -38h
+%assign linnum	     -34h
+%assign tmp6	     -30h
+%assign tmp5	     -2Ch
+%assign lineinc	     -28h
+%assign prior_linnum -24h
+%assign file_name    -20h
+%assign _line	     -1Ch
+%assign tmp4	     -18h
+%assign tmp3	     -14h
+%assign tmp2	     -10h
+%assign tmp1         -0Ch
+%assign line         -8
+%assign depend_ptr   -4
+%assign argc          8
+%assign argv          0Ch
+;%assign envp         10h
 
 main:
                 push    ebp
@@ -2376,9 +2376,9 @@ main_59:                                ; ...
 ; Modified Registers: EAX, ECX, (EDX)
 ; ---------------------------------------------------------------------------
 
-p               equ  8
-q               equ  0Ch
-advance         equ  10h
+%assign p	8
+%assign q       0Ch
+%assign advance	10h
 
 get_param:
                 push    ebp
@@ -2454,10 +2454,10 @@ gp_3:                                   ; ...
 ; Modified Registers: EAX, ECX, (EDX)
 ; ---------------------------------------------------------------------------
 
-tmp             equ -4
-dst             equ  8
-src             equ  0Ch
-what            equ  10h
+%assign tmp	-4
+%assign dst	 8
+%assign src	 0Ch
+%assign what	 10h
 
 copy_filename:
                 push    ebp*what)
@@ -2508,12 +2508,12 @@ cfn_1:                                  ; ...
 ; Modified Registers: EAX, ECX, EDX
 ; ---------------------------------------------------------------------------
 
-nbs             equ -14h
-n               equ -10h
-q               equ -0Ch
-os              equ -8
-p               equ -4
-str             equ  8
+%assign nbs	-14h
+%assign n	-10h
+%assign q	-0Ch
+%assign os	-8
+%assign p	-4
+%assign str	 8
 
 quote_for_pmake:
                 push    ebp
@@ -2841,12 +2841,12 @@ qfm_29:                                 ; ...
 ; Modified Registers: EAX, ECX, EDX
 ; ---------------------------------------------------------------------------
 
-n               equ -14h
-quote           equ -10h
-q               equ -0Ch
-os              equ -8
-p               equ -4
-str             equ  8
+%assign n	-14h
+%assign quote	-10h
+%assign q	-0Ch
+%assign os	-8
+%assign p	-4
+%assign str	 8
 
 quote_for_wmake:
                 push    ebp
@@ -3150,22 +3150,22 @@ show_version:
 ; Modified Registers: EAX, ECX, EDX
 ; ---------------------------------------------------------------------------
 
-tmp10           equ -34h
-tmp9            equ -30h
-tmp8            equ -2Ch
-eqsave          equ -28h
-plen            equ -24h
-olen            equ -20h
-tx              equ -1Ch
-tmp3            equ -18h
-tmp2            equ -14h
-tmp1            equ -10h
-opt             equ -0Ch
-advance         equ -8
-param           equ -4
-p               equ  8
-q               equ  0Ch
-pass            equ  10h
+%assign tmp10	-34h
+%assign tmp9	-30h
+%assign tmp8	-2Ch
+%assign eqsave	-28h
+%assign plen	-24h
+%assign olen	-20h
+%assign tx	-1Ch
+%assign tmp3	-18h
+%assign tmp2	-14h
+%assign tmp1	-10h
+%assign opt	-0Ch
+%assign advance	-8
+%assign param	-4
+%assign p	 8 
+%assign q	 0Ch
+%assign pass	 10h
 
 process_arg:
                 push    ebp
@@ -4558,15 +4558,15 @@ pa_141:                                 ; ...
 ; Modified Registers: EAX, ECX, (EDX)
 ; ---------------------------------------------------------------------------
 
-offset          equ -1Ch
-prevargsize     equ -18h
-bufsize         equ -14h
-prevarg         equ -10h
-q               equ -0Ch
-p               equ -8
-buffer          equ -4
-rfile           equ  8
-pass            equ  0Ch
+%assign offset	    -1Ch
+%assign prevargsize -18h
+%assign bufsize	    -14h
+%assign prevarg	    -10h
+%assign q	    -0Ch
+%assign p	    -8
+%assign buffer	    -4
+%assign rfile	     8
+%assign pass	     0Ch
 
 process_respfile:
                 push    ebp
@@ -4819,13 +4819,13 @@ endp            process_respfile
 ; Modified Registers: EAX, ECX, (EDX)
 ; ---------------------------------------------------------------------------
 
-separator       equ -11h
-prevarg         equ -10h
-arg             equ -0Ch
-q               equ -8
-p               equ -4
-args            equ  8
-pass            equ  0Ch
+%assign separator -11h
+%assign prevarg   -10h
+%assign arg	  -0Ch
+%assign q	  -8
+%assign p	  -4
+%assign args	   8
+%assign pass	   0Ch
 
 process_args:
                 push    ebp
@@ -4952,10 +4952,10 @@ pas_8:                                  ; ...
 ; Modified Registers: EAX, ECX, (EDX)
 ; ---------------------------------------------------------------------------
 
-f               equ -804h
-str             equ -800h
-file            equ  8
-pass            equ  0Ch
+%assign f	-804h
+%assign str	-800h
+%assign file	 8
+%assign pass	 0Ch
 
 process_response_file:
                 push    ebp
@@ -5029,21 +5029,21 @@ prf_3:                                  ; ...
 ;
 ; Output: none
 ;
-; Modified Registers: EAX, ECX, (EDX)
+; Modified Registers: EAX, ECX, EDX
 ; ---------------------------------------------------------------------------
 
-tmp3            equ -24h
-tmp2            equ -20h
-advance         equ -1Ch
-tmp1            equ -18h
-i               equ -14h
-p               equ -10h
-envcopy         equ -0Ch
-envreal         equ -8
-rfile           equ -4
-argc            equ  8
-argv            equ  0Ch
-pass            equ  10h
+%assign tmp3	-24h
+%assign tmp2	-20h
+%assign advance	-1Ch
+%assign tmp1	-18h
+%assign i	-14h
+%assign p	-10h
+%assign envcopy	-0Ch
+%assign envreal	-8
+%assign rfile	-4
+%assign arg	 8
+%assign argv	 0Ch
+%assign pass	 10h
 
 parse_cmdline:
                 push    ebp
@@ -5072,16 +5072,16 @@ pcl_2:                                  ; ...
 
 pcl_3:                                  ; ...
                 mov     eax, [ebp+i]
-                mov     ecx,   warning_state_init
+                mov     ecx, warning_state_init
                 add     ecx, eax
                 mov     eax, [ebp+i]
-                mov     edx,   warning_state
+                mov     edx, warning_state
                 add     edx, eax
                 mov     eax, [ebp+i]
                 mov     [ebp+tmp1], ecx
                 mov     ecx, 12
                 imul    eax, ecx
-                mov     ecx,   warnings
+                mov     ecx, warnings
                 add     ecx, eax
                 add     ecx, 8
                 movzx   eax, byte [ecx]
@@ -5092,7 +5092,7 @@ pcl_3:                                  ; ...
 ; ---------------------------------------------------------------------------
 
 pcl_4:                                  ; ...
-                mov     eax, L_104 ; "NASMENV"
+                mov     eax, L_104	; "NASMENV"
                 push    eax
                 call    getenv
                 add     esp, 4
@@ -5229,7 +5229,7 @@ pcl_10:                                 ; ...
 pcl_11:                                 ; ...
                 mov     eax, [ebp+p]
                 push    eax
-                mov     eax, L_105 ; "unable to open response file `%s'"
+                mov     eax, L_105	; "unable to open response file `%s'"
                 push    eax
                 mov     eax, 53h
                 push    eax
@@ -5303,7 +5303,7 @@ pcl_19:                                 ; ...
 ; ---------------------------------------------------------------------------
 
 pcl_20:                                 ; ...
-                mov     eax, L_106 ; "no input file specified"
+                mov     eax, L_106	; "no input file specified"
                 push    eax
                 mov     eax, 40h
                 push    eax
@@ -5313,7 +5313,7 @@ pcl_20:                                 ; ...
 ; ---------------------------------------------------------------------------
 
 pcl_21:                                 ; ...
-                mov     eax, [errname] ; else if ((errname && !strcmp(inname, errname)) ||
+                mov     eax, [errname]	; else if ((errname && !strcmp(inname, errname)) ||
                 cmp     eax, 0
                 jz      pcl_23
                 mov     eax, [errname]
@@ -5332,7 +5332,7 @@ pcl_22:                                 ; ...
 ; ---------------------------------------------------------------------------
 
 pcl_23:                                 ; ...
-                mov     eax, [outname] ; (outname && !strcmp(inname, outname)) ||
+                mov     eax, [outname]	; (outname && !strcmp(inname, outname)) ||
                 cmp     eax, 0
                 jz      pcl_25
                 mov     eax, [outname]
@@ -5393,7 +5393,7 @@ pcl_29:                                 ; ...
 ; ---------------------------------------------------------------------------
 
 pcl_30:                                 ; ...
-                mov     eax, L_107 ; "will not overwrite input file"
+                mov     eax, L_107	; "will not overwrite input file"
                 push    eax
                 mov     eax, 40h
                 push    eax
@@ -5423,7 +5423,7 @@ pcl_32:                                 ; ...
                 mov     [error_file], eax ; error_file = stderr;
                 mov     eax, [errname]
                 push    eax
-                mov     eax, L_108 ; "cannot open file `%s' for error message"...
+                mov     eax, L_108	; "cannot open file `%s' for error message"...
                 push    eax
                 mov     eax, 40h
                 push    eax
@@ -5454,55 +5454,55 @@ pcl_33:                                 ; ...
 ; Modified Registers: EAX, ECX, EDX
 ; ---------------------------------------------------------------------------
 
-tmp16           equ -230h
-tmp15           equ -22Ch
-tmp14           equ -228h
-tmp14h          equ -224h
-tmp13           equ -21Ch
-tmp13h          equ -218h
-tmp12           equ -214h
-tmp11           equ -210h
-tmp10           equ -20Ch
-tmp9            equ -208h
-typeinfo        equ -204h
-l               equ -200h
-l_h             equ -1FCh
-n               equ -1F4h
-fwinf           equ -1F0h
-tmp8            equ -1ECh
-tmp7            equ -1E8h
-tmp6            equ -1E4h
-tmp5            equ -1E0h
-tmp4            equ -1DCh
-tmp2            equ -1D8h
-tmp3            equ -1D4h
-tmp2h           equ -1D0h
-tmp1h           equ -1CCh
-stall_count     equ -1C8h
-stall_count_h   equ -1C4h
-prev_offset_changed equ -1C0h
-prev_offset_changed_h equ -1BCh
-i               equ -1B4h
-output_ins      equ -1B0h
-output_prefixes equ -1ACh
-output_ins_opcode equ -190h
-output_ins_operands equ -188h
-output_ins_oprs equ -180h
-output_ins_oprs_0_segment equ -160h
-output_ins_oprs_0_offset equ -158h
-output_ins_oprs_0_offset_h equ -154h
-output_ins_oprs_0_wrt equ -150h
-output_ins_oprs_1_type equ -140h
-output_ins_oprs_1_segment equ -120h
-output_ins_oprs_1_offset equ -118h
-output_ins_oprs_1_offset_h equ -114h
-output_ins_oprs_1_wrt equ -110h
-output_ins_eops_float equ -3Ch
-output_ins_times equ -38h
-output_ins_forw_ref equ -34h
-line            equ -4
-fname           equ  8
-depend_ptr      equ  0Ch
+%assign tmp16	  -230h
+%assign tmp15	  -22Ch
+%assign tmp14	  -228h
+%assign tmp14h	  -224h
+%assign tmp13	  -21Ch
+%assign tmp13h	  -218h
+%assign tmp12	  -214h
+%assign tmp11	  -210h
+%assign tmp10	  -20Ch
+%assign tmp9	  -208h
+%assign typeinfo  -204h
+%assign l	  -200h
+%assign l_h	  -1FCh
+%assign n	  -1F4h
+%assign fwinf	  -1F0h
+%assign tmp8	  -1ECh
+%assign tmp7	  -1E8h
+%assign tmp6	  -1E4h
+%assign tmp5	  -1E0h
+%assign tmp4	  -1DCh
+%assign tmp2	  -1D8h
+%assign tmp3	  -1D4h
+%assign tmp2h	  -1D0h
+%assign tmp1h	  -1CCh
+%assign stall_count   -1C8h
+%assign stall_count_h -1C4h
+%assign prev_offset_changed   -1C0h
+%assign prev_offset_changed_h -1BCh
+%assign i	  -1B4h
+%assign output_ins                 -1B0h
+%assign output_prefixes            -1ACh
+%assign output_ins_opcode          -190h
+%assign output_ins_operands        -188h
+%assign output_ins_oprs            -180h
+%assign output_ins_oprs_0_segment  -160h
+%assign output_ins_oprs_0_offset   -158h
+%assign output_ins_oprs_0_offset_h -154h
+%assign output_ins_oprs_0_wrt      -150h
+%assign output_ins_oprs_1_type     -140h
+%assign output_ins_oprs_1_segment  -120h
+%assign output_ins_oprs_1_offset   -118h
+%assign output_ins_oprs_1_offset_h -114h
+%assign output_ins_oprs_1_wrt      -110h
+%assign output_ins_eops_float      -3Ch
+%assign output_ins_times           -38h
+%assign output_ins_forw_ref        -34h
+%assign line	  -4
+%assign fname	   8
+%assign depend_ptr 0Ch
 
 assemble_file:
                 push    ebp
@@ -6838,8 +6838,8 @@ af_120:                                 ; ...
 ; Modified Registers: EAX, (ECX), (EDX)
 ; ---------------------------------------------------------------------------
 
-index           equ -4
-severity        equ  8
+%assign index	-4
+%assign severity 8
 
 warn_index:
                 push    ebp
@@ -6906,7 +6906,7 @@ wi_4:                                   ; ...
 ; Modified Registers: EAX, (ECX), (EDX)
 ; ---------------------------------------------------------------------------
 
-severity        equ  8
+%assign severity 8
 
 skip_this_pass:
                 push    ebp             ; static bool skip_this_pass(int severity)
@@ -6979,7 +6979,7 @@ stp_6:                                  ; ...
 ; Modified Registers: EAX, (ECX), (EDX)
 ; ---------------------------------------------------------------------------
 
-severity        equ  8
+%assign severity 8
 
 is_suppressed:
                 push    ebp
@@ -7036,10 +7036,10 @@ is_3:                                   ; ...
 ; Modified Registers: EAX, ECX, (EDX)
 ; ---------------------------------------------------------------------------
 
-state           equ -9
-type            equ -8
-warn_is_err     equ -1
-severity        equ  8
+%assign state       -9
+%assign type        -8
+%assign warn_is_err -1
+%assign severity     8
 
 true_error_type:
                 push    ebp
@@ -7102,25 +7102,25 @@ tet_1:                                  ; ...
 ; Modified Registers: EAX, ECX, EDX
 ; ---------------------------------------------------------------------------
 
-tmp6            equ -4B4h
-tmp5            equ -4B0h
-tmp4            equ -4ACh
-tmp3            equ -4A8h
-var_4A4         equ -4A4h
-tmp2            equ -4A0h
-tmp1            equ -49Ch
-pfx_table       equ -498h
-lineno          equ -494h
-currentfile     equ -490h
-true_type       equ -48Ch
-spec_type       equ -488h
-pfx             equ -484h
-linestr         equ -480h
-warnsuf         equ -440h
-msg             equ -400h
-severity        equ  8
-fmt             equ  0Ch
-args            equ  10h
+%assign tmp6        -4B4h
+%assign tmp5        -4B0h
+%assign tmp4        -4ACh
+%assign tmp3        -4A8h
+%assign var_4A4     -4A4h
+%assign tmp2        -4A0h
+%assign tmp1        -49Ch
+%assign pfx_table   -498h
+%assign lineno      -494h
+%assign currentfile -490h
+%assign true_type   -48Ch
+%assign spec_type   -488h
+%assign pfx         -484h
+%assign linestr     -480h
+%assign warnsuf     -440h
+%assign msg         -400h
+%assign severity     8
+%assign fmt          0Ch
+%assign args         10h
 
 nasm_verror_asm:
                 push    ebp             ; char msg[1024];
@@ -7757,10 +7757,10 @@ usage:
 ; Modified Registers: EAX, ECX, EDX
 ; ---------------------------------------------------------------------------
 
-w_i_help        equ -0Ch
-w_i_name        equ -8
-i               equ -4
-xopt            equ  8
+%assign w_i_help -0Ch
+%assign w_i_name -8
+%assign i        -4
+%assign xopt      8
 
 help:
                 push    ebp             ; static void help(const char xopt)
