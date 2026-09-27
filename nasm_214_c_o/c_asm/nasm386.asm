@@ -2,7 +2,7 @@
 ; NASM v2.14.02 - NETWIDE ASSEMBLER FOR TRDOS 386 - Erdogan Tan - 18/09/2026 
 ; Disassembled from NASM v2.14.02 (Windows) object files (Dissassembler: IDA)
 ; NASM Syntax: Erdogan Tan
-; Last Update: 26/09/2026
+; Last Update: 27/09/2026
 ; ===========================================================================
 ; nasm nasm386.asm -l nasm386.txt -o NASM.PRG -Z error.txt
 ; ---------------------------------------------------------------------------
@@ -42,6 +42,9 @@ ORG 0x00000000 ; TRDOS 386 Flat Binary base/start address
 %include 'readnum.asm'
 %include 'bsi.asm'
 %include 'rbtree.asm'
+%include 'hashtbl.asm'
+%include 'raa.asm'
+%include 'saa.asm'
 
 ; --- x86 Processor Specific Files ---
 %include 'insnsa.asm'
