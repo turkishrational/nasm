@@ -36,14 +36,14 @@
 
 ; section .text
 
-;struct perfect_hash {
-;   uint64_t crcinit;
-;   uint32_t hashmask;
-;   uint32_t tbllen;
-;   int tbloffs;
-;   int errval;
-;   const int16_t *hashvals;
-;   const char * const *strings;
+; struct perfect_hash {
+;    uint64_t crcinit;
+;    uint32_t hashmask;
+;    uint32_t tbllen;
+;    int tbloffs;
+;    int errval;
+;    const int16_t *hashvals;
+;    const char * const *strings;
 ; };
 
 ; =============== S U B R O U T I N E =======================================
