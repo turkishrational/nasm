@@ -61,7 +61,7 @@
 ;
 ; Output [EAX]: hash table entry
 ;
-; Modified Registers: EAX, ECX, (EDX)
+; Modified Registers: EAX, ECX, EDX
 ; ---------------------------------------------------------------------------
 
 ;%assign tmp3  -20h
