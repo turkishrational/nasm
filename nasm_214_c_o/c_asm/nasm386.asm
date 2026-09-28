@@ -45,6 +45,8 @@ ORG 0x00000000 ; TRDOS 386 Flat Binary base/start address
 %include 'hashtbl.asm'
 %include 'raa.asm'
 %include 'saa.asm'
+%include 'strlist.asm'
+%include 'perfhash.asm'
 
 ; --- x86 Processor Specific Files ---
 %include 'insnsa.asm'
