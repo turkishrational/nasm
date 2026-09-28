@@ -64,7 +64,7 @@
 ; Modified Registers: EAX, ECX, (EDX)
 ; ---------------------------------------------------------------------------
 
-%assign tmp3   -20h
+;%assign tmp3  -20h
 %assign tmp2   -1Ch
 %assign tmp1   -18h
 %assign ix     -12h
@@ -78,8 +78,9 @@
 perfhash_find:
                 push    ebp
                 mov     ebp, esp
-                sub     esp, 32
-                nop                     ; uint32_t k1, k2;
+                ;sub    esp, 32
+                sub     esp, 28
+                ;nop                    ; uint32_t k1, k2;
                                         ; uint64_t crc;
                                         ; uint16_t ix;
                 mov     eax, [ebp+hash]
@@ -101,7 +102,7 @@ perfhash_find:
                 and     ecx, edx
                 mov     [ebp+k_1], ecx  ; k1 = (uint32_t)crc & hash->hashmask;
                 mov     eax, [ebp+crc_h]
-                mov     ecx, 0
+                ;mov    ecx, 0
                 mov     ecx, [ebp+hash]
                 add     ecx, 8
                 mov     edx, [ecx]
