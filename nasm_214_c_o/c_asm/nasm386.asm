@@ -47,6 +47,10 @@ ORG 0x00000000 ; TRDOS 386 Flat Binary base/start address
 %include 'saa.asm'
 %include 'strlist.asm'
 %include 'perfhash.asm'
+%include 'badenum.asm'
+%include 'strlcpy.asm'
+%include 'strnlen.asm'
+%include 'strrchrn.asm'
 
 ; --- x86 Processor Specific Files ---
 %include 'insnsa.asm'
@@ -72,7 +76,6 @@ ORG 0x00000000 ; TRDOS 386 Flat Binary base/start address
 %include 'preproc.asm'
 %include 'quote.asm'
 %include 'pptok.asm'
-%include 'macros.asm'
 %include 'listing.asm'
 %include 'eval.asm'
 %include 'exprlib.asm'
@@ -83,6 +86,7 @@ ORG 0x00000000 ; TRDOS 386 Flat Binary base/start address
 %include 'segalloc.asm'
 %include 'preproc-nop.asm'
 %include 'rdstrnum.asm'
+%include 'macros.asm'
 
 ; --- Output Format Files ---
 %include 'outform.asm'

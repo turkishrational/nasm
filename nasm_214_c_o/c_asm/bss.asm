@@ -2,7 +2,7 @@
 ; NASM v2.14.02 - NETWIDE ASSEMBLER FOR TRDOS 386 - Erdogan Tan - 18/09/2026 
 ; Disassembled from "nasm.c" (Dissassembler: IDA)
 ; NASM Syntax: Erdogan Tan
-; Last Update: 25/09/2026
+; Last Update: 30/09/2026
 ; ===========================================================================
 ; bss.asm
 ; -------
@@ -116,7 +116,7 @@ nasm_tolower_tab:
 ; srcfile.asm (srcfile.c)
 ; ---------------------------------------------------------------------------
 
-filename_hash: resb 16
+filename_hash:  resb 16
 
 ; ---------------------------------------------------------------------------
 ; zerobuf.asm (zerobuf.c)
@@ -124,8 +124,13 @@ filename_hash: resb 16
 
 ; const uint8_t zero_buffer[ZERO_BUF_SIZE];
 
-zero_buffer:   resb 65536
+zero_buffer:    resb 65536
 
+; ---------------------------------------------------------------------------
+; badenum.asm (badenum.c)
+; ---------------------------------------------------------------------------
+
+buf:            resb 64                   ; ...
 
 ; ---------------------------------------------------------------------------
 

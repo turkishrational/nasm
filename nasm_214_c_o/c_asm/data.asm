@@ -2,7 +2,7 @@
 ; NASM v2.14.02 - NETWIDE ASSEMBLER FOR TRDOS 386 - Erdogan Tan - 18/09/2026 
 ; Disassembled from "nasm.c" (Dissassembler: IDA)
 ; NASM Syntax: Erdogan Tan
-; Last Update: 27/09/2026
+; Last Update: 30/09/2026
 ; ===========================================================================
 ; data.asm
 ; --------
@@ -815,4 +815,10 @@ L_207:          db 'saa.c',0
 L_208:          db 'posn + len <= s->datalen',0
 L_209:          db 'saa.c',0
 L_210:          db 'posn <= s->datalen',0
+
+; ---------------------------------------------------------------------------
+; badenum.asm (badenum.c)
+; ---------------------------------------------------------------------------
+
+L_211:          db '<invalid %d>',0
 
