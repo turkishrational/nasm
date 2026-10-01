@@ -1,3 +1,9 @@
+; NASM 2.14.02 port to TRDOS 386 (Beginning: 18/09/2026)
+; ---------------------------------------------------------
+; by Help of Google GEMINI (1/10/2026) - donustur_tokenhash.py
+; *********************************************************
+; tokhash.c -> tokhash.asm (data.asm)
+
 ; --- Otomatik Uretilen NASM Tablosu ---
 section .data
 

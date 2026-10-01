@@ -1,3 +1,9 @@
+; NASM 2.14.02 port to TRDOS 386 (Beginning: 18/09/2026)
+; ---------------------------------------------------------
+; by Help of Google GEMINI (1/10/2026) - enumerator.py
+; *********************************************************
+; *.c -> *.asm
+
 ; --- Otomatik Uretilen NASM Assign Sabitleri ---
 
 %assign EXPR_REG_START 1
