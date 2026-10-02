@@ -62,8 +62,6 @@ def parse_insnsa_c(filepath):
                     asm_output.append("    dq 0                      ; opd")
                 for _ in range(5):
                     asm_output.append("    dw 0                      ; deco")
-                # 02/10/2026 (dword alignment)
-                asm_output.append("    dw 0")
                 asm_output.append("    dd 0                      ; code (NULL)")
                 asm_output.append("    dd 0                      ; iflag_idx")
                 asm_output.append("")
@@ -95,9 +93,6 @@ def parse_insnsa_c(filepath):
                     deco_vals = parse_sub_list(deco_field, 5)
                     for val in deco_vals:
                         asm_output.append(f"    dw {val}")
-
-                    # 02/10/2026 (dword alignment)
-                    asm_output.append(f"    dw 0")
                         
                     # code (pointer)
                     code_val = "0" if code_field == "NULL" else code_field

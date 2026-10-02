@@ -25,7 +25,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40677
     dd 0
 
@@ -42,7 +41,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41539
     dd 1
 
@@ -59,7 +57,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40539
     dd 1
 
@@ -76,7 +73,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40543
     dd 2
 
@@ -93,7 +89,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40547
     dd 1
 
@@ -110,7 +105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40551
     dd 2
 
@@ -127,7 +121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41542
     dd 1
 
@@ -144,7 +137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38734
     dd 3
 
@@ -161,7 +153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38735
     dd 0
 
@@ -178,7 +169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35008
     dd 3
 
@@ -195,7 +185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35009
     dd 0
 
@@ -212,7 +201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35014
     dd 4
 
@@ -229,7 +217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35015
     dd 5
 
@@ -246,7 +233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35020
     dd 6
 
@@ -263,7 +249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35021
     dd 7
 
@@ -280,7 +265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29201
     dd 8
 
@@ -297,7 +281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29201
     dd 0
 
@@ -314,7 +297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38739
     dd 8
 
@@ -331,7 +313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38739
     dd 0
 
@@ -348,7 +329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38744
     dd 9
 
@@ -365,7 +345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38744
     dd 5
 
@@ -382,7 +361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38749
     dd 10
 
@@ -399,7 +377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38749
     dd 7
 
@@ -416,7 +393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25740
     dd 11
 
@@ -433,7 +409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25747
     dd 12
 
@@ -450,7 +425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25754
     dd 13
 
@@ -467,7 +441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40555
     dd 8
 
@@ -484,7 +457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38754
     dd 8
 
@@ -501,7 +473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38759
     dd 9
 
@@ -518,7 +489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38764
     dd 10
 
@@ -535,7 +505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35026
     dd 3
 
@@ -552,7 +521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25761
     dd 3
 
@@ -569,7 +537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25768
     dd 4
 
@@ -586,7 +553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25775
     dd 6
 
@@ -603,7 +569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25761
     dd 3
 
@@ -620,7 +585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25768
     dd 4
 
@@ -637,7 +601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38769
     dd 3
 
@@ -654,7 +617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38770
     dd 0
 
@@ -671,7 +633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35038
     dd 3
 
@@ -688,7 +649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35039
     dd 0
 
@@ -705,7 +665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35044
     dd 4
 
@@ -722,7 +681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35045
     dd 5
 
@@ -739,7 +697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35050
     dd 6
 
@@ -756,7 +713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35051
     dd 7
 
@@ -773,7 +729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32974
     dd 8
 
@@ -790,7 +745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32974
     dd 0
 
@@ -807,7 +761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38774
     dd 8
 
@@ -824,7 +777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38774
     dd 0
 
@@ -841,7 +793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38779
     dd 9
 
@@ -858,7 +809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38779
     dd 5
 
@@ -875,7 +825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38784
     dd 10
 
@@ -892,7 +841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38784
     dd 7
 
@@ -909,7 +857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25782
     dd 11
 
@@ -926,7 +873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25789
     dd 12
 
@@ -943,7 +889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25796
     dd 13
 
@@ -960,7 +905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40559
     dd 8
 
@@ -977,7 +921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38789
     dd 8
 
@@ -994,7 +937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38794
     dd 9
 
@@ -1011,7 +953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38799
     dd 10
 
@@ -1028,7 +969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35056
     dd 3
 
@@ -1045,7 +985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25803
     dd 3
 
@@ -1062,7 +1001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25810
     dd 4
 
@@ -1079,7 +1017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25817
     dd 6
 
@@ -1096,7 +1033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35056
     dd 3
 
@@ -1113,7 +1049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25803
     dd 3
 
@@ -1130,7 +1065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25810
     dd 4
 
@@ -1147,7 +1081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38804
     dd 3
 
@@ -1164,7 +1097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38805
     dd 0
 
@@ -1181,7 +1113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35068
     dd 3
 
@@ -1198,7 +1129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35069
     dd 0
 
@@ -1215,7 +1145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35074
     dd 4
 
@@ -1232,7 +1161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35075
     dd 5
 
@@ -1249,7 +1177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35080
     dd 6
 
@@ -1266,7 +1193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35081
     dd 7
 
@@ -1283,7 +1209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33254
     dd 8
 
@@ -1300,7 +1225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33254
     dd 0
 
@@ -1317,7 +1241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38809
     dd 8
 
@@ -1334,7 +1257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38809
     dd 0
 
@@ -1351,7 +1273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38814
     dd 9
 
@@ -1368,7 +1289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38814
     dd 5
 
@@ -1385,7 +1305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38819
     dd 10
 
@@ -1402,7 +1321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38819
     dd 7
 
@@ -1419,7 +1337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25824
     dd 11
 
@@ -1436,7 +1353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25831
     dd 12
 
@@ -1453,7 +1369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25838
     dd 13
 
@@ -1470,7 +1385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40563
     dd 8
 
@@ -1487,7 +1401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38824
     dd 8
 
@@ -1504,7 +1417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38829
     dd 9
 
@@ -1521,7 +1433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38834
     dd 10
 
@@ -1538,7 +1449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35086
     dd 3
 
@@ -1555,7 +1465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25845
     dd 3
 
@@ -1572,7 +1481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25852
     dd 4
 
@@ -1589,7 +1497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25859
     dd 6
 
@@ -1606,7 +1513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35086
     dd 3
 
@@ -1623,7 +1529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25845
     dd 3
 
@@ -1640,7 +1545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25852
     dd 4
 
@@ -1657,7 +1561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25280
     dd 15
 
@@ -1674,7 +1577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25280
     dd 16
 
@@ -1691,7 +1593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38839
     dd 18
 
@@ -1708,7 +1609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38844
     dd 19
 
@@ -1725,7 +1625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25866
     dd 9
 
@@ -1742,7 +1641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25866
     dd 5
 
@@ -1759,7 +1657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25873
     dd 9
 
@@ -1776,7 +1673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25873
     dd 5
 
@@ -1793,7 +1689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25880
     dd 10
 
@@ -1810,7 +1705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25880
     dd 7
 
@@ -1827,7 +1721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25887
     dd 9
 
@@ -1844,7 +1737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25887
     dd 5
 
@@ -1861,7 +1753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25894
     dd 9
 
@@ -1878,7 +1769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25894
     dd 5
 
@@ -1895,7 +1785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25901
     dd 10
 
@@ -1912,7 +1801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25901
     dd 7
 
@@ -1929,7 +1817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35098
     dd 20
 
@@ -1946,7 +1833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35104
     dd 7
 
@@ -1963,7 +1849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35110
     dd 9
 
@@ -1980,7 +1865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35110
     dd 5
 
@@ -1997,7 +1881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35116
     dd 9
 
@@ -2014,7 +1897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35116
     dd 5
 
@@ -2031,7 +1913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35122
     dd 10
 
@@ -2048,7 +1929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35122
     dd 7
 
@@ -2065,7 +1945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25908
     dd 21
 
@@ -2082,7 +1961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25915
     dd 21
 
@@ -2099,7 +1977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25922
     dd 22
 
@@ -2116,7 +1993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25929
     dd 4
 
@@ -2133,7 +2009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25930
     dd 5
 
@@ -2150,7 +2025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25936
     dd 4
 
@@ -2167,7 +2041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25937
     dd 5
 
@@ -2184,7 +2057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25943
     dd 6
 
@@ -2201,7 +2073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25944
     dd 7
 
@@ -2218,7 +2089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8340
     dd 23
 
@@ -2235,7 +2105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8348
     dd 23
 
@@ -2252,7 +2121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8356
     dd 24
 
@@ -2269,7 +2137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25950
     dd 4
 
@@ -2286,7 +2153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25951
     dd 5
 
@@ -2303,7 +2169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25957
     dd 4
 
@@ -2320,7 +2185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25958
     dd 5
 
@@ -2337,7 +2201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25964
     dd 6
 
@@ -2354,7 +2217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25965
     dd 7
 
@@ -2371,7 +2233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8364
     dd 23
 
@@ -2388,7 +2249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8372
     dd 23
 
@@ -2405,7 +2265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8380
     dd 24
 
@@ -2422,7 +2281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25971
     dd 4
 
@@ -2439,7 +2297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25972
     dd 5
 
@@ -2456,7 +2313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25978
     dd 4
 
@@ -2473,7 +2329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25979
     dd 5
 
@@ -2490,7 +2345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25985
     dd 6
 
@@ -2507,7 +2361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25986
     dd 7
 
@@ -2524,7 +2377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8388
     dd 23
 
@@ -2541,7 +2393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8396
     dd 23
 
@@ -2558,7 +2409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8404
     dd 24
 
@@ -2575,7 +2425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38849
     dd 25
 
@@ -2592,7 +2441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38854
     dd 26
 
@@ -2609,7 +2457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38859
     dd 27
 
@@ -2626,7 +2473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38864
     dd 28
 
@@ -2643,7 +2489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35146
     dd 1
 
@@ -2660,7 +2505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35152
     dd 1
 
@@ -2677,7 +2521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35152
     dd 1
 
@@ -2694,7 +2537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35158
     dd 19
 
@@ -2711,7 +2553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35158
     dd 19
 
@@ -2728,7 +2569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38869
     dd 1
 
@@ -2745,7 +2585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38874
     dd 7
 
@@ -2762,7 +2601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38879
     dd 0
 
@@ -2779,7 +2617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38884
     dd 5
 
@@ -2796,7 +2633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38874
     dd 7
 
@@ -2813,7 +2649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38889
     dd 25
 
@@ -2830,7 +2665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38894
     dd 26
 
@@ -2847,7 +2681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38899
     dd 27
 
@@ -2864,7 +2697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38904
     dd 28
 
@@ -2881,7 +2713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40575
     dd 0
 
@@ -2898,7 +2729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40579
     dd 5
 
@@ -2915,7 +2745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40583
     dd 7
 
@@ -2932,7 +2761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40311
     dd 0
 
@@ -2949,7 +2777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37561
     dd 0
 
@@ -2966,7 +2793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39626
     dd 0
 
@@ -2983,7 +2809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40587
     dd 29
 
@@ -3000,7 +2825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41545
     dd 0
 
@@ -3017,7 +2841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40591
     dd 8
 
@@ -3034,7 +2857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40591
     dd 0
 
@@ -3051,7 +2873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38909
     dd 8
 
@@ -3068,7 +2889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38909
     dd 0
 
@@ -3085,7 +2905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38914
     dd 9
 
@@ -3102,7 +2921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38914
     dd 5
 
@@ -3119,7 +2937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38919
     dd 10
 
@@ -3136,7 +2953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38919
     dd 7
 
@@ -3153,7 +2969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33212
     dd 8
 
@@ -3170,7 +2985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33212
     dd 0
 
@@ -3187,7 +3001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38924
     dd 8
 
@@ -3204,7 +3017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38924
     dd 0
 
@@ -3221,7 +3033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38929
     dd 9
 
@@ -3238,7 +3049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38929
     dd 5
 
@@ -3255,7 +3065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38934
     dd 10
 
@@ -3272,7 +3081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38934
     dd 7
 
@@ -3289,7 +3097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35164
     dd 0
 
@@ -3306,7 +3113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35170
     dd 5
 
@@ -3323,7 +3129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35176
     dd 7
 
@@ -3340,7 +3145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40595
     dd 8
 
@@ -3357,7 +3161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38939
     dd 8
 
@@ -3374,7 +3177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38944
     dd 9
 
@@ -3391,7 +3193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38949
     dd 10
 
@@ -3408,7 +3209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38954
     dd 8
 
@@ -3425,7 +3225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35182
     dd 8
 
@@ -3442,7 +3241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35188
     dd 9
 
@@ -3459,7 +3257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35194
     dd 10
 
@@ -3476,7 +3273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38954
     dd 8
 
@@ -3493,7 +3289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35182
     dd 8
 
@@ -3510,7 +3305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35188
     dd 9
 
@@ -3527,7 +3321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40599
     dd 0
 
@@ -3544,7 +3337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38964
     dd 5
 
@@ -3561,7 +3353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38969
     dd 7
 
@@ -3578,7 +3369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38974
     dd 0
 
@@ -3595,7 +3385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35200
     dd 31
 
@@ -3612,7 +3401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35201
     dd 32
 
@@ -3629,7 +3417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25992
     dd 31
 
@@ -3646,7 +3433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25993
     dd 32
 
@@ -3663,7 +3449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25999
     dd 31
 
@@ -3680,7 +3465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26000
     dd 32
 
@@ -3697,7 +3481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26006
     dd 6
 
@@ -3714,7 +3497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26007
     dd 7
 
@@ -3731,7 +3513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26013
     dd 35
 
@@ -3748,7 +3529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35218
     dd 13
 
@@ -3765,7 +3545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40603
     dd 32
 
@@ -3782,7 +3561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40607
     dd 36
 
@@ -3799,7 +3577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40611
     dd 36
 
@@ -3816,7 +3593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40615
     dd 7
 
@@ -3833,7 +3609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40619
     dd 0
 
@@ -3850,7 +3625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40623
     dd 5
 
@@ -3867,7 +3641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41548
     dd 1
 
@@ -3884,7 +3657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41551
     dd 1
 
@@ -3901,7 +3673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40627
     dd 1
 
@@ -3918,7 +3689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40631
     dd 19
 
@@ -3935,7 +3705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38984
     dd 11
 
@@ -3952,7 +3721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35224
     dd 11
 
@@ -3969,7 +3737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35230
     dd 12
 
@@ -3986,7 +3753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35236
     dd 13
 
@@ -4003,7 +3769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40635
     dd 0
 
@@ -4020,7 +3785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38989
     dd 0
 
@@ -4037,7 +3801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38994
     dd 5
 
@@ -4054,7 +3817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38999
     dd 7
 
@@ -4071,7 +3833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40639
     dd 37
 
@@ -4088,7 +3849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40643
     dd 38
 
@@ -4105,7 +3865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39004
     dd 39
 
@@ -4122,7 +3881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41583
     dd 0
 
@@ -4139,7 +3897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41583
     dd 0
 
@@ -4156,7 +3913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40647
     dd 40
 
@@ -4173,7 +3929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40651
     dd 40
 
@@ -4190,7 +3945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40655
     dd 40
 
@@ -4207,7 +3961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40659
     dd 40
 
@@ -4224,7 +3977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39009
     dd 40
 
@@ -4241,7 +3993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39014
     dd 40
 
@@ -4258,7 +4009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39009
     dd 40
 
@@ -4275,7 +4025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39019
     dd 40
 
@@ -4292,7 +4041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39024
     dd 40
 
@@ -4309,7 +4057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39024
     dd 40
 
@@ -4326,7 +4073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40667
     dd 40
 
@@ -4343,7 +4089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40667
     dd 40
 
@@ -4360,7 +4105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40671
     dd 40
 
@@ -4377,7 +4121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40671
     dd 40
 
@@ -4394,7 +4137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40675
     dd 40
 
@@ -4411,7 +4153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39029
     dd 40
 
@@ -4428,7 +4169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39034
     dd 41
 
@@ -4445,7 +4185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39039
     dd 41
 
@@ -4462,7 +4201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39044
     dd 41
 
@@ -4479,7 +4217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39049
     dd 41
 
@@ -4496,7 +4233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39054
     dd 41
 
@@ -4513,7 +4249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39059
     dd 41
 
@@ -4530,7 +4265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39064
     dd 41
 
@@ -4547,7 +4281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39069
     dd 41
 
@@ -4564,7 +4297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39074
     dd 41
 
@@ -4581,7 +4313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39079
     dd 41
 
@@ -4598,7 +4329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39084
     dd 41
 
@@ -4615,7 +4345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39089
     dd 41
 
@@ -4632,7 +4361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39094
     dd 41
 
@@ -4649,7 +4377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39099
     dd 41
 
@@ -4666,7 +4393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39104
     dd 41
 
@@ -4683,7 +4409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39109
     dd 41
 
@@ -4700,7 +4425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40711
     dd 40
 
@@ -4717,7 +4441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40715
     dd 40
 
@@ -4734,7 +4457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39114
     dd 40
 
@@ -4751,7 +4473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39119
     dd 40
 
@@ -4768,7 +4489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39124
     dd 41
 
@@ -4785,7 +4505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39129
     dd 41
 
@@ -4802,7 +4521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39134
     dd 41
 
@@ -4819,7 +4537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39139
     dd 41
 
@@ -4836,7 +4553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40731
     dd 40
 
@@ -4853,7 +4569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40735
     dd 40
 
@@ -4870,7 +4585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39144
     dd 40
 
@@ -4887,7 +4601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39149
     dd 40
 
@@ -4904,7 +4617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40743
     dd 40
 
@@ -4921,7 +4633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40747
     dd 42
 
@@ -4938,7 +4649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40751
     dd 40
 
@@ -4955,7 +4665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39154
     dd 40
 
@@ -4972,7 +4681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40755
     dd 40
 
@@ -4989,7 +4697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40759
     dd 40
 
@@ -5006,7 +4713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39159
     dd 40
 
@@ -5023,7 +4729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39164
     dd 40
 
@@ -5040,7 +4745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39159
     dd 40
 
@@ -5057,7 +4761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39169
     dd 40
 
@@ -5074,7 +4777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39174
     dd 40
 
@@ -5091,7 +4793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39174
     dd 40
 
@@ -5108,7 +4809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40767
     dd 40
 
@@ -5125,7 +4825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40771
     dd 40
 
@@ -5142,7 +4841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39179
     dd 40
 
@@ -5159,7 +4857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39179
     dd 40
 
@@ -5176,7 +4873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39184
     dd 40
 
@@ -5193,7 +4889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39189
     dd 40
 
@@ -5210,7 +4905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39194
     dd 40
 
@@ -5227,7 +4921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39194
     dd 40
 
@@ -5244,7 +4937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40779
     dd 43
 
@@ -5261,7 +4953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39199
     dd 40
 
@@ -5278,7 +4969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39204
     dd 40
 
@@ -5295,7 +4985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40783
     dd 40
 
@@ -5312,7 +5001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39209
     dd 44
 
@@ -5329,7 +5017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40787
     dd 44
 
@@ -5346,7 +5033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40791
     dd 40
 
@@ -5363,7 +5049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40795
     dd 40
 
@@ -5380,7 +5065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40799
     dd 40
 
@@ -5397,7 +5081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40803
     dd 40
 
@@ -5414,7 +5097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40807
     dd 40
 
@@ -5431,7 +5113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40811
     dd 40
 
@@ -5448,7 +5129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40815
     dd 40
 
@@ -5465,7 +5145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40819
     dd 40
 
@@ -5482,7 +5161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40823
     dd 40
 
@@ -5499,7 +5177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40827
     dd 40
 
@@ -5516,7 +5193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40831
     dd 40
 
@@ -5533,7 +5209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40835
     dd 40
 
@@ -5550,7 +5225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40839
     dd 40
 
@@ -5567,7 +5241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40843
     dd 40
 
@@ -5584,7 +5257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40847
     dd 40
 
@@ -5601,7 +5273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40851
     dd 40
 
@@ -5618,7 +5289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39214
     dd 40
 
@@ -5635,7 +5305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40855
     dd 40
 
@@ -5652,7 +5321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40859
     dd 40
 
@@ -5669,7 +5337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40863
     dd 40
 
@@ -5686,7 +5353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40867
     dd 40
 
@@ -5703,7 +5369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40871
     dd 40
 
@@ -5720,7 +5385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40875
     dd 45
 
@@ -5737,7 +5401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40879
     dd 45
 
@@ -5754,7 +5417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40883
     dd 45
 
@@ -5771,7 +5433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40887
     dd 40
 
@@ -5788,7 +5449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40891
     dd 40
 
@@ -5805,7 +5465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40895
     dd 40
 
@@ -5822,7 +5481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40899
     dd 40
 
@@ -5839,7 +5497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40903
     dd 40
 
@@ -5856,7 +5513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40907
     dd 40
 
@@ -5873,7 +5529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40911
     dd 40
 
@@ -5890,7 +5545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39219
     dd 40
 
@@ -5907,7 +5561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40919
     dd 40
 
@@ -5924,7 +5577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40923
     dd 46
 
@@ -5941,7 +5593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40927
     dd 40
 
@@ -5958,7 +5609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40931
     dd 40
 
@@ -5975,7 +5625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40935
     dd 40
 
@@ -5992,7 +5641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40939
     dd 40
 
@@ -6009,7 +5657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40943
     dd 40
 
@@ -6026,7 +5673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40947
     dd 40
 
@@ -6043,7 +5689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40951
     dd 40
 
@@ -6060,7 +5705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40955
     dd 40
 
@@ -6077,7 +5721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40959
     dd 40
 
@@ -6094,7 +5737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39224
     dd 40
 
@@ -6111,7 +5753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39224
     dd 40
 
@@ -6128,7 +5769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39229
     dd 40
 
@@ -6145,7 +5785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39234
     dd 40
 
@@ -6162,7 +5801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39239
     dd 40
 
@@ -6179,7 +5817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39239
     dd 40
 
@@ -6196,7 +5833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39030
     dd 40
 
@@ -6213,7 +5849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39155
     dd 40
 
@@ -6230,7 +5865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39200
     dd 40
 
@@ -6247,7 +5881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39215
     dd 40
 
@@ -6264,7 +5897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40967
     dd 40
 
@@ -6281,7 +5913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39245
     dd 40
 
@@ -6298,7 +5929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39255
     dd 46
 
@@ -6315,7 +5945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39260
     dd 40
 
@@ -6332,7 +5961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39270
     dd 46
 
@@ -6349,7 +5977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39275
     dd 47
 
@@ -6366,7 +5993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40971
     dd 40
 
@@ -6383,7 +6009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40975
     dd 40
 
@@ -6400,7 +6025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40979
     dd 42
 
@@ -6417,7 +6041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40983
     dd 40
 
@@ -6434,7 +6057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40987
     dd 40
 
@@ -6451,7 +6073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40991
     dd 40
 
@@ -6468,7 +6089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39244
     dd 40
 
@@ -6485,7 +6105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40995
     dd 40
 
@@ -6502,7 +6121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40999
     dd 47
 
@@ -6519,7 +6137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41003
     dd 42
 
@@ -6536,7 +6153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41007
     dd 42
 
@@ -6553,7 +6169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41011
     dd 40
 
@@ -6570,7 +6185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41015
     dd 40
 
@@ -6587,7 +6201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41019
     dd 40
 
@@ -6604,7 +6217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39249
     dd 40
 
@@ -6621,7 +6233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39254
     dd 46
 
@@ -6638,7 +6249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39259
     dd 40
 
@@ -6655,7 +6265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41027
     dd 40
 
@@ -6672,7 +6281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41031
     dd 40
 
@@ -6689,7 +6297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41035
     dd 40
 
@@ -6706,7 +6313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39264
     dd 40
 
@@ -6723,7 +6329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39269
     dd 46
 
@@ -6740,7 +6345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39274
     dd 47
 
@@ -6757,7 +6361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41043
     dd 40
 
@@ -6774,7 +6377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41047
     dd 40
 
@@ -6791,7 +6393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39279
     dd 40
 
@@ -6808,7 +6409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39279
     dd 40
 
@@ -6825,7 +6425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39284
     dd 40
 
@@ -6842,7 +6441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39289
     dd 40
 
@@ -6859,7 +6457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39294
     dd 40
 
@@ -6876,7 +6473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39294
     dd 40
 
@@ -6893,7 +6489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41055
     dd 40
 
@@ -6910,7 +6505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41059
     dd 40
 
@@ -6927,7 +6521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39299
     dd 40
 
@@ -6944,7 +6537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39299
     dd 40
 
@@ -6961,7 +6553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39304
     dd 40
 
@@ -6978,7 +6569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39309
     dd 40
 
@@ -6995,7 +6585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39314
     dd 40
 
@@ -7012,7 +6601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39314
     dd 40
 
@@ -7029,7 +6617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41067
     dd 40
 
@@ -7046,7 +6633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39319
     dd 42
 
@@ -7063,7 +6649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39324
     dd 42
 
@@ -7080,7 +6665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39329
     dd 41
 
@@ -7097,7 +6681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39334
     dd 41
 
@@ -7114,7 +6697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39339
     dd 41
 
@@ -7131,7 +6713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39344
     dd 41
 
@@ -7148,7 +6729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39349
     dd 42
 
@@ -7165,7 +6745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39354
     dd 42
 
@@ -7182,7 +6761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41087
     dd 42
 
@@ -7199,7 +6777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41091
     dd 40
 
@@ -7216,7 +6793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39359
     dd 40
 
@@ -7233,7 +6809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39359
     dd 40
 
@@ -7250,7 +6825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39364
     dd 40
 
@@ -7267,7 +6841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41099
     dd 40
 
@@ -7284,7 +6857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41103
     dd 40
 
@@ -7301,7 +6873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41107
     dd 40
 
@@ -7318,7 +6889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41554
     dd 48
 
@@ -7335,7 +6905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41111
     dd 0
 
@@ -7352,7 +6921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39369
     dd 0
 
@@ -7369,7 +6937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39374
     dd 5
 
@@ -7386,7 +6953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39379
     dd 7
 
@@ -7403,7 +6969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41115
     dd 0
 
@@ -7420,7 +6985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39384
     dd 0
 
@@ -7437,7 +7001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39389
     dd 5
 
@@ -7454,7 +7017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39394
     dd 7
 
@@ -7471,7 +7033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35242
     dd 9
 
@@ -7488,7 +7049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35242
     dd 5
 
@@ -7505,7 +7065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35248
     dd 9
 
@@ -7522,7 +7081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35248
     dd 5
 
@@ -7539,7 +7097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35254
     dd 10
 
@@ -7556,7 +7113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35254
     dd 7
 
@@ -7573,7 +7129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35260
     dd 52
 
@@ -7590,7 +7145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35266
     dd 52
 
@@ -7607,7 +7161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35260
     dd 39
 
@@ -7624,7 +7177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35266
     dd 39
 
@@ -7641,7 +7193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35272
     dd 9
 
@@ -7658,7 +7209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35278
     dd 9
 
@@ -7675,7 +7225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35272
     dd 5
 
@@ -7692,7 +7241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35278
     dd 5
 
@@ -7709,7 +7257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35284
     dd 10
 
@@ -7726,7 +7273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35290
     dd 10
 
@@ -7743,7 +7289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35284
     dd 7
 
@@ -7760,7 +7305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35290
     dd 7
 
@@ -7777,7 +7321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35302
     dd 39
 
@@ -7794,7 +7337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35308
     dd 39
 
@@ -7811,7 +7353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35314
     dd 5
 
@@ -7828,7 +7369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35320
     dd 5
 
@@ -7845,7 +7385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35326
     dd 7
 
@@ -7862,7 +7401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35332
     dd 7
 
@@ -7879,7 +7417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41119
     dd 53
 
@@ -7896,7 +7433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39399
     dd 53
 
@@ -7913,7 +7449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39404
     dd 21
 
@@ -7930,7 +7465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41560
     dd 0
 
@@ -7947,7 +7481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41123
     dd 0
 
@@ -7964,7 +7497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41127
     dd 5
 
@@ -7981,7 +7513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41131
     dd 1
 
@@ -7998,7 +7529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41135
     dd 19
 
@@ -8015,7 +7545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39409
     dd 11
 
@@ -8032,7 +7561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35338
     dd 11
 
@@ -8049,7 +7577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35344
     dd 12
 
@@ -8066,7 +7593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35350
     dd 13
 
@@ -8083,7 +7609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41563
     dd 39
 
@@ -8100,7 +7625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41139
     dd 5
 
@@ -8117,7 +7641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41143
     dd 39
 
@@ -8134,7 +7657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41147
     dd 53
 
@@ -8151,7 +7673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41557
     dd 5
 
@@ -8168,7 +7689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41566
     dd 0
 
@@ -8185,7 +7705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41569
     dd 1
 
@@ -8202,7 +7721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41151
     dd 54
 
@@ -8219,7 +7737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26020
     dd 55
 
@@ -8236,7 +7753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26020
     dd 56
 
@@ -8253,7 +7769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39414
     dd 54
 
@@ -8270,7 +7785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35356
     dd 57
 
@@ -8287,7 +7801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35362
     dd 58
 
@@ -8304,7 +7817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26027
     dd 59
 
@@ -8321,7 +7833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35363
     dd 58
 
@@ -8338,7 +7849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41155
     dd 0
 
@@ -8355,7 +7865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41159
     dd 5
 
@@ -8372,7 +7881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41163
     dd 7
 
@@ -8389,7 +7897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41167
     dd 0
 
@@ -8406,7 +7913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39419
     dd 1
 
@@ -8423,7 +7929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39424
     dd 5
 
@@ -8440,7 +7945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39429
     dd 7
 
@@ -8457,7 +7961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39435
     dd 0
 
@@ -8474,7 +7977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39439
     dd 25
 
@@ -8491,7 +7993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39444
     dd 26
 
@@ -8508,7 +8009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39449
     dd 27
 
@@ -8525,7 +8025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39454
     dd 28
 
@@ -8542,7 +8041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35386
     dd 1
 
@@ -8559,7 +8057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35392
     dd 1
 
@@ -8576,7 +8073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35392
     dd 1
 
@@ -8593,7 +8089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35398
     dd 19
 
@@ -8610,7 +8105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35398
     dd 19
 
@@ -8627,7 +8121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39459
     dd 1
 
@@ -8644,7 +8137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39464
     dd 7
 
@@ -8661,7 +8153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39469
     dd 0
 
@@ -8678,7 +8169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39474
     dd 5
 
@@ -8695,7 +8185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39464
     dd 7
 
@@ -8712,7 +8201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39479
     dd 25
 
@@ -8729,7 +8217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39484
     dd 26
 
@@ -8746,7 +8233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39489
     dd 27
 
@@ -8763,7 +8249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39494
     dd 28
 
@@ -8780,7 +8265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35404
     dd 60
 
@@ -8797,7 +8281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35410
     dd 60
 
@@ -8814,7 +8297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35416
     dd 60
 
@@ -8831,7 +8313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35422
     dd 60
 
@@ -8848,7 +8329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35428
     dd 60
 
@@ -8865,7 +8345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41572
     dd 0
 
@@ -8882,7 +8361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35434
     dd 61
 
@@ -8899,7 +8377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35434
     dd 62
 
@@ -8916,7 +8393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35434
     dd 63
 
@@ -8933,7 +8409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35440
     dd 65
 
@@ -8950,7 +8425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35440
     dd 63
 
@@ -8967,7 +8441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35440
     dd 63
 
@@ -8984,7 +8457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35446
     dd 66
 
@@ -9001,7 +8473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35446
     dd 64
 
@@ -9018,7 +8489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35446
     dd 64
 
@@ -9035,7 +8505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35446
     dd 64
 
@@ -9052,7 +8521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39499
     dd 1
 
@@ -9069,7 +8537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39504
     dd 19
 
@@ -9086,7 +8553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39509
     dd 0
 
@@ -9103,7 +8569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39514
     dd 5
 
@@ -9120,7 +8585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39519
     dd 7
 
@@ -9137,7 +8601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39771
     dd 39
 
@@ -9154,7 +8617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39524
     dd 1
 
@@ -9171,7 +8633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39529
     dd 19
 
@@ -9188,7 +8649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35452
     dd 59
 
@@ -9205,7 +8665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35458
     dd 5
 
@@ -9222,7 +8681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35464
     dd 5
 
@@ -9239,7 +8697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35470
     dd 7
 
@@ -9256,7 +8713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39534
     dd 29
 
@@ -9273,7 +8729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35476
     dd 5
 
@@ -9290,7 +8745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35482
     dd 5
 
@@ -9307,7 +8761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35488
     dd 7
 
@@ -9324,7 +8777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39539
     dd 29
 
@@ -9341,7 +8793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39544
     dd 67
 
@@ -9358,7 +8809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39544
     dd 67
 
@@ -9375,7 +8825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39544
     dd 67
 
@@ -9392,7 +8841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39549
     dd 29
 
@@ -9409,7 +8857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39549
     dd 29
 
@@ -9426,7 +8873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39549
     dd 29
 
@@ -9443,7 +8889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41575
     dd 0
 
@@ -9460,7 +8905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41179
     dd 5
 
@@ -9477,7 +8921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41183
     dd 7
 
@@ -9494,7 +8937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41187
     dd 0
 
@@ -9511,7 +8953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39554
     dd 0
 
@@ -9528,7 +8969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39559
     dd 1
 
@@ -9545,7 +8985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39564
     dd 5
 
@@ -9562,7 +9001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39569
     dd 7
 
@@ -9579,7 +9017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39574
     dd 0
 
@@ -9596,7 +9033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39579
     dd 1
 
@@ -9613,7 +9049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39584
     dd 5
 
@@ -9630,7 +9065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39589
     dd 7
 
@@ -9647,7 +9081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39594
     dd 0
 
@@ -9664,7 +9097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39599
     dd 1
 
@@ -9681,7 +9113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39604
     dd 5
 
@@ -9698,7 +9129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39609
     dd 7
 
@@ -9715,7 +9145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39594
     dd 0
 
@@ -9732,7 +9161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39599
     dd 1
 
@@ -9749,7 +9177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39604
     dd 5
 
@@ -9766,7 +9193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39609
     dd 7
 
@@ -9783,7 +9209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39574
     dd 0
 
@@ -9800,7 +9225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39579
     dd 1
 
@@ -9817,7 +9241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39584
     dd 5
 
@@ -9834,7 +9257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39589
     dd 7
 
@@ -9851,7 +9273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35494
     dd 61
 
@@ -9868,7 +9289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35494
     dd 62
 
@@ -9885,7 +9305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35494
     dd 63
 
@@ -9902,7 +9321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35500
     dd 65
 
@@ -9919,7 +9337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35500
     dd 63
 
@@ -9936,7 +9353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35500
     dd 63
 
@@ -9953,7 +9369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35506
     dd 66
 
@@ -9970,7 +9385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35506
     dd 64
 
@@ -9987,7 +9401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35506
     dd 64
 
@@ -10004,7 +9417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35506
     dd 64
 
@@ -10021,7 +9433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35512
     dd 5
 
@@ -10038,7 +9449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35518
     dd 5
 
@@ -10055,7 +9465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35524
     dd 7
 
@@ -10072,7 +9481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39614
     dd 67
 
@@ -10089,7 +9497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39614
     dd 67
 
@@ -10106,7 +9513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39614
     dd 67
 
@@ -10123,7 +9529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35530
     dd 59
 
@@ -10140,7 +9545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39619
     dd 69
 
@@ -10157,7 +9561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39624
     dd 71
 
@@ -10174,7 +9577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39645
     dd 72
 
@@ -10191,7 +9593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39629
     dd 0
 
@@ -10208,7 +9609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39634
     dd 5
 
@@ -10225,7 +9625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39644
     dd 7
 
@@ -10242,7 +9641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39665
     dd 72
 
@@ -10259,7 +9657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39654
     dd 0
 
@@ -10276,7 +9673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39659
     dd 5
 
@@ -10293,7 +9689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39664
     dd 7
 
@@ -10310,7 +9705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41191
     dd 8
 
@@ -10327,7 +9721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39669
     dd 8
 
@@ -10344,7 +9737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39674
     dd 9
 
@@ -10361,7 +9753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39679
     dd 10
 
@@ -10378,7 +9769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41195
     dd 76
 
@@ -10395,7 +9785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39684
     dd 76
 
@@ -10412,7 +9801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39689
     dd 77
 
@@ -10429,7 +9817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39694
     dd 78
 
@@ -10446,7 +9833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35536
     dd 79
 
@@ -10463,7 +9849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35542
     dd 80
 
@@ -10480,7 +9865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35548
     dd 79
 
@@ -10497,7 +9881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35554
     dd 80
 
@@ -10514,7 +9897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35561
     dd 79
 
@@ -10531,7 +9913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35560
     dd 80
 
@@ -10548,7 +9929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35567
     dd 79
 
@@ -10565,7 +9945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35566
     dd 80
 
@@ -10582,7 +9961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39709
     dd 8
 
@@ -10599,7 +9977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39710
     dd 0
 
@@ -10616,7 +9993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35572
     dd 8
 
@@ -10633,7 +10009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35573
     dd 0
 
@@ -10650,7 +10025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35578
     dd 9
 
@@ -10667,7 +10041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35579
     dd 5
 
@@ -10684,7 +10057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35584
     dd 10
 
@@ -10701,7 +10073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35585
     dd 7
 
@@ -10718,7 +10089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41199
     dd 8
 
@@ -10735,7 +10105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41199
     dd 0
 
@@ -10752,7 +10121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39714
     dd 8
 
@@ -10769,7 +10137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39714
     dd 0
 
@@ -10786,7 +10153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39719
     dd 9
 
@@ -10803,7 +10169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39719
     dd 5
 
@@ -10820,7 +10185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39724
     dd 10
 
@@ -10837,7 +10201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39724
     dd 7
 
@@ -10854,7 +10217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41203
     dd 8
 
@@ -10871,7 +10233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39729
     dd 8
 
@@ -10888,7 +10249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39734
     dd 9
 
@@ -10905,7 +10265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39744
     dd 10
 
@@ -10922,7 +10281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35590
     dd 8
 
@@ -10939,7 +10297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26062
     dd 8
 
@@ -10956,7 +10313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26069
     dd 9
 
@@ -10973,7 +10329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26076
     dd 10
 
@@ -10990,7 +10345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26076
     dd 7
 
@@ -11007,7 +10361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35590
     dd 8
 
@@ -11024,7 +10377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26062
     dd 8
 
@@ -11041,7 +10393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26069
     dd 9
 
@@ -11058,7 +10409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35596
     dd 82
 
@@ -11075,7 +10425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35602
     dd 82
 
@@ -11092,7 +10441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35608
     dd 84
 
@@ -11109,7 +10457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35614
     dd 84
 
@@ -11126,7 +10473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26083
     dd 85
 
@@ -11143,7 +10489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26090
     dd 85
 
@@ -11160,7 +10505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8473
     dd 0
 
@@ -11177,7 +10521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41207
     dd 5
 
@@ -11194,7 +10537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41211
     dd 7
 
@@ -11211,7 +10553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41215
     dd 0
 
@@ -11228,7 +10569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35620
     dd 21
 
@@ -11245,7 +10585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35620
     dd 5
 
@@ -11262,7 +10601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35626
     dd 5
 
@@ -11279,7 +10617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35632
     dd 5
 
@@ -11296,7 +10633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35638
     dd 7
 
@@ -11313,7 +10649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35644
     dd 7
 
@@ -11330,7 +10665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39749
     dd 7
 
@@ -11347,7 +10681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35650
     dd 21
 
@@ -11364,7 +10697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35650
     dd 5
 
@@ -11381,7 +10713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35656
     dd 5
 
@@ -11398,7 +10729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35662
     dd 5
 
@@ -11415,7 +10745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35668
     dd 7
 
@@ -11432,7 +10761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35674
     dd 7
 
@@ -11449,7 +10777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41219
     dd 0
 
@@ -11466,7 +10793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39754
     dd 0
 
@@ -11483,7 +10809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39759
     dd 5
 
@@ -11500,7 +10825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39764
     dd 7
 
@@ -11517,7 +10841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39769
     dd 69
 
@@ -11534,7 +10857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39774
     dd 71
 
@@ -11551,7 +10873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39779
     dd 11
 
@@ -11568,7 +10889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35680
     dd 11
 
@@ -11585,7 +10905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35686
     dd 12
 
@@ -11602,7 +10921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35692
     dd 13
 
@@ -11619,7 +10937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39784
     dd 0
 
@@ -11636,7 +10953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35698
     dd 86
 
@@ -11653,7 +10969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35704
     dd 86
 
@@ -11670,7 +10985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35710
     dd 7
 
@@ -11687,7 +11001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39789
     dd 11
 
@@ -11704,7 +11017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35716
     dd 11
 
@@ -11721,7 +11033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35722
     dd 12
 
@@ -11738,7 +11049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35728
     dd 13
 
@@ -11755,7 +11065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39794
     dd 3
 
@@ -11772,7 +11081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39795
     dd 0
 
@@ -11789,7 +11097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35734
     dd 3
 
@@ -11806,7 +11113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35735
     dd 0
 
@@ -11823,7 +11129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35740
     dd 4
 
@@ -11840,7 +11145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35741
     dd 5
 
@@ -11857,7 +11161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35746
     dd 6
 
@@ -11874,7 +11177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35747
     dd 7
 
@@ -11891,7 +11193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33499
     dd 8
 
@@ -11908,7 +11209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33499
     dd 0
 
@@ -11925,7 +11225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39799
     dd 8
 
@@ -11942,7 +11241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39799
     dd 0
 
@@ -11959,7 +11257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39804
     dd 9
 
@@ -11976,7 +11273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39804
     dd 5
 
@@ -11993,7 +11289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39809
     dd 10
 
@@ -12010,7 +11305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39809
     dd 7
 
@@ -12027,7 +11321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26097
     dd 11
 
@@ -12044,7 +11337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26104
     dd 12
 
@@ -12061,7 +11353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26111
     dd 13
 
@@ -12078,7 +11369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41223
     dd 8
 
@@ -12095,7 +11385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39814
     dd 8
 
@@ -12112,7 +11401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39819
     dd 9
 
@@ -12129,7 +11417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39824
     dd 10
 
@@ -12146,7 +11433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35752
     dd 3
 
@@ -12163,7 +11449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26118
     dd 3
 
@@ -12180,7 +11465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26125
     dd 4
 
@@ -12197,7 +11481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26132
     dd 6
 
@@ -12214,7 +11497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35752
     dd 3
 
@@ -12231,7 +11513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26118
     dd 3
 
@@ -12248,7 +11529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26125
     dd 4
 
@@ -12265,7 +11545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41227
     dd 53
 
@@ -12282,7 +11561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39829
     dd 53
 
@@ -12299,7 +11577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39834
     dd 21
 
@@ -12316,7 +11593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40526
     dd 0
 
@@ -12333,7 +11609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41231
     dd 0
 
@@ -12350,7 +11625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41235
     dd 5
 
@@ -12367,7 +11641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41578
     dd 39
 
@@ -12384,7 +11657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41239
     dd 5
 
@@ -12401,7 +11673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41243
     dd 39
 
@@ -12418,7 +11689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26139
     dd 84
 
@@ -12435,7 +11705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26146
     dd 84
 
@@ -12452,7 +11721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26153
     dd 84
 
@@ -12469,7 +11737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26160
     dd 84
 
@@ -12486,7 +11753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26167
     dd 84
 
@@ -12503,7 +11769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26174
     dd 84
 
@@ -12520,7 +11785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35764
     dd 87
 
@@ -12537,7 +11801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26181
     dd 84
 
@@ -12554,7 +11817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26188
     dd 84
 
@@ -12571,7 +11833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26195
     dd 84
 
@@ -12588,7 +11849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26202
     dd 84
 
@@ -12605,7 +11865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26209
     dd 84
 
@@ -12622,7 +11881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26216
     dd 84
 
@@ -12639,7 +11897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41247
     dd 0
 
@@ -12656,7 +11913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35770
     dd 87
 
@@ -12673,7 +11929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8412
     dd 88
 
@@ -12690,7 +11945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26223
     dd 84
 
@@ -12707,7 +11961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26230
     dd 84
 
@@ -12724,7 +11977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26237
     dd 84
 
@@ -12741,7 +11993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26244
     dd 84
 
@@ -12758,7 +12009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26251
     dd 84
 
@@ -12775,7 +12025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26258
     dd 84
 
@@ -12792,7 +12041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36971
     dd 89
 
@@ -12809,7 +12057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8420
     dd 88
 
@@ -12826,7 +12073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8428
     dd 88
 
@@ -12843,7 +12089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8436
     dd 88
 
@@ -12860,7 +12105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8444
     dd 88
 
@@ -12877,7 +12121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8452
     dd 88
 
@@ -12894,7 +12137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8460
     dd 88
 
@@ -12911,7 +12153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8468
     dd 88
 
@@ -12928,7 +12169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8476
     dd 88
 
@@ -12945,7 +12185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8484
     dd 88
 
@@ -12962,7 +12201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8492
     dd 88
 
@@ -12979,7 +12217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8500
     dd 88
 
@@ -12996,7 +12233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8508
     dd 88
 
@@ -13013,7 +12249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8516
     dd 88
 
@@ -13030,7 +12265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8524
     dd 88
 
@@ -13047,7 +12281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8532
     dd 88
 
@@ -13064,7 +12297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8540
     dd 88
 
@@ -13081,7 +12313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8548
     dd 88
 
@@ -13098,7 +12329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37067
     dd 89
 
@@ -13115,7 +12345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26265
     dd 84
 
@@ -13132,7 +12361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35776
     dd 87
 
@@ -13149,7 +12377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35782
     dd 87
 
@@ -13166,7 +12393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8556
     dd 88
 
@@ -13183,7 +12409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35788
     dd 87
 
@@ -13200,7 +12425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26272
     dd 84
 
@@ -13217,7 +12441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26279
     dd 84
 
@@ -13234,7 +12457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37199
     dd 87
 
@@ -13251,7 +12473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37055
     dd 87
 
@@ -13268,7 +12489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37037
     dd 87
 
@@ -13285,7 +12505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36959
     dd 87
 
@@ -13302,7 +12521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41251
     dd 0
 
@@ -13319,7 +12537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41255
     dd 19
 
@@ -13336,7 +12553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41259
     dd 7
 
@@ -13353,7 +12569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39839
     dd 0
 
@@ -13370,7 +12585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39844
     dd 19
 
@@ -13387,7 +12601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39849
     dd 7
 
@@ -13404,7 +12617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8849
     dd 1
 
@@ -13421,7 +12633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3621
     dd 1
 
@@ -13438,7 +12649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3765
     dd 1
 
@@ -13455,7 +12665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41263
     dd 5
 
@@ -13472,7 +12681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41267
     dd 5
 
@@ -13489,7 +12697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41271
     dd 18
 
@@ -13506,7 +12713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41275
     dd 19
 
@@ -13523,7 +12729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41279
     dd 18
 
@@ -13540,7 +12745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41283
     dd 0
 
@@ -13557,7 +12761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41287
     dd 19
 
@@ -13574,7 +12777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41287
     dd 7
 
@@ -13591,7 +12793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41291
     dd 0
 
@@ -13608,7 +12809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26286
     dd 84
 
@@ -13625,7 +12825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39854
     dd 88
 
@@ -13642,7 +12841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39859
     dd 88
 
@@ -13659,7 +12857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26293
     dd 84
 
@@ -13676,7 +12873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26300
     dd 38
 
@@ -13693,7 +12889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26307
     dd 84
 
@@ -13710,7 +12905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26314
     dd 38
 
@@ -13727,7 +12921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26321
     dd 84
 
@@ -13744,7 +12937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26328
     dd 38
 
@@ -13761,7 +12953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26335
     dd 84
 
@@ -13778,7 +12969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26342
     dd 38
 
@@ -13795,7 +12985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26349
     dd 84
 
@@ -13812,7 +13001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26356
     dd 38
 
@@ -13829,7 +13017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26363
     dd 84
 
@@ -13846,7 +13033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26370
     dd 38
 
@@ -13863,7 +13049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26377
     dd 84
 
@@ -13880,7 +13065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26384
     dd 38
 
@@ -13897,7 +13081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26391
     dd 84
 
@@ -13914,7 +13097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26398
     dd 38
 
@@ -13931,7 +13113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26405
     dd 84
 
@@ -13948,7 +13129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26412
     dd 84
 
@@ -13965,7 +13145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26419
     dd 84
 
@@ -13982,7 +13161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35794
     dd 87
 
@@ -13999,7 +13177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26426
     dd 84
 
@@ -14016,7 +13193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26433
     dd 84
 
@@ -14033,7 +13209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26440
     dd 84
 
@@ -14050,7 +13225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26447
     dd 84
 
@@ -14067,7 +13241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26454
     dd 84
 
@@ -14084,7 +13257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26461
     dd 84
 
@@ -14101,7 +13273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26468
     dd 84
 
@@ -14118,7 +13289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26475
     dd 84
 
@@ -14135,7 +13305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26482
     dd 84
 
@@ -14152,7 +13321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26489
     dd 84
 
@@ -14169,7 +13337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41295
     dd 0
 
@@ -14186,7 +13353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41299
     dd 19
 
@@ -14203,7 +13369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41303
     dd 7
 
@@ -14220,7 +13385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39864
     dd 0
 
@@ -14237,7 +13401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39869
     dd 19
 
@@ -14254,7 +13417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39874
     dd 7
 
@@ -14271,7 +13433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8817
     dd 1
 
@@ -14288,7 +13449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3477
     dd 1
 
@@ -14305,7 +13465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3603
     dd 1
 
@@ -14322,7 +13481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3747
     dd 1
 
@@ -14339,7 +13497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41307
     dd 5
 
@@ -14356,7 +13513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41311
     dd 5
 
@@ -14373,7 +13529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39900
     dd 39
 
@@ -14390,7 +13545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39884
     dd 91
 
@@ -14407,7 +13561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39894
     dd 92
 
@@ -14424,7 +13577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39894
     dd 93
 
@@ -14441,7 +13593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39904
     dd 94
 
@@ -14458,7 +13609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39904
     dd 94
 
@@ -14475,7 +13625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41315
     dd 18
 
@@ -14492,7 +13641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41319
     dd 19
 
@@ -14509,7 +13657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41323
     dd 18
 
@@ -14526,7 +13673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41327
     dd 0
 
@@ -14543,7 +13689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41331
     dd 19
 
@@ -14560,7 +13705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41331
     dd 7
 
@@ -14577,7 +13721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41335
     dd 0
 
@@ -14594,7 +13737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26496
     dd 84
 
@@ -14611,7 +13753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41339
     dd 0
 
@@ -14628,7 +13769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41343
     dd 0
 
@@ -14645,7 +13785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39909
     dd 39
 
@@ -14662,7 +13801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39914
     dd 0
 
@@ -14679,7 +13817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39919
     dd 0
 
@@ -14696,7 +13833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35800
     dd 39
 
@@ -14713,7 +13849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39924
     dd 5
 
@@ -14730,7 +13865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39929
     dd 5
 
@@ -14747,7 +13881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35806
     dd 5
 
@@ -14764,7 +13897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39934
     dd 7
 
@@ -14781,7 +13913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39939
     dd 7
 
@@ -14798,7 +13929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35812
     dd 7
 
@@ -14815,7 +13945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41347
     dd 0
 
@@ -14832,7 +13961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41351
     dd 0
 
@@ -14849,7 +13977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39944
     dd 39
 
@@ -14866,7 +13993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39949
     dd 0
 
@@ -14883,7 +14009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39954
     dd 0
 
@@ -14900,7 +14025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35818
     dd 39
 
@@ -14917,7 +14041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39959
     dd 5
 
@@ -14934,7 +14057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39964
     dd 5
 
@@ -14951,7 +14073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35824
     dd 5
 
@@ -14968,7 +14089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39969
     dd 7
 
@@ -14985,7 +14105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39974
     dd 7
 
@@ -15002,7 +14121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35830
     dd 7
 
@@ -15019,7 +14137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35836
     dd 95
 
@@ -15036,7 +14153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41355
     dd 96
 
@@ -15053,7 +14169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41359
     dd 86
 
@@ -15070,7 +14185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41363
     dd 32
 
@@ -15087,7 +14201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39979
     dd 97
 
@@ -15104,7 +14217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41384
     dd 25
 
@@ -15121,7 +14233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40005
     dd 98
 
@@ -15138,7 +14249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41388
     dd 0
 
@@ -15155,7 +14265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40010
     dd 72
 
@@ -15172,7 +14281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41384
     dd 25
 
@@ -15189,7 +14297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40005
     dd 98
 
@@ -15206,7 +14313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41367
     dd 25
 
@@ -15223,7 +14329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40005
     dd 98
 
@@ -15240,7 +14345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41371
     dd 0
 
@@ -15257,7 +14361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39984
     dd 72
 
@@ -15274,7 +14377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41367
     dd 25
 
@@ -15291,7 +14393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39989
     dd 98
 
@@ -15308,7 +14409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41375
     dd 26
 
@@ -15325,7 +14425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39994
     dd 99
 
@@ -15342,7 +14441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41379
     dd 0
 
@@ -15359,7 +14457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39999
     dd 72
 
@@ -15376,7 +14473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41375
     dd 26
 
@@ -15393,7 +14489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39994
     dd 99
 
@@ -15410,7 +14505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41383
     dd 28
 
@@ -15427,7 +14521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40004
     dd 100
 
@@ -15444,7 +14537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41387
     dd 7
 
@@ -15461,7 +14553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40009
     dd 101
 
@@ -15478,7 +14569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41383
     dd 28
 
@@ -15495,7 +14585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40004
     dd 100
 
@@ -15512,7 +14601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41391
     dd 0
 
@@ -15529,7 +14617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41395
     dd 0
 
@@ -15546,7 +14633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40014
     dd 39
 
@@ -15563,7 +14649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40019
     dd 0
 
@@ -15580,7 +14665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40024
     dd 0
 
@@ -15597,7 +14681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35842
     dd 39
 
@@ -15614,7 +14697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40029
     dd 5
 
@@ -15631,7 +14713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40034
     dd 5
 
@@ -15648,7 +14729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35848
     dd 5
 
@@ -15665,7 +14745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40039
     dd 7
 
@@ -15682,7 +14761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40044
     dd 7
 
@@ -15699,7 +14777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35854
     dd 7
 
@@ -15716,7 +14793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41399
     dd 0
 
@@ -15733,7 +14809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41403
     dd 0
 
@@ -15750,7 +14825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40049
     dd 39
 
@@ -15767,7 +14841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40054
     dd 0
 
@@ -15784,7 +14857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40059
     dd 0
 
@@ -15801,7 +14873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35860
     dd 39
 
@@ -15818,7 +14889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40064
     dd 5
 
@@ -15835,7 +14905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40069
     dd 5
 
@@ -15852,7 +14921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35866
     dd 5
 
@@ -15869,7 +14937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40074
     dd 7
 
@@ -15886,7 +14953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40079
     dd 7
 
@@ -15903,7 +14969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35872
     dd 7
 
@@ -15920,7 +14985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37319
     dd 102
 
@@ -15937,7 +15001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40084
     dd 102
 
@@ -15954,7 +15017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41407
     dd 103
 
@@ -15971,7 +15033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40089
     dd 102
 
@@ -15988,7 +15049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8441
     dd 0
 
@@ -16005,7 +15065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40516
     dd 104
 
@@ -16022,7 +15081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41419
     dd 0
 
@@ -16039,7 +15097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41423
     dd 0
 
@@ -16056,7 +15113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40129
     dd 39
 
@@ -16073,7 +15129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40134
     dd 0
 
@@ -16090,7 +15145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40139
     dd 0
 
@@ -16107,7 +15161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35896
     dd 39
 
@@ -16124,7 +15177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40144
     dd 5
 
@@ -16141,7 +15193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40149
     dd 5
 
@@ -16158,7 +15209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35902
     dd 5
 
@@ -16175,7 +15225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40154
     dd 7
 
@@ -16192,7 +15241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40159
     dd 7
 
@@ -16209,7 +15257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35908
     dd 7
 
@@ -16226,7 +15273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40164
     dd 3
 
@@ -16243,7 +15289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40165
     dd 0
 
@@ -16260,7 +15305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35914
     dd 3
 
@@ -16277,7 +15321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35915
     dd 0
 
@@ -16294,7 +15337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35920
     dd 4
 
@@ -16311,7 +15353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35921
     dd 5
 
@@ -16328,7 +15369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35926
     dd 6
 
@@ -16345,7 +15385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35927
     dd 7
 
@@ -16362,7 +15401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28088
     dd 8
 
@@ -16379,7 +15417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28088
     dd 0
 
@@ -16396,7 +15433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40169
     dd 8
 
@@ -16413,7 +15449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40169
     dd 0
 
@@ -16430,7 +15465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40174
     dd 9
 
@@ -16447,7 +15481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40174
     dd 5
 
@@ -16464,7 +15497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40179
     dd 10
 
@@ -16481,7 +15513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40179
     dd 7
 
@@ -16498,7 +15529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26503
     dd 11
 
@@ -16515,7 +15545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26510
     dd 12
 
@@ -16532,7 +15561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26517
     dd 13
 
@@ -16549,7 +15577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41427
     dd 8
 
@@ -16566,7 +15593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40184
     dd 8
 
@@ -16583,7 +15609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40189
     dd 9
 
@@ -16600,7 +15625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40194
     dd 10
 
@@ -16617,7 +15641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35932
     dd 3
 
@@ -16634,7 +15657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26524
     dd 3
 
@@ -16651,7 +15673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26531
     dd 4
 
@@ -16668,7 +15689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26538
     dd 6
 
@@ -16685,7 +15705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35932
     dd 3
 
@@ -16702,7 +15721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26524
     dd 3
 
@@ -16719,7 +15737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26531
     dd 4
 
@@ -16736,7 +15753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41431
     dd 0
 
@@ -16753,7 +15769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40199
     dd 5
 
@@ -16770,7 +15785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40204
     dd 7
 
@@ -16787,7 +15801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40209
     dd 0
 
@@ -16804,7 +15817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35944
     dd 59
 
@@ -16821,7 +15833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40214
     dd 105
 
@@ -16838,7 +15849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41411
     dd 0
 
@@ -16855,7 +15865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41415
     dd 0
 
@@ -16872,7 +15881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40094
     dd 39
 
@@ -16889,7 +15897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40099
     dd 0
 
@@ -16906,7 +15913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40104
     dd 0
 
@@ -16923,7 +15929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35878
     dd 39
 
@@ -16940,7 +15945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40109
     dd 5
 
@@ -16957,7 +15961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40114
     dd 5
 
@@ -16974,7 +15977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35884
     dd 5
 
@@ -16991,7 +15993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40119
     dd 7
 
@@ -17008,7 +16009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40124
     dd 7
 
@@ -17025,7 +16025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35890
     dd 7
 
@@ -17042,7 +16041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26545
     dd 106
 
@@ -17059,7 +16057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26545
     dd 106
 
@@ -17076,7 +16073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26552
     dd 106
 
@@ -17093,7 +16089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26552
     dd 106
 
@@ -17110,7 +16105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26559
     dd 107
 
@@ -17127,7 +16121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26559
     dd 107
 
@@ -17144,7 +16137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35950
     dd 9
 
@@ -17161,7 +16153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35950
     dd 5
 
@@ -17178,7 +16169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35956
     dd 9
 
@@ -17195,7 +16185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35956
     dd 5
 
@@ -17212,7 +16201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35962
     dd 10
 
@@ -17229,7 +16217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35962
     dd 7
 
@@ -17246,7 +16233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41435
     dd 0
 
@@ -17263,7 +16249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41439
     dd 0
 
@@ -17280,7 +16265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40219
     dd 39
 
@@ -17297,7 +16281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40224
     dd 0
 
@@ -17314,7 +16297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40229
     dd 0
 
@@ -17331,7 +16313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35968
     dd 39
 
@@ -17348,7 +16329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40234
     dd 5
 
@@ -17365,7 +16345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40239
     dd 5
 
@@ -17382,7 +16361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35974
     dd 5
 
@@ -17399,7 +16377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40244
     dd 7
 
@@ -17416,7 +16393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40249
     dd 7
 
@@ -17433,7 +16409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35980
     dd 7
 
@@ -17450,7 +16425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26566
     dd 106
 
@@ -17467,7 +16441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26566
     dd 106
 
@@ -17484,7 +16457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26573
     dd 106
 
@@ -17501,7 +16473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26573
     dd 106
 
@@ -17518,7 +16489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26580
     dd 107
 
@@ -17535,7 +16505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26580
     dd 107
 
@@ -17552,7 +16521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35986
     dd 9
 
@@ -17569,7 +16537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35986
     dd 5
 
@@ -17586,7 +16553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35992
     dd 9
 
@@ -17603,7 +16569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35992
     dd 5
 
@@ -17620,7 +16585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35998
     dd 10
 
@@ -17637,7 +16601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35998
     dd 7
 
@@ -17654,7 +16617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40254
     dd 105
 
@@ -17671,7 +16633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36023
     dd 105
 
@@ -17688,7 +16649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36023
     dd 105
 
@@ -17705,7 +16665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36004
     dd 105
 
@@ -17722,7 +16681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36010
     dd 5
 
@@ -17739,7 +16697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36022
     dd 7
 
@@ -17756,7 +16713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40259
     dd 7
 
@@ -17773,7 +16729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41557
     dd 108
 
@@ -17790,7 +16745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36041
     dd 105
 
@@ -17807,7 +16761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36041
     dd 105
 
@@ -17824,7 +16777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36028
     dd 105
 
@@ -17841,7 +16793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36034
     dd 5
 
@@ -17858,7 +16809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36040
     dd 7
 
@@ -17875,7 +16825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39981
     dd 0
 
@@ -17892,7 +16841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41581
     dd 0
 
@@ -17909,7 +16857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+39776
     dd 0
 
@@ -17926,7 +16873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8545
     dd 0
 
@@ -17943,7 +16889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41451
     dd 5
 
@@ -17960,7 +16905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41455
     dd 7
 
@@ -17977,7 +16921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41459
     dd 0
 
@@ -17994,7 +16937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36059
     dd 62
 
@@ -18011,7 +16953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36059
     dd 62
 
@@ -18028,7 +16969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36046
     dd 62
 
@@ -18045,7 +16985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36052
     dd 63
 
@@ -18062,7 +17001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36058
     dd 7
 
@@ -18079,7 +17017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40264
     dd 3
 
@@ -18096,7 +17033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40265
     dd 0
 
@@ -18113,7 +17049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36064
     dd 3
 
@@ -18130,7 +17065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36065
     dd 0
 
@@ -18147,7 +17081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36070
     dd 4
 
@@ -18164,7 +17097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36071
     dd 5
 
@@ -18181,7 +17113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36076
     dd 6
 
@@ -18198,7 +17129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36077
     dd 7
 
@@ -18215,7 +17145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33856
     dd 8
 
@@ -18232,7 +17161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33856
     dd 0
 
@@ -18249,7 +17177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40269
     dd 8
 
@@ -18266,7 +17193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40269
     dd 0
 
@@ -18283,7 +17209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40274
     dd 9
 
@@ -18300,7 +17225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40274
     dd 5
 
@@ -18317,7 +17241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40279
     dd 10
 
@@ -18334,7 +17257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40279
     dd 7
 
@@ -18351,7 +17273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26587
     dd 11
 
@@ -18368,7 +17289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26594
     dd 12
 
@@ -18385,7 +17305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26601
     dd 13
 
@@ -18402,7 +17321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41463
     dd 8
 
@@ -18419,7 +17337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40284
     dd 8
 
@@ -18436,7 +17353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40289
     dd 9
 
@@ -18453,7 +17369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40294
     dd 10
 
@@ -18470,7 +17385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36082
     dd 3
 
@@ -18487,7 +17401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26608
     dd 3
 
@@ -18504,7 +17417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26615
     dd 4
 
@@ -18521,7 +17433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26622
     dd 6
 
@@ -18538,7 +17449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36082
     dd 3
 
@@ -18555,7 +17465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26608
     dd 3
 
@@ -18572,7 +17481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26615
     dd 4
 
@@ -18589,7 +17497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27177
     dd 102
 
@@ -18606,7 +17513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40304
     dd 102
 
@@ -18623,7 +17529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40309
     dd 7
 
@@ -18640,7 +17545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41175
     dd 110
 
@@ -18657,7 +17561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41467
     dd 86
 
@@ -18674,7 +17577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41471
     dd 111
 
@@ -18691,7 +17593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41171
     dd 112
 
@@ -18708,7 +17609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41475
     dd 8
 
@@ -18725,7 +17625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41475
     dd 0
 
@@ -18742,7 +17641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40314
     dd 8
 
@@ -18759,7 +17657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40314
     dd 0
 
@@ -18776,7 +17673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40319
     dd 9
 
@@ -18793,7 +17689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40319
     dd 5
 
@@ -18810,7 +17705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40324
     dd 10
 
@@ -18827,7 +17721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40324
     dd 7
 
@@ -18844,7 +17737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41479
     dd 8
 
@@ -18861,7 +17753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40329
     dd 8
 
@@ -18878,7 +17769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40334
     dd 9
 
@@ -18895,7 +17785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40339
     dd 10
 
@@ -18912,7 +17801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41483
     dd 8
 
@@ -18929,7 +17817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40344
     dd 8
 
@@ -18946,7 +17833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40349
     dd 9
 
@@ -18963,7 +17849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40354
     dd 10
 
@@ -18980,7 +17865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40359
     dd 8
 
@@ -18997,7 +17881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36094
     dd 8
 
@@ -19014,7 +17897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36100
     dd 9
 
@@ -19031,7 +17913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36106
     dd 10
 
@@ -19048,7 +17929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40359
     dd 8
 
@@ -19065,7 +17945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36094
     dd 8
 
@@ -19082,7 +17961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36100
     dd 9
 
@@ -19099,7 +17977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41487
     dd 113
 
@@ -19116,7 +17993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36112
     dd 39
 
@@ -19133,7 +18009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36118
     dd 39
 
@@ -19150,7 +18025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36124
     dd 39
 
@@ -19167,7 +18041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36130
     dd 39
 
@@ -19184,7 +18057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36136
     dd 39
 
@@ -19201,7 +18073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36142
     dd 39
 
@@ -19218,7 +18089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41495
     dd 39
 
@@ -19235,7 +18105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40364
     dd 62
 
@@ -19252,7 +18121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40364
     dd 62
 
@@ -19269,7 +18137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40364
     dd 62
 
@@ -19286,7 +18153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40369
     dd 62
 
@@ -19303,7 +18169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40369
     dd 62
 
@@ -19320,7 +18185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40369
     dd 62
 
@@ -19337,7 +18201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41073
     dd 0
 
@@ -19354,7 +18217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40535
     dd 54
 
@@ -19371,7 +18233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36160
     dd 95
 
@@ -19388,7 +18249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41499
     dd 96
 
@@ -19405,7 +18265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36166
     dd 115
 
@@ -19422,7 +18281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36167
     dd 20
 
@@ -19439,7 +18297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26657
     dd 115
 
@@ -19456,7 +18313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26658
     dd 20
 
@@ -19473,7 +18329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26664
     dd 115
 
@@ -19490,7 +18345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26665
     dd 20
 
@@ -19507,7 +18361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26671
     dd 6
 
@@ -19524,7 +18377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26672
     dd 7
 
@@ -19541,7 +18393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41503
     dd 0
 
@@ -19558,7 +18409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41507
     dd 5
 
@@ -19575,7 +18425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41511
     dd 7
 
@@ -19592,7 +18441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41515
     dd 0
 
@@ -19609,7 +18457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41519
     dd 5
 
@@ -19626,7 +18473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41523
     dd 7
 
@@ -19643,7 +18489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41527
     dd 19
 
@@ -19660,7 +18505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40374
     dd 3
 
@@ -19677,7 +18521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40375
     dd 0
 
@@ -19694,7 +18537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36184
     dd 3
 
@@ -19711,7 +18553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36185
     dd 0
 
@@ -19728,7 +18569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36190
     dd 4
 
@@ -19745,7 +18585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36191
     dd 5
 
@@ -19762,7 +18601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36196
     dd 6
 
@@ -19779,7 +18617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36197
     dd 7
 
@@ -19796,7 +18633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40379
     dd 3
 
@@ -19813,7 +18649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40380
     dd 0
 
@@ -19830,7 +18665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36202
     dd 3
 
@@ -19847,7 +18681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36203
     dd 0
 
@@ -19864,7 +18697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36208
     dd 4
 
@@ -19881,7 +18713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36209
     dd 5
 
@@ -19898,7 +18729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36214
     dd 6
 
@@ -19915,7 +18745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36215
     dd 7
 
@@ -19932,7 +18761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37591
     dd 0
 
@@ -19949,7 +18777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37591
     dd 0
 
@@ -19966,7 +18793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40384
     dd 3
 
@@ -19983,7 +18809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40385
     dd 0
 
@@ -20000,7 +18825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36220
     dd 3
 
@@ -20017,7 +18841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36221
     dd 0
 
@@ -20034,7 +18857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36226
     dd 4
 
@@ -20051,7 +18873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36227
     dd 5
 
@@ -20068,7 +18889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36232
     dd 6
 
@@ -20085,7 +18905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36233
     dd 7
 
@@ -20102,7 +18921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33296
     dd 8
 
@@ -20119,7 +18937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33296
     dd 0
 
@@ -20136,7 +18953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40389
     dd 8
 
@@ -20153,7 +18969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40389
     dd 0
 
@@ -20170,7 +18985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40394
     dd 9
 
@@ -20187,7 +19001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40394
     dd 5
 
@@ -20204,7 +19017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40399
     dd 10
 
@@ -20221,7 +19033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40399
     dd 7
 
@@ -20238,7 +19049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26678
     dd 11
 
@@ -20255,7 +19065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26685
     dd 12
 
@@ -20272,7 +19081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26692
     dd 13
 
@@ -20289,7 +19097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41531
     dd 8
 
@@ -20306,7 +19113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40404
     dd 8
 
@@ -20323,7 +19129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40409
     dd 9
 
@@ -20340,7 +19145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40414
     dd 10
 
@@ -20357,7 +19161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36238
     dd 3
 
@@ -20374,7 +19177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26699
     dd 3
 
@@ -20391,7 +19193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26706
     dd 4
 
@@ -20408,7 +19209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26713
     dd 6
 
@@ -20425,7 +19225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36238
     dd 3
 
@@ -20442,7 +19241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26699
     dd 3
 
@@ -20459,7 +19257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26706
     dd 4
 
@@ -20476,7 +19273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26720
     dd 118
 
@@ -20493,7 +19289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26720
     dd 86
 
@@ -20510,7 +19305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26727
     dd 118
 
@@ -20527,7 +19321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26727
     dd 86
 
@@ -20544,7 +19337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26734
     dd 10
 
@@ -20561,7 +19353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26734
     dd 7
 
@@ -20578,7 +19369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26741
     dd 119
 
@@ -20595,7 +19385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26748
     dd 27
 
@@ -20612,7 +19401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26755
     dd 27
 
@@ -20629,7 +19417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26762
     dd 28
 
@@ -20646,7 +19433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40420
     dd 25
 
@@ -20663,7 +19449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36250
     dd 21
 
@@ -20680,7 +19465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36250
     dd 5
 
@@ -20697,7 +19481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36256
     dd 120
 
@@ -20714,7 +19497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36262
     dd 120
 
@@ -20731,7 +19513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36268
     dd 120
 
@@ -20748,7 +19529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36274
     dd 120
 
@@ -20765,7 +19545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8564
     dd 120
 
@@ -20782,7 +19561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8572
     dd 120
 
@@ -20799,7 +19577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8580
     dd 120
 
@@ -20816,7 +19593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8588
     dd 120
 
@@ -20833,7 +19609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8596
     dd 120
 
@@ -20850,7 +19625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8604
     dd 120
 
@@ -20867,7 +19641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8612
     dd 120
 
@@ -20884,7 +19657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8620
     dd 120
 
@@ -20901,7 +19673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8628
     dd 120
 
@@ -20918,7 +19689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8636
     dd 120
 
@@ -20935,7 +19705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8644
     dd 120
 
@@ -20952,7 +19721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8652
     dd 120
 
@@ -20969,7 +19737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8660
     dd 120
 
@@ -20986,7 +19753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8668
     dd 120
 
@@ -21003,7 +19769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8676
     dd 120
 
@@ -21020,7 +19785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8684
     dd 120
 
@@ -21037,7 +19801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26776
     dd 121
 
@@ -21054,7 +19817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26776
     dd 121
 
@@ -21071,7 +19833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26783
     dd 121
 
@@ -21088,7 +19849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26783
     dd 121
 
@@ -21105,7 +19865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36280
     dd 120
 
@@ -21122,7 +19881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36286
     dd 122
 
@@ -21139,7 +19897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36292
     dd 122
 
@@ -21156,7 +19913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26791
     dd 123
 
@@ -21173,7 +19929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26790
     dd 124
 
@@ -21190,7 +19945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26798
     dd 123
 
@@ -21207,7 +19961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26798
     dd 123
 
@@ -21224,7 +19977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26797
     dd 125
 
@@ -21241,7 +19993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26797
     dd 125
 
@@ -21258,7 +20009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36298
     dd 126
 
@@ -21275,7 +20025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26805
     dd 123
 
@@ -21292,7 +20041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26804
     dd 125
 
@@ -21309,7 +20057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36304
     dd 120
 
@@ -21326,7 +20073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36310
     dd 120
 
@@ -21343,7 +20089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36316
     dd 120
 
@@ -21360,7 +20105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36322
     dd 120
 
@@ -21377,7 +20121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36328
     dd 120
 
@@ -21394,7 +20137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36334
     dd 120
 
@@ -21411,7 +20153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36340
     dd 120
 
@@ -21428,7 +20169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36346
     dd 120
 
@@ -21445,7 +20185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36352
     dd 120
 
@@ -21462,7 +20201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36358
     dd 120
 
@@ -21479,7 +20217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36364
     dd 120
 
@@ -21496,7 +20233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36358
     dd 120
 
@@ -21513,7 +20249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36154
     dd 120
 
@@ -21530,7 +20265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36370
     dd 120
 
@@ -21547,7 +20281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36154
     dd 120
 
@@ -21564,7 +20297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36376
     dd 120
 
@@ -21581,7 +20313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26811
     dd 127
 
@@ -21598,7 +20329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36382
     dd 120
 
@@ -21615,7 +20345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36388
     dd 120
 
@@ -21632,7 +20361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36394
     dd 120
 
@@ -21649,7 +20377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36388
     dd 120
 
@@ -21666,7 +20393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36400
     dd 120
 
@@ -21683,7 +20409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36406
     dd 120
 
@@ -21700,7 +20425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36412
     dd 120
 
@@ -21717,7 +20441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36418
     dd 120
 
@@ -21734,7 +20457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36424
     dd 120
 
@@ -21751,7 +20473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36430
     dd 120
 
@@ -21768,7 +20489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36436
     dd 120
 
@@ -21785,7 +20505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36442
     dd 120
 
@@ -21802,7 +20521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36448
     dd 120
 
@@ -21819,7 +20537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26818
     dd 120
 
@@ -21836,7 +20553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36454
     dd 120
 
@@ -21853,7 +20569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36460
     dd 120
 
@@ -21870,7 +20585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36466
     dd 120
 
@@ -21887,7 +20601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36472
     dd 120
 
@@ -21904,7 +20617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36478
     dd 120
 
@@ -21921,7 +20633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36484
     dd 120
 
@@ -21938,7 +20649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36490
     dd 120
 
@@ -21955,7 +20665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36496
     dd 120
 
@@ -21972,7 +20681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36502
     dd 120
 
@@ -21989,7 +20697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26826
     dd 128
 
@@ -22006,7 +20713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26825
     dd 129
 
@@ -22023,7 +20729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26833
     dd 128
 
@@ -22040,7 +20745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26832
     dd 129
 
@@ -22057,7 +20761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40424
     dd 130
 
@@ -22074,7 +20777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40429
     dd 131
 
@@ -22091,7 +20793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26840
     dd 130
 
@@ -22108,7 +20809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26839
     dd 132
 
@@ -22125,7 +20825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26847
     dd 133
 
@@ -22142,7 +20841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26846
     dd 134
 
@@ -22159,7 +20857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26854
     dd 133
 
@@ -22176,7 +20873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26853
     dd 134
 
@@ -22193,7 +20889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26861
     dd 133
 
@@ -22210,7 +20905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26860
     dd 134
 
@@ -22227,7 +20921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26868
     dd 130
 
@@ -22244,7 +20937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26867
     dd 132
 
@@ -22261,7 +20953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26875
     dd 133
 
@@ -22278,7 +20969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26874
     dd 134
 
@@ -22295,7 +20985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37613
     dd 135
 
@@ -22312,7 +21001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37631
     dd 135
 
@@ -22329,7 +21017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37649
     dd 135
 
@@ -22346,7 +21033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37667
     dd 135
 
@@ -22363,7 +21049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35944
     dd 135
 
@@ -22380,7 +21065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36508
     dd 136
 
@@ -22397,7 +21081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36514
     dd 137
 
@@ -22414,7 +21097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26881
     dd 137
 
@@ -22431,7 +21113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26888
     dd 137
 
@@ -22448,7 +21129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26895
     dd 138
 
@@ -22465,7 +21145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26902
     dd 138
 
@@ -22482,7 +21161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26902
     dd 138
 
@@ -22499,7 +21177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26902
     dd 138
 
@@ -22516,7 +21193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26909
     dd 137
 
@@ -22533,7 +21209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26916
     dd 137
 
@@ -22550,7 +21225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26923
     dd 137
 
@@ -22567,7 +21241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26930
     dd 137
 
@@ -22584,7 +21257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36520
     dd 136
 
@@ -22601,7 +21273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26937
     dd 137
 
@@ -22618,7 +21289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26944
     dd 137
 
@@ -22635,7 +21305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8692
     dd 139
 
@@ -22652,7 +21321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8700
     dd 88
 
@@ -22669,7 +21337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8708
     dd 88
 
@@ -22686,7 +21353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8716
     dd 88
 
@@ -22703,7 +21369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8724
     dd 88
 
@@ -22720,7 +21385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8732
     dd 88
 
@@ -22737,7 +21401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36526
     dd 140
 
@@ -22754,7 +21417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36532
     dd 140
 
@@ -22771,7 +21433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36538
     dd 141
 
@@ -22788,7 +21449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26952
     dd 142
 
@@ -22805,7 +21465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26951
     dd 143
 
@@ -22822,7 +21481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36544
     dd 141
 
@@ -22839,7 +21497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35452
     dd 140
 
@@ -22856,7 +21513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35530
     dd 140
 
@@ -22873,7 +21529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26958
     dd 144
 
@@ -22890,7 +21545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26965
     dd 144
 
@@ -22907,7 +21561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26965
     dd 140
 
@@ -22924,7 +21577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26958
     dd 140
 
@@ -22941,7 +21593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36550
     dd 140
 
@@ -22958,7 +21609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36556
     dd 141
 
@@ -22975,7 +21625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36550
     dd 141
 
@@ -22992,7 +21641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36556
     dd 140
 
@@ -23009,7 +21657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36562
     dd 140
 
@@ -23026,7 +21673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36568
     dd 141
 
@@ -23043,7 +21689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36562
     dd 141
 
@@ -23060,7 +21705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36568
     dd 140
 
@@ -23077,7 +21721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36574
     dd 140
 
@@ -23094,7 +21737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36580
     dd 140
 
@@ -23111,7 +21753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36586
     dd 140
 
@@ -23128,7 +21769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36586
     dd 145
 
@@ -23145,7 +21785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36580
     dd 145
 
@@ -23162,7 +21801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26972
     dd 146
 
@@ -23179,7 +21817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26979
     dd 146
 
@@ -23196,7 +21833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36592
     dd 140
 
@@ -23213,7 +21849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36598
     dd 141
 
@@ -23230,7 +21865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36604
     dd 141
 
@@ -23247,7 +21881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36610
     dd 141
 
@@ -23264,7 +21897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36616
     dd 141
 
@@ -23281,7 +21913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36622
     dd 141
 
@@ -23298,7 +21929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36628
     dd 141
 
@@ -23315,7 +21945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36634
     dd 147
 
@@ -23332,7 +21961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36640
     dd 141
 
@@ -23349,7 +21977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36646
     dd 141
 
@@ -23366,7 +21993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36652
     dd 141
 
@@ -23383,7 +22009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36658
     dd 141
 
@@ -23400,7 +22025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36664
     dd 141
 
@@ -23417,7 +22041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36670
     dd 141
 
@@ -23434,7 +22057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36676
     dd 141
 
@@ -23451,7 +22073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36682
     dd 141
 
@@ -23468,7 +22089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36688
     dd 141
 
@@ -23485,7 +22105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36694
     dd 141
 
@@ -23502,7 +22121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36700
     dd 141
 
@@ -23519,7 +22137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36706
     dd 141
 
@@ -23536,7 +22153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36712
     dd 141
 
@@ -23553,7 +22169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36718
     dd 141
 
@@ -23570,7 +22185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36724
     dd 141
 
@@ -23587,7 +22201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26986
     dd 148
 
@@ -23604,7 +22217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26993
     dd 148
 
@@ -23621,7 +22233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26993
     dd 148
 
@@ -23638,7 +22249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26993
     dd 148
 
@@ -23655,7 +22265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36730
     dd 141
 
@@ -23672,7 +22281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36736
     dd 141
 
@@ -23689,7 +22297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36742
     dd 141
 
@@ -23706,7 +22313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36748
     dd 141
 
@@ -23723,7 +22329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36754
     dd 141
 
@@ -23740,7 +22345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36760
     dd 140
 
@@ -23757,7 +22361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36766
     dd 141
 
@@ -23774,7 +22377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36772
     dd 141
 
@@ -23791,7 +22393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36778
     dd 141
 
@@ -23808,7 +22409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27000
     dd 141
 
@@ -23825,7 +22425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36784
     dd 141
 
@@ -23842,7 +22441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36790
     dd 141
 
@@ -23859,7 +22457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36796
     dd 141
 
@@ -23876,7 +22473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27007
     dd 148
 
@@ -23893,7 +22489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27007
     dd 150
 
@@ -23910,7 +22505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27014
     dd 148
 
@@ -23927,7 +22521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27014
     dd 150
 
@@ -23944,7 +22537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27021
     dd 148
 
@@ -23961,7 +22553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27021
     dd 150
 
@@ -23978,7 +22569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27028
     dd 151
 
@@ -23995,7 +22585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36802
     dd 141
 
@@ -24012,7 +22601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27035
     dd 151
 
@@ -24029,7 +22617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36808
     dd 141
 
@@ -24046,7 +22633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27042
     dd 151
 
@@ -24063,7 +22649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36814
     dd 141
 
@@ -24080,7 +22665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27049
     dd 151
 
@@ -24097,7 +22681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36820
     dd 141
 
@@ -24114,7 +22697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27056
     dd 151
 
@@ -24131,7 +22713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36826
     dd 141
 
@@ -24148,7 +22729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27063
     dd 151
 
@@ -24165,7 +22745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27070
     dd 151
 
@@ -24182,7 +22761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36832
     dd 141
 
@@ -24199,7 +22777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27077
     dd 151
 
@@ -24216,7 +22793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36838
     dd 141
 
@@ -24233,7 +22809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27084
     dd 151
 
@@ -24250,7 +22825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36844
     dd 141
 
@@ -24267,7 +22841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27091
     dd 151
 
@@ -24284,7 +22857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36850
     dd 141
 
@@ -24301,7 +22873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36856
     dd 141
 
@@ -24318,7 +22889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36862
     dd 141
 
@@ -24335,7 +22905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27098
     dd 141
 
@@ -24352,7 +22921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36868
     dd 141
 
@@ -24369,7 +22937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36874
     dd 141
 
@@ -24386,7 +22953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36880
     dd 141
 
@@ -24403,7 +22969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36886
     dd 141
 
@@ -24420,7 +22985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36892
     dd 141
 
@@ -24437,7 +23001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36898
     dd 141
 
@@ -24454,7 +23017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36904
     dd 141
 
@@ -24471,7 +23033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36910
     dd 141
 
@@ -24488,7 +23049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36916
     dd 141
 
@@ -24505,7 +23065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36922
     dd 141
 
@@ -24522,7 +23081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36928
     dd 141
 
@@ -24539,7 +23097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36934
     dd 141
 
@@ -24556,7 +23113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36940
     dd 141
 
@@ -24573,7 +23129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36946
     dd 141
 
@@ -24590,7 +23145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36952
     dd 141
 
@@ -24607,7 +23161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36958
     dd 145
 
@@ -24624,7 +23177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36964
     dd 141
 
@@ -24641,7 +23193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36970
     dd 141
 
@@ -24658,7 +23209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8740
     dd 141
 
@@ -24675,7 +23225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8748
     dd 140
 
@@ -24692,7 +23241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8756
     dd 141
 
@@ -24709,7 +23257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8764
     dd 140
 
@@ -24726,7 +23273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8772
     dd 141
 
@@ -24743,7 +23289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8780
     dd 140
 
@@ -24760,7 +23305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8788
     dd 141
 
@@ -24777,7 +23321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8796
     dd 140
 
@@ -24794,7 +23337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8804
     dd 141
 
@@ -24811,7 +23353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8812
     dd 140
 
@@ -24828,7 +23369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8820
     dd 141
 
@@ -24845,7 +23385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8828
     dd 140
 
@@ -24862,7 +23401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8836
     dd 141
 
@@ -24879,7 +23417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8844
     dd 140
 
@@ -24896,7 +23433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8852
     dd 141
 
@@ -24913,7 +23449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8860
     dd 140
 
@@ -24930,7 +23465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27105
     dd 140
 
@@ -24947,7 +23481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27112
     dd 140
 
@@ -24964,7 +23497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36976
     dd 140
 
@@ -24981,7 +23513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36982
     dd 145
 
@@ -24998,7 +23529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36988
     dd 141
 
@@ -25015,7 +23545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+36994
     dd 141
 
@@ -25032,7 +23561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37000
     dd 141
 
@@ -25049,7 +23577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37006
     dd 141
 
@@ -25066,7 +23593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37012
     dd 145
 
@@ -25083,7 +23609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37018
     dd 141
 
@@ -25100,7 +23625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37024
     dd 145
 
@@ -25117,7 +23641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27119
     dd 152
 
@@ -25134,7 +23657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27119
     dd 152
 
@@ -25151,7 +23673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27126
     dd 153
 
@@ -25168,7 +23689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27126
     dd 153
 
@@ -25185,7 +23705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37030
     dd 145
 
@@ -25202,7 +23721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27133
     dd 154
 
@@ -25219,7 +23737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27140
     dd 153
 
@@ -25236,7 +23753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37036
     dd 144
 
@@ -25253,7 +23769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37042
     dd 141
 
@@ -25270,7 +23785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37048
     dd 141
 
@@ -25287,7 +23801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37054
     dd 141
 
@@ -25304,7 +23817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27147
     dd 152
 
@@ -25321,7 +23833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27147
     dd 152
 
@@ -25338,7 +23849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27154
     dd 153
 
@@ -25355,7 +23865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27154
     dd 153
 
@@ -25372,7 +23881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37060
     dd 141
 
@@ -25389,7 +23897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37066
     dd 140
 
@@ -25406,7 +23913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37072
     dd 141
 
@@ -25423,7 +23929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37078
     dd 140
 
@@ -25440,7 +23945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37084
     dd 141
 
@@ -25457,7 +23961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37090
     dd 140
 
@@ -25474,7 +23977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37096
     dd 140
 
@@ -25491,7 +23993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37102
     dd 140
 
@@ -25508,7 +24009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37102
     dd 141
 
@@ -25525,7 +24025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37096
     dd 141
 
@@ -25542,7 +24041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37108
     dd 140
 
@@ -25559,7 +24057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37114
     dd 140
 
@@ -25576,7 +24073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37120
     dd 140
 
@@ -25593,7 +24089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37126
     dd 140
 
@@ -25610,7 +24105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37132
     dd 140
 
@@ -25627,7 +24121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27161
     dd 146
 
@@ -25644,7 +24137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37138
     dd 140
 
@@ -25661,7 +24153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37144
     dd 140
 
@@ -25678,7 +24169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37144
     dd 140
 
@@ -25695,7 +24185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37138
     dd 140
 
@@ -25712,7 +24201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37150
     dd 140
 
@@ -25729,7 +24217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37156
     dd 140
 
@@ -25746,7 +24233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37156
     dd 141
 
@@ -25763,7 +24249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37150
     dd 141
 
@@ -25780,7 +24265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37162
     dd 141
 
@@ -25797,7 +24281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37168
     dd 140
 
@@ -25814,7 +24297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37174
     dd 141
 
@@ -25831,7 +24313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27168
     dd 148
 
@@ -25848,7 +24329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27168
     dd 155
 
@@ -25865,7 +24345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37180
     dd 141
 
@@ -25882,7 +24361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37186
     dd 140
 
@@ -25899,7 +24377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37192
     dd 141
 
@@ -25916,7 +24393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37198
     dd 140
 
@@ -25933,7 +24409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37204
     dd 140
 
@@ -25950,7 +24425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37210
     dd 140
 
@@ -25967,7 +24441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37216
     dd 140
 
@@ -25984,7 +24457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37222
     dd 140
 
@@ -26001,7 +24473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37228
     dd 156
 
@@ -26018,7 +24489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37234
     dd 156
 
@@ -26035,7 +24505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37240
     dd 156
 
@@ -26052,7 +24521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37246
     dd 156
 
@@ -26069,7 +24537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37252
     dd 156
 
@@ -26086,7 +24553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37258
     dd 156
 
@@ -26103,7 +24569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37264
     dd 156
 
@@ -26120,7 +24585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37270
     dd 157
 
@@ -26137,7 +24601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37276
     dd 157
 
@@ -26154,7 +24617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37282
     dd 157
 
@@ -26171,7 +24633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40434
     dd 158
 
@@ -26188,7 +24649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40439
     dd 158
 
@@ -26205,7 +24665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40444
     dd 159
 
@@ -26222,7 +24681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37288
     dd 159
 
@@ -26239,7 +24697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40449
     dd 159
 
@@ -26256,7 +24713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40454
     dd 159
 
@@ -26273,7 +24729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40459
     dd 158
 
@@ -26290,7 +24745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40464
     dd 158
 
@@ -26307,7 +24761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37294
     dd 159
 
@@ -26324,7 +24777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37300
     dd 159
 
@@ -26341,7 +24793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27176
     dd 160
 
@@ -26358,7 +24809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27175
     dd 161
 
@@ -26375,7 +24825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40469
     dd 159
 
@@ -26392,7 +24841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40474
     dd 158
 
@@ -26409,7 +24857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40479
     dd 158
 
@@ -26426,7 +24873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27183
     dd 160
 
@@ -26443,7 +24889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27182
     dd 161
 
@@ -26460,7 +24905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40484
     dd 159
 
@@ -26477,7 +24921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37306
     dd 159
 
@@ -26494,7 +24937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8869
     dd 162
 
@@ -26511,7 +24953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8868
     dd 163
 
@@ -26528,7 +24969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8877
     dd 162
 
@@ -26545,7 +24985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8876
     dd 163
 
@@ -26562,7 +25001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27189
     dd 164
 
@@ -26579,7 +25017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27196
     dd 165
 
@@ -26596,7 +25033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27203
     dd 164
 
@@ -26613,7 +25049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27210
     dd 165
 
@@ -26630,7 +25065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27217
     dd 164
 
@@ -26647,7 +25081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27224
     dd 165
 
@@ -26664,7 +25097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8884
     dd 164
 
@@ -26681,7 +25113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8892
     dd 165
 
@@ -26698,7 +25129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27231
     dd 164
 
@@ -26715,7 +25145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27238
     dd 165
 
@@ -26732,7 +25161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27245
     dd 164
 
@@ -26749,7 +25177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27252
     dd 165
 
@@ -26766,7 +25193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27259
     dd 164
 
@@ -26783,7 +25209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27266
     dd 165
 
@@ -26800,7 +25225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27273
     dd 164
 
@@ -26817,7 +25241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27280
     dd 165
 
@@ -26834,7 +25257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27287
     dd 164
 
@@ -26851,7 +25273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27294
     dd 165
 
@@ -26868,7 +25289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27301
     dd 164
 
@@ -26885,7 +25305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27308
     dd 165
 
@@ -26902,7 +25321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27315
     dd 164
 
@@ -26919,7 +25337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27322
     dd 165
 
@@ -26936,7 +25353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27329
     dd 164
 
@@ -26953,7 +25369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27336
     dd 165
 
@@ -26970,7 +25385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27343
     dd 164
 
@@ -26987,7 +25401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27350
     dd 165
 
@@ -27004,7 +25417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27357
     dd 164
 
@@ -27021,7 +25433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27364
     dd 165
 
@@ -27038,7 +25449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27371
     dd 164
 
@@ -27055,7 +25465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27378
     dd 165
 
@@ -27072,7 +25481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27385
     dd 164
 
@@ -27089,7 +25497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27392
     dd 165
 
@@ -27106,7 +25513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8900
     dd 166
 
@@ -27123,7 +25529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37312
     dd 166
 
@@ -27140,7 +25545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8908
     dd 166
 
@@ -27157,7 +25561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37318
     dd 166
 
@@ -27174,7 +25577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37324
     dd 167
 
@@ -27191,7 +25593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37330
     dd 168
 
@@ -27208,7 +25609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27399
     dd 110
 
@@ -27225,7 +25625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27406
     dd 110
 
@@ -27242,7 +25641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27413
     dd 59
 
@@ -27259,7 +25657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8916
     dd 169
 
@@ -27276,7 +25673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8924
     dd 169
 
@@ -27293,7 +25689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27420
     dd 169
 
@@ -27310,7 +25705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27420
     dd 169
 
@@ -27327,7 +25721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27427
     dd 169
 
@@ -27344,7 +25737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27427
     dd 169
 
@@ -27361,7 +25753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8932
     dd 169
 
@@ -27378,7 +25769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8940
     dd 169
 
@@ -27395,7 +25785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+241
     dd 169
 
@@ -27412,7 +25801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+240
     dd 170
 
@@ -27429,7 +25817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8948
     dd 171
 
@@ -27446,7 +25833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27434
     dd 169
 
@@ -27463,7 +25849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8956
     dd 169
 
@@ -27480,7 +25865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27441
     dd 169
 
@@ -27497,7 +25881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27448
     dd 169
 
@@ -27514,7 +25897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27448
     dd 169
 
@@ -27531,7 +25913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8964
     dd 169
 
@@ -27548,7 +25929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27455
     dd 169
 
@@ -27565,7 +25945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+250
     dd 169
 
@@ -27582,7 +25961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+250
     dd 169
 
@@ -27599,7 +25977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+249
     dd 170
 
@@ -27616,7 +25993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+258
     dd 169
 
@@ -27633,7 +26009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+267
     dd 170
 
@@ -27650,7 +26025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+277
     dd 169
 
@@ -27667,7 +26041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+277
     dd 169
 
@@ -27684,7 +26057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+276
     dd 170
 
@@ -27701,7 +26073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27462
     dd 169
 
@@ -27718,7 +26089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+286
     dd 172
 
@@ -27735,7 +26105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+285
     dd 172
 
@@ -27752,7 +26121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+286
     dd 172
 
@@ -27769,7 +26137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+294
     dd 172
 
@@ -27786,7 +26153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+294
     dd 172
 
@@ -27803,7 +26169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+303
     dd 173
 
@@ -27820,7 +26185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+303
     dd 173
 
@@ -27837,7 +26201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27469
     dd 169
 
@@ -27854,7 +26217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27476
     dd 169
 
@@ -27871,7 +26233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27483
     dd 169
 
@@ -27888,7 +26249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27490
     dd 169
 
@@ -27905,7 +26265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27497
     dd 169
 
@@ -27922,7 +26281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27504
     dd 169
 
@@ -27939,7 +26297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27511
     dd 169
 
@@ -27956,7 +26313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27518
     dd 169
 
@@ -27973,7 +26329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27525
     dd 174
 
@@ -27990,7 +26345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27532
     dd 171
 
@@ -28007,7 +26361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27539
     dd 175
 
@@ -28024,7 +26377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27546
     dd 174
 
@@ -28041,7 +26393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27553
     dd 171
 
@@ -28058,7 +26409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27560
     dd 174
 
@@ -28075,7 +26425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27567
     dd 174
 
@@ -28092,7 +26441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27574
     dd 171
 
@@ -28109,7 +26457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27581
     dd 175
 
@@ -28126,7 +26473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27588
     dd 174
 
@@ -28143,7 +26489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27595
     dd 171
 
@@ -28160,7 +26505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27602
     dd 174
 
@@ -28177,7 +26521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27609
     dd 169
 
@@ -28194,7 +26537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27616
     dd 169
 
@@ -28211,7 +26553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27623
     dd 169
 
@@ -28228,7 +26569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8972
     dd 169
 
@@ -28245,7 +26585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8980
     dd 169
 
@@ -28262,7 +26601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8988
     dd 169
 
@@ -28279,7 +26617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+8996
     dd 169
 
@@ -28296,7 +26633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9021
     dd 176
 
@@ -28313,7 +26649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9004
     dd 176
 
@@ -28330,7 +26665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9012
     dd 176
 
@@ -28347,7 +26681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9020
     dd 177
 
@@ -28364,7 +26697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9028
     dd 177
 
@@ -28381,7 +26713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9036
     dd 176
 
@@ -28398,7 +26729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9044
     dd 176
 
@@ -28415,7 +26745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9052
     dd 176
 
@@ -28432,7 +26761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9060
     dd 176
 
@@ -28449,7 +26777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27630
     dd 176
 
@@ -28466,7 +26793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27637
     dd 178
 
@@ -28483,7 +26809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27644
     dd 179
 
@@ -28500,7 +26825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27651
     dd 180
 
@@ -28517,7 +26841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+41535
     dd 135
 
@@ -28534,7 +26857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9068
     dd 181
 
@@ -28551,7 +26873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9076
     dd 181
 
@@ -28568,7 +26889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9084
     dd 182
 
@@ -28585,7 +26905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9092
     dd 182
 
@@ -28602,7 +26921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9100
     dd 182
 
@@ -28619,7 +26937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9108
     dd 182
 
@@ -28636,7 +26953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9116
     dd 182
 
@@ -28653,7 +26969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9124
     dd 182
 
@@ -28670,7 +26985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27658
     dd 183
 
@@ -28687,7 +27001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27665
     dd 183
 
@@ -28704,7 +27017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27672
     dd 183
 
@@ -28721,7 +27033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27679
     dd 183
 
@@ -28738,7 +27049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27686
     dd 183
 
@@ -28755,7 +27065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9132
     dd 183
 
@@ -28772,7 +27081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27693
     dd 184
 
@@ -28789,7 +27097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27700
     dd 184
 
@@ -28806,7 +27113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27707
     dd 184
 
@@ -28823,7 +27129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27714
     dd 184
 
@@ -28840,7 +27145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27721
     dd 184
 
@@ -28857,7 +27161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27728
     dd 184
 
@@ -28874,7 +27177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27735
     dd 184
 
@@ -28891,7 +27193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27742
     dd 184
 
@@ -28908,7 +27209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27749
     dd 184
 
@@ -28925,7 +27225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9140
     dd 184
 
@@ -28942,7 +27241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27756
     dd 185
 
@@ -28959,7 +27257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27763
     dd 185
 
@@ -28976,7 +27273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27770
     dd 185
 
@@ -28993,7 +27289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27777
     dd 185
 
@@ -29010,7 +27305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27784
     dd 185
 
@@ -29027,7 +27321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27791
     dd 185
 
@@ -29044,7 +27337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27798
     dd 185
 
@@ -29061,7 +27353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27805
     dd 185
 
@@ -29078,7 +27369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9148
     dd 186
 
@@ -29095,7 +27385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9156
     dd 186
 
@@ -29112,7 +27401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9164
     dd 186
 
@@ -29129,7 +27417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9172
     dd 186
 
@@ -29146,7 +27433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9180
     dd 186
 
@@ -29163,7 +27449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9188
     dd 186
 
@@ -29180,7 +27465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9196
     dd 186
 
@@ -29197,7 +27481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9204
     dd 186
 
@@ -29214,7 +27497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9212
     dd 186
 
@@ -29231,7 +27513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9220
     dd 186
 
@@ -29248,7 +27529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9228
     dd 186
 
@@ -29265,7 +27545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9236
     dd 186
 
@@ -29282,7 +27561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9244
     dd 186
 
@@ -29299,7 +27577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9252
     dd 186
 
@@ -29316,7 +27593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9260
     dd 186
 
@@ -29333,7 +27609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9268
     dd 186
 
@@ -29350,7 +27625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9276
     dd 187
 
@@ -29367,7 +27641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9284
     dd 187
 
@@ -29384,7 +27657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9292
     dd 187
 
@@ -29401,7 +27673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9300
     dd 187
 
@@ -29418,7 +27689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9308
     dd 187
 
@@ -29435,7 +27705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9316
     dd 187
 
@@ -29452,7 +27721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9324
     dd 187
 
@@ -29469,7 +27737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9332
     dd 187
 
@@ -29486,7 +27753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27812
     dd 184
 
@@ -29503,7 +27769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27819
     dd 184
 
@@ -29520,7 +27785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27826
     dd 184
 
@@ -29537,7 +27801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27833
     dd 184
 
@@ -29554,7 +27817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27840
     dd 184
 
@@ -29571,7 +27833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27847
     dd 184
 
@@ -29588,7 +27849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27854
     dd 184
 
@@ -29605,7 +27865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27861
     dd 184
 
@@ -29622,7 +27881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27868
     dd 184
 
@@ -29639,7 +27897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27875
     dd 184
 
@@ -29656,7 +27913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27882
     dd 184
 
@@ -29673,7 +27929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27889
     dd 184
 
@@ -29690,7 +27945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27896
     dd 184
 
@@ -29707,7 +27961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27903
     dd 184
 
@@ -29724,7 +27977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27910
     dd 184
 
@@ -29741,7 +27993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27917
     dd 184
 
@@ -29758,7 +28009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27924
     dd 184
 
@@ -29775,7 +28025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27931
     dd 184
 
@@ -29792,7 +28041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27938
     dd 184
 
@@ -29809,7 +28057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27945
     dd 184
 
@@ -29826,7 +28073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27952
     dd 184
 
@@ -29843,7 +28089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27959
     dd 184
 
@@ -29860,7 +28105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27966
     dd 184
 
@@ -29877,7 +28121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27973
     dd 184
 
@@ -29894,7 +28137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27980
     dd 184
 
@@ -29911,7 +28153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27987
     dd 184
 
@@ -29928,7 +28169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+27994
     dd 184
 
@@ -29945,7 +28185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28001
     dd 184
 
@@ -29962,7 +28201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28008
     dd 184
 
@@ -29979,7 +28217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28015
     dd 184
 
@@ -29996,7 +28233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28022
     dd 184
 
@@ -30013,7 +28249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28029
     dd 184
 
@@ -30030,7 +28265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28036
     dd 184
 
@@ -30047,7 +28281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28043
     dd 184
 
@@ -30064,7 +28297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28050
     dd 184
 
@@ -30081,7 +28313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28057
     dd 184
 
@@ -30098,7 +28329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9340
     dd 184
 
@@ -30115,7 +28345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9348
     dd 184
 
@@ -30132,7 +28361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9356
     dd 184
 
@@ -30149,7 +28377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9364
     dd 184
 
@@ -30166,7 +28393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9372
     dd 184
 
@@ -30183,7 +28409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9380
     dd 184
 
@@ -30200,7 +28425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9388
     dd 184
 
@@ -30217,7 +28441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9396
     dd 184
 
@@ -30234,7 +28457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9404
     dd 184
 
@@ -30251,7 +28473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9412
     dd 184
 
@@ -30268,7 +28489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9420
     dd 184
 
@@ -30285,7 +28505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9428
     dd 184
 
@@ -30302,7 +28521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9436
     dd 184
 
@@ -30319,7 +28537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9444
     dd 184
 
@@ -30336,7 +28553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9452
     dd 184
 
@@ -30353,7 +28569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9460
     dd 184
 
@@ -30370,7 +28585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28064
     dd 184
 
@@ -30387,7 +28601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28071
     dd 184
 
@@ -30404,7 +28617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28078
     dd 184
 
@@ -30421,7 +28633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28085
     dd 184
 
@@ -30438,7 +28649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+312
     dd 184
 
@@ -30455,7 +28665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+321
     dd 184
 
@@ -30472,7 +28681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+330
     dd 184
 
@@ -30489,7 +28697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+339
     dd 184
 
@@ -30506,7 +28713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+348
     dd 184
 
@@ -30523,7 +28729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+357
     dd 184
 
@@ -30540,7 +28745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+366
     dd 184
 
@@ -30557,7 +28761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+375
     dd 184
 
@@ -30574,7 +28777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+384
     dd 184
 
@@ -30591,7 +28793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+393
     dd 184
 
@@ -30608,7 +28809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+402
     dd 184
 
@@ -30625,7 +28825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+411
     dd 184
 
@@ -30642,7 +28841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+384
     dd 184
 
@@ -30659,7 +28857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+393
     dd 184
 
@@ -30676,7 +28873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+402
     dd 184
 
@@ -30693,7 +28889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+411
     dd 184
 
@@ -30710,7 +28905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+420
     dd 184
 
@@ -30727,7 +28921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+429
     dd 184
 
@@ -30744,7 +28937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+438
     dd 184
 
@@ -30761,7 +28953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+447
     dd 184
 
@@ -30778,7 +28969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+420
     dd 184
 
@@ -30795,7 +28985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+429
     dd 184
 
@@ -30812,7 +29001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+438
     dd 184
 
@@ -30829,7 +29017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+447
     dd 184
 
@@ -30846,7 +29033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+456
     dd 184
 
@@ -30863,7 +29049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+465
     dd 184
 
@@ -30880,7 +29065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+474
     dd 184
 
@@ -30897,7 +29081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+483
     dd 184
 
@@ -30914,7 +29097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+456
     dd 184
 
@@ -30931,7 +29113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+465
     dd 184
 
@@ -30948,7 +29129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+474
     dd 184
 
@@ -30965,7 +29145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+483
     dd 184
 
@@ -30982,7 +29161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+492
     dd 184
 
@@ -30999,7 +29177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+501
     dd 184
 
@@ -31016,7 +29193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+510
     dd 184
 
@@ -31033,7 +29209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+519
     dd 184
 
@@ -31050,7 +29225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+492
     dd 184
 
@@ -31067,7 +29241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+501
     dd 184
 
@@ -31084,7 +29257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+510
     dd 184
 
@@ -31101,7 +29273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+519
     dd 184
 
@@ -31118,7 +29289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+528
     dd 184
 
@@ -31135,7 +29305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+537
     dd 184
 
@@ -31152,7 +29321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+546
     dd 184
 
@@ -31169,7 +29337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+555
     dd 184
 
@@ -31186,7 +29353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+528
     dd 184
 
@@ -31203,7 +29369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+537
     dd 184
 
@@ -31220,7 +29385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+546
     dd 184
 
@@ -31237,7 +29401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+555
     dd 184
 
@@ -31254,7 +29417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+564
     dd 184
 
@@ -31271,7 +29433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+573
     dd 184
 
@@ -31288,7 +29449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+582
     dd 184
 
@@ -31305,7 +29465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+591
     dd 184
 
@@ -31322,7 +29481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+564
     dd 184
 
@@ -31339,7 +29497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+573
     dd 184
 
@@ -31356,7 +29513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+582
     dd 184
 
@@ -31373,7 +29529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+591
     dd 184
 
@@ -31390,7 +29545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+600
     dd 184
 
@@ -31407,7 +29561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+609
     dd 184
 
@@ -31424,7 +29577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+618
     dd 184
 
@@ -31441,7 +29593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+627
     dd 184
 
@@ -31458,7 +29609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+600
     dd 184
 
@@ -31475,7 +29625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+609
     dd 184
 
@@ -31492,7 +29641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+618
     dd 184
 
@@ -31509,7 +29657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+627
     dd 184
 
@@ -31526,7 +29673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+636
     dd 184
 
@@ -31543,7 +29689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+645
     dd 184
 
@@ -31560,7 +29705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+654
     dd 184
 
@@ -31577,7 +29721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+663
     dd 184
 
@@ -31594,7 +29737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+672
     dd 184
 
@@ -31611,7 +29753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+681
     dd 184
 
@@ -31628,7 +29769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+690
     dd 184
 
@@ -31645,7 +29785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+699
     dd 184
 
@@ -31662,7 +29801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+672
     dd 184
 
@@ -31679,7 +29817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+681
     dd 184
 
@@ -31696,7 +29833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+690
     dd 184
 
@@ -31713,7 +29849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+699
     dd 184
 
@@ -31730,7 +29865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+708
     dd 184
 
@@ -31747,7 +29881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+717
     dd 184
 
@@ -31764,7 +29897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+726
     dd 184
 
@@ -31781,7 +29913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+735
     dd 184
 
@@ -31798,7 +29929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+708
     dd 184
 
@@ -31815,7 +29945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+717
     dd 184
 
@@ -31832,7 +29961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+726
     dd 184
 
@@ -31849,7 +29977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+735
     dd 184
 
@@ -31866,7 +29993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+744
     dd 184
 
@@ -31883,7 +30009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+753
     dd 184
 
@@ -31900,7 +30025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+762
     dd 184
 
@@ -31917,7 +30041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+771
     dd 184
 
@@ -31934,7 +30057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+744
     dd 184
 
@@ -31951,7 +30073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+753
     dd 184
 
@@ -31968,7 +30089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+762
     dd 184
 
@@ -31985,7 +30105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+771
     dd 184
 
@@ -32002,7 +30121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+780
     dd 184
 
@@ -32019,7 +30137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+789
     dd 184
 
@@ -32036,7 +30153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+798
     dd 184
 
@@ -32053,7 +30169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+807
     dd 184
 
@@ -32070,7 +30185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+816
     dd 184
 
@@ -32087,7 +30201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+825
     dd 184
 
@@ -32104,7 +30217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+834
     dd 184
 
@@ -32121,7 +30233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+843
     dd 184
 
@@ -32138,7 +30249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+816
     dd 184
 
@@ -32155,7 +30265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+825
     dd 184
 
@@ -32172,7 +30281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+834
     dd 184
 
@@ -32189,7 +30297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+843
     dd 184
 
@@ -32206,7 +30313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+852
     dd 184
 
@@ -32223,7 +30329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+861
     dd 184
 
@@ -32240,7 +30345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+870
     dd 184
 
@@ -32257,7 +30361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+879
     dd 184
 
@@ -32274,7 +30377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+852
     dd 184
 
@@ -32291,7 +30393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+861
     dd 184
 
@@ -32308,7 +30409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+870
     dd 184
 
@@ -32325,7 +30425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+879
     dd 184
 
@@ -32342,7 +30441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+888
     dd 184
 
@@ -32359,7 +30457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+897
     dd 184
 
@@ -32376,7 +30473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+906
     dd 184
 
@@ -32393,7 +30489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+915
     dd 184
 
@@ -32410,7 +30505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+888
     dd 184
 
@@ -32427,7 +30521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+897
     dd 184
 
@@ -32444,7 +30537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+906
     dd 184
 
@@ -32461,7 +30553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+915
     dd 184
 
@@ -32478,7 +30569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+312
     dd 184
 
@@ -32495,7 +30585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+321
     dd 184
 
@@ -32512,7 +30601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+330
     dd 184
 
@@ -32529,7 +30617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+339
     dd 184
 
@@ -32546,7 +30633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+924
     dd 184
 
@@ -32563,7 +30649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+933
     dd 184
 
@@ -32580,7 +30665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+942
     dd 184
 
@@ -32597,7 +30681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+951
     dd 184
 
@@ -32614,7 +30697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+960
     dd 184
 
@@ -32631,7 +30713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+969
     dd 184
 
@@ -32648,7 +30729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+978
     dd 184
 
@@ -32665,7 +30745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+987
     dd 184
 
@@ -32682,7 +30761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+996
     dd 184
 
@@ -32699,7 +30777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1005
     dd 184
 
@@ -32716,7 +30793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1014
     dd 184
 
@@ -32733,7 +30809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1023
     dd 184
 
@@ -32750,7 +30825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1032
     dd 184
 
@@ -32767,7 +30841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1041
     dd 184
 
@@ -32784,7 +30857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1050
     dd 184
 
@@ -32801,7 +30873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1059
     dd 184
 
@@ -32818,7 +30889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1068
     dd 184
 
@@ -32835,7 +30905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1077
     dd 184
 
@@ -32852,7 +30921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1086
     dd 184
 
@@ -32869,7 +30937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1095
     dd 184
 
@@ -32886,7 +30953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1104
     dd 184
 
@@ -32903,7 +30969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1113
     dd 184
 
@@ -32920,7 +30985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1122
     dd 184
 
@@ -32937,7 +31001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1131
     dd 184
 
@@ -32954,7 +31017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1140
     dd 184
 
@@ -32971,7 +31033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1149
     dd 184
 
@@ -32988,7 +31049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1158
     dd 184
 
@@ -33005,7 +31065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1167
     dd 184
 
@@ -33022,7 +31081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1176
     dd 184
 
@@ -33039,7 +31097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1185
     dd 184
 
@@ -33056,7 +31113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1194
     dd 184
 
@@ -33073,7 +31129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1203
     dd 184
 
@@ -33090,7 +31145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1212
     dd 184
 
@@ -33107,7 +31161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1221
     dd 184
 
@@ -33124,7 +31177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1230
     dd 184
 
@@ -33141,7 +31193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1239
     dd 184
 
@@ -33158,7 +31209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1248
     dd 184
 
@@ -33175,7 +31225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1257
     dd 184
 
@@ -33192,7 +31241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1266
     dd 184
 
@@ -33209,7 +31257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1275
     dd 184
 
@@ -33226,7 +31273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1284
     dd 184
 
@@ -33243,7 +31289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1293
     dd 184
 
@@ -33260,7 +31305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1302
     dd 184
 
@@ -33277,7 +31321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1311
     dd 184
 
@@ -33294,7 +31337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1320
     dd 184
 
@@ -33311,7 +31353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1329
     dd 184
 
@@ -33328,7 +31369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1338
     dd 184
 
@@ -33345,7 +31385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1347
     dd 184
 
@@ -33362,7 +31401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1356
     dd 184
 
@@ -33379,7 +31417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1365
     dd 184
 
@@ -33396,7 +31433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1374
     dd 184
 
@@ -33413,7 +31449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1383
     dd 184
 
@@ -33430,7 +31465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1392
     dd 184
 
@@ -33447,7 +31481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1401
     dd 184
 
@@ -33464,7 +31497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1410
     dd 184
 
@@ -33481,7 +31513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1419
     dd 184
 
@@ -33498,7 +31529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1428
     dd 184
 
@@ -33515,7 +31545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1437
     dd 184
 
@@ -33532,7 +31561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1446
     dd 184
 
@@ -33549,7 +31577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1455
     dd 184
 
@@ -33566,7 +31593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9468
     dd 184
 
@@ -33583,7 +31609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9476
     dd 184
 
@@ -33600,7 +31625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9484
     dd 184
 
@@ -33617,7 +31641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9492
     dd 184
 
@@ -33634,7 +31657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1464
     dd 184
 
@@ -33651,7 +31673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1473
     dd 184
 
@@ -33668,7 +31689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1482
     dd 184
 
@@ -33685,7 +31705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1491
     dd 184
 
@@ -33702,7 +31721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1500
     dd 184
 
@@ -33719,7 +31737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1509
     dd 184
 
@@ -33736,7 +31753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1518
     dd 184
 
@@ -33753,7 +31769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1527
     dd 184
 
@@ -33770,7 +31785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1536
     dd 184
 
@@ -33787,7 +31801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1545
     dd 184
 
@@ -33804,7 +31817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1554
     dd 184
 
@@ -33821,7 +31833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1563
     dd 184
 
@@ -33838,7 +31849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1536
     dd 184
 
@@ -33855,7 +31865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1545
     dd 184
 
@@ -33872,7 +31881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1554
     dd 184
 
@@ -33889,7 +31897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1563
     dd 184
 
@@ -33906,7 +31913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1572
     dd 184
 
@@ -33923,7 +31929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1581
     dd 184
 
@@ -33940,7 +31945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1590
     dd 184
 
@@ -33957,7 +31961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1599
     dd 184
 
@@ -33974,7 +31977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1572
     dd 184
 
@@ -33991,7 +31993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1581
     dd 184
 
@@ -34008,7 +32009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1590
     dd 184
 
@@ -34025,7 +32025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1599
     dd 184
 
@@ -34042,7 +32041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1608
     dd 184
 
@@ -34059,7 +32057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1617
     dd 184
 
@@ -34076,7 +32073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1626
     dd 184
 
@@ -34093,7 +32089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1635
     dd 184
 
@@ -34110,7 +32105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1608
     dd 184
 
@@ -34127,7 +32121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1617
     dd 184
 
@@ -34144,7 +32137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1626
     dd 184
 
@@ -34161,7 +32153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1635
     dd 184
 
@@ -34178,7 +32169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1644
     dd 184
 
@@ -34195,7 +32185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1653
     dd 184
 
@@ -34212,7 +32201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1662
     dd 184
 
@@ -34229,7 +32217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1671
     dd 184
 
@@ -34246,7 +32233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1644
     dd 184
 
@@ -34263,7 +32249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1653
     dd 184
 
@@ -34280,7 +32265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1662
     dd 184
 
@@ -34297,7 +32281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1671
     dd 184
 
@@ -34314,7 +32297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1680
     dd 184
 
@@ -34331,7 +32313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1689
     dd 184
 
@@ -34348,7 +32329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1698
     dd 184
 
@@ -34365,7 +32345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1707
     dd 184
 
@@ -34382,7 +32361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1680
     dd 184
 
@@ -34399,7 +32377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1689
     dd 184
 
@@ -34416,7 +32393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1698
     dd 184
 
@@ -34433,7 +32409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1707
     dd 184
 
@@ -34450,7 +32425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1716
     dd 184
 
@@ -34467,7 +32441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1725
     dd 184
 
@@ -34484,7 +32457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1734
     dd 184
 
@@ -34501,7 +32473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1743
     dd 184
 
@@ -34518,7 +32489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1716
     dd 184
 
@@ -34535,7 +32505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1725
     dd 184
 
@@ -34552,7 +32521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1734
     dd 184
 
@@ -34569,7 +32537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1743
     dd 184
 
@@ -34586,7 +32553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1752
     dd 184
 
@@ -34603,7 +32569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1761
     dd 184
 
@@ -34620,7 +32585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1770
     dd 184
 
@@ -34637,7 +32601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1779
     dd 184
 
@@ -34654,7 +32617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1752
     dd 184
 
@@ -34671,7 +32633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1761
     dd 184
 
@@ -34688,7 +32649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1770
     dd 184
 
@@ -34705,7 +32665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1779
     dd 184
 
@@ -34722,7 +32681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1788
     dd 184
 
@@ -34739,7 +32697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1797
     dd 184
 
@@ -34756,7 +32713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1806
     dd 184
 
@@ -34773,7 +32729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1815
     dd 184
 
@@ -34790,7 +32745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1824
     dd 184
 
@@ -34807,7 +32761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1833
     dd 184
 
@@ -34824,7 +32777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1842
     dd 184
 
@@ -34841,7 +32793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1851
     dd 184
 
@@ -34858,7 +32809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1824
     dd 184
 
@@ -34875,7 +32825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1833
     dd 184
 
@@ -34892,7 +32841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1842
     dd 184
 
@@ -34909,7 +32857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1851
     dd 184
 
@@ -34926,7 +32873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1860
     dd 184
 
@@ -34943,7 +32889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1869
     dd 184
 
@@ -34960,7 +32905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1878
     dd 184
 
@@ -34977,7 +32921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1887
     dd 184
 
@@ -34994,7 +32937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1860
     dd 184
 
@@ -35011,7 +32953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1869
     dd 184
 
@@ -35028,7 +32969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1878
     dd 184
 
@@ -35045,7 +32985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1887
     dd 184
 
@@ -35062,7 +33001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1896
     dd 184
 
@@ -35079,7 +33017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1905
     dd 184
 
@@ -35096,7 +33033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1914
     dd 184
 
@@ -35113,7 +33049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1923
     dd 184
 
@@ -35130,7 +33065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1896
     dd 184
 
@@ -35147,7 +33081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1905
     dd 184
 
@@ -35164,7 +33097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1914
     dd 184
 
@@ -35181,7 +33113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1923
     dd 184
 
@@ -35198,7 +33129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1932
     dd 184
 
@@ -35215,7 +33145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1941
     dd 184
 
@@ -35232,7 +33161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1950
     dd 184
 
@@ -35249,7 +33177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1959
     dd 184
 
@@ -35266,7 +33193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1968
     dd 184
 
@@ -35283,7 +33209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1977
     dd 184
 
@@ -35300,7 +33225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1986
     dd 184
 
@@ -35317,7 +33241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1995
     dd 184
 
@@ -35334,7 +33257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1968
     dd 184
 
@@ -35351,7 +33273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1977
     dd 184
 
@@ -35368,7 +33289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1986
     dd 184
 
@@ -35385,7 +33305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1995
     dd 184
 
@@ -35402,7 +33321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2004
     dd 184
 
@@ -35419,7 +33337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2013
     dd 184
 
@@ -35436,7 +33353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2022
     dd 184
 
@@ -35453,7 +33369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2031
     dd 184
 
@@ -35470,7 +33385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2004
     dd 184
 
@@ -35487,7 +33401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2013
     dd 184
 
@@ -35504,7 +33417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2022
     dd 184
 
@@ -35521,7 +33433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2031
     dd 184
 
@@ -35538,7 +33449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2040
     dd 184
 
@@ -35555,7 +33465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2049
     dd 184
 
@@ -35572,7 +33481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2058
     dd 184
 
@@ -35589,7 +33497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2067
     dd 184
 
@@ -35606,7 +33513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2040
     dd 184
 
@@ -35623,7 +33529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2049
     dd 184
 
@@ -35640,7 +33545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2058
     dd 184
 
@@ -35657,7 +33561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2067
     dd 184
 
@@ -35674,7 +33577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1464
     dd 184
 
@@ -35691,7 +33593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1473
     dd 184
 
@@ -35708,7 +33609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1482
     dd 184
 
@@ -35725,7 +33625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+1491
     dd 184
 
@@ -35742,7 +33641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2076
     dd 184
 
@@ -35759,7 +33657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2085
     dd 184
 
@@ -35776,7 +33673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2094
     dd 184
 
@@ -35793,7 +33689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2103
     dd 184
 
@@ -35810,7 +33705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2112
     dd 184
 
@@ -35827,7 +33721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2121
     dd 184
 
@@ -35844,7 +33737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2130
     dd 184
 
@@ -35861,7 +33753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2139
     dd 184
 
@@ -35878,7 +33769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2148
     dd 184
 
@@ -35895,7 +33785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2157
     dd 184
 
@@ -35912,7 +33801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2166
     dd 184
 
@@ -35929,7 +33817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2175
     dd 184
 
@@ -35946,7 +33833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2184
     dd 184
 
@@ -35963,7 +33849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2193
     dd 184
 
@@ -35980,7 +33865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2202
     dd 184
 
@@ -35997,7 +33881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2211
     dd 184
 
@@ -36014,7 +33897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2220
     dd 184
 
@@ -36031,7 +33913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2229
     dd 184
 
@@ -36048,7 +33929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2238
     dd 184
 
@@ -36065,7 +33945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2247
     dd 184
 
@@ -36082,7 +33961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2256
     dd 184
 
@@ -36099,7 +33977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2265
     dd 184
 
@@ -36116,7 +33993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2274
     dd 184
 
@@ -36133,7 +34009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2283
     dd 184
 
@@ -36150,7 +34025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2292
     dd 184
 
@@ -36167,7 +34041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2301
     dd 184
 
@@ -36184,7 +34057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2310
     dd 184
 
@@ -36201,7 +34073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2319
     dd 184
 
@@ -36218,7 +34089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2328
     dd 184
 
@@ -36235,7 +34105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2337
     dd 184
 
@@ -36252,7 +34121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2346
     dd 184
 
@@ -36269,7 +34137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2355
     dd 184
 
@@ -36286,7 +34153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2364
     dd 184
 
@@ -36303,7 +34169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2373
     dd 184
 
@@ -36320,7 +34185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2382
     dd 184
 
@@ -36337,7 +34201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2391
     dd 184
 
@@ -36354,7 +34217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2400
     dd 184
 
@@ -36371,7 +34233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2409
     dd 184
 
@@ -36388,7 +34249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2418
     dd 184
 
@@ -36405,7 +34265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2427
     dd 184
 
@@ -36422,7 +34281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2436
     dd 184
 
@@ -36439,7 +34297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2445
     dd 184
 
@@ -36456,7 +34313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2454
     dd 184
 
@@ -36473,7 +34329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2463
     dd 184
 
@@ -36490,7 +34345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2472
     dd 184
 
@@ -36507,7 +34361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2481
     dd 184
 
@@ -36524,7 +34377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2490
     dd 184
 
@@ -36541,7 +34393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2499
     dd 184
 
@@ -36558,7 +34409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2508
     dd 184
 
@@ -36575,7 +34425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2517
     dd 184
 
@@ -36592,7 +34441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2526
     dd 184
 
@@ -36609,7 +34457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2535
     dd 184
 
@@ -36626,7 +34473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2544
     dd 184
 
@@ -36643,7 +34489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2553
     dd 184
 
@@ -36660,7 +34505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2562
     dd 184
 
@@ -36677,7 +34521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2571
     dd 184
 
@@ -36694,7 +34537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2580
     dd 184
 
@@ -36711,7 +34553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2589
     dd 184
 
@@ -36728,7 +34569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2598
     dd 184
 
@@ -36745,7 +34585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2607
     dd 184
 
@@ -36762,7 +34601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9500
     dd 184
 
@@ -36779,7 +34617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9508
     dd 184
 
@@ -36796,7 +34633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9516
     dd 184
 
@@ -36813,7 +34649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9524
     dd 184
 
@@ -36830,7 +34665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2616
     dd 184
 
@@ -36847,7 +34681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2625
     dd 184
 
@@ -36864,7 +34697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2634
     dd 184
 
@@ -36881,7 +34713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2643
     dd 184
 
@@ -36898,7 +34729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2652
     dd 184
 
@@ -36915,7 +34745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2661
     dd 184
 
@@ -36932,7 +34761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2652
     dd 184
 
@@ -36949,7 +34777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2661
     dd 184
 
@@ -36966,7 +34793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2670
     dd 184
 
@@ -36983,7 +34809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2679
     dd 184
 
@@ -37000,7 +34825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2670
     dd 184
 
@@ -37017,7 +34841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2679
     dd 184
 
@@ -37034,7 +34857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2688
     dd 184
 
@@ -37051,7 +34873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2697
     dd 184
 
@@ -37068,7 +34889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2688
     dd 184
 
@@ -37085,7 +34905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2697
     dd 184
 
@@ -37102,7 +34921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2706
     dd 184
 
@@ -37119,7 +34937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2715
     dd 184
 
@@ -37136,7 +34953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2706
     dd 184
 
@@ -37153,7 +34969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2715
     dd 184
 
@@ -37170,7 +34985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2724
     dd 184
 
@@ -37187,7 +35001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2733
     dd 184
 
@@ -37204,7 +35017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2724
     dd 184
 
@@ -37221,7 +35033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2733
     dd 184
 
@@ -37238,7 +35049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2742
     dd 184
 
@@ -37255,7 +35065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2751
     dd 184
 
@@ -37272,7 +35081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2742
     dd 184
 
@@ -37289,7 +35097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2751
     dd 184
 
@@ -37306,7 +35113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2760
     dd 184
 
@@ -37323,7 +35129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2769
     dd 184
 
@@ -37340,7 +35145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2760
     dd 184
 
@@ -37357,7 +35161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2769
     dd 184
 
@@ -37374,7 +35177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2778
     dd 184
 
@@ -37391,7 +35193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2787
     dd 184
 
@@ -37408,7 +35209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2796
     dd 184
 
@@ -37425,7 +35225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2805
     dd 184
 
@@ -37442,7 +35241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2796
     dd 184
 
@@ -37459,7 +35257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2805
     dd 184
 
@@ -37476,7 +35273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2814
     dd 184
 
@@ -37493,7 +35289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2823
     dd 184
 
@@ -37510,7 +35305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2814
     dd 184
 
@@ -37527,7 +35321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2823
     dd 184
 
@@ -37544,7 +35337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2832
     dd 184
 
@@ -37561,7 +35353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2841
     dd 184
 
@@ -37578,7 +35369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2832
     dd 184
 
@@ -37595,7 +35385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2841
     dd 184
 
@@ -37612,7 +35401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2850
     dd 184
 
@@ -37629,7 +35417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2859
     dd 184
 
@@ -37646,7 +35433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2868
     dd 184
 
@@ -37663,7 +35449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2877
     dd 184
 
@@ -37680,7 +35465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2868
     dd 184
 
@@ -37697,7 +35481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2877
     dd 184
 
@@ -37714,7 +35497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2886
     dd 184
 
@@ -37731,7 +35513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2895
     dd 184
 
@@ -37748,7 +35529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2886
     dd 184
 
@@ -37765,7 +35545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2895
     dd 184
 
@@ -37782,7 +35561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2904
     dd 184
 
@@ -37799,7 +35577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2913
     dd 184
 
@@ -37816,7 +35593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2904
     dd 184
 
@@ -37833,7 +35609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2913
     dd 184
 
@@ -37850,7 +35625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2616
     dd 184
 
@@ -37867,7 +35641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2625
     dd 184
 
@@ -37884,7 +35657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2922
     dd 184
 
@@ -37901,7 +35673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2931
     dd 184
 
@@ -37918,7 +35689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2940
     dd 184
 
@@ -37935,7 +35705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2949
     dd 184
 
@@ -37952,7 +35721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2958
     dd 184
 
@@ -37969,7 +35737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2967
     dd 184
 
@@ -37986,7 +35753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2976
     dd 184
 
@@ -38003,7 +35769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2985
     dd 184
 
@@ -38020,7 +35785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+2994
     dd 184
 
@@ -38037,7 +35801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3003
     dd 184
 
@@ -38054,7 +35817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3012
     dd 184
 
@@ -38071,7 +35833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3021
     dd 184
 
@@ -38088,7 +35849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3030
     dd 184
 
@@ -38105,7 +35865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3039
     dd 184
 
@@ -38122,7 +35881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3048
     dd 184
 
@@ -38139,7 +35897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3057
     dd 184
 
@@ -38156,7 +35913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3066
     dd 184
 
@@ -38173,7 +35929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3075
     dd 184
 
@@ -38190,7 +35945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3084
     dd 184
 
@@ -38207,7 +35961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3093
     dd 184
 
@@ -38224,7 +35977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3102
     dd 184
 
@@ -38241,7 +35993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3111
     dd 184
 
@@ -38258,7 +36009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3120
     dd 184
 
@@ -38275,7 +36025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3129
     dd 184
 
@@ -38292,7 +36041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3138
     dd 184
 
@@ -38309,7 +36057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3147
     dd 184
 
@@ -38326,7 +36073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3156
     dd 184
 
@@ -38343,7 +36089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3165
     dd 184
 
@@ -38360,7 +36105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3174
     dd 184
 
@@ -38377,7 +36121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3183
     dd 184
 
@@ -38394,7 +36137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9532
     dd 184
 
@@ -38411,7 +36153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9540
     dd 184
 
@@ -38428,7 +36169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3192
     dd 184
 
@@ -38445,7 +36185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3201
     dd 184
 
@@ -38462,7 +36201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3210
     dd 184
 
@@ -38479,7 +36217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3219
     dd 184
 
@@ -38496,7 +36233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3228
     dd 184
 
@@ -38513,7 +36249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3237
     dd 184
 
@@ -38530,7 +36265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3228
     dd 184
 
@@ -38547,7 +36281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3237
     dd 184
 
@@ -38564,7 +36297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3246
     dd 184
 
@@ -38581,7 +36313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3255
     dd 184
 
@@ -38598,7 +36329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3246
     dd 184
 
@@ -38615,7 +36345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3255
     dd 184
 
@@ -38632,7 +36361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3264
     dd 184
 
@@ -38649,7 +36377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3273
     dd 184
 
@@ -38666,7 +36393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3264
     dd 184
 
@@ -38683,7 +36409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3273
     dd 184
 
@@ -38700,7 +36425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3282
     dd 184
 
@@ -38717,7 +36441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3291
     dd 184
 
@@ -38734,7 +36457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3282
     dd 184
 
@@ -38751,7 +36473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3291
     dd 184
 
@@ -38768,7 +36489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3300
     dd 184
 
@@ -38785,7 +36505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3309
     dd 184
 
@@ -38802,7 +36521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3300
     dd 184
 
@@ -38819,7 +36537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3309
     dd 184
 
@@ -38836,7 +36553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3318
     dd 184
 
@@ -38853,7 +36569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3327
     dd 184
 
@@ -38870,7 +36585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3318
     dd 184
 
@@ -38887,7 +36601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3327
     dd 184
 
@@ -38904,7 +36617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3336
     dd 184
 
@@ -38921,7 +36633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3345
     dd 184
 
@@ -38938,7 +36649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3336
     dd 184
 
@@ -38955,7 +36665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3345
     dd 184
 
@@ -38972,7 +36681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3354
     dd 184
 
@@ -38989,7 +36697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3363
     dd 184
 
@@ -39006,7 +36713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3372
     dd 184
 
@@ -39023,7 +36729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3381
     dd 184
 
@@ -39040,7 +36745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3372
     dd 184
 
@@ -39057,7 +36761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3381
     dd 184
 
@@ -39074,7 +36777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3390
     dd 184
 
@@ -39091,7 +36793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3399
     dd 184
 
@@ -39108,7 +36809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3390
     dd 184
 
@@ -39125,7 +36825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3399
     dd 184
 
@@ -39142,7 +36841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3408
     dd 184
 
@@ -39159,7 +36857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3417
     dd 184
 
@@ -39176,7 +36873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3408
     dd 184
 
@@ -39193,7 +36889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3417
     dd 184
 
@@ -39210,7 +36905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3426
     dd 184
 
@@ -39227,7 +36921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3435
     dd 184
 
@@ -39244,7 +36937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3444
     dd 184
 
@@ -39261,7 +36953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3453
     dd 184
 
@@ -39278,7 +36969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3444
     dd 184
 
@@ -39295,7 +36985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3453
     dd 184
 
@@ -39312,7 +37001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3462
     dd 184
 
@@ -39329,7 +37017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3471
     dd 184
 
@@ -39346,7 +37033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3462
     dd 184
 
@@ -39363,7 +37049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3471
     dd 184
 
@@ -39380,7 +37065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3480
     dd 184
 
@@ -39397,7 +37081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3489
     dd 184
 
@@ -39414,7 +37097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3480
     dd 184
 
@@ -39431,7 +37113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3489
     dd 184
 
@@ -39448,7 +37129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3192
     dd 184
 
@@ -39465,7 +37145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3201
     dd 184
 
@@ -39482,7 +37161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3498
     dd 184
 
@@ -39499,7 +37177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3507
     dd 184
 
@@ -39516,7 +37193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3516
     dd 184
 
@@ -39533,7 +37209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3525
     dd 184
 
@@ -39550,7 +37225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3534
     dd 184
 
@@ -39567,7 +37241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3543
     dd 184
 
@@ -39584,7 +37257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3552
     dd 184
 
@@ -39601,7 +37273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3561
     dd 184
 
@@ -39618,7 +37289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3570
     dd 184
 
@@ -39635,7 +37305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3579
     dd 184
 
@@ -39652,7 +37321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3588
     dd 184
 
@@ -39669,7 +37337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3597
     dd 184
 
@@ -39686,7 +37353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3606
     dd 184
 
@@ -39703,7 +37369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3615
     dd 184
 
@@ -39720,7 +37385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3624
     dd 184
 
@@ -39737,7 +37401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3633
     dd 184
 
@@ -39754,7 +37417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3642
     dd 184
 
@@ -39771,7 +37433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3651
     dd 184
 
@@ -39788,7 +37449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3660
     dd 184
 
@@ -39805,7 +37465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3669
     dd 184
 
@@ -39822,7 +37481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3678
     dd 184
 
@@ -39839,7 +37497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3687
     dd 184
 
@@ -39856,7 +37513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3696
     dd 184
 
@@ -39873,7 +37529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3705
     dd 184
 
@@ -39890,7 +37545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3714
     dd 184
 
@@ -39907,7 +37561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3723
     dd 184
 
@@ -39924,7 +37577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3732
     dd 184
 
@@ -39941,7 +37593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3741
     dd 184
 
@@ -39958,7 +37609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3750
     dd 184
 
@@ -39975,7 +37625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3759
     dd 184
 
@@ -39992,7 +37641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9548
     dd 184
 
@@ -40009,7 +37657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9556
     dd 184
 
@@ -40026,7 +37673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28092
     dd 184
 
@@ -40043,7 +37689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28099
     dd 184
 
@@ -40060,7 +37705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28106
     dd 184
 
@@ -40077,7 +37721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28113
     dd 184
 
@@ -40094,7 +37737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28120
     dd 184
 
@@ -40111,7 +37753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28127
     dd 184
 
@@ -40128,7 +37769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28134
     dd 184
 
@@ -40145,7 +37785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28134
     dd 188
 
@@ -40162,7 +37801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28141
     dd 184
 
@@ -40179,7 +37817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28141
     dd 189
 
@@ -40196,7 +37833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28148
     dd 184
 
@@ -40213,7 +37849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28148
     dd 188
 
@@ -40230,7 +37865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28155
     dd 184
 
@@ -40247,7 +37881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28155
     dd 189
 
@@ -40264,7 +37897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28162
     dd 184
 
@@ -40281,7 +37913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28169
     dd 184
 
@@ -40298,7 +37929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28176
     dd 184
 
@@ -40315,7 +37945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28183
     dd 184
 
@@ -40332,7 +37961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28190
     dd 184
 
@@ -40349,7 +37977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28197
     dd 190
 
@@ -40366,7 +37993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28204
     dd 184
 
@@ -40383,7 +38009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28211
     dd 184
 
@@ -40400,7 +38025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28218
     dd 191
 
@@ -40417,7 +38041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28225
     dd 191
 
@@ -40434,7 +38057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28232
     dd 192
 
@@ -40451,7 +38073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28239
     dd 192
 
@@ -40468,7 +38089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28246
     dd 191
 
@@ -40485,7 +38105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28253
     dd 191
 
@@ -40502,7 +38121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28260
     dd 192
 
@@ -40519,7 +38137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28267
     dd 192
 
@@ -40536,7 +38153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28274
     dd 184
 
@@ -40553,7 +38169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28281
     dd 184
 
@@ -40570,7 +38185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28288
     dd 184
 
@@ -40587,7 +38201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28295
     dd 190
 
@@ -40604,7 +38217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28302
     dd 184
 
@@ -40621,7 +38233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28302
     dd 188
 
@@ -40638,7 +38249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28309
     dd 184
 
@@ -40655,7 +38265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28309
     dd 189
 
@@ -40672,7 +38281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28316
     dd 184
 
@@ -40689,7 +38297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28323
     dd 184
 
@@ -40706,7 +38313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28330
     dd 184
 
@@ -40723,7 +38329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28337
     dd 190
 
@@ -40740,7 +38345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28344
     dd 184
 
@@ -40757,7 +38361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28351
     dd 190
 
@@ -40774,7 +38377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28358
     dd 184
 
@@ -40791,7 +38393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28365
     dd 184
 
@@ -40808,7 +38409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28372
     dd 184
 
@@ -40825,7 +38425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28379
     dd 184
 
@@ -40842,7 +38441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28386
     dd 184
 
@@ -40859,7 +38457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28393
     dd 184
 
@@ -40876,7 +38473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28400
     dd 184
 
@@ -40893,7 +38489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28407
     dd 184
 
@@ -40910,7 +38505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28414
     dd 184
 
@@ -40927,7 +38521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28421
     dd 184
 
@@ -40944,7 +38537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28428
     dd 184
 
@@ -40961,7 +38553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28435
     dd 184
 
@@ -40978,7 +38569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9564
     dd 184
 
@@ -40995,7 +38585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9572
     dd 184
 
@@ -41012,7 +38601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9580
     dd 184
 
@@ -41029,7 +38617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9588
     dd 184
 
@@ -41046,7 +38633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9596
     dd 184
 
@@ -41063,7 +38649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9604
     dd 184
 
@@ -41080,7 +38665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9612
     dd 184
 
@@ -41097,7 +38681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9620
     dd 184
 
@@ -41114,7 +38697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28442
     dd 184
 
@@ -41131,7 +38713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28449
     dd 184
 
@@ -41148,7 +38729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28456
     dd 184
 
@@ -41165,7 +38745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28463
     dd 184
 
@@ -41182,7 +38761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28470
     dd 184
 
@@ -41199,7 +38777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28477
     dd 184
 
@@ -41216,7 +38793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28484
     dd 184
 
@@ -41233,7 +38809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28491
     dd 184
 
@@ -41250,7 +38825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28498
     dd 184
 
@@ -41267,7 +38841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28505
     dd 184
 
@@ -41284,7 +38857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28512
     dd 184
 
@@ -41301,7 +38873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28519
     dd 184
 
@@ -41318,7 +38889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28526
     dd 184
 
@@ -41335,7 +38905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28533
     dd 184
 
@@ -41352,7 +38921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28540
     dd 184
 
@@ -41369,7 +38937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28547
     dd 184
 
@@ -41386,7 +38953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9628
     dd 184
 
@@ -41403,7 +38969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9636
     dd 184
 
@@ -41420,7 +38985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9644
     dd 184
 
@@ -41437,7 +39001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9652
     dd 184
 
@@ -41454,7 +39017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28554
     dd 184
 
@@ -41471,7 +39033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28561
     dd 184
 
@@ -41488,7 +39049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28561
     dd 184
 
@@ -41505,7 +39065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28568
     dd 184
 
@@ -41522,7 +39081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28575
     dd 184
 
@@ -41539,7 +39097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28582
     dd 184
 
@@ -41556,7 +39113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28589
     dd 184
 
@@ -41573,7 +39129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28596
     dd 188
 
@@ -41590,7 +39145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28603
     dd 189
 
@@ -41607,7 +39161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28610
     dd 184
 
@@ -41624,7 +39177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28617
     dd 184
 
@@ -41641,7 +39193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28624
     dd 184
 
@@ -41658,7 +39209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28631
     dd 184
 
@@ -41675,7 +39225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28638
     dd 184
 
@@ -41692,7 +39241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28645
     dd 184
 
@@ -41709,7 +39257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28652
     dd 184
 
@@ -41726,7 +39273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28659
     dd 184
 
@@ -41743,7 +39289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28666
     dd 184
 
@@ -41760,7 +39305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28673
     dd 184
 
@@ -41777,7 +39321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28680
     dd 184
 
@@ -41794,7 +39337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28687
     dd 184
 
@@ -41811,7 +39353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28694
     dd 184
 
@@ -41828,7 +39369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28701
     dd 184
 
@@ -41845,7 +39385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28708
     dd 184
 
@@ -41862,7 +39401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28715
     dd 184
 
@@ -41879,7 +39417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28722
     dd 184
 
@@ -41896,7 +39433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28729
     dd 184
 
@@ -41913,7 +39449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28736
     dd 184
 
@@ -41930,7 +39465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28743
     dd 184
 
@@ -41947,7 +39481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28750
     dd 184
 
@@ -41964,7 +39497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28757
     dd 184
 
@@ -41981,7 +39513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28764
     dd 184
 
@@ -41998,7 +39529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28771
     dd 184
 
@@ -42015,7 +39545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28778
     dd 184
 
@@ -42032,7 +39561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28785
     dd 184
 
@@ -42049,7 +39577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28792
     dd 184
 
@@ -42066,7 +39593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28799
     dd 184
 
@@ -42083,7 +39609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28806
     dd 184
 
@@ -42100,7 +39625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28813
     dd 184
 
@@ -42117,7 +39641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28820
     dd 184
 
@@ -42134,7 +39657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28827
     dd 184
 
@@ -42151,7 +39673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28834
     dd 184
 
@@ -42168,7 +39689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28841
     dd 184
 
@@ -42185,7 +39705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28848
     dd 184
 
@@ -42202,7 +39721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28855
     dd 184
 
@@ -42219,7 +39737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28862
     dd 184
 
@@ -42236,7 +39753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28869
     dd 184
 
@@ -42253,7 +39769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28876
     dd 193
 
@@ -42270,7 +39785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28883
     dd 193
 
@@ -42287,7 +39801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28890
     dd 192
 
@@ -42304,7 +39817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28897
     dd 192
 
@@ -42321,7 +39833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28904
     dd 184
 
@@ -42338,7 +39849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28911
     dd 184
 
@@ -42355,7 +39865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28918
     dd 184
 
@@ -42372,7 +39881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28925
     dd 184
 
@@ -42389,7 +39897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28932
     dd 184
 
@@ -42406,7 +39913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28939
     dd 184
 
@@ -42423,7 +39929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28932
     dd 184
 
@@ -42440,7 +39945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28939
     dd 184
 
@@ -42457,7 +39961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28946
     dd 184
 
@@ -42474,7 +39977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28953
     dd 184
 
@@ -42491,7 +39993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28960
     dd 184
 
@@ -42508,7 +40009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28967
     dd 184
 
@@ -42525,7 +40025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28960
     dd 184
 
@@ -42542,7 +40041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28967
     dd 184
 
@@ -42559,7 +40057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28974
     dd 184
 
@@ -42576,7 +40073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28981
     dd 184
 
@@ -42593,7 +40089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28988
     dd 184
 
@@ -42610,7 +40105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28995
     dd 184
 
@@ -42627,7 +40121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29002
     dd 184
 
@@ -42644,7 +40137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29009
     dd 184
 
@@ -42661,7 +40153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29016
     dd 184
 
@@ -42678,7 +40169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29023
     dd 184
 
@@ -42695,7 +40185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29009
     dd 184
 
@@ -42712,7 +40201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29016
     dd 184
 
@@ -42729,7 +40217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29030
     dd 184
 
@@ -42746,7 +40233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29037
     dd 184
 
@@ -42763,7 +40249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29044
     dd 184
 
@@ -42780,7 +40265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28974
     dd 184
 
@@ -42797,7 +40281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28981
     dd 184
 
@@ -42814,7 +40297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29051
     dd 184
 
@@ -42831,7 +40313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29058
     dd 190
 
@@ -42848,7 +40329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29058
     dd 184
 
@@ -42865,7 +40345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29065
     dd 190
 
@@ -42882,7 +40361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29065
     dd 184
 
@@ -42899,7 +40377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29072
     dd 190
 
@@ -42916,7 +40393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29072
     dd 184
 
@@ -42933,7 +40409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29079
     dd 190
 
@@ -42950,7 +40425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29079
     dd 184
 
@@ -42967,7 +40441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29086
     dd 184
 
@@ -42984,7 +40457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29093
     dd 184
 
@@ -43001,7 +40473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29093
     dd 184
 
@@ -43018,7 +40489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29100
     dd 184
 
@@ -43035,7 +40505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29107
     dd 184
 
@@ -43052,7 +40521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29114
     dd 184
 
@@ -43069,7 +40537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29121
     dd 184
 
@@ -43086,7 +40553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29128
     dd 184
 
@@ -43103,7 +40569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29135
     dd 184
 
@@ -43120,7 +40585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29142
     dd 184
 
@@ -43137,7 +40601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29149
     dd 184
 
@@ -43154,7 +40617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29156
     dd 184
 
@@ -43171,7 +40633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29163
     dd 184
 
@@ -43188,7 +40649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29170
     dd 184
 
@@ -43205,7 +40665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29177
     dd 184
 
@@ -43222,7 +40681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29184
     dd 184
 
@@ -43239,7 +40697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29191
     dd 184
 
@@ -43256,7 +40713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29198
     dd 184
 
@@ -43273,7 +40729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29205
     dd 184
 
@@ -43290,7 +40745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29212
     dd 184
 
@@ -43307,7 +40761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29219
     dd 184
 
@@ -43324,7 +40777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29226
     dd 184
 
@@ -43341,7 +40793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29233
     dd 184
 
@@ -43358,7 +40809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29240
     dd 184
 
@@ -43375,7 +40825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29247
     dd 184
 
@@ -43392,7 +40841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29254
     dd 184
 
@@ -43409,7 +40857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29261
     dd 184
 
@@ -43426,7 +40873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29268
     dd 184
 
@@ -43443,7 +40889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29275
     dd 184
 
@@ -43460,7 +40905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29282
     dd 184
 
@@ -43477,7 +40921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29289
     dd 184
 
@@ -43494,7 +40937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29296
     dd 184
 
@@ -43511,7 +40953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9660
     dd 184
 
@@ -43528,7 +40969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9668
     dd 184
 
@@ -43545,7 +40985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29303
     dd 184
 
@@ -43562,7 +41001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29310
     dd 184
 
@@ -43579,7 +41017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29317
     dd 184
 
@@ -43596,7 +41033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29324
     dd 184
 
@@ -43613,7 +41049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29331
     dd 184
 
@@ -43630,7 +41065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29338
     dd 184
 
@@ -43647,7 +41081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29345
     dd 184
 
@@ -43664,7 +41097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29352
     dd 184
 
@@ -43681,7 +41113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29359
     dd 184
 
@@ -43698,7 +41129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29366
     dd 184
 
@@ -43715,7 +41145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29373
     dd 184
 
@@ -43732,7 +41161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29380
     dd 184
 
@@ -43749,7 +41177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29387
     dd 184
 
@@ -43766,7 +41193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29394
     dd 184
 
@@ -43783,7 +41209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29401
     dd 184
 
@@ -43800,7 +41225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29408
     dd 184
 
@@ -43817,7 +41241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29415
     dd 184
 
@@ -43834,7 +41257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29422
     dd 184
 
@@ -43851,7 +41273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29429
     dd 184
 
@@ -43868,7 +41289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29436
     dd 184
 
@@ -43885,7 +41305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29443
     dd 184
 
@@ -43902,7 +41321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29450
     dd 184
 
@@ -43919,7 +41337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29457
     dd 184
 
@@ -43936,7 +41353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29464
     dd 184
 
@@ -43953,7 +41369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29471
     dd 184
 
@@ -43970,7 +41385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29478
     dd 184
 
@@ -43987,7 +41401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29485
     dd 184
 
@@ -44004,7 +41417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29492
     dd 184
 
@@ -44021,7 +41433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29499
     dd 184
 
@@ -44038,7 +41449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29506
     dd 184
 
@@ -44055,7 +41465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29513
     dd 184
 
@@ -44072,7 +41481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29520
     dd 184
 
@@ -44089,7 +41497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29527
     dd 184
 
@@ -44106,7 +41513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29534
     dd 184
 
@@ -44123,7 +41529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29541
     dd 184
 
@@ -44140,7 +41545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29548
     dd 184
 
@@ -44157,7 +41561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29555
     dd 184
 
@@ -44174,7 +41577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29562
     dd 184
 
@@ -44191,7 +41593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29569
     dd 184
 
@@ -44208,7 +41609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29576
     dd 184
 
@@ -44225,7 +41625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29583
     dd 184
 
@@ -44242,7 +41641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29590
     dd 184
 
@@ -44259,7 +41657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29597
     dd 184
 
@@ -44276,7 +41673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29604
     dd 184
 
@@ -44293,7 +41689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29611
     dd 184
 
@@ -44310,7 +41705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29618
     dd 184
 
@@ -44327,7 +41721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29625
     dd 184
 
@@ -44344,7 +41737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9676
     dd 184
 
@@ -44361,7 +41753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9684
     dd 184
 
@@ -44378,7 +41769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29632
     dd 184
 
@@ -44395,7 +41785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29639
     dd 184
 
@@ -44412,7 +41801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29646
     dd 184
 
@@ -44429,7 +41817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29653
     dd 184
 
@@ -44446,7 +41833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29660
     dd 184
 
@@ -44463,7 +41849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29667
     dd 184
 
@@ -44480,7 +41865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29674
     dd 184
 
@@ -44497,7 +41881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29681
     dd 184
 
@@ -44514,7 +41897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9692
     dd 184
 
@@ -44531,7 +41913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9700
     dd 184
 
@@ -44548,7 +41929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9708
     dd 184
 
@@ -44565,7 +41945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9716
     dd 184
 
@@ -44582,7 +41961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9724
     dd 184
 
@@ -44599,7 +41977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9732
     dd 184
 
@@ -44616,7 +41993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9740
     dd 184
 
@@ -44633,7 +42009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9748
     dd 184
 
@@ -44650,7 +42025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29688
     dd 184
 
@@ -44667,7 +42041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29695
     dd 184
 
@@ -44684,7 +42057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29702
     dd 184
 
@@ -44701,7 +42073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29709
     dd 184
 
@@ -44718,7 +42089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29716
     dd 184
 
@@ -44735,7 +42105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29723
     dd 184
 
@@ -44752,7 +42121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29730
     dd 184
 
@@ -44769,7 +42137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29737
     dd 184
 
@@ -44786,7 +42153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29744
     dd 184
 
@@ -44803,7 +42169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29751
     dd 184
 
@@ -44820,7 +42185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29758
     dd 184
 
@@ -44837,7 +42201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29765
     dd 184
 
@@ -44854,7 +42217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29772
     dd 184
 
@@ -44871,7 +42233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29779
     dd 184
 
@@ -44888,7 +42249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29786
     dd 184
 
@@ -44905,7 +42265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29793
     dd 184
 
@@ -44922,7 +42281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29800
     dd 184
 
@@ -44939,7 +42297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29807
     dd 184
 
@@ -44956,7 +42313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29814
     dd 184
 
@@ -44973,7 +42329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29821
     dd 184
 
@@ -44990,7 +42345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9756
     dd 184
 
@@ -45007,7 +42361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9764
     dd 184
 
@@ -45024,7 +42377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29828
     dd 184
 
@@ -45041,7 +42393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29835
     dd 184
 
@@ -45058,7 +42409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29842
     dd 184
 
@@ -45075,7 +42425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29849
     dd 184
 
@@ -45092,7 +42441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9772
     dd 184
 
@@ -45109,7 +42457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9780
     dd 184
 
@@ -45126,7 +42473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9788
     dd 184
 
@@ -45143,7 +42489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9796
     dd 184
 
@@ -45160,7 +42505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9804
     dd 190
 
@@ -45177,7 +42521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9804
     dd 184
 
@@ -45194,7 +42537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9804
     dd 184
 
@@ -45211,7 +42553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9812
     dd 190
 
@@ -45228,7 +42569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9812
     dd 184
 
@@ -45245,7 +42585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9820
     dd 190
 
@@ -45262,7 +42601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9820
     dd 184
 
@@ -45279,7 +42617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9820
     dd 184
 
@@ -45296,7 +42633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9828
     dd 190
 
@@ -45313,7 +42649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9828
     dd 184
 
@@ -45330,7 +42665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9836
     dd 190
 
@@ -45347,7 +42681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29856
     dd 184
 
@@ -45364,7 +42697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29863
     dd 184
 
@@ -45381,7 +42713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29870
     dd 184
 
@@ -45398,7 +42729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29877
     dd 184
 
@@ -45415,7 +42745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29884
     dd 184
 
@@ -45432,7 +42761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29891
     dd 184
 
@@ -45449,7 +42777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29898
     dd 184
 
@@ -45466,7 +42793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29905
     dd 184
 
@@ -45483,7 +42809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29912
     dd 184
 
@@ -45500,7 +42825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29919
     dd 184
 
@@ -45517,7 +42841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29926
     dd 184
 
@@ -45534,7 +42857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29933
     dd 184
 
@@ -45551,7 +42873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29940
     dd 184
 
@@ -45568,7 +42889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9844
     dd 184
 
@@ -45585,7 +42905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9852
     dd 184
 
@@ -45602,7 +42921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9844
     dd 184
 
@@ -45619,7 +42937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9852
     dd 184
 
@@ -45636,7 +42953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9844
     dd 184
 
@@ -45653,7 +42969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9852
     dd 184
 
@@ -45670,7 +42985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9860
     dd 184
 
@@ -45687,7 +43001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9868
     dd 184
 
@@ -45704,7 +43017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9860
     dd 184
 
@@ -45721,7 +43033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9868
     dd 184
 
@@ -45738,7 +43049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9860
     dd 184
 
@@ -45755,7 +43065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9868
     dd 184
 
@@ -45772,7 +43081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9876
     dd 184
 
@@ -45789,7 +43097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9884
     dd 184
 
@@ -45806,7 +43113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9876
     dd 184
 
@@ -45823,7 +43129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9884
     dd 184
 
@@ -45840,7 +43145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9892
     dd 190
 
@@ -45857,7 +43161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9900
     dd 190
 
@@ -45874,7 +43177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9892
     dd 190
 
@@ -45891,7 +43193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9900
     dd 190
 
@@ -45908,7 +43209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29947
     dd 184
 
@@ -45925,7 +43225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29954
     dd 184
 
@@ -45942,7 +43241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29961
     dd 184
 
@@ -45959,7 +43257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29968
     dd 184
 
@@ -45976,7 +43273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29975
     dd 184
 
@@ -45993,7 +43289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29982
     dd 184
 
@@ -46010,7 +43305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29989
     dd 184
 
@@ -46027,7 +43321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+29996
     dd 184
 
@@ -46044,7 +43337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30003
     dd 184
 
@@ -46061,7 +43353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30010
     dd 184
 
@@ -46078,7 +43369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30017
     dd 184
 
@@ -46095,7 +43385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30024
     dd 184
 
@@ -46112,7 +43401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30031
     dd 184
 
@@ -46129,7 +43417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30038
     dd 184
 
@@ -46146,7 +43433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30045
     dd 184
 
@@ -46163,7 +43449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30052
     dd 184
 
@@ -46180,7 +43465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30059
     dd 184
 
@@ -46197,7 +43481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30066
     dd 184
 
@@ -46214,7 +43497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30073
     dd 184
 
@@ -46231,7 +43513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30080
     dd 184
 
@@ -46248,7 +43529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30087
     dd 184
 
@@ -46265,7 +43545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30094
     dd 184
 
@@ -46282,7 +43561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30101
     dd 184
 
@@ -46299,7 +43577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30108
     dd 184
 
@@ -46316,7 +43593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30115
     dd 184
 
@@ -46333,7 +43609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30122
     dd 184
 
@@ -46350,7 +43625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30129
     dd 184
 
@@ -46367,7 +43641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30136
     dd 184
 
@@ -46384,7 +43657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30143
     dd 190
 
@@ -46401,7 +43673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30143
     dd 184
 
@@ -46418,7 +43689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30150
     dd 184
 
@@ -46435,7 +43705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30157
     dd 184
 
@@ -46452,7 +43721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30164
     dd 184
 
@@ -46469,7 +43737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30171
     dd 184
 
@@ -46486,7 +43753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30178
     dd 184
 
@@ -46503,7 +43769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30185
     dd 184
 
@@ -46520,7 +43785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30192
     dd 184
 
@@ -46537,7 +43801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30199
     dd 184
 
@@ -46554,7 +43817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30206
     dd 184
 
@@ -46571,7 +43833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30213
     dd 184
 
@@ -46588,7 +43849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30220
     dd 184
 
@@ -46605,7 +43865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30227
     dd 184
 
@@ -46622,7 +43881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30234
     dd 184
 
@@ -46639,7 +43897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30241
     dd 184
 
@@ -46656,7 +43913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30248
     dd 184
 
@@ -46673,7 +43929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30255
     dd 184
 
@@ -46690,7 +43945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30262
     dd 184
 
@@ -46707,7 +43961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30269
     dd 184
 
@@ -46724,7 +43977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30276
     dd 184
 
@@ -46741,7 +43993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30283
     dd 184
 
@@ -46758,7 +44009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30290
     dd 184
 
@@ -46775,7 +44025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30297
     dd 184
 
@@ -46792,7 +44041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30304
     dd 184
 
@@ -46809,7 +44057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30311
     dd 184
 
@@ -46826,7 +44073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30318
     dd 184
 
@@ -46843,7 +44089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30325
     dd 184
 
@@ -46860,7 +44105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30332
     dd 184
 
@@ -46877,7 +44121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30339
     dd 184
 
@@ -46894,7 +44137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30346
     dd 184
 
@@ -46911,7 +44153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30353
     dd 184
 
@@ -46928,7 +44169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30360
     dd 184
 
@@ -46945,7 +44185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30367
     dd 184
 
@@ -46962,7 +44201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9908
     dd 184
 
@@ -46979,7 +44217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9916
     dd 184
 
@@ -46996,7 +44233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9924
     dd 184
 
@@ -47013,7 +44249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30374
     dd 184
 
@@ -47030,7 +44265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30381
     dd 184
 
@@ -47047,7 +44281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30388
     dd 184
 
@@ -47064,7 +44297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30395
     dd 184
 
@@ -47081,7 +44313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30402
     dd 184
 
@@ -47098,7 +44329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30409
     dd 184
 
@@ -47115,7 +44345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9932
     dd 184
 
@@ -47132,7 +44361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9940
     dd 184
 
@@ -47149,7 +44377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9948
     dd 184
 
@@ -47166,7 +44393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9956
     dd 184
 
@@ -47183,7 +44409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30416
     dd 184
 
@@ -47200,7 +44425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30423
     dd 184
 
@@ -47217,7 +44441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9964
     dd 184
 
@@ -47234,7 +44457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9972
     dd 184
 
@@ -47251,7 +44473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30430
     dd 184
 
@@ -47268,7 +44489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30437
     dd 184
 
@@ -47285,7 +44505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9980
     dd 184
 
@@ -47302,7 +44521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9988
     dd 184
 
@@ -47319,7 +44537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30444
     dd 184
 
@@ -47336,7 +44553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30451
     dd 184
 
@@ -47353,7 +44569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+9996
     dd 184
 
@@ -47370,7 +44585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10004
     dd 184
 
@@ -47387,7 +44601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30458
     dd 184
 
@@ -47404,7 +44617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30465
     dd 184
 
@@ -47421,7 +44633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10012
     dd 184
 
@@ -47438,7 +44649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10020
     dd 184
 
@@ -47455,7 +44665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30472
     dd 184
 
@@ -47472,7 +44681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30479
     dd 184
 
@@ -47489,7 +44697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10028
     dd 184
 
@@ -47506,7 +44713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10036
     dd 184
 
@@ -47523,7 +44729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30486
     dd 184
 
@@ -47540,7 +44745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30493
     dd 184
 
@@ -47557,7 +44761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10044
     dd 184
 
@@ -47574,7 +44777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10052
     dd 184
 
@@ -47591,7 +44793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30500
     dd 184
 
@@ -47608,7 +44809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30507
     dd 184
 
@@ -47625,7 +44825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10060
     dd 184
 
@@ -47642,7 +44841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10068
     dd 184
 
@@ -47659,7 +44857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30514
     dd 184
 
@@ -47676,7 +44873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30521
     dd 184
 
@@ -47693,7 +44889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10076
     dd 184
 
@@ -47710,7 +44905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10084
     dd 184
 
@@ -47727,7 +44921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30528
     dd 184
 
@@ -47744,7 +44937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30535
     dd 184
 
@@ -47761,7 +44953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30542
     dd 184
 
@@ -47778,7 +44969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30549
     dd 184
 
@@ -47795,7 +44985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30556
     dd 184
 
@@ -47812,7 +45001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30563
     dd 184
 
@@ -47829,7 +45017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30570
     dd 184
 
@@ -47846,7 +45033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30577
     dd 184
 
@@ -47863,7 +45049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30584
     dd 184
 
@@ -47880,7 +45065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30591
     dd 184
 
@@ -47897,7 +45081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30598
     dd 184
 
@@ -47914,7 +45097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30605
     dd 184
 
@@ -47931,7 +45113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30612
     dd 184
 
@@ -47948,7 +45129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30619
     dd 184
 
@@ -47965,7 +45145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30626
     dd 184
 
@@ -47982,7 +45161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30633
     dd 184
 
@@ -47999,7 +45177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30640
     dd 184
 
@@ -48016,7 +45193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30647
     dd 184
 
@@ -48033,7 +45209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30654
     dd 184
 
@@ -48050,7 +45225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30661
     dd 184
 
@@ -48067,7 +45241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30668
     dd 184
 
@@ -48084,7 +45257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30675
     dd 184
 
@@ -48101,7 +45273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30682
     dd 184
 
@@ -48118,7 +45289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30689
     dd 184
 
@@ -48135,7 +45305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30696
     dd 184
 
@@ -48152,7 +45321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30703
     dd 184
 
@@ -48169,7 +45337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30710
     dd 184
 
@@ -48186,7 +45353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30717
     dd 184
 
@@ -48203,7 +45369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30724
     dd 184
 
@@ -48220,7 +45385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30731
     dd 184
 
@@ -48237,7 +45401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30738
     dd 184
 
@@ -48254,7 +45417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30745
     dd 184
 
@@ -48271,7 +45433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30752
     dd 184
 
@@ -48288,7 +45449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30759
     dd 184
 
@@ -48305,7 +45465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30766
     dd 184
 
@@ -48322,7 +45481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30773
     dd 184
 
@@ -48339,7 +45497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30780
     dd 184
 
@@ -48356,7 +45513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30787
     dd 184
 
@@ -48373,7 +45529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30794
     dd 184
 
@@ -48390,7 +45545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30801
     dd 184
 
@@ -48407,7 +45561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30808
     dd 184
 
@@ -48424,7 +45577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30815
     dd 184
 
@@ -48441,7 +45593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30822
     dd 184
 
@@ -48458,7 +45609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30829
     dd 184
 
@@ -48475,7 +45625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10092
     dd 184
 
@@ -48492,7 +45641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10100
     dd 184
 
@@ -48509,7 +45657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10108
     dd 184
 
@@ -48526,7 +45673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10116
     dd 184
 
@@ -48543,7 +45689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10124
     dd 184
 
@@ -48560,7 +45705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10132
     dd 184
 
@@ -48577,7 +45721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10140
     dd 184
 
@@ -48594,7 +45737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10148
     dd 184
 
@@ -48611,7 +45753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10156
     dd 184
 
@@ -48628,7 +45769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10164
     dd 184
 
@@ -48645,7 +45785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10172
     dd 184
 
@@ -48662,7 +45801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10180
     dd 184
 
@@ -48679,7 +45817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10188
     dd 184
 
@@ -48696,7 +45833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10196
     dd 184
 
@@ -48713,7 +45849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10204
     dd 184
 
@@ -48730,7 +45865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10212
     dd 184
 
@@ -48747,7 +45881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30836
     dd 184
 
@@ -48764,7 +45897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30843
     dd 184
 
@@ -48781,7 +45913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30850
     dd 184
 
@@ -48798,7 +45929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30857
     dd 184
 
@@ -48815,7 +45945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30864
     dd 184
 
@@ -48832,7 +45961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30871
     dd 184
 
@@ -48849,7 +45977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30878
     dd 184
 
@@ -48866,7 +45993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30885
     dd 184
 
@@ -48883,7 +46009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30892
     dd 184
 
@@ -48900,7 +46025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30899
     dd 184
 
@@ -48917,7 +46041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30906
     dd 184
 
@@ -48934,7 +46057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30913
     dd 184
 
@@ -48951,7 +46073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30920
     dd 184
 
@@ -48968,7 +46089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30927
     dd 184
 
@@ -48985,7 +46105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30934
     dd 184
 
@@ -49002,7 +46121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30941
     dd 184
 
@@ -49019,7 +46137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30948
     dd 184
 
@@ -49036,7 +46153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30955
     dd 184
 
@@ -49053,7 +46169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30962
     dd 184
 
@@ -49070,7 +46185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30969
     dd 184
 
@@ -49087,7 +46201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30976
     dd 184
 
@@ -49104,7 +46217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30983
     dd 184
 
@@ -49121,7 +46233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30990
     dd 184
 
@@ -49138,7 +46249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30997
     dd 184
 
@@ -49155,7 +46265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31004
     dd 184
 
@@ -49172,7 +46281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31011
     dd 184
 
@@ -49189,7 +46297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31018
     dd 184
 
@@ -49206,7 +46313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31025
     dd 184
 
@@ -49223,7 +46329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31032
     dd 184
 
@@ -49240,7 +46345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31039
     dd 184
 
@@ -49257,7 +46361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31046
     dd 184
 
@@ -49274,7 +46377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31053
     dd 184
 
@@ -49291,7 +46393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31060
     dd 184
 
@@ -49308,7 +46409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31067
     dd 184
 
@@ -49325,7 +46425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31074
     dd 184
 
@@ -49342,7 +46441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31081
     dd 184
 
@@ -49359,7 +46457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31088
     dd 184
 
@@ -49376,7 +46473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31095
     dd 184
 
@@ -49393,7 +46489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31102
     dd 184
 
@@ -49410,7 +46505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31109
     dd 184
 
@@ -49427,7 +46521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31116
     dd 184
 
@@ -49444,7 +46537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31123
     dd 184
 
@@ -49461,7 +46553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31130
     dd 184
 
@@ -49478,7 +46569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31137
     dd 184
 
@@ -49495,7 +46585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31144
     dd 184
 
@@ -49512,7 +46601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31151
     dd 184
 
@@ -49529,7 +46617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31158
     dd 184
 
@@ -49546,7 +46633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31165
     dd 184
 
@@ -49563,7 +46649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31172
     dd 184
 
@@ -49580,7 +46665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31179
     dd 184
 
@@ -49597,7 +46681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31186
     dd 184
 
@@ -49614,7 +46697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37336
     dd 184
 
@@ -49631,7 +46713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37342
     dd 184
 
@@ -49648,7 +46729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3768
     dd 183
 
@@ -49665,7 +46745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3777
     dd 183
 
@@ -49682,7 +46761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3786
     dd 183
 
@@ -49699,7 +46777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3795
     dd 183
 
@@ -49716,7 +46793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10220
     dd 183
 
@@ -49733,7 +46809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3804
     dd 184
 
@@ -49750,7 +46825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3813
     dd 184
 
@@ -49767,7 +46841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3822
     dd 184
 
@@ -49784,7 +46857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3831
     dd 184
 
@@ -49801,7 +46873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3840
     dd 184
 
@@ -49818,7 +46889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3849
     dd 184
 
@@ -49835,7 +46905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3858
     dd 184
 
@@ -49852,7 +46921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3867
     dd 184
 
@@ -49869,7 +46937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10228
     dd 184
 
@@ -49886,7 +46953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10236
     dd 184
 
@@ -49903,7 +46969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3876
     dd 194
 
@@ -49920,7 +46985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3885
     dd 194
 
@@ -49937,7 +47001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3894
     dd 194
 
@@ -49954,7 +47017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3903
     dd 194
 
@@ -49971,7 +47033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3912
     dd 194
 
@@ -49988,7 +47049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3921
     dd 194
 
@@ -50005,7 +47065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3930
     dd 194
 
@@ -50022,7 +47081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3939
     dd 194
 
@@ -50039,7 +47097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10244
     dd 194
 
@@ -50056,7 +47113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10252
     dd 194
 
@@ -50073,7 +47129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+0
     dd 195
 
@@ -50090,7 +47145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10
     dd 195
 
@@ -50107,7 +47161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+20
     dd 195
 
@@ -50124,7 +47177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+30
     dd 195
 
@@ -50141,7 +47193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40
     dd 195
 
@@ -50158,7 +47209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+50
     dd 195
 
@@ -50175,7 +47225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+60
     dd 195
 
@@ -50192,7 +47241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+70
     dd 195
 
@@ -50209,7 +47257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3948
     dd 195
 
@@ -50226,7 +47273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3957
     dd 195
 
@@ -50243,7 +47289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+80
     dd 195
 
@@ -50260,7 +47305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+90
     dd 195
 
@@ -50277,7 +47321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+100
     dd 195
 
@@ -50294,7 +47337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+110
     dd 195
 
@@ -50311,7 +47353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+120
     dd 195
 
@@ -50328,7 +47369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+130
     dd 195
 
@@ -50345,7 +47385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+140
     dd 195
 
@@ -50362,7 +47401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+150
     dd 195
 
@@ -50379,7 +47417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3966
     dd 195
 
@@ -50396,7 +47433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3975
     dd 195
 
@@ -50413,7 +47449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+160
     dd 196
 
@@ -50430,7 +47465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+170
     dd 196
 
@@ -50447,7 +47481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+180
     dd 196
 
@@ -50464,7 +47497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+190
     dd 196
 
@@ -50481,7 +47513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+200
     dd 196
 
@@ -50498,7 +47529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+210
     dd 196
 
@@ -50515,7 +47545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+220
     dd 196
 
@@ -50532,7 +47561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+230
     dd 196
 
@@ -50549,7 +47577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3984
     dd 196
 
@@ -50566,7 +47593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+3993
     dd 196
 
@@ -50583,7 +47609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31193
     dd 197
 
@@ -50600,7 +47625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31200
     dd 197
 
@@ -50617,7 +47641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31207
     dd 197
 
@@ -50634,7 +47657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31214
     dd 197
 
@@ -50651,7 +47673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31193
     dd 197
 
@@ -50668,7 +47689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31200
     dd 197
 
@@ -50685,7 +47705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31207
     dd 197
 
@@ -50702,7 +47721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31214
     dd 197
 
@@ -50719,7 +47737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31221
     dd 197
 
@@ -50736,7 +47753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31228
     dd 197
 
@@ -50753,7 +47769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31235
     dd 197
 
@@ -50770,7 +47785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31242
     dd 197
 
@@ -50787,7 +47801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31221
     dd 197
 
@@ -50804,7 +47817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31228
     dd 197
 
@@ -50821,7 +47833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31235
     dd 197
 
@@ -50838,7 +47849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31242
     dd 197
 
@@ -50855,7 +47865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31249
     dd 197
 
@@ -50872,7 +47881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31256
     dd 197
 
@@ -50889,7 +47897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31263
     dd 197
 
@@ -50906,7 +47913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31270
     dd 197
 
@@ -50923,7 +47929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31249
     dd 197
 
@@ -50940,7 +47945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31256
     dd 197
 
@@ -50957,7 +47961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31263
     dd 197
 
@@ -50974,7 +47977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31270
     dd 197
 
@@ -50991,7 +47993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31277
     dd 197
 
@@ -51008,7 +48009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31284
     dd 197
 
@@ -51025,7 +48025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31291
     dd 197
 
@@ -51042,7 +48041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31298
     dd 197
 
@@ -51059,7 +48057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31277
     dd 197
 
@@ -51076,7 +48073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31284
     dd 197
 
@@ -51093,7 +48089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31291
     dd 197
 
@@ -51110,7 +48105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31298
     dd 197
 
@@ -51127,7 +48121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31305
     dd 197
 
@@ -51144,7 +48137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31312
     dd 197
 
@@ -51161,7 +48153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31319
     dd 197
 
@@ -51178,7 +48169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31326
     dd 197
 
@@ -51195,7 +48185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31305
     dd 197
 
@@ -51212,7 +48201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31312
     dd 197
 
@@ -51229,7 +48217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31319
     dd 197
 
@@ -51246,7 +48233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31326
     dd 197
 
@@ -51263,7 +48249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31333
     dd 197
 
@@ -51280,7 +48265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31340
     dd 197
 
@@ -51297,7 +48281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31347
     dd 197
 
@@ -51314,7 +48297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31354
     dd 197
 
@@ -51331,7 +48313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31333
     dd 197
 
@@ -51348,7 +48329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31340
     dd 197
 
@@ -51365,7 +48345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31347
     dd 197
 
@@ -51382,7 +48361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31354
     dd 197
 
@@ -51399,7 +48377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31361
     dd 197
 
@@ -51416,7 +48393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31368
     dd 197
 
@@ -51433,7 +48409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31375
     dd 197
 
@@ -51450,7 +48425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31382
     dd 197
 
@@ -51467,7 +48441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31361
     dd 197
 
@@ -51484,7 +48457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31368
     dd 197
 
@@ -51501,7 +48473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31375
     dd 197
 
@@ -51518,7 +48489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31382
     dd 197
 
@@ -51535,7 +48505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31389
     dd 197
 
@@ -51552,7 +48521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31396
     dd 197
 
@@ -51569,7 +48537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31403
     dd 197
 
@@ -51586,7 +48553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31410
     dd 197
 
@@ -51603,7 +48569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31389
     dd 197
 
@@ -51620,7 +48585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31396
     dd 197
 
@@ -51637,7 +48601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31403
     dd 197
 
@@ -51654,7 +48617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31410
     dd 197
 
@@ -51671,7 +48633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31417
     dd 197
 
@@ -51688,7 +48649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31424
     dd 197
 
@@ -51705,7 +48665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31431
     dd 197
 
@@ -51722,7 +48681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31438
     dd 197
 
@@ -51739,7 +48697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31417
     dd 197
 
@@ -51756,7 +48713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31424
     dd 197
 
@@ -51773,7 +48729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31431
     dd 197
 
@@ -51790,7 +48745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31438
     dd 197
 
@@ -51807,7 +48761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31445
     dd 197
 
@@ -51824,7 +48777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31452
     dd 197
 
@@ -51841,7 +48793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31459
     dd 197
 
@@ -51858,7 +48809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31466
     dd 197
 
@@ -51875,7 +48825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31445
     dd 197
 
@@ -51892,7 +48841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31452
     dd 197
 
@@ -51909,7 +48857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31459
     dd 197
 
@@ -51926,7 +48873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31466
     dd 197
 
@@ -51943,7 +48889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31473
     dd 197
 
@@ -51960,7 +48905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31480
     dd 197
 
@@ -51977,7 +48921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31487
     dd 197
 
@@ -51994,7 +48937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31494
     dd 197
 
@@ -52011,7 +48953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31473
     dd 197
 
@@ -52028,7 +48969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31480
     dd 197
 
@@ -52045,7 +48985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31487
     dd 197
 
@@ -52062,7 +49001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31494
     dd 197
 
@@ -52079,7 +49017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31501
     dd 197
 
@@ -52096,7 +49033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31508
     dd 197
 
@@ -52113,7 +49049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31515
     dd 197
 
@@ -52130,7 +49065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31522
     dd 197
 
@@ -52147,7 +49081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31501
     dd 197
 
@@ -52164,7 +49097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31508
     dd 197
 
@@ -52181,7 +49113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31515
     dd 197
 
@@ -52198,7 +49129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31522
     dd 197
 
@@ -52215,7 +49145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31529
     dd 197
 
@@ -52232,7 +49161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31536
     dd 197
 
@@ -52249,7 +49177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31543
     dd 197
 
@@ -52266,7 +49193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31550
     dd 197
 
@@ -52283,7 +49209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31529
     dd 197
 
@@ -52300,7 +49225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31536
     dd 197
 
@@ -52317,7 +49241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31543
     dd 197
 
@@ -52334,7 +49257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31550
     dd 197
 
@@ -52351,7 +49273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31557
     dd 197
 
@@ -52368,7 +49289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31564
     dd 197
 
@@ -52385,7 +49305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31571
     dd 197
 
@@ -52402,7 +49321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31578
     dd 197
 
@@ -52419,7 +49337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31557
     dd 197
 
@@ -52436,7 +49353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31564
     dd 197
 
@@ -52453,7 +49369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31571
     dd 197
 
@@ -52470,7 +49385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31578
     dd 197
 
@@ -52487,7 +49401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31585
     dd 197
 
@@ -52504,7 +49417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31592
     dd 197
 
@@ -52521,7 +49433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31599
     dd 197
 
@@ -52538,7 +49449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31606
     dd 197
 
@@ -52555,7 +49465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31585
     dd 197
 
@@ -52572,7 +49481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31592
     dd 197
 
@@ -52589,7 +49497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31599
     dd 197
 
@@ -52606,7 +49513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31606
     dd 197
 
@@ -52623,7 +49529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31613
     dd 197
 
@@ -52640,7 +49545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31620
     dd 197
 
@@ -52657,7 +49561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31627
     dd 197
 
@@ -52674,7 +49577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31634
     dd 197
 
@@ -52691,7 +49593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31613
     dd 197
 
@@ -52708,7 +49609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31620
     dd 197
 
@@ -52725,7 +49625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31627
     dd 197
 
@@ -52742,7 +49641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31634
     dd 197
 
@@ -52759,7 +49657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31641
     dd 197
 
@@ -52776,7 +49673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31648
     dd 197
 
@@ -52793,7 +49689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31655
     dd 197
 
@@ -52810,7 +49705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31662
     dd 197
 
@@ -52827,7 +49721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31641
     dd 197
 
@@ -52844,7 +49737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31648
     dd 197
 
@@ -52861,7 +49753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31655
     dd 197
 
@@ -52878,7 +49769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31662
     dd 197
 
@@ -52895,7 +49785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31669
     dd 197
 
@@ -52912,7 +49801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31676
     dd 197
 
@@ -52929,7 +49817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31683
     dd 197
 
@@ -52946,7 +49833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31690
     dd 197
 
@@ -52963,7 +49849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31669
     dd 197
 
@@ -52980,7 +49865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31676
     dd 197
 
@@ -52997,7 +49881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31683
     dd 197
 
@@ -53014,7 +49897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31690
     dd 197
 
@@ -53031,7 +49913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31697
     dd 197
 
@@ -53048,7 +49929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31704
     dd 197
 
@@ -53065,7 +49945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31697
     dd 197
 
@@ -53082,7 +49961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31704
     dd 197
 
@@ -53099,7 +49977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31711
     dd 197
 
@@ -53116,7 +49993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31718
     dd 197
 
@@ -53133,7 +50009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31711
     dd 197
 
@@ -53150,7 +50025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31718
     dd 197
 
@@ -53167,7 +50041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31725
     dd 197
 
@@ -53184,7 +50057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31732
     dd 197
 
@@ -53201,7 +50073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31725
     dd 197
 
@@ -53218,7 +50089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31732
     dd 197
 
@@ -53235,7 +50105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31739
     dd 197
 
@@ -53252,7 +50121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31746
     dd 197
 
@@ -53269,7 +50137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31739
     dd 197
 
@@ -53286,7 +50153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31746
     dd 197
 
@@ -53303,7 +50169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31753
     dd 197
 
@@ -53320,7 +50185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31760
     dd 197
 
@@ -53337,7 +50201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31753
     dd 197
 
@@ -53354,7 +50217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31760
     dd 197
 
@@ -53371,7 +50233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31767
     dd 197
 
@@ -53388,7 +50249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31774
     dd 197
 
@@ -53405,7 +50265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31767
     dd 197
 
@@ -53422,7 +50281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31774
     dd 197
 
@@ -53439,7 +50297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31781
     dd 197
 
@@ -53456,7 +50313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31788
     dd 197
 
@@ -53473,7 +50329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31781
     dd 197
 
@@ -53490,7 +50345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31788
     dd 197
 
@@ -53507,7 +50361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31795
     dd 197
 
@@ -53524,7 +50377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31802
     dd 197
 
@@ -53541,7 +50393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31795
     dd 197
 
@@ -53558,7 +50409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31802
     dd 197
 
@@ -53575,7 +50425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31809
     dd 197
 
@@ -53592,7 +50441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31816
     dd 197
 
@@ -53609,7 +50457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31809
     dd 197
 
@@ -53626,7 +50473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31816
     dd 197
 
@@ -53643,7 +50489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31823
     dd 197
 
@@ -53660,7 +50505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31830
     dd 197
 
@@ -53677,7 +50521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31823
     dd 197
 
@@ -53694,7 +50537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31830
     dd 197
 
@@ -53711,7 +50553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31837
     dd 197
 
@@ -53728,7 +50569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31844
     dd 197
 
@@ -53745,7 +50585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31837
     dd 197
 
@@ -53762,7 +50601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31844
     dd 197
 
@@ -53779,7 +50617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31851
     dd 197
 
@@ -53796,7 +50633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31858
     dd 197
 
@@ -53813,7 +50649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31851
     dd 197
 
@@ -53830,7 +50665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31858
     dd 197
 
@@ -53847,7 +50681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31865
     dd 134
 
@@ -53864,7 +50697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31872
     dd 134
 
@@ -53881,7 +50713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31879
     dd 134
 
@@ -53898,7 +50729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31886
     dd 134
 
@@ -53915,7 +50745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37348
     dd 133
 
@@ -53932,7 +50761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37354
     dd 133
 
@@ -53949,7 +50777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37360
     dd 134
 
@@ -53966,7 +50793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31893
     dd 134
 
@@ -53983,7 +50809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31900
     dd 134
 
@@ -54000,7 +50825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31907
     dd 134
 
@@ -54017,7 +50841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31914
     dd 134
 
@@ -54034,7 +50857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31921
     dd 198
 
@@ -54051,7 +50873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31928
     dd 198
 
@@ -54068,7 +50889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10260
     dd 198
 
@@ -54085,7 +50905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10268
     dd 198
 
@@ -54102,7 +50921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10276
     dd 133
 
@@ -54119,7 +50937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10284
     dd 134
 
@@ -54136,7 +50953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10292
     dd 133
 
@@ -54153,7 +50969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10300
     dd 134
 
@@ -54170,7 +50985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37366
     dd 133
 
@@ -54187,7 +51001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37372
     dd 133
 
@@ -54204,7 +51017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37378
     dd 134
 
@@ -54221,7 +51033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40489
     dd 199
 
@@ -54238,7 +51049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40494
     dd 199
 
@@ -54255,7 +51065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40499
     dd 36
 
@@ -54272,7 +51081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37384
     dd 36
 
@@ -54289,7 +51097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37390
     dd 36
 
@@ -54306,7 +51113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37396
     dd 36
 
@@ -54323,7 +51129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37402
     dd 36
 
@@ -54340,7 +51145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37408
     dd 36
 
@@ -54357,7 +51161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37414
     dd 36
 
@@ -54374,7 +51177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37420
     dd 36
 
@@ -54391,7 +51193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37426
     dd 36
 
@@ -54408,7 +51209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31935
     dd 200
 
@@ -54425,7 +51225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31942
     dd 201
 
@@ -54442,7 +51241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31949
     dd 200
 
@@ -54459,7 +51257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31956
     dd 201
 
@@ -54476,7 +51273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10308
     dd 200
 
@@ -54493,7 +51289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10316
     dd 201
 
@@ -54510,7 +51305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10324
     dd 200
 
@@ -54527,7 +51321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10332
     dd 201
 
@@ -54544,7 +51337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10340
     dd 202
 
@@ -54561,7 +51353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10348
     dd 202
 
@@ -54578,7 +51369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10356
     dd 202
 
@@ -54595,7 +51385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10364
     dd 202
 
@@ -54612,7 +51401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10372
     dd 202
 
@@ -54629,7 +51417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10380
     dd 202
 
@@ -54646,7 +51433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10388
     dd 202
 
@@ -54663,7 +51449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10396
     dd 202
 
@@ -54680,7 +51465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10404
     dd 202
 
@@ -54697,7 +51481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10412
     dd 202
 
@@ -54714,7 +51497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10420
     dd 202
 
@@ -54731,7 +51513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10428
     dd 202
 
@@ -54748,7 +51529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10436
     dd 202
 
@@ -54765,7 +51545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10444
     dd 202
 
@@ -54782,7 +51561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10452
     dd 202
 
@@ -54799,7 +51577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10460
     dd 202
 
@@ -54816,7 +51593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10468
     dd 202
 
@@ -54833,7 +51609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10476
     dd 202
 
@@ -54850,7 +51625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10484
     dd 202
 
@@ -54867,7 +51641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10492
     dd 202
 
@@ -54884,7 +51657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10500
     dd 202
 
@@ -54901,7 +51673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10508
     dd 202
 
@@ -54918,7 +51689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10516
     dd 202
 
@@ -54935,7 +51705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10524
     dd 202
 
@@ -54952,7 +51721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10532
     dd 202
 
@@ -54969,7 +51737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10540
     dd 202
 
@@ -54986,7 +51753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10548
     dd 202
 
@@ -55003,7 +51769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10556
     dd 202
 
@@ -55020,7 +51785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10564
     dd 202
 
@@ -55037,7 +51801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10572
     dd 202
 
@@ -55054,7 +51817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10580
     dd 202
 
@@ -55071,7 +51833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10588
     dd 202
 
@@ -55088,7 +51849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10596
     dd 202
 
@@ -55105,7 +51865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10604
     dd 202
 
@@ -55122,7 +51881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10612
     dd 202
 
@@ -55139,7 +51897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10620
     dd 202
 
@@ -55156,7 +51913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10628
     dd 202
 
@@ -55173,7 +51929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10636
     dd 202
 
@@ -55190,7 +51945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10644
     dd 202
 
@@ -55207,7 +51961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10652
     dd 202
 
@@ -55224,7 +51977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10660
     dd 202
 
@@ -55241,7 +51993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10668
     dd 202
 
@@ -55258,7 +52009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10676
     dd 202
 
@@ -55275,7 +52025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10684
     dd 202
 
@@ -55292,7 +52041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10692
     dd 202
 
@@ -55309,7 +52057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10700
     dd 202
 
@@ -55326,7 +52073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10708
     dd 202
 
@@ -55343,7 +52089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10716
     dd 202
 
@@ -55360,7 +52105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10724
     dd 202
 
@@ -55377,7 +52121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10732
     dd 202
 
@@ -55394,7 +52137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10740
     dd 202
 
@@ -55411,7 +52153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10748
     dd 202
 
@@ -55428,7 +52169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10756
     dd 202
 
@@ -55445,7 +52185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10764
     dd 202
 
@@ -55462,7 +52201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10772
     dd 202
 
@@ -55479,7 +52217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10780
     dd 202
 
@@ -55496,7 +52233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10788
     dd 202
 
@@ -55513,7 +52249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10796
     dd 202
 
@@ -55530,7 +52265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10804
     dd 202
 
@@ -55547,7 +52281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10812
     dd 202
 
@@ -55564,7 +52297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10820
     dd 202
 
@@ -55581,7 +52313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10828
     dd 202
 
@@ -55598,7 +52329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10836
     dd 202
 
@@ -55615,7 +52345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10844
     dd 202
 
@@ -55632,7 +52361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10852
     dd 202
 
@@ -55649,7 +52377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10860
     dd 202
 
@@ -55666,7 +52393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10868
     dd 202
 
@@ -55683,7 +52409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10876
     dd 202
 
@@ -55700,7 +52425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10884
     dd 202
 
@@ -55717,7 +52441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10892
     dd 202
 
@@ -55734,7 +52457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10900
     dd 202
 
@@ -55751,7 +52473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10908
     dd 202
 
@@ -55768,7 +52489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10916
     dd 202
 
@@ -55785,7 +52505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10924
     dd 202
 
@@ -55802,7 +52521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10932
     dd 202
 
@@ -55819,7 +52537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10940
     dd 202
 
@@ -55836,7 +52553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10948
     dd 202
 
@@ -55853,7 +52569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10956
     dd 202
 
@@ -55870,7 +52585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10964
     dd 202
 
@@ -55887,7 +52601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10972
     dd 202
 
@@ -55904,7 +52617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10980
     dd 202
 
@@ -55921,7 +52633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10988
     dd 202
 
@@ -55938,7 +52649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+10996
     dd 202
 
@@ -55955,7 +52665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11004
     dd 202
 
@@ -55972,7 +52681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11012
     dd 202
 
@@ -55989,7 +52697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11020
     dd 202
 
@@ -56006,7 +52713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11028
     dd 202
 
@@ -56023,7 +52729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11036
     dd 202
 
@@ -56040,7 +52745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11044
     dd 202
 
@@ -56057,7 +52761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11052
     dd 202
 
@@ -56074,7 +52777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11060
     dd 202
 
@@ -56091,7 +52793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11068
     dd 202
 
@@ -56108,7 +52809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11076
     dd 202
 
@@ -56125,7 +52825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11084
     dd 202
 
@@ -56142,7 +52841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11092
     dd 202
 
@@ -56159,7 +52857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11100
     dd 202
 
@@ -56176,7 +52873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11108
     dd 202
 
@@ -56193,7 +52889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11116
     dd 202
 
@@ -56210,7 +52905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11124
     dd 202
 
@@ -56227,7 +52921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11132
     dd 202
 
@@ -56244,7 +52937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11140
     dd 202
 
@@ -56261,7 +52953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11148
     dd 202
 
@@ -56278,7 +52969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11156
     dd 202
 
@@ -56295,7 +52985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11164
     dd 202
 
@@ -56312,7 +53001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11172
     dd 202
 
@@ -56329,7 +53017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11180
     dd 202
 
@@ -56346,7 +53033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11188
     dd 202
 
@@ -56363,7 +53049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11196
     dd 202
 
@@ -56380,7 +53065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11204
     dd 202
 
@@ -56397,7 +53081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11212
     dd 202
 
@@ -56414,7 +53097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11220
     dd 202
 
@@ -56431,7 +53113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11228
     dd 202
 
@@ -56448,7 +53129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11236
     dd 202
 
@@ -56465,7 +53145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11244
     dd 202
 
@@ -56482,7 +53161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11252
     dd 202
 
@@ -56499,7 +53177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11260
     dd 202
 
@@ -56516,7 +53193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11268
     dd 202
 
@@ -56533,7 +53209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11276
     dd 202
 
@@ -56550,7 +53225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11284
     dd 202
 
@@ -56567,7 +53241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11292
     dd 202
 
@@ -56584,7 +53257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11300
     dd 202
 
@@ -56601,7 +53273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11308
     dd 202
 
@@ -56618,7 +53289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11316
     dd 202
 
@@ -56635,7 +53305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11324
     dd 202
 
@@ -56652,7 +53321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11332
     dd 202
 
@@ -56669,7 +53337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11340
     dd 202
 
@@ -56686,7 +53353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11348
     dd 202
 
@@ -56703,7 +53369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11356
     dd 202
 
@@ -56720,7 +53385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31963
     dd 202
 
@@ -56737,7 +53401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31970
     dd 202
 
@@ -56754,7 +53417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31977
     dd 202
 
@@ -56771,7 +53433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31984
     dd 202
 
@@ -56788,7 +53449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31991
     dd 202
 
@@ -56805,7 +53465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+31998
     dd 202
 
@@ -56822,7 +53481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32005
     dd 202
 
@@ -56839,7 +53497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32012
     dd 202
 
@@ -56856,7 +53513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32019
     dd 202
 
@@ -56873,7 +53529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32026
     dd 202
 
@@ -56890,7 +53545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32033
     dd 202
 
@@ -56907,7 +53561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32040
     dd 202
 
@@ -56924,7 +53577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11364
     dd 202
 
@@ -56941,7 +53593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11372
     dd 202
 
@@ -56958,7 +53609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11380
     dd 202
 
@@ -56975,7 +53625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11388
     dd 202
 
@@ -56992,7 +53641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11396
     dd 202
 
@@ -57009,7 +53657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11404
     dd 202
 
@@ -57026,7 +53673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11412
     dd 202
 
@@ -57043,7 +53689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11420
     dd 202
 
@@ -57060,7 +53705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11428
     dd 202
 
@@ -57077,7 +53721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11436
     dd 202
 
@@ -57094,7 +53737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11444
     dd 202
 
@@ -57111,7 +53753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11452
     dd 202
 
@@ -57128,7 +53769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11460
     dd 202
 
@@ -57145,7 +53785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11468
     dd 202
 
@@ -57162,7 +53801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11476
     dd 202
 
@@ -57179,7 +53817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11484
     dd 202
 
@@ -57196,7 +53833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11492
     dd 202
 
@@ -57213,7 +53849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11500
     dd 202
 
@@ -57230,7 +53865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11508
     dd 202
 
@@ -57247,7 +53881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11516
     dd 202
 
@@ -57264,7 +53897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11524
     dd 202
 
@@ -57281,7 +53913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11532
     dd 202
 
@@ -57298,7 +53929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11540
     dd 202
 
@@ -57315,7 +53945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11548
     dd 202
 
@@ -57332,7 +53961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32047
     dd 202
 
@@ -57349,7 +53977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32054
     dd 202
 
@@ -57366,7 +53993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32061
     dd 202
 
@@ -57383,7 +54009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32068
     dd 202
 
@@ -57400,7 +54025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32075
     dd 202
 
@@ -57417,7 +54041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32082
     dd 202
 
@@ -57434,7 +54057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32089
     dd 202
 
@@ -57451,7 +54073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32096
     dd 202
 
@@ -57468,7 +54089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32103
     dd 202
 
@@ -57485,7 +54105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32110
     dd 202
 
@@ -57502,7 +54121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32117
     dd 202
 
@@ -57519,7 +54137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32124
     dd 202
 
@@ -57536,7 +54153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32131
     dd 202
 
@@ -57553,7 +54169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32138
     dd 202
 
@@ -57570,7 +54185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32145
     dd 202
 
@@ -57587,7 +54201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32152
     dd 202
 
@@ -57604,7 +54217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32159
     dd 202
 
@@ -57621,7 +54233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32166
     dd 202
 
@@ -57638,7 +54249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32173
     dd 202
 
@@ -57655,7 +54265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32180
     dd 202
 
@@ -57672,7 +54281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32187
     dd 202
 
@@ -57689,7 +54297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32194
     dd 202
 
@@ -57706,7 +54313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32201
     dd 202
 
@@ -57723,7 +54329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32208
     dd 202
 
@@ -57740,7 +54345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32215
     dd 202
 
@@ -57757,7 +54361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32222
     dd 202
 
@@ -57774,7 +54377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32229
     dd 202
 
@@ -57791,7 +54393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32236
     dd 202
 
@@ -57808,7 +54409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32243
     dd 202
 
@@ -57825,7 +54425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32250
     dd 202
 
@@ -57842,7 +54441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11556
     dd 202
 
@@ -57859,7 +54457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11564
     dd 202
 
@@ -57876,7 +54473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11572
     dd 202
 
@@ -57893,7 +54489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11580
     dd 202
 
@@ -57910,7 +54505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11588
     dd 202
 
@@ -57927,7 +54521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11596
     dd 202
 
@@ -57944,7 +54537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11604
     dd 202
 
@@ -57961,7 +54553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11612
     dd 202
 
@@ -57978,7 +54569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11620
     dd 202
 
@@ -57995,7 +54585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11628
     dd 202
 
@@ -58012,7 +54601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11636
     dd 202
 
@@ -58029,7 +54617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11644
     dd 202
 
@@ -58046,7 +54633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11652
     dd 202
 
@@ -58063,7 +54649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11660
     dd 202
 
@@ -58080,7 +54665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11668
     dd 202
 
@@ -58097,7 +54681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11676
     dd 202
 
@@ -58114,7 +54697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11684
     dd 202
 
@@ -58131,7 +54713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11692
     dd 202
 
@@ -58148,7 +54729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11700
     dd 202
 
@@ -58165,7 +54745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11708
     dd 202
 
@@ -58182,7 +54761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11716
     dd 202
 
@@ -58199,7 +54777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11724
     dd 202
 
@@ -58216,7 +54793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11732
     dd 202
 
@@ -58233,7 +54809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11740
     dd 202
 
@@ -58250,7 +54825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11748
     dd 202
 
@@ -58267,7 +54841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11756
     dd 202
 
@@ -58284,7 +54857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11764
     dd 202
 
@@ -58301,7 +54873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11772
     dd 202
 
@@ -58318,7 +54889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32257
     dd 202
 
@@ -58335,7 +54905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32264
     dd 202
 
@@ -58352,7 +54921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32271
     dd 202
 
@@ -58369,7 +54937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32278
     dd 202
 
@@ -58386,7 +54953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11780
     dd 202
 
@@ -58403,7 +54969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11788
     dd 202
 
@@ -58420,7 +54985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32285
     dd 202
 
@@ -58437,7 +55001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32292
     dd 202
 
@@ -58454,7 +55017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32299
     dd 202
 
@@ -58471,7 +55033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32306
     dd 202
 
@@ -58488,7 +55049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11796
     dd 202
 
@@ -58505,7 +55065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11804
     dd 202
 
@@ -58522,7 +55081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32313
     dd 202
 
@@ -58539,7 +55097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32320
     dd 202
 
@@ -58556,7 +55113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32327
     dd 202
 
@@ -58573,7 +55129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32334
     dd 202
 
@@ -58590,7 +55145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11812
     dd 202
 
@@ -58607,7 +55161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11820
     dd 202
 
@@ -58624,7 +55177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32341
     dd 202
 
@@ -58641,7 +55193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32348
     dd 202
 
@@ -58658,7 +55209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32355
     dd 202
 
@@ -58675,7 +55225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32362
     dd 202
 
@@ -58692,7 +55241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11828
     dd 202
 
@@ -58709,7 +55257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11836
     dd 202
 
@@ -58726,7 +55273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32369
     dd 202
 
@@ -58743,7 +55289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32376
     dd 202
 
@@ -58760,7 +55305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32383
     dd 202
 
@@ -58777,7 +55321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32390
     dd 202
 
@@ -58794,7 +55337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32397
     dd 202
 
@@ -58811,7 +55353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32404
     dd 202
 
@@ -58828,7 +55369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32411
     dd 202
 
@@ -58845,7 +55385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32418
     dd 202
 
@@ -58862,7 +55401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32425
     dd 202
 
@@ -58879,7 +55417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32432
     dd 202
 
@@ -58896,7 +55433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32439
     dd 202
 
@@ -58913,7 +55449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32446
     dd 202
 
@@ -58930,7 +55465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32453
     dd 202
 
@@ -58947,7 +55481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32460
     dd 202
 
@@ -58964,7 +55497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32467
     dd 202
 
@@ -58981,7 +55513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32474
     dd 202
 
@@ -58998,7 +55529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32481
     dd 202
 
@@ -59015,7 +55545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32488
     dd 202
 
@@ -59032,7 +55561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32495
     dd 202
 
@@ -59049,7 +55577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32502
     dd 202
 
@@ -59066,7 +55593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32509
     dd 202
 
@@ -59083,7 +55609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32516
     dd 202
 
@@ -59100,7 +55625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32523
     dd 202
 
@@ -59117,7 +55641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32530
     dd 202
 
@@ -59134,7 +55657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32537
     dd 202
 
@@ -59151,7 +55673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32544
     dd 202
 
@@ -59168,7 +55689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32551
     dd 202
 
@@ -59185,7 +55705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32558
     dd 202
 
@@ -59202,7 +55721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32565
     dd 202
 
@@ -59219,7 +55737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32572
     dd 202
 
@@ -59236,7 +55753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32579
     dd 202
 
@@ -59253,7 +55769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32586
     dd 202
 
@@ -59270,7 +55785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11844
     dd 203
 
@@ -59287,7 +55801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11852
     dd 203
 
@@ -59304,7 +55817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32593
     dd 203
 
@@ -59321,7 +55833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32600
     dd 203
 
@@ -59338,7 +55849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32607
     dd 203
 
@@ -59355,7 +55865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32614
     dd 203
 
@@ -59372,7 +55881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32621
     dd 203
 
@@ -59389,7 +55897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32628
     dd 203
 
@@ -59406,7 +55913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32635
     dd 203
 
@@ -59423,7 +55929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32642
     dd 203
 
@@ -59440,7 +55945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32649
     dd 203
 
@@ -59457,7 +55961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32656
     dd 203
 
@@ -59474,7 +55977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32663
     dd 203
 
@@ -59491,7 +55993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32670
     dd 203
 
@@ -59508,7 +56009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32677
     dd 203
 
@@ -59525,7 +56025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32684
     dd 203
 
@@ -59542,7 +56041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32691
     dd 203
 
@@ -59559,7 +56057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32698
     dd 203
 
@@ -59576,7 +56073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32705
     dd 203
 
@@ -59593,7 +56089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32712
     dd 203
 
@@ -59610,7 +56105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32719
     dd 203
 
@@ -59627,7 +56121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32726
     dd 203
 
@@ -59644,7 +56137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32733
     dd 203
 
@@ -59661,7 +56153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32740
     dd 203
 
@@ -59678,7 +56169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32747
     dd 203
 
@@ -59695,7 +56185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32754
     dd 203
 
@@ -59712,7 +56201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32761
     dd 203
 
@@ -59729,7 +56217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32768
     dd 203
 
@@ -59746,7 +56233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32775
     dd 203
 
@@ -59763,7 +56249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11860
     dd 203
 
@@ -59780,7 +56265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11868
     dd 203
 
@@ -59797,7 +56281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32782
     dd 203
 
@@ -59814,7 +56297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32789
     dd 203
 
@@ -59831,7 +56313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32796
     dd 203
 
@@ -59848,7 +56329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32803
     dd 203
 
@@ -59865,7 +56345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32810
     dd 203
 
@@ -59882,7 +56361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32817
     dd 203
 
@@ -59899,7 +56377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32824
     dd 203
 
@@ -59916,7 +56393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32831
     dd 203
 
@@ -59933,7 +56409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11876
     dd 203
 
@@ -59950,7 +56425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11884
     dd 203
 
@@ -59967,7 +56441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11892
     dd 203
 
@@ -59984,7 +56457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11900
     dd 203
 
@@ -60001,7 +56473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32838
     dd 203
 
@@ -60018,7 +56489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32845
     dd 203
 
@@ -60035,7 +56505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32852
     dd 203
 
@@ -60052,7 +56521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32859
     dd 203
 
@@ -60069,7 +56537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32866
     dd 203
 
@@ -60086,7 +56553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32873
     dd 203
 
@@ -60103,7 +56569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32880
     dd 203
 
@@ -60120,7 +56585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32887
     dd 203
 
@@ -60137,7 +56601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32894
     dd 203
 
@@ -60154,7 +56617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32901
     dd 203
 
@@ -60171,7 +56633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32908
     dd 203
 
@@ -60188,7 +56649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32915
     dd 203
 
@@ -60205,7 +56665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32922
     dd 203
 
@@ -60222,7 +56681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32929
     dd 203
 
@@ -60239,7 +56697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32936
     dd 203
 
@@ -60256,7 +56713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32943
     dd 203
 
@@ -60273,7 +56729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32950
     dd 203
 
@@ -60290,7 +56745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32957
     dd 203
 
@@ -60307,7 +56761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32964
     dd 203
 
@@ -60324,7 +56777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32971
     dd 203
 
@@ -60341,7 +56793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32978
     dd 203
 
@@ -60358,7 +56809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32985
     dd 203
 
@@ -60375,7 +56825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32992
     dd 203
 
@@ -60392,7 +56841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+32999
     dd 203
 
@@ -60409,7 +56857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33006
     dd 203
 
@@ -60426,7 +56873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33013
     dd 203
 
@@ -60443,7 +56889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33020
     dd 203
 
@@ -60460,7 +56905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33027
     dd 203
 
@@ -60477,7 +56921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33034
     dd 203
 
@@ -60494,7 +56937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33041
     dd 203
 
@@ -60511,7 +56953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33048
     dd 203
 
@@ -60528,7 +56969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33055
     dd 203
 
@@ -60545,7 +56985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33062
     dd 203
 
@@ -60562,7 +57001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33069
     dd 203
 
@@ -60579,7 +57017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33076
     dd 203
 
@@ -60596,7 +57033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33083
     dd 203
 
@@ -60613,7 +57049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33090
     dd 203
 
@@ -60630,7 +57065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33097
     dd 203
 
@@ -60647,7 +57081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33104
     dd 203
 
@@ -60664,7 +57097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33111
     dd 203
 
@@ -60681,7 +57113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33118
     dd 203
 
@@ -60698,7 +57129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33125
     dd 203
 
@@ -60715,7 +57145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33132
     dd 203
 
@@ -60732,7 +57161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33139
     dd 203
 
@@ -60749,7 +57177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33146
     dd 203
 
@@ -60766,7 +57193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33153
     dd 203
 
@@ -60783,7 +57209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33160
     dd 203
 
@@ -60800,7 +57225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33167
     dd 203
 
@@ -60817,7 +57241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33174
     dd 203
 
@@ -60834,7 +57257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33181
     dd 203
 
@@ -60851,7 +57273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33188
     dd 203
 
@@ -60868,7 +57289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33195
     dd 203
 
@@ -60885,7 +57305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33202
     dd 203
 
@@ -60902,7 +57321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33209
     dd 203
 
@@ -60919,7 +57337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33216
     dd 203
 
@@ -60936,7 +57353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33223
     dd 203
 
@@ -60953,7 +57369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33230
     dd 203
 
@@ -60970,7 +57385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33230
     dd 203
 
@@ -60987,7 +57401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33237
     dd 203
 
@@ -61004,7 +57417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33244
     dd 203
 
@@ -61021,7 +57433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33244
     dd 203
 
@@ -61038,7 +57449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33251
     dd 203
 
@@ -61055,7 +57465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33251
     dd 203
 
@@ -61072,7 +57481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33258
     dd 203
 
@@ -61089,7 +57497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33265
     dd 203
 
@@ -61106,7 +57513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33265
     dd 203
 
@@ -61123,7 +57529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33272
     dd 203
 
@@ -61140,7 +57545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33279
     dd 203
 
@@ -61157,7 +57561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33286
     dd 203
 
@@ -61174,7 +57577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33286
     dd 203
 
@@ -61191,7 +57593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33293
     dd 203
 
@@ -61208,7 +57609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33293
     dd 203
 
@@ -61225,7 +57625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33300
     dd 203
 
@@ -61242,7 +57641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33307
     dd 203
 
@@ -61259,7 +57657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33307
     dd 203
 
@@ -61276,7 +57673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33314
     dd 203
 
@@ -61293,7 +57689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33321
     dd 203
 
@@ -61310,7 +57705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33328
     dd 203
 
@@ -61327,7 +57721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33335
     dd 203
 
@@ -61344,7 +57737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33342
     dd 203
 
@@ -61361,7 +57753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33349
     dd 203
 
@@ -61378,7 +57769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33356
     dd 203
 
@@ -61395,7 +57785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33363
     dd 203
 
@@ -61412,7 +57801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33370
     dd 203
 
@@ -61429,7 +57817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33377
     dd 203
 
@@ -61446,7 +57833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33384
     dd 203
 
@@ -61463,7 +57849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33391
     dd 203
 
@@ -61480,7 +57865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33398
     dd 203
 
@@ -61497,7 +57881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33405
     dd 203
 
@@ -61514,7 +57897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33412
     dd 203
 
@@ -61531,7 +57913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33419
     dd 203
 
@@ -61548,7 +57929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33426
     dd 203
 
@@ -61565,7 +57945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33433
     dd 203
 
@@ -61582,7 +57961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33440
     dd 203
 
@@ -61599,7 +57977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33447
     dd 203
 
@@ -61616,7 +57993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33454
     dd 203
 
@@ -61633,7 +58009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11908
     dd 203
 
@@ -61650,7 +58025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11916
     dd 203
 
@@ -61667,7 +58041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11924
     dd 203
 
@@ -61684,7 +58057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33461
     dd 203
 
@@ -61701,7 +58073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33468
     dd 203
 
@@ -61718,7 +58089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33475
     dd 203
 
@@ -61735,7 +58105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33482
     dd 203
 
@@ -61752,7 +58121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33489
     dd 203
 
@@ -61769,7 +58137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33496
     dd 203
 
@@ -61786,7 +58153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11932
     dd 203
 
@@ -61803,7 +58169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11940
     dd 203
 
@@ -61820,7 +58185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33503
     dd 203
 
@@ -61837,7 +58201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33510
     dd 203
 
@@ -61854,7 +58217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11948
     dd 203
 
@@ -61871,7 +58233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11956
     dd 203
 
@@ -61888,7 +58249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33517
     dd 203
 
@@ -61905,7 +58265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33524
     dd 203
 
@@ -61922,7 +58281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11964
     dd 203
 
@@ -61939,7 +58297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11972
     dd 203
 
@@ -61956,7 +58313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33531
     dd 203
 
@@ -61973,7 +58329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33538
     dd 203
 
@@ -61990,7 +58345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11980
     dd 203
 
@@ -62007,7 +58361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11988
     dd 203
 
@@ -62024,7 +58377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33545
     dd 203
 
@@ -62041,7 +58393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33552
     dd 203
 
@@ -62058,7 +58409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+11996
     dd 203
 
@@ -62075,7 +58425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12004
     dd 203
 
@@ -62092,7 +58441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33559
     dd 203
 
@@ -62109,7 +58457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33566
     dd 203
 
@@ -62126,7 +58473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12012
     dd 203
 
@@ -62143,7 +58489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12020
     dd 203
 
@@ -62160,7 +58505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12028
     dd 203
 
@@ -62177,7 +58521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12036
     dd 203
 
@@ -62194,7 +58537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33573
     dd 203
 
@@ -62211,7 +58553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33580
     dd 203
 
@@ -62228,7 +58569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12044
     dd 203
 
@@ -62245,7 +58585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12052
     dd 203
 
@@ -62262,7 +58601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33587
     dd 203
 
@@ -62279,7 +58617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33594
     dd 203
 
@@ -62296,7 +58633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12060
     dd 203
 
@@ -62313,7 +58649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12068
     dd 203
 
@@ -62330,7 +58665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33601
     dd 203
 
@@ -62347,7 +58681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33608
     dd 203
 
@@ -62364,7 +58697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12076
     dd 203
 
@@ -62381,7 +58713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12084
     dd 203
 
@@ -62398,7 +58729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33615
     dd 203
 
@@ -62415,7 +58745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33622
     dd 203
 
@@ -62432,7 +58761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33629
     dd 203
 
@@ -62449,7 +58777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33636
     dd 203
 
@@ -62466,7 +58793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33643
     dd 203
 
@@ -62483,7 +58809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33650
     dd 203
 
@@ -62500,7 +58825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33657
     dd 203
 
@@ -62517,7 +58841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33664
     dd 203
 
@@ -62534,7 +58857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33671
     dd 203
 
@@ -62551,7 +58873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33678
     dd 203
 
@@ -62568,7 +58889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33685
     dd 203
 
@@ -62585,7 +58905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33692
     dd 203
 
@@ -62602,7 +58921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33699
     dd 203
 
@@ -62619,7 +58937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33706
     dd 203
 
@@ -62636,7 +58953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33713
     dd 203
 
@@ -62653,7 +58969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33720
     dd 203
 
@@ -62670,7 +58985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33727
     dd 203
 
@@ -62687,7 +59001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33734
     dd 203
 
@@ -62704,7 +59017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33741
     dd 203
 
@@ -62721,7 +59033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33748
     dd 203
 
@@ -62738,7 +59049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33755
     dd 203
 
@@ -62755,7 +59065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33762
     dd 203
 
@@ -62772,7 +59081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33769
     dd 203
 
@@ -62789,7 +59097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33776
     dd 203
 
@@ -62806,7 +59113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33783
     dd 203
 
@@ -62823,7 +59129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33790
     dd 203
 
@@ -62840,7 +59145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33797
     dd 203
 
@@ -62857,7 +59161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33804
     dd 203
 
@@ -62874,7 +59177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33811
     dd 203
 
@@ -62891,7 +59193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33818
     dd 203
 
@@ -62908,7 +59209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33825
     dd 203
 
@@ -62925,7 +59225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33832
     dd 203
 
@@ -62942,7 +59241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33839
     dd 203
 
@@ -62959,7 +59257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33846
     dd 203
 
@@ -62976,7 +59273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33853
     dd 203
 
@@ -62993,7 +59289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28064
     dd 203
 
@@ -63010,7 +59305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28071
     dd 203
 
@@ -63027,7 +59321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+28078
     dd 203
 
@@ -63044,7 +59337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33860
     dd 203
 
@@ -63061,7 +59353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12092
     dd 203
 
@@ -63078,7 +59369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12100
     dd 203
 
@@ -63095,7 +59385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12108
     dd 203
 
@@ -63112,7 +59401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12116
     dd 203
 
@@ -63129,7 +59417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33867
     dd 203
 
@@ -63146,7 +59433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33867
     dd 203
 
@@ -63163,7 +59449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33874
     dd 203
 
@@ -63180,7 +59465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33874
     dd 203
 
@@ -63197,7 +59481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33881
     dd 203
 
@@ -63214,7 +59497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33881
     dd 203
 
@@ -63231,7 +59513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33888
     dd 203
 
@@ -63248,7 +59529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33888
     dd 203
 
@@ -63265,7 +59545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33895
     dd 203
 
@@ -63282,7 +59561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33895
     dd 203
 
@@ -63299,7 +59577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33902
     dd 203
 
@@ -63316,7 +59593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33902
     dd 203
 
@@ -63333,7 +59609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33909
     dd 203
 
@@ -63350,7 +59625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33909
     dd 203
 
@@ -63367,7 +59641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33916
     dd 203
 
@@ -63384,7 +59657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33916
     dd 203
 
@@ -63401,7 +59673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33923
     dd 203
 
@@ -63418,7 +59689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33930
     dd 203
 
@@ -63435,7 +59705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12124
     dd 203
 
@@ -63452,7 +59721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33937
     dd 203
 
@@ -63469,7 +59737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33944
     dd 203
 
@@ -63486,7 +59753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12132
     dd 203
 
@@ -63503,7 +59769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12140
     dd 203
 
@@ -63520,7 +59785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12148
     dd 203
 
@@ -63537,7 +59801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12156
     dd 203
 
@@ -63554,7 +59817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12164
     dd 203
 
@@ -63571,7 +59833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12172
     dd 203
 
@@ -63588,7 +59849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33951
     dd 203
 
@@ -63605,7 +59865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33958
     dd 203
 
@@ -63622,7 +59881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33965
     dd 203
 
@@ -63639,7 +59897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33972
     dd 203
 
@@ -63656,7 +59913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33979
     dd 203
 
@@ -63673,7 +59929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33986
     dd 203
 
@@ -63690,7 +59945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+33993
     dd 203
 
@@ -63707,7 +59961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34000
     dd 203
 
@@ -63724,7 +59977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34007
     dd 203
 
@@ -63741,7 +59993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34014
     dd 203
 
@@ -63758,7 +60009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34021
     dd 203
 
@@ -63775,7 +60025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34028
     dd 203
 
@@ -63792,7 +60041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34035
     dd 203
 
@@ -63809,7 +60057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34042
     dd 203
 
@@ -63826,7 +60073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34049
     dd 203
 
@@ -63843,7 +60089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34056
     dd 203
 
@@ -63860,7 +60105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34063
     dd 203
 
@@ -63877,7 +60121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34070
     dd 203
 
@@ -63894,7 +60137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34077
     dd 203
 
@@ -63911,7 +60153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34084
     dd 203
 
@@ -63928,7 +60169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34091
     dd 203
 
@@ -63945,7 +60185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34098
     dd 203
 
@@ -63962,7 +60201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34105
     dd 203
 
@@ -63979,7 +60217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34112
     dd 203
 
@@ -63996,7 +60233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34119
     dd 203
 
@@ -64013,7 +60249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34126
     dd 203
 
@@ -64030,7 +60265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34133
     dd 203
 
@@ -64047,7 +60281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34140
     dd 203
 
@@ -64064,7 +60297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34147
     dd 203
 
@@ -64081,7 +60313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34154
     dd 203
 
@@ -64098,7 +60329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34161
     dd 203
 
@@ -64115,7 +60345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34168
     dd 203
 
@@ -64132,7 +60361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34175
     dd 203
 
@@ -64149,7 +60377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34182
     dd 203
 
@@ -64166,7 +60393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34189
     dd 203
 
@@ -64183,7 +60409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34196
     dd 203
 
@@ -64200,7 +60425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12180
     dd 203
 
@@ -64217,7 +60441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12188
     dd 203
 
@@ -64234,7 +60457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12196
     dd 203
 
@@ -64251,7 +60473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12204
     dd 203
 
@@ -64268,7 +60489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12212
     dd 203
 
@@ -64285,7 +60505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12220
     dd 203
 
@@ -64302,7 +60521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12228
     dd 203
 
@@ -64319,7 +60537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12236
     dd 203
 
@@ -64336,7 +60553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12244
     dd 203
 
@@ -64353,7 +60569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12252
     dd 203
 
@@ -64370,7 +60585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12260
     dd 203
 
@@ -64387,7 +60601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12268
     dd 203
 
@@ -64404,7 +60617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12276
     dd 203
 
@@ -64421,7 +60633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12284
     dd 203
 
@@ -64438,7 +60649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12292
     dd 203
 
@@ -64455,7 +60665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12300
     dd 203
 
@@ -64472,7 +60681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40504
     dd 204
 
@@ -64489,7 +60697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40504
     dd 204
 
@@ -64506,7 +60713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37432
     dd 204
 
@@ -64523,7 +60729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37438
     dd 205
 
@@ -64540,7 +60745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37444
     dd 205
 
@@ -64557,7 +60761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37450
     dd 206
 
@@ -64574,7 +60777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40509
     dd 204
 
@@ -64591,7 +60793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40514
     dd 207
 
@@ -64608,7 +60809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34203
     dd 208
 
@@ -64625,7 +60825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34210
     dd 209
 
@@ -64642,7 +60841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34217
     dd 208
 
@@ -64659,7 +60857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34224
     dd 209
 
@@ -64676,7 +60873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12308
     dd 210
 
@@ -64693,7 +60889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12316
     dd 211
 
@@ -64710,7 +60905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34231
     dd 210
 
@@ -64727,7 +60921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34238
     dd 211
 
@@ -64744,7 +60937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34245
     dd 210
 
@@ -64761,7 +60953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34252
     dd 211
 
@@ -64778,7 +60969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34259
     dd 208
 
@@ -64795,7 +60985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34266
     dd 209
 
@@ -64812,7 +61001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34273
     dd 210
 
@@ -64829,7 +61017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34280
     dd 211
 
@@ -64846,7 +61033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34287
     dd 210
 
@@ -64863,7 +61049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34294
     dd 211
 
@@ -64880,7 +61065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34301
     dd 210
 
@@ -64897,7 +61081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34308
     dd 211
 
@@ -64914,7 +61097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34315
     dd 210
 
@@ -64931,7 +61113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34322
     dd 211
 
@@ -64948,7 +61129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34329
     dd 208
 
@@ -64965,7 +61145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34336
     dd 209
 
@@ -64982,7 +61161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34343
     dd 208
 
@@ -64999,7 +61177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34350
     dd 209
 
@@ -65016,7 +61193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34357
     dd 210
 
@@ -65033,7 +61209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34364
     dd 211
 
@@ -65050,7 +61225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34371
     dd 212
 
@@ -65067,7 +61241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34378
     dd 213
 
@@ -65084,7 +61257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34385
     dd 212
 
@@ -65101,7 +61273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34392
     dd 213
 
@@ -65118,7 +61289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34399
     dd 212
 
@@ -65135,7 +61305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34406
     dd 213
 
@@ -65152,7 +61321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34413
     dd 212
 
@@ -65169,7 +61337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34420
     dd 213
 
@@ -65186,7 +61353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12324
     dd 212
 
@@ -65203,7 +61369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12332
     dd 213
 
@@ -65220,7 +61385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34427
     dd 212
 
@@ -65237,7 +61401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34434
     dd 213
 
@@ -65254,7 +61417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34441
     dd 212
 
@@ -65271,7 +61433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34448
     dd 213
 
@@ -65288,7 +61449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34455
     dd 212
 
@@ -65305,7 +61465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34462
     dd 213
 
@@ -65322,7 +61481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34469
     dd 214
 
@@ -65339,7 +61497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34476
     dd 214
 
@@ -65356,7 +61513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34483
     dd 215
 
@@ -65373,7 +61529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34490
     dd 210
 
@@ -65390,7 +61545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34497
     dd 211
 
@@ -65407,7 +61561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34504
     dd 210
 
@@ -65424,7 +61577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34511
     dd 211
 
@@ -65441,7 +61593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40519
     dd 216
 
@@ -65458,7 +61609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37456
     dd 217
 
@@ -65475,7 +61625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34519
     dd 218
 
@@ -65492,7 +61641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34519
     dd 219
 
@@ -65509,7 +61657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34518
     dd 220
 
@@ -65526,7 +61673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34526
     dd 218
 
@@ -65543,7 +61689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34526
     dd 219
 
@@ -65560,7 +61705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34525
     dd 220
 
@@ -65577,7 +61721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34533
     dd 218
 
@@ -65594,7 +61737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34533
     dd 219
 
@@ -65611,7 +61753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34532
     dd 220
 
@@ -65628,7 +61769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37462
     dd 218
 
@@ -65645,7 +61785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37462
     dd 218
 
@@ -65662,7 +61801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37468
     dd 218
 
@@ -65679,7 +61817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37468
     dd 218
 
@@ -65696,7 +61833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37463
     dd 217
 
@@ -65713,7 +61849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37474
     dd 221
 
@@ -65730,7 +61865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37474
     dd 222
 
@@ -65747,7 +61881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37469
     dd 217
 
@@ -65764,7 +61897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37480
     dd 221
 
@@ -65781,7 +61913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37480
     dd 222
 
@@ -65798,7 +61929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37486
     dd 221
 
@@ -65815,7 +61945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37486
     dd 222
 
@@ -65832,7 +61961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37492
     dd 223
 
@@ -65849,7 +61977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37498
     dd 223
 
@@ -65866,7 +61993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37504
     dd 223
 
@@ -65883,7 +62009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34539
     dd 223
 
@@ -65900,7 +62025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37510
     dd 223
 
@@ -65917,7 +62041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37516
     dd 223
 
@@ -65934,7 +62057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37522
     dd 223
 
@@ -65951,7 +62073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37522
     dd 223
 
@@ -65968,7 +62089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34546
     dd 224
 
@@ -65985,7 +62105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34553
     dd 224
 
@@ -66002,7 +62121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34560
     dd 224
 
@@ -66019,7 +62137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34567
     dd 224
 
@@ -66036,7 +62153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34574
     dd 224
 
@@ -66053,7 +62169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34581
     dd 224
 
@@ -66070,7 +62185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34588
     dd 224
 
@@ -66087,7 +62201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34595
     dd 224
 
@@ -66104,7 +62217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34602
     dd 224
 
@@ -66121,7 +62233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34609
     dd 224
 
@@ -66138,7 +62249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34616
     dd 224
 
@@ -66155,7 +62265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34623
     dd 224
 
@@ -66172,7 +62281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34630
     dd 224
 
@@ -66189,7 +62297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34637
     dd 224
 
@@ -66206,7 +62313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34644
     dd 224
 
@@ -66223,7 +62329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34651
     dd 224
 
@@ -66240,7 +62345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34658
     dd 224
 
@@ -66257,7 +62361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34665
     dd 224
 
@@ -66274,7 +62377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34672
     dd 224
 
@@ -66291,7 +62393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34679
     dd 224
 
@@ -66308,7 +62409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34686
     dd 224
 
@@ -66325,7 +62425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34693
     dd 224
 
@@ -66342,7 +62441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34700
     dd 224
 
@@ -66359,7 +62457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34707
     dd 224
 
@@ -66376,7 +62473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34714
     dd 224
 
@@ -66393,7 +62489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34721
     dd 224
 
@@ -66410,7 +62505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34728
     dd 224
 
@@ -66427,7 +62521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34735
     dd 224
 
@@ -66444,7 +62537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34742
     dd 224
 
@@ -66461,7 +62553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34749
     dd 224
 
@@ -66478,7 +62569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34756
     dd 224
 
@@ -66495,7 +62585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34763
     dd 224
 
@@ -66512,7 +62601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34770
     dd 224
 
@@ -66529,7 +62617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34777
     dd 224
 
@@ -66546,7 +62633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34784
     dd 224
 
@@ -66563,7 +62649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34791
     dd 224
 
@@ -66580,7 +62665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34798
     dd 224
 
@@ -66597,7 +62681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34805
     dd 224
 
@@ -66614,7 +62697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34812
     dd 224
 
@@ -66631,7 +62713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34819
     dd 224
 
@@ -66648,7 +62729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12340
     dd 224
 
@@ -66665,7 +62745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12348
     dd 224
 
@@ -66682,7 +62761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12356
     dd 224
 
@@ -66699,7 +62777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12364
     dd 224
 
@@ -66716,7 +62793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12372
     dd 224
 
@@ -66733,7 +62809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12380
     dd 224
 
@@ -66750,7 +62825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12388
     dd 224
 
@@ -66767,7 +62841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+12396
     dd 224
 
@@ -66784,7 +62857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34826
     dd 224
 
@@ -66801,7 +62873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34833
     dd 224
 
@@ -66818,7 +62889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34840
     dd 224
 
@@ -66835,7 +62905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34847
     dd 224
 
@@ -66852,7 +62921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34854
     dd 224
 
@@ -66869,7 +62937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34861
     dd 224
 
@@ -66886,7 +62953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34868
     dd 224
 
@@ -66903,7 +62969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34875
     dd 224
 
@@ -66920,7 +62985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34882
     dd 224
 
@@ -66937,7 +63001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34889
     dd 224
 
@@ -66954,7 +63017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34896
     dd 224
 
@@ -66971,7 +63033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34903
     dd 224
 
@@ -66988,7 +63049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34910
     dd 224
 
@@ -67005,7 +63065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34917
     dd 224
 
@@ -67022,7 +63081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34924
     dd 224
 
@@ -67039,7 +63097,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12404
     dd 225
 
@@ -67053,7 +63110,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -67073,7 +63129,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12420
     dd 225
 
@@ -67087,7 +63142,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -67107,7 +63161,6 @@ instrux:
     dw B64|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12436
     dd 226
 
@@ -67121,7 +63174,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64|ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -67141,7 +63193,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12452
     dd 225
 
@@ -67155,7 +63206,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -67175,7 +63225,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12468
     dd 225
 
@@ -67189,7 +63238,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -67209,7 +63257,6 @@ instrux:
     dw B32|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12484
     dd 226
 
@@ -67223,7 +63270,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -67243,7 +63289,6 @@ instrux:
     dw ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12500
     dd 226
 
@@ -67257,7 +63302,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -67277,7 +63321,6 @@ instrux:
     dw ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12516
     dd 226
 
@@ -67291,7 +63334,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -67311,7 +63353,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4002
     dd 225
 
@@ -67325,7 +63366,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -67345,7 +63385,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4020
     dd 225
 
@@ -67359,7 +63398,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -67379,7 +63417,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4038
     dd 226
 
@@ -67393,7 +63430,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -67413,7 +63449,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4056
     dd 225
 
@@ -67427,7 +63462,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -67447,7 +63481,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4074
     dd 225
 
@@ -67461,7 +63494,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -67481,7 +63513,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4092
     dd 226
 
@@ -67495,7 +63526,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -67515,7 +63545,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12532
     dd 227
 
@@ -67529,7 +63558,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -67549,7 +63577,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12548
     dd 227
 
@@ -67563,7 +63590,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -67583,7 +63609,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12564
     dd 228
 
@@ -67597,7 +63622,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -67617,7 +63641,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12580
     dd 227
 
@@ -67631,7 +63654,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -67651,7 +63673,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12596
     dd 227
 
@@ -67665,7 +63686,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -67685,7 +63705,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12612
     dd 228
 
@@ -67699,7 +63718,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -67719,7 +63737,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12628
     dd 227
 
@@ -67733,7 +63750,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -67753,7 +63769,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12644
     dd 227
 
@@ -67767,7 +63782,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -67787,7 +63801,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12660
     dd 228
 
@@ -67801,7 +63814,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -67821,7 +63833,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12676
     dd 227
 
@@ -67835,7 +63846,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -67855,7 +63865,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12692
     dd 227
 
@@ -67869,7 +63878,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -67889,7 +63897,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12708
     dd 228
 
@@ -67903,7 +63910,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -67923,7 +63929,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12724
     dd 225
 
@@ -67938,7 +63943,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+12732
@@ -67957,7 +63961,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12740
     dd 226
 
@@ -67972,7 +63975,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+12748
@@ -67991,7 +63993,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12756
     dd 225
 
@@ -68008,7 +64009,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12764
     dd 226
 
@@ -68021,7 +64021,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -68042,7 +64041,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12780
     dd 228
 
@@ -68055,7 +64053,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -68076,7 +64073,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12796
     dd 226
 
@@ -68089,7 +64085,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -68110,7 +64105,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12812
     dd 227
 
@@ -68123,7 +64117,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -68144,7 +64137,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12828
     dd 226
 
@@ -68157,7 +64149,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -68178,7 +64169,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12844
     dd 227
 
@@ -68191,7 +64181,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -68212,7 +64201,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12860
     dd 225
 
@@ -68225,7 +64213,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -68246,7 +64233,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12876
     dd 228
 
@@ -68259,7 +64245,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -68280,7 +64265,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12892
     dd 228
 
@@ -68293,7 +64277,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -68314,7 +64297,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12908
     dd 225
 
@@ -68327,7 +64309,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -68348,7 +64329,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12924
     dd 225
 
@@ -68361,7 +64341,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -68382,7 +64361,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12940
     dd 225
 
@@ -68395,7 +64373,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -68416,7 +64393,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12956
     dd 226
 
@@ -68429,7 +64405,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -68450,7 +64425,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12972
     dd 225
 
@@ -68463,7 +64437,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -68484,7 +64457,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4110
     dd 225
 
@@ -68499,7 +64471,6 @@ instrux:
     dw MASK
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+4119
@@ -68518,7 +64489,6 @@ instrux:
     dw B64|SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4128
     dd 226
 
@@ -68533,7 +64503,6 @@ instrux:
     dw MASK
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+4137
@@ -68552,7 +64521,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4146
     dd 225
 
@@ -68567,7 +64535,6 @@ instrux:
     dw MASK
     dw 0
     dw B32|SAE
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+4155
@@ -68586,7 +64553,6 @@ instrux:
     dw SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4164
     dd 226
 
@@ -68603,7 +64569,6 @@ instrux:
     dw SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4173
     dd 226
 
@@ -68617,7 +64582,6 @@ instrux:
     dq 0
     dw 0
     dw SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -68637,7 +64601,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+12996
     dd 226
 
@@ -68650,7 +64613,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -68671,7 +64633,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13012
     dd 225
 
@@ -68684,7 +64645,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -68705,7 +64665,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13028
     dd 225
 
@@ -68718,7 +64677,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -68739,7 +64697,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13044
     dd 226
 
@@ -68752,7 +64709,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -68773,7 +64729,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13060
     dd 225
 
@@ -68786,7 +64741,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -68807,7 +64761,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13076
     dd 225
 
@@ -68820,7 +64773,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -68841,7 +64793,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13092
     dd 226
 
@@ -68855,7 +64806,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -68875,7 +64825,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13108
     dd 225
 
@@ -68889,7 +64838,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -68909,7 +64857,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13124
     dd 225
 
@@ -68923,7 +64870,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -68943,7 +64889,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13140
     dd 226
 
@@ -68957,7 +64902,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -68977,7 +64921,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13156
     dd 225
 
@@ -68991,7 +64934,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64|ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69011,7 +64953,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13172
     dd 225
 
@@ -69025,7 +64966,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69045,7 +64985,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13188
     dd 226
 
@@ -69059,7 +64998,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69079,7 +65017,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13204
     dd 227
 
@@ -69093,7 +65030,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64|ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69113,7 +65049,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13220
     dd 225
 
@@ -69127,7 +65062,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69147,7 +65081,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13236
     dd 226
 
@@ -69161,7 +65094,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69181,7 +65113,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13252
     dd 227
 
@@ -69198,7 +65129,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13260
     dd 228
 
@@ -69211,7 +65141,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69232,7 +65161,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13276
     dd 225
 
@@ -69246,7 +65174,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69266,7 +65193,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13292
     dd 225
 
@@ -69280,7 +65206,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69300,7 +65225,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13308
     dd 226
 
@@ -69314,7 +65238,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69334,7 +65257,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13324
     dd 225
 
@@ -69351,7 +65273,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13332
     dd 226
 
@@ -69364,7 +65285,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69385,7 +65305,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4191
     dd 225
 
@@ -69402,7 +65321,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4200
     dd 226
 
@@ -69415,7 +65333,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69436,7 +65353,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4191
     dd 225
 
@@ -69450,7 +65366,6 @@ instrux:
     dq 0
     dw MASK
     dw SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69470,7 +65385,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13340
     dd 227
 
@@ -69484,7 +65398,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69504,7 +65417,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13356
     dd 228
 
@@ -69518,7 +65430,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69538,7 +65449,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13372
     dd 225
 
@@ -69552,7 +65462,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69572,7 +65481,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13388
     dd 227
 
@@ -69586,7 +65494,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69606,7 +65513,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13404
     dd 228
 
@@ -69620,7 +65526,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69640,7 +65545,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13420
     dd 227
 
@@ -69654,7 +65558,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64|ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69674,7 +65577,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13436
     dd 227
 
@@ -69688,7 +65590,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69708,7 +65609,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13452
     dd 228
 
@@ -69722,7 +65622,6 @@ instrux:
     dq 0
     dw 0
     dw ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69742,7 +65641,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13468
     dd 226
 
@@ -69759,7 +65657,6 @@ instrux:
     dw ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13476
     dd 226
 
@@ -69773,7 +65670,6 @@ instrux:
     dq 0
     dw 0
     dw ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69793,7 +65689,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13492
     dd 226
 
@@ -69807,7 +65702,6 @@ instrux:
     dq 0
     dw 0
     dw ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69827,7 +65721,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13508
     dd 226
 
@@ -69841,7 +65734,6 @@ instrux:
     dq 0
     dw 0
     dw ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69861,7 +65753,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13524
     dd 226
 
@@ -69878,7 +65769,6 @@ instrux:
     dw SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13532
     dd 226
 
@@ -69892,7 +65782,6 @@ instrux:
     dq 0
     dw 0
     dw ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69912,7 +65801,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13548
     dd 226
 
@@ -69926,7 +65814,6 @@ instrux:
     dq 0
     dw 0
     dw ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69946,7 +65833,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13564
     dd 226
 
@@ -69960,7 +65846,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -69980,7 +65865,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13580
     dd 225
 
@@ -69994,7 +65878,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64|SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70014,7 +65897,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13596
     dd 227
 
@@ -70028,7 +65910,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70048,7 +65929,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13612
     dd 228
 
@@ -70062,7 +65942,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70082,7 +65961,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13628
     dd 225
 
@@ -70096,7 +65974,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64|SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70116,7 +65993,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13644
     dd 227
 
@@ -70130,7 +66006,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70150,7 +66025,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13660
     dd 228
 
@@ -70164,7 +66038,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70184,7 +66057,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13676
     dd 225
 
@@ -70198,7 +66070,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32|SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70218,7 +66089,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13692
     dd 227
 
@@ -70232,7 +66102,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70252,7 +66121,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13708
     dd 228
 
@@ -70266,7 +66134,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70286,7 +66153,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13724
     dd 225
 
@@ -70300,7 +66166,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32|SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70320,7 +66185,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13740
     dd 227
 
@@ -70334,7 +66198,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70354,7 +66217,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13756
     dd 228
 
@@ -70368,7 +66230,6 @@ instrux:
     dq 0
     dw 0
     dw SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70388,7 +66249,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13772
     dd 226
 
@@ -70402,7 +66262,6 @@ instrux:
     dq 0
     dw 0
     dw SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70422,7 +66281,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13788
     dd 226
 
@@ -70436,7 +66294,6 @@ instrux:
     dq 0
     dw 0
     dw SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70456,7 +66313,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13804
     dd 226
 
@@ -70470,7 +66326,6 @@ instrux:
     dq 0
     dw 0
     dw SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70490,7 +66345,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13820
     dd 226
 
@@ -70504,7 +66358,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70524,7 +66377,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13836
     dd 225
 
@@ -70538,7 +66390,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70558,7 +66409,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13852
     dd 225
 
@@ -70572,7 +66422,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70592,7 +66441,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13868
     dd 226
 
@@ -70606,7 +66454,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70626,7 +66473,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13884
     dd 227
 
@@ -70640,7 +66486,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64|ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70660,7 +66505,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13900
     dd 227
 
@@ -70674,7 +66518,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70694,7 +66537,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13916
     dd 228
 
@@ -70708,7 +66550,6 @@ instrux:
     dq 0
     dw 0
     dw ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70728,7 +66569,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13932
     dd 226
 
@@ -70742,7 +66582,6 @@ instrux:
     dq 0
     dw 0
     dw ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70762,7 +66601,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13948
     dd 226
 
@@ -70775,7 +66613,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70796,7 +66633,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4218
     dd 229
 
@@ -70809,7 +66645,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70830,7 +66665,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4236
     dd 229
 
@@ -70843,7 +66677,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70864,7 +66697,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4254
     dd 230
 
@@ -70881,7 +66713,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13956
     dd 225
 
@@ -70895,7 +66726,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70915,7 +66745,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13972
     dd 225
 
@@ -70929,7 +66758,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70949,7 +66777,6 @@ instrux:
     dw B64|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+13988
     dd 226
 
@@ -70963,7 +66790,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64|ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -70983,7 +66809,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14004
     dd 225
 
@@ -70997,7 +66822,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71017,7 +66841,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14020
     dd 225
 
@@ -71031,7 +66854,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71051,7 +66873,6 @@ instrux:
     dw B32|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14036
     dd 226
 
@@ -71065,7 +66886,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71085,7 +66905,6 @@ instrux:
     dw ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14052
     dd 226
 
@@ -71099,7 +66918,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71119,7 +66937,6 @@ instrux:
     dw ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14068
     dd 226
 
@@ -71133,7 +66950,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71153,7 +66969,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14084
     dd 231
 
@@ -71170,7 +66985,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14092
     dd 231
 
@@ -71183,7 +66997,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71204,7 +67017,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14108
     dd 225
 
@@ -71217,7 +67029,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71238,7 +67049,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14100
     dd 225
 
@@ -71251,7 +67061,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71272,7 +67081,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14116
     dd 226
 
@@ -71285,7 +67093,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71306,7 +67113,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14132
     dd 225
 
@@ -71319,7 +67125,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71340,7 +67145,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14124
     dd 225
 
@@ -71353,7 +67157,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71374,7 +67177,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14140
     dd 226
 
@@ -71387,7 +67189,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71408,7 +67209,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4272
     dd 226
 
@@ -71421,7 +67221,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71442,7 +67241,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4290
     dd 226
 
@@ -71455,7 +67253,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71476,7 +67273,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4308
     dd 228
 
@@ -71489,7 +67285,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71510,7 +67305,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4326
     dd 228
 
@@ -71523,7 +67317,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71544,7 +67337,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4344
     dd 228
 
@@ -71557,7 +67349,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71578,7 +67369,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4362
     dd 226
 
@@ -71591,7 +67381,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71612,7 +67401,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4380
     dd 226
 
@@ -71625,7 +67413,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71646,7 +67433,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4398
     dd 226
 
@@ -71659,7 +67445,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71680,7 +67465,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4416
     dd 228
 
@@ -71693,7 +67477,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71714,7 +67497,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4434
     dd 228
 
@@ -71727,7 +67509,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71748,7 +67529,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4452
     dd 228
 
@@ -71761,7 +67541,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71782,7 +67561,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4470
     dd 226
 
@@ -71799,7 +67577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+4479
     dd 226
 
@@ -71816,7 +67593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+4479
     dd 226
 
@@ -71833,7 +67609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+4479
     dd 226
 
@@ -71850,7 +67625,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4488
     dd 225
 
@@ -71864,7 +67638,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71884,7 +67657,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4506
     dd 225
 
@@ -71898,7 +67670,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71918,7 +67689,6 @@ instrux:
     dw B64|SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4524
     dd 226
 
@@ -71932,7 +67702,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64|SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71952,7 +67721,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4542
     dd 225
 
@@ -71966,7 +67734,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -71986,7 +67753,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4560
     dd 225
 
@@ -72000,7 +67766,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -72020,7 +67785,6 @@ instrux:
     dw B32|SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4578
     dd 226
 
@@ -72034,7 +67798,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32|SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -72054,7 +67817,6 @@ instrux:
     dw SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4596
     dd 226
 
@@ -72068,7 +67830,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -72088,7 +67849,6 @@ instrux:
     dw SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4614
     dd 226
 
@@ -72102,7 +67862,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -72122,7 +67881,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14148
     dd 225
 
@@ -72137,7 +67895,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14156
@@ -72156,7 +67913,6 @@ instrux:
     dw B64|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14164
     dd 226
 
@@ -72171,7 +67927,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14172
@@ -72190,7 +67945,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14180
     dd 225
 
@@ -72205,7 +67959,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14188
@@ -72224,7 +67977,6 @@ instrux:
     dw ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14196
     dd 226
 
@@ -72239,7 +67991,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14204
@@ -72258,7 +68009,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14212
     dd 225
 
@@ -72273,7 +68023,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14220
@@ -72292,7 +68041,6 @@ instrux:
     dw B64|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14228
     dd 226
 
@@ -72307,7 +68055,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14236
@@ -72326,7 +68073,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14244
     dd 225
 
@@ -72341,7 +68087,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14252
@@ -72360,7 +68105,6 @@ instrux:
     dw ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14260
     dd 226
 
@@ -72375,7 +68119,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14268
@@ -72394,7 +68137,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14276
     dd 225
 
@@ -72409,7 +68151,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14284
@@ -72428,7 +68169,6 @@ instrux:
     dw B64|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14292
     dd 226
 
@@ -72443,7 +68183,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14300
@@ -72462,7 +68201,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14308
     dd 225
 
@@ -72477,7 +68215,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14316
@@ -72496,7 +68233,6 @@ instrux:
     dw ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14324
     dd 226
 
@@ -72511,7 +68247,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14332
@@ -72530,7 +68265,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14340
     dd 225
 
@@ -72545,7 +68279,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14348
@@ -72564,7 +68297,6 @@ instrux:
     dw B64|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14356
     dd 226
 
@@ -72579,7 +68311,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14364
@@ -72598,7 +68329,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14372
     dd 225
 
@@ -72613,7 +68343,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14380
@@ -72632,7 +68361,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14388
     dd 225
 
@@ -72647,7 +68375,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14396
@@ -72666,7 +68393,6 @@ instrux:
     dw B64|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14404
     dd 226
 
@@ -72681,7 +68407,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14412
@@ -72700,7 +68425,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14420
     dd 225
 
@@ -72715,7 +68439,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14428
@@ -72734,7 +68457,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14436
     dd 225
 
@@ -72749,7 +68471,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14444
@@ -72768,7 +68489,6 @@ instrux:
     dw B64|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14452
     dd 226
 
@@ -72783,7 +68503,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14460
@@ -72802,7 +68521,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14468
     dd 225
 
@@ -72817,7 +68535,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14476
@@ -72836,7 +68553,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14484
     dd 225
 
@@ -72851,7 +68567,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14492
@@ -72870,7 +68585,6 @@ instrux:
     dw B64|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14500
     dd 226
 
@@ -72885,7 +68599,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14508
@@ -72904,7 +68617,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14516
     dd 225
 
@@ -72919,7 +68631,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14524
@@ -72938,7 +68649,6 @@ instrux:
     dw ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14532
     dd 226
 
@@ -72953,7 +68663,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14540
@@ -72972,7 +68681,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14548
     dd 225
 
@@ -72987,7 +68695,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14556
@@ -73006,7 +68713,6 @@ instrux:
     dw B64|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14564
     dd 226
 
@@ -73021,7 +68727,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14572
@@ -73040,7 +68745,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14580
     dd 225
 
@@ -73055,7 +68759,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14588
@@ -73074,7 +68777,6 @@ instrux:
     dw ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14596
     dd 226
 
@@ -73089,7 +68791,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14604
@@ -73108,7 +68809,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14612
     dd 225
 
@@ -73123,7 +68823,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14620
@@ -73142,7 +68841,6 @@ instrux:
     dw B64|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14628
     dd 226
 
@@ -73157,7 +68855,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14636
@@ -73176,7 +68873,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14644
     dd 225
 
@@ -73191,7 +68887,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14652
@@ -73210,7 +68905,6 @@ instrux:
     dw ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14660
     dd 226
 
@@ -73225,7 +68919,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14668
@@ -73244,7 +68937,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14676
     dd 225
 
@@ -73259,7 +68951,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14684
@@ -73278,7 +68969,6 @@ instrux:
     dw B64|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14692
     dd 226
 
@@ -73293,7 +68983,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14700
@@ -73312,7 +69001,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14708
     dd 225
 
@@ -73327,7 +69015,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14716
@@ -73346,7 +69033,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14724
     dd 225
 
@@ -73361,7 +69047,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14732
@@ -73380,7 +69065,6 @@ instrux:
     dw B64|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14740
     dd 226
 
@@ -73395,7 +69079,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14748
@@ -73414,7 +69097,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14756
     dd 225
 
@@ -73429,7 +69111,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14764
@@ -73448,7 +69129,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14772
     dd 225
 
@@ -73463,7 +69143,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14780
@@ -73482,7 +69161,6 @@ instrux:
     dw B64|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14788
     dd 226
 
@@ -73497,7 +69175,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14796
@@ -73516,7 +69193,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14804
     dd 225
 
@@ -73531,7 +69207,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14812
@@ -73550,7 +69225,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14820
     dd 225
 
@@ -73565,7 +69239,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14828
@@ -73584,7 +69257,6 @@ instrux:
     dw B64|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14836
     dd 226
 
@@ -73599,7 +69271,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14844
@@ -73618,7 +69289,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14852
     dd 225
 
@@ -73633,7 +69303,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14860
@@ -73652,7 +69321,6 @@ instrux:
     dw ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14868
     dd 226
 
@@ -73667,7 +69335,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14876
@@ -73686,7 +69353,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14884
     dd 225
 
@@ -73701,7 +69367,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14892
@@ -73720,7 +69385,6 @@ instrux:
     dw B64|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14900
     dd 226
 
@@ -73735,7 +69399,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14908
@@ -73754,7 +69417,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14916
     dd 225
 
@@ -73769,7 +69431,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14924
@@ -73788,7 +69449,6 @@ instrux:
     dw ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14932
     dd 226
 
@@ -73803,7 +69463,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14940
@@ -73822,7 +69481,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14948
     dd 225
 
@@ -73837,7 +69495,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14956
@@ -73856,7 +69513,6 @@ instrux:
     dw B64|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14964
     dd 226
 
@@ -73871,7 +69527,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14972
@@ -73890,7 +69545,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14980
     dd 225
 
@@ -73905,7 +69559,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+14988
@@ -73924,7 +69577,6 @@ instrux:
     dw ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+14996
     dd 226
 
@@ -73939,7 +69591,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+15004
@@ -73958,7 +69609,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15012
     dd 225
 
@@ -73973,7 +69623,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+15020
@@ -73992,7 +69641,6 @@ instrux:
     dw B64|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15028
     dd 226
 
@@ -74007,7 +69655,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+15036
@@ -74026,7 +69673,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15044
     dd 225
 
@@ -74041,7 +69687,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+15052
@@ -74060,7 +69705,6 @@ instrux:
     dw ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15060
     dd 226
 
@@ -74075,7 +69719,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+15068
@@ -74094,7 +69737,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15076
     dd 225
 
@@ -74109,7 +69751,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+15084
@@ -74128,7 +69769,6 @@ instrux:
     dw B64|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15092
     dd 226
 
@@ -74143,7 +69783,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+15100
@@ -74162,7 +69801,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15108
     dd 225
 
@@ -74177,7 +69815,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+15116
@@ -74196,7 +69833,6 @@ instrux:
     dw ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15124
     dd 226
 
@@ -74211,7 +69847,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+15132
@@ -74230,7 +69865,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15140
     dd 225
 
@@ -74245,7 +69879,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+15148
@@ -74264,7 +69897,6 @@ instrux:
     dw B64|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15156
     dd 226
 
@@ -74279,7 +69911,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+15164
@@ -74298,7 +69929,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15172
     dd 225
 
@@ -74313,7 +69943,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+15180
@@ -74332,7 +69961,6 @@ instrux:
     dw ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15188
     dd 226
 
@@ -74349,7 +69977,6 @@ instrux:
     dw ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15196
     dd 226
 
@@ -74363,7 +69990,6 @@ instrux:
     dq 0
     dw MASK
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -74383,7 +70009,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4641
     dd 227
 
@@ -74397,7 +70022,6 @@ instrux:
     dq 0
     dw MASK
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -74417,7 +70041,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4659
     dd 227
 
@@ -74431,7 +70054,6 @@ instrux:
     dq 0
     dw MASK
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -74451,7 +70073,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4677
     dd 228
 
@@ -74464,7 +70085,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -74485,7 +70105,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4695
     dd 228
 
@@ -74498,7 +70117,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -74519,7 +70137,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4713
     dd 225
 
@@ -74532,7 +70149,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -74553,7 +70169,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4731
     dd 225
 
@@ -74566,7 +70181,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -74587,7 +70201,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4749
     dd 226
 
@@ -74600,7 +70213,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -74621,7 +70233,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4767
     dd 232
 
@@ -74634,7 +70245,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -74655,7 +70265,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4785
     dd 232
 
@@ -74668,7 +70277,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -74689,7 +70297,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4803
     dd 232
 
@@ -74702,7 +70309,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -74723,7 +70329,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4821
     dd 232
 
@@ -74736,7 +70341,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -74757,7 +70361,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4839
     dd 225
 
@@ -74770,7 +70373,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -74791,7 +70393,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4857
     dd 225
 
@@ -74804,7 +70405,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -74825,7 +70425,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4875
     dd 226
 
@@ -74839,7 +70438,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -74859,7 +70457,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15212
     dd 225
 
@@ -74873,7 +70470,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64|SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -74893,7 +70489,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15228
     dd 225
 
@@ -74907,7 +70502,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -74927,7 +70521,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15244
     dd 226
 
@@ -74942,7 +70535,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw SAE
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+15252
@@ -74961,7 +70553,6 @@ instrux:
     dw SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15260
     dd 226
 
@@ -74975,7 +70566,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -74995,7 +70585,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4893
     dd 225
 
@@ -75009,7 +70598,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64|SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75029,7 +70617,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4911
     dd 225
 
@@ -75043,7 +70630,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75063,7 +70649,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4929
     dd 226
 
@@ -75078,7 +70663,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw SAE
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+4938
@@ -75097,7 +70681,6 @@ instrux:
     dw SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4947
     dd 226
 
@@ -75110,7 +70693,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75131,7 +70713,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4965
     dd 225
 
@@ -75144,7 +70725,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75165,7 +70745,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+4983
     dd 226
 
@@ -75178,7 +70757,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75199,7 +70777,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5001
     dd 228
 
@@ -75212,7 +70789,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75233,7 +70809,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5019
     dd 227
 
@@ -75246,7 +70821,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75267,7 +70841,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5037
     dd 228
 
@@ -75280,7 +70853,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75301,7 +70873,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5055
     dd 226
 
@@ -75314,7 +70885,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75335,7 +70905,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5073
     dd 225
 
@@ -75348,7 +70917,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75369,7 +70937,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5091
     dd 226
 
@@ -75382,7 +70949,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75403,7 +70969,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5109
     dd 228
 
@@ -75416,7 +70981,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75437,7 +71001,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5127
     dd 227
 
@@ -75450,7 +71013,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75471,7 +71033,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5145
     dd 228
 
@@ -75484,7 +71045,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75505,7 +71065,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5163
     dd 226
 
@@ -75522,7 +71081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5172
     dd 226
 
@@ -75539,7 +71097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5181
     dd 226
 
@@ -75556,7 +71113,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15268
     dd 225
 
@@ -75570,7 +71126,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75590,7 +71145,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15284
     dd 225
 
@@ -75604,7 +71158,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75624,7 +71177,6 @@ instrux:
     dw B64|SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15300
     dd 226
 
@@ -75638,7 +71190,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64|SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75658,7 +71209,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15316
     dd 225
 
@@ -75672,7 +71222,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75692,7 +71241,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15332
     dd 225
 
@@ -75706,7 +71254,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75726,7 +71273,6 @@ instrux:
     dw B32|SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15348
     dd 226
 
@@ -75740,7 +71286,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32|SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75760,7 +71305,6 @@ instrux:
     dw SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15364
     dd 226
 
@@ -75774,7 +71318,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75794,7 +71337,6 @@ instrux:
     dw SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15380
     dd 226
 
@@ -75808,7 +71350,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75828,7 +71369,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15396
     dd 225
 
@@ -75842,7 +71382,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75862,7 +71401,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15412
     dd 225
 
@@ -75876,7 +71414,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75896,7 +71433,6 @@ instrux:
     dw B64|SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15428
     dd 226
 
@@ -75910,7 +71446,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64|SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75930,7 +71465,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15444
     dd 225
 
@@ -75944,7 +71478,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75964,7 +71497,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15460
     dd 225
 
@@ -75978,7 +71510,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -75998,7 +71529,6 @@ instrux:
     dw B32|SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15476
     dd 226
 
@@ -76012,7 +71542,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32|SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76032,7 +71561,6 @@ instrux:
     dw SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15492
     dd 226
 
@@ -76046,7 +71574,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76066,7 +71593,6 @@ instrux:
     dw SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15508
     dd 226
 
@@ -76083,7 +71609,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15516
     dd 226
 
@@ -76096,7 +71621,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76117,7 +71641,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15532
     dd 225
 
@@ -76130,7 +71653,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76151,7 +71673,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15548
     dd 225
 
@@ -76164,7 +71685,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76185,7 +71705,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15564
     dd 226
 
@@ -76198,7 +71717,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76219,7 +71737,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15580
     dd 225
 
@@ -76232,7 +71749,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76253,7 +71769,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15596
     dd 225
 
@@ -76266,7 +71781,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76287,7 +71801,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15612
     dd 226
 
@@ -76300,7 +71813,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76321,7 +71833,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15628
     dd 225
 
@@ -76334,7 +71845,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76355,7 +71865,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15644
     dd 225
 
@@ -76368,7 +71877,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76389,7 +71897,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15660
     dd 226
 
@@ -76406,7 +71913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+15668
     dd 226
 
@@ -76423,7 +71929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+15676
     dd 226
 
@@ -76436,7 +71941,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76457,7 +71961,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15692
     dd 225
 
@@ -76470,7 +71973,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76491,7 +71993,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15708
     dd 225
 
@@ -76504,7 +72005,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76525,7 +72025,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15724
     dd 226
 
@@ -76538,7 +72037,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76559,7 +72057,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15740
     dd 225
 
@@ -76572,7 +72069,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76593,7 +72089,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15756
     dd 225
 
@@ -76606,7 +72101,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76627,7 +72121,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15772
     dd 226
 
@@ -76640,7 +72133,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76661,7 +72153,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15788
     dd 225
 
@@ -76674,7 +72165,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76695,7 +72185,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15804
     dd 229
 
@@ -76708,7 +72197,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76729,7 +72217,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15820
     dd 230
 
@@ -76742,7 +72229,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76763,7 +72249,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15836
     dd 229
 
@@ -76776,7 +72261,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76797,7 +72281,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15852
     dd 225
 
@@ -76810,7 +72293,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76831,7 +72313,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15868
     dd 226
 
@@ -76844,7 +72325,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76865,7 +72345,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15884
     dd 225
 
@@ -76878,7 +72357,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76899,7 +72377,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15900
     dd 225
 
@@ -76912,7 +72389,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76933,7 +72409,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15916
     dd 226
 
@@ -76946,7 +72421,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -76967,7 +72441,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15932
     dd 225
 
@@ -76980,7 +72453,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -77001,7 +72473,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15948
     dd 229
 
@@ -77014,7 +72485,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -77035,7 +72505,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15964
     dd 230
 
@@ -77048,7 +72517,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -77069,7 +72537,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+15980
     dd 229
 
@@ -77082,7 +72549,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -77103,7 +72569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+15996
     dd 226
 
@@ -77120,7 +72585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16004
     dd 226
 
@@ -77137,7 +72601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16012
     dd 226
 
@@ -77154,7 +72617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16020
     dd 226
 
@@ -77171,7 +72633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16028
     dd 226
 
@@ -77188,7 +72649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16036
     dd 226
 
@@ -77205,7 +72665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16044
     dd 226
 
@@ -77222,7 +72681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16052
     dd 226
 
@@ -77239,7 +72697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16060
     dd 226
 
@@ -77256,7 +72713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16068
     dd 226
 
@@ -77273,7 +72729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16076
     dd 226
 
@@ -77290,7 +72745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16084
     dd 226
 
@@ -77307,7 +72761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16092
     dd 226
 
@@ -77324,7 +72777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16100
     dd 226
 
@@ -77341,7 +72793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16108
     dd 226
 
@@ -77358,7 +72809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16116
     dd 226
 
@@ -77375,7 +72825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16124
     dd 225
 
@@ -77392,7 +72841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16132
     dd 225
 
@@ -77409,7 +72857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16140
     dd 226
 
@@ -77426,7 +72873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16148
     dd 225
 
@@ -77443,7 +72889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16156
     dd 225
 
@@ -77460,7 +72905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16164
     dd 226
 
@@ -77477,7 +72921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16172
     dd 225
 
@@ -77494,7 +72937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16180
     dd 225
 
@@ -77511,7 +72953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16188
     dd 226
 
@@ -77528,7 +72969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16196
     dd 225
 
@@ -77545,7 +72985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16204
     dd 225
 
@@ -77562,7 +73001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16212
     dd 226
 
@@ -77579,7 +73017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16220
     dd 226
 
@@ -77596,7 +73033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16228
     dd 226
 
@@ -77613,7 +73049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16236
     dd 226
 
@@ -77630,7 +73065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+16244
     dd 226
 
@@ -77643,7 +73077,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -77664,7 +73097,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16260
     dd 226
 
@@ -77677,7 +73109,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -77698,7 +73129,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16276
     dd 226
 
@@ -77711,7 +73141,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -77732,7 +73161,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16292
     dd 226
 
@@ -77745,7 +73173,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -77766,7 +73193,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16308
     dd 225
 
@@ -77779,7 +73205,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -77800,7 +73225,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16324
     dd 225
 
@@ -77813,7 +73237,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -77834,7 +73257,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16340
     dd 226
 
@@ -77847,7 +73269,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -77868,7 +73289,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16356
     dd 226
 
@@ -77881,7 +73301,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -77902,7 +73321,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16372
     dd 226
 
@@ -77915,7 +73333,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -77936,7 +73353,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16388
     dd 226
 
@@ -77949,7 +73365,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -77970,7 +73385,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16404
     dd 225
 
@@ -77983,7 +73397,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78004,7 +73417,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16420
     dd 225
 
@@ -78017,7 +73429,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78038,7 +73449,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16436
     dd 226
 
@@ -78051,7 +73461,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78072,7 +73481,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16452
     dd 225
 
@@ -78085,7 +73493,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78106,7 +73513,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16468
     dd 225
 
@@ -78119,7 +73525,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78140,7 +73545,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16484
     dd 226
 
@@ -78153,7 +73557,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78174,7 +73577,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16500
     dd 225
 
@@ -78187,7 +73589,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78208,7 +73609,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16516
     dd 225
 
@@ -78221,7 +73621,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78242,7 +73641,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16532
     dd 226
 
@@ -78259,7 +73657,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16540
     dd 225
 
@@ -78273,7 +73670,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78293,7 +73689,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16556
     dd 225
 
@@ -78307,7 +73702,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78327,7 +73721,6 @@ instrux:
     dw B64|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16572
     dd 226
 
@@ -78341,7 +73734,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64|ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78361,7 +73753,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16588
     dd 225
 
@@ -78375,7 +73766,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78395,7 +73785,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16604
     dd 225
 
@@ -78409,7 +73798,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78429,7 +73817,6 @@ instrux:
     dw B32|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16620
     dd 226
 
@@ -78443,7 +73830,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78463,7 +73849,6 @@ instrux:
     dw ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16636
     dd 226
 
@@ -78477,7 +73862,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78497,7 +73881,6 @@ instrux:
     dw ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16652
     dd 226
 
@@ -78511,7 +73894,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78531,7 +73913,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16668
     dd 227
 
@@ -78545,7 +73926,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78565,7 +73945,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16684
     dd 227
 
@@ -78579,7 +73958,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78599,7 +73977,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16700
     dd 228
 
@@ -78613,7 +73990,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78633,7 +74009,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16716
     dd 227
 
@@ -78647,7 +74022,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78667,7 +74041,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16732
     dd 227
 
@@ -78681,7 +74054,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78701,7 +74073,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16748
     dd 228
 
@@ -78718,7 +74089,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16756
     dd 228
 
@@ -78731,7 +74101,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78752,7 +74121,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16772
     dd 229
 
@@ -78765,7 +74133,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78786,7 +74153,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16788
     dd 225
 
@@ -78800,7 +74166,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78820,7 +74185,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16804
     dd 226
 
@@ -78834,7 +74198,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78854,7 +74217,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16820
     dd 225
 
@@ -78871,7 +74233,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16828
     dd 226
 
@@ -78884,7 +74245,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78905,7 +74265,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16844
     dd 229
 
@@ -78918,7 +74277,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78939,7 +74297,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16860
     dd 229
 
@@ -78953,7 +74310,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -78973,7 +74329,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16876
     dd 229
 
@@ -78987,7 +74342,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79007,7 +74361,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16892
     dd 230
 
@@ -79024,7 +74377,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16900
     dd 230
 
@@ -79037,7 +74389,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79058,7 +74409,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16916
     dd 229
 
@@ -79071,7 +74421,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79092,7 +74441,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16932
     dd 229
 
@@ -79105,7 +74453,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79126,7 +74473,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16948
     dd 230
 
@@ -79143,7 +74489,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16956
     dd 229
 
@@ -79157,7 +74502,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79177,7 +74521,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16972
     dd 229
 
@@ -79191,7 +74534,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79211,7 +74553,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16988
     dd 230
 
@@ -79228,7 +74569,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+16996
     dd 230
 
@@ -79241,7 +74581,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79262,7 +74601,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17012
     dd 229
 
@@ -79275,7 +74613,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79296,7 +74633,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17028
     dd 229
 
@@ -79309,7 +74645,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79330,7 +74665,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17044
     dd 230
 
@@ -79343,7 +74677,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79364,7 +74697,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17060
     dd 229
 
@@ -79377,7 +74709,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79398,7 +74729,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17076
     dd 229
 
@@ -79411,7 +74741,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79432,7 +74761,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17092
     dd 230
 
@@ -79449,7 +74777,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17100
     dd 225
 
@@ -79463,7 +74790,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79483,7 +74809,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17116
     dd 225
 
@@ -79497,7 +74822,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79517,7 +74841,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17132
     dd 226
 
@@ -79531,7 +74854,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79551,7 +74873,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17148
     dd 225
 
@@ -79565,7 +74886,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79585,7 +74905,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17164
     dd 225
 
@@ -79599,7 +74918,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79619,7 +74937,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17180
     dd 226
 
@@ -79636,7 +74953,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17188
     dd 226
 
@@ -79649,7 +74965,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79670,7 +74985,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17204
     dd 229
 
@@ -79683,7 +74997,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79704,7 +75017,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17220
     dd 229
 
@@ -79717,7 +75029,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79738,7 +75049,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17236
     dd 230
 
@@ -79751,7 +75061,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79772,7 +75081,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17252
     dd 229
 
@@ -79785,7 +75093,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79806,7 +75113,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17268
     dd 229
 
@@ -79819,7 +75125,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79840,7 +75145,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17284
     dd 230
 
@@ -79853,7 +75157,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79874,7 +75177,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17300
     dd 229
 
@@ -79887,7 +75189,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79908,7 +75209,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17316
     dd 229
 
@@ -79921,7 +75221,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79942,7 +75241,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17332
     dd 230
 
@@ -79955,7 +75253,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -79976,7 +75273,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17348
     dd 229
 
@@ -79989,7 +75285,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80010,7 +75305,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17364
     dd 229
 
@@ -80023,7 +75317,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80044,7 +75337,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17380
     dd 230
 
@@ -80057,7 +75349,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80078,7 +75369,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17396
     dd 229
 
@@ -80091,7 +75381,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80112,7 +75401,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17412
     dd 229
 
@@ -80125,7 +75413,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80146,7 +75433,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17428
     dd 230
 
@@ -80159,7 +75445,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80180,7 +75465,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5199
     dd 229
 
@@ -80193,7 +75477,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80214,7 +75497,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5217
     dd 229
 
@@ -80227,7 +75509,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80248,7 +75529,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5235
     dd 230
 
@@ -80265,7 +75545,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17436
     dd 225
 
@@ -80279,7 +75558,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80299,7 +75577,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17452
     dd 225
 
@@ -80313,7 +75590,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80333,7 +75609,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17468
     dd 226
 
@@ -80347,7 +75622,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80367,7 +75641,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17484
     dd 225
 
@@ -80381,7 +75654,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80401,7 +75673,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17500
     dd 225
 
@@ -80415,7 +75686,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80435,7 +75705,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17516
     dd 226
 
@@ -80449,7 +75718,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80469,7 +75737,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17532
     dd 225
 
@@ -80483,7 +75750,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80503,7 +75769,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17548
     dd 225
 
@@ -80517,7 +75782,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80537,7 +75801,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17564
     dd 226
 
@@ -80551,7 +75814,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80571,7 +75833,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17580
     dd 225
 
@@ -80585,7 +75846,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80605,7 +75865,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17596
     dd 225
 
@@ -80619,7 +75878,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80639,7 +75897,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17612
     dd 226
 
@@ -80656,7 +75913,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17620
     dd 226
 
@@ -80669,7 +75925,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80690,7 +75945,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17636
     dd 229
 
@@ -80703,7 +75957,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80724,7 +75977,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17652
     dd 229
 
@@ -80737,7 +75989,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80758,7 +76009,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17668
     dd 230
 
@@ -80771,7 +76021,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80792,7 +76041,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17684
     dd 229
 
@@ -80805,7 +76053,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80826,7 +76073,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17700
     dd 229
 
@@ -80839,7 +76085,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80860,7 +76105,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17716
     dd 230
 
@@ -80873,7 +76117,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80894,7 +76137,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17732
     dd 229
 
@@ -80907,7 +76149,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -80928,7 +76169,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17748
     dd 225
 
@@ -80943,7 +76183,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+17756
@@ -80962,7 +76201,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17764
     dd 226
 
@@ -80977,7 +76215,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+17772
@@ -80996,7 +76233,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17780
     dd 225
 
@@ -81013,7 +76249,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17788
     dd 226
 
@@ -81026,7 +76261,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -81047,7 +76281,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17804
     dd 229
 
@@ -81060,7 +76293,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -81081,7 +76313,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17820
     dd 229
 
@@ -81094,7 +76325,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -81115,7 +76345,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17836
     dd 230
 
@@ -81128,7 +76357,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -81149,7 +76377,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17844
     dd 229
 
@@ -81162,7 +76389,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -81183,7 +76409,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17844
     dd 229
 
@@ -81196,7 +76421,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -81217,7 +76441,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17852
     dd 229
 
@@ -81230,7 +76453,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -81251,7 +76473,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17852
     dd 229
 
@@ -81264,7 +76485,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -81285,7 +76505,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17860
     dd 230
 
@@ -81298,7 +76517,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -81319,7 +76537,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17860
     dd 230
 
@@ -81332,7 +76549,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -81353,7 +76569,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17876
     dd 225
 
@@ -81366,7 +76581,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -81387,7 +76601,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17892
     dd 225
 
@@ -81400,7 +76613,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -81421,7 +76633,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17908
     dd 226
 
@@ -81434,7 +76645,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -81455,7 +76665,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17924
     dd 225
 
@@ -81468,7 +76677,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -81489,7 +76697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+17940
     dd 233
 
@@ -81506,7 +76713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+17948
     dd 233
 
@@ -81523,7 +76729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+17956
     dd 234
 
@@ -81540,7 +76745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+17964
     dd 233
 
@@ -81557,7 +76761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+17972
     dd 233
 
@@ -81574,7 +76777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+17980
     dd 234
 
@@ -81587,7 +76789,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -81608,7 +76809,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+17996
     dd 225
 
@@ -81621,7 +76821,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -81642,7 +76841,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18012
     dd 225
 
@@ -81655,7 +76853,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -81676,7 +76873,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18028
     dd 226
 
@@ -81689,7 +76885,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -81710,7 +76905,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18044
     dd 225
 
@@ -81723,7 +76917,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -81744,7 +76937,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18060
     dd 229
 
@@ -81757,7 +76949,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -81778,7 +76969,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18076
     dd 230
 
@@ -81791,7 +76981,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -81812,7 +77001,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18084
     dd 229
 
@@ -81825,7 +77013,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -81846,7 +77033,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18092
     dd 229
 
@@ -81859,7 +77045,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -81880,7 +77065,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18092
     dd 229
 
@@ -81893,7 +77077,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -81914,7 +77097,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18100
     dd 230
 
@@ -81927,7 +77109,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -81948,7 +77129,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5244
     dd 229
 
@@ -81961,7 +77141,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -81982,7 +77161,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5262
     dd 230
 
@@ -81997,7 +77175,6 @@ instrux:
     dw MASK
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+5271
@@ -82016,7 +77193,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5280
     dd 225
 
@@ -82033,7 +77209,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5289
     dd 226
 
@@ -82046,7 +77221,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -82067,7 +77241,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18116
     dd 229
 
@@ -82080,7 +77253,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -82101,7 +77273,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18132
     dd 225
 
@@ -82116,7 +77287,6 @@ instrux:
     dw MASK
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+18140
@@ -82135,7 +77305,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18148
     dd 226
 
@@ -82150,7 +77319,6 @@ instrux:
     dw MASK
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+18156
@@ -82169,7 +77337,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18164
     dd 225
 
@@ -82186,7 +77353,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18172
     dd 226
 
@@ -82199,7 +77365,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -82220,7 +77385,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18188
     dd 229
 
@@ -82233,7 +77397,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -82254,7 +77417,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18204
     dd 229
 
@@ -82267,7 +77429,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -82288,7 +77449,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18220
     dd 230
 
@@ -82303,7 +77463,6 @@ instrux:
     dw MASK
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+18228
@@ -82322,7 +77481,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18236
     dd 225
 
@@ -82337,7 +77495,6 @@ instrux:
     dw MASK
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+18244
@@ -82356,7 +77513,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18252
     dd 225
 
@@ -82371,7 +77527,6 @@ instrux:
     dw MASK
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+18260
@@ -82390,7 +77545,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18268
     dd 226
 
@@ -82403,7 +77557,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -82424,7 +77577,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18284
     dd 229
 
@@ -82437,7 +77589,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -82458,7 +77609,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5298
     dd 225
 
@@ -82473,7 +77623,6 @@ instrux:
     dw MASK
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+5307
@@ -82492,7 +77641,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5316
     dd 226
 
@@ -82505,7 +77653,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -82526,7 +77673,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5334
     dd 229
 
@@ -82539,7 +77685,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -82560,7 +77705,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5352
     dd 225
 
@@ -82575,7 +77719,6 @@ instrux:
     dw MASK
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+5361
@@ -82594,7 +77737,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5370
     dd 226
 
@@ -82609,7 +77751,6 @@ instrux:
     dw MASK
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+5379
@@ -82628,7 +77769,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5388
     dd 225
 
@@ -82645,7 +77785,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5397
     dd 226
 
@@ -82658,7 +77797,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -82679,7 +77817,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5415
     dd 229
 
@@ -82692,7 +77829,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -82713,7 +77849,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5433
     dd 229
 
@@ -82726,7 +77861,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -82747,7 +77881,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5451
     dd 230
 
@@ -82760,7 +77893,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -82781,7 +77913,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18308
     dd 225
 
@@ -82794,7 +77925,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -82815,7 +77945,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18324
     dd 225
 
@@ -82828,7 +77957,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -82849,7 +77977,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18340
     dd 226
 
@@ -82862,7 +77989,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -82883,7 +78009,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18356
     dd 225
 
@@ -82896,7 +78021,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -82917,7 +78041,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18372
     dd 225
 
@@ -82930,7 +78053,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -82951,7 +78073,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18388
     dd 226
 
@@ -82965,7 +78086,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -82985,7 +78105,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18404
     dd 233
 
@@ -82999,7 +78118,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -83019,7 +78137,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18420
     dd 233
 
@@ -83033,7 +78150,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -83053,7 +78169,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18436
     dd 234
 
@@ -83066,7 +78181,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -83087,7 +78201,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18452
     dd 235
 
@@ -83100,7 +78213,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -83121,7 +78233,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18468
     dd 235
 
@@ -83134,7 +78245,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -83155,7 +78265,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18484
     dd 236
 
@@ -83172,7 +78281,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18492
     dd 225
 
@@ -83186,7 +78294,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -83206,7 +78313,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18508
     dd 226
 
@@ -83223,7 +78329,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18516
     dd 226
 
@@ -83236,7 +78341,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -83257,7 +78361,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18532
     dd 235
 
@@ -83270,7 +78373,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -83291,7 +78393,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18548
     dd 225
 
@@ -83306,7 +78407,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+18556
@@ -83325,7 +78425,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18564
     dd 226
 
@@ -83340,7 +78439,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+18572
@@ -83359,7 +78457,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18580
     dd 225
 
@@ -83374,7 +78471,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+18588
@@ -83393,7 +78489,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18596
     dd 225
 
@@ -83408,7 +78503,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+18604
@@ -83427,7 +78521,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18612
     dd 226
 
@@ -83442,7 +78535,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+18620
@@ -83461,7 +78553,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18628
     dd 225
 
@@ -83478,7 +78569,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18636
     dd 226
 
@@ -83491,7 +78581,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -83512,7 +78601,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18652
     dd 229
 
@@ -83525,7 +78613,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -83546,7 +78633,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5460
     dd 225
 
@@ -83560,7 +78646,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -83580,7 +78665,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5478
     dd 226
 
@@ -83597,7 +78681,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18668
     dd 225
 
@@ -83611,7 +78694,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -83631,7 +78713,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18684
     dd 225
 
@@ -83645,7 +78726,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -83665,7 +78745,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18700
     dd 226
 
@@ -83679,7 +78758,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -83699,7 +78777,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5487
     dd 225
 
@@ -83713,7 +78790,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -83733,7 +78809,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5505
     dd 226
 
@@ -83750,7 +78825,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18716
     dd 225
 
@@ -83764,7 +78838,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -83784,7 +78857,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18732
     dd 225
 
@@ -83798,7 +78870,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -83818,7 +78889,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18748
     dd 226
 
@@ -83832,7 +78902,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -83852,7 +78921,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5514
     dd 225
 
@@ -83866,7 +78934,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -83886,7 +78953,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18764
     dd 225
 
@@ -83900,7 +78966,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -83920,7 +78985,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18780
     dd 226
 
@@ -83934,7 +78998,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -83954,7 +79017,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18796
     dd 225
 
@@ -83968,7 +79030,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -83988,7 +79049,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18812
     dd 226
 
@@ -84002,7 +79062,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -84022,7 +79081,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5532
     dd 225
 
@@ -84036,7 +79094,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -84056,7 +79113,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18828
     dd 225
 
@@ -84070,7 +79126,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -84090,7 +79145,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18844
     dd 226
 
@@ -84107,7 +79161,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18852
     dd 226
 
@@ -84120,7 +79173,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -84141,7 +79193,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18868
     dd 235
 
@@ -84154,7 +79205,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -84175,7 +79225,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18884
     dd 225
 
@@ -84190,7 +79239,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+18892
@@ -84209,7 +79257,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18900
     dd 226
 
@@ -84224,7 +79271,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+18908
@@ -84243,7 +79289,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18916
     dd 225
 
@@ -84258,7 +79303,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+18924
@@ -84277,7 +79321,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18932
     dd 225
 
@@ -84292,7 +79335,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+18940
@@ -84311,7 +79353,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18948
     dd 226
 
@@ -84326,7 +79367,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+18956
@@ -84345,7 +79385,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18964
     dd 225
 
@@ -84362,7 +79401,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18972
     dd 226
 
@@ -84375,7 +79413,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -84396,7 +79433,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+18988
     dd 229
 
@@ -84409,7 +79445,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -84430,7 +79465,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19004
     dd 229
 
@@ -84443,7 +79477,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -84464,7 +79497,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19020
     dd 229
 
@@ -84477,7 +79509,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -84498,7 +79529,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19036
     dd 230
 
@@ -84511,7 +79541,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -84532,7 +79561,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19052
     dd 225
 
@@ -84545,7 +79573,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -84566,7 +79593,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19068
     dd 226
 
@@ -84579,7 +79605,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -84600,7 +79625,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19060
     dd 225
 
@@ -84613,7 +79637,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -84634,7 +79657,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19076
     dd 225
 
@@ -84647,7 +79669,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -84668,7 +79689,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19092
     dd 226
 
@@ -84681,7 +79701,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -84702,7 +79721,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19084
     dd 225
 
@@ -84715,7 +79733,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -84736,7 +79753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5550
     dd 230
 
@@ -84753,7 +79769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5550
     dd 230
 
@@ -84770,7 +79785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5550
     dd 230
 
@@ -84787,7 +79801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5550
     dd 230
 
@@ -84804,7 +79817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5550
     dd 230
 
@@ -84821,7 +79833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5559
     dd 228
 
@@ -84838,7 +79849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5568
     dd 228
 
@@ -84855,7 +79865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5577
     dd 230
 
@@ -84872,7 +79881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5577
     dd 230
 
@@ -84889,7 +79897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5577
     dd 230
 
@@ -84906,7 +79913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5577
     dd 230
 
@@ -84923,7 +79929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5586
     dd 230
 
@@ -84940,7 +79945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5586
     dd 230
 
@@ -84957,7 +79961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5586
     dd 230
 
@@ -84970,7 +79973,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -84991,7 +79993,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5604
     dd 225
 
@@ -85004,7 +80005,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -85025,7 +80025,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5622
     dd 225
 
@@ -85038,7 +80037,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -85059,7 +80057,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5640
     dd 226
 
@@ -85072,7 +80069,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -85093,7 +80089,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5658
     dd 225
 
@@ -85106,7 +80101,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -85127,7 +80121,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5676
     dd 225
 
@@ -85140,7 +80133,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -85161,7 +80153,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5694
     dd 226
 
@@ -85178,7 +80169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5703
     dd 230
 
@@ -85195,7 +80185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5712
     dd 230
 
@@ -85212,7 +80201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5703
     dd 230
 
@@ -85229,7 +80217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5712
     dd 230
 
@@ -85246,7 +80233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5721
     dd 228
 
@@ -85263,7 +80249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5730
     dd 228
 
@@ -85280,7 +80265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5739
     dd 228
 
@@ -85297,7 +80281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5748
     dd 228
 
@@ -85314,7 +80297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5757
     dd 230
 
@@ -85331,7 +80313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5766
     dd 230
 
@@ -85348,7 +80329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5757
     dd 230
 
@@ -85365,7 +80345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+5766
     dd 230
 
@@ -85379,7 +80358,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -85399,7 +80377,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19108
     dd 233
 
@@ -85413,7 +80390,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -85433,7 +80409,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19124
     dd 233
 
@@ -85447,7 +80422,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -85467,7 +80441,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19140
     dd 234
 
@@ -85482,7 +80455,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+19148
@@ -85501,7 +80473,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19156
     dd 237
 
@@ -85516,7 +80487,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+19164
@@ -85535,7 +80505,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19172
     dd 237
 
@@ -85550,7 +80519,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+19180
@@ -85569,7 +80537,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19188
     dd 238
 
@@ -85582,7 +80549,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -85603,7 +80569,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19204
     dd 229
 
@@ -85616,7 +80581,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -85637,7 +80601,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19220
     dd 229
 
@@ -85650,7 +80613,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -85671,7 +80633,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19236
     dd 230
 
@@ -85684,7 +80645,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -85705,7 +80665,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19252
     dd 229
 
@@ -85718,7 +80677,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -85739,7 +80697,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19268
     dd 229
 
@@ -85752,7 +80709,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -85773,7 +80729,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19284
     dd 230
 
@@ -85786,7 +80741,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -85807,7 +80761,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19300
     dd 229
 
@@ -85820,7 +80773,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -85841,7 +80793,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19316
     dd 229
 
@@ -85854,7 +80805,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -85875,7 +80825,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19332
     dd 230
 
@@ -85892,7 +80841,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19340
     dd 225
 
@@ -85906,7 +80854,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -85926,7 +80873,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19356
     dd 225
 
@@ -85940,7 +80886,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -85960,7 +80905,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19372
     dd 226
 
@@ -85974,7 +80918,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -85994,7 +80937,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19388
     dd 225
 
@@ -86008,7 +80950,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86028,7 +80969,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19404
     dd 225
 
@@ -86042,7 +80982,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86062,7 +81001,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19420
     dd 226
 
@@ -86079,7 +81017,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19428
     dd 226
 
@@ -86092,7 +81029,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86113,7 +81049,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19444
     dd 229
 
@@ -86126,7 +81061,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86147,7 +81081,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19460
     dd 229
 
@@ -86160,7 +81093,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86181,7 +81113,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19476
     dd 230
 
@@ -86194,7 +81125,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86215,7 +81145,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19492
     dd 229
 
@@ -86228,7 +81157,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86249,7 +81177,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19508
     dd 229
 
@@ -86262,7 +81189,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86283,7 +81209,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19524
     dd 230
 
@@ -86300,7 +81225,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19532
     dd 225
 
@@ -86314,7 +81238,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86334,7 +81257,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19548
     dd 225
 
@@ -86348,7 +81270,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86368,7 +81289,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19564
     dd 226
 
@@ -86382,7 +81302,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86402,7 +81321,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19580
     dd 225
 
@@ -86416,7 +81334,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86436,7 +81353,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19596
     dd 225
 
@@ -86450,7 +81366,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86470,7 +81385,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19612
     dd 226
 
@@ -86487,7 +81401,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19620
     dd 226
 
@@ -86500,7 +81413,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86521,7 +81433,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19636
     dd 229
 
@@ -86534,7 +81445,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86555,7 +81465,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19652
     dd 229
 
@@ -86568,7 +81477,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86589,7 +81497,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19668
     dd 230
 
@@ -86602,7 +81509,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86623,7 +81529,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19684
     dd 229
 
@@ -86636,7 +81541,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86657,7 +81561,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19700
     dd 229
 
@@ -86670,7 +81573,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86691,7 +81593,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19716
     dd 230
 
@@ -86708,7 +81609,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19724
     dd 225
 
@@ -86722,7 +81622,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86742,7 +81641,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19740
     dd 225
 
@@ -86756,7 +81654,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86776,7 +81673,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19756
     dd 226
 
@@ -86790,7 +81686,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86810,7 +81705,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19772
     dd 225
 
@@ -86824,7 +81718,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86844,7 +81737,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19788
     dd 225
 
@@ -86858,7 +81750,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86878,7 +81769,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19804
     dd 226
 
@@ -86895,7 +81785,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19812
     dd 226
 
@@ -86908,7 +81797,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86929,7 +81817,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19828
     dd 229
 
@@ -86942,7 +81829,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86963,7 +81849,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19844
     dd 229
 
@@ -86976,7 +81861,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -86997,7 +81881,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19860
     dd 230
 
@@ -87010,7 +81893,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -87031,7 +81913,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19876
     dd 229
 
@@ -87044,7 +81925,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -87065,7 +81945,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19892
     dd 229
 
@@ -87078,7 +81957,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -87099,7 +81977,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19908
     dd 230
 
@@ -87116,7 +81993,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19916
     dd 225
 
@@ -87130,7 +82006,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -87150,7 +82025,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19932
     dd 225
 
@@ -87164,7 +82038,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -87184,7 +82057,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19948
     dd 226
 
@@ -87198,7 +82070,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -87218,7 +82089,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19964
     dd 225
 
@@ -87232,7 +82102,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -87252,7 +82121,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19980
     dd 225
 
@@ -87266,7 +82134,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -87286,7 +82153,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+19996
     dd 226
 
@@ -87303,7 +82169,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20004
     dd 226
 
@@ -87316,7 +82181,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -87337,7 +82201,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20020
     dd 229
 
@@ -87350,7 +82213,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -87371,7 +82233,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20036
     dd 229
 
@@ -87384,7 +82245,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -87405,7 +82265,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20052
     dd 230
 
@@ -87422,7 +82281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+20060
     dd 229
 
@@ -87439,7 +82297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+20068
     dd 229
 
@@ -87456,7 +82313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+20076
     dd 230
 
@@ -87473,7 +82329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+20084
     dd 227
 
@@ -87490,7 +82345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+20092
     dd 227
 
@@ -87507,7 +82361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+20100
     dd 228
 
@@ -87520,7 +82373,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -87541,7 +82393,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20116
     dd 225
 
@@ -87554,7 +82405,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -87575,7 +82425,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20132
     dd 225
 
@@ -87588,7 +82437,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -87609,7 +82457,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20148
     dd 226
 
@@ -87622,7 +82469,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -87643,7 +82489,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20164
     dd 225
 
@@ -87656,7 +82501,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -87677,7 +82521,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20180
     dd 225
 
@@ -87690,7 +82533,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -87711,7 +82553,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20196
     dd 226
 
@@ -87728,7 +82569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+20204
     dd 229
 
@@ -87745,7 +82585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+20212
     dd 229
 
@@ -87762,7 +82601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+20220
     dd 230
 
@@ -87779,7 +82617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+20228
     dd 227
 
@@ -87796,7 +82633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+20236
     dd 227
 
@@ -87813,7 +82649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+20244
     dd 228
 
@@ -87830,7 +82665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+20252
     dd 227
 
@@ -87847,7 +82681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+20260
     dd 227
 
@@ -87864,7 +82697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+20268
     dd 228
 
@@ -87881,7 +82713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+20276
     dd 229
 
@@ -87898,7 +82729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+20284
     dd 229
 
@@ -87915,7 +82745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+20292
     dd 230
 
@@ -87932,7 +82761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+20300
     dd 227
 
@@ -87949,7 +82777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+20308
     dd 227
 
@@ -87966,7 +82793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+20316
     dd 228
 
@@ -87979,7 +82805,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88000,7 +82825,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20332
     dd 225
 
@@ -88013,7 +82837,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88034,7 +82857,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20348
     dd 225
 
@@ -88047,7 +82869,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88068,7 +82889,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20364
     dd 226
 
@@ -88081,7 +82901,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88102,7 +82921,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20380
     dd 225
 
@@ -88115,7 +82933,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88136,7 +82953,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20396
     dd 225
 
@@ -88149,7 +82965,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88170,7 +82985,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20412
     dd 226
 
@@ -88183,7 +82997,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88204,7 +83017,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20428
     dd 225
 
@@ -88217,7 +83029,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88238,7 +83049,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20444
     dd 225
 
@@ -88251,7 +83061,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88272,7 +83081,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20460
     dd 226
 
@@ -88285,7 +83093,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88306,7 +83113,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20476
     dd 225
 
@@ -88319,7 +83125,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88340,7 +83145,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20492
     dd 225
 
@@ -88353,7 +83157,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88374,7 +83177,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20508
     dd 226
 
@@ -88387,7 +83189,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88408,7 +83209,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20524
     dd 225
 
@@ -88421,7 +83221,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88442,7 +83241,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20540
     dd 225
 
@@ -88455,7 +83253,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88476,7 +83273,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20556
     dd 226
 
@@ -88489,7 +83285,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88510,7 +83305,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20572
     dd 225
 
@@ -88523,7 +83317,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88544,7 +83337,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20588
     dd 225
 
@@ -88557,7 +83349,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88578,7 +83369,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20604
     dd 226
 
@@ -88591,7 +83381,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88612,7 +83401,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20620
     dd 225
 
@@ -88625,7 +83413,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88646,7 +83433,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20636
     dd 225
 
@@ -88659,7 +83445,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88680,7 +83465,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20652
     dd 226
 
@@ -88693,7 +83477,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88714,7 +83497,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20668
     dd 225
 
@@ -88727,7 +83509,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88748,7 +83529,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20684
     dd 225
 
@@ -88761,7 +83541,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88782,7 +83561,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20700
     dd 226
 
@@ -88795,7 +83573,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88816,7 +83593,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20716
     dd 229
 
@@ -88829,7 +83605,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88850,7 +83625,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20732
     dd 229
 
@@ -88863,7 +83637,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88884,7 +83657,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20748
     dd 230
 
@@ -88897,7 +83669,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88918,7 +83689,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20764
     dd 225
 
@@ -88931,7 +83701,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88952,7 +83721,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20780
     dd 225
 
@@ -88965,7 +83733,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -88986,7 +83753,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20796
     dd 226
 
@@ -88999,7 +83765,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89020,7 +83785,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20812
     dd 229
 
@@ -89033,7 +83797,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89054,7 +83817,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20828
     dd 225
 
@@ -89067,7 +83829,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89088,7 +83849,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20844
     dd 226
 
@@ -89101,7 +83861,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89122,7 +83881,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20860
     dd 225
 
@@ -89135,7 +83893,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89156,7 +83913,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20876
     dd 225
 
@@ -89169,7 +83925,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89190,7 +83945,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20892
     dd 226
 
@@ -89203,7 +83957,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89224,7 +83977,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20908
     dd 225
 
@@ -89237,7 +83989,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89258,7 +84009,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20924
     dd 225
 
@@ -89271,7 +84021,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89292,7 +84041,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20940
     dd 226
 
@@ -89305,7 +84053,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89326,7 +84073,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20956
     dd 225
 
@@ -89339,7 +84085,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89360,7 +84105,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20972
     dd 225
 
@@ -89373,7 +84117,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89394,7 +84137,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+20988
     dd 226
 
@@ -89407,7 +84149,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89428,7 +84169,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21004
     dd 225
 
@@ -89441,7 +84181,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89462,7 +84201,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21020
     dd 225
 
@@ -89475,7 +84213,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89496,7 +84233,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21036
     dd 226
 
@@ -89509,7 +84245,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89530,7 +84265,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21052
     dd 225
 
@@ -89543,7 +84277,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89564,7 +84297,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21068
     dd 225
 
@@ -89577,7 +84309,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89598,7 +84329,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21084
     dd 226
 
@@ -89611,7 +84341,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89632,7 +84361,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21100
     dd 225
 
@@ -89645,7 +84373,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89666,7 +84393,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21116
     dd 225
 
@@ -89679,7 +84405,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89700,7 +84425,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21132
     dd 226
 
@@ -89713,7 +84437,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89734,7 +84457,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21148
     dd 229
 
@@ -89747,7 +84469,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89768,7 +84489,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21164
     dd 229
 
@@ -89781,7 +84501,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89802,7 +84521,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21180
     dd 230
 
@@ -89819,7 +84537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+21188
     dd 229
 
@@ -89836,7 +84553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+21196
     dd 229
 
@@ -89853,7 +84569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+21204
     dd 230
 
@@ -89866,7 +84581,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89887,7 +84601,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21220
     dd 229
 
@@ -89900,7 +84613,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89921,7 +84633,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21236
     dd 229
 
@@ -89934,7 +84645,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89955,7 +84665,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21252
     dd 230
 
@@ -89968,7 +84677,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -89989,7 +84697,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21268
     dd 225
 
@@ -90002,7 +84709,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90023,7 +84729,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21284
     dd 225
 
@@ -90036,7 +84741,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90057,7 +84761,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21300
     dd 226
 
@@ -90070,7 +84773,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90091,7 +84793,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21316
     dd 229
 
@@ -90104,7 +84805,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90125,7 +84825,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21332
     dd 225
 
@@ -90138,7 +84837,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90159,7 +84857,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21348
     dd 226
 
@@ -90172,7 +84869,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90193,7 +84889,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21364
     dd 225
 
@@ -90206,7 +84901,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90227,7 +84921,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21380
     dd 225
 
@@ -90240,7 +84933,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90261,7 +84953,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21396
     dd 226
 
@@ -90278,7 +84969,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21404
     dd 225
 
@@ -90292,7 +84982,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90312,7 +85001,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21420
     dd 225
 
@@ -90326,7 +85014,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90346,7 +85033,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21436
     dd 226
 
@@ -90363,7 +85049,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21444
     dd 226
 
@@ -90376,7 +85061,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90397,7 +85081,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21460
     dd 229
 
@@ -90410,7 +85093,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90431,7 +85113,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21476
     dd 229
 
@@ -90444,7 +85125,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90465,7 +85145,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21492
     dd 230
 
@@ -90478,7 +85157,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90499,7 +85177,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21508
     dd 229
 
@@ -90512,7 +85189,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90533,7 +85209,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21524
     dd 229
 
@@ -90546,7 +85221,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90567,7 +85241,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21540
     dd 230
 
@@ -90580,7 +85253,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90601,7 +85273,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21556
     dd 229
 
@@ -90614,7 +85285,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90635,7 +85305,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21572
     dd 229
 
@@ -90648,7 +85317,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90669,7 +85337,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21588
     dd 230
 
@@ -90686,7 +85353,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21596
     dd 225
 
@@ -90700,7 +85366,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90720,7 +85385,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21612
     dd 225
 
@@ -90734,7 +85398,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90754,7 +85417,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21628
     dd 226
 
@@ -90768,7 +85430,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90788,7 +85449,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21644
     dd 227
 
@@ -90802,7 +85462,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90822,7 +85481,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21660
     dd 227
 
@@ -90836,7 +85494,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90856,7 +85513,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21676
     dd 228
 
@@ -90873,7 +85529,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21684
     dd 228
 
@@ -90886,7 +85541,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90907,7 +85561,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21700
     dd 229
 
@@ -90920,7 +85573,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90941,7 +85593,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21716
     dd 229
 
@@ -90954,7 +85605,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -90975,7 +85625,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21732
     dd 230
 
@@ -90992,7 +85641,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21740
     dd 235
 
@@ -91006,7 +85654,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91026,7 +85673,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21756
     dd 235
 
@@ -91040,7 +85686,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91060,7 +85705,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21772
     dd 236
 
@@ -91074,7 +85718,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91094,7 +85737,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21788
     dd 225
 
@@ -91108,7 +85750,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91128,7 +85769,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21804
     dd 225
 
@@ -91142,7 +85782,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91162,7 +85801,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21820
     dd 226
 
@@ -91176,7 +85814,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91196,7 +85833,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21836
     dd 225
 
@@ -91210,7 +85846,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91230,7 +85865,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21852
     dd 225
 
@@ -91244,7 +85878,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91264,7 +85897,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21868
     dd 226
 
@@ -91278,7 +85910,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91298,7 +85929,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21884
     dd 225
 
@@ -91312,7 +85942,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91332,7 +85961,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21900
     dd 225
 
@@ -91346,7 +85974,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91366,7 +85993,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21916
     dd 226
 
@@ -91380,7 +86006,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91400,7 +86025,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5775
     dd 225
 
@@ -91413,7 +86037,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91434,7 +86057,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5793
     dd 225
 
@@ -91447,7 +86069,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91468,7 +86089,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5811
     dd 226
 
@@ -91481,7 +86101,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91502,7 +86121,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5829
     dd 225
 
@@ -91515,7 +86133,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91536,7 +86153,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5847
     dd 225
 
@@ -91549,7 +86165,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91570,7 +86185,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5865
     dd 226
 
@@ -91583,7 +86197,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91604,7 +86217,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21932
     dd 225
 
@@ -91618,7 +86230,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91638,7 +86249,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21948
     dd 225
 
@@ -91652,7 +86262,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91672,7 +86281,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21964
     dd 226
 
@@ -91686,7 +86294,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91706,7 +86313,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21980
     dd 225
 
@@ -91720,7 +86326,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91740,7 +86345,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+21996
     dd 225
 
@@ -91754,7 +86358,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91774,7 +86377,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22012
     dd 226
 
@@ -91788,7 +86390,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91808,7 +86409,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5883
     dd 225
 
@@ -91821,7 +86421,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91842,7 +86441,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5901
     dd 225
 
@@ -91855,7 +86453,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91876,7 +86473,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5919
     dd 226
 
@@ -91889,7 +86485,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91910,7 +86505,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5937
     dd 225
 
@@ -91923,7 +86517,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91944,7 +86537,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5955
     dd 225
 
@@ -91957,7 +86549,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -91978,7 +86569,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+5973
     dd 226
 
@@ -91991,7 +86581,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -92012,7 +86601,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22028
     dd 225
 
@@ -92026,7 +86614,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -92046,7 +86633,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22044
     dd 225
 
@@ -92060,7 +86646,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -92080,7 +86665,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22060
     dd 226
 
@@ -92094,7 +86678,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -92114,7 +86697,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22076
     dd 225
 
@@ -92128,7 +86710,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -92148,7 +86729,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22092
     dd 225
 
@@ -92162,7 +86742,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -92182,7 +86761,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22108
     dd 226
 
@@ -92196,7 +86774,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -92216,7 +86793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+22124
     dd 229
 
@@ -92233,7 +86809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+22132
     dd 229
 
@@ -92250,7 +86825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+22140
     dd 229
 
@@ -92267,7 +86841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+22148
     dd 229
 
@@ -92284,7 +86857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+22156
     dd 230
 
@@ -92301,7 +86873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+22164
     dd 230
 
@@ -92314,7 +86885,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -92335,7 +86905,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6000
     dd 225
 
@@ -92348,7 +86917,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -92369,7 +86937,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6018
     dd 225
 
@@ -92382,7 +86949,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -92403,7 +86969,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6036
     dd 226
 
@@ -92416,7 +86981,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -92437,7 +87001,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6054
     dd 225
 
@@ -92450,7 +87013,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -92471,7 +87033,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6072
     dd 225
 
@@ -92484,7 +87045,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -92505,7 +87065,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6090
     dd 226
 
@@ -92518,7 +87077,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -92539,7 +87097,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22180
     dd 229
 
@@ -92552,7 +87109,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -92573,7 +87129,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22196
     dd 229
 
@@ -92586,7 +87141,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -92607,7 +87161,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22212
     dd 230
 
@@ -92621,7 +87174,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -92641,7 +87193,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6108
     dd 225
 
@@ -92658,7 +87209,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6117
     dd 226
 
@@ -92671,7 +87221,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -92692,7 +87241,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6135
     dd 229
 
@@ -92705,7 +87253,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -92726,7 +87273,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6153
     dd 229
 
@@ -92739,7 +87285,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -92760,7 +87305,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6171
     dd 230
 
@@ -92773,7 +87317,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -92794,7 +87337,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22228
     dd 225
 
@@ -92807,7 +87349,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -92828,7 +87369,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22244
     dd 225
 
@@ -92841,7 +87381,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -92862,7 +87401,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22260
     dd 226
 
@@ -92879,7 +87417,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6180
     dd 225
 
@@ -92892,7 +87429,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -92913,7 +87449,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6198
     dd 225
 
@@ -92926,7 +87461,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -92947,7 +87481,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6216
     dd 226
 
@@ -92960,7 +87493,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -92981,7 +87513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+6234
     dd 229
 
@@ -92998,7 +87529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+6243
     dd 229
 
@@ -93015,7 +87545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+6252
     dd 229
 
@@ -93032,7 +87561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+6261
     dd 229
 
@@ -93049,7 +87577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+6270
     dd 230
 
@@ -93066,7 +87593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+6279
     dd 230
 
@@ -93079,7 +87605,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -93100,7 +87625,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22276
     dd 225
 
@@ -93113,7 +87637,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -93134,7 +87657,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22292
     dd 225
 
@@ -93147,7 +87669,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -93168,7 +87689,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22308
     dd 226
 
@@ -93185,7 +87705,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6288
     dd 225
 
@@ -93198,7 +87717,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -93219,7 +87737,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6306
     dd 225
 
@@ -93232,7 +87749,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -93253,7 +87769,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6324
     dd 226
 
@@ -93266,7 +87781,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -93287,7 +87801,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22316
     dd 225
 
@@ -93301,7 +87814,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -93321,7 +87833,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22332
     dd 225
 
@@ -93335,7 +87846,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -93355,7 +87865,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22348
     dd 226
 
@@ -93369,7 +87878,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -93389,7 +87897,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22364
     dd 225
 
@@ -93403,7 +87910,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -93423,7 +87929,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22380
     dd 225
 
@@ -93437,7 +87942,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -93457,7 +87961,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22396
     dd 226
 
@@ -93474,7 +87977,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22404
     dd 226
 
@@ -93487,7 +87989,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -93508,7 +88009,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22420
     dd 229
 
@@ -93521,7 +88021,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -93542,7 +88041,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22436
     dd 229
 
@@ -93555,7 +88053,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -93576,7 +88073,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22452
     dd 230
 
@@ -93589,7 +88085,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -93610,7 +88105,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22468
     dd 229
 
@@ -93623,7 +88117,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -93644,7 +88137,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22484
     dd 229
 
@@ -93657,7 +88149,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -93678,7 +88169,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22500
     dd 230
 
@@ -93691,7 +88181,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -93712,7 +88201,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6351
     dd 229
 
@@ -93725,7 +88213,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -93746,7 +88233,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6369
     dd 229
 
@@ -93759,7 +88245,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -93780,7 +88265,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6387
     dd 230
 
@@ -93793,7 +88277,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -93814,7 +88297,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22516
     dd 225
 
@@ -93827,7 +88309,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -93848,7 +88329,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22532
     dd 225
 
@@ -93861,7 +88341,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -93882,7 +88361,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22548
     dd 226
 
@@ -93899,7 +88377,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6396
     dd 225
 
@@ -93912,7 +88389,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -93933,7 +88409,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6414
     dd 225
 
@@ -93946,7 +88421,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -93967,7 +88441,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6432
     dd 226
 
@@ -93980,7 +88453,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94001,7 +88473,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22556
     dd 225
 
@@ -94014,7 +88485,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94035,7 +88505,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22572
     dd 225
 
@@ -94048,7 +88517,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94069,7 +88537,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22588
     dd 226
 
@@ -94082,7 +88549,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94103,7 +88569,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6450
     dd 225
 
@@ -94116,7 +88581,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94137,7 +88601,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6468
     dd 225
 
@@ -94150,7 +88613,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94171,7 +88633,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6486
     dd 226
 
@@ -94184,7 +88645,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94205,7 +88665,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22604
     dd 225
 
@@ -94219,7 +88678,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94239,7 +88697,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22620
     dd 225
 
@@ -94253,7 +88710,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94273,7 +88729,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22636
     dd 226
 
@@ -94287,7 +88742,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94307,7 +88761,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22652
     dd 225
 
@@ -94321,7 +88774,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94341,7 +88793,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22668
     dd 225
 
@@ -94355,7 +88806,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94375,7 +88825,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22684
     dd 226
 
@@ -94392,7 +88841,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22692
     dd 226
 
@@ -94405,7 +88853,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94426,7 +88873,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22708
     dd 229
 
@@ -94439,7 +88885,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94460,7 +88905,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22724
     dd 229
 
@@ -94473,7 +88917,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94494,7 +88937,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22740
     dd 230
 
@@ -94507,7 +88949,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94528,7 +88969,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22756
     dd 229
 
@@ -94541,7 +88981,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94562,7 +89001,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22772
     dd 229
 
@@ -94575,7 +89013,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94596,7 +89033,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22788
     dd 230
 
@@ -94609,7 +89045,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94630,7 +89065,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6513
     dd 229
 
@@ -94643,7 +89077,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94664,7 +89097,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6531
     dd 229
 
@@ -94677,7 +89109,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94698,7 +89129,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6549
     dd 230
 
@@ -94711,7 +89141,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94732,7 +89161,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22804
     dd 225
 
@@ -94745,7 +89173,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94766,7 +89193,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22820
     dd 225
 
@@ -94779,7 +89205,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94800,7 +89225,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22836
     dd 226
 
@@ -94817,7 +89241,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6558
     dd 225
 
@@ -94830,7 +89253,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94851,7 +89273,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6576
     dd 225
 
@@ -94864,7 +89285,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94885,7 +89305,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6594
     dd 226
 
@@ -94898,7 +89317,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -94919,7 +89337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+6612
     dd 229
 
@@ -94936,7 +89353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+6621
     dd 229
 
@@ -94953,7 +89369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+6630
     dd 229
 
@@ -94970,7 +89385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+6639
     dd 229
 
@@ -94987,7 +89401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+6648
     dd 230
 
@@ -95004,7 +89417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+6657
     dd 230
 
@@ -95017,7 +89429,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95038,7 +89449,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22852
     dd 225
 
@@ -95051,7 +89461,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95072,7 +89481,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22868
     dd 225
 
@@ -95085,7 +89493,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95106,7 +89513,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22884
     dd 226
 
@@ -95123,7 +89529,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6666
     dd 225
 
@@ -95136,7 +89541,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95157,7 +89561,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6684
     dd 225
 
@@ -95170,7 +89573,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95191,7 +89593,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6702
     dd 226
 
@@ -95204,7 +89605,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95225,7 +89625,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22892
     dd 225
 
@@ -95239,7 +89638,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95259,7 +89657,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22908
     dd 225
 
@@ -95273,7 +89670,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95293,7 +89689,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22924
     dd 226
 
@@ -95307,7 +89702,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95327,7 +89721,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22940
     dd 225
 
@@ -95341,7 +89734,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95361,7 +89753,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22956
     dd 225
 
@@ -95375,7 +89766,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95395,7 +89785,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22972
     dd 226
 
@@ -95412,7 +89801,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22980
     dd 226
 
@@ -95425,7 +89813,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95446,7 +89833,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+22996
     dd 229
 
@@ -95459,7 +89845,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95480,7 +89865,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23012
     dd 229
 
@@ -95493,7 +89877,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95514,7 +89897,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23028
     dd 230
 
@@ -95527,7 +89909,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95548,7 +89929,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23044
     dd 229
 
@@ -95561,7 +89941,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95582,7 +89961,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23060
     dd 229
 
@@ -95595,7 +89973,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95616,7 +89993,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23076
     dd 230
 
@@ -95629,7 +90005,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95650,7 +90025,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6729
     dd 229
 
@@ -95663,7 +90037,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95684,7 +90057,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6747
     dd 229
 
@@ -95697,7 +90069,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95718,7 +90089,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6765
     dd 230
 
@@ -95731,7 +90101,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95752,7 +90121,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23092
     dd 229
 
@@ -95765,7 +90133,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95786,7 +90153,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23108
     dd 229
 
@@ -95799,7 +90165,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95820,7 +90185,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23124
     dd 230
 
@@ -95837,7 +90201,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23132
     dd 225
 
@@ -95851,7 +90214,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95871,7 +90233,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23148
     dd 225
 
@@ -95885,7 +90246,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95905,7 +90265,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23164
     dd 226
 
@@ -95919,7 +90278,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95939,7 +90297,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23180
     dd 225
 
@@ -95953,7 +90310,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -95973,7 +90329,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23196
     dd 225
 
@@ -95987,7 +90342,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -96007,7 +90361,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23212
     dd 226
 
@@ -96024,7 +90377,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23220
     dd 226
 
@@ -96037,7 +90389,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -96058,7 +90409,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23236
     dd 229
 
@@ -96071,7 +90421,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -96092,7 +90441,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23252
     dd 229
 
@@ -96105,7 +90453,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -96126,7 +90473,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23268
     dd 230
 
@@ -96139,7 +90485,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -96160,7 +90505,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23284
     dd 229
 
@@ -96173,7 +90517,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -96194,7 +90537,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23300
     dd 229
 
@@ -96207,7 +90549,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -96228,7 +90569,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23316
     dd 230
 
@@ -96241,7 +90581,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -96262,7 +90601,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23332
     dd 229
 
@@ -96275,7 +90613,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -96296,7 +90633,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23348
     dd 229
 
@@ -96309,7 +90645,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -96330,7 +90665,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23364
     dd 230
 
@@ -96343,7 +90677,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -96364,7 +90697,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23380
     dd 229
 
@@ -96377,7 +90709,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -96398,7 +90729,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23396
     dd 229
 
@@ -96411,7 +90741,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -96432,7 +90761,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23412
     dd 230
 
@@ -96445,7 +90773,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -96466,7 +90793,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23428
     dd 229
 
@@ -96479,7 +90805,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -96500,7 +90825,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23444
     dd 229
 
@@ -96513,7 +90837,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -96534,7 +90857,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23460
     dd 230
 
@@ -96549,7 +90871,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+6774
@@ -96568,7 +90889,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6783
     dd 225
 
@@ -96583,7 +90903,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+6792
@@ -96602,7 +90921,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6801
     dd 225
 
@@ -96617,7 +90935,6 @@ instrux:
     dw MASK|Z
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+6810
@@ -96636,7 +90953,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6819
     dd 226
 
@@ -96649,7 +90965,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -96670,7 +90985,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23476
     dd 229
 
@@ -96683,7 +90997,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -96704,7 +91017,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23492
     dd 225
 
@@ -96719,7 +91031,6 @@ instrux:
     dw MASK
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+23500
@@ -96738,7 +91049,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23508
     dd 226
 
@@ -96753,7 +91063,6 @@ instrux:
     dw MASK
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+23516
@@ -96772,7 +91081,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23524
     dd 225
 
@@ -96789,7 +91097,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23532
     dd 226
 
@@ -96802,7 +91109,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -96823,7 +91129,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23548
     dd 229
 
@@ -96836,7 +91141,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -96857,7 +91161,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23564
     dd 229
 
@@ -96870,7 +91173,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -96891,7 +91193,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23580
     dd 230
 
@@ -96906,7 +91207,6 @@ instrux:
     dw MASK
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+23588
@@ -96925,7 +91225,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23596
     dd 225
 
@@ -96940,7 +91239,6 @@ instrux:
     dw MASK
     dw 0
     dw B32
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+23604
@@ -96959,7 +91257,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23612
     dd 225
 
@@ -96974,7 +91271,6 @@ instrux:
     dw MASK
     dw 0
     dw B64
-    dw 0
     dw 0
     dw 0
     dd nasm_bytecodes+23620
@@ -96993,7 +91289,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23628
     dd 226
 
@@ -97006,7 +91301,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97027,7 +91321,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23644
     dd 229
 
@@ -97040,7 +91333,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97061,7 +91353,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23660
     dd 229
 
@@ -97074,7 +91365,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97095,7 +91385,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23676
     dd 229
 
@@ -97108,7 +91397,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97129,7 +91417,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23692
     dd 230
 
@@ -97142,7 +91429,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97163,7 +91449,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23708
     dd 225
 
@@ -97177,7 +91462,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97197,7 +91481,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23724
     dd 225
 
@@ -97211,7 +91494,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97231,7 +91513,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23740
     dd 226
 
@@ -97245,7 +91526,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97265,7 +91545,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23756
     dd 225
 
@@ -97279,7 +91558,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97299,7 +91577,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23772
     dd 225
 
@@ -97313,7 +91590,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97333,7 +91609,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23788
     dd 226
 
@@ -97350,7 +91625,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23796
     dd 226
 
@@ -97363,7 +91637,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97384,7 +91657,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23812
     dd 229
 
@@ -97397,7 +91669,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97418,7 +91689,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23828
     dd 229
 
@@ -97431,7 +91701,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97452,7 +91721,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23844
     dd 230
 
@@ -97465,7 +91733,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97486,7 +91753,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23860
     dd 229
 
@@ -97499,7 +91765,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97520,7 +91785,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23876
     dd 229
 
@@ -97533,7 +91797,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97554,7 +91817,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23892
     dd 230
 
@@ -97571,7 +91833,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23900
     dd 225
 
@@ -97585,7 +91846,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97605,7 +91865,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23916
     dd 225
 
@@ -97619,7 +91878,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97639,7 +91897,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23932
     dd 226
 
@@ -97653,7 +91910,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97673,7 +91929,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23948
     dd 225
 
@@ -97687,7 +91942,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97707,7 +91961,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23964
     dd 225
 
@@ -97721,7 +91974,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97741,7 +91993,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23980
     dd 226
 
@@ -97758,7 +92009,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+23988
     dd 226
 
@@ -97771,7 +92021,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97792,7 +92041,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24004
     dd 229
 
@@ -97805,7 +92053,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97826,7 +92073,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24020
     dd 229
 
@@ -97839,7 +92085,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97860,7 +92105,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24036
     dd 230
 
@@ -97877,7 +92121,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24044
     dd 225
 
@@ -97891,7 +92134,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97911,7 +92153,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24060
     dd 225
 
@@ -97925,7 +92166,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97945,7 +92185,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24076
     dd 226
 
@@ -97959,7 +92198,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -97979,7 +92217,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24092
     dd 225
 
@@ -97993,7 +92230,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98013,7 +92249,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24108
     dd 225
 
@@ -98027,7 +92262,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98047,7 +92281,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24124
     dd 226
 
@@ -98061,7 +92294,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98081,7 +92313,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6828
     dd 227
 
@@ -98095,7 +92326,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98115,7 +92345,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6846
     dd 227
 
@@ -98129,7 +92358,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98149,7 +92377,6 @@ instrux:
     dw B64|SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6864
     dd 228
 
@@ -98163,7 +92390,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64|SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98183,7 +92409,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6882
     dd 227
 
@@ -98197,7 +92422,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98217,7 +92441,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6900
     dd 227
 
@@ -98231,7 +92454,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98251,7 +92473,6 @@ instrux:
     dw B32|SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6918
     dd 228
 
@@ -98265,7 +92486,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32|SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98285,7 +92505,6 @@ instrux:
     dw SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6936
     dd 228
 
@@ -98299,7 +92518,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98319,7 +92537,6 @@ instrux:
     dw SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6954
     dd 228
 
@@ -98333,7 +92550,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98353,7 +92569,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24140
     dd 225
 
@@ -98367,7 +92582,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98387,7 +92601,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24156
     dd 226
 
@@ -98401,7 +92614,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98421,7 +92633,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24172
     dd 225
 
@@ -98438,7 +92649,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24180
     dd 226
 
@@ -98451,7 +92661,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98472,7 +92681,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24196
     dd 226
 
@@ -98485,7 +92693,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98506,7 +92713,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24212
     dd 226
 
@@ -98520,7 +92726,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64|SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98540,7 +92745,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24228
     dd 231
 
@@ -98557,7 +92761,6 @@ instrux:
     dw SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24236
     dd 231
 
@@ -98571,7 +92774,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98591,7 +92793,6 @@ instrux:
     dw SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24252
     dd 231
 
@@ -98605,7 +92806,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98625,7 +92825,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6972
     dd 227
 
@@ -98639,7 +92838,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98659,7 +92857,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+6990
     dd 228
 
@@ -98673,7 +92870,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98693,7 +92889,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7008
     dd 227
 
@@ -98707,7 +92902,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32|SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98727,7 +92921,6 @@ instrux:
     dw SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7026
     dd 228
 
@@ -98741,7 +92934,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98761,7 +92953,6 @@ instrux:
     dw SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7044
     dd 228
 
@@ -98775,7 +92966,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98795,7 +92985,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7062
     dd 225
 
@@ -98809,7 +92998,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98829,7 +93017,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7080
     dd 226
 
@@ -98843,7 +93030,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98863,7 +93049,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7098
     dd 225
 
@@ -98877,7 +93062,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32|SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98897,7 +93081,6 @@ instrux:
     dw SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7116
     dd 226
 
@@ -98911,7 +93094,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98931,7 +93113,6 @@ instrux:
     dw SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7134
     dd 226
 
@@ -98945,7 +93126,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98965,7 +93145,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24268
     dd 225
 
@@ -98979,7 +93158,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -98999,7 +93177,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24284
     dd 226
 
@@ -99013,7 +93190,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99033,7 +93209,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24300
     dd 225
 
@@ -99050,7 +93225,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24308
     dd 226
 
@@ -99063,7 +93237,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99084,7 +93257,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24324
     dd 226
 
@@ -99097,7 +93269,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99118,7 +93289,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24340
     dd 226
 
@@ -99132,7 +93302,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64|SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99152,7 +93321,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24356
     dd 231
 
@@ -99169,7 +93337,6 @@ instrux:
     dw SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24364
     dd 231
 
@@ -99183,7 +93350,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99203,7 +93369,6 @@ instrux:
     dw SAE
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24380
     dd 231
 
@@ -99217,7 +93382,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99237,7 +93401,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24396
     dd 225
 
@@ -99251,7 +93414,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99271,7 +93433,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24412
     dd 225
 
@@ -99285,7 +93446,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99305,7 +93465,6 @@ instrux:
     dw B64|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24428
     dd 226
 
@@ -99319,7 +93478,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64|ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99339,7 +93497,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24444
     dd 225
 
@@ -99353,7 +93510,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99373,7 +93529,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24460
     dd 225
 
@@ -99387,7 +93542,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99407,7 +93561,6 @@ instrux:
     dw B32|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24476
     dd 226
 
@@ -99421,7 +93574,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99441,7 +93593,6 @@ instrux:
     dw ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24492
     dd 226
 
@@ -99455,7 +93606,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99475,7 +93625,6 @@ instrux:
     dw ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24508
     dd 226
 
@@ -99492,7 +93641,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24516
     dd 226
 
@@ -99505,7 +93653,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99526,7 +93673,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7161
     dd 225
 
@@ -99539,7 +93685,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99560,7 +93705,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7179
     dd 225
 
@@ -99573,7 +93717,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99594,7 +93737,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7197
     dd 226
 
@@ -99607,7 +93749,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99628,7 +93769,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7215
     dd 232
 
@@ -99641,7 +93781,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99662,7 +93801,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7233
     dd 232
 
@@ -99675,7 +93813,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99696,7 +93833,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7251
     dd 232
 
@@ -99709,7 +93845,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99730,7 +93865,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7269
     dd 232
 
@@ -99743,7 +93877,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99764,7 +93897,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7287
     dd 225
 
@@ -99777,7 +93909,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99798,7 +93929,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7305
     dd 225
 
@@ -99811,7 +93941,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99832,7 +93961,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7323
     dd 226
 
@@ -99849,7 +93977,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7332
     dd 225
 
@@ -99863,7 +93990,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99883,7 +94009,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7350
     dd 226
 
@@ -99897,7 +94022,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99917,7 +94041,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7368
     dd 225
 
@@ -99931,7 +94054,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99951,7 +94073,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7386
     dd 226
 
@@ -99965,7 +94086,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -99985,7 +94105,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7404
     dd 225
 
@@ -99999,7 +94118,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100019,7 +94137,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7422
     dd 226
 
@@ -100033,7 +94150,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100053,7 +94169,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7440
     dd 225
 
@@ -100067,7 +94182,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100087,7 +94201,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7458
     dd 226
 
@@ -100101,7 +94214,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100121,7 +94233,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7476
     dd 225
 
@@ -100135,7 +94246,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100155,7 +94265,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7494
     dd 225
 
@@ -100169,7 +94278,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100189,7 +94297,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7512
     dd 226
 
@@ -100203,7 +94310,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100223,7 +94329,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7530
     dd 225
 
@@ -100237,7 +94342,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100257,7 +94361,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7548
     dd 225
 
@@ -100271,7 +94374,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100291,7 +94393,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7566
     dd 226
 
@@ -100305,7 +94406,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100325,7 +94425,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24524
     dd 225
 
@@ -100339,7 +94438,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100359,7 +94457,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24540
     dd 226
 
@@ -100373,7 +94470,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100393,7 +94489,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24556
     dd 225
 
@@ -100407,7 +94502,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100427,7 +94521,6 @@ instrux:
     dw ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24572
     dd 226
 
@@ -100441,7 +94534,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100461,7 +94553,6 @@ instrux:
     dw ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24588
     dd 226
 
@@ -100475,7 +94566,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100495,7 +94585,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24604
     dd 225
 
@@ -100509,7 +94598,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100529,7 +94617,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24620
     dd 225
 
@@ -100543,7 +94630,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100563,7 +94649,6 @@ instrux:
     dw B64|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24636
     dd 226
 
@@ -100577,7 +94662,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64|ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100597,7 +94681,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24652
     dd 225
 
@@ -100611,7 +94694,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100631,7 +94713,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24668
     dd 225
 
@@ -100645,7 +94726,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100665,7 +94745,6 @@ instrux:
     dw B32|ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24684
     dd 226
 
@@ -100679,7 +94758,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32|ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100699,7 +94777,6 @@ instrux:
     dw ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24700
     dd 226
 
@@ -100713,7 +94790,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100733,7 +94809,6 @@ instrux:
     dw ER
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24716
     dd 226
 
@@ -100747,7 +94822,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw ER
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100767,7 +94841,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24732
     dd 226
 
@@ -100781,7 +94854,6 @@ instrux:
     dq 0
     dw 0
     dw SAE
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100801,7 +94873,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24748
     dd 225
 
@@ -100815,7 +94886,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100835,7 +94905,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24764
     dd 225
 
@@ -100849,7 +94918,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100869,7 +94937,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24780
     dd 226
 
@@ -100883,7 +94950,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100903,7 +94969,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24796
     dd 225
 
@@ -100917,7 +94982,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100937,7 +95001,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24812
     dd 225
 
@@ -100951,7 +95014,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -100971,7 +95033,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24828
     dd 226
 
@@ -100985,7 +95046,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -101005,7 +95065,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24844
     dd 225
 
@@ -101019,7 +95078,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -101039,7 +95097,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24860
     dd 225
 
@@ -101053,7 +95110,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -101073,7 +95129,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24876
     dd 226
 
@@ -101087,7 +95142,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -101107,7 +95161,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24892
     dd 225
 
@@ -101121,7 +95174,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -101141,7 +95193,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24908
     dd 225
 
@@ -101155,7 +95206,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -101175,7 +95225,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24924
     dd 226
 
@@ -101189,7 +95238,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -101209,7 +95257,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24940
     dd 227
 
@@ -101223,7 +95270,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -101243,7 +95289,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24956
     dd 227
 
@@ -101257,7 +95302,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -101277,7 +95321,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24972
     dd 228
 
@@ -101291,7 +95334,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -101311,7 +95353,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+24988
     dd 227
 
@@ -101325,7 +95366,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -101345,7 +95385,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25004
     dd 227
 
@@ -101359,7 +95398,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -101379,7 +95417,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25020
     dd 228
 
@@ -101393,7 +95430,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -101413,7 +95449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40524
     dd 239
 
@@ -101430,7 +95465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40529
     dd 239
 
@@ -101447,7 +95481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34932
     dd 240
 
@@ -101464,7 +95497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34931
     dd 239
 
@@ -101481,7 +95513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34932
     dd 241
 
@@ -101498,7 +95529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37528
     dd 133
 
@@ -101515,7 +95545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37534
     dd 133
 
@@ -101532,7 +95561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37540
     dd 242
 
@@ -101549,7 +95577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37559
     dd 243
 
@@ -101566,7 +95593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26840
     dd 133
 
@@ -101583,7 +95609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+26839
     dd 239
 
@@ -101600,7 +95625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37564
     dd 133
 
@@ -101617,7 +95641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34938
     dd 246
 
@@ -101634,7 +95657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34945
     dd 247
 
@@ -101651,7 +95673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25036
     dd 240
 
@@ -101668,7 +95689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25044
     dd 133
 
@@ -101685,7 +95705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25052
     dd 239
 
@@ -101702,7 +95721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37570
     dd 133
 
@@ -101719,7 +95737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37534
     dd 133
 
@@ -101736,7 +95753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34952
     dd 240
 
@@ -101753,7 +95769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34959
     dd 133
 
@@ -101770,7 +95785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34966
     dd 239
 
@@ -101787,7 +95801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37576
     dd 133
 
@@ -101804,7 +95817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+40534
     dd 133
 
@@ -101821,7 +95833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25060
     dd 248
 
@@ -101838,7 +95849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25068
     dd 249
 
@@ -101855,7 +95865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25076
     dd 249
 
@@ -101872,7 +95881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25084
     dd 249
 
@@ -101889,7 +95897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25092
     dd 249
 
@@ -101906,7 +95913,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7584
     dd 250
 
@@ -101920,7 +95926,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -101940,7 +95945,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7602
     dd 250
 
@@ -101954,7 +95958,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -101974,7 +95977,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7620
     dd 251
 
@@ -101988,7 +95990,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -102008,7 +96009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25100
     dd 248
 
@@ -102025,7 +96025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25108
     dd 249
 
@@ -102042,7 +96041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25116
     dd 249
 
@@ -102059,7 +96057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25124
     dd 249
 
@@ -102076,7 +96073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+25132
     dd 249
 
@@ -102093,7 +96089,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7638
     dd 250
 
@@ -102107,7 +96102,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -102127,7 +96121,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7656
     dd 250
 
@@ -102141,7 +96134,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -102161,7 +96153,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7674
     dd 251
 
@@ -102175,7 +96166,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -102195,7 +96185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34973
     dd 248
 
@@ -102212,7 +96201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34980
     dd 249
 
@@ -102229,7 +96217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34987
     dd 249
 
@@ -102246,7 +96233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+34994
     dd 249
 
@@ -102263,7 +96249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35001
     dd 249
 
@@ -102276,7 +96261,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -102297,7 +96281,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25148
     dd 250
 
@@ -102310,7 +96293,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -102331,7 +96313,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25164
     dd 250
 
@@ -102344,7 +96325,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -102365,7 +96345,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25180
     dd 251
 
@@ -102378,7 +96357,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -102399,7 +96377,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25196
     dd 252
 
@@ -102412,7 +96389,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -102433,7 +96409,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25212
     dd 252
 
@@ -102446,7 +96421,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -102467,7 +96441,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25228
     dd 253
 
@@ -102480,7 +96453,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -102501,7 +96473,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25244
     dd 252
 
@@ -102514,7 +96485,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -102535,7 +96505,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25260
     dd 252
 
@@ -102548,7 +96517,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -102569,7 +96537,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25276
     dd 253
 
@@ -102582,7 +96549,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -102603,7 +96569,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25292
     dd 252
 
@@ -102616,7 +96581,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -102637,7 +96601,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25308
     dd 252
 
@@ -102650,7 +96613,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -102671,7 +96633,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25324
     dd 253
 
@@ -102684,7 +96645,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -102705,7 +96665,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25340
     dd 252
 
@@ -102718,7 +96677,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -102739,7 +96697,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25356
     dd 252
 
@@ -102752,7 +96709,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -102773,7 +96729,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25372
     dd 253
 
@@ -102786,7 +96741,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -102807,7 +96761,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7701
     dd 252
 
@@ -102820,7 +96773,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -102841,7 +96793,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7719
     dd 252
 
@@ -102854,7 +96805,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -102875,7 +96825,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7737
     dd 253
 
@@ -102892,7 +96841,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7746
     dd 252
 
@@ -102906,7 +96854,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -102926,7 +96873,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7764
     dd 252
 
@@ -102940,7 +96886,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -102960,7 +96905,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7782
     dd 253
 
@@ -102974,7 +96918,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -102994,7 +96937,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7800
     dd 252
 
@@ -103008,7 +96950,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -103028,7 +96969,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7818
     dd 252
 
@@ -103042,7 +96982,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -103062,7 +97001,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7836
     dd 253
 
@@ -103079,7 +97017,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7845
     dd 253
 
@@ -103092,7 +97029,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -103113,7 +97049,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7863
     dd 252
 
@@ -103126,7 +97061,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -103147,7 +97081,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7881
     dd 252
 
@@ -103160,7 +97093,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -103181,7 +97113,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7899
     dd 253
 
@@ -103198,7 +97129,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7908
     dd 252
 
@@ -103212,7 +97142,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -103232,7 +97161,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7926
     dd 252
 
@@ -103246,7 +97174,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -103266,7 +97193,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7944
     dd 253
 
@@ -103280,7 +97206,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -103300,7 +97225,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7962
     dd 252
 
@@ -103314,7 +97238,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -103334,7 +97257,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7980
     dd 252
 
@@ -103348,7 +97270,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -103368,7 +97289,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+7998
     dd 253
 
@@ -103385,7 +97305,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+8007
     dd 253
 
@@ -103398,7 +97317,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -103419,7 +97337,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+8025
     dd 252
 
@@ -103432,7 +97349,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -103453,7 +97369,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+8043
     dd 252
 
@@ -103466,7 +97381,6 @@ instrux:
     dq IMMEDIATE|BITS8
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -103487,7 +97401,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+8061
     dd 253
 
@@ -103504,7 +97417,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+8070
     dd 252
 
@@ -103518,7 +97430,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -103538,7 +97449,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+8088
     dd 252
 
@@ -103552,7 +97462,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -103572,7 +97481,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+8106
     dd 253
 
@@ -103586,7 +97494,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -103606,7 +97513,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+8124
     dd 252
 
@@ -103620,7 +97526,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -103640,7 +97545,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+8142
     dd 252
 
@@ -103654,7 +97558,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -103674,7 +97577,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+8160
     dd 253
 
@@ -103691,7 +97593,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+8169
     dd 253
 
@@ -103704,7 +97605,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -103725,7 +97625,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+8187
     dd 252
 
@@ -103738,7 +97637,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -103759,7 +97657,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+8205
     dd 252
 
@@ -103772,7 +97669,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -103793,7 +97689,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+8223
     dd 253
 
@@ -103810,7 +97705,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+8232
     dd 252
 
@@ -103824,7 +97718,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -103844,7 +97737,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+8250
     dd 252
 
@@ -103858,7 +97750,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -103878,7 +97769,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+8268
     dd 253
 
@@ -103892,7 +97782,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -103912,7 +97801,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+8286
     dd 252
 
@@ -103926,7 +97814,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -103946,7 +97833,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+8304
     dd 252
 
@@ -103960,7 +97846,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -103980,7 +97865,6 @@ instrux:
     dw B64
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+8322
     dd 253
 
@@ -103994,7 +97878,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B64
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -104014,7 +97897,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25380
     dd 254
 
@@ -104028,7 +97910,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -104048,7 +97929,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25396
     dd 254
 
@@ -104062,7 +97942,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -104082,7 +97961,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25412
     dd 255
 
@@ -104096,7 +97974,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -104116,7 +97993,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25428
     dd 254
 
@@ -104130,7 +98006,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -104150,7 +98025,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25444
     dd 254
 
@@ -104164,7 +98038,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -104184,7 +98057,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25460
     dd 255
 
@@ -104198,7 +98070,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -104218,7 +98089,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25476
     dd 254
 
@@ -104232,7 +98102,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -104252,7 +98121,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25492
     dd 254
 
@@ -104266,7 +98134,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -104286,7 +98153,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25508
     dd 255
 
@@ -104300,7 +98166,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -104320,7 +98185,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25524
     dd 254
 
@@ -104334,7 +98198,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -104354,7 +98217,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25540
     dd 254
 
@@ -104368,7 +98230,6 @@ instrux:
     dq 0
     dw MASK|Z
     dw B32
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -104388,7 +98249,6 @@ instrux:
     dw B32
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25556
     dd 255
 
@@ -104405,7 +98265,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25564
     dd 255
 
@@ -104418,7 +98277,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -104439,7 +98297,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25580
     dd 256
 
@@ -104452,7 +98309,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -104473,7 +98329,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25596
     dd 256
 
@@ -104486,7 +98341,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -104507,7 +98361,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25612
     dd 257
 
@@ -104520,7 +98373,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -104541,7 +98393,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25628
     dd 258
 
@@ -104554,7 +98405,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -104575,7 +98425,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25644
     dd 258
 
@@ -104588,7 +98437,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -104609,7 +98457,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25660
     dd 259
 
@@ -104622,7 +98469,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -104643,7 +98489,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25676
     dd 256
 
@@ -104656,7 +98501,6 @@ instrux:
     dq 0
     dq 0
     dw MASK
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -104677,7 +98521,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25692
     dd 260
 
@@ -104690,7 +98533,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -104711,7 +98553,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25708
     dd 260
 
@@ -104724,7 +98565,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -104745,7 +98585,6 @@ instrux:
     dw 0
     dw 0
     dw 0
-    dw 0
     dd nasm_bytecodes+25724
     dd 261
 
@@ -104758,7 +98597,6 @@ instrux:
     dq 0
     dq 0
     dw MASK|Z
-    dw 0
     dw 0
     dw 0
     dw 0
@@ -104779,7 +98617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37582
     dd 262
 
@@ -104796,7 +98633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37588
     dd 262
 
@@ -104813,7 +98649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37594
     dd 262
 
@@ -104830,7 +98665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37600
     dd 263
 
@@ -104847,7 +98681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37606
     dd 263
 
@@ -104864,7 +98697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37612
     dd 264
 
@@ -104881,7 +98713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37618
     dd 263
 
@@ -104898,7 +98729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37624
     dd 263
 
@@ -104915,7 +98745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37630
     dd 264
 
@@ -104932,7 +98761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37636
     dd 263
 
@@ -104949,7 +98777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37642
     dd 263
 
@@ -104966,7 +98793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37648
     dd 264
 
@@ -104983,7 +98809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37654
     dd 263
 
@@ -105000,7 +98825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37660
     dd 263
 
@@ -105017,7 +98841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37666
     dd 264
 
@@ -105034,7 +98857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37672
     dd 263
 
@@ -105051,7 +98873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37678
     dd 263
 
@@ -105068,7 +98889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37684
     dd 264
 
@@ -105085,7 +98905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37690
     dd 263
 
@@ -105102,7 +98921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37696
     dd 263
 
@@ -105119,7 +98937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37702
     dd 264
 
@@ -105136,7 +98953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37708
     dd 263
 
@@ -105153,7 +98969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37714
     dd 263
 
@@ -105170,7 +98985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37720
     dd 264
 
@@ -105187,7 +99001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37726
     dd 263
 
@@ -105204,7 +99017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37732
     dd 263
 
@@ -105221,7 +99033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37738
     dd 264
 
@@ -105238,7 +99049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37744
     dd 263
 
@@ -105255,7 +99065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37750
     dd 263
 
@@ -105272,7 +99081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37756
     dd 264
 
@@ -105289,7 +99097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37762
     dd 263
 
@@ -105306,7 +99113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37768
     dd 263
 
@@ -105323,7 +99129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37774
     dd 264
 
@@ -105340,7 +99145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37780
     dd 263
 
@@ -105357,7 +99161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37786
     dd 263
 
@@ -105374,7 +99177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37792
     dd 264
 
@@ -105391,7 +99193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37798
     dd 263
 
@@ -105408,7 +99209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37804
     dd 263
 
@@ -105425,7 +99225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37810
     dd 264
 
@@ -105442,7 +99241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37816
     dd 263
 
@@ -105459,7 +99257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37822
     dd 263
 
@@ -105476,7 +99273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37828
     dd 264
 
@@ -105493,7 +99289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37834
     dd 263
 
@@ -105510,7 +99305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37840
     dd 263
 
@@ -105527,7 +99321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37846
     dd 264
 
@@ -105544,7 +99337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37852
     dd 263
 
@@ -105561,7 +99353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37858
     dd 263
 
@@ -105578,7 +99369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37864
     dd 264
 
@@ -105595,7 +99385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37870
     dd 263
 
@@ -105612,7 +99401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37876
     dd 263
 
@@ -105629,7 +99417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37882
     dd 264
 
@@ -105646,7 +99433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37888
     dd 263
 
@@ -105663,7 +99449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37894
     dd 263
 
@@ -105680,7 +99465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37900
     dd 264
 
@@ -105697,7 +99481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37906
     dd 263
 
@@ -105714,7 +99497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37912
     dd 263
 
@@ -105731,7 +99513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37918
     dd 264
 
@@ -105748,7 +99529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37924
     dd 263
 
@@ -105765,7 +99545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37930
     dd 263
 
@@ -105782,7 +99561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37936
     dd 264
 
@@ -105799,7 +99577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37942
     dd 263
 
@@ -105816,7 +99593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37948
     dd 263
 
@@ -105833,7 +99609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37954
     dd 264
 
@@ -105850,7 +99625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37960
     dd 263
 
@@ -105867,7 +99641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37966
     dd 263
 
@@ -105884,7 +99657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37972
     dd 264
 
@@ -105901,7 +99673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37978
     dd 263
 
@@ -105918,7 +99689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37984
     dd 263
 
@@ -105935,7 +99705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37990
     dd 264
 
@@ -105952,7 +99721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+37996
     dd 263
 
@@ -105969,7 +99737,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38002
     dd 263
 
@@ -105986,7 +99753,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38008
     dd 264
 
@@ -106003,7 +99769,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38014
     dd 263
 
@@ -106020,7 +99785,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38020
     dd 263
 
@@ -106037,7 +99801,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38026
     dd 264
 
@@ -106054,7 +99817,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38032
     dd 263
 
@@ -106071,7 +99833,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38038
     dd 263
 
@@ -106088,7 +99849,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38044
     dd 264
 
@@ -106105,7 +99865,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38050
     dd 263
 
@@ -106122,7 +99881,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38056
     dd 263
 
@@ -106139,7 +99897,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38062
     dd 264
 
@@ -106156,7 +99913,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38068
     dd 263
 
@@ -106173,7 +99929,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38074
     dd 263
 
@@ -106190,7 +99945,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38080
     dd 264
 
@@ -106207,7 +99961,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38086
     dd 263
 
@@ -106224,7 +99977,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38092
     dd 263
 
@@ -106241,7 +99993,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38098
     dd 264
 
@@ -106258,7 +100009,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38104
     dd 263
 
@@ -106275,7 +100025,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38110
     dd 263
 
@@ -106292,7 +100041,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38116
     dd 264
 
@@ -106309,7 +100057,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38122
     dd 263
 
@@ -106326,7 +100073,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38128
     dd 263
 
@@ -106343,7 +100089,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38134
     dd 264
 
@@ -106360,7 +100105,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38140
     dd 263
 
@@ -106377,7 +100121,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38146
     dd 263
 
@@ -106394,7 +100137,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38152
     dd 264
 
@@ -106411,7 +100153,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38158
     dd 263
 
@@ -106428,7 +100169,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38164
     dd 263
 
@@ -106445,7 +100185,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38170
     dd 264
 
@@ -106462,7 +100201,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38176
     dd 263
 
@@ -106479,7 +100217,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38182
     dd 263
 
@@ -106496,7 +100233,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38188
     dd 264
 
@@ -106513,7 +100249,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38194
     dd 263
 
@@ -106530,7 +100265,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38200
     dd 263
 
@@ -106547,7 +100281,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38206
     dd 264
 
@@ -106564,7 +100297,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38212
     dd 263
 
@@ -106581,7 +100313,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38218
     dd 263
 
@@ -106598,7 +100329,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38224
     dd 264
 
@@ -106615,7 +100345,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38230
     dd 263
 
@@ -106632,7 +100361,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38236
     dd 263
 
@@ -106649,7 +100377,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38242
     dd 264
 
@@ -106666,7 +100393,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38248
     dd 263
 
@@ -106683,7 +100409,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38254
     dd 263
 
@@ -106700,7 +100425,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38260
     dd 264
 
@@ -106717,7 +100441,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38266
     dd 263
 
@@ -106734,7 +100457,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38272
     dd 263
 
@@ -106751,7 +100473,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38278
     dd 264
 
@@ -106768,7 +100489,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38284
     dd 263
 
@@ -106785,7 +100505,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38290
     dd 263
 
@@ -106802,7 +100521,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38296
     dd 264
 
@@ -106819,7 +100537,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38302
     dd 263
 
@@ -106836,7 +100553,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38308
     dd 263
 
@@ -106853,7 +100569,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38314
     dd 264
 
@@ -106870,7 +100585,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38320
     dd 263
 
@@ -106887,7 +100601,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38326
     dd 263
 
@@ -106904,7 +100617,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38332
     dd 264
 
@@ -106921,7 +100633,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38338
     dd 263
 
@@ -106938,7 +100649,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38344
     dd 263
 
@@ -106955,7 +100665,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38350
     dd 264
 
@@ -106972,7 +100681,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38356
     dd 263
 
@@ -106989,7 +100697,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38362
     dd 263
 
@@ -107006,7 +100713,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38368
     dd 264
 
@@ -107023,7 +100729,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38374
     dd 263
 
@@ -107040,7 +100745,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38380
     dd 263
 
@@ -107057,7 +100761,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38386
     dd 264
 
@@ -107074,7 +100777,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38392
     dd 263
 
@@ -107091,7 +100793,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38398
     dd 263
 
@@ -107108,7 +100809,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38404
     dd 264
 
@@ -107125,7 +100825,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38410
     dd 263
 
@@ -107142,7 +100841,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38416
     dd 263
 
@@ -107159,7 +100857,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38422
     dd 264
 
@@ -107176,7 +100873,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38428
     dd 263
 
@@ -107193,7 +100889,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38434
     dd 263
 
@@ -107210,7 +100905,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38440
     dd 264
 
@@ -107227,7 +100921,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38446
     dd 263
 
@@ -107244,7 +100937,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38452
     dd 263
 
@@ -107261,7 +100953,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38458
     dd 264
 
@@ -107278,7 +100969,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38464
     dd 263
 
@@ -107295,7 +100985,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38470
     dd 263
 
@@ -107312,7 +101001,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38476
     dd 264
 
@@ -107329,7 +101017,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38482
     dd 263
 
@@ -107346,7 +101033,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38488
     dd 263
 
@@ -107363,7 +101049,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38494
     dd 264
 
@@ -107380,7 +101065,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38500
     dd 263
 
@@ -107397,7 +101081,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38506
     dd 263
 
@@ -107414,7 +101097,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38512
     dd 264
 
@@ -107431,7 +101113,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38518
     dd 263
 
@@ -107448,7 +101129,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38524
     dd 263
 
@@ -107465,7 +101145,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38530
     dd 264
 
@@ -107482,7 +101161,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38536
     dd 263
 
@@ -107499,7 +101177,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38542
     dd 263
 
@@ -107516,7 +101193,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38548
     dd 264
 
@@ -107533,7 +101209,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38554
     dd 263
 
@@ -107550,7 +101225,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38560
     dd 263
 
@@ -107567,7 +101241,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38566
     dd 264
 
@@ -107584,7 +101257,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38572
     dd 263
 
@@ -107601,7 +101273,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38578
     dd 263
 
@@ -107618,7 +101289,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38584
     dd 264
 
@@ -107635,7 +101305,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38590
     dd 263
 
@@ -107652,7 +101321,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38596
     dd 263
 
@@ -107669,7 +101337,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38602
     dd 264
 
@@ -107686,7 +101353,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35698
     dd 263
 
@@ -107703,7 +101369,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35704
     dd 263
 
@@ -107720,7 +101385,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+35710
     dd 264
 
@@ -107737,7 +101401,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38608
     dd 263
 
@@ -107754,7 +101417,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38614
     dd 263
 
@@ -107771,7 +101433,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38620
     dd 264
 
@@ -107788,7 +101449,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38626
     dd 263
 
@@ -107805,7 +101465,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38632
     dd 263
 
@@ -107822,7 +101481,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38638
     dd 264
 
@@ -107839,7 +101497,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38644
     dd 263
 
@@ -107856,7 +101513,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38650
     dd 263
 
@@ -107873,7 +101529,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38656
     dd 264
 
@@ -107890,7 +101545,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38662
     dd 263
 
@@ -107907,7 +101561,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38668
     dd 263
 
@@ -107924,7 +101577,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38674
     dd 264
 
@@ -107941,7 +101593,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38680
     dd 263
 
@@ -107958,7 +101609,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38686
     dd 263
 
@@ -107975,7 +101625,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38692
     dd 264
 
@@ -107992,7 +101641,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38698
     dd 263
 
@@ -108009,7 +101657,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38704
     dd 263
 
@@ -108026,7 +101673,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38710
     dd 264
 
@@ -108043,7 +101689,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38716
     dd 263
 
@@ -108060,7 +101705,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38722
     dd 263
 
@@ -108077,7 +101721,6 @@ instrux:
     dw NO_DECORATOR
     dw NO_DECORATOR
     dw NO_DECORATOR
-    dw 0
     dd nasm_bytecodes+38728
     dd 264
 

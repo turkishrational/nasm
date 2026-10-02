@@ -75,9 +75,6 @@ def parse_insnsd_c(filepath):
                         for val in deco_vals:
                             asm_output.append(f"    dw {val}")
                             
-                        # 02/10/2026 (dword alignment)
-                        asm_output.append(f"    dw 0") 
-                        
                         code_val = "0" if code_field == "NULL" else code_field
                         asm_output.append(f"    dd {code_val}")
                         asm_output.append(f"    dd {iflag_field}")
