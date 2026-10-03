@@ -55,8 +55,6 @@ ORG 0x00000000 ; TRDOS 386 Flat Binary base/start address
 ; --- x86 Processor Specific Files ---
 %include 'insnsa.asm'
 
-%include 'insnsn.asm'
-%include 'regs.asm'
 %include 'regvals.asm'
 %include 'regflags.asm'
 %include 'regdis.asm'

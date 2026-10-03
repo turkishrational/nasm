@@ -814,7 +814,7 @@ iflag_set_default_cpu:
 %assign arg_4   0Ch
 
 _iflag_pfmask:
-                push    ebp             ; 
+                push    ebp
                 mov     ebp, esp        ; #define iflag_pfmask(itemp)
                                         ;  _iflag_pfmask(&insns_flags[(itemp)->iflag_idx])
                 sub     esp, 16         ; iflag_t r;
@@ -1015,7 +1015,7 @@ oirb_2:                                 ; ...
 %assign opcode  8
 
 db_bytes:
-                push    ebp             ; static inline int const_func db_bytes(enum opcode opcode)
+                push    ebp
                 mov     ebp, esp
                 sub     esp, 0
                 nop
@@ -1131,7 +1131,7 @@ dbb_13:                                 ; ...
 %assign opcode  8
 
 resb_bytes:
-                push    ebp             ; static inline int const_func resb_bytes(enum opcode opcode)
+                push    ebp
                 mov     ebp, esp
                 sub     esp, 0
                 nop
