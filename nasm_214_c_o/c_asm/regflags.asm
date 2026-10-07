@@ -15,7 +15,15 @@
 
 ; Source File : 'regflags.c'
 
+; ===========================================================================
+; DATA (initialized)
+; ===========================================================================
+
+; section .data
+
 ; const opflags_t nasm_reg_flags[] = {
+
+; align 8
 
 nasm_reg_flags:
     dq 0

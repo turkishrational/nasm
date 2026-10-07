@@ -56,7 +56,6 @@ ORG 0x00000000 ; TRDOS 386 Flat Binary base/start address
 %include 'insnsa.asm'
 %include 'opflags.asm'         ; opflags.h
 
-%include 'regdis.asm'
 %include 'disp8.asm'
 %include 'iflag.asm'
 

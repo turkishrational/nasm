@@ -94,6 +94,12 @@
 %assign REG_CLASS_OPMASK        8000h
 %assign REG_CLASS_BND           10000h
 
+; ===========================================================================
+; CODE
+; ===========================================================================
+
+; section .text
+
 ; =============== S U B R O U T I N E =======================================
 
 ; static inline bool is_class(opflags_t class, opflags_t op)
