@@ -228,7 +228,7 @@ readnum:
 
 rn_1:                                   ; ...
                 mov     eax, [ebp+r]
-                movsx   ecx, byte ptr [eax]
+                movsx   ecx, byte [eax]
                 and     ecx, 0FFh
                 push    ecx
                 call    isspace         ; while (nasm_isspace(*r))
@@ -245,7 +245,7 @@ rn_1:                                   ; ...
 rn_2:                                   ; ...
                 mov     eax, [ebp+r]    ; If the number came from make_tok_num (as a result of an %assign),
                                         ; it might have a '-' built into it (rather than in a preceeding token).
-                movsx   ecx, byte ptr [eax] ; if (*r == '-') {
+                movsx   ecx, byte [eax] ; if (*r == '-') {
                 cmp     ecx, '-'
                 jnz     rn_3
                 mov     eax, [ebp+r]
@@ -261,7 +261,7 @@ rn_3:                                   ; ...
 
 rn_4:                                   ; ...
                 mov     eax, [ebp+q]    ; while (lib_isnumchar(*q))
-                movsx   ecx, byte ptr [eax]
+                movsx   ecx, byte [eax]
                 and     ecx, 0FFh
                 push    ecx
                 call    isalnum         ; #define lib_isnumchar(c)
@@ -270,11 +270,11 @@ rn_4:                                   ; ...
                 cmp     eax, 0
                 jnz     rn_5
                 mov     eax, [ebp+q]
-                movsx   ecx, byte ptr [eax]
+                movsx   ecx, byte [eax]
                 cmp     ecx, '$'
                 jz      rn_5
                 mov     eax, [ebp+q]
-                movsx   ecx, byte ptr [eax]
+                movsx   ecx, byte [eax]
                 cmp     ecx, '_'
                 jz      rn_5
                 jmp     rn_6
@@ -323,12 +323,12 @@ rn_8:                                   ; ...
                                         ; && (pradix = radix_letter(r[1])) != 0)
                 jle     rn_9
                 mov     eax, [ebp+r]
-                movsx   ecx, byte ptr [eax]
+                movsx   ecx, byte [eax]
                 cmp     ecx, '0'
                 jnz     rn_9
                 mov     eax, [ebp+r]
                 inc     eax
-                movsx   ecx, byte ptr [eax]
+                movsx   ecx, byte [eax]
                 push    ecx
                 call    radix_letter
                 add     esp, 4
@@ -345,7 +345,7 @@ rn_9:                                   ; ...
                 cmp     eax, 1
                 jle     rn_10
                 mov     eax, [ebp+r]
-                movsx   ecx, byte ptr [eax]
+                movsx   ecx, byte [eax]
                 cmp     ecx, '$'
                 jnz     rn_10
                 mov     eax, 16
@@ -360,7 +360,7 @@ rn_10:                                  ; ...
                 jle     rn_11
                 mov     eax, [ebp+q]
                 add     eax, -1
-                movsx   ecx, byte ptr [eax]
+                movsx   ecx, byte [eax]
                 push    ecx
                 call    radix_letter
                 add     esp, 4
@@ -448,7 +448,7 @@ rn_17:                                  ; ...
 
 rn_18:                                  ; ...
                 mov     eax, [ebp+r]    ; while (*r && r < q) {
-                movsx   ecx, byte ptr [eax]
+                movsx   ecx, byte [eax]
                 cmp     ecx, 0
                 jz      rn_32
                 mov     eax, [ebp+r]
@@ -456,19 +456,19 @@ rn_18:                                  ; ...
                 cmp     eax, ecx
                 jnb     rn_32
                 mov     eax, [ebp+r]
-                movsx   ecx, byte ptr [eax]
+                movsx   ecx, byte [eax]
                 cmp     ecx, '_'        ; if (*r != '_') {
                 jz      rn_31
                 mov     eax, [ebp+r]
-                movsx   ecx, byte ptr [eax]
+                movsx   ecx, byte [eax]
                 cmp     ecx, '0'        ;  if (*r < '0' || (*r > '9' && *r < 'A')
                 jl      rn_24
                 mov     eax, [ebp+r]
-                movsx   ecx, byte ptr [eax]
+                movsx   ecx, byte [eax]
                 cmp     ecx, '9'
                 jle     rn_19
                 mov     eax, [ebp+r]
-                movsx   ecx, byte ptr [eax]
+                movsx   ecx, byte [eax]
                 cmp     ecx, 'A'
                 jge     rn_19           ; || (digit = numvalue(*r)) >= radix) {
                 jmp     rn_24
@@ -478,14 +478,14 @@ rn_19:                                  ; ...
                 mov     eax, [ebp+r]    ; /* This returns the numeric value of a given 'digit'. */
                                         ; #define numvalue(c)
                                         ; ((c) >= 'a' ? (c) - 'a' + 10 : (c) >= 'A' ? (c) - 'A' + 10 : (c) - '0')
-                movsx   ecx, byte ptr [eax]
+                movsx   ecx, byte [eax]
                 cmp     ecx, 'a'
                 mov     eax, 0
                 setnl   al
                 cmp     eax, 0          ; (c) >= 'a' ?
                 jz      rn_20           ; ((right/false side))
                 mov     eax, [ebp+r]    ; (c) - 'a' + 10 ((left/true side))
-                movsx   ecx, byte ptr [eax]
+                movsx   ecx, byte [eax]
                 sub     ecx, 'a'
                 add     ecx, 10
                 jmp     rn_23
@@ -493,14 +493,14 @@ rn_19:                                  ; ...
 
 rn_20:                                  ; ...
                 mov     eax, [ebp+r]    ; (c) >= 'A' ? (c) - 'A' + 10 : (c) - '0'
-                movsx   ecx, byte ptr [eax]
+                movsx   ecx, byte [eax]
                 cmp     ecx, 'A'
                 mov     eax, 0
                 setnl   al
                 cmp     eax, 0
                 jz      rn_21
                 mov     eax, [ebp+r]
-                movsx   ecx, byte ptr [eax]
+                movsx   ecx, byte [eax]
                 sub     ecx, 'A'
                 add     ecx, 10
                 jmp     rn_22
@@ -508,7 +508,7 @@ rn_20:                                  ; ...
 
 rn_21:                                  ; ...
                 mov     eax, [ebp+r]
-                movsx   ecx, byte ptr [eax]
+                movsx   ecx, byte [eax]
                 sub     ecx, '0'
                 jmp     $+5
 ; ---------------------------------------------------------------------------

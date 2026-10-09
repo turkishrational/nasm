@@ -68,7 +68,7 @@ ismatch:
 
 im_1:                                   ; ...
                 mov     eax, [ebp+p]
-                movsx   ecx, byte ptr [eax] ; *p
+                movsx   ecx, byte [eax] ; *p
                 cmp     ecx, 0
                 jz      im_5
                 jmp     im_3
@@ -85,7 +85,7 @@ im_2:                                   ; ...
 im_3:                                   ; ...
                 mov     eax, [ebp+p]    ; if (ch == *p)
                 movsx   ecx, [ebp+chr]
-                movsx   edx, byte ptr [eax]
+                movsx   edx, byte [eax]
                 cmp     ecx, edx
                 jnz     im_4
                 mov     eax, 1          ; return true;
@@ -342,7 +342,7 @@ nasm_catfile:
                 dec     eax
                 mov     ecx, [ebp+dir]
                 add     ecx, eax
-                movsx   eax, byte ptr [ecx]
+                movsx   eax, byte [ecx]
                 push    eax
                 mov     eax, L_194      ; "/\\:"
                 push    eax

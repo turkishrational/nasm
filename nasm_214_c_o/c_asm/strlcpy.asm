@@ -93,7 +93,7 @@ slcpy_1:                                ; ...
                 mov     edx, eax
                 inc     eax
                 mov     [ebp+s], eax
-                ;movsx  eax, byte ptr [edx]
+                ;movsx  eax, byte [edx]
                 mov     al, [edx]
                 mov     [ecx], al       ; if ((*d++ = *s++) == '\0')
                 cmp     eax, 0
@@ -123,7 +123,7 @@ slcpy_4:                                ; ...
                 mov     ecx, eax
                 inc     eax
                 mov     [ebp+s], eax
-                movsx   eax, byte ptr [ecx]
+                movsx   eax, byte [ecx]
                 cmp     eax, 0          ; while (*s++)
                 jz      slcpy_5
                 jmp     short slcpy_4

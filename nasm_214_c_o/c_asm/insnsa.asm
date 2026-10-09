@@ -2,7 +2,7 @@
 ; NASM v2.14.02 - NETWIDE ASSEMBLER FOR TRDOS 386 - Erdogan Tan - 18/09/2026 
 ; Disassembled from "insnsa.c" (Dissassembler: IDA)
 ; NASM Syntax: Erdogan Tan
-; Last Update: 02/10/2026
+; Last Update: 09/10/2026
 ; ===========================================================================
 ; insnsa.asm
 ; ----------
@@ -811,7 +811,7 @@ iflag_set_default_cpu:
 
 %assign r      -10h
 %assign r_ret   8
-%assign arg_4   0Ch
+%assign a       0Ch
 
 _iflag_pfmask:
                 push    ebp
@@ -825,7 +825,7 @@ _iflag_pfmask:
                 add     esp, 4
                 mov     eax, 112
                 push    eax
-                mov     eax, [ebp+arg_4]
+                mov     eax, [ebp+a]
                 push    eax
                 call    iflag_test      ; if (iflag_test(a, IF_CYRIX))
                 add     esp, 8
@@ -841,7 +841,7 @@ _iflag_pfmask:
 ifp_1:                                  ; ...
                 mov     eax, 113
                 push    eax
-                mov     eax, [ebp+arg_4]
+                mov     eax, [ebp+a]
                 push    eax
                 call    iflag_test      ; if (iflag_test(a, IF_AMD))
                 add     esp, 8
