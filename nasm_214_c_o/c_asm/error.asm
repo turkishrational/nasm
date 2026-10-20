@@ -269,7 +269,7 @@ nasm_panic_from_macro:
                 push    eax
                 mov     eax, [ebp+file]
                 push    eax
-                mov     eax, ; L_212 ; "Internal error at %s:%d\n"
+                mov     eax, L_212 ; "Internal error at %s:%d\n"
                 push    eax
                 mov     eax, 16    ; ERR_NOFILE
                 push    eax
@@ -314,7 +314,7 @@ nasm_assert_failed:
                 push    eax
                 mov     eax, [ebp+msg]
                 push    eax
-                mov     eax, ; L_213 ; "assertion %s failed at %s:%d"
+                mov     eax, L_213 ; "assertion %s failed at %s:%d"
                 push    eax
                 mov     eax, 0
                 push    eax
@@ -408,11 +408,11 @@ sws_4:                                ; ...
                 mov     eax, 3        ; case 'N':
                                       ; case 'n':
                 push    eax
-                mov     eax, ; L_214      ; "no-"
+                mov     eax, L_214    ; "no-"
                 push    eax
                 mov     eax, [ebp+value]
                 push    eax
-                call    nasm_strnicmp   ; if (!nasm_strnicmp(value, "no-", 3)) {
+                call    nasm_strnicmp ; if (!nasm_strnicmp(value, "no-", 3)) {
                 add     esp, 12
                 cmp     eax, 0
                 ;jz     sws_5
@@ -432,11 +432,11 @@ sws_5:                                ; ...
 ; ---------------------------------------------------------------------------
 
 sws_6:                                ; ...
-                mov     eax, ; L_215      ; "none"
+                mov     eax, L_215    ; "none"
                 push    eax
                 mov     eax, [ebp+value]
                 push    eax
-                call    nasm_stricmp    ; } else if (!nasm_stricmp(value, "none")) {
+                call    nasm_stricmp  ; } else if (!nasm_stricmp(value, "none")) {
                 add     esp, 8
                 cmp     eax, 0
                 ;jz     sws_7
@@ -461,7 +461,7 @@ sws_8:                                ; ...
                 ;jmp    sws_11
 ; ---------------------------------------------------------------------------
 
-sws_9:                                ; ...
+sws_9:                                 ; ...
                 ;movsx  ecx, byte [eax] ; switch (*value) {
                 mov	cl, [eax]
                 ;cmp    ecx, '-'
@@ -479,7 +479,7 @@ sws_9:                                ; ...
                 jmp     short sws_8
 ; ---------------------------------------------------------------------------
 
-sws_10:                               ; ...
+sws_10:                                ; ...
                 ;cmp    ecx, 'N'       ; case 'N':
                 cmp	cl, 'N'
                 jz      sws_4
@@ -498,7 +498,7 @@ sws_11:                               ; ...
                 jz      sws_19
                 mov     eax, 5
                 push    eax
-                mov     eax, ; L_216      ; "error"
+                mov     eax, L_216    ; "error"
                 push    eax
                 mov     eax, [ebp+value]
                 push    eax
@@ -559,7 +559,7 @@ sws_17:                               ; ...
                 mov     eax, [ebp+value]
                 cmp     eax, 0        ; if (value && !nasm_stricmp(value, "all"))
                 jz      sws_19
-                mov     eax, ; L_217  ; "all"
+                mov     eax, L_217    ; "all"
                 push    eax
                 mov     eax, [ebp+value]
                 push    eax
