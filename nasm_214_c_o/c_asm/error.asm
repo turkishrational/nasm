@@ -144,7 +144,7 @@ nasm_error:
 ;
 ; Description:
 ;
-; C Declaration: fata; L_func nasm_fatal(int flags, const char *fmt, ...)
+; C Declaration: fatal_func nasm_fatal(int flags, const char *fmt, ...)
 ;
 ; Input (Stack): [EBP+8] = flags
 ;                [EBP+12] = *fmt
@@ -159,7 +159,7 @@ nasm_error:
 ; compiler.h
 ; ----------
 ; /* A fatal function is both unlikely and no_return */
-; #define fata; L_func no_return unlikely_func
+; #define fatal_func no_return unlikely_func
 
 %assign ap      -4
 %assign flags    8
@@ -195,7 +195,7 @@ nasm_fatal:
 ;
 ; Description:
 ;
-; C Declaration: fata; L_func nasm_panic(int flags, const char *fmt, ...)
+; C Declaration: fatal_func nasm_panic(int flags, const char *fmt, ...)
 ;
 ; Input (Stack): [EBP+8] = flags
 ;                [EBP+12] = *fmt
@@ -210,7 +210,7 @@ nasm_fatal:
 ; compiler.h
 ; ----------
 ; /* A fatal function is both unlikely and no_return */
-; #define fata; L_func no_return unlikely_func
+; #define fatal_func no_return unlikely_func
 
 %assign ap      -4
 %assign flags    8
@@ -246,7 +246,7 @@ nasm_panic:
 ;
 ; Description:
 ;
-; C Declaration: fata; L_func nasm_panic_from_macro(const char *file, int line)
+; C Declaration: fatal_func nasm_panic_from_macro(const char *file, int line)
 ;
 ; Input (Stack): [EBP+8] = *file
 ;                [EBP+12] = line
@@ -287,7 +287,7 @@ nasm_panic_from_macro:
 ; Description:
 ;
 ; C Declaration:
-;  fata; L_func nasm_assert_failed(const char *file, int line, const char *msg)
+;  fatal_func nasm_assert_failed(const char *file, int line, const char *msg)
 ;
 ; Input (Stack): [EBP+8] = *file
 ;                [EBP+12] = line
