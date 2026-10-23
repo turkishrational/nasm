@@ -4396,7 +4396,7 @@ fc_9:                            ; ...
 ; Output [EAX]: 0 (valid option), -1 (unknown option)
 ;        (rc: option, daz: true or false) 
 ;
-; Modified Registers: EAX, ECX, EDX
+; Modified Registers: EAX, (ECX), (EDX)
 ; ---------------------------------------------------------------------------
 
 %assign option  8
