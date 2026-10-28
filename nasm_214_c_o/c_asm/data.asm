@@ -2,7 +2,7 @@
 ; NASM v2.14.02 - NETWIDE ASSEMBLER FOR TRDOS 386 - Erdogan Tan - 18/09/2026 
 ; Disassembled from "nasm.c" (Dissassembler: IDA)
 ; NASM Syntax: Erdogan Tan
-; Last Update: 24/10/2026
+; Last Update: 28/10/2026
 ; ===========================================================================
 ; data.asm
 ; --------
@@ -168159,6 +168159,299 @@ L_291:    db 'down',0             ; ...
 L_292:    db 'up',0               ; ...
 L_293:    db 'zero',0             ; ...
 L_294:    db 'default',0          ; ...
+
+; ---------------------------------------------------------------------------
+; directiv.asm (directiv.c)
+; ---------------------------------------------------------------------------
+
+; %include 'direcdat.asm'
+
+align 4
+
+cpunames:
+        dd L_295        ; "8086"
+        dd 60h
+	dd L_296        ; "186"
+        dd 61h
+        dd L_297        ; "286"
+        dd 62h
+        dd L_298        ; "386"
+        dd 63h
+        dd L_299        ; "486"
+        dd 64h
+        dd L_300        ; "586"
+        dd 65h
+        dd L_301        ; "pentium"
+        dd 65h
+        dd L_302        ; "pentiummmx"
+        dd 65h
+        dd L_303        ; "686"
+        dd 66h
+        dd L_304        ; "p6"
+        dd 66h
+        dd L_305        ; "ppro"
+        dd 66h
+        dd L_306        ; "pentiumpro"
+        dd 66h
+        dd L_307        ; "p2"
+        dd 66h
+        dd L_308        ; "pentiumii"
+        dd 66h
+        dd L_309        ; "p3"
+        dd 67h
+        dd L_310        ; "katmai"
+        dd 67h
+        dd L_311        ; "p4"
+        dd 68h
+        dd L_312        ; "willamette"
+        dd 68h
+        dd L_313        ; "prescott"
+        dd 69h
+        dd L_314        ; "x64"
+        dd 6Ah
+        dd L_315        ; "x86-64"
+        dd 6Ah
+        dd L_316        ; "ia64"
+        dd 6Fh
+        dd L_317        ; "ia-64"
+        dd 6Fh
+        dd L_318        ; "itanium"
+        dd 6Fh
+        dd L_319        ; "itanic"
+        dd 6Fh
+        dd L_320        ; "merced"
+        dd 6Fh
+        dd L_321        ; "any"
+        dd 6Fh
+        dd L_322        ; "default"
+        dd 6Fh
+        dd L_323        ; "all"
+        dd 6Fh
+        dd 0
+        dd 6Fh
+
+L_295:  db '8086',0             ; ...
+L_296:  db '186',0              ; ...
+L_297:  db '286',0              ; ...
+L_298:  db '386',0              ; ...
+L_299:  db '486',0              ; ...
+L_300:  db '586',0              ; ...
+L_301:  db 'pentium',0          ; ...
+L_302:  db 'pentiummmx',0       ; ...
+L_303:  db '686',0              ; ...
+L_304:  db 'p6',0               ; ...
+L_305:  db 'ppro',0             ; ...
+L_306:  db 'pentiumpro',0       ; ...
+L_307:  db 'p2',0               ; ...
+L_308:  db 'pentiumii',0        ; ...
+L_309:  db 'p3',0               ; ...
+L_310:  db 'katmai',0           ; ...
+L_311:  db 'p4',0               ; ...
+L_312:  db 'willamette',0       ; ...
+L_313:  db 'prescott',0         ; ...
+L_314:  db 'x64',0              ; ...
+L_315:  db 'x86-64',0           ; ...
+L_316:  db 'ia64',0             ; ...
+L_317:  db 'ia-64',0            ; ...
+L_318:  db 'itanium',0          ; ...
+L_319:  db 'itanic',0           ; ...
+L_320:  db 'merced',0           ; ...
+L_321:  db 'any',0              ; ...
+L_322:  db 'default',0          ; ...
+L_323:  db 'all',0              ; ...
+L_324:  db 'unknown ',27h,'cpu',27h,' type ',27h,'%s',27h,0
+L_325:  db 'cannot specify 32-bit segment on processor below a 386',0
+L_326:  db 'cannot specify 64-bit segment on processor below an x86-64',0
+L_327:  db '`%s',27h,' is not a valid segment size; must be 16, 32 or 64',0
+L_328:  db 'invalid directive line',0
+L_329:  db 'directiv.c',0       ; ...
+L_330:  db 'unrecognised directive [%s]',0
+L_331:  db 'segment name `%s',27h,' not recognized',0
+L_332:  db 'segment alignment `%s',27h,' is not power of two',0
+L_333:  db 'absurdly large segment alignment `%s',27h,' (2^%d)',0
+L_334:  db 'identifier expected after %s, got `%s',27h,0
+L_335:  db '%s size specified in common declaration',0
+L_336:  db 'invalid',0          ; ...
+L_337:  db 'no',0               ; ...
+L_338:  db 'invalid syntax in %s declaration',0
+L_339:  db 'cannot use non-relocatable expression as ABSOLUTE address',0
+L_340:  db 'invalid ABSOLUTE address in pass two',0
+L_341:  db 'identifier expected after DEBUG',0
+L_342:  db 'DEBUG identifier too long',0
+L_343:  db 'unknown warning option: %s',0
+L_344:  db 'unknown ',27h,'float',27h,' directive: %s',0
+L_345:  db 'invalid parameter to [%s] directive',0
+
+; ---------------------------------------------------------------------------
+; directbl.asm (directbl.c)
+; ---------------------------------------------------------------------------
+
+; %include 'directbl.asm'
+
+align 4
+
+	; const char * const directive_tbl[38] = {
+directive_tbl:
+	dd L_346        ; "absolute"
+	dd L_347	; "bits"
+	dd L_348	; "common"
+	dd L_349	; "cpu"
+	dd L_350	; "debug"
+	dd L_351	; "default"
+	dd L_352	; "extern"
+	dd L_353	; "float"
+	dd L_354	; "global"
+	dd L_355	; "static"
+	dd L_356	; "list"
+	dd L_357	; "section"
+	dd L_358	; "segment"
+	dd L_359	; "warning"
+	dd L_360	; "sectalign"
+	dd L_361	; "pragma"
+	dd L_362	; "export"
+	dd L_363	; "group"
+	dd L_364	; "import"
+	dd L_365	; "library"
+	dd L_366	; "map"
+	dd L_367	; "module"
+	dd L_368	; "org"
+	dd L_369	; "osabi"
+	dd L_370	; "safeseh"
+	dd L_371	; "uppercase"
+	dd L_372	; "prefix"
+	dd L_373	; "suffix"
+	dd L_374	; "gprefix"
+	dd L_375	; "gsuffix"
+	dd L_376	; "lprefix"
+	dd L_377	; "lsuffix"
+	dd L_378	; "limit"
+	dd L_379	; "subsections_via_symbols"
+	dd L_380	; "no_dead_strip"
+	dd L_381	; "maxdump"
+	dd L_382	; "nodepend"
+	dd L_383	; "noseclabels"
+
+L_346:  db 'absolute',0	; ...
+L_347:  db 'bits',0    	; ...
+L_348:  db 'common',0  	; ...
+L_349:  db 'cpu',0     	; ...
+L_350:  db 'debug',0   	; ...
+L_351:  db 'default',0 	; ...
+L_352:  db 'extern',0  	; ...
+L_353:  db 'float',0   	; ...
+L_354:  db 'global',0  	; ...
+L_355:  db 'static',0  	; ...
+L_356:  db 'list',0    	; ...
+L_357:  db 'section',0 	; ...
+L_358:  db 'segment',0 	; ...
+L_359:  db 'warning',0 	; ...
+L_360:  db 'sectalign',0
+L_361:  db 'pragma',0  	; ...
+L_362:  db 'export',0  	; ...
+L_363:  db 'group',0   	; ...
+L_364:  db 'import',0  	; ...
+L_365:  db 'library',0 	; ...
+L_366:  db 'map',0     	; ...
+L_367:  db 'module',0  	; ...
+L_368:  db 'org',0     	; ...
+L_369:  db 'osabi',0   	; ...
+L_370:  db 'safeseh',0 	; ...
+L_371:  db 'uppercase',0
+L_372:  db 'prefix',0  	; ...
+L_373:  db 'suffix',0  	; ...
+L_374:  db 'gprefix',0 	; ...
+L_375:  db 'gsuffix',0 	; ...
+L_376:  db 'lprefix',0 	; ...
+L_377:  db 'lsuffix',0 	; ...
+L_378:  db 'limit',0   	; ...
+L_379:  db 'subsections_via_symbols',0
+L_380:  db 'no_dead_strip',0
+L_381:  db 'maxdump',0 	; ...
+L_382:  db 'nodepend',0	; ...
+L_383:  db 'noseclabels',0 
+
+        ; static const int16_t directive_hashvals[64] = {
+directive_hashvals:
+        dw 0           	; 0,
+        dw 5555h       	; UNUSED,
+        dw 0           	; 0,
+        dw 5555h
+        dw 26
+        dw -4
+        dw 0
+        dw 11
+        dw 0
+        dw 8           	; 8,
+        dw 5555h       	; UNUSED,
+        dw 5555h
+        dw 0
+        dw -5          	; -5,
+        dw 28
+        dw 15
+        dw 5555h
+        dw 5555h
+        dw 5555h
+        dw -16
+        dw 5555h
+        dw 2
+        dw 19
+        dw -3
+        dw -22
+        dw 16
+        dw 5555h
+        dw 6
+        dw 11
+        dw -20
+        dw 16
+        dw -13
+        dw 0
+        dw 5555h
+        dw 5555h
+        dw 5555h
+        dw 0
+        dw 0
+        dw 6
+        dw 0
+        dw 22
+        dw 2
+        dw -28
+        dw 32
+        dw 12
+        dw 23
+        dw 3
+        dw 5555h
+        dw 26
+        dw 5555h
+        dw 12
+        dw 29
+        dw 10
+        dw 17
+        dw 28
+        dw 34
+        dw 5555h
+        dw 5555h
+        dw 1
+        dw 9
+        dw 27
+        dw 5555h       	; UNUSED,
+        dw 19          	; 19,
+        dw 14          	; 14
+                    	; };
+        ;db 0, 0, 0, 0
+        ;db 0, 0
+
+align 4 
+
+        ; const struct perfect_hash directive_hash = {
+directive_hash:
+        dd 0E291C26Ch ; UINT64_C(0x076259c3e291c26c),
+        dd 76259C3h   ; 
+        dd 1Fh        ; UINT32_C(0x1f),
+        dd 38         ; UINT32_C(38),
+        dd 3          ; 3,
+        dd 1          ; 1, ; (D_unknown),
+        dd directive_hashvals ; directive_hashvals,
+        dd directive_tbl ; directive_tbl
 
 ; ---------------------------------------------------------------------------
 ; end of initialized data
