@@ -2,7 +2,7 @@
 ; NASM v2.14.02 - NETWIDE ASSEMBLER FOR TRDOS 386 - Erdogan Tan - 18/09/2026 
 ; Disassembled from "nasm.c" (Dissassembler: IDA)
 ; NASM Syntax: Erdogan Tan
-; Last Update: 28/10/2026
+; Last Update: 31/10/2026
 ; ===========================================================================
 ; data.asm
 ; --------
@@ -168452,6 +168452,56 @@ directive_hash:
         dd 1          ; 1, ; (D_unknown),
         dd directive_hashvals ; directive_hashvals,
         dd directive_tbl ; directive_tbl
+
+; ---------------------------------------------------------------------------
+; pragma.asm (pragma.c)
+; ---------------------------------------------------------------------------
+
+; %include 'pragmdat.asm'
+
+align 4
+
+global_pragmas:
+        dd L_384         ; "asm"
+        dd 0             ; NULL
+        dd L_385         ; "limit"
+        dd limit_pragma  ; limit_pragma (address) 
+        dd L_386         ; "list"
+        dd 0             ; NULL
+        dd L_387         ; "file"
+        dd 0             ; NULL
+        dd L_388         ; "input"
+        dd 0             ; NULL
+        dd L_389         ; "preproc"
+        dd 0             ; NULL
+        dd L_390         ; "output"
+        dd 0             ; NULL
+        dd L_391         ; "debug"
+        dd 0             ; NULL
+        dd L_392         ; "ignore"
+        dd 0             ; NULL 
+        dd 0             ; NULL
+        dd 0             ; NULL
+
+L_384:  db 'asm',0       ; ...
+L_385:  db 'limit',0     ; ...
+L_386:  db 'list',0      ; ...
+L_387:  db 'file',0      ; ...
+L_388:  db 'input',0     ; ...
+L_389:  db 'preproc',0   ; ...
+;L_390: db 'output',0    ; ...
+;L_391: db 'debug',0     ; ...
+L_392:  db 'ignore',0    ; ...
+L_393:  db 'empty %%pragma %s',0 ; ...
+L_394:  db 'unknown %%pragma %s %s',0 ; ...
+L_395:  db 'bad argument to %%pragma %s %s',0 ; ...
+L_396:  db 'pragma.c',0  ; ...
+L_397:  db 'empty pragma directive',0 ; ...
+L_398:  db 'ignore',0    ; ...
+L_390:
+L_399:  db 'output',0    ; ...
+L_391:
+L_400:  db 'debug',0     ; ...
 
 ; ---------------------------------------------------------------------------
 ; end of initialized data
