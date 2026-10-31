@@ -1478,7 +1478,9 @@ spl_7:                                  ; ...
 ; ---------------------------------------------------------------------------
 
 spl_8:                                  ; ...
-                mov     eax, [ebp+default_name]
+                mov     eax, [ebp+default_name] ; if (default_name &&
+                                        ;    !nasm_stricmp(pragma->facility_name, default_name))
+                                        ;    goto found_it;
                 cmp     eax, 0
                 jz      spl_10
                 mov     eax, [ebp+pragma]
@@ -1637,7 +1639,7 @@ spl_21:                                 ; ...
 
 spl_22:                                 ; ...
                 mov     eax, 174        ; default:
-                                        ;   panic();  /// 'pragma.c' page 174
+                                        ;   panic();  /// 'pragma.c' line 174
                 push    eax
                 mov     eax, offset L_396 ; "pragma.c"
                 push    eax
@@ -1823,7 +1825,7 @@ pp_11:                                  ; ...
 
 pp_12:                                  ; ...
                 mov     eax, ds:ofmt    ; /* Look to see if it is an output backend pragma */
-                add     eax, 4Ch
+                add     eax, 76
                 mov     ecx, ds:ofmt
                 add     ecx, 4
                 lea     edx, [ebp+pragma]
@@ -2047,21 +2049,21 @@ ccode_opcodes   db    7                 ; ...
                 db    0
 global_pragmas  dd offset L_384         ; ...
                                         ; "asm"
-                align 10h
+                dd 0
                 dd offset L_385         ; "limit"
                 dd offset limit_pragma
                 dd offset L_386         ; "list"
-                align 10h
+                dd 0
                 dd offset L_387         ; "file"
-                align 8
+                dd 0
                 dd offset L_388         ; "input"
-                align 10h
+                dd 0
                 dd offset L_389         ; "preproc"
-                align 8
+                dd 0
                 dd offset L_390         ; "output"
-                align 10h
+                dd 0
                 dd offset L_391         ; "debug"
-                align 8
+                dd 0
                 dd offset L_392         ; "ignore"
                 dd 0
                 dd 0
