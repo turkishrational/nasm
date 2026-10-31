@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>IDA - pragma.i64 (pragma.o) C:\Users\90542\OneDrive\Masaüstü\nasm_214_c_o\pragma.i64</title>
+<title>IDA - pragma.i64 (pragma.o) C:\Users\90542\OneDrive\Masaüstü\nasm_214_c_o\o\pragma.i64</title>
 </head>
 <body bgcolor="#ffffff">
 <span style="white-space: pre; font-family: Consolas; color: blue; background: #ffffff">
@@ -1509,8 +1509,10 @@
 </span><span style="color:black">.text:08000A7C </span><span style="color:gray">; ---------------------------------------------------------------------------
 </span><span style="color:black">.text:08000A7C
 .text:08000A7C </span><span style="color:gray">spl_8</span><span style="color:navy">:                                  </span><span style="color:green">; search_pragma_list+33↑j
-</span><span style="color:black">.text:08000A7C                 </span><span style="color:navy">mov     eax, [ebp+</span><span style="color:green">default_name</span><span style="color:navy">]
-</span><span style="color:black">.text:08000A7F                 </span><span style="color:navy">cmp     eax, </span><span style="color:green">0
+</span><span style="color:black">.text:08000A7C                 </span><span style="color:navy">mov     eax, [ebp+</span><span style="color:green">default_name</span><span style="color:navy">] </span>; if (default_name &amp;&amp;
+<span style="color:black">.text:08000A7C                                         </span>;    !nasm_stricmp(pragma-&gt;facility_name, default_name))
+<span style="color:black">.text:08000A7C                                         </span>;    goto found_it;
+<span style="color:black">.text:08000A7F                 </span><span style="color:navy">cmp     eax, </span><span style="color:green">0
 </span><span style="color:black">.text:08000A82                 </span><span style="color:navy">jz      </span><span style="color:gray">spl_10
 </span><span style="color:black">.text:08000A88                 </span><span style="color:navy">mov     eax, [ebp+</span><span style="color:green">pragma</span><span style="color:navy">]
 </span><span style="color:black">.text:08000A8B                 </span><span style="color:navy">add     eax, </span><span style="color:green">4
@@ -1673,7 +1675,7 @@
 </span><span style="color:black">.text:08000BC1
 .text:08000BC1 </span><span style="color:gray">spl_22</span><span style="color:navy">:                                 </span><span style="color:green">; search_pragma_list+1F0↓j
 </span><span style="color:black">.text:08000BC1                 </span><span style="color:navy">mov     eax, </span><span style="color:green">174        </span>; default:
-<span style="color:black">.text:08000BC1                                         </span>;   panic();  /// &#039;pragma.c&#039; page 174
+<span style="color:black">.text:08000BC1                                         </span>;   panic();  /// &#039;pragma.c&#039; line 174
 <span style="color:black">.text:08000BC6                 </span><span style="color:navy">push    eax
 </span><span style="color:black">.text:08000BC7                 </span><span style="color:navy">mov     eax, offset </span>L_396 <span style="color:gray">; &quot;pragma.c&quot;
 </span><span style="color:black">.text:08000BCC                 </span><span style="color:navy">push    eax
@@ -1861,7 +1863,7 @@
 </span><span style="color:black">.text:08000D59
 .text:08000D59 </span><span style="color:gray">pp_12</span><span style="color:navy">:                                  </span><span style="color:green">; process_pragma+150↑j
 </span><span style="color:black">.text:08000D59                 </span><span style="color:navy">mov     eax, ds:</span><span style="color:#ff00ff">ofmt    </span>; /* Look to see if it is an output backend pragma */
-<span style="color:black">.text:08000D5F                 </span><span style="color:navy">add     eax, </span><span style="color:green">4Ch
+<span style="color:black">.text:08000D5F                 </span><span style="color:navy">add     eax, </span><span style="color:green">76
 </span><span style="color:black">.text:08000D62                 </span><span style="color:navy">mov     ecx, ds:</span><span style="color:#ff00ff">ofmt
 </span><span style="color:black">.text:08000D68                 </span><span style="color:navy">add     ecx, </span><span style="color:green">4
 </span><span style="color:black">.text:08000D6B                 </span><span style="color:navy">lea     edx, [ebp+</span><span style="color:green">pragma</span><span style="color:navy">]
@@ -2090,21 +2092,21 @@
 </span><span style="color:olive">.data:08000EF7                 </span><span style="color:navy">db    </span><span style="color:#008040">0
 </span><span style="color:gray">.data:08000EF8 </span>global_pragmas  <span style="color:navy">dd offset </span>L_384         <span style="color:#8080ff">; process_pragma+13F↑o
 </span><span style="color:gray">.data:08000EF8                                         ; &quot;asm&quot;
-.data:08000EFC                 </span><span style="color:navy">align </span><span style="color:#008040">10h
+.data:08000EFC                 </span><span style="color:navy">dd </span><span style="color:#008040">0
 </span><span style="color:gray">.data:08000F00                 </span><span style="color:navy">dd offset </span>L_385         <span style="color:gray">; &quot;limit&quot;
 .data:08000F04                 </span><span style="color:navy">dd offset </span>limit_pragma
 <span style="color:gray">.data:08000F08                 </span><span style="color:navy">dd offset </span>L_386         <span style="color:gray">; &quot;list&quot;
-.data:08000F0C                 </span><span style="color:navy">align </span><span style="color:#008040">10h
+.data:08000F0C                 </span><span style="color:navy">dd </span><span style="color:#008040">0
 </span><span style="color:gray">.data:08000F10                 </span><span style="color:navy">dd offset </span>L_387         <span style="color:gray">; &quot;file&quot;
-.data:08000F14                 </span><span style="color:navy">align </span><span style="color:#008040">8
+.data:08000F14                 </span><span style="color:navy">dd </span><span style="color:#008040">0
 </span><span style="color:gray">.data:08000F18                 </span><span style="color:navy">dd offset </span>L_388         <span style="color:gray">; &quot;input&quot;
-.data:08000F1C                 </span><span style="color:navy">align </span><span style="color:#008040">10h
+.data:08000F1C                 </span><span style="color:navy">dd </span><span style="color:#008040">0
 </span><span style="color:gray">.data:08000F20                 </span><span style="color:navy">dd offset </span>L_389         <span style="color:gray">; &quot;preproc&quot;
-.data:08000F24                 </span><span style="color:navy">align </span><span style="color:#008040">8
+.data:08000F24                 </span><span style="color:navy">dd </span><span style="color:#008040">0
 </span><span style="color:gray">.data:08000F28                 </span><span style="color:navy">dd offset </span>L_390         <span style="color:gray">; &quot;output&quot;
-.data:08000F2C                 </span><span style="color:navy">align </span><span style="color:#008040">10h
+.data:08000F2C                 </span><span style="color:navy">dd </span><span style="color:#008040">0
 </span><span style="color:gray">.data:08000F30                 </span><span style="color:navy">dd offset </span>L_391         <span style="color:gray">; &quot;debug&quot;
-.data:08000F34                 </span><span style="color:navy">align </span><span style="color:#008040">8
+.data:08000F34                 </span><span style="color:navy">dd </span><span style="color:#008040">0
 </span><span style="color:gray">.data:08000F38                 </span><span style="color:navy">dd offset </span>L_392         <span style="color:gray">; &quot;ignore&quot;
 .data:08000F3C                 </span><span style="color:navy">dd </span><span style="color:#008040">0
 </span><span style="color:gray">.data:08000F40                 </span><span style="color:navy">dd </span><span style="color:#008040">0

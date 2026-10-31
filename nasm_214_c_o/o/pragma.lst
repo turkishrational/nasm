@@ -1476,7 +1476,9 @@
 .text:08000A7C ; ---------------------------------------------------------------------------
 .text:08000A7C
 .text:08000A7C spl_8:                                  ; ...
-.text:08000A7C                 mov     eax, [ebp+default_name]
+.text:08000A7C                 mov     eax, [ebp+default_name] ; if (default_name &&
+.text:08000A7C                                         ;    !nasm_stricmp(pragma->facility_name, default_name))
+.text:08000A7C                                         ;    goto found_it;
 .text:08000A7F                 cmp     eax, 0
 .text:08000A82                 jz      spl_10
 .text:08000A88                 mov     eax, [ebp+pragma]
@@ -1635,7 +1637,7 @@
 .text:08000BC1
 .text:08000BC1 spl_22:                                 ; ...
 .text:08000BC1                 mov     eax, 174        ; default:
-.text:08000BC1                                         ;   panic();  /// 'pragma.c' page 174
+.text:08000BC1                                         ;   panic();  /// 'pragma.c' line 174
 .text:08000BC6                 push    eax
 .text:08000BC7                 mov     eax, offset L_396 ; "pragma.c"
 .text:08000BCC                 push    eax
@@ -1821,7 +1823,7 @@
 .text:08000D59
 .text:08000D59 pp_12:                                  ; ...
 .text:08000D59                 mov     eax, ds:ofmt    ; /* Look to see if it is an output backend pragma */
-.text:08000D5F                 add     eax, 4Ch
+.text:08000D5F                 add     eax, 76
 .text:08000D62                 mov     ecx, ds:ofmt
 .text:08000D68                 add     ecx, 4
 .text:08000D6B                 lea     edx, [ebp+pragma]
@@ -2045,21 +2047,21 @@
 .data:08000EF7                 db    0
 .data:08000EF8 global_pragmas  dd offset L_384         ; ...
 .data:08000EF8                                         ; "asm"
-.data:08000EFC                 align 10h
+.data:08000EFC                 dd 0
 .data:08000F00                 dd offset L_385         ; "limit"
 .data:08000F04                 dd offset limit_pragma
 .data:08000F08                 dd offset L_386         ; "list"
-.data:08000F0C                 align 10h
+.data:08000F0C                 dd 0
 .data:08000F10                 dd offset L_387         ; "file"
-.data:08000F14                 align 8
+.data:08000F14                 dd 0
 .data:08000F18                 dd offset L_388         ; "input"
-.data:08000F1C                 align 10h
+.data:08000F1C                 dd 0
 .data:08000F20                 dd offset L_389         ; "preproc"
-.data:08000F24                 align 8
+.data:08000F24                 dd 0
 .data:08000F28                 dd offset L_390         ; "output"
-.data:08000F2C                 align 10h
+.data:08000F2C                 dd 0
 .data:08000F30                 dd offset L_391         ; "debug"
-.data:08000F34                 align 8
+.data:08000F34                 dd 0
 .data:08000F38                 dd offset L_392         ; "ignore"
 .data:08000F3C                 dd 0
 .data:08000F40                 dd 0
