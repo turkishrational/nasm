@@ -1,11 +1,11 @@
 ; ===========================================================================
 ; NASM v2.14.02 - NETWIDE ASSEMBLER FOR TRDOS 386 - Erdogan Tan - 18/09/2026 
-; Disassembled from "directiv.c" (Dissassembler: IDA)
+; Disassembled from "pragma.c" (Dissassembler: IDA)
 ; NASM Syntax: Erdogan Tan
 ; Last Update: 31/10/2026
 ; ===========================================================================
-; directiv.asm
-; ------------
+; pragma.asm
+; ----------
 ; This file will be included in the "nasm386.asm" file
 ; Inclusion order: 33
 
@@ -398,7 +398,7 @@ spl_21:                                 ; ...
 
 spl_22:                                 ; ...
                 mov     eax, 174        ; default:
-                                        ;   panic();  /// 'pragma.c' page 174
+                                        ;   panic();  /// 'pragma.c' line 174
                 push    eax
                 mov     eax, L_396      ; "pragma.c"
                 push    eax
