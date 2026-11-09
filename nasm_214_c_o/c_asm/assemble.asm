@@ -2,7 +2,7 @@
 ; NASM v2.14.02 - NETWIDE ASSEMBLER FOR TRDOS 386 - Erdogan Tan - 18/09/2026 
 ; Disassembled from "assemble.c" (Dissassembler: IDA)
 ; NASM Syntax: Erdogan Tan
-; Last Update: 03/11/2026
+; Last Update: 08/11/2026
 ; ===========================================================================
 ; assemble.asm
 ; ------------
@@ -161,6 +161,38 @@
 ;     PPS_ASIZE,  /* Address size prefix */
 ;     PPS_VEX,    /* VEX type */
 ;     MAXPREFIX   /* Total number of prefix slots */
+; };
+
+; typedef struct extop { /* extended operand */
+;     struct extop    *next;      /* linked list */
+;     char            *stringval; /* if it's a string, then here it is */
+;     size_t          stringlen;  /* ... and here's how long it is */
+;     int64_t         offset;     /* ... it's given here ... */
+;     int32_t         segment;    /* if it's a number/address, then... */
+;     int32_t         wrt;        /* ... and here */
+;     bool            relative;   /* self-relative expression */
+;     enum extop_type type;       /* defined above */
+; } extop;
+
+; enum out_sign {
+;     OUT_WRAP,      /* Undefined signedness (wraps) */
+;     OUT_SIGNED,    /* Value is signed */
+;     OUT_UNSIGNED   /* Value is unsigned */
+; };
+
+; enum extop_type { /* extended operand types */
+;     EOT_NOTHING,
+;     EOT_DB_STRING,      /* Byte string */
+;     EOT_DB_STRING_FREE, /* Byte string which should be nasm_free'd*/
+;     EOT_DB_NUMBER       /* Integer */
+; };
+
+; enum file_flags {
+;     NF_BINARY = 0x00000000, /* Binary file (default) */
+;     NF_TEXT = 0x00000001,   /* Text file */
+;     NF_NONFATAL = 0x00000000, /* Don't die on open failure (default) */
+;     NF_FATAL = 0x00000002,  /* Die on open failure */
+;     NF_FORMAP = 0x00000004  /* Intended to use nasm_map_file() */
 ; };
 
 
@@ -2072,1132 +2104,1280 @@ jm_15:                                  ; ...
 
 ; =============== S U B R O U T I N E =======================================
 
-; Attributes: bp-based frame
+; Function: assemble
+;
+; Description:
+;
+; C Declaration:
+; int64_t assemble(int32_t segment, int64_t start, int bits, insn *instruction)
+;
+; Input (Stack): [EBP+8]  = segment
+;                [EBP+12] = start (low dword)
+;                [EBP+16] = start (high dword)
+;                [EBP+20] = bits
+;                [EBP+24] = *instruction
+;
+; Output [EDX:EAX]: delta (offset difference, instruction size)
+;
+; Modified Registers: EAX, ECX, EDX
+; ---------------------------------------------------------------------------
 
-                public assemble
-proc            assemble near
+%assign insn_size      -90h
+%assign insn_size_h    -8Ch
+%assign l              -88h
+%assign m              -84h
+%assign blk            -80h
+%assign buf            -7Ch
+%assign map            -78h
+%assign len            -74h
+%assign base           -70h
+%assign t              -6Ch
+%assign fp             -68h
+%assign fname          -64h
 
-var_B8          = dword ptr -0B8h
-var_B4          = dword ptr -0B4h
-var_B0          = dword ptr -0B0h
-var_AC          = dword ptr -0ACh
-var_A4          = dword ptr -0A4h
-var_A0          = dword ptr -0A0h
-var_9C          = dword ptr -9Ch
-var_98          = dword ptr -98h
-var_94          = dword ptr -94h
-var_90          = dword ptr -90h
-var_8C          = dword ptr -8Ch
-var_88          = dword ptr -88h
-var_84          = dword ptr -84h
-var_80          = dword ptr -80h
-var_7C          = dword ptr -7Ch
-var_78          = dword ptr -78h
-var_74          = dword ptr -74h
-var_70          = dword ptr -70h
-var_6C          = dword ptr -6Ch
-var_68          = dword ptr -68h
-var_64          = dword ptr -64h
-var_60          = dword ptr -60h
-var_5C          = dword ptr -5Ch
-var_58          = dword ptr -58h
-var_54          = dword ptr -54h
-var_50          = dword ptr -50h
-var_4C          = dword ptr -4Ch
-var_48          = dword ptr -48h
-var_44          = dword ptr -44h
-var_40          = dword ptr -40h
-var_3C          = dword ptr -3Ch
-var_38          = dword ptr -38h
-var_34          = dword ptr -34h
-var_30          = dword ptr -30h
-var_2C          = dword ptr -2Ch
-var_28          = dword ptr -28h
-var_24          = dword ptr -24h
-var_20          = dword ptr -20h
-var_18          = dword ptr -18h
-var_14          = dword ptr -14h
-var_10          = dword ptr -10h
-var_C           = dword ptr -0Ch
-var_8           = dword ptr -8
-var_4           = dword ptr -4
-arg_0           8
-arg_4           0Ch
-arg_8           10h
-arg_C           14h
-arg_10          18h
+;%assign tmp7          -0B8h
+;%assign tmp7_h        -0B4h
+;%assign insn_size     -0B0h
+;%assign insn_size_h   -0ACh
+;%assign tmp6          -0A4h
+;%assign tmp5          -0A0h
+;%assign tmp4          -9Ch
+;%assign l             -98h
+;%assign tmp3          -94h
+;%assign tmp2          -90h
+;%assign m             -8Ch
+;%assign blk           -88h
+;%assign buf           -84h
+;%assign map           -80h
+;%assign len           -7Ch
+;%assign base          -78h
+;%assign t             -74h
+;%assign fp            -70h
+;%assign fname         -6Ch
+;%assign tmp1          -68h
+;%assign tmp1_h        -64h
 
+%assign _align         -60h
+%assign e              -5Ch
+%assign wsize          -58h
+%assign wsize_h        -54h
+%assign _m             -50h
+%assign temp           -4Ch
+%assign _data          -48h
+%assign _data_offs_h   -44h
+%assign data_segment   -40h
+%assign data_type      -3Ch
+%assign data_sign      -38h
+%assign data_inslen    -34h
+%assign data_insoffs   -30h
+%assign data_bits      -2Ch
+%assign data_size      -28h
+%assign data_size_h    -24h
+%assign data_itemp     -20h
+%assign data_toffset   -18h
+%assign data_toffset_h -14h
+%assign data_tsegment  -10h
+%assign data_twrt      -0Ch
+%assign data_relbase   -8
+%assign data_relbase_h -4
+%assign _segment        8
+%assign _start          0Ch
+%assign _start_h        10h
+%assign _bits           14h
+%assign instruction     18h
+
+assemble:
                 push    ebp
-                mov     ebp, esp
-                sub     esp, 0B8h
-                nop
-                mov     eax, 48h
+                mov     ebp, esp        ; struct out_data data;
+                ;sub    esp, 184        ; const struct itemplate *temp;
+                ;nop                    ; enum match_result m;
+                sub     esp, 144  
+                mov     eax, 72         ; int64_t wsize; /* size for DB etc. */
                 push    eax
+                ;mov    eax, 0
+                mov     al, 0
+                push    eax
+                lea     eax, [ebp+_data]
+                push    eax
+                call    memset          ; nasm_zero(data);
+                add     esp, 12
+                mov     eax, [ebp+_start]
+                mov     ecx, [ebp+_start_h]
+                mov     [ebp+_data], eax ; data.offset = start;
+                mov     [ebp+_data_offs_h], ecx
+                mov     eax, [ebp+_segment]
+                mov     [ebp+data_segment], eax ; data.segment = segment;
                 mov     eax, 0
-                push    eax
-                lea     eax, [ebp+var_48]
-                push    eax
-                call    memset
-                add     esp, 0Ch
-                mov     eax, [ebp+arg_4]
-                mov     ecx, [ebp+arg_8]
-                mov     [ebp+var_48], eax
-                mov     [ebp+var_44], ecx
-                mov     eax, [ebp+arg_0]
-                mov     [ebp+var_40], eax
-                mov     eax, 0
-                mov     [ebp+var_20], eax
-                mov     eax, [ebp+arg_C]
-                mov     [ebp+var_2C], eax
-                mov     eax, [ebp+arg_10]
-                add     eax, 20h
+                mov     [ebp+data_itemp], eax ; data.itemp = NULL;
+                mov     eax, [ebp+_bits]
+                mov     [ebp+data_bits], eax ; data.bits = bits;
+                mov     eax, [ebp+instruction]
+                add     eax, 32
                 mov     ecx, [eax]
                 push    ecx
                 call    db_bytes
                 add     esp, 4
                 mov     ecx, eax
-                sar     ecx, 1Fh
-                mov     [ebp+var_58], eax
-                mov     [ebp+var_54], ecx
-                mov     eax, [ebp+var_54]
-                cmp     eax, 0FFFFFFFFh
-                jnz     loc_80019D7
-                mov     eax, [ebp+var_58]
-                cmp     eax, 0FFFFFFFFh
-                jnz     loc_80019D7
-                mov     eax, 0
-                mov     edx, 0
-                jmp     locret_80024DA
+                sar     ecx, 31
+                mov     [ebp+wsize], eax ; wsize = db_bytes(instruction->opcode);
+                mov     [ebp+wsize_h], ecx
+                ;mov    eax, [ebp+wsize_h]
+                ;cmp    eax, 0FFFFFFFFh
+                cmp     ecx, 0FFFFFFFFh
+                jnz     asml_1
+                ;mov    eax, [ebp+wsize]
+                ;cmp    eax, 0FFFFFFFFh ; if (wsize == -1)
+                cmp     eax, ecx 
+                ;jnz    asml_1
+                jnz     asml_2 ; (ecx < 0)  
+                ;mov    eax, 0          ; (64 bit value, edx:eax = 0)
+                inc	eax ; -1 -> 0 
+                ;mov    edx, 0
+                mov     edx, eax   
+                jmp     asml_84         ; return 0;
 ; ---------------------------------------------------------------------------
 
-loc_80019D7:                            ; ...
-                mov     eax, [ebp+var_54]
-                cmp     eax, 0
-                jnz     loc_80019EF
-                mov     eax, [ebp+var_58]
-                cmp     eax, 0
-                jz      loc_8001C02
+asml_1:                                 ; (ecx <> -1)
+                ;;mov   eax, [ebp+wsize_h] ; if (wsize) {
+                ;;cmp   eax, 0
+                ;cmp    ecx, 0
+                and	ecx, ecx
+                jnz     asml_2
+                mov     eax, [ebp+wsize]
+                ;cmp    eax, 0
+                and	eax, eax 
+                jz      asml_19
 
-loc_80019EF:                            ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 170h
-                mov     ecx, [eax]
-                mov     [ebp+var_5C], ecx
+asml_2:                                 ; ...
+                mov     eax, [ebp+instruction] ; extop *e;
+                add     eax, 368
+                mov     ecx, [eax]      ; #define list_for_each(pos, head)   \
+                                        ;     for (pos = head; pos; pos = pos->next)
+                mov     [ebp+e], ecx    ; (instruction->eops = instruction + 368)
+                                        ; list_for_each(e, instruction->eops) {
 
-loc_80019FD:                            ; ...
-                mov     eax, [ebp+var_5C]
-                cmp     eax, 0
-                jz      loc_8001BFD
-                jmp     loc_8001A18
+asml_3:                                 ; ...
+                mov     eax, [ebp+e]
+                ;cmp    eax, 0          ; (for) continue if e (pos) > 0
+                or	eax, eax  
+                jz      asml_18         ; exit (for)
+                jmp     asml_5
 ; ---------------------------------------------------------------------------
 
-loc_8001A0E:                            ; ...
-                mov     eax, [ebp+var_5C]
-                mov     ecx, [eax]
-                mov     [ebp+var_5C], ecx
-                jmp     short loc_80019FD
+asml_13:
+asml_17:
+asml_4:                                 ; ...
+                mov     eax, [ebp+e]
+                mov     ecx, [eax]      ; extop->next
+                mov     [ebp+e], ecx    ; (for next)
+                jmp     short asml_3    ; for (e = head; e; e = e->next)
 ; ---------------------------------------------------------------------------
 
-loc_8001A18:                            ; ...
-                mov     eax, [ebp+var_5C]
-                add     eax, 24h
+asml_5:                                 ; ...
+                ;mov    eax, [ebp+e]    ; if (e->type == EOT_DB_NUMBER) {
+                add     eax, 36         ; e->type (e + 36) /// extop->type
                 mov     ecx, [eax]
-                cmp     ecx, 3
-                jnz     loc_8001B36
-                mov     eax, [ebp+var_54]
+                cmp     ecx, 3          ; EOT_DB_NUMBER = 3
+                jnz     asml_14
+                mov     eax, [ebp+wsize_h] ; if (wsize > 8) {
                 cmp     eax, 0
-                jl      loc_8001A60
-                jnz     loc_8001A47
-                mov     eax, [ebp+var_58]
+                jl      asml_7
+                jnz     asml_6
+                mov     eax, [ebp+wsize]
                 cmp     eax, 8
-                jbe     loc_8001A60
+                jbe     asml_7
 
-loc_8001A47:                            ; ...
-                mov     eax, offset A_35 ; "integer supplied to a DT, DO, DY or DZ "...
+asml_6:                                 ; ...
+                mov     eax, A_35       ; "integer supplied to a DT, DO, DY or DZ "...
                 push    eax
                 mov     eax, 3
                 push    eax
-                call    nasm_error
+                call    nasm_error      ; nasm_error(ERR_NONFATAL,
+                                        ; "integer supplied to a DT, DO, DY or DZ instruction");
                 add     esp, 8
-                jmp     loc_8001B31
+                jmp     asml_13
 ; ---------------------------------------------------------------------------
 
-loc_8001A60:                            ; ...
-                mov     eax, 0
-                mov     [ebp+var_30], eax
-                mov     eax, [ebp+var_58]
-                mov     ecx, [ebp+var_54]
-                mov     [ebp+var_28], eax
-                mov     [ebp+var_24], ecx
-                mov     [ebp+var_34], eax
-                mov     eax, [ebp+var_5C]
-                add     eax, 10h
+asml_7:                                 ; ...
+                mov     eax, 0          ; } else {
+                mov     [ebp+data_insoffs], eax ; data.insoffs = 0;
+                mov     eax, [ebp+wsize]
+                mov     ecx, [ebp+wsize_h]
+                mov     [ebp+data_size], eax ; data.inslen = data.size = wsize;
+                mov     [ebp+data_size_h], ecx ; (data + 36)
+                mov     [ebp+data_inslen], eax ; (data + 20)
+                mov     eax, [ebp+e]
+                add     eax, 16         ; e->offset;
+                                        ; extop->offset = extop + 16 (64bit aligned structure offset)
                 mov     ecx, [eax]
-                add     eax, 4
+                add     eax, 4          ; (high dword)
                 mov     edx, [eax]
-                mov     [ebp+var_18], ecx
-                mov     [ebp+var_14], edx
-                mov     eax, [ebp+var_5C]
-                add     eax, 1Ch
-                mov     ecx, [eax]
-                mov     [ebp+var_C], ecx
+                mov     [ebp+data_toffset], ecx ; uint64_t toffset; /// data->toffset = data + 48
+                mov     [ebp+data_toffset_h], edx ; data.toffset = e->offset;
+                mov     eax, [ebp+e]
+                add     eax, 28         ; int32_t wrt;  /// extop->wrt = extop + 28
+                mov     ecx, [eax]      ; data.twrt = e->wrt;
+                mov     [ebp+data_twrt], ecx ; data->twrt = data + 60
                 mov     eax, 0
                 mov     ecx, 0
-                mov     [ebp+var_8], eax
-                mov     [ebp+var_4], ecx
-                mov     eax, [ebp+var_5C]
-                add     eax, 18h
+                mov     [ebp+data_relbase], eax ; data.relbase = 0; /// data->relbase = data + 64
+                mov     [ebp+data_relbase_h], ecx
+                mov     eax, [ebp+e]    ; if (e->segment != NO_SEG && (e->segment & 1)) {
+                add     eax, 24         ; extop->segment = extop + 24
                 mov     ecx, [eax]
-                cmp     ecx, 0FFFFFFFFh
-                jz      loc_8001AEA
-                mov     eax, [ebp+var_5C]
-                add     eax, 18h
-                mov     ecx, [eax]
-                and     ecx, 1
-                cmp     ecx, 0
-                jz      loc_8001AEA
-                mov     eax, [ebp+var_5C]
-                add     eax, 18h
-                mov     ecx, [eax]
-                mov     [ebp+var_10], ecx
-                mov     eax, 5
-                mov     [ebp+var_3C], eax
-                mov     eax, 2
-                mov     [ebp+var_38], eax
-                jmp     loc_8001B25
+                ;
+                mov     [ebp+data_tsegment], ecx ; *
+                ;
+                cmp     ecx, -1         ; NO_SEG = -1
+                jz      asml_8
+                ;mov    eax, [ebp+e]
+                ;add    eax, 24
+                ;mov    ecx, [eax]
+                ;and    ecx, 1
+                and     cl, 1 
+                ;cmp    ecx, 0
+                jz      asml_8
+                ;
+                ;mov    eax, [ebp+e]    ; data.tsegment = e->segment;
+                ;add    eax, 24
+                ;mov    ecx, [eax]
+                ;mov    [ebp+data_tsegment], ecx ; *
+                ;
+                mov     eax, 5          ; OUT_SEGMENT = 5
+                mov     [ebp+data_type], eax ; data.type = OUT_SEGMENT;
+                ;mov    eax, 2          ; OUT_UNSIGNED = 2
+                mov     al, 2  
+                mov     [ebp+data_sign], eax ; data.sign = OUT_UNSIGNED;
+                jmp     asml_12
 ; ---------------------------------------------------------------------------
 
-loc_8001AEA:                            ; ...
-                mov     eax, [ebp+var_5C]
-                add     eax, 18h
+asml_8:                                 ; ...
+                ;mov    eax, [ebp+e]    ; } else {
+                ;add    eax, 24
+                ;mov    ecx, [eax]
+                ;mov    [ebp+data_tsegment], ecx ; data.tsegment = e->segment;
+                mov     eax, [ebp+e]    ; data.type = e->relative ? OUT_RELADDR : OUT_ADDRESS;
+                add     eax, 32         ; extop->relative = extop + 32
                 mov     ecx, [eax]
-                mov     [ebp+var_10], ecx
-                mov     eax, [ebp+var_5C]
-                add     eax, 20h
-                mov     ecx, [eax]
-                cmp     ecx, 0
-                jz      loc_8001B0B
-                jmp     loc_8001B15
+                ;cmp    ecx, 0
+                ;jz     asml_9
+                jecxz   asml_9
+                jmp     asml_10
 ; ---------------------------------------------------------------------------
 
-loc_8001B0B:                            ; ...
-                mov     eax, 3
-                jmp     loc_8001B1A
+asml_9:                                 ; ...
+                mov     eax, 3          ; OUT_ADDRESS = 3
+                jmp     asml_11
 ; ---------------------------------------------------------------------------
 
-loc_8001B15:                            ; ...
-                mov     eax, 4
+asml_10:                                ; ...
+                mov     eax, 4          ; OUT_RELADDR = 4
 
-loc_8001B1A:                            ; ...
-                mov     [ebp+var_3C], eax
-                mov     eax, 0
-                mov     [ebp+var_38], eax
+asml_11:                                ; ...
+                mov     [ebp+data_type], eax
+                ;mov    eax, 0          ; OUT_WRAP = 0
+                mov     al, 0  
+                mov     [ebp+data_sign], eax ; data.sign = OUT_WRAP;
 
-loc_8001B25:                            ; ...
-                lea     eax, [ebp+var_48]
+asml_12:                                ; ...
+                lea     eax, [ebp+_data]
                 push    eax
-                call    _out
+                call    _out            ; out(&data);
                 add     esp, 4
 
-loc_8001B31:                            ; ...
-                jmp     loc_8001BF8
+;asml_13:                               ; ...
+                jmp     asml_17
 ; ---------------------------------------------------------------------------
 
-loc_8001B36:                            ; ...
-                mov     eax, [ebp+var_5C]
-                add     eax, 24h
-                mov     ecx, [eax]
-                cmp     ecx, 1
-                jz      loc_8001B5D
-                mov     eax, [ebp+var_5C]
-                add     eax, 24h
-                mov     ecx, [eax]
-                cmp     ecx, 2
-                jz      loc_8001B5D
-                jmp     loc_8001BF8
+asml_14:                                ; ...
+                ;mov    eax, [ebp+e]    ; } else if (e->type == EOT_DB_STRING ||
+                ;                       ;            e->type == EOT_DB_STRING_FREE) {
+                ;add    eax, 36         ; extop->type = extop + 30
+                ;mov    ecx, [eax]
+                ;cmp    ecx, 1          ; EOT_DB_STRING = 1
+                ;jz     asml_15
+                jecxz   asml_15 
+                ;mov    eax, [ebp+e]
+                ;add    eax, 36
+                ;mov    ecx, [eax]
+                cmp     ecx, 2          ; EOT_DB_STRING_FREE = 2
+                jz      asml_15
+                jmp     asml_17
 ; ---------------------------------------------------------------------------
 
-loc_8001B5D:                            ; ...
-                mov     eax, [ebp+var_5C]
-                add     eax, 8
-                mov     ecx, [eax]
-                mov     eax, 0
-                mov     edx, [ebp+var_58]
-                mov     [ebp+var_68], ecx
-                mov     [ebp+var_64], eax
-                mov     eax, [ebp+var_54]
+asml_15:                                ; ...
+                ;mov    eax, [ebp+e]
+                ;add    eax, 8          ; e->stringlen = e + 8
+                ;mov    ecx, [eax]
+                ;mov    eax, 0
+                mov     edx, [ebp+wsize]
+                ;mov    [ebp+tmp1], ecx ; int align = e->stringlen % wsize;
+                ;mov    [ebp+tmp1_h], eax
+                mov     eax, [ebp+wsize_h]
                 push    eax
                 push    edx
-                mov     eax, [ebp+var_68]
-                mov     ecx, [ebp+var_64]
-                push    ecx
-                push    eax
+                ;mov    eax, [ebp+tmp1] ; **
+                ;mov    ecx, [ebp+tmp1_h] ; *
+                mov     eax, [ebp+e]
+                add     eax, 8          ; e->stringlen = e + 8
+                mov     ecx, [eax] ; **
+                mov     eax, 0 ; *
+                ;push   ecx ; tmp1_h = 0
+                ;push	eax ; tmp1
+                push    eax ; * tmp1_h = 0
+                push    ecx ; ** tmp1
                 call    __moddi3
-                add     esp, 10h
-                mov     [ebp+var_60], eax
-                mov     eax, [ebp+var_60]
+                add     esp, 16
+                mov     [ebp+_align], eax
+                ;mov    eax, [ebp+_align] ; if (align)
                 cmp     eax, 0
-                jz      loc_8001BAC
-                mov     eax, [ebp+var_60]
-                mov     ecx, eax
-                sar     ecx, 1Fh
-                mov     edx, [ebp+var_58]
+                jz      asml_16
+                ;mov    eax, [ebp+_align]
+                ;mov    ecx, eax
+                ;sar    ecx, 31
+                mov     edx, [ebp+wsize]
                 sub     edx, eax
-                mov     eax, [ebp+var_54]
-                sbb     eax, ecx
-                mov     [ebp+var_60], edx
+                ;mov    eax, [ebp+wsize_h]
+                ;sbb    eax, ecx
+                mov     [ebp+_align], edx ; align = wsize - align;
 
-loc_8001BAC:                            ; ...
+;asml_16:                                ; ...
                 mov     eax, 0
-                mov     [ebp+var_30], eax
-                mov     eax, [ebp+var_5C]
+asml_16:
+                mov     [ebp+data_insoffs], eax ; data.insoffs = 0;
+                mov     eax, [ebp+e]
                 add     eax, 8
                 mov     ecx, [eax]
-                mov     eax, [ebp+var_60]
+                mov     eax, [ebp+_align]
                 add     ecx, eax
-                mov     [ebp+var_34], ecx
-                mov     eax, [ebp+var_5C]
+                mov     [ebp+data_inslen], ecx ; data.inslen = e->stringlen + align;
+                mov     eax, [ebp+e]
+                mov     ecx, eax   
                 add     eax, 4
-                mov     ecx, [ebp+var_5C]
+                ;mov    ecx, [ebp+e]
                 add     ecx, 8
-                mov     edx, [ecx]
+                mov     edx, [ecx]      ; e->stringlen
                 push    edx
-                mov     ecx, [eax]
+                mov     ecx, [eax]      ; e->stringval
                 push    ecx
-                lea     eax, [ebp+var_48]
+                lea     eax, [ebp+_data] ; &data
                 push    eax
-                call    out_rawdata
-                add     esp, 0Ch
-                mov     eax, [ebp+var_60]
+                call    out_rawdata     ; out_rawdata(&data, e->stringval, e->stringlen);
+                add     esp, 12
+                mov     eax, [ebp+_align]
                 push    eax
-                mov     eax, offset zero_buffer
+                mov     eax, zero_buffer
                 push    eax
-                lea     eax, [ebp+var_48]
+                lea     eax, [ebp+_data]
                 push    eax
-                call    out_rawdata
-                add     esp, 0Ch
+                call    out_rawdata     ; out_rawdata(&data, zero_buffer, align);
+                add     esp, 12
 
-loc_8001BF8:                            ; ...
-                jmp     loc_8001A0E
+;asml_17:                               ; ...
+                jmp     asml_4
 ; ---------------------------------------------------------------------------
 
-loc_8001BFD:                            ; ...
-                jmp     loc_80024B2
+;asml_18:                               ; ...
+                ;jmp    asml_83
 ; ---------------------------------------------------------------------------
 
-loc_8001C02:                            ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 20h
+asml_19:                                ; ...
+                mov     eax, [ebp+instruction] ; } else if (instruction->opcode == I_INCBIN) {
+                add     eax, 32         ; instruction->opcode = instruction + 32
                 mov     ecx, [eax]
-                cmp     ecx, 10h
-                jnz     loc_8002128
-                mov     eax, [ebp+arg_10]
-                add     eax, 170h
+                cmp     ecx, 16         ; I_INCBIN = 16
+                jnz     asml_50
+                mov     eax, [ebp+instruction]
+                add     eax, 368        ; (instruction->eops = instruction + 368)
                 mov     ecx, [eax]
-                add     ecx, 4
+                add     ecx, 4          ; eops->stringval (extop->stringval = 4)
                 mov     eax, [ecx]
-                mov     [ebp+var_6C], eax
-                mov     eax, [ebp+arg_10]
-                add     eax, 178h
+                mov     [ebp+fname], eax ; const char *fname = instruction->eops->stringval;
+                mov     eax, [ebp+instruction] ; FILE *fp;
+                add     eax, 376        ; (instruction->times = instruction + 376) ((insn structure))
                 mov     ecx, [eax]
-                mov     [ebp+var_74], ecx
+                mov     [ebp+t], ecx    ; size_t t = instruction->times; /* INCBIN handles TIMES by itself */
                 mov     eax, 0
-                mov     [ebp+var_78], eax
-                mov     eax, 0
-                mov     [ebp+var_80], eax
-                mov     eax, 0
-                mov     [ebp+var_84], eax
-                mov     eax, 0
-                mov     [ebp+var_88], eax
-                mov     eax, 0
-                mov     [ebp+var_8C], eax
-                mov     eax, [ebp+var_74]
-                cmp     eax, 0
-                jz      loc_8001C76
-                jmp     loc_8001C7B
+                mov     [ebp+base], eax ; off_t base = 0;
+                ;mov    eax, 0          ; off_t len;
+                mov     [ebp+map], eax  ; const void *map = NULL;
+                ;mov    eax, 0          ; NULL
+                mov     [ebp+buf], eax  ; char *buf = NULL;
+                ;mov    eax, 0
+                mov     [ebp+blk], eax  ; size_t blk = 0;  /* Buffered I/O block size */
+                ;mov    eax, 0
+                mov     [ebp+m], eax    ; size_t m = 0; /* Bytes last read */
+                mov     eax, [ebp+t]
+                ;cmp    eax, 0          ; if (!t)
+                or	eax, eax
+                jz      asml_20         ; goto done;
+                ;jmp    asml_21
 ; ---------------------------------------------------------------------------
 
-loc_8001C76:                            ; ...
-                jmp     loc_8002113
+;asml_20:                                ; ...
+                ;jmp    asml_49         ; goto done;
 ; ---------------------------------------------------------------------------
 
-loc_8001C7B:                            ; ...
-                mov     eax, 4
-                push    eax
-                mov     eax, [ebp+var_6C]
+asml_21:                                ; ...
+                mov     eax, 4          ; fp = nasm_open_read(fname, NF_BINARY|NF_FORMAP);
+                push    eax             ; NF_BINARY|NF_FORMAP
+                mov     eax, [ebp+fname]
                 push    eax
                 call    nasm_open_read
                 add     esp, 8
-                mov     [ebp+var_70], eax
-                mov     eax, [ebp+var_70]
-                cmp     eax, 0
-                jz      loc_8001CA1
-                jmp     loc_8001CBE
+                mov     [ebp+fp], eax
+                mov     eax, [ebp+fp]   ; if (!fp) {
+                                        ;     nasm_error(ERR_NONFATAL, "`incbin': unable to open file `%s'",
+                                        ;                   fname);
+                                        ;     goto done;
+                                        ;  }
+                ;cmp    eax, 0
+                ;jz     asml_22
+                ;jmp    asml_23
+                and	eax, eax 
+                jnz     asml_23 
 ; ---------------------------------------------------------------------------
 
-loc_8001CA1:                            ; ...
-                mov     eax, [ebp+var_6C]
+asml_22:                                ; ...
+                mov     eax, [ebp+fname]
                 push    eax
-                mov     eax, offset A_36 ; "`incbin': unable to open file `%s'"
+                mov     eax, A_36       ; "`incbin': unable to open file `%s'"
                 push    eax
                 mov     eax, 3
                 push    eax
                 call    nasm_error
-                add     esp, 0Ch
-                jmp     loc_8002113
+                add     esp, 12
+                jmp     asml_49
 ; ---------------------------------------------------------------------------
 
-loc_8001CBE:                            ; ...
-                mov     eax, [ebp+var_70]
+asml_23:                                ; ...
+                ;mov    eax, [ebp+fp]
                 push    eax
                 call    nasm_file_size
                 add     esp, 4
-                mov     [ebp+var_7C], eax
-                mov     eax, [ebp+var_7C]
-                cmp     eax, 0FFFFFFFFh
-                jnz     loc_8001CF6
-                mov     eax, [ebp+var_6C]
+                mov     [ebp+len], eax  ; len = nasm_file_size(fp);
+                ;mov    eax, [ebp+len]
+                cmp     eax, 0FFFFFFFFh ; if (len == (off_t)-1) {
+                jnz     asml_24
+                mov     eax, [ebp+fname]
                 push    eax
-                mov     eax, offset A_37 ; "`incbin': unable to get length of file "...
+                mov     eax, A_37       ; "`incbin': unable to get length of file "...
                 push    eax
                 mov     eax, 3
                 push    eax
-                call    nasm_error
-                add     esp, 0Ch
-                jmp     loc_80020CD
+                call    nasm_error      ; nasm_error(ERR_NONFATAL, "`incbin': unable to get length of file `%s'",
+                                        ;                        fname);
+                                        ; goto close_done;
+                add     esp, 12
+                jmp     asml_46
 ; ---------------------------------------------------------------------------
 
-loc_8001CF6:                            ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 170h
+asml_24:                                ; ...
+                mov     eax, [ebp+instruction] ; if (instruction->eops->next) {
+                add     eax, 368        ; (instruction->eops = instruction + 368)
                 mov     ecx, [eax]
-                mov     eax, [ecx]
+                mov     eax, [ecx]      ; (eops->next = eops + 0)
                 cmp     eax, 0
-                jz      loc_8001DA4
-                mov     eax, [ebp+arg_10]
-                add     eax, 170h
-                mov     ecx, [eax]
-                mov     eax, [ecx]
-                add     eax, 10h
+                jz      asml_26
+                ;mov    eax, [ebp+instruction]
+                ;add    eax, 368
+                ;mov    ecx, [eax]
+                ;mov    eax, [ecx]
+                add     eax, 16         ; eops->offset = eops + 16 (64bit aligned in 'extop' structure)
                 mov     ecx, [eax]
                 add     eax, 4
-                mov     edx, [eax]
-                mov     [ebp+var_78], ecx
-                mov     eax, [ebp+var_78]
-                mov     ecx, [ebp+var_7C]
-                cmp     eax, ecx
-                jl      loc_8001D41
+                mov     edx, [eax]      ; high dword of 'eops->offset'
+                mov     [ebp+base], ecx ; base = instruction->eops->next->offset;
+                ;mov    eax, [ebp+base]
+                ;mov    ecx, [ebp+len]  ; if (base >= len) {
+                mov     eax, [ebp+len]
+                ;cmp    eax, ecx ; (eax = base, ecx = len)
+                cmp     ecx, eax ; (ecx = base, eax = len)
+                jl      asml_25
                 mov     eax, 0
-                mov     [ebp+var_7C], eax
-                jmp     loc_8001DA4
+                mov     [ebp+len], eax  ; len = 0;
+                jmp     asml_26
 ; ---------------------------------------------------------------------------
 
-loc_8001D41:                            ; ...
-                mov     eax, [ebp+var_7C]
-                mov     ecx, [ebp+var_78]
+asml_25:                                ; ...
+                ;mov    eax, [ebp+len]  ; } else {
+                ;mov    ecx, [ebp+base]
                 sub     eax, ecx
-                mov     [ebp+var_7C], eax
-                mov     eax, [ebp+arg_10]
-                add     eax, 170h
+                mov     [ebp+len], eax  ; len -= base;
+                mov     eax, [ebp+instruction] ; if (instruction->eops->next->next &&
+                add     eax, 368
                 mov     ecx, [eax]
-                mov     eax, [ecx]
-                mov     ecx, [eax]
+                mov     eax, [ecx]      ; instruction->eops->next
+                mov     ecx, [eax]      ; eops->next->next
                 cmp     ecx, 0
-                jz      loc_8001DA4
-                mov     eax, [ebp+arg_10]
-                add     eax, 170h
+                jz      asml_26
+                mov     eax, [ebp+instruction] ; (&&) len > (off_t)instruction->eops->next->next->offset)
+                add     eax, 368
                 mov     ecx, [eax]
                 mov     eax, [ecx]
                 mov     ecx, [eax]
-                add     ecx, 10h
+                add     ecx, 16
                 mov     eax, [ecx]
-                add     ecx, 4
-                mov     edx, [ecx]
-                mov     ecx, [ebp+var_7C]
+                ;add    ecx, 4
+                ;mov    edx, [ecx]
+                mov     ecx, [ebp+len]
                 cmp     ecx, eax
-                jle     loc_8001DA4
-                mov     eax, [ebp+arg_10]
-                add     eax, 170h
-                mov     ecx, [eax]
-                mov     eax, [ecx]
-                mov     ecx, [eax]
-                add     ecx, 10h
-                mov     eax, [ecx]
-                add     ecx, 4
-                mov     edx, [ecx]
-                mov     [ebp+var_7C], eax
+                jle     asml_26
+                ;mov    eax, [ebp+instruction] ; len = (off_t)instruction->eops->next->next->offset;
+                ;add    eax, 368
+                ;mov    ecx, [eax]
+                ;mov    eax, [ecx]
+                ;mov    ecx, [eax]
+                ;add    ecx, 16
+                ;mov    eax, [ecx]      ; eops->next->next->offset
+                ;;add   ecx, 4          ; (high dword of 'eops->offset')
+                ;;mov   edx, [ecx]
+                mov     [ebp+len], eax
 
-loc_8001DA4:                            ; ...
-                mov     eax, [ds:lfmt]
-                add     eax, 1Ch
-                mov     ecx, [ebp+var_48]
-                mov     edx, [ebp+var_44]
+asml_26:                                ; ...
+                mov     eax, [lfmt]
+                add     eax, 28         ; lfmt->set_offset address
+                mov     ecx, [ebp+_data]
+                mov     edx, [ebp+_data_offs_h]
                 push    edx
                 push    ecx
-                mov     [ebp+var_90], eax
-                mov     eax, [ebp+var_90]
+                ;mov    [ebp+tmp2], eax
+                ;mov    eax, [ebp+tmp2]
                 mov     eax, [eax]
-                call    eax
+                call    eax             ; lfmt->set_offset(data.offset);
                 add     esp, 8
-                mov     eax, [ds:lfmt]
-                add     eax, 10h
-                mov     ecx, 4
+                mov     eax, [lfmt]
+                add     eax, 16         ; lfmt->uplevel address
+                mov     ecx, 4          ; LIST_INCBIN
                 push    ecx
-                mov     [ebp+var_94], eax
-                mov     eax, [ebp+var_94]
+                ;mov    [ebp+tmp3], eax
+                ;mov    eax, [ebp+tmp3]
                 mov     eax, [eax]
-                call    eax
+                call    eax             ; lfmt->uplevel(LIST_INCBIN);
                 add     esp, 4
-                mov     eax, [ebp+var_7C]
+                mov     eax, [ebp+len]  ; if (!len)
                 cmp     eax, 0
-                jz      loc_8001DFB
-                jmp     loc_8001E00
+                jz      asml_27         ; goto end_incbin;
+                ;jmp    asml_28
 ; ---------------------------------------------------------------------------
 
-loc_8001DFB:                            ; ...
-                jmp     loc_8002026
+;asml_27:                               ; ...
+                ;jmp    asml_44
 ; ---------------------------------------------------------------------------
 
-loc_8001E00:                            ; ...
-                mov     eax, [ebp+var_7C]
+asml_28:                                ; ...
+                mov     eax, [ebp+len]  ; /* Try to map file data */
                 push    eax
-                mov     eax, [ebp+var_78]
+                mov     eax, [ebp+base]
                 push    eax
-                mov     eax, [ebp+var_70]
+                mov     eax, [ebp+fp]
                 push    eax
-                call    nasm_map_file
-                add     esp, 0Ch
-                mov     [ebp+var_80], eax
-                mov     eax, [ebp+var_80]
+                call    nasm_map_file   ; map = nasm_map_file(fp, base, len);
+                add     esp, 12
+                mov     [ebp+map], eax
+                ;mov    eax, [ebp+map]  ; if (!map) {
                 cmp     eax, 0
-                jz      loc_8001E28
-                jmp     loc_8001E6F
+                ;jz     asml_29
+                ;jmp    asml_33
+                jnz     asml_33
 ; ---------------------------------------------------------------------------
 
-loc_8001E28:                            ; ...
-                mov     eax, [ebp+var_7C]
-                cmp     eax, 100000h
-                mov     eax, 0
-                setl    al
-                cmp     eax, 0
-                jz      loc_8001E47
-                jmp     loc_8001E51
+asml_29:                                ; ...
+                mov     eax, [ebp+len]
+                cmp     eax, 1048576    ; #define ZERO_BUF_SIZE 65536
+                                        ; #define INCBIN_MAX_BUF (ZERO_BUF_SIZE * 16)
+                ;mov    eax, 0
+                ;setl   al
+                ;cmp    eax, 0
+                ;jz     asml_30
+                ;jmp    asml_31
+                jna     asml_31 
 ; ---------------------------------------------------------------------------
 
-loc_8001E47:                            ; ...
-                mov     eax, 100000h
-                jmp     loc_8001E54
+asml_30:                                ; ...
+                mov     eax, 1048576    ; INCBIN_MAX_BUF = 100000h
+                ;jmp    asml_32
 ; ---------------------------------------------------------------------------
 
-loc_8001E51:                            ; ...
-                mov     eax, [ebp+var_7C]
+asml_31:                                ; ...
+                ;mov    eax, [ebp+len]
 
-loc_8001E54:                            ; ...
-                mov     [ebp+var_88], eax
-                mov     eax, [ebp+var_88]
+asml_32:                                ; ...
+                mov     [ebp+blk], eax  ; blk = len < (off_t)INCBIN_MAX_BUF ? (size_t)len : INCBIN_MAX_BUF;
+                ;mov    eax, [ebp+blk]
                 push    eax
                 call    nasm_malloc
                 add     esp, 4
-                mov     [ebp+var_84], eax
+                mov     [ebp+buf], eax  ; buf = nasm_malloc(blk);
 
-loc_8001E6F:                            ; ...
-                mov     eax, [ebp+var_74]
-                mov     ecx, eax
-                add     eax, 0FFFFFFFFh
-                mov     [ebp+var_74], eax
-                cmp     ecx, 0
-                jz      loc_8002026
-                mov     eax, 0
-                mov     [ebp+var_30], eax
-                mov     eax, 0
-                mov     [ebp+var_34], eax
-                mov     eax, [ebp+var_80]
+asml_43:
+asml_33:                                ; ...
+                mov     eax, [ebp+t]    ; while (t--) {
+                ;mov    ecx, eax
+                ;add    eax, -1
+                ;mov    [ebp+t], eax
+                add     dword [ebp+t], -1    
+                ;cmp    ecx, 0
                 cmp     eax, 0
-                jz      loc_8001EB8
-                mov     eax, [ebp+var_7C]
+                jz      asml_44
+                mov     eax, 0
+                mov     [ebp+data_insoffs], eax ; data.insoffs = 0;
+                ;mov    eax, 0
+                mov     [ebp+data_inslen], eax ; data.inslen = 0;
+                mov     eax, [ebp+map]  ; if (map) {
+                mov     ecx, [ebp+len] ; *
+                ;cmp    eax, 0
+                and	eax, eax  
+                jz      asml_34
+                ;;mov   eax, [ebp+len]
+                ;;push  eax
+                ;mov    ecx, [ebp+len] ; *
+                push    ecx   
+                ;mov    eax, [ebp+map]
                 push    eax
-                mov     eax, [ebp+var_80]
+                lea     eax, [ebp+_data]
                 push    eax
-                lea     eax, [ebp+var_48]
-                push    eax
-                call    out_rawdata
-                add     esp, 0Ch
-                jmp     loc_8002021
+                call    out_rawdata     ; out_rawdata(&data, map, len);
+                add     esp, 12
+                jmp     asml_43
 ; ---------------------------------------------------------------------------
 
-loc_8001EB8:                            ; ...
-                mov     eax, [ebp+var_8C]
-                mov     ecx, [ebp+var_7C]
+asml_34:                                ; ...
+                mov     eax, [ebp+m]    ; } else if ((off_t)m == len) {
+                ;mov    ecx, [ebp+len] ; *
                 cmp     eax, ecx
-                jnz     loc_8001EE5
-                mov     eax, [ebp+var_7C]
+                jnz     asml_35
+                ;mov    eax, [ebp+len]
+                ;push   eax
+                push	ecx
+                mov     eax, [ebp+buf]
                 push    eax
-                mov     eax, [ebp+var_84]
+                lea     eax, [ebp+_data]
                 push    eax
-                lea     eax, [ebp+var_48]
-                push    eax
-                call    out_rawdata
-                add     esp, 0Ch
-                jmp     loc_8002021
+                call    out_rawdata     ; out_rawdata(&data, buf, len);
+                add     esp, 12
+                jmp     asml_43
 ; ---------------------------------------------------------------------------
 
-loc_8001EE5:                            ; ...
-                mov     eax, [ebp+var_7C]
-                mov     [ebp+var_98], eax
-                mov     eax, 0
+asml_35:                                ; ...
+                ;mov    eax, [ebp+len]  ; } else {
+                ;mov    [ebp+l], eax    ; off_t l = len;
+                ; ecx = [ebp+len]
+                mov     [ebp+l], ecx
+                mov     eax, 0          ; SEEK_SET = 0
                 push    eax
-                mov     eax, [ebp+var_78]
+                mov     eax, [ebp+base]
                 push    eax
-                mov     eax, [ebp+var_70]
+                mov     eax, [ebp+fp]
                 push    eax
-                call    fseek
-                add     esp, 0Ch
+                call    fseek           ; if (fseeko(fp, base, SEEK_SET) < 0 || ferror(fp)) {
+                add     esp, 12
                 cmp     eax, 0
-                jl      loc_8001F27
-                mov     eax, [ebp+var_70]
+                jl      asml_36
+                mov     eax, [ebp+fp]
                 push    eax
                 call    ferror
                 add     esp, 4
                 cmp     eax, 0
-                jnz     loc_8001F27
-                jmp     loc_8001F44
+                ;jnz    asml_36
+                ;jmp    asml_37
+                jz      asml_37  
 ; ---------------------------------------------------------------------------
 
-loc_8001F27:                            ; ...
-                mov     eax, [ebp+var_6C]
+asml_36:                                ; ...
+                mov     eax, [ebp+fname]
                 push    eax
-                mov     eax, offset A_38 ; "`incbin': unable to seek on file `%s'"
+                mov     eax, A_38       ; "`incbin': unable to seek on file `%s'"
                 push    eax
                 mov     eax, 3
                 push    eax
-                call    nasm_error
-                add     esp, 0Ch
-                jmp     loc_8002026
+                call    nasm_error      ; nasm_error(ERR_NONFATAL,
+                                        ;            "`incbin': unable to seek on file `%s'", fname);
+                add     esp, 12
+                jmp     asml_44         ; goto end_incbin;
 ; ---------------------------------------------------------------------------
 
-loc_8001F44:                            ; ...
-                mov     eax, [ebp+var_98]
+asml_37:                                ; ...
+                mov     eax, [ebp+l]    ; while (l > 0) {
                 cmp     eax, 0
-                jle     loc_8002021
-                mov     eax, [ebp+var_98]
-                mov     ecx, [ebp+var_88]
+                jle     asml_43
+                ;mov    eax, [ebp+l]
+                mov     ecx, [ebp+blk]
                 cmp     eax, ecx
-                mov     eax, 0
-                setl    al
-                cmp     eax, 0
-                jz      loc_8001F77
-                jmp     loc_8001F82
+                ;mov    eax, 0
+                ;setl   al
+                ;cmp    eax, 0
+                ;jz     asml_38
+                ;jmp    asml_39
+                jle     asml_39 
 ; ---------------------------------------------------------------------------
 
-loc_8001F77:                            ; ...
-                mov     eax, [ebp+var_88]
-                jmp     loc_8001F88
+asml_38:                                ; ...
+                ;mov    eax, [ebp+blk]
+                mov     eax, ecx
+                ;jmp    asml_40
 ; ---------------------------------------------------------------------------
 
-loc_8001F82:                            ; ...
-                mov     eax, [ebp+var_98]
+asml_39:                                ; ...
+                ;mov    eax, [ebp+l]
 
-loc_8001F88:                            ; ...
-                mov     ecx, [ebp+var_70]
+asml_40:                                ; ...
+                mov     ecx, [ebp+fp]
                 push    ecx
                 push    eax
                 mov     eax, 1
                 push    eax
-                mov     eax, [ebp+var_84]
+                mov     eax, [ebp+buf]
                 push    eax
                 call    fread
-                add     esp, 10h
-                mov     [ebp+var_8C], eax
-                mov     eax, [ebp+var_8C]
-                cmp     eax, 0
-                jz      loc_8001FD1
-                mov     eax, [ebp+var_70]
+                add     esp, 16
+                mov     [ebp+m], eax    ; m = fread(buf, 1, l < (off_t)blk ? (size_t)l : blk, fp);
+                ;mov    eax, [ebp+m]    ; if (!m || feof(fp)) {
+                ;cmp    eax, 0
+                or      eax, eax    
+                jz      asml_41
+                mov     eax, [ebp+fp]
                 push    eax
                 call    feof
                 add     esp, 4
-                cmp     eax, 0
-                jnz     loc_8001FD1
-                jmp     loc_8001FEE
+                ;cmp    eax, 0
+                ;jnz    asml_41
+                ;jmp    asml_42
+                and     eax, eax
+                jz      asml_42   
 ; ---------------------------------------------------------------------------
 
-loc_8001FD1:                            ; ...
-                mov     eax, [ebp+var_6C]
+asml_41:                                ; ...
+                mov     eax, [ebp+fname] ; /* This shouldn't happen unless the file
+                                        ; actually changes while we are reading it. */
                 push    eax
-                mov     eax, offset A_39 ; "`incbin': unexpected EOF while reading "...
+                mov     eax, A_39       ; "`incbin': unexpected EOF while reading "...
                 push    eax
                 mov     eax, 3
                 push    eax
-                call    nasm_error
-                add     esp, 0Ch
-                jmp     loc_8002026
+                call    nasm_error      ; nasm_error(ERR_NONFATAL,
+                                        ;  "`incbin': unexpected EOF while reading file `%s'", fname);
+                add     esp, 12
+                jmp     asml_44         ; goto end_incbin;
 ; ---------------------------------------------------------------------------
 
-loc_8001FEE:                            ; ...
-                mov     eax, [ebp+var_8C]
+asml_42:                                ; ...
+                mov     eax, [ebp+m]
                 push    eax
-                mov     eax, [ebp+var_84]
+                mov     eax, [ebp+buf]
                 push    eax
-                lea     eax, [ebp+var_48]
+                lea     eax, [ebp+_data]
                 push    eax
-                call    out_rawdata
-                add     esp, 0Ch
-                mov     eax, [ebp+var_98]
-                mov     ecx, [ebp+var_8C]
+                call    out_rawdata     ; out_rawdata(&data, buf, m);
+                add     esp, 12
+                mov     eax, [ebp+l]
+                mov     ecx, [ebp+m]
                 sub     eax, ecx
-                mov     [ebp+var_98], eax
-                jmp     loc_8001F44
+                mov     [ebp+l], eax    ; l -= m;
+                jmp     asml_37
 ; ---------------------------------------------------------------------------
 
-loc_8002021:                            ; ...
-                jmp     loc_8001E6F
+;asml_43:                               ; ...
+                ;jmp    asml_33
 ; ---------------------------------------------------------------------------
 
-loc_8002026:                            ; ...
-                mov     eax, [ds:lfmt]
-                add     eax, 14h
-                mov     ecx, 4
+asml_27:
+asml_44:                                ; ...
+                mov     eax, [lfmt]     ; end_incbin:
+                add     eax, 20         ; (lfmt->downlevel = lfmt + 20)
+                mov     ecx, 4          ; LIST_INCBIN = 4
                 push    ecx
-                mov     [ebp+var_9C], eax
-                mov     eax, [ebp+var_9C]
+                ;mov    [ebp+tmp4], eax
+                ;mov    eax, [ebp+tmp4]
                 mov     eax, [eax]
-                call    eax
+                call    eax             ; lfmt->downlevel(LIST_INCBIN);
                 add     esp, 4
-                mov     eax, [ebp+arg_10]
-                add     eax, 178h
+                mov     eax, [ebp+instruction]
+                add     eax, 376        ; if (instruction->times > 1) {
                 mov     ecx, [eax]
                 cmp     ecx, 1
-                jle     loc_80020A0
-                mov     eax, [ds:lfmt]
-                add     eax, 10h
-                mov     ecx, 5
+                jle     asml_45
+                mov     eax, [lfmt]
+                add     eax, 16
+                mov     ecx, 5          ; LIST_TIMES = 5
                 push    ecx
-                mov     [ebp+var_A0], eax
-                mov     eax, [ebp+var_A0]
+                ;mov    [ebp+tmp5], eax
+                ;mov    eax, [ebp+tmp5]
                 mov     eax, [eax]
-                call    eax
+                call    eax             ; lfmt->uplevel(LIST_TIMES);
                 add     esp, 4
-                mov     eax, [ds:lfmt]
-                add     eax, 14h
+                mov     eax, [lfmt]
+                add     eax, 20
                 mov     ecx, 5
                 push    ecx
-                mov     [ebp+var_A4], eax
-                mov     eax, [ebp+var_A4]
+                ;mov    [ebp+tmp6], eax
+                ;mov    eax, [ebp+tmp6]
                 mov     eax, [eax]
-                call    eax
+                call    eax             ; lfmt->downlevel(LIST_TIMES);
                 add     esp, 4
 
-loc_80020A0:                            ; ...
-                mov     eax, [ebp+var_70]
+asml_45:                                ; ...
+                mov     eax, [ebp+fp]   ; if (ferror(fp)) {
                 push    eax
                 call    ferror
                 add     esp, 4
                 cmp     eax, 0
-                jz      loc_80020CD
-                mov     eax, [ebp+var_6C]
+                jz      asml_46
+                mov     eax, [ebp+fname]
                 push    eax
-                mov     eax, offset A_40 ; "`incbin': error while reading file `%s'"
+                mov     eax, A_40       ; "`incbin': error while reading file `%s'"
                 push    eax
                 mov     eax, 3
                 push    eax
-                call    nasm_error
-                add     esp, 0Ch
+                call    nasm_error      ; nasm_error(ERR_NONFATAL,
+                                        ;   "`incbin': error while reading file `%s'", fname);
+                add     esp, 12
 
-loc_80020CD:                            ; ...
-                mov     eax, [ebp+var_84]
-                cmp     eax, 0
-                jz      loc_80020EB
-                mov     eax, [ebp+var_84]
+asml_46:                                ; ...
+                mov     eax, [ebp+buf]  ; close_done:
+                cmp     eax, 0          ; if (buf)
+                jz      asml_47
+                ;mov    eax, [ebp+buf]
                 push    eax
-                call    nasm_free
+                call    nasm_free       ; nasm_free(buf);
                 add     esp, 4
 
-loc_80020EB:                            ; ...
-                mov     eax, [ebp+var_80]
+asml_47:                                ; ...
+                mov     eax, [ebp+map]  ; if (map)
                 cmp     eax, 0
-                jz      loc_8002107
-                mov     eax, [ebp+var_7C]
+                jz      asml_48
+                ;mov    eax, [ebp+len]
+                ;push   eax
+                mov     ecx, [ebp+len]
+                push	ecx 
+                ;mov    eax, [ebp+map]
                 push    eax
-                mov     eax, [ebp+var_80]
-                push    eax
-                call    nasm_unmap_file
+                call    nasm_unmap_file ; nasm_unmap_file(map, len);
                 add     esp, 8
 
-loc_8002107:                            ; ...
-                mov     eax, [ebp+var_70]
+asml_48:                                ; ...
+                mov     eax, [ebp+fp]
                 push    eax
-                call    fclose
+                call    fclose          ; fclose(fp);
                 add     esp, 4
 
-loc_8002113:                            ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 178h
-                mov     ecx, 1
-                mov     [eax], ecx
-                jmp     loc_80024B2
+asml_20:
+asml_49:                                ; ...
+                mov     eax, [ebp+instruction] ; done:
+                add     eax, 376
+                mov     ecx, 1		; /* Tell the upper layer not to iterate */
+                mov     [eax], ecx      ; instruction->times = 1;
+                jmp     asml_83
 ; ---------------------------------------------------------------------------
 
-loc_8002128:                            ; ...
-                mov     eax, [ebp+arg_C]
+asml_50:                                ; ...
+                mov     eax, [ebp+_bits] ; } else {
+                push    eax             ; /* "Real" instruction */
+                mov     eax, [ebp+instruction] ; /* Check to see if we need an address-size prefix */
                 push    eax
-                mov     eax, [ebp+arg_10]
-                push    eax
-                call    add_asp
+                call    add_asp         ; add_asp(instruction, bits);
                 add     esp, 8
-                mov     eax, [ebp+arg_C]
+                mov     eax, [ebp+_bits]
                 push    eax
-                mov     eax, [ebp+var_48]
-                mov     ecx, [ebp+var_44]
+                mov     eax, [ebp+_data]
+                mov     ecx, [ebp+_data_offs_h]
                 push    ecx
                 push    eax
-                mov     eax, [ebp+var_40]
+                mov     eax, [ebp+data_segment]
                 push    eax
-                mov     eax, [ebp+arg_10]
+                mov     eax, [ebp+instruction]
                 push    eax
-                lea     eax, [ebp+var_4C]
+                lea     eax, [ebp+temp]
                 push    eax
                 call    find_match
-                add     esp, 18h
-                mov     [ebp+var_50], eax
-                mov     eax, [ebp+var_50]
-                cmp     eax, 10h
-                jnz     loc_800225F
-                mov     eax, [ebp+var_4C]
+                add     esp, 24
+                mov     [ebp+_m], eax   ; m = find_match(&temp, instruction, data.segment, data.offset, bits);
+                ;mov    eax, [ebp+_m]   ; if (m == MOK_GOOD) {
+                cmp     eax, 16         ; MOK_GOOD = 16
+                jnz     asml_60         ;  } else {  /* No match */
+                mov     eax, [ebp+temp] ; /* Matches! */
                 push    eax
-                mov     eax, [ebp+arg_10]
+                mov     eax, [ebp+instruction]
                 push    eax
-                mov     eax, [ebp+arg_C]
+                mov     eax, [ebp+_bits]
                 push    eax
-                mov     eax, [ebp+var_48]
-                mov     ecx, [ebp+var_44]
+                mov     eax, [ebp+_data]
+                mov     ecx, [ebp+_data_offs_h]
                 push    ecx
                 push    eax
-                mov     eax, [ebp+var_40]
+                mov     eax, [ebp+data_segment]
                 push    eax
                 call    calcsize
-                add     esp, 18h
-                mov     [ebp+var_B0], eax
-                mov     [ebp+var_AC], edx
-                mov     eax, [ebp+var_AC]
-                cmp     eax, 0
-                jl      loc_80021BC
-                jnz     loc_80021B7
-                mov     eax, [ebp+var_B0]
-                cmp     eax, 0
-                jb      loc_80021BC
+                add     esp, 24
+                mov     [ebp+insn_size], eax ; int64_t insn_size =
+                                        ;      calcsize(data.segment, data.offset, bits, instruction, temp);
+                mov     [ebp+insn_size_h], edx
+                ;mov    eax, [ebp+insn_size_h]
+                ;cmp    eax, 0
+                cmp     edx, 0  
+                jl      asml_52 ; (edx:eax < 0)
+                ;jnz    asml_51 ; (edx:eax >= 0)
+                ;mov    eax, [ebp+insn_size] ; nasm_assert(insn_size >= 0);
+                ;cmp    eax, 0
+                ;jb     asml_52
 
-loc_80021B7:                            ; ...
-                jmp     loc_80021C1
+;asml_51:                               ; ...
+                jmp     asml_53 ; (edx:eax >= 0)
 ; ---------------------------------------------------------------------------
 
-loc_80021BC:                            ; ...
-                jmp     loc_80021C6
+asml_52:                                ; ...
+                ;jmp    asml_54
 ; ---------------------------------------------------------------------------
 
-loc_80021C1:                            ; ...
-                jmp     loc_80021E0
+;asml_53:                                ; ...
+                ;jmp    asml_55
 ; ---------------------------------------------------------------------------
 
-loc_80021C6:                            ; ...
-                mov     eax, offset A_42 ; "insn_size >= 0"
+asml_54:                                ; ...
+                mov     eax, A_42       ; "insn_size >= 0"
                 push    eax
-                mov     eax, 2EAh
+                mov     eax, 746        ; ('assemble.c', line 746)
                 push    eax
-                mov     eax, offset A_41 ; "assemble.c"
+                mov     eax, A_41       ; "assemble.c"
                 push    eax
                 call    nasm_assert_failed
-                add     esp, 0Ch
+                add     esp, 12
 
-loc_80021E0:                            ; ...
-                mov     eax, [ebp+var_4C]
-                mov     [ebp+var_20], eax
-                mov     eax, [ebp+arg_C]
-                mov     [ebp+var_2C], eax
+asml_51:
+asml_53:
+asml_55:                                ; ...
+                mov     eax, [ebp+temp]
+                mov     [ebp+data_itemp], eax ; data.itemp = temp;
+                mov     eax, [ebp+_bits]
+                mov     [ebp+data_bits], eax ; data.bits = bits;
                 mov     eax, 0
-                mov     [ebp+var_30], eax
-                mov     eax, [ebp+var_B0]
-                mov     [ebp+var_34], eax
-                mov     eax, [ebp+arg_10]
+                mov     [ebp+data_insoffs], eax ; data.insoffs = 0;
+                mov     eax, [ebp+insn_size]
+                mov     [ebp+data_inslen], eax ; data.inslen = insn_size;
+                mov     eax, [ebp+instruction]
                 push    eax
-                lea     eax, [ebp+var_48]
+                lea     eax, [ebp+_data]
                 push    eax
-                call    gencode
+                call    gencode         ; gencode(&data, instruction);
                 add     esp, 8
-                mov     eax, [ebp+var_30]
+                mov     eax, [ebp+data_insoffs] ; nasm_assert(data.insoffs == insn_size);
                 mov     ecx, eax
-                sar     ecx, 1Fh
-                mov     edx, [ebp+var_AC]
+                sar     ecx, 31         ; (extend 32bit signed value to 64bit signed value)
+                mov     edx, [ebp+insn_size_h]
                 cmp     ecx, edx
-                jnz     loc_8002236
-                mov     ecx, [ebp+var_B0]
+                jnz     asml_56 ; (ecx:eax <> insn_size)
+                mov     ecx, [ebp+insn_size]
                 cmp     eax, ecx
-                jnz     loc_8002236
-                jmp     loc_800223B
+                jnz     asml_56 ; (ecx:eax <> insn_size)
+                jmp     asml_57 ; (ecx:eax = insn_size)
 ; ---------------------------------------------------------------------------
 
-loc_8002236:                            ; ...
-                jmp     loc_8002240
+;asml_56:                                ; ...
+                ;jmp    asml_58
 ; ---------------------------------------------------------------------------
 
-loc_800223B:                            ; ...
-                jmp     loc_800225A
+;asml_57:                               ; ...
+                ;jmp    asml_59
 ; ---------------------------------------------------------------------------
 
-loc_8002240:                            ; ...
-                mov     eax, offset A_44 ; "data.insoffs == insn_size"
+asml_56:
+asml_58:                                ; ...
+                mov     eax, A_44       ; "data.insoffs == insn_size"
                 push    eax
-                mov     eax, 2F2h
+                mov     eax, 754        ; ('assemble.c' file, line 754)
                 push    eax
-                mov     eax, offset A_43 ; "assemble.c"
+                mov     eax, A_43       ; "assemble.c"
                 push    eax
                 call    nasm_assert_failed
-                add     esp, 0Ch
-
-loc_800225A:                            ; ...
-                jmp     loc_80024B2
+                add     esp, 12
+;asml_57:
+;asml_59:                               ; ...
+                jmp     asml_83
 ; ---------------------------------------------------------------------------
 
-loc_800225F:                            ; ...
-                jmp     loc_8002401
+;asml_60:                               ; ...
+                ;jmp    asml_78         ; } else {
+                                        ; /* No match */
+                                        ; switch (m) {
 ; ---------------------------------------------------------------------------
 
-loc_8002264:                            ; ...
-                mov     eax, offset A_45 ; "operation size not specified"
+asml_61:                                ; ...
+                mov     eax, A_45       ; "operation size not specified"
+                ;push   eax             ; case MERR_OPSIZEMISSING:
+                ;mov    eax, 3
+                ;push   eax
+                ;call   nasm_error      ; nasm_error(ERR_NONFATAL, "operation size not specified");
+                ;add    esp, 8
+                ;jmp    asml_82         ; break;
+                jmp     asml_85
+; ---------------------------------------------------------------------------
+
+asml_62:                                ; ...
+                mov     eax, A_46       ; "mismatch in operand sizes"
+                ;push   eax             ; case MERR_OPSIZEMISMATCH:
+                ;mov    eax, 3
+                ;push   eax
+                ;call   nasm_error      ; nasm_error(ERR_NONFATAL, "mismatch in operand sizes");
+                ;add    esp, 8
+                ;jmp    asml_82         ; break;
+                jmp     asml_85
+; ---------------------------------------------------------------------------
+
+asml_63:                                ; ...
+                mov     eax, A_47       ; "broadcast not permitted on this operand"
+                ;push   eax             ; case MERR_BRNOTHERE:
+                ;mov    eax, 3
+                ;push   eax
+                ;call   nasm_error      ; nasm_error(ERR_NONFATAL,
+                ;                       ;            "broadcast not permitted on this operand");
+                ;add    esp, 8
+                ;jmp    asml_82
+                jmp     asml_85
+; ---------------------------------------------------------------------------
+
+asml_64:                                ; ...
+                mov     eax, A_48       ; "mismatch in the number of broadcasting "...
+                ;push   eax             ; case MERR_BRNUMMISMATCH:
+                ;mov    eax, 3
+                ;push   eax
+                ;call   nasm_error      ; nasm_error(ERR_NONFATAL,
+                ;                       ;            "mismatch in the number of broadcasting elements");
+                ;add    esp, 8
+                ;jmp    asml_82         ; break;
+                jmp     asml_85
+; ---------------------------------------------------------------------------
+
+asml_65:                                ; ...
+                mov     eax, A_49       ; "mask not permitted on this operand"
+                ;push   eax             ; case MERR_MASKNOTHERE:
+                ;mov    eax, 3
+                ;push   eax
+                ;call   nasm_error      ; nasm_error(ERR_NONFATAL,
+                ;                       ;            "mask not permitted on this operand");
+                ;add    esp, 8
+                ;jmp    asml_82
+                jmp     asml_85
+; ---------------------------------------------------------------------------
+
+asml_66:                                ; ...
+                mov     eax, A_50       ; "unsupported mode decorator for instruct"...
+                ;push   eax             ; case MERR_DECONOTHERE:
+                ;mov    eax, 3
+                ;push   eax
+                ;call   nasm_error      ; nasm_error(ERR_NONFATAL,
+                ;                       ;            "unsupported mode decorator for instruction");
+                ;add    esp, 8
+                ;jmp    asml_82
+                jmp     asml_85
+; ---------------------------------------------------------------------------
+
+asml_67:                                ; ...
+                mov     eax, A_51       ; "no instruction for this cpu level"
+                ;push   eax             ; case MERR_BADCPU:
+                ;mov    eax, 3
+                ;push   eax
+                ;call   nasm_error      ; nasm_error(ERR_NONFATAL, "no instruction for this cpu level");
+                ;add    esp, 8
+                ;jmp    asml_82         ; break;
+                jmp     asml_85
+; ---------------------------------------------------------------------------
+
+asml_68:                                ; ...
+                mov     eax, [ebp+_bits] ; case MERR_BADMODE:
+                push    eax
+                mov     eax, A_52       ; "instruction not supported in %d-bit mod"...
                 push    eax
                 mov     eax, 3
                 push    eax
-                call    nasm_error
-                add     esp, 8
-                jmp     loc_80024A2
+                call    nasm_error      ; nasm_error(ERR_NONFATAL,
+                                        ;            "instruction not supported in %d-bit mode", bits);
+                add     esp, 12
+                jmp     asml_82
 ; ---------------------------------------------------------------------------
 
-loc_800227D:                            ; ...
-                mov     eax, offset A_46 ; "mismatch in operand sizes"
-                push    eax
-                mov     eax, 3
-                push    eax
-                call    nasm_error
-                add     esp, 8
-                jmp     loc_80024A2
+asml_69:                                ; ...
+                mov     eax, A_53       ; "specific encoding scheme not available"
+                ;push   eax             ; case MERR_ENCMISMATCH:
+                ;mov    eax, 3
+                ;push   eax
+                ;call   nasm_error      ; nasm_error(ERR_NONFATAL, "specific encoding scheme not available");
+                ;add    esp, 8
+                ;jmp    asml_82
+                jmp     asml_85
 ; ---------------------------------------------------------------------------
 
-loc_8002296:                            ; ...
-                mov     eax, offset A_47 ; "broadcast not permitted on this operand"
-                push    eax
-                mov     eax, 3
-                push    eax
-                call    nasm_error
-                add     esp, 8
-                jmp     loc_80024A2
+asml_70:                                ; ...
+                mov     eax, A_54       ; "bnd prefix is not allowed"
+                ;push   eax             ; case MERR_BADBND:
+                ;mov    eax, 3
+                ;push   eax
+                ;call   nasm_error      ; nasm_error(ERR_NONFATAL, "bnd prefix is not allowed");
+                ;add    esp, 8
+                ;jmp    asml_82         ; break;
+                jmp     asml_85
 ; ---------------------------------------------------------------------------
 
-loc_80022AF:                            ; ...
-                mov     eax, offset A_48 ; "mismatch in the number of broadcasting "...
+asml_71:                                ; ...
+                mov     eax, 252        ; nasm_error(ERR_NONFATAL, "%s prefix is not allowed",
+                                        ;  (has_prefix(instruction, PPS_REP, P_REPNE) ? "repne" : "repnz"));
+                push    eax             ; P_REPNE
+                mov     eax, 1          ; PPS_REP
                 push    eax
-                mov     eax, 3
-                push    eax
-                call    nasm_error
-                add     esp, 8
-                jmp     loc_80024A2
-; ---------------------------------------------------------------------------
-
-loc_80022C8:                            ; ...
-                mov     eax, offset A_49 ; "mask not permitted on this operand"
-                push    eax
-                mov     eax, 3
-                push    eax
-                call    nasm_error
-                add     esp, 8
-                jmp     loc_80024A2
-; ---------------------------------------------------------------------------
-
-loc_80022E1:                            ; ...
-                mov     eax, offset A_50 ; "unsupported mode decorator for instruct"...
-                push    eax
-                mov     eax, 3
-                push    eax
-                call    nasm_error
-                add     esp, 8
-                jmp     loc_80024A2
-; ---------------------------------------------------------------------------
-
-loc_80022FA:                            ; ...
-                mov     eax, offset A_51 ; "no instruction for this cpu level"
-                push    eax
-                mov     eax, 3
-                push    eax
-                call    nasm_error
-                add     esp, 8
-                jmp     loc_80024A2
-; ---------------------------------------------------------------------------
-
-loc_8002313:                            ; ...
-                mov     eax, [ebp+arg_C]
-                push    eax
-                mov     eax, offset A_52 ; "instruction not supported in %d-bit mod"...
-                push    eax
-                mov     eax, 3
-                push    eax
-                call    nasm_error
-                add     esp, 0Ch
-                jmp     loc_80024A2
-; ---------------------------------------------------------------------------
-
-loc_8002330:                            ; ...
-                mov     eax, offset A_53 ; "specific encoding scheme not available"
-                push    eax
-                mov     eax, 3
-                push    eax
-                call    nasm_error
-                add     esp, 8
-                jmp     loc_80024A2
-; ---------------------------------------------------------------------------
-
-loc_8002349:                            ; ...
-                mov     eax, offset A_54 ; "bnd prefix is not allowed"
-                push    eax
-                mov     eax, 3
-                push    eax
-                call    nasm_error
-                add     esp, 8
-                jmp     loc_80024A2
-; ---------------------------------------------------------------------------
-
-loc_8002362:                            ; ...
-                mov     eax, 0FCh
-                push    eax
-                mov     eax, 1
-                push    eax
-                mov     eax, [ebp+arg_10]
+                mov     eax, [ebp+instruction]
                 push    eax
                 call    has_prefix
-                add     esp, 0Ch
+                add     esp, 12
                 cmp     eax, 0
-                jz      loc_8002388
-                jmp     loc_8002392
+                ;jz     asml_72
+                ;jmp    asml_73
+                jnz     asml_73
 ; ---------------------------------------------------------------------------
 
-loc_8002388:                            ; ...
-                mov     eax, offset A_57 ; "repnz"
-                jmp     loc_8002397
+asml_72:                                ; ...
+                mov     eax, A_57       ; "repnz"
+                jmp     asml_74
 ; ---------------------------------------------------------------------------
 
-loc_8002392:                            ; ...
-                mov     eax, offset A_56 ; "repne"
+asml_73:                                ; ...
+                mov     eax, A_56       ; "repne"
 
-loc_8002397:                            ; ...
+asml_74:                                ; ...
                 push    eax
-                mov     eax, offset A_55 ; "%s prefix is not allowed"
+                mov     eax, A_55       ; "%s prefix is not allowed"
                 push    eax
-                mov     eax, 3
+                mov     eax, 3          ; ERR_NONFATAL
                 push    eax
                 call    nasm_error
-                add     esp, 0Ch
-                jmp     loc_80024A2
+                add     esp, 12
+                jmp     asml_82
 ; ---------------------------------------------------------------------------
 
-loc_80023B1:                            ; ...
-                mov     eax, offset A_58 ; "invalid register set size"
-                push    eax
+asml_75:                                ; ...
+                mov     eax, A_58       ; "invalid register set size"
+                ;push   eax             ; case MERR_REGSETSIZE:
+                ;mov    eax, 3
+                ;push   eax
+                ;call   nasm_error      ; nasm_error(ERR_NONFATAL, "invalid register set size");
+                ;add    esp, 8
+                ;jmp    asml_82         ; break;
+                jmp     asml_85
+; ---------------------------------------------------------------------------
+
+asml_76:                                ; ...
+                mov     eax, A_59       ; "register set not valid for operand"
+                ;push   eax             ; case MERR_REGSET:
+                ;mov    eax, 3
+                ;push   eax
+                ;call   nasm_error      ; nasm_error(ERR_NONFATAL, "register set not valid for operand");
+                ;add    esp, 8
+                ;jmp    asml_82         ; break;
+                jmp     asml_85
+; ---------------------------------------------------------------------------
+
+asml_77:                                ; ...
+                mov     eax, A_60       ; "invalid combination of opcode and opera"...
+asml_85:
+                push    eax             ; (case) default:
                 mov     eax, 3
                 push    eax
-                call    nasm_error
+                call    nasm_error      ; nasm_error(ERR_NONFATAL,
+                                        ;            "invalid combination of opcode and operands");
                 add     esp, 8
-                jmp     loc_80024A2
+                jmp     asml_82         ; break;
+; ---------------------------------------------------------------------------
+                ;jmp    asml_82
 ; ---------------------------------------------------------------------------
 
-loc_80023CA:                            ; ...
-                mov     eax, offset A_59 ; "register set not valid for operand"
-                push    eax
-                mov     eax, 3
-                push    eax
-                call    nasm_error
-                add     esp, 8
-                jmp     loc_80024A2
-; ---------------------------------------------------------------------------
-
-loc_80023E3:                            ; ...
-                mov     eax, offset A_60 ; "invalid combination of opcode and opera"...
-                push    eax
-                mov     eax, 3
-                push    eax
-                call    nasm_error
-                add     esp, 8
-                jmp     loc_80024A2
-; ---------------------------------------------------------------------------
-                jmp     loc_80024A2
-; ---------------------------------------------------------------------------
-
-loc_8002401:                            ; ...
-                mov     eax, [ebp+var_50]
+asml_60:
+asml_78:                                ; ...
+                mov     eax, [ebp+_m]   ; switch (m) {
                 cmp     eax, 7
-                ja      loc_8002459
-                cmp     eax, 7
-                jnb     loc_80022FA
-                cmp     eax, 4
-                ja      loc_8002445
-                cmp     eax, 4
-                jnb     loc_80022AF
-                cmp     eax, 1
-                jz      loc_8002264
-                cmp     eax, 2
-                jz      loc_800227D
-                cmp     eax, 3
-                jz      loc_8002296
-                jmp     short loc_80023E3
+                ja      asml_80
+                ;cmp    eax, 7          ; case MERR_BADCPU:
+                ;jnb    asml_67
+                je      asml_67  
+                ;cmp    eax, 4
+                cmp     al, 4
+                ja      asml_79
+                ;cmp    eax, 4          ; case MERR_BRNUMMISMATCH:
+                ;jnb    asml_64
+                je      asml_64
+                ;cmp    eax, 1          ; case MERR_OPSIZEMISSING:
+                cmp     al, 1  
+                jz      asml_61
+                ;cmp    eax, 2          ; case MERR_OPSIZEMISMATCH:
+                cmp     al, 2  
+                jz      asml_62
+                ;cmp    eax, 3          ; case MERR_BRNOTHERE:
+                cmp     al, 3 
+                jz      asml_63
+                jmp     short asml_77
 ; ---------------------------------------------------------------------------
 
-loc_8002445:                            ; ...
-                cmp     eax, 5
-                jz      loc_80022C8
-                cmp     eax, 6
-                jz      loc_80022E1
-                jmp     short loc_80023E3
+asml_79:                                ; ...
+                ;cmp    eax, 5          ; case MERR_MASKNOTHERE:
+                cmp     al, 5 
+                jz      asml_65
+                ;cmp    eax, 6          ; case MERR_DECONOTHERE:
+                cmp     al, 6
+                jz      asml_66
+                jmp     short asml_77
 ; ---------------------------------------------------------------------------
 
-loc_8002459:                            ; ...
-                cmp     eax, 0Ch
-                ja      loc_800248B
-                cmp     eax, 0Ch
-                jnb     loc_8002362
-                cmp     eax, 8
-                jz      loc_8002313
-                cmp     eax, 0Ah
-                jz      loc_8002330
-                cmp     eax, 0Bh
-                jz      loc_8002349
-                jmp     loc_80023E3
+asml_80:                                ; ...
+                cmp     eax, 12
+                ja      asml_81
+                ;cmp    eax, 12         ; case MERR_BADREPNE:
+                ;jnb    asml_71
+                je      asml_71    
+                ;cmp    eax, 8          ; case MERR_BADMODE:
+                cmp     al, 8   
+                jz      asml_68
+                ;cmp    eax, 10         ; case MERR_ENCMISMATCH:
+                cmp     al, 10 
+                jz      asml_69
+                ;cmp    eax, 11         ; case MERR_BADBND:
+                cmp     al, 11  
+                jz      asml_70
+                jmp     asml_77
 ; ---------------------------------------------------------------------------
 
-loc_800248B:                            ; ...
-                cmp     eax, 0Dh
-                jz      loc_80023B1
-                cmp     eax, 0Eh
-                jz      loc_80023CA
-                jmp     loc_80023E3
+asml_81:                                ; ...
+                cmp     eax, 13         ; case MERR_REGSETSIZE:
+                jz      asml_75
+                cmp     eax, 14         ; case MERR_REGSET:
+                jz      asml_76
+                jmp     asml_77         ; (case) default:
 ; ---------------------------------------------------------------------------
 
-loc_80024A2:                            ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 178h
+asml_82:                                ; ...
+                mov     eax, [ebp+instruction] ; instruction->times = 1;
+                                        ; /* Avoid repeated error messages */
+                add     eax, 376
                 mov     ecx, 1
                 mov     [eax], ecx
 
-loc_80024B2:                            ; ...
-                mov     eax, [ebp+var_48]
-                mov     ecx, [ebp+arg_4]
+asml_18:
+asml_57:
+asml_59:
+asml_83:                                ; ...
+                mov     eax, [ebp+_data] ; return data.offset - start;
+                mov     ecx, [ebp+_start]
                 sub     eax, ecx
-                mov     ecx, [ebp+var_44]
-                mov     edx, [ebp+arg_8]
-                sbb     ecx, edx
-                mov     [ebp+var_B8], eax
-                mov     [ebp+var_B4], ecx
-                mov     eax, [ebp+var_B8]
-                mov     edx, [ebp+var_B4]
+                ;mov    ecx, [ebp+_data_offs_h]
+                ;mov    edx, [ebp+_start_h]
+                ;sbb    ecx, edx
+                ;mov    [ebp+tmp7], eax
+                ;mov    [ebp+tmp7_h], ecx
+                ;mov    eax, [ebp+tmp7]
+                ;mov    edx, [ebp+tmp7_h]
+                mov     edx, [ebp+_data_offs_h]
+                mov     ecx, [ebp+_start_h]
+                sbb     edx, ecx
 
-locret_80024DA:                         ; ...
+asml_84:                                ; ...
                 leave
                 retn
-endp            assemble
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -15085,132 +15265,132 @@ ends            _text
 
 ; %include 'asmldata.asm'
 
-A_10:    db 'invalid %s prefix',0 ; ...
-A_11:    db 'byte',0             ; ...
-A_94:
-A_12:    db 'word',0             ; ...
-A_95:
-A_13:    db 'dword',0            ; ...
-A_14:    db 'qword',0            ; ...
-A_15:    db 'tword',0            ; ...
-A_16:    db 'oword',0            ; ...
-A_17:    db 'yword',0            ; ...
-A_18:    db 'zword',0            ; ...
-A_19:    db '???',0              ; ...
-A_20:    db '%s data exceeds bounds',0 ; ...
-A_61:
-A_43:
-A_41:
-A_25:
-A_23:
-A_21:    db 'assemble.c',0       ; ...
+;A_ 10:    db 'invalid %s prefix',0 ; ...
+;A_ 11:    db 'byte',0             ; ...
+;A_ 94:
+;A_ 12:    db 'word',0             ; ...
+;A_ 95:
+;A_ 13:    db 'dword',0            ; ...
+;A_ 14:    db 'qword',0            ; ...
+;A_ 15:    db 'tword',0            ; ...
+;A_ 16:    db 'oword',0            ; ...
+;A_ 17:    db 'yword',0            ; ...
+;A_ 18:    db 'zword',0            ; ...
+;A_ 19:    db '???',0              ; ...
+;A_ 20:    db '%s data exceeds bounds',0 ; ...
+;A_ 61:
+;A_ 43:
+;A_ 41:
+;A_ 25:
+;A_ 23:
+;A_ 21:    db 'assemble.c',0       ; ...
 
-align 4
+;align 4
 
-lineno:  dd 0                    ; ...
-lnfname: dd 0                    ; ...
+;lineno:  dd 0                     ; ...
+;lnfname: dd 0                     ; ...
 
-;A_23:   db 'assemble.c',0       ; ...
-A_24:    db 'data->size <= 8',0  ; ...
-;A_25:   db 'assemble.c',0       ; ...
-A_26:    db 'data->size <= 8',0  ; ...
-A_27:    db '%u-bit signed relocation unsupported by output format %s',0 ; ...
-A_28:    db '%u-bit %s relocation zero-extended from %u bits',0 ; ...
-A_29:    db 'segment',0          ; ...
-A_30:    db 'unsigned',0         ; ...
-A_31:    db 'segment references cannot be relative',0 ; ...
-A_32:    db 'segment reference must be 16 bits',0 ; ...
-A_33:    db 'invalid use of self-relative expression',0 ; ...
-A_34:    db 'jmp short does not init bnd regs - bnd prefix dropped.',0 ; ...
-A_35:    db 'integer supplied to a DT, DO, DY or DZ instruction',0 ; ...
-A_36:    db '`incbin',27h,': unable to open file `%s',27h,0 ; ...
-A_63:
-A_37:    db '`incbin',27h,': unable to get length of file `%s',27h,0 ; ...
-A_38:    db '`incbin',27h,': unable to seek on file `%s',27h,0 ; ...
-A_39:    db '`incbin',27h,': unexpected EOF while reading file `%s',27h,0 ; ...
-A_40:    db '`incbin',27h,': error while reading file `%s',27h,0 ; ...
-;A_41:   db 'assemble.c',0       ; ...
-A_42:    db 'insn_size >= 0',0   ; ...
-;A_43:   db 'assemble.c',0       ; ...
-A_44:    db 'data.insoffs == insn_size',0 ; ...
-A_45:    db 'operation size not specified',0 ; ...
-A_46:    db 'mismatch in operand sizes',0 ; ...
-A_47:    db 'broadcast not permitted on this operand',0 ; ...
-A_48:    db 'mismatch in the number of broadcasting elements',0 ; ...
-A_49:    db 'mask not permitted on this operand',0 ; ...
-A_50:    db 'unsupported mode decorator for instruction',0 ; ...
-A_51:    db 'no instruction for this cpu level',0 ; ...
-A_52:    db 'instruction not supported in %d-bit mode',0 ; ...
-A_53:    db 'specific encoding scheme not available',0 ; ...
-A_54:    db 'bnd prefix is not allowed',0 ; ...
-A_55:    db '%s prefix is not allowed',0 ; ...
-A_56:    db 'repne',0            ; ...
-A_57:    db 'repnz',0            ; ...
-A_58:    db 'invalid register set size',0 ; ...
-A_59:    db 'register set not valid for operand',0 ; ...
-A_60:    db 'invalid combination of opcode and operands',0 ; ...
-;A_61:   db 'assemble.c',0       ; ...
-A_62:    db 'wsize > 0',0        ; ...
-;A_63:   db '`incbin',27h,': unable to get length of file `%s',27h,0 ; ...
+;;A_ 23:   db 'assemble.c',0       ; ...
+;A_ 24:    db 'data->size <= 8',0  ; ...
+;;A_ 25:   db 'assemble.c',0       ; ...
+;A_ 26:    db 'data->size <= 8',0  ; ...
+;A_ 27:    db '%u-bit signed relocation unsupported by output format %s',0 ; ...
+;A_ 28:    db '%u-bit %s relocation zero-extended from %u bits',0 ; ...
+;A_ 29:    db 'segment',0          ; ...
+;A_ 30:    db 'unsigned',0         ; ...
+;A_ 31:    db 'segment references cannot be relative',0 ; ...
+;A_ 32:    db 'segment reference must be 16 bits',0 ; ...
+;A_ 33:    db 'invalid use of self-relative expression',0 ; ...
+;A_ 34:    db 'jmp short does not init bnd regs - bnd prefix dropped.',0 ; ...
+;A_ 35:    db 'integer supplied to a DT, DO, DY or DZ instruction',0 ; ...
+;A_ 36:    db '`incbin',27h,': unable to open file `%s',27h,0 ; ...
+;A_ 63:
+;A_ 37:    db '`incbin',27h,': unable to get length of file `%s',27h,0 ; ...
+;A_ 38:    db '`incbin',27h,': unable to seek on file `%s',27h,0 ; ...
+;A_ 39:    db '`incbin',27h,': unexpected EOF while reading file `%s',27h,0 ; ...
+;A_ 40:    db '`incbin',27h,': error while reading file `%s',27h,0 ; ...
+;;A_ 41:   db 'assemble.c',0       ; ...
+;A_ 42:    db 'insn_size >= 0',0   ; ...
+;;A_ 43:   db 'assemble.c',0       ; ...
+;A_ 44:    db 'data.insoffs == insn_size',0 ; ...
+;A_ 45:    db 'operation size not specified',0 ; ...
+;A_ 46:    db 'mismatch in operand sizes',0 ; ...
+;A_ 47:    db 'broadcast not permitted on this operand',0 ; ...
+;A_ 48:    db 'mismatch in the number of broadcasting elements',0 ; ...
+;A_ 49:    db 'mask not permitted on this operand',0 ; ...
+;A_ 50:    db 'unsupported mode decorator for instruction',0 ; ...
+;A_ 51:    db 'no instruction for this cpu level',0 ; ...
+;A_ 52:    db 'instruction not supported in %d-bit mode',0 ; ...
+;A_ 53:    db 'specific encoding scheme not available',0 ; ...
+;A_ 54:    db 'bnd prefix is not allowed',0 ; ...
+;A_ 55:    db '%s prefix is not allowed',0 ; ...
+;A_ 56:    db 'repne',0            ; ...
+;A_ 57:    db 'repnz',0            ; ...
+;A_ 58:    db 'invalid register set size',0 ; ...
+;A_ 59:    db 'register set not valid for operand',0 ; ...
+;A_ 60:    db 'invalid combination of opcode and operands',0 ; ...
+;;A_ 61:   db 'assemble.c',0       ; ...
+;A_ 62:    db 'wsize > 0',0        ; ...
+;;A_ 63:   db '`incbin',27h,': unable to get length of file `%s',27h,0 ; ...
 
-align 4
+;align 4
 
-warn:    dd 2                    ; ...
-         dd 2
-         dd 0
-         dd 1
-         dd 2
-         dd 0
-         dd 0
-         dd 1
+;warn:    dd 2                     ; ...
+;         dd 2
+;         dd 0
+;         dd 1
+;         dd 2
+;         dd 0
+;         dd 0
+;         dd 1
 
-A_64:    db '%s with this instruction requires lock',0 ; ...
-A_65:    db '%s invalid with this instruction',0 ; ...
-A_67:
-A_66:    db 'invalid operand size prefix',0 ; ...
-;A_67:   db 'invalid operand size prefix',0 ; ...
-A_68:    db 'attempt to reserve non-constant quantity of BSS space',0 ; ...
-A_69:    db 'forward reference in RESx can have unpredictable results',0 ; ...
-A_98:
-A_70:    db '%s',0               ; ...
-A_71:    db 'internal instruction table corrupt: instruction code \%o (0x%02X) given',0
-A_72:    db 'instruction cannot use high registers',0 ; ...
-A_73:    db 'cannot use high register in AVX instruction',0 ; ...
-A_74:    db 'invalid operands in non-64-bit mode',0 ; ...
-A_75:    db 'invalid high-16 register in non-AVX-512',0 ; ...
-A_76:    db 'cannot use high register in rex instruction',0 ; ...
-A_77:    db 'invalid operands in non-64-bit mode',0 ; ...
-A_78:    db 'instruction is not lockable',0 ; ...
-A_79:    db 'cs segment base generated, but will be ignored in 64-bit mode',0 ; ...
-A_80:    db 'ds segment base generated, but will be ignored in 64-bit mode',0 ; ...
-A_81:    db 'es segment base generated, but will be ignored in 64-bit mode',0 ; ...
-A_82:    db 'ss segment base generated, but will be ignored in 64-bit mode',0 ; ...
-A_83:    db 'segr6 and segr7 cannot be used as prefixes',0 ; ...
-A_84:    db '16-bit addressing is not supported in 64-bit mode',0 ; ...
-A_85:    db '64-bit addressing is only supported in 64-bit mode',0 ; ...
-A_86:    db 'invalid instruction prefix',0 ; ...
-A_87:    db 'short jump is out of range',0 ; ...
-A_88:    db 'value referenced by FAR is not relocatable',0 ; ...
-A_89:    db 'non-absolute expression not permitted as argument %d',0 ; ...
-A_90:    db 'is4 argument exceeds bounds',0 ; ...
-A_91:    db 'signed dword immediate exceeds bounds',0 ; ...
-A_92:    db '%s value exceeds bounds',0 ; ...
-A_93:    db 'signed byte',0      ; ...
-;A_94:   db 'word',0             ; ...
-;A_95:   db 'dword',0            ; ...
-A_96:    db 'signed dword',0     ; ...
-A_97:    db 'non-constant BSS size in pass two',0 ; ...
-;A_98:   db '%s',0               ; ...
-A_99:    db 'internal instruction table corrupt: instruction code \%o (0x%02X) given',0
-A_100:   db 'invalid operand passed to regflag()',0 ; ...
-A_101:   db 'invalid operand passed to regval()',0 ; ...
-A_102:   db 'invalid operand passed to op_rexflags()',0 ; ...
-A_103:   db 'size of broadcasting element is greater than 64 bits',0 ; ...
-A_104:   db 'invalid effective address',0 ; ...
-A_105:   db 'broadcast not allowed with register operand',0 ; ...
-A_106:   db 'embedded rounding is available only with register-register operations',0
-A_107:   db 'absolute address can not be RIP-relative',0 ; ...
-A_108:   db 'RIP-relative addressing is prohibited for MIB',0 ; ...
-A_109:   db 'displacement size ignored on absolute address',0 ; ...
-A_110:   db 'impossible combination of address sizes',0 ; ...
+;A_ 64:    db '%s with this instruction requires lock',0 ; ...
+;A_ 65:    db '%s invalid with this instruction',0 ; ...
+;A_ 67:
+;A_ 66:    db 'invalid operand size prefix',0 ; ...
+;;A_ 67:   db 'invalid operand size prefix',0 ; ...
+;A_ 68:    db 'attempt to reserve non-constant quantity of BSS space',0 ; ...
+;A_ 69:    db 'forward reference in RESx can have unpredictable results',0 ; ...
+;A_ 98:
+;A_ 70:    db '%s',0               ; ...
+;A_ 71:    db 'internal instruction table corrupt: instruction code \%o (0x%02X) given',0
+;A_ 72:    db 'instruction cannot use high registers',0 ; ...
+;A_ 73:    db 'cannot use high register in AVX instruction',0 ; ...
+;A_ 74:    db 'invalid operands in non-64-bit mode',0 ; ...
+;A_ 75:    db 'invalid high-16 register in non-AVX-512',0 ; ...
+;A_ 76:    db 'cannot use high register in rex instruction',0 ; ...
+;A_ 77:    db 'invalid operands in non-64-bit mode',0 ; ...
+;A_ 78:    db 'instruction is not lockable',0 ; ...
+;A_ 79:    db 'cs segment base generated, but will be ignored in 64-bit mode',0 ; ...
+;A_ 80:    db 'ds segment base generated, but will be ignored in 64-bit mode',0 ; ...
+;A_ 81:    db 'es segment base generated, but will be ignored in 64-bit mode',0 ; ...
+;A_ 82:    db 'ss segment base generated, but will be ignored in 64-bit mode',0 ; ...
+;A_ 83:    db 'segr6 and segr7 cannot be used as prefixes',0 ; ...
+;A_ 84:    db '16-bit addressing is not supported in 64-bit mode',0 ; ...
+;A_ 85:    db '64-bit addressing is only supported in 64-bit mode',0 ; ...
+;A_ 86:    db 'invalid instruction prefix',0 ; ...
+;A_ 87:    db 'short jump is out of range',0 ; ...
+;A_ 88:    db 'value referenced by FAR is not relocatable',0 ; ...
+;A_ 89:    db 'non-absolute expression not permitted as argument %d',0 ; ...
+;A_ 90:    db 'is4 argument exceeds bounds',0 ; ...
+;A_ 91:    db 'signed dword immediate exceeds bounds',0 ; ...
+;A_ 92:    db '%s value exceeds bounds',0 ; ...
+;A_ 93:    db 'signed byte',0      ; ...
+;;A_ 94:   db 'word',0             ; ...
+;;A_ 95:   db 'dword',0            ; ...
+;A_ 96:    db 'signed dword',0     ; ...
+;A_ 97:    db 'non-constant BSS size in pass two',0 ; ...
+;;A_ 98:   db '%s',0               ; ...
+;A_ 99:    db 'internal instruction table corrupt: instruction code \%o (0x%02X) given',0
+;A_ 100:   db 'invalid operand passed to regflag()',0 ; ...
+;A_ 101:   db 'invalid operand passed to regval()',0 ; ...
+;A_ 102:   db 'invalid operand passed to op_rexflags()',0 ; ...
+;A_ 103:   db 'size of broadcasting element is greater than 64 bits',0 ; ...
+;A_ 104:   db 'invalid effective address',0 ; ...
+;A_ 105:   db 'broadcast not allowed with register operand',0 ; ...
+;A_ 106:   db 'embedded rounding is available only with register-register operations',0
+;A_ 107:   db 'absolute address can not be RIP-relative',0 ; ...
+;A_ 108:   db 'RIP-relative addressing is prohibited for MIB',0 ; ...
+;A_ 109:   db 'displacement size ignored on absolute address',0 ; ...
+;A_ 110:   db 'impossible combination of address sizes',0 ; ...
  
