@@ -3406,1124 +3406,1175 @@
 .text:08001952                 public assemble
 .text:08001952 proc            assemble near
 .text:08001952
-.text:08001952 var_B8          = dword ptr -0B8h
-.text:08001952 var_B4          = dword ptr -0B4h
-.text:08001952 var_B0          = dword ptr -0B0h
-.text:08001952 var_AC          = dword ptr -0ACh
-.text:08001952 var_A4          = dword ptr -0A4h
-.text:08001952 var_A0          = dword ptr -0A0h
-.text:08001952 var_9C          = dword ptr -9Ch
-.text:08001952 var_98          = dword ptr -98h
-.text:08001952 var_94          = dword ptr -94h
-.text:08001952 var_90          = dword ptr -90h
-.text:08001952 var_8C          = dword ptr -8Ch
-.text:08001952 var_88          = dword ptr -88h
-.text:08001952 var_84          = dword ptr -84h
-.text:08001952 var_80          = dword ptr -80h
-.text:08001952 var_7C          = dword ptr -7Ch
-.text:08001952 var_78          = dword ptr -78h
-.text:08001952 var_74          = dword ptr -74h
-.text:08001952 var_70          = dword ptr -70h
-.text:08001952 var_6C          = dword ptr -6Ch
-.text:08001952 var_68          = dword ptr -68h
-.text:08001952 var_64          = dword ptr -64h
-.text:08001952 var_60          = dword ptr -60h
-.text:08001952 var_5C          = dword ptr -5Ch
-.text:08001952 var_58          = dword ptr -58h
-.text:08001952 var_54          = dword ptr -54h
-.text:08001952 var_50          = dword ptr -50h
-.text:08001952 var_4C          = dword ptr -4Ch
-.text:08001952 var_48          = dword ptr -48h
-.text:08001952 var_44          = dword ptr -44h
-.text:08001952 var_40          = dword ptr -40h
-.text:08001952 var_3C          = dword ptr -3Ch
-.text:08001952 var_38          = dword ptr -38h
-.text:08001952 var_34          = dword ptr -34h
-.text:08001952 var_30          = dword ptr -30h
-.text:08001952 var_2C          = dword ptr -2Ch
-.text:08001952 var_28          = dword ptr -28h
-.text:08001952 var_24          = dword ptr -24h
-.text:08001952 var_20          = dword ptr -20h
-.text:08001952 var_18          = dword ptr -18h
-.text:08001952 var_14          = dword ptr -14h
-.text:08001952 var_10          = dword ptr -10h
-.text:08001952 var_C           = dword ptr -0Ch
-.text:08001952 var_8           = dword ptr -8
-.text:08001952 var_4           = dword ptr -4
-.text:08001952 arg_0           = dword ptr  8
-.text:08001952 arg_4           = dword ptr  0Ch
-.text:08001952 arg_8           = dword ptr  10h
-.text:08001952 arg_C           = dword ptr  14h
-.text:08001952 arg_10          = dword ptr  18h
+.text:08001952 tmp7            = dword ptr -0B8h
+.text:08001952 tmp7_h          = dword ptr -0B4h
+.text:08001952 insn_size       = dword ptr -0B0h
+.text:08001952 insn_size_h     = dword ptr -0ACh
+.text:08001952 tmp6            = dword ptr -0A4h
+.text:08001952 tmp5            = dword ptr -0A0h
+.text:08001952 tmp4            = dword ptr -9Ch
+.text:08001952 l               = dword ptr -98h
+.text:08001952 tmp3            = dword ptr -94h
+.text:08001952 tmp2            = dword ptr -90h
+.text:08001952 m               = dword ptr -8Ch
+.text:08001952 blk             = dword ptr -88h
+.text:08001952 buf             = dword ptr -84h
+.text:08001952 map             = dword ptr -80h
+.text:08001952 len             = dword ptr -7Ch
+.text:08001952 base            = dword ptr -78h
+.text:08001952 t               = dword ptr -74h
+.text:08001952 fp              = dword ptr -70h
+.text:08001952 fname           = dword ptr -6Ch
+.text:08001952 tmp1            = dword ptr -68h
+.text:08001952 tmp1_h          = dword ptr -64h
+.text:08001952 _align          = dword ptr -60h
+.text:08001952 e               = dword ptr -5Ch
+.text:08001952 wsize           = dword ptr -58h
+.text:08001952 wsize_h         = dword ptr -54h
+.text:08001952 _m              = dword ptr -50h
+.text:08001952 temp            = dword ptr -4Ch
+.text:08001952 _data           = dword ptr -48h
+.text:08001952 _data_offs_h    = dword ptr -44h
+.text:08001952 data_segment    = dword ptr -40h
+.text:08001952 data_type       = dword ptr -3Ch
+.text:08001952 data_sign       = dword ptr -38h
+.text:08001952 data_inslen     = dword ptr -34h
+.text:08001952 data_insoffs    = dword ptr -30h
+.text:08001952 data_bits       = dword ptr -2Ch
+.text:08001952 data_size       = dword ptr -28h
+.text:08001952 data_size_h     = dword ptr -24h
+.text:08001952 data_itemp      = dword ptr -20h
+.text:08001952 data_toffset    = dword ptr -18h
+.text:08001952 data_toffset_h  = dword ptr -14h
+.text:08001952 data_tsegment   = dword ptr -10h
+.text:08001952 data_twrt       = dword ptr -0Ch
+.text:08001952 data_relbase    = dword ptr -8
+.text:08001952 data_relbase_h  = dword ptr -4
+.text:08001952 _segment        = dword ptr  8
+.text:08001952 _start          = dword ptr  0Ch
+.text:08001952 _start_h        = dword ptr  10h
+.text:08001952 _bits           = dword ptr  14h
+.text:08001952 instruction     = dword ptr  18h
 .text:08001952
-.text:08001952                 push    ebp
-.text:08001953                 mov     ebp, esp
-.text:08001955                 sub     esp, 0B8h
-.text:0800195B                 nop
-.text:0800195C                 mov     eax, 48h
+.text:08001952                 push    ebp             ; int64_t assemble(int32_t segment, int64_t start, int bits, insn *instruction)
+.text:08001953                 mov     ebp, esp        ; struct out_data data;
+.text:08001955                 sub     esp, 184        ; const struct itemplate *temp;
+.text:0800195B                 nop                     ; enum match_result m;
+.text:0800195C                 mov     eax, 72         ; int64_t wsize; /* size for DB etc. */
 .text:08001961                 push    eax
 .text:08001962                 mov     eax, 0
 .text:08001967                 push    eax
-.text:08001968                 lea     eax, [ebp+var_48]
+.text:08001968                 lea     eax, [ebp+_data]
 .text:0800196B                 push    eax
-.text:0800196C                 call    memset
-.text:08001971                 add     esp, 0Ch
-.text:08001974                 mov     eax, [ebp+arg_4]
-.text:08001977                 mov     ecx, [ebp+arg_8]
-.text:0800197A                 mov     [ebp+var_48], eax
-.text:0800197D                 mov     [ebp+var_44], ecx
-.text:08001980                 mov     eax, [ebp+arg_0]
-.text:08001983                 mov     [ebp+var_40], eax
+.text:0800196C                 call    memset          ; nasm_zero(data);
+.text:08001971                 add     esp, 12
+.text:08001974                 mov     eax, [ebp+_start]
+.text:08001977                 mov     ecx, [ebp+_start_h]
+.text:0800197A                 mov     [ebp+_data], eax ; data.offset = start;
+.text:0800197D                 mov     [ebp+_data_offs_h], ecx
+.text:08001980                 mov     eax, [ebp+_segment]
+.text:08001983                 mov     [ebp+data_segment], eax ; data.segment = segment;
 .text:08001986                 mov     eax, 0
-.text:0800198B                 mov     [ebp+var_20], eax
-.text:0800198E                 mov     eax, [ebp+arg_C]
-.text:08001991                 mov     [ebp+var_2C], eax
-.text:08001994                 mov     eax, [ebp+arg_10]
-.text:08001997                 add     eax, 20h
+.text:0800198B                 mov     [ebp+data_itemp], eax ; data.itemp = NULL;
+.text:0800198E                 mov     eax, [ebp+_bits]
+.text:08001991                 mov     [ebp+data_bits], eax ; data.bits = bits;
+.text:08001994                 mov     eax, [ebp+instruction]
+.text:08001997                 add     eax, 32
 .text:0800199A                 mov     ecx, [eax]
 .text:0800199C                 push    ecx
 .text:0800199D                 call    db_bytes
 .text:080019A2                 add     esp, 4
 .text:080019A5                 mov     ecx, eax
-.text:080019A7                 sar     ecx, 1Fh
-.text:080019AA                 mov     [ebp+var_58], eax
-.text:080019AD                 mov     [ebp+var_54], ecx
-.text:080019B0                 mov     eax, [ebp+var_54]
+.text:080019A7                 sar     ecx, 31
+.text:080019AA                 mov     [ebp+wsize], eax ; wsize = db_bytes(instruction->opcode);
+.text:080019AD                 mov     [ebp+wsize_h], ecx
+.text:080019B0                 mov     eax, [ebp+wsize_h]
 .text:080019B3                 cmp     eax, 0FFFFFFFFh
-.text:080019B6                 jnz     loc_80019D7
-.text:080019BC                 mov     eax, [ebp+var_58]
-.text:080019BF                 cmp     eax, 0FFFFFFFFh
-.text:080019C2                 jnz     loc_80019D7
-.text:080019C8                 mov     eax, 0
+.text:080019B6                 jnz     asml_1
+.text:080019BC                 mov     eax, [ebp+wsize]
+.text:080019BF                 cmp     eax, 0FFFFFFFFh ; if (wsize == -1)
+.text:080019C2                 jnz     asml_1
+.text:080019C8                 mov     eax, 0          ; (64 bit value, edx:eax = 0)
 .text:080019CD                 mov     edx, 0
-.text:080019D2                 jmp     locret_80024DA
+.text:080019D2                 jmp     asml_84         ; return 0;
 .text:080019D7 ; ---------------------------------------------------------------------------
 .text:080019D7
-.text:080019D7 loc_80019D7:                            ; ...
-.text:080019D7                 mov     eax, [ebp+var_54]
+.text:080019D7 asml_1:                                 ; ...
+.text:080019D7                 mov     eax, [ebp+wsize_h] ; if (wsize) {
 .text:080019DA                 cmp     eax, 0
-.text:080019DD                 jnz     loc_80019EF
-.text:080019E3                 mov     eax, [ebp+var_58]
+.text:080019DD                 jnz     asml_2
+.text:080019E3                 mov     eax, [ebp+wsize]
 .text:080019E6                 cmp     eax, 0
-.text:080019E9                 jz      loc_8001C02
+.text:080019E9                 jz      asml_19
 .text:080019EF
-.text:080019EF loc_80019EF:                            ; ...
-.text:080019EF                 mov     eax, [ebp+arg_10]
-.text:080019F2                 add     eax, 170h
-.text:080019F8                 mov     ecx, [eax]
-.text:080019FA                 mov     [ebp+var_5C], ecx
+.text:080019EF asml_2:                                 ; ...
+.text:080019EF                 mov     eax, [ebp+instruction] ; extop *e;
+.text:080019F2                 add     eax, 368        ; typedef struct extop { /* extended operand */
+.text:080019F2                                         ;     struct extop    *next;      /* linked list */
+.text:080019F2                                         ;     char            *stringval; /* if it's a string, then here it is */
+.text:080019F2                                         ;     size_t          stringlen;  /* ... and here's how long it is */
+.text:080019F2                                         ;     int64_t         offset;     /* ... it's given here ... */
+.text:080019F2                                         ;     int32_t         segment;    /* if it's a number/address, then... */
+.text:080019F2                                         ;     int32_t         wrt;        /* ... and here */
+.text:080019F2                                         ;     bool            relative;   /* self-relative expression */
+.text:080019F2                                         ;     enum extop_type type;       /* defined above */
+.text:080019F2                                         ; } extop;
+.text:080019F8                 mov     ecx, [eax]      ; #define list_for_each(pos, head)   \
+.text:080019F8                                         ;     for (pos = head; pos; pos = pos->next)
+.text:080019FA                 mov     [ebp+e], ecx    ; (instruction->eops = instruction + 368)
+.text:080019FA                                         ; list_for_each(e, instruction->eops) {
 .text:080019FD
-.text:080019FD loc_80019FD:                            ; ...
-.text:080019FD                 mov     eax, [ebp+var_5C]
-.text:08001A00                 cmp     eax, 0
-.text:08001A03                 jz      loc_8001BFD
-.text:08001A09                 jmp     loc_8001A18
+.text:080019FD asml_3:                                 ; ...
+.text:080019FD                 mov     eax, [ebp+e]
+.text:08001A00                 cmp     eax, 0          ; (for) continue if e (pos) > 0
+.text:08001A03                 jz      asml_18         ; exit (for)
+.text:08001A09                 jmp     asml_5
 .text:08001A0E ; ---------------------------------------------------------------------------
 .text:08001A0E
-.text:08001A0E loc_8001A0E:                            ; ...
-.text:08001A0E                 mov     eax, [ebp+var_5C]
-.text:08001A11                 mov     ecx, [eax]
-.text:08001A13                 mov     [ebp+var_5C], ecx
-.text:08001A16                 jmp     short loc_80019FD
+.text:08001A0E asml_4:                                 ; ...
+.text:08001A0E                 mov     eax, [ebp+e]
+.text:08001A11                 mov     ecx, [eax]      ; extop->next
+.text:08001A13                 mov     [ebp+e], ecx    ; (for next)
+.text:08001A16                 jmp     short asml_3    ; for (e = head; e; e = e->next)
 .text:08001A18 ; ---------------------------------------------------------------------------
 .text:08001A18
-.text:08001A18 loc_8001A18:                            ; ...
-.text:08001A18                 mov     eax, [ebp+var_5C]
-.text:08001A1B                 add     eax, 24h
+.text:08001A18 asml_5:                                 ; ...
+.text:08001A18                 mov     eax, [ebp+e]    ; if (e->type == EOT_DB_NUMBER) {
+.text:08001A1B                 add     eax, 36         ; e->type (e + 36) /// extop->type
 .text:08001A1E                 mov     ecx, [eax]
-.text:08001A20                 cmp     ecx, 3
-.text:08001A23                 jnz     loc_8001B36
-.text:08001A29                 mov     eax, [ebp+var_54]
+.text:08001A20                 cmp     ecx, 3          ; EOT_DB_NUMBER = 3
+.text:08001A23                 jnz     asml_14         ; enum extop_type { /* extended operand types */
+.text:08001A23                                         ;     EOT_NOTHING,
+.text:08001A23                                         ;     EOT_DB_STRING,      /* Byte string */
+.text:08001A23                                         ;     EOT_DB_STRING_FREE, /* Byte string which should be nasm_free'd*/
+.text:08001A23                                         ;     EOT_DB_NUMBER       /* Integer */
+.text:08001A23                                         ; };
+.text:08001A29                 mov     eax, [ebp+wsize_h] ; if (wsize > 8) {
 .text:08001A2C                 cmp     eax, 0
-.text:08001A2F                 jl      loc_8001A60
-.text:08001A35                 jnz     loc_8001A47
-.text:08001A3B                 mov     eax, [ebp+var_58]
+.text:08001A2F                 jl      asml_7
+.text:08001A35                 jnz     asml_6
+.text:08001A3B                 mov     eax, [ebp+wsize]
 .text:08001A3E                 cmp     eax, 8
-.text:08001A41                 jbe     loc_8001A60
+.text:08001A41                 jbe     asml_7
 .text:08001A47
-.text:08001A47 loc_8001A47:                            ; ...
+.text:08001A47 asml_6:                                 ; ...
 .text:08001A47                 mov     eax, offset L_35 ; "integer supplied to a DT, DO, DY or DZ "...
 .text:08001A4C                 push    eax
 .text:08001A4D                 mov     eax, 3
 .text:08001A52                 push    eax
-.text:08001A53                 call    nasm_error
+.text:08001A53                 call    nasm_error      ; nasm_error(ERR_NONFATAL,
+.text:08001A53                                         ; "integer supplied to a DT, DO, DY or DZ instruction");
 .text:08001A58                 add     esp, 8
-.text:08001A5B                 jmp     loc_8001B31
+.text:08001A5B                 jmp     asml_13
 .text:08001A60 ; ---------------------------------------------------------------------------
 .text:08001A60
-.text:08001A60 loc_8001A60:                            ; ...
-.text:08001A60                 mov     eax, 0
-.text:08001A65                 mov     [ebp+var_30], eax
-.text:08001A68                 mov     eax, [ebp+var_58]
-.text:08001A6B                 mov     ecx, [ebp+var_54]
-.text:08001A6E                 mov     [ebp+var_28], eax
-.text:08001A71                 mov     [ebp+var_24], ecx
-.text:08001A74                 mov     [ebp+var_34], eax
-.text:08001A77                 mov     eax, [ebp+var_5C]
-.text:08001A7A                 add     eax, 10h
+.text:08001A60 asml_7:                                 ; ...
+.text:08001A60                 mov     eax, 0          ; } else {
+.text:08001A65                 mov     [ebp+data_insoffs], eax ; data.insoffs = 0;
+.text:08001A68                 mov     eax, [ebp+wsize]
+.text:08001A6B                 mov     ecx, [ebp+wsize_h]
+.text:08001A6E                 mov     [ebp+data_size], eax ; data.inslen = data.size = wsize;
+.text:08001A71                 mov     [ebp+data_size_h], ecx ; (data + 36)
+.text:08001A74                 mov     [ebp+data_inslen], eax ; (data + 20)
+.text:08001A77                 mov     eax, [ebp+e]
+.text:08001A7A                 add     eax, 16         ; e->offset;  /// extop->offset = extop + 16 (64bit aligned structure offset)
 .text:08001A7D                 mov     ecx, [eax]
-.text:08001A7F                 add     eax, 4
+.text:08001A7F                 add     eax, 4          ; (high dword)
 .text:08001A82                 mov     edx, [eax]
-.text:08001A84                 mov     [ebp+var_18], ecx
-.text:08001A87                 mov     [ebp+var_14], edx
-.text:08001A8A                 mov     eax, [ebp+var_5C]
-.text:08001A8D                 add     eax, 1Ch
-.text:08001A90                 mov     ecx, [eax]
-.text:08001A92                 mov     [ebp+var_C], ecx
+.text:08001A84                 mov     [ebp+data_toffset], ecx ; uint64_t toffset; /// data->toffset = data + 48
+.text:08001A87                 mov     [ebp+data_toffset_h], edx ; data.toffset = e->offset;
+.text:08001A8A                 mov     eax, [ebp+e]
+.text:08001A8D                 add     eax, 28         ; int32_t wrt;  /// extop->wrt = extop + 28
+.text:08001A90                 mov     ecx, [eax]      ; data.twrt = e->wrt;
+.text:08001A92                 mov     [ebp+data_twrt], ecx ; data->twrt = data + 60
 .text:08001A95                 mov     eax, 0
 .text:08001A9A                 mov     ecx, 0
-.text:08001A9F                 mov     [ebp+var_8], eax
-.text:08001AA2                 mov     [ebp+var_4], ecx
-.text:08001AA5                 mov     eax, [ebp+var_5C]
-.text:08001AA8                 add     eax, 18h
+.text:08001A9F                 mov     [ebp+data_relbase], eax ; data.relbase = 0; /// data->relbase = data + 64
+.text:08001AA2                 mov     [ebp+data_relbase_h], ecx
+.text:08001AA5                 mov     eax, [ebp+e]    ; if (e->segment != NO_SEG && (e->segment & 1)) {
+.text:08001AA8                 add     eax, 24         ; extop->segment = extop + 24
 .text:08001AAB                 mov     ecx, [eax]
-.text:08001AAD                 cmp     ecx, 0FFFFFFFFh
-.text:08001AB0                 jz      loc_8001AEA
-.text:08001AB6                 mov     eax, [ebp+var_5C]
-.text:08001AB9                 add     eax, 18h
+.text:08001AAD                 cmp     ecx, -1         ; NO_SEG = -1
+.text:08001AB0                 jz      asml_8
+.text:08001AB6                 mov     eax, [ebp+e]
+.text:08001AB9                 add     eax, 24
 .text:08001ABC                 mov     ecx, [eax]
 .text:08001ABE                 and     ecx, 1
 .text:08001AC1                 cmp     ecx, 0
-.text:08001AC4                 jz      loc_8001AEA
-.text:08001ACA                 mov     eax, [ebp+var_5C]
-.text:08001ACD                 add     eax, 18h
+.text:08001AC4                 jz      asml_8
+.text:08001ACA                 mov     eax, [ebp+e]    ; data.tsegment = e->segment;
+.text:08001ACD                 add     eax, 24
 .text:08001AD0                 mov     ecx, [eax]
-.text:08001AD2                 mov     [ebp+var_10], ecx
-.text:08001AD5                 mov     eax, 5
-.text:08001ADA                 mov     [ebp+var_3C], eax
-.text:08001ADD                 mov     eax, 2
-.text:08001AE2                 mov     [ebp+var_38], eax
-.text:08001AE5                 jmp     loc_8001B25
+.text:08001AD2                 mov     [ebp+data_tsegment], ecx
+.text:08001AD5                 mov     eax, 5          ; OUT_SEGMENT = 5
+.text:08001ADA                 mov     [ebp+data_type], eax ; data.type = OUT_SEGMENT;
+.text:08001ADD                 mov     eax, 2          ; OUT_UNSIGNED = 2
+.text:08001AE2                 mov     [ebp+data_sign], eax ; data.sign = OUT_UNSIGNED;
+.text:08001AE5                 jmp     asml_12
 .text:08001AEA ; ---------------------------------------------------------------------------
 .text:08001AEA
-.text:08001AEA loc_8001AEA:                            ; ...
-.text:08001AEA                 mov     eax, [ebp+var_5C]
-.text:08001AED                 add     eax, 18h
+.text:08001AEA asml_8:                                 ; ...
+.text:08001AEA                 mov     eax, [ebp+e]    ; } else {
+.text:08001AED                 add     eax, 24
 .text:08001AF0                 mov     ecx, [eax]
-.text:08001AF2                 mov     [ebp+var_10], ecx
-.text:08001AF5                 mov     eax, [ebp+var_5C]
-.text:08001AF8                 add     eax, 20h
+.text:08001AF2                 mov     [ebp+data_tsegment], ecx ; data.tsegment = e->segment;
+.text:08001AF5                 mov     eax, [ebp+e]    ; data.type = e->relative ? OUT_RELADDR : OUT_ADDRESS;
+.text:08001AF8                 add     eax, 32         ; extop->relative = extop + 32
 .text:08001AFB                 mov     ecx, [eax]
 .text:08001AFD                 cmp     ecx, 0
-.text:08001B00                 jz      loc_8001B0B
-.text:08001B06                 jmp     loc_8001B15
+.text:08001B00                 jz      asml_9
+.text:08001B06                 jmp     asml_10
 .text:08001B0B ; ---------------------------------------------------------------------------
 .text:08001B0B
-.text:08001B0B loc_8001B0B:                            ; ...
-.text:08001B0B                 mov     eax, 3
-.text:08001B10                 jmp     loc_8001B1A
+.text:08001B0B asml_9:                                 ; ...
+.text:08001B0B                 mov     eax, 3          ; OUT_ADDRESS = 3
+.text:08001B10                 jmp     asml_11
 .text:08001B15 ; ---------------------------------------------------------------------------
 .text:08001B15
-.text:08001B15 loc_8001B15:                            ; ...
-.text:08001B15                 mov     eax, 4
+.text:08001B15 asml_10:                                ; ...
+.text:08001B15                 mov     eax, 4          ; OUT_RELADDR = 4
 .text:08001B1A
-.text:08001B1A loc_8001B1A:                            ; ...
-.text:08001B1A                 mov     [ebp+var_3C], eax
-.text:08001B1D                 mov     eax, 0
-.text:08001B22                 mov     [ebp+var_38], eax
+.text:08001B1A asml_11:                                ; ...
+.text:08001B1A                 mov     [ebp+data_type], eax
+.text:08001B1D                 mov     eax, 0          ; OUT_WRAP = 0
+.text:08001B1D                                         ; enum out_sign {
+.text:08001B1D                                         ;     OUT_WRAP,      /* Undefined signedness (wraps) */
+.text:08001B1D                                         ;     OUT_SIGNED,    /* Value is signed */
+.text:08001B1D                                         ;     OUT_UNSIGNED   /* Value is unsigned */
+.text:08001B1D                                         ; };
+.text:08001B22                 mov     [ebp+data_sign], eax ; data.sign = OUT_WRAP;
 .text:08001B25
-.text:08001B25 loc_8001B25:                            ; ...
-.text:08001B25                 lea     eax, [ebp+var_48]
+.text:08001B25 asml_12:                                ; ...
+.text:08001B25                 lea     eax, [ebp+_data]
 .text:08001B28                 push    eax
-.text:08001B29                 call    _out
+.text:08001B29                 call    _out            ; out(&data);
 .text:08001B2E                 add     esp, 4
 .text:08001B31
-.text:08001B31 loc_8001B31:                            ; ...
-.text:08001B31                 jmp     loc_8001BF8
+.text:08001B31 asml_13:                                ; ...
+.text:08001B31                 jmp     asml_17
 .text:08001B36 ; ---------------------------------------------------------------------------
 .text:08001B36
-.text:08001B36 loc_8001B36:                            ; ...
-.text:08001B36                 mov     eax, [ebp+var_5C]
-.text:08001B39                 add     eax, 24h
+.text:08001B36 asml_14:                                ; ...
+.text:08001B36                 mov     eax, [ebp+e]    ; } else if (e->type == EOT_DB_STRING ||
+.text:08001B36                                         ;            e->type == EOT_DB_STRING_FREE) {
+.text:08001B39                 add     eax, 36         ; extop->type = extop + 30
 .text:08001B3C                 mov     ecx, [eax]
-.text:08001B3E                 cmp     ecx, 1
-.text:08001B41                 jz      loc_8001B5D
-.text:08001B47                 mov     eax, [ebp+var_5C]
-.text:08001B4A                 add     eax, 24h
+.text:08001B3E                 cmp     ecx, 1          ; EOT_DB_STRING = 1
+.text:08001B41                 jz      asml_15
+.text:08001B47                 mov     eax, [ebp+e]
+.text:08001B4A                 add     eax, 36
 .text:08001B4D                 mov     ecx, [eax]
-.text:08001B4F                 cmp     ecx, 2
-.text:08001B52                 jz      loc_8001B5D
-.text:08001B58                 jmp     loc_8001BF8
+.text:08001B4F                 cmp     ecx, 2          ; EOT_DB_STRING_FREE = 2
+.text:08001B52                 jz      asml_15
+.text:08001B58                 jmp     asml_17
 .text:08001B5D ; ---------------------------------------------------------------------------
 .text:08001B5D
-.text:08001B5D loc_8001B5D:                            ; ...
-.text:08001B5D                 mov     eax, [ebp+var_5C]
-.text:08001B60                 add     eax, 8
+.text:08001B5D asml_15:                                ; ...
+.text:08001B5D                 mov     eax, [ebp+e]
+.text:08001B60                 add     eax, 8          ; e->stringlen = e + 8
 .text:08001B63                 mov     ecx, [eax]
 .text:08001B65                 mov     eax, 0
-.text:08001B6A                 mov     edx, [ebp+var_58]
-.text:08001B6D                 mov     [ebp+var_68], ecx
-.text:08001B70                 mov     [ebp+var_64], eax
-.text:08001B73                 mov     eax, [ebp+var_54]
+.text:08001B6A                 mov     edx, [ebp+wsize]
+.text:08001B6D                 mov     [ebp+tmp1], ecx ; int align = e->stringlen % wsize;
+.text:08001B70                 mov     [ebp+tmp1_h], eax
+.text:08001B73                 mov     eax, [ebp+wsize_h]
 .text:08001B76                 push    eax
 .text:08001B77                 push    edx
-.text:08001B78                 mov     eax, [ebp+var_68]
-.text:08001B7B                 mov     ecx, [ebp+var_64]
+.text:08001B78                 mov     eax, [ebp+tmp1]
+.text:08001B7B                 mov     ecx, [ebp+tmp1_h]
 .text:08001B7E                 push    ecx
 .text:08001B7F                 push    eax
 .text:08001B80                 call    __moddi3
-.text:08001B85                 add     esp, 10h
-.text:08001B88                 mov     [ebp+var_60], eax
-.text:08001B8B                 mov     eax, [ebp+var_60]
+.text:08001B85                 add     esp, 16
+.text:08001B88                 mov     [ebp+_align], eax
+.text:08001B8B                 mov     eax, [ebp+_align] ; if (align)
 .text:08001B8E                 cmp     eax, 0
-.text:08001B91                 jz      loc_8001BAC
-.text:08001B97                 mov     eax, [ebp+var_60]
+.text:08001B91                 jz      asml_16
+.text:08001B97                 mov     eax, [ebp+_align]
 .text:08001B9A                 mov     ecx, eax
-.text:08001B9C                 sar     ecx, 1Fh
-.text:08001B9F                 mov     edx, [ebp+var_58]
+.text:08001B9C                 sar     ecx, 31
+.text:08001B9F                 mov     edx, [ebp+wsize]
 .text:08001BA2                 sub     edx, eax
-.text:08001BA4                 mov     eax, [ebp+var_54]
+.text:08001BA4                 mov     eax, [ebp+wsize_h]
 .text:08001BA7                 sbb     eax, ecx
-.text:08001BA9                 mov     [ebp+var_60], edx
+.text:08001BA9                 mov     [ebp+_align], edx ; align = wsize - align;
 .text:08001BAC
-.text:08001BAC loc_8001BAC:                            ; ...
+.text:08001BAC asml_16:                                ; ...
 .text:08001BAC                 mov     eax, 0
-.text:08001BB1                 mov     [ebp+var_30], eax
-.text:08001BB4                 mov     eax, [ebp+var_5C]
+.text:08001BB1                 mov     [ebp+data_insoffs], eax ; data.insoffs = 0;
+.text:08001BB4                 mov     eax, [ebp+e]
 .text:08001BB7                 add     eax, 8
 .text:08001BBA                 mov     ecx, [eax]
-.text:08001BBC                 mov     eax, [ebp+var_60]
+.text:08001BBC                 mov     eax, [ebp+_align]
 .text:08001BBF                 add     ecx, eax
-.text:08001BC1                 mov     [ebp+var_34], ecx
-.text:08001BC4                 mov     eax, [ebp+var_5C]
+.text:08001BC1                 mov     [ebp+data_inslen], ecx ; data.inslen = e->stringlen + align;
+.text:08001BC4                 mov     eax, [ebp+e]
 .text:08001BC7                 add     eax, 4
-.text:08001BCA                 mov     ecx, [ebp+var_5C]
+.text:08001BCA                 mov     ecx, [ebp+e]
 .text:08001BCD                 add     ecx, 8
-.text:08001BD0                 mov     edx, [ecx]
+.text:08001BD0                 mov     edx, [ecx]      ; e->stringlen
 .text:08001BD2                 push    edx
-.text:08001BD3                 mov     ecx, [eax]
+.text:08001BD3                 mov     ecx, [eax]      ; e->stringval
 .text:08001BD5                 push    ecx
-.text:08001BD6                 lea     eax, [ebp+var_48]
+.text:08001BD6                 lea     eax, [ebp+_data] ; &data
 .text:08001BD9                 push    eax
-.text:08001BDA                 call    out_rawdata
-.text:08001BDF                 add     esp, 0Ch
-.text:08001BE2                 mov     eax, [ebp+var_60]
+.text:08001BDA                 call    out_rawdata     ; out_rawdata(&data, e->stringval, e->stringlen);
+.text:08001BDF                 add     esp, 12
+.text:08001BE2                 mov     eax, [ebp+_align]
 .text:08001BE5                 push    eax
 .text:08001BE6                 mov     eax, offset zero_buffer
 .text:08001BEB                 push    eax
-.text:08001BEC                 lea     eax, [ebp+var_48]
+.text:08001BEC                 lea     eax, [ebp+_data]
 .text:08001BEF                 push    eax
-.text:08001BF0                 call    out_rawdata
-.text:08001BF5                 add     esp, 0Ch
+.text:08001BF0                 call    out_rawdata     ; out_rawdata(&data, zero_buffer, align);
+.text:08001BF5                 add     esp, 12
 .text:08001BF8
-.text:08001BF8 loc_8001BF8:                            ; ...
-.text:08001BF8                 jmp     loc_8001A0E
+.text:08001BF8 asml_17:                                ; ...
+.text:08001BF8                 jmp     asml_4
 .text:08001BFD ; ---------------------------------------------------------------------------
 .text:08001BFD
-.text:08001BFD loc_8001BFD:                            ; ...
-.text:08001BFD                 jmp     loc_80024B2
+.text:08001BFD asml_18:                                ; ...
+.text:08001BFD                 jmp     asml_83
 .text:08001C02 ; ---------------------------------------------------------------------------
 .text:08001C02
-.text:08001C02 loc_8001C02:                            ; ...
-.text:08001C02                 mov     eax, [ebp+arg_10]
-.text:08001C05                 add     eax, 20h
+.text:08001C02 asml_19:                                ; ...
+.text:08001C02                 mov     eax, [ebp+instruction] ; } else if (instruction->opcode == I_INCBIN) {
+.text:08001C05                 add     eax, 32         ; instruction->opcode = instruction + 32
 .text:08001C08                 mov     ecx, [eax]
-.text:08001C0A                 cmp     ecx, 10h
-.text:08001C0D                 jnz     loc_8002128
-.text:08001C13                 mov     eax, [ebp+arg_10]
-.text:08001C16                 add     eax, 170h
+.text:08001C0A                 cmp     ecx, 16         ; I_INCBIN = 16
+.text:08001C0D                 jnz     asml_50
+.text:08001C13                 mov     eax, [ebp+instruction]
+.text:08001C16                 add     eax, 368        ; (instruction->eops = instruction + 368)
 .text:08001C1C                 mov     ecx, [eax]
-.text:08001C1E                 add     ecx, 4
+.text:08001C1E                 add     ecx, 4          ; eops->stringval (extop->stringval = 4)
 .text:08001C21                 mov     eax, [ecx]
-.text:08001C23                 mov     [ebp+var_6C], eax
-.text:08001C26                 mov     eax, [ebp+arg_10]
-.text:08001C29                 add     eax, 178h
+.text:08001C23                 mov     [ebp+fname], eax ; const char *fname = instruction->eops->stringval;
+.text:08001C26                 mov     eax, [ebp+instruction] ; FILE *fp;
+.text:08001C29                 add     eax, 376        ; (instruction->times = instruction + 376) ((insn structure))
 .text:08001C2F                 mov     ecx, [eax]
-.text:08001C31                 mov     [ebp+var_74], ecx
+.text:08001C31                 mov     [ebp+t], ecx    ; size_t t = instruction->times; /* INCBIN handles TIMES by itself */
 .text:08001C34                 mov     eax, 0
-.text:08001C39                 mov     [ebp+var_78], eax
-.text:08001C3C                 mov     eax, 0
-.text:08001C41                 mov     [ebp+var_80], eax
-.text:08001C44                 mov     eax, 0
-.text:08001C49                 mov     [ebp+var_84], eax
+.text:08001C39                 mov     [ebp+base], eax ; off_t base = 0;
+.text:08001C3C                 mov     eax, 0          ; off_t len;
+.text:08001C41                 mov     [ebp+map], eax  ; const void *map = NULL;
+.text:08001C44                 mov     eax, 0          ; NULL
+.text:08001C49                 mov     [ebp+buf], eax  ; char *buf = NULL;
 .text:08001C4F                 mov     eax, 0
-.text:08001C54                 mov     [ebp+var_88], eax
+.text:08001C54                 mov     [ebp+blk], eax  ; size_t blk = 0;  /* Buffered I/O block size */
 .text:08001C5A                 mov     eax, 0
-.text:08001C5F                 mov     [ebp+var_8C], eax
-.text:08001C65                 mov     eax, [ebp+var_74]
-.text:08001C68                 cmp     eax, 0
-.text:08001C6B                 jz      loc_8001C76
-.text:08001C71                 jmp     loc_8001C7B
+.text:08001C5F                 mov     [ebp+m], eax    ; size_t m = 0; /* Bytes last read */
+.text:08001C65                 mov     eax, [ebp+t]
+.text:08001C68                 cmp     eax, 0          ; if (!t)
+.text:08001C6B                 jz      asml_20         ; goto done;
+.text:08001C71                 jmp     asml_21
 .text:08001C76 ; ---------------------------------------------------------------------------
 .text:08001C76
-.text:08001C76 loc_8001C76:                            ; ...
-.text:08001C76                 jmp     loc_8002113
+.text:08001C76 asml_20:                                ; ...
+.text:08001C76                 jmp     asml_49         ; goto done;
 .text:08001C7B ; ---------------------------------------------------------------------------
 .text:08001C7B
-.text:08001C7B loc_8001C7B:                            ; ...
-.text:08001C7B                 mov     eax, 4
-.text:08001C80                 push    eax
-.text:08001C81                 mov     eax, [ebp+var_6C]
+.text:08001C7B asml_21:                                ; ...
+.text:08001C7B                 mov     eax, 4          ; fp = nasm_open_read(fname, NF_BINARY|NF_FORMAP);
+.text:08001C80                 push    eax             ; NF_BINARY|NF_FORMAP
+.text:08001C81                 mov     eax, [ebp+fname] ; enum file_flags {
+.text:08001C81                                         ;     NF_BINARY = 0x00000000, /* Binary file (default) */
+.text:08001C81                                         ;     NF_TEXT = 0x00000001,   /* Text file */
+.text:08001C81                                         ;     NF_NONFATAL = 0x00000000, /* Don't die on open failure (default) */
+.text:08001C81                                         ;     NF_FATAL = 0x00000002,  /* Die on open failure */
+.text:08001C81                                         ;     NF_FORMAP = 0x00000004  /* Intended to use nasm_map_file() */
+.text:08001C81                                         ; };
 .text:08001C84                 push    eax
 .text:08001C85                 call    nasm_open_read
 .text:08001C8A                 add     esp, 8
-.text:08001C8D                 mov     [ebp+var_70], eax
-.text:08001C90                 mov     eax, [ebp+var_70]
+.text:08001C8D                 mov     [ebp+fp], eax
+.text:08001C90                 mov     eax, [ebp+fp]   ; if (!fp) {
+.text:08001C90                                         ;     nasm_error(ERR_NONFATAL, "`incbin': unable to open file `%s'",
+.text:08001C90                                         ;                   fname);
+.text:08001C90                                         ;     goto done;
+.text:08001C90                                         ;  }
 .text:08001C93                 cmp     eax, 0
-.text:08001C96                 jz      loc_8001CA1
-.text:08001C9C                 jmp     loc_8001CBE
+.text:08001C96                 jz      asml_22
+.text:08001C9C                 jmp     asml_23
 .text:08001CA1 ; ---------------------------------------------------------------------------
 .text:08001CA1
-.text:08001CA1 loc_8001CA1:                            ; ...
-.text:08001CA1                 mov     eax, [ebp+var_6C]
+.text:08001CA1 asml_22:                                ; ...
+.text:08001CA1                 mov     eax, [ebp+fname]
 .text:08001CA4                 push    eax
 .text:08001CA5                 mov     eax, offset L_36 ; "`incbin': unable to open file `%s'"
 .text:08001CAA                 push    eax
 .text:08001CAB                 mov     eax, 3
 .text:08001CB0                 push    eax
 .text:08001CB1                 call    nasm_error
-.text:08001CB6                 add     esp, 0Ch
-.text:08001CB9                 jmp     loc_8002113
+.text:08001CB6                 add     esp, 12
+.text:08001CB9                 jmp     asml_49
 .text:08001CBE ; ---------------------------------------------------------------------------
 .text:08001CBE
-.text:08001CBE loc_8001CBE:                            ; ...
-.text:08001CBE                 mov     eax, [ebp+var_70]
+.text:08001CBE asml_23:                                ; ...
+.text:08001CBE                 mov     eax, [ebp+fp]
 .text:08001CC1                 push    eax
 .text:08001CC2                 call    nasm_file_size
 .text:08001CC7                 add     esp, 4
-.text:08001CCA                 mov     [ebp+var_7C], eax
-.text:08001CCD                 mov     eax, [ebp+var_7C]
-.text:08001CD0                 cmp     eax, 0FFFFFFFFh
-.text:08001CD3                 jnz     loc_8001CF6
-.text:08001CD9                 mov     eax, [ebp+var_6C]
+.text:08001CCA                 mov     [ebp+len], eax  ; len = nasm_file_size(fp);
+.text:08001CCD                 mov     eax, [ebp+len]
+.text:08001CD0                 cmp     eax, 0FFFFFFFFh ; if (len == (off_t)-1) {
+.text:08001CD3                 jnz     asml_24
+.text:08001CD9                 mov     eax, [ebp+fname]
 .text:08001CDC                 push    eax
 .text:08001CDD                 mov     eax, offset L_37 ; "`incbin': unable to get length of file "...
 .text:08001CE2                 push    eax
 .text:08001CE3                 mov     eax, 3
 .text:08001CE8                 push    eax
-.text:08001CE9                 call    nasm_error
-.text:08001CEE                 add     esp, 0Ch
-.text:08001CF1                 jmp     loc_80020CD
+.text:08001CE9                 call    nasm_error      ; nasm_error(ERR_NONFATAL, "`incbin': unable to get length of file `%s'",
+.text:08001CE9                                         ;                        fname);
+.text:08001CE9                                         ; goto close_done;
+.text:08001CEE                 add     esp, 12
+.text:08001CF1                 jmp     asml_46
 .text:08001CF6 ; ---------------------------------------------------------------------------
 .text:08001CF6
-.text:08001CF6 loc_8001CF6:                            ; ...
-.text:08001CF6                 mov     eax, [ebp+arg_10]
-.text:08001CF9                 add     eax, 170h
+.text:08001CF6 asml_24:                                ; ...
+.text:08001CF6                 mov     eax, [ebp+instruction] ; if (instruction->eops->next) {
+.text:08001CF9                 add     eax, 368        ; (instruction->eops = instruction + 368)
 .text:08001CFF                 mov     ecx, [eax]
-.text:08001D01                 mov     eax, [ecx]
+.text:08001D01                 mov     eax, [ecx]      ; (eops->next = eops + 0)
 .text:08001D03                 cmp     eax, 0
-.text:08001D06                 jz      loc_8001DA4
-.text:08001D0C                 mov     eax, [ebp+arg_10]
-.text:08001D0F                 add     eax, 170h
+.text:08001D06                 jz      asml_26
+.text:08001D0C                 mov     eax, [ebp+instruction]
+.text:08001D0F                 add     eax, 368
 .text:08001D15                 mov     ecx, [eax]
 .text:08001D17                 mov     eax, [ecx]
-.text:08001D19                 add     eax, 10h
+.text:08001D19                 add     eax, 16         ; eops->offset = eops + 16 (64bit aligned in 'extop' structure)
 .text:08001D1C                 mov     ecx, [eax]
 .text:08001D1E                 add     eax, 4
-.text:08001D21                 mov     edx, [eax]
-.text:08001D23                 mov     [ebp+var_78], ecx
-.text:08001D26                 mov     eax, [ebp+var_78]
-.text:08001D29                 mov     ecx, [ebp+var_7C]
+.text:08001D21                 mov     edx, [eax]      ; high dword of 'eops->offset'
+.text:08001D23                 mov     [ebp+base], ecx ; base = instruction->eops->next->offset;
+.text:08001D26                 mov     eax, [ebp+base]
+.text:08001D29                 mov     ecx, [ebp+len]  ; if (base >= len) {
 .text:08001D2C                 cmp     eax, ecx
-.text:08001D2E                 jl      loc_8001D41
+.text:08001D2E                 jl      asml_25
 .text:08001D34                 mov     eax, 0
-.text:08001D39                 mov     [ebp+var_7C], eax
-.text:08001D3C                 jmp     loc_8001DA4
+.text:08001D39                 mov     [ebp+len], eax  ; len = 0;
+.text:08001D3C                 jmp     asml_26
 .text:08001D41 ; ---------------------------------------------------------------------------
 .text:08001D41
-.text:08001D41 loc_8001D41:                            ; ...
-.text:08001D41                 mov     eax, [ebp+var_7C]
-.text:08001D44                 mov     ecx, [ebp+var_78]
+.text:08001D41 asml_25:                                ; ...
+.text:08001D41                 mov     eax, [ebp+len]  ; } else {
+.text:08001D44                 mov     ecx, [ebp+base]
 .text:08001D47                 sub     eax, ecx
-.text:08001D49                 mov     [ebp+var_7C], eax
-.text:08001D4C                 mov     eax, [ebp+arg_10]
-.text:08001D4F                 add     eax, 170h
+.text:08001D49                 mov     [ebp+len], eax  ; len -= base;
+.text:08001D4C                 mov     eax, [ebp+instruction] ; if (instruction->eops->next->next &&
+.text:08001D4F                 add     eax, 368
 .text:08001D55                 mov     ecx, [eax]
-.text:08001D57                 mov     eax, [ecx]
-.text:08001D59                 mov     ecx, [eax]
+.text:08001D57                 mov     eax, [ecx]      ; instruction->eops->next
+.text:08001D59                 mov     ecx, [eax]      ; eops->next->next
 .text:08001D5B                 cmp     ecx, 0
-.text:08001D5E                 jz      loc_8001DA4
-.text:08001D64                 mov     eax, [ebp+arg_10]
-.text:08001D67                 add     eax, 170h
+.text:08001D5E                 jz      asml_26
+.text:08001D64                 mov     eax, [ebp+instruction] ; (&&) len > (off_t)instruction->eops->next->next->offset)
+.text:08001D67                 add     eax, 368
 .text:08001D6D                 mov     ecx, [eax]
 .text:08001D6F                 mov     eax, [ecx]
 .text:08001D71                 mov     ecx, [eax]
-.text:08001D73                 add     ecx, 10h
+.text:08001D73                 add     ecx, 16
 .text:08001D76                 mov     eax, [ecx]
 .text:08001D78                 add     ecx, 4
 .text:08001D7B                 mov     edx, [ecx]
-.text:08001D7D                 mov     ecx, [ebp+var_7C]
+.text:08001D7D                 mov     ecx, [ebp+len]
 .text:08001D80                 cmp     ecx, eax
-.text:08001D82                 jle     loc_8001DA4
-.text:08001D88                 mov     eax, [ebp+arg_10]
-.text:08001D8B                 add     eax, 170h
+.text:08001D82                 jle     asml_26
+.text:08001D88                 mov     eax, [ebp+instruction] ; len = (off_t)instruction->eops->next->next->offset;
+.text:08001D8B                 add     eax, 368
 .text:08001D91                 mov     ecx, [eax]
 .text:08001D93                 mov     eax, [ecx]
 .text:08001D95                 mov     ecx, [eax]
-.text:08001D97                 add     ecx, 10h
-.text:08001D9A                 mov     eax, [ecx]
-.text:08001D9C                 add     ecx, 4
+.text:08001D97                 add     ecx, 16
+.text:08001D9A                 mov     eax, [ecx]      ; eops->next->next->offset
+.text:08001D9C                 add     ecx, 4          ; (high dword of 'eops->offset')
 .text:08001D9F                 mov     edx, [ecx]
-.text:08001DA1                 mov     [ebp+var_7C], eax
+.text:08001DA1                 mov     [ebp+len], eax
 .text:08001DA4
-.text:08001DA4 loc_8001DA4:                            ; ...
+.text:08001DA4 asml_26:                                ; ...
 .text:08001DA4                 mov     eax, [ds:lfmt]
-.text:08001DAA                 add     eax, 1Ch
-.text:08001DAD                 mov     ecx, [ebp+var_48]
-.text:08001DB0                 mov     edx, [ebp+var_44]
+.text:08001DAA                 add     eax, 28         ; lfmt->set_offset address
+.text:08001DAD                 mov     ecx, [ebp+_data]
+.text:08001DB0                 mov     edx, [ebp+_data_offs_h]
 .text:08001DB3                 push    edx
 .text:08001DB4                 push    ecx
-.text:08001DB5                 mov     [ebp+var_90], eax
-.text:08001DBB                 mov     eax, [ebp+var_90]
+.text:08001DB5                 mov     [ebp+tmp2], eax
+.text:08001DBB                 mov     eax, [ebp+tmp2]
 .text:08001DC1                 mov     eax, [eax]
-.text:08001DC3                 call    eax
+.text:08001DC3                 call    eax             ; lfmt->set_offset(data.offset);
 .text:08001DC5                 add     esp, 8
 .text:08001DC8                 mov     eax, [ds:lfmt]
-.text:08001DCE                 add     eax, 10h
-.text:08001DD1                 mov     ecx, 4
+.text:08001DCE                 add     eax, 16         ; lfmt->uplevel address
+.text:08001DD1                 mov     ecx, 4          ; LIST_INCBIN
 .text:08001DD6                 push    ecx
-.text:08001DD7                 mov     [ebp+var_94], eax
-.text:08001DDD                 mov     eax, [ebp+var_94]
+.text:08001DD7                 mov     [ebp+tmp3], eax
+.text:08001DDD                 mov     eax, [ebp+tmp3]
 .text:08001DE3                 mov     eax, [eax]
-.text:08001DE5                 call    eax
+.text:08001DE5                 call    eax             ; lfmt->uplevel(LIST_INCBIN);
 .text:08001DE7                 add     esp, 4
-.text:08001DEA                 mov     eax, [ebp+var_7C]
+.text:08001DEA                 mov     eax, [ebp+len]  ; if (!len)
 .text:08001DED                 cmp     eax, 0
-.text:08001DF0                 jz      loc_8001DFB
-.text:08001DF6                 jmp     loc_8001E00
+.text:08001DF0                 jz      asml_27         ; goto end_incbin;
+.text:08001DF6                 jmp     asml_28
 .text:08001DFB ; ---------------------------------------------------------------------------
 .text:08001DFB
-.text:08001DFB loc_8001DFB:                            ; ...
-.text:08001DFB                 jmp     loc_8002026
+.text:08001DFB asml_27:                                ; ...
+.text:08001DFB                 jmp     asml_44
 .text:08001E00 ; ---------------------------------------------------------------------------
 .text:08001E00
-.text:08001E00 loc_8001E00:                            ; ...
-.text:08001E00                 mov     eax, [ebp+var_7C]
+.text:08001E00 asml_28:                                ; ...
+.text:08001E00                 mov     eax, [ebp+len]  ; /* Try to map file data */
 .text:08001E03                 push    eax
-.text:08001E04                 mov     eax, [ebp+var_78]
+.text:08001E04                 mov     eax, [ebp+base]
 .text:08001E07                 push    eax
-.text:08001E08                 mov     eax, [ebp+var_70]
+.text:08001E08                 mov     eax, [ebp+fp]
 .text:08001E0B                 push    eax
-.text:08001E0C                 call    nasm_map_file
-.text:08001E11                 add     esp, 0Ch
-.text:08001E14                 mov     [ebp+var_80], eax
-.text:08001E17                 mov     eax, [ebp+var_80]
+.text:08001E0C                 call    nasm_map_file   ; map = nasm_map_file(fp, base, len);
+.text:08001E11                 add     esp, 12
+.text:08001E14                 mov     [ebp+map], eax
+.text:08001E17                 mov     eax, [ebp+map]  ; if (!map) {
 .text:08001E1A                 cmp     eax, 0
-.text:08001E1D                 jz      loc_8001E28
-.text:08001E23                 jmp     loc_8001E6F
+.text:08001E1D                 jz      asml_29
+.text:08001E23                 jmp     asml_33
 .text:08001E28 ; ---------------------------------------------------------------------------
 .text:08001E28
-.text:08001E28 loc_8001E28:                            ; ...
-.text:08001E28                 mov     eax, [ebp+var_7C]
-.text:08001E2B                 cmp     eax, 100000h
+.text:08001E28 asml_29:                                ; ...
+.text:08001E28                 mov     eax, [ebp+len]
+.text:08001E2B                 cmp     eax, 1048576    ; #define ZERO_BUF_SIZE 65536
+.text:08001E2B                                         ; #define INCBIN_MAX_BUF (ZERO_BUF_SIZE * 16)
 .text:08001E31                 mov     eax, 0
 .text:08001E36                 setl    al
 .text:08001E39                 cmp     eax, 0
-.text:08001E3C                 jz      loc_8001E47
-.text:08001E42                 jmp     loc_8001E51
+.text:08001E3C                 jz      asml_30
+.text:08001E42                 jmp     asml_31
 .text:08001E47 ; ---------------------------------------------------------------------------
 .text:08001E47
-.text:08001E47 loc_8001E47:                            ; ...
-.text:08001E47                 mov     eax, 100000h
-.text:08001E4C                 jmp     loc_8001E54
+.text:08001E47 asml_30:                                ; ...
+.text:08001E47                 mov     eax, 1048576    ; INCBIN_MAX_BUF = 100000h
+.text:08001E4C                 jmp     asml_32
 .text:08001E51 ; ---------------------------------------------------------------------------
 .text:08001E51
-.text:08001E51 loc_8001E51:                            ; ...
-.text:08001E51                 mov     eax, [ebp+var_7C]
+.text:08001E51 asml_31:                                ; ...
+.text:08001E51                 mov     eax, [ebp+len]
 .text:08001E54
-.text:08001E54 loc_8001E54:                            ; ...
-.text:08001E54                 mov     [ebp+var_88], eax
-.text:08001E5A                 mov     eax, [ebp+var_88]
+.text:08001E54 asml_32:                                ; ...
+.text:08001E54                 mov     [ebp+blk], eax  ; blk = len < (off_t)INCBIN_MAX_BUF ? (size_t)len : INCBIN_MAX_BUF;
+.text:08001E5A                 mov     eax, [ebp+blk]
 .text:08001E60                 push    eax
 .text:08001E61                 call    nasm_malloc
 .text:08001E66                 add     esp, 4
-.text:08001E69                 mov     [ebp+var_84], eax
+.text:08001E69                 mov     [ebp+buf], eax  ; buf = nasm_malloc(blk);
 .text:08001E6F
-.text:08001E6F loc_8001E6F:                            ; ...
-.text:08001E6F                 mov     eax, [ebp+var_74]
+.text:08001E6F asml_33:                                ; ...
+.text:08001E6F                 mov     eax, [ebp+t]    ; while (t--) {
 .text:08001E72                 mov     ecx, eax
-.text:08001E74                 add     eax, 0FFFFFFFFh
-.text:08001E77                 mov     [ebp+var_74], eax
+.text:08001E74                 add     eax, -1
+.text:08001E77                 mov     [ebp+t], eax
 .text:08001E7A                 cmp     ecx, 0
-.text:08001E7D                 jz      loc_8002026
+.text:08001E7D                 jz      asml_44
 .text:08001E83                 mov     eax, 0
-.text:08001E88                 mov     [ebp+var_30], eax
+.text:08001E88                 mov     [ebp+data_insoffs], eax ; data.insoffs = 0;
 .text:08001E8B                 mov     eax, 0
-.text:08001E90                 mov     [ebp+var_34], eax
-.text:08001E93                 mov     eax, [ebp+var_80]
+.text:08001E90                 mov     [ebp+data_inslen], eax ; data.inslen = 0;
+.text:08001E93                 mov     eax, [ebp+map]  ; if (map) {
 .text:08001E96                 cmp     eax, 0
-.text:08001E99                 jz      loc_8001EB8
-.text:08001E9F                 mov     eax, [ebp+var_7C]
+.text:08001E99                 jz      asml_34
+.text:08001E9F                 mov     eax, [ebp+len]
 .text:08001EA2                 push    eax
-.text:08001EA3                 mov     eax, [ebp+var_80]
+.text:08001EA3                 mov     eax, [ebp+map]
 .text:08001EA6                 push    eax
-.text:08001EA7                 lea     eax, [ebp+var_48]
+.text:08001EA7                 lea     eax, [ebp+_data]
 .text:08001EAA                 push    eax
-.text:08001EAB                 call    out_rawdata
-.text:08001EB0                 add     esp, 0Ch
-.text:08001EB3                 jmp     loc_8002021
+.text:08001EAB                 call    out_rawdata     ; out_rawdata(&data, map, len);
+.text:08001EB0                 add     esp, 12
+.text:08001EB3                 jmp     asml_43
 .text:08001EB8 ; ---------------------------------------------------------------------------
 .text:08001EB8
-.text:08001EB8 loc_8001EB8:                            ; ...
-.text:08001EB8                 mov     eax, [ebp+var_8C]
-.text:08001EBE                 mov     ecx, [ebp+var_7C]
+.text:08001EB8 asml_34:                                ; ...
+.text:08001EB8                 mov     eax, [ebp+m]    ; } else if ((off_t)m == len) {
+.text:08001EBE                 mov     ecx, [ebp+len]
 .text:08001EC1                 cmp     eax, ecx
-.text:08001EC3                 jnz     loc_8001EE5
-.text:08001EC9                 mov     eax, [ebp+var_7C]
+.text:08001EC3                 jnz     asml_35
+.text:08001EC9                 mov     eax, [ebp+len]
 .text:08001ECC                 push    eax
-.text:08001ECD                 mov     eax, [ebp+var_84]
+.text:08001ECD                 mov     eax, [ebp+buf]
 .text:08001ED3                 push    eax
-.text:08001ED4                 lea     eax, [ebp+var_48]
+.text:08001ED4                 lea     eax, [ebp+_data]
 .text:08001ED7                 push    eax
-.text:08001ED8                 call    out_rawdata
-.text:08001EDD                 add     esp, 0Ch
-.text:08001EE0                 jmp     loc_8002021
+.text:08001ED8                 call    out_rawdata     ; out_rawdata(&data, buf, len);
+.text:08001EDD                 add     esp, 12
+.text:08001EE0                 jmp     asml_43
 .text:08001EE5 ; ---------------------------------------------------------------------------
 .text:08001EE5
-.text:08001EE5 loc_8001EE5:                            ; ...
-.text:08001EE5                 mov     eax, [ebp+var_7C]
-.text:08001EE8                 mov     [ebp+var_98], eax
-.text:08001EEE                 mov     eax, 0
+.text:08001EE5 asml_35:                                ; ...
+.text:08001EE5                 mov     eax, [ebp+len]  ; } else {
+.text:08001EE8                 mov     [ebp+l], eax    ; off_t l = len;
+.text:08001EEE                 mov     eax, 0          ; SEEK_SET = 0
 .text:08001EF3                 push    eax
-.text:08001EF4                 mov     eax, [ebp+var_78]
+.text:08001EF4                 mov     eax, [ebp+base]
 .text:08001EF7                 push    eax
-.text:08001EF8                 mov     eax, [ebp+var_70]
+.text:08001EF8                 mov     eax, [ebp+fp]
 .text:08001EFB                 push    eax
-.text:08001EFC                 call    fseek
-.text:08001F01                 add     esp, 0Ch
+.text:08001EFC                 call    fseek           ; if (fseeko(fp, base, SEEK_SET) < 0 || ferror(fp)) {
+.text:08001F01                 add     esp, 12
 .text:08001F04                 cmp     eax, 0
-.text:08001F07                 jl      loc_8001F27
-.text:08001F0D                 mov     eax, [ebp+var_70]
+.text:08001F07                 jl      asml_36
+.text:08001F0D                 mov     eax, [ebp+fp]
 .text:08001F10                 push    eax
 .text:08001F11                 call    ferror
 .text:08001F16                 add     esp, 4
 .text:08001F19                 cmp     eax, 0
-.text:08001F1C                 jnz     loc_8001F27
-.text:08001F22                 jmp     loc_8001F44
+.text:08001F1C                 jnz     asml_36
+.text:08001F22                 jmp     asml_37
 .text:08001F27 ; ---------------------------------------------------------------------------
 .text:08001F27
-.text:08001F27 loc_8001F27:                            ; ...
-.text:08001F27                 mov     eax, [ebp+var_6C]
+.text:08001F27 asml_36:                                ; ...
+.text:08001F27                 mov     eax, [ebp+fname]
 .text:08001F2A                 push    eax
 .text:08001F2B                 mov     eax, offset L_38 ; "`incbin': unable to seek on file `%s'"
 .text:08001F30                 push    eax
 .text:08001F31                 mov     eax, 3
 .text:08001F36                 push    eax
-.text:08001F37                 call    nasm_error
-.text:08001F3C                 add     esp, 0Ch
-.text:08001F3F                 jmp     loc_8002026
+.text:08001F37                 call    nasm_error      ; nasm_error(ERR_NONFATAL,
+.text:08001F37                                         ;            "`incbin': unable to seek on file `%s'", fname);
+.text:08001F3C                 add     esp, 12
+.text:08001F3F                 jmp     asml_44         ; goto end_incbin;
 .text:08001F44 ; ---------------------------------------------------------------------------
 .text:08001F44
-.text:08001F44 loc_8001F44:                            ; ...
-.text:08001F44                 mov     eax, [ebp+var_98]
+.text:08001F44 asml_37:                                ; ...
+.text:08001F44                 mov     eax, [ebp+l]    ; while (l > 0) {
 .text:08001F4A                 cmp     eax, 0
-.text:08001F4D                 jle     loc_8002021
-.text:08001F53                 mov     eax, [ebp+var_98]
-.text:08001F59                 mov     ecx, [ebp+var_88]
+.text:08001F4D                 jle     asml_43
+.text:08001F53                 mov     eax, [ebp+l]
+.text:08001F59                 mov     ecx, [ebp+blk]
 .text:08001F5F                 cmp     eax, ecx
 .text:08001F61                 mov     eax, 0
 .text:08001F66                 setl    al
 .text:08001F69                 cmp     eax, 0
-.text:08001F6C                 jz      loc_8001F77
-.text:08001F72                 jmp     loc_8001F82
+.text:08001F6C                 jz      asml_38
+.text:08001F72                 jmp     asml_39
 .text:08001F77 ; ---------------------------------------------------------------------------
 .text:08001F77
-.text:08001F77 loc_8001F77:                            ; ...
-.text:08001F77                 mov     eax, [ebp+var_88]
-.text:08001F7D                 jmp     loc_8001F88
+.text:08001F77 asml_38:                                ; ...
+.text:08001F77                 mov     eax, [ebp+blk]
+.text:08001F7D                 jmp     asml_40
 .text:08001F82 ; ---------------------------------------------------------------------------
 .text:08001F82
-.text:08001F82 loc_8001F82:                            ; ...
-.text:08001F82                 mov     eax, [ebp+var_98]
+.text:08001F82 asml_39:                                ; ...
+.text:08001F82                 mov     eax, [ebp+l]
 .text:08001F88
-.text:08001F88 loc_8001F88:                            ; ...
-.text:08001F88                 mov     ecx, [ebp+var_70]
+.text:08001F88 asml_40:                                ; ...
+.text:08001F88                 mov     ecx, [ebp+fp]
 .text:08001F8B                 push    ecx
 .text:08001F8C                 push    eax
 .text:08001F8D                 mov     eax, 1
 .text:08001F92                 push    eax
-.text:08001F93                 mov     eax, [ebp+var_84]
+.text:08001F93                 mov     eax, [ebp+buf]
 .text:08001F99                 push    eax
 .text:08001F9A                 call    fread
-.text:08001F9F                 add     esp, 10h
-.text:08001FA2                 mov     [ebp+var_8C], eax
-.text:08001FA8                 mov     eax, [ebp+var_8C]
+.text:08001F9F                 add     esp, 16
+.text:08001FA2                 mov     [ebp+m], eax    ; m = fread(buf, 1, l < (off_t)blk ? (size_t)l : blk, fp);
+.text:08001FA8                 mov     eax, [ebp+m]    ; if (!m || feof(fp)) {
 .text:08001FAE                 cmp     eax, 0
-.text:08001FB1                 jz      loc_8001FD1
-.text:08001FB7                 mov     eax, [ebp+var_70]
+.text:08001FB1                 jz      asml_41
+.text:08001FB7                 mov     eax, [ebp+fp]
 .text:08001FBA                 push    eax
 .text:08001FBB                 call    feof
 .text:08001FC0                 add     esp, 4
 .text:08001FC3                 cmp     eax, 0
-.text:08001FC6                 jnz     loc_8001FD1
-.text:08001FCC                 jmp     loc_8001FEE
+.text:08001FC6                 jnz     asml_41
+.text:08001FCC                 jmp     asml_42
 .text:08001FD1 ; ---------------------------------------------------------------------------
 .text:08001FD1
-.text:08001FD1 loc_8001FD1:                            ; ...
-.text:08001FD1                 mov     eax, [ebp+var_6C]
+.text:08001FD1 asml_41:                                ; ...
+.text:08001FD1                 mov     eax, [ebp+fname] ; /* This shouldn't happen unless the file
+.text:08001FD1                                         ; actually changes while we are reading it. */
 .text:08001FD4                 push    eax
 .text:08001FD5                 mov     eax, offset L_39 ; "`incbin': unexpected EOF while reading "...
 .text:08001FDA                 push    eax
 .text:08001FDB                 mov     eax, 3
 .text:08001FE0                 push    eax
-.text:08001FE1                 call    nasm_error
-.text:08001FE6                 add     esp, 0Ch
-.text:08001FE9                 jmp     loc_8002026
+.text:08001FE1                 call    nasm_error      ; nasm_error(ERR_NONFATAL,
+.text:08001FE1                                         ;  "`incbin': unexpected EOF while reading file `%s'", fname);
+.text:08001FE6                 add     esp, 12
+.text:08001FE9                 jmp     asml_44         ; goto end_incbin;
 .text:08001FEE ; ---------------------------------------------------------------------------
 .text:08001FEE
-.text:08001FEE loc_8001FEE:                            ; ...
-.text:08001FEE                 mov     eax, [ebp+var_8C]
+.text:08001FEE asml_42:                                ; ...
+.text:08001FEE                 mov     eax, [ebp+m]
 .text:08001FF4                 push    eax
-.text:08001FF5                 mov     eax, [ebp+var_84]
+.text:08001FF5                 mov     eax, [ebp+buf]
 .text:08001FFB                 push    eax
-.text:08001FFC                 lea     eax, [ebp+var_48]
+.text:08001FFC                 lea     eax, [ebp+_data]
 .text:08001FFF                 push    eax
-.text:08002000                 call    out_rawdata
-.text:08002005                 add     esp, 0Ch
-.text:08002008                 mov     eax, [ebp+var_98]
-.text:0800200E                 mov     ecx, [ebp+var_8C]
+.text:08002000                 call    out_rawdata     ; out_rawdata(&data, buf, m);
+.text:08002005                 add     esp, 12
+.text:08002008                 mov     eax, [ebp+l]
+.text:0800200E                 mov     ecx, [ebp+m]
 .text:08002014                 sub     eax, ecx
-.text:08002016                 mov     [ebp+var_98], eax
-.text:0800201C                 jmp     loc_8001F44
+.text:08002016                 mov     [ebp+l], eax    ; l -= m;
+.text:0800201C                 jmp     asml_37
 .text:08002021 ; ---------------------------------------------------------------------------
 .text:08002021
-.text:08002021 loc_8002021:                            ; ...
-.text:08002021                 jmp     loc_8001E6F
+.text:08002021 asml_43:                                ; ...
+.text:08002021                 jmp     asml_33
 .text:08002026 ; ---------------------------------------------------------------------------
 .text:08002026
-.text:08002026 loc_8002026:                            ; ...
-.text:08002026                 mov     eax, [ds:lfmt]
-.text:0800202C                 add     eax, 14h
-.text:0800202F                 mov     ecx, 4
+.text:08002026 asml_44:                                ; ...
+.text:08002026                 mov     eax, [ds:lfmt]  ; end_incbin:
+.text:0800202C                 add     eax, 20         ; (lfmt->downlevel = lfmt + 20)
+.text:0800202F                 mov     ecx, 4          ; LIST_INCBIN = 4
 .text:08002034                 push    ecx
-.text:08002035                 mov     [ebp+var_9C], eax
-.text:0800203B                 mov     eax, [ebp+var_9C]
+.text:08002035                 mov     [ebp+tmp4], eax
+.text:0800203B                 mov     eax, [ebp+tmp4]
 .text:08002041                 mov     eax, [eax]
-.text:08002043                 call    eax
+.text:08002043                 call    eax             ; lfmt->downlevel(LIST_INCBIN);
 .text:08002045                 add     esp, 4
-.text:08002048                 mov     eax, [ebp+arg_10]
-.text:0800204B                 add     eax, 178h
+.text:08002048                 mov     eax, [ebp+instruction]
+.text:0800204B                 add     eax, 376        ; if (instruction->times > 1) {
 .text:08002051                 mov     ecx, [eax]
 .text:08002053                 cmp     ecx, 1
-.text:08002056                 jle     loc_80020A0
+.text:08002056                 jle     asml_45
 .text:0800205C                 mov     eax, [ds:lfmt]
-.text:08002062                 add     eax, 10h
-.text:08002065                 mov     ecx, 5
+.text:08002062                 add     eax, 16
+.text:08002065                 mov     ecx, 5          ; LIST_TIMES = 5
 .text:0800206A                 push    ecx
-.text:0800206B                 mov     [ebp+var_A0], eax
-.text:08002071                 mov     eax, [ebp+var_A0]
+.text:0800206B                 mov     [ebp+tmp5], eax
+.text:08002071                 mov     eax, [ebp+tmp5]
 .text:08002077                 mov     eax, [eax]
-.text:08002079                 call    eax
+.text:08002079                 call    eax             ; lfmt->uplevel(LIST_TIMES);
 .text:0800207B                 add     esp, 4
 .text:0800207E                 mov     eax, [ds:lfmt]
-.text:08002084                 add     eax, 14h
+.text:08002084                 add     eax, 20
 .text:08002087                 mov     ecx, 5
 .text:0800208C                 push    ecx
-.text:0800208D                 mov     [ebp+var_A4], eax
-.text:08002093                 mov     eax, [ebp+var_A4]
+.text:0800208D                 mov     [ebp+tmp6], eax
+.text:08002093                 mov     eax, [ebp+tmp6]
 .text:08002099                 mov     eax, [eax]
-.text:0800209B                 call    eax
+.text:0800209B                 call    eax             ; lfmt->downlevel(LIST_TIMES);
 .text:0800209D                 add     esp, 4
 .text:080020A0
-.text:080020A0 loc_80020A0:                            ; ...
-.text:080020A0                 mov     eax, [ebp+var_70]
+.text:080020A0 asml_45:                                ; ...
+.text:080020A0                 mov     eax, [ebp+fp]   ; if (ferror(fp)) {
 .text:080020A3                 push    eax
 .text:080020A4                 call    ferror
 .text:080020A9                 add     esp, 4
 .text:080020AC                 cmp     eax, 0
-.text:080020AF                 jz      loc_80020CD
-.text:080020B5                 mov     eax, [ebp+var_6C]
+.text:080020AF                 jz      asml_46
+.text:080020B5                 mov     eax, [ebp+fname]
 .text:080020B8                 push    eax
 .text:080020B9                 mov     eax, offset L_40 ; "`incbin': error while reading file `%s'"
 .text:080020BE                 push    eax
 .text:080020BF                 mov     eax, 3
 .text:080020C4                 push    eax
-.text:080020C5                 call    nasm_error
-.text:080020CA                 add     esp, 0Ch
+.text:080020C5                 call    nasm_error      ; nasm_error(ERR_NONFATAL,
+.text:080020C5                                         ;   "`incbin': error while reading file `%s'", fname);
+.text:080020CA                 add     esp, 12
 .text:080020CD
-.text:080020CD loc_80020CD:                            ; ...
-.text:080020CD                 mov     eax, [ebp+var_84]
-.text:080020D3                 cmp     eax, 0
-.text:080020D6                 jz      loc_80020EB
-.text:080020DC                 mov     eax, [ebp+var_84]
+.text:080020CD asml_46:                                ; ...
+.text:080020CD                 mov     eax, [ebp+buf]  ; close_done:
+.text:080020D3                 cmp     eax, 0          ; if (buf)
+.text:080020D6                 jz      asml_47
+.text:080020DC                 mov     eax, [ebp+buf]
 .text:080020E2                 push    eax
-.text:080020E3                 call    nasm_free
+.text:080020E3                 call    nasm_free       ; nasm_free(buf);
 .text:080020E8                 add     esp, 4
 .text:080020EB
-.text:080020EB loc_80020EB:                            ; ...
-.text:080020EB                 mov     eax, [ebp+var_80]
+.text:080020EB asml_47:                                ; ...
+.text:080020EB                 mov     eax, [ebp+map]  ; if (map)
 .text:080020EE                 cmp     eax, 0
-.text:080020F1                 jz      loc_8002107
-.text:080020F7                 mov     eax, [ebp+var_7C]
+.text:080020F1                 jz      asml_48
+.text:080020F7                 mov     eax, [ebp+len]
 .text:080020FA                 push    eax
-.text:080020FB                 mov     eax, [ebp+var_80]
+.text:080020FB                 mov     eax, [ebp+map]
 .text:080020FE                 push    eax
-.text:080020FF                 call    nasm_unmap_file
+.text:080020FF                 call    nasm_unmap_file ; nasm_unmap_file(map, len);
 .text:08002104                 add     esp, 8
 .text:08002107
-.text:08002107 loc_8002107:                            ; ...
-.text:08002107                 mov     eax, [ebp+var_70]
+.text:08002107 asml_48:                                ; ...
+.text:08002107                 mov     eax, [ebp+fp]
 .text:0800210A                 push    eax
-.text:0800210B                 call    fclose
+.text:0800210B                 call    fclose          ; fclose(fp);
 .text:08002110                 add     esp, 4
 .text:08002113
-.text:08002113 loc_8002113:                            ; ...
-.text:08002113                 mov     eax, [ebp+arg_10]
-.text:08002116                 add     eax, 178h
+.text:08002113 asml_49:                                ; ...
+.text:08002113                 mov     eax, [ebp+instruction] ; done:
+.text:08002116                 add     eax, 376
 .text:0800211C                 mov     ecx, 1
-.text:08002121                 mov     [eax], ecx
-.text:08002123                 jmp     loc_80024B2
+.text:08002121                 mov     [eax], ecx      ; instruction->times = 1; /* Tell the upper layer not to iterate */
+.text:08002123                 jmp     asml_83
 .text:08002128 ; ---------------------------------------------------------------------------
 .text:08002128
-.text:08002128 loc_8002128:                            ; ...
-.text:08002128                 mov     eax, [ebp+arg_C]
-.text:0800212B                 push    eax
-.text:0800212C                 mov     eax, [ebp+arg_10]
+.text:08002128 asml_50:                                ; ...
+.text:08002128                 mov     eax, [ebp+_bits] ; } else {
+.text:0800212B                 push    eax             ; /* "Real" instruction */
+.text:0800212C                 mov     eax, [ebp+instruction] ; /* Check to see if we need an address-size prefix */
 .text:0800212F                 push    eax
-.text:08002130                 call    add_asp
+.text:08002130                 call    add_asp         ; add_asp(instruction, bits);
 .text:08002135                 add     esp, 8
-.text:08002138                 mov     eax, [ebp+arg_C]
+.text:08002138                 mov     eax, [ebp+_bits]
 .text:0800213B                 push    eax
-.text:0800213C                 mov     eax, [ebp+var_48]
-.text:0800213F                 mov     ecx, [ebp+var_44]
+.text:0800213C                 mov     eax, [ebp+_data]
+.text:0800213F                 mov     ecx, [ebp+_data_offs_h]
 .text:08002142                 push    ecx
 .text:08002143                 push    eax
-.text:08002144                 mov     eax, [ebp+var_40]
+.text:08002144                 mov     eax, [ebp+data_segment]
 .text:08002147                 push    eax
-.text:08002148                 mov     eax, [ebp+arg_10]
+.text:08002148                 mov     eax, [ebp+instruction]
 .text:0800214B                 push    eax
-.text:0800214C                 lea     eax, [ebp+var_4C]
+.text:0800214C                 lea     eax, [ebp+temp]
 .text:0800214F                 push    eax
 .text:08002150                 call    find_match
-.text:08002155                 add     esp, 18h
-.text:08002158                 mov     [ebp+var_50], eax
-.text:0800215B                 mov     eax, [ebp+var_50]
-.text:0800215E                 cmp     eax, 10h
-.text:08002161                 jnz     loc_800225F
-.text:08002167                 mov     eax, [ebp+var_4C]
+.text:08002155                 add     esp, 24
+.text:08002158                 mov     [ebp+_m], eax   ; m = find_match(&temp, instruction, data.segment, data.offset, bits);
+.text:0800215B                 mov     eax, [ebp+_m]   ; if (m == MOK_GOOD) {
+.text:0800215E                 cmp     eax, 16         ; MOK_GOOD = 16
+.text:08002161                 jnz     asml_60         ;  } else {  /* No match */
+.text:08002167                 mov     eax, [ebp+temp] ; /* Matches! */
 .text:0800216A                 push    eax
-.text:0800216B                 mov     eax, [ebp+arg_10]
+.text:0800216B                 mov     eax, [ebp+instruction]
 .text:0800216E                 push    eax
-.text:0800216F                 mov     eax, [ebp+arg_C]
+.text:0800216F                 mov     eax, [ebp+_bits]
 .text:08002172                 push    eax
-.text:08002173                 mov     eax, [ebp+var_48]
-.text:08002176                 mov     ecx, [ebp+var_44]
+.text:08002173                 mov     eax, [ebp+_data]
+.text:08002176                 mov     ecx, [ebp+_data_offs_h]
 .text:08002179                 push    ecx
 .text:0800217A                 push    eax
-.text:0800217B                 mov     eax, [ebp+var_40]
+.text:0800217B                 mov     eax, [ebp+data_segment]
 .text:0800217E                 push    eax
 .text:0800217F                 call    calcsize
-.text:08002184                 add     esp, 18h
-.text:08002187                 mov     [ebp+var_B0], eax
-.text:0800218D                 mov     [ebp+var_AC], edx
-.text:08002193                 mov     eax, [ebp+var_AC]
+.text:08002184                 add     esp, 24
+.text:08002187                 mov     [ebp+insn_size], eax ; int64_t insn_size =
+.text:08002187                                         ;      calcsize(data.segment, data.offset, bits, instruction, temp);
+.text:0800218D                 mov     [ebp+insn_size_h], edx
+.text:08002193                 mov     eax, [ebp+insn_size_h]
 .text:08002199                 cmp     eax, 0
-.text:0800219C                 jl      loc_80021BC
-.text:080021A2                 jnz     loc_80021B7
-.text:080021A8                 mov     eax, [ebp+var_B0]
+.text:0800219C                 jl      asml_52
+.text:080021A2                 jnz     asml_51
+.text:080021A8                 mov     eax, [ebp+insn_size] ; nasm_assert(insn_size >= 0);
 .text:080021AE                 cmp     eax, 0
-.text:080021B1                 jb      loc_80021BC
+.text:080021B1                 jb      asml_52
 .text:080021B7
-.text:080021B7 loc_80021B7:                            ; ...
-.text:080021B7                 jmp     loc_80021C1
+.text:080021B7 asml_51:                                ; ...
+.text:080021B7                 jmp     asml_53
 .text:080021BC ; ---------------------------------------------------------------------------
 .text:080021BC
-.text:080021BC loc_80021BC:                            ; ...
-.text:080021BC                 jmp     loc_80021C6
+.text:080021BC asml_52:                                ; ...
+.text:080021BC                 jmp     asml_54
 .text:080021C1 ; ---------------------------------------------------------------------------
 .text:080021C1
-.text:080021C1 loc_80021C1:                            ; ...
-.text:080021C1                 jmp     loc_80021E0
+.text:080021C1 asml_53:                                ; ...
+.text:080021C1                 jmp     asml_55
 .text:080021C6 ; ---------------------------------------------------------------------------
 .text:080021C6
-.text:080021C6 loc_80021C6:                            ; ...
+.text:080021C6 asml_54:                                ; ...
 .text:080021C6                 mov     eax, offset L_42 ; "insn_size >= 0"
 .text:080021CB                 push    eax
-.text:080021CC                 mov     eax, 2EAh
+.text:080021CC                 mov     eax, 746        ; ('assemble.c', line 746)
 .text:080021D1                 push    eax
 .text:080021D2                 mov     eax, offset L_41 ; "assemble.c"
 .text:080021D7                 push    eax
 .text:080021D8                 call    nasm_assert_failed
-.text:080021DD                 add     esp, 0Ch
+.text:080021DD                 add     esp, 12
 .text:080021E0
-.text:080021E0 loc_80021E0:                            ; ...
-.text:080021E0                 mov     eax, [ebp+var_4C]
-.text:080021E3                 mov     [ebp+var_20], eax
-.text:080021E6                 mov     eax, [ebp+arg_C]
-.text:080021E9                 mov     [ebp+var_2C], eax
+.text:080021E0 asml_55:                                ; ...
+.text:080021E0                 mov     eax, [ebp+temp]
+.text:080021E3                 mov     [ebp+data_itemp], eax ; data.itemp = temp;
+.text:080021E6                 mov     eax, [ebp+_bits]
+.text:080021E9                 mov     [ebp+data_bits], eax ; data.bits = bits;
 .text:080021EC                 mov     eax, 0
-.text:080021F1                 mov     [ebp+var_30], eax
-.text:080021F4                 mov     eax, [ebp+var_B0]
-.text:080021FA                 mov     [ebp+var_34], eax
-.text:080021FD                 mov     eax, [ebp+arg_10]
+.text:080021F1                 mov     [ebp+data_insoffs], eax ; data.insoffs = 0;
+.text:080021F4                 mov     eax, [ebp+insn_size]
+.text:080021FA                 mov     [ebp+data_inslen], eax ; data.inslen = insn_size;
+.text:080021FD                 mov     eax, [ebp+instruction]
 .text:08002200                 push    eax
-.text:08002201                 lea     eax, [ebp+var_48]
+.text:08002201                 lea     eax, [ebp+_data]
 .text:08002204                 push    eax
-.text:08002205                 call    gencode
+.text:08002205                 call    gencode         ; gencode(&data, instruction);
 .text:0800220A                 add     esp, 8
-.text:0800220D                 mov     eax, [ebp+var_30]
+.text:0800220D                 mov     eax, [ebp+data_insoffs] ; nasm_assert(data.insoffs == insn_size);
 .text:08002210                 mov     ecx, eax
-.text:08002212                 sar     ecx, 1Fh
-.text:08002215                 mov     edx, [ebp+var_AC]
+.text:08002212                 sar     ecx, 31         ; (extend 32bit signed value to 64bit signed value)
+.text:08002215                 mov     edx, [ebp+insn_size_h]
 .text:0800221B                 cmp     ecx, edx
-.text:0800221D                 jnz     loc_8002236
-.text:08002223                 mov     ecx, [ebp+var_B0]
+.text:0800221D                 jnz     asml_56
+.text:08002223                 mov     ecx, [ebp+insn_size]
 .text:08002229                 cmp     eax, ecx
-.text:0800222B                 jnz     loc_8002236
-.text:08002231                 jmp     loc_800223B
+.text:0800222B                 jnz     asml_56
+.text:08002231                 jmp     asml_57
 .text:08002236 ; ---------------------------------------------------------------------------
 .text:08002236
-.text:08002236 loc_8002236:                            ; ...
-.text:08002236                 jmp     loc_8002240
+.text:08002236 asml_56:                                ; ...
+.text:08002236                 jmp     asml_58
 .text:0800223B ; ---------------------------------------------------------------------------
 .text:0800223B
-.text:0800223B loc_800223B:                            ; ...
-.text:0800223B                 jmp     loc_800225A
+.text:0800223B asml_57:                                ; ...
+.text:0800223B                 jmp     asml_59
 .text:08002240 ; ---------------------------------------------------------------------------
 .text:08002240
-.text:08002240 loc_8002240:                            ; ...
+.text:08002240 asml_58:                                ; ...
 .text:08002240                 mov     eax, offset L_44 ; "data.insoffs == insn_size"
 .text:08002245                 push    eax
-.text:08002246                 mov     eax, 2F2h
+.text:08002246                 mov     eax, 754        ; ('assemble.c' file, line 754)
 .text:0800224B                 push    eax
 .text:0800224C                 mov     eax, offset L_43 ; "assemble.c"
 .text:08002251                 push    eax
 .text:08002252                 call    nasm_assert_failed
-.text:08002257                 add     esp, 0Ch
+.text:08002257                 add     esp, 12
 .text:0800225A
-.text:0800225A loc_800225A:                            ; ...
-.text:0800225A                 jmp     loc_80024B2
+.text:0800225A asml_59:                                ; ...
+.text:0800225A                 jmp     asml_83
 .text:0800225F ; ---------------------------------------------------------------------------
 .text:0800225F
-.text:0800225F loc_800225F:                            ; ...
-.text:0800225F                 jmp     loc_8002401
+.text:0800225F asml_60:                                ; ...
+.text:0800225F                 jmp     asml_78         ; } else {
+.text:0800225F                                         ; /* No match */
+.text:0800225F                                         ; switch (m) {
 .text:08002264 ; ---------------------------------------------------------------------------
 .text:08002264
-.text:08002264 loc_8002264:                            ; ...
+.text:08002264 asml_61:                                ; ...
 .text:08002264                 mov     eax, offset L_45 ; "operation size not specified"
-.text:08002269                 push    eax
+.text:08002269                 push    eax             ; case MERR_OPSIZEMISSING:
 .text:0800226A                 mov     eax, 3
 .text:0800226F                 push    eax
-.text:08002270                 call    nasm_error
+.text:08002270                 call    nasm_error      ; nasm_error(ERR_NONFATAL, "operation size not specified");
 .text:08002275                 add     esp, 8
-.text:08002278                 jmp     loc_80024A2
+.text:08002278                 jmp     asml_82         ; break;
 .text:0800227D ; ---------------------------------------------------------------------------
 .text:0800227D
-.text:0800227D loc_800227D:                            ; ...
+.text:0800227D asml_62:                                ; ...
 .text:0800227D                 mov     eax, offset L_46 ; "mismatch in operand sizes"
-.text:08002282                 push    eax
+.text:08002282                 push    eax             ; case MERR_OPSIZEMISMATCH:
 .text:08002283                 mov     eax, 3
 .text:08002288                 push    eax
-.text:08002289                 call    nasm_error
+.text:08002289                 call    nasm_error      ; nasm_error(ERR_NONFATAL, "mismatch in operand sizes");
 .text:0800228E                 add     esp, 8
-.text:08002291                 jmp     loc_80024A2
+.text:08002291                 jmp     asml_82         ; break;
 .text:08002296 ; ---------------------------------------------------------------------------
 .text:08002296
-.text:08002296 loc_8002296:                            ; ...
+.text:08002296 asml_63:                                ; ...
 .text:08002296                 mov     eax, offset L_47 ; "broadcast not permitted on this operand"
-.text:0800229B                 push    eax
+.text:0800229B                 push    eax             ; case MERR_BRNOTHERE:
 .text:0800229C                 mov     eax, 3
 .text:080022A1                 push    eax
-.text:080022A2                 call    nasm_error
+.text:080022A2                 call    nasm_error      ; nasm_error(ERR_NONFATAL,
+.text:080022A2                                         ;            "broadcast not permitted on this operand");
 .text:080022A7                 add     esp, 8
-.text:080022AA                 jmp     loc_80024A2
+.text:080022AA                 jmp     asml_82
 .text:080022AF ; ---------------------------------------------------------------------------
 .text:080022AF
-.text:080022AF loc_80022AF:                            ; ...
+.text:080022AF asml_64:                                ; ...
 .text:080022AF                 mov     eax, offset L_48 ; "mismatch in the number of broadcasting "...
-.text:080022B4                 push    eax
+.text:080022B4                 push    eax             ; case MERR_BRNUMMISMATCH:
 .text:080022B5                 mov     eax, 3
 .text:080022BA                 push    eax
-.text:080022BB                 call    nasm_error
+.text:080022BB                 call    nasm_error      ; nasm_error(ERR_NONFATAL,
+.text:080022BB                                         ;            "mismatch in the number of broadcasting elements");
 .text:080022C0                 add     esp, 8
-.text:080022C3                 jmp     loc_80024A2
+.text:080022C3                 jmp     asml_82         ; break;
 .text:080022C8 ; ---------------------------------------------------------------------------
 .text:080022C8
-.text:080022C8 loc_80022C8:                            ; ...
+.text:080022C8 asml_65:                                ; ...
 .text:080022C8                 mov     eax, offset L_49 ; "mask not permitted on this operand"
-.text:080022CD                 push    eax
+.text:080022CD                 push    eax             ; case MERR_MASKNOTHERE:
 .text:080022CE                 mov     eax, 3
 .text:080022D3                 push    eax
-.text:080022D4                 call    nasm_error
+.text:080022D4                 call    nasm_error      ; nasm_error(ERR_NONFATAL,
+.text:080022D4                                         ;            "mask not permitted on this operand");
 .text:080022D9                 add     esp, 8
-.text:080022DC                 jmp     loc_80024A2
+.text:080022DC                 jmp     asml_82
 .text:080022E1 ; ---------------------------------------------------------------------------
 .text:080022E1
-.text:080022E1 loc_80022E1:                            ; ...
+.text:080022E1 asml_66:                                ; ...
 .text:080022E1                 mov     eax, offset L_50 ; "unsupported mode decorator for instruct"...
-.text:080022E6                 push    eax
+.text:080022E6                 push    eax             ; case MERR_DECONOTHERE:
 .text:080022E7                 mov     eax, 3
 .text:080022EC                 push    eax
-.text:080022ED                 call    nasm_error
+.text:080022ED                 call    nasm_error      ; nasm_error(ERR_NONFATAL,
+.text:080022ED                                         ;            "unsupported mode decorator for instruction");
 .text:080022F2                 add     esp, 8
-.text:080022F5                 jmp     loc_80024A2
+.text:080022F5                 jmp     asml_82
 .text:080022FA ; ---------------------------------------------------------------------------
 .text:080022FA
-.text:080022FA loc_80022FA:                            ; ...
+.text:080022FA asml_67:                                ; ...
 .text:080022FA                 mov     eax, offset L_51 ; "no instruction for this cpu level"
-.text:080022FF                 push    eax
+.text:080022FF                 push    eax             ; case MERR_BADCPU:
 .text:08002300                 mov     eax, 3
 .text:08002305                 push    eax
-.text:08002306                 call    nasm_error
+.text:08002306                 call    nasm_error      ; nasm_error(ERR_NONFATAL, "no instruction for this cpu level");
 .text:0800230B                 add     esp, 8
-.text:0800230E                 jmp     loc_80024A2
+.text:0800230E                 jmp     asml_82         ; break;
 .text:08002313 ; ---------------------------------------------------------------------------
 .text:08002313
-.text:08002313 loc_8002313:                            ; ...
-.text:08002313                 mov     eax, [ebp+arg_C]
+.text:08002313 asml_68:                                ; ...
+.text:08002313                 mov     eax, [ebp+_bits] ; case MERR_BADMODE:
 .text:08002316                 push    eax
 .text:08002317                 mov     eax, offset L_52 ; "instruction not supported in %d-bit mod"...
 .text:0800231C                 push    eax
 .text:0800231D                 mov     eax, 3
 .text:08002322                 push    eax
-.text:08002323                 call    nasm_error
-.text:08002328                 add     esp, 0Ch
-.text:0800232B                 jmp     loc_80024A2
+.text:08002323                 call    nasm_error      ; nasm_error(ERR_NONFATAL,
+.text:08002323                                         ;            "instruction not supported in %d-bit mode", bits);
+.text:08002328                 add     esp, 12
+.text:0800232B                 jmp     asml_82
 .text:08002330 ; ---------------------------------------------------------------------------
 .text:08002330
-.text:08002330 loc_8002330:                            ; ...
+.text:08002330 asml_69:                                ; ...
 .text:08002330                 mov     eax, offset L_53 ; "specific encoding scheme not available"
-.text:08002335                 push    eax
+.text:08002335                 push    eax             ; case MERR_ENCMISMATCH:
 .text:08002336                 mov     eax, 3
 .text:0800233B                 push    eax
-.text:0800233C                 call    nasm_error
+.text:0800233C                 call    nasm_error      ; nasm_error(ERR_NONFATAL, "specific encoding scheme not available");
 .text:08002341                 add     esp, 8
-.text:08002344                 jmp     loc_80024A2
+.text:08002344                 jmp     asml_82
 .text:08002349 ; ---------------------------------------------------------------------------
 .text:08002349
-.text:08002349 loc_8002349:                            ; ...
+.text:08002349 asml_70:                                ; ...
 .text:08002349                 mov     eax, offset L_54 ; "bnd prefix is not allowed"
-.text:0800234E                 push    eax
+.text:0800234E                 push    eax             ; case MERR_BADBND:
 .text:0800234F                 mov     eax, 3
 .text:08002354                 push    eax
-.text:08002355                 call    nasm_error
+.text:08002355                 call    nasm_error      ; nasm_error(ERR_NONFATAL, "bnd prefix is not allowed");
 .text:0800235A                 add     esp, 8
-.text:0800235D                 jmp     loc_80024A2
+.text:0800235D                 jmp     asml_82         ; break;
 .text:08002362 ; ---------------------------------------------------------------------------
 .text:08002362
-.text:08002362 loc_8002362:                            ; ...
-.text:08002362                 mov     eax, 0FCh
-.text:08002367                 push    eax
-.text:08002368                 mov     eax, 1
+.text:08002362 asml_71:                                ; ...
+.text:08002362                 mov     eax, 252        ; nasm_error(ERR_NONFATAL, "%s prefix is not allowed",
+.text:08002362                                         ;  (has_prefix(instruction, PPS_REP, P_REPNE) ? "repne" : "repnz"));
+.text:08002367                 push    eax             ; P_REPNE
+.text:08002368                 mov     eax, 1          ; PPS_REP
 .text:0800236D                 push    eax
-.text:0800236E                 mov     eax, [ebp+arg_10]
+.text:0800236E                 mov     eax, [ebp+instruction]
 .text:08002371                 push    eax
 .text:08002372                 call    has_prefix
-.text:08002377                 add     esp, 0Ch
+.text:08002377                 add     esp, 12
 .text:0800237A                 cmp     eax, 0
-.text:0800237D                 jz      loc_8002388
-.text:08002383                 jmp     loc_8002392
+.text:0800237D                 jz      asml_72
+.text:08002383                 jmp     asml_73
 .text:08002388 ; ---------------------------------------------------------------------------
 .text:08002388
-.text:08002388 loc_8002388:                            ; ...
+.text:08002388 asml_72:                                ; ...
 .text:08002388                 mov     eax, offset L_57 ; "repnz"
-.text:0800238D                 jmp     loc_8002397
+.text:0800238D                 jmp     asml_74
 .text:08002392 ; ---------------------------------------------------------------------------
 .text:08002392
-.text:08002392 loc_8002392:                            ; ...
+.text:08002392 asml_73:                                ; ...
 .text:08002392                 mov     eax, offset L_56 ; "repne"
 .text:08002397
-.text:08002397 loc_8002397:                            ; ...
+.text:08002397 asml_74:                                ; ...
 .text:08002397                 push    eax
 .text:08002398                 mov     eax, offset L_55 ; "%s prefix is not allowed"
 .text:0800239D                 push    eax
-.text:0800239E                 mov     eax, 3
+.text:0800239E                 mov     eax, 3          ; ERR_NONFATAL
 .text:080023A3                 push    eax
 .text:080023A4                 call    nasm_error
-.text:080023A9                 add     esp, 0Ch
-.text:080023AC                 jmp     loc_80024A2
+.text:080023A9                 add     esp, 12
+.text:080023AC                 jmp     asml_82
 .text:080023B1 ; ---------------------------------------------------------------------------
 .text:080023B1
-.text:080023B1 loc_80023B1:                            ; ...
+.text:080023B1 asml_75:                                ; ...
 .text:080023B1                 mov     eax, offset L_58 ; "invalid register set size"
-.text:080023B6                 push    eax
+.text:080023B6                 push    eax             ; case MERR_REGSETSIZE:
 .text:080023B7                 mov     eax, 3
 .text:080023BC                 push    eax
-.text:080023BD                 call    nasm_error
+.text:080023BD                 call    nasm_error      ; nasm_error(ERR_NONFATAL, "invalid register set size");
 .text:080023C2                 add     esp, 8
-.text:080023C5                 jmp     loc_80024A2
+.text:080023C5                 jmp     asml_82         ; break;
 .text:080023CA ; ---------------------------------------------------------------------------
 .text:080023CA
-.text:080023CA loc_80023CA:                            ; ...
+.text:080023CA asml_76:                                ; ...
 .text:080023CA                 mov     eax, offset L_59 ; "register set not valid for operand"
-.text:080023CF                 push    eax
+.text:080023CF                 push    eax             ; case MERR_REGSET:
 .text:080023D0                 mov     eax, 3
 .text:080023D5                 push    eax
-.text:080023D6                 call    nasm_error
+.text:080023D6                 call    nasm_error      ; nasm_error(ERR_NONFATAL, "register set not valid for operand");
 .text:080023DB                 add     esp, 8
-.text:080023DE                 jmp     loc_80024A2
+.text:080023DE                 jmp     asml_82         ; break;
 .text:080023E3 ; ---------------------------------------------------------------------------
 .text:080023E3
-.text:080023E3 loc_80023E3:                            ; ...
+.text:080023E3 asml_77:                                ; ...
 .text:080023E3                 mov     eax, offset L_60 ; "invalid combination of opcode and opera"...
-.text:080023E8                 push    eax
+.text:080023E8                 push    eax             ; (case) default:
 .text:080023E9                 mov     eax, 3
 .text:080023EE                 push    eax
-.text:080023EF                 call    nasm_error
+.text:080023EF                 call    nasm_error      ; nasm_error(ERR_NONFATAL,
+.text:080023EF                                         ;            "invalid combination of opcode and operands");
 .text:080023F4                 add     esp, 8
-.text:080023F7                 jmp     loc_80024A2
+.text:080023F7                 jmp     asml_82         ; break;
 .text:080023FC ; ---------------------------------------------------------------------------
-.text:080023FC                 jmp     loc_80024A2
+.text:080023FC                 jmp     asml_82
 .text:08002401 ; ---------------------------------------------------------------------------
 .text:08002401
-.text:08002401 loc_8002401:                            ; ...
-.text:08002401                 mov     eax, [ebp+var_50]
+.text:08002401 asml_78:                                ; ...
+.text:08002401                 mov     eax, [ebp+_m]   ; switch (m) {
 .text:08002404                 cmp     eax, 7
-.text:08002407                 ja      loc_8002459
-.text:0800240D                 cmp     eax, 7
-.text:08002410                 jnb     loc_80022FA
+.text:08002407                 ja      asml_80
+.text:0800240D                 cmp     eax, 7          ; case MERR_BADCPU:
+.text:08002410                 jnb     asml_67
 .text:08002416                 cmp     eax, 4
-.text:08002419                 ja      loc_8002445
-.text:0800241F                 cmp     eax, 4
-.text:08002422                 jnb     loc_80022AF
-.text:08002428                 cmp     eax, 1
-.text:0800242B                 jz      loc_8002264
-.text:08002431                 cmp     eax, 2
-.text:08002434                 jz      loc_800227D
-.text:0800243A                 cmp     eax, 3
-.text:0800243D                 jz      loc_8002296
-.text:08002443                 jmp     short loc_80023E3
+.text:08002419                 ja      asml_79
+.text:0800241F                 cmp     eax, 4          ; case MERR_BRNUMMISMATCH:
+.text:08002422                 jnb     asml_64
+.text:08002428                 cmp     eax, 1          ; case MERR_OPSIZEMISSING:
+.text:0800242B                 jz      asml_61
+.text:08002431                 cmp     eax, 2          ; case MERR_OPSIZEMISMATCH:
+.text:08002434                 jz      asml_62
+.text:0800243A                 cmp     eax, 3          ; case MERR_BRNOTHERE:
+.text:0800243D                 jz      asml_63
+.text:08002443                 jmp     short asml_77
 .text:08002445 ; ---------------------------------------------------------------------------
 .text:08002445
-.text:08002445 loc_8002445:                            ; ...
-.text:08002445                 cmp     eax, 5
-.text:08002448                 jz      loc_80022C8
-.text:0800244E                 cmp     eax, 6
-.text:08002451                 jz      loc_80022E1
-.text:08002457                 jmp     short loc_80023E3
+.text:08002445 asml_79:                                ; ...
+.text:08002445                 cmp     eax, 5          ; case MERR_MASKNOTHERE:
+.text:08002448                 jz      asml_65
+.text:0800244E                 cmp     eax, 6          ; case MERR_DECONOTHERE:
+.text:08002451                 jz      asml_66
+.text:08002457                 jmp     short asml_77
 .text:08002459 ; ---------------------------------------------------------------------------
 .text:08002459
-.text:08002459 loc_8002459:                            ; ...
-.text:08002459                 cmp     eax, 0Ch
-.text:0800245C                 ja      loc_800248B
-.text:08002462                 cmp     eax, 0Ch
-.text:08002465                 jnb     loc_8002362
-.text:0800246B                 cmp     eax, 8
-.text:0800246E                 jz      loc_8002313
-.text:08002474                 cmp     eax, 0Ah
-.text:08002477                 jz      loc_8002330
-.text:0800247D                 cmp     eax, 0Bh
-.text:08002480                 jz      loc_8002349
-.text:08002486                 jmp     loc_80023E3
+.text:08002459 asml_80:                                ; ...
+.text:08002459                 cmp     eax, 12
+.text:0800245C                 ja      asml_81
+.text:08002462                 cmp     eax, 12         ; case MERR_BADREPNE:
+.text:08002465                 jnb     asml_71
+.text:0800246B                 cmp     eax, 8          ; case MERR_BADMODE:
+.text:0800246E                 jz      asml_68
+.text:08002474                 cmp     eax, 10         ; case MERR_ENCMISMATCH:
+.text:08002477                 jz      asml_69
+.text:0800247D                 cmp     eax, 11         ; case MERR_BADBND:
+.text:08002480                 jz      asml_70
+.text:08002486                 jmp     asml_77
 .text:0800248B ; ---------------------------------------------------------------------------
 .text:0800248B
-.text:0800248B loc_800248B:                            ; ...
-.text:0800248B                 cmp     eax, 0Dh
-.text:0800248E                 jz      loc_80023B1
-.text:08002494                 cmp     eax, 0Eh
-.text:08002497                 jz      loc_80023CA
-.text:0800249D                 jmp     loc_80023E3
+.text:0800248B asml_81:                                ; ...
+.text:0800248B                 cmp     eax, 13         ; case MERR_REGSETSIZE:
+.text:0800248E                 jz      asml_75
+.text:08002494                 cmp     eax, 14         ; case MERR_REGSET:
+.text:08002497                 jz      asml_76
+.text:0800249D                 jmp     asml_77         ; (case) default:
 .text:080024A2 ; ---------------------------------------------------------------------------
 .text:080024A2
-.text:080024A2 loc_80024A2:                            ; ...
-.text:080024A2                 mov     eax, [ebp+arg_10]
-.text:080024A5                 add     eax, 178h
+.text:080024A2 asml_82:                                ; ...
+.text:080024A2                 mov     eax, [ebp+instruction] ; instruction->times = 1;
+.text:080024A2                                         ; /* Avoid repeated error messages */
+.text:080024A5                 add     eax, 376
 .text:080024AB                 mov     ecx, 1
 .text:080024B0                 mov     [eax], ecx
 .text:080024B2
-.text:080024B2 loc_80024B2:                            ; ...
-.text:080024B2                 mov     eax, [ebp+var_48]
-.text:080024B5                 mov     ecx, [ebp+arg_4]
+.text:080024B2 asml_83:                                ; ...
+.text:080024B2                 mov     eax, [ebp+_data] ; return data.offset - start;
+.text:080024B5                 mov     ecx, [ebp+_start]
 .text:080024B8                 sub     eax, ecx
-.text:080024BA                 mov     ecx, [ebp+var_44]
-.text:080024BD                 mov     edx, [ebp+arg_8]
+.text:080024BA                 mov     ecx, [ebp+_data_offs_h]
+.text:080024BD                 mov     edx, [ebp+_start_h]
 .text:080024C0                 sbb     ecx, edx
-.text:080024C2                 mov     [ebp+var_B8], eax
-.text:080024C8                 mov     [ebp+var_B4], ecx
-.text:080024CE                 mov     eax, [ebp+var_B8]
-.text:080024D4                 mov     edx, [ebp+var_B4]
+.text:080024C2                 mov     [ebp+tmp7], eax
+.text:080024C8                 mov     [ebp+tmp7_h], ecx
+.text:080024CE                 mov     eax, [ebp+tmp7]
+.text:080024D4                 mov     edx, [ebp+tmp7_h]
 .text:080024DA
-.text:080024DA locret_80024DA:                         ; ...
+.text:080024DA asml_84:                                ; ...
 .text:080024DA                 leave
 .text:080024DB                 retn
 .text:080024DB endp            assemble
@@ -4565,13 +4616,13 @@
 .text:080024E9                 add     eax, 20h
 .text:080024EC                 mov     ecx, [eax]
 .text:080024EE                 cmp     ecx, 0FFFFFFFFh
-.text:080024F1                 jnz     loc_8002506
+.text:080024F1                 jnz     insnz_1
 .text:080024F7                 mov     eax, 0
 .text:080024FC                 mov     edx, 0
-.text:08002501                 jmp     locret_8002840
+.text:08002501                 jmp     insnz_17
 .text:08002506 ; ---------------------------------------------------------------------------
 .text:08002506
-.text:08002506 loc_8002506:                            ; ...
+.text:08002506 insnz_1:                                ; ...
 .text:08002506                 mov     eax, [ebp+arg_10]
 .text:08002509                 add     eax, 20h
 .text:0800250C                 mov     ecx, [eax]
@@ -4579,7 +4630,7 @@
 .text:0800250F                 call    opcode_is_db
 .text:08002514                 add     esp, 4
 .text:08002517                 cmp     eax, 0
-.text:0800251A                 jz      loc_8002656
+.text:0800251A                 jz      insnz_11
 .text:08002520                 mov     eax, 0
 .text:08002525                 mov     [ebp+var_10], eax
 .text:08002528                 mov     eax, [ebp+arg_10]
@@ -4591,7 +4642,7 @@
 .text:08002539                 mov     [ebp+var_18], eax
 .text:0800253C                 mov     eax, [ebp+var_18]
 .text:0800253F                 cmp     eax, 0
-.text:08002542                 jg      loc_8002562
+.text:08002542                 jg      insnz_2
 .text:08002548                 mov     eax, offset L_62 ; "wsize > 0"
 .text:0800254D                 push    eax
 .text:0800254E                 mov     eax, 33Dh
@@ -4601,34 +4652,34 @@
 .text:0800255A                 call    nasm_assert_failed
 .text:0800255F                 add     esp, 0Ch
 .text:08002562
-.text:08002562 loc_8002562:                            ; ...
+.text:08002562 insnz_2:                                ; ...
 .text:08002562                 mov     eax, [ebp+arg_10]
 .text:08002565                 add     eax, 170h
 .text:0800256B                 mov     ecx, [eax]
 .text:0800256D                 mov     [ebp+var_C], ecx
 .text:08002570
-.text:08002570 loc_8002570:                            ; ...
+.text:08002570 insnz_3:                                ; ...
 .text:08002570                 mov     eax, [ebp+var_C]
 .text:08002573                 cmp     eax, 0
-.text:08002576                 jz      loc_800263D
-.text:0800257C                 jmp     loc_800258B
+.text:08002576                 jz      insnz_10
+.text:0800257C                 jmp     insnz_5
 .text:08002581 ; ---------------------------------------------------------------------------
 .text:08002581
-.text:08002581 loc_8002581:                            ; ...
+.text:08002581 insnz_4:                                ; ...
 .text:08002581                 mov     eax, [ebp+var_C]
 .text:08002584                 mov     ecx, [eax]
 .text:08002586                 mov     [ebp+var_C], ecx
-.text:08002589                 jmp     short loc_8002570
+.text:08002589                 jmp     short insnz_3
 .text:0800258B ; ---------------------------------------------------------------------------
 .text:0800258B
-.text:0800258B loc_800258B:                            ; ...
+.text:0800258B insnz_5:                                ; ...
 .text:0800258B                 mov     eax, 0
 .text:08002590                 mov     [ebp+var_14], eax
 .text:08002593                 mov     eax, [ebp+var_C]
 .text:08002596                 add     eax, 24h
 .text:08002599                 mov     ecx, [eax]
 .text:0800259B                 cmp     ecx, 3
-.text:0800259E                 jnz     loc_80025CC
+.text:0800259E                 jnz     insnz_6
 .text:080025A4                 mov     eax, 1
 .text:080025A9                 mov     [ebp+var_14], eax
 .text:080025AC                 mov     eax, [ebp+var_C]
@@ -4642,30 +4693,30 @@
 .text:080025BE                 push    ecx
 .text:080025BF                 call    warn_overflow_const
 .text:080025C4                 add     esp, 0Ch
-.text:080025C7                 jmp     loc_80025FE
+.text:080025C7                 jmp     insnz_8
 .text:080025CC ; ---------------------------------------------------------------------------
 .text:080025CC
-.text:080025CC loc_80025CC:                            ; ...
+.text:080025CC insnz_6:                                ; ...
 .text:080025CC                 mov     eax, [ebp+var_C]
 .text:080025CF                 add     eax, 24h
 .text:080025D2                 mov     ecx, [eax]
 .text:080025D4                 cmp     ecx, 1
-.text:080025D7                 jz      loc_80025F3
+.text:080025D7                 jz      insnz_7
 .text:080025DD                 mov     eax, [ebp+var_C]
 .text:080025E0                 add     eax, 24h
 .text:080025E3                 mov     ecx, [eax]
 .text:080025E5                 cmp     ecx, 2
-.text:080025E8                 jz      loc_80025F3
-.text:080025EE                 jmp     loc_80025FE
+.text:080025E8                 jz      insnz_7
+.text:080025EE                 jmp     insnz_8
 .text:080025F3 ; ---------------------------------------------------------------------------
 .text:080025F3
-.text:080025F3 loc_80025F3:                            ; ...
+.text:080025F3 insnz_7:                                ; ...
 .text:080025F3                 mov     eax, [ebp+var_C]
 .text:080025F6                 add     eax, 8
 .text:080025F9                 mov     ecx, [eax]
 .text:080025FB                 mov     [ebp+var_14], ecx
 .text:080025FE
-.text:080025FE loc_80025FE:                            ; ...
+.text:080025FE insnz_8:                                ; ...
 .text:080025FE                 mov     eax, 0
 .text:08002603                 mov     ecx, [ebp+var_14]
 .text:08002606                 sub     eax, ecx
@@ -4675,23 +4726,23 @@
 .text:0800260E                 mov     [ebp+var_1C], edx
 .text:08002611                 mov     eax, [ebp+var_1C]
 .text:08002614                 cmp     eax, 0
-.text:08002617                 jge     loc_8002628
+.text:08002617                 jge     insnz_9
 .text:0800261D                 mov     eax, [ebp+var_1C]
 .text:08002620                 mov     ecx, [ebp+var_18]
 .text:08002623                 add     eax, ecx
 .text:08002625                 mov     [ebp+var_1C], eax
 .text:08002628
-.text:08002628 loc_8002628:                            ; ...
+.text:08002628 insnz_9:                                ; ...
 .text:08002628                 mov     eax, [ebp+var_14]
 .text:0800262B                 mov     ecx, [ebp+var_1C]
 .text:0800262E                 add     eax, ecx
 .text:08002630                 mov     ecx, [ebp+var_10]
 .text:08002633                 add     ecx, eax
 .text:08002635                 mov     [ebp+var_10], ecx
-.text:08002638                 jmp     loc_8002581
+.text:08002638                 jmp     insnz_4
 .text:0800263D ; ---------------------------------------------------------------------------
 .text:0800263D
-.text:0800263D loc_800263D:                            ; ...
+.text:0800263D insnz_10:                               ; ...
 .text:0800263D                 mov     eax, [ebp+var_10]
 .text:08002640                 mov     ecx, eax
 .text:08002642                 sar     ecx, 1Fh
@@ -4699,15 +4750,15 @@
 .text:08002648                 mov     [ebp+var_24], ecx
 .text:0800264B                 mov     eax, [ebp+var_28]
 .text:0800264E                 mov     edx, [ebp+var_24]
-.text:08002651                 jmp     locret_8002840
+.text:08002651                 jmp     insnz_17
 .text:08002656 ; ---------------------------------------------------------------------------
 .text:08002656
-.text:08002656 loc_8002656:                            ; ...
+.text:08002656 insnz_11:                               ; ...
 .text:08002656                 mov     eax, [ebp+arg_10]
 .text:08002659                 add     eax, 20h
 .text:0800265C                 mov     ecx, [eax]
 .text:0800265E                 cmp     ecx, 10h
-.text:08002661                 jnz     loc_80027C8
+.text:08002661                 jnz     insnz_15
 .text:08002667                 mov     eax, [ebp+arg_10]
 .text:0800266A                 add     eax, 170h
 .text:08002670                 mov     ecx, [eax]
@@ -4721,7 +4772,7 @@
 .text:08002686                 mov     [ebp+var_30], eax
 .text:08002689                 mov     eax, [ebp+var_30]
 .text:0800268C                 cmp     eax, 0FFFFFFFFh
-.text:0800268F                 jnz     loc_80026BC
+.text:0800268F                 jnz     insnz_12
 .text:08002695                 mov     eax, [ebp+var_2C]
 .text:08002698                 push    eax
 .text:08002699                 mov     eax, offset L_63 ; "`incbin': unable to get length of file "...
@@ -4732,16 +4783,16 @@
 .text:080026AA                 add     esp, 0Ch
 .text:080026AD                 mov     eax, 0
 .text:080026B2                 mov     edx, 0
-.text:080026B7                 jmp     locret_8002840
+.text:080026B7                 jmp     insnz_17
 .text:080026BC ; ---------------------------------------------------------------------------
 .text:080026BC
-.text:080026BC loc_80026BC:                            ; ...
+.text:080026BC insnz_12:                               ; ...
 .text:080026BC                 mov     eax, [ebp+arg_10]
 .text:080026BF                 add     eax, 170h
 .text:080026C5                 mov     ecx, [eax]
 .text:080026C7                 mov     eax, [ecx]
 .text:080026C9                 cmp     eax, 0
-.text:080026CC                 jz      loc_800278B
+.text:080026CC                 jz      insnz_14
 .text:080026D2                 mov     eax, [ebp+arg_10]
 .text:080026D5                 add     eax, 170h
 .text:080026DB                 mov     ecx, [eax]
@@ -4752,13 +4803,13 @@
 .text:080026E7                 mov     edx, [eax]
 .text:080026E9                 mov     eax, [ebp+var_30]
 .text:080026EC                 cmp     eax, ecx
-.text:080026EE                 jg      loc_8002701
+.text:080026EE                 jg      insnz_13
 .text:080026F4                 mov     eax, 0
 .text:080026F9                 mov     [ebp+var_30], eax
-.text:080026FC                 jmp     loc_800278B
+.text:080026FC                 jmp     insnz_14
 .text:08002701 ; ---------------------------------------------------------------------------
 .text:08002701
-.text:08002701 loc_8002701:                            ; ...
+.text:08002701 insnz_13:                               ; ...
 .text:08002701                 mov     eax, [ebp+arg_10]
 .text:08002704                 add     eax, 170h
 .text:0800270A                 mov     ecx, [eax]
@@ -4783,7 +4834,7 @@
 .text:0800273E                 mov     eax, [ecx]
 .text:08002740                 mov     ecx, [eax]
 .text:08002742                 cmp     ecx, 0
-.text:08002745                 jz      loc_800278B
+.text:08002745                 jz      insnz_14
 .text:0800274B                 mov     eax, [ebp+arg_10]
 .text:0800274E                 add     eax, 170h
 .text:08002754                 mov     ecx, [eax]
@@ -4795,7 +4846,7 @@
 .text:08002762                 mov     edx, [ecx]
 .text:08002764                 mov     ecx, [ebp+var_30]
 .text:08002767                 cmp     ecx, eax
-.text:08002769                 jle     loc_800278B
+.text:08002769                 jle     insnz_14
 .text:0800276F                 mov     eax, [ebp+arg_10]
 .text:08002772                 add     eax, 170h
 .text:08002778                 mov     ecx, [eax]
@@ -4807,7 +4858,7 @@
 .text:08002786                 mov     edx, [ecx]
 .text:08002788                 mov     [ebp+var_30], eax
 .text:0800278B
-.text:0800278B loc_800278B:                            ; ...
+.text:0800278B insnz_14:                               ; ...
 .text:0800278B                 mov     eax, [ebp+arg_10]
 .text:0800278E                 add     eax, 178h
 .text:08002794                 mov     ecx, [ebp+var_30]
@@ -4825,10 +4876,10 @@
 .text:080027BA                 mov     [ebp+var_3C], ecx
 .text:080027BD                 mov     eax, [ebp+var_40]
 .text:080027C0                 mov     edx, [ebp+var_3C]
-.text:080027C3                 jmp     locret_8002840
+.text:080027C3                 jmp     insnz_17
 .text:080027C8 ; ---------------------------------------------------------------------------
 .text:080027C8
-.text:080027C8 loc_80027C8:                            ; ...
+.text:080027C8 insnz_15:                               ; ...
 .text:080027C8                 mov     eax, [ebp+arg_C]
 .text:080027CB                 push    eax
 .text:080027CC                 mov     eax, [ebp+arg_10]
@@ -4852,7 +4903,7 @@
 .text:080027F8                 mov     [ebp+var_8], eax
 .text:080027FB                 mov     eax, [ebp+var_8]
 .text:080027FE                 cmp     eax, 10h
-.text:08002801                 jnz     loc_8002831
+.text:08002801                 jnz     insnz_16
 .text:08002807                 mov     eax, [ebp+var_4]
 .text:0800280A                 push    eax
 .text:0800280B                 mov     eax, [ebp+arg_10]
@@ -4867,18 +4918,18 @@
 .text:0800281E                 push    eax
 .text:0800281F                 call    calcsize
 .text:08002824                 add     esp, 18h
-.text:08002827                 jmp     locret_8002840
+.text:08002827                 jmp     insnz_17
 .text:0800282C ; ---------------------------------------------------------------------------
-.text:0800282C                 jmp     locret_8002840
+.text:0800282C                 jmp     insnz_17
 .text:08002831 ; ---------------------------------------------------------------------------
 .text:08002831
-.text:08002831 loc_8002831:                            ; ...
+.text:08002831 insnz_16:                               ; ...
 .text:08002831                 mov     eax, 0FFFFFFFFh
 .text:08002836                 mov     edx, 0FFFFFFFFh
 .text:0800283B                 jmp     $+5
 .text:08002840 ; ---------------------------------------------------------------------------
 .text:08002840
-.text:08002840 locret_8002840:                         ; ...
+.text:08002840 insnz_17:                               ; ...
 .text:08002840                 leave
 .text:08002841                 retn
 .text:08002841 endp            insn_size
