@@ -4589,104 +4589,105 @@ endp            assemble
                 public insn_size
 proc            insn_size near
 
-var_40          = dword ptr -40h
-var_3C          = dword ptr -3Ch
-var_38          = dword ptr -38h
-var_34          = dword ptr -34h
-var_30          = dword ptr -30h
-var_2C          = dword ptr -2Ch
-var_28          = dword ptr -28h
-var_24          = dword ptr -24h
-var_1C          = dword ptr -1Ch
-var_18          = dword ptr -18h
-var_14          = dword ptr -14h
-var_10          = dword ptr -10h
-var_C           = dword ptr -0Ch
-var_8           = dword ptr -8
-var_4           = dword ptr -4
-arg_0           = dword ptr  8
-arg_4           = dword ptr  0Ch
-arg_8           = dword ptr  10h
-arg_C           = dword ptr  14h
-arg_10          = dword ptr  18h
+tmp3            = dword ptr -40h
+tmp3_h          = dword ptr -3Ch
+tmp2_h          = dword ptr -38h
+tmp2            = dword ptr -34h
+len             = dword ptr -30h
+fname           = dword ptr -2Ch
+tmp1            = dword ptr -28h
+tmp1_h          = dword ptr -24h
+_align          = dword ptr -1Ch
+wsize           = dword ptr -18h
+osize           = dword ptr -14h
+isize           = dword ptr -10h
+e               = dword ptr -0Ch
+m               = dword ptr -8
+temp            = dword ptr -4
+_segment        = dword ptr  8
+_offset         = dword ptr  0Ch
+_offset_h       = dword ptr  10h
+_bits           = dword ptr  14h
+instruction     = dword ptr  18h
 
-                push    ebp
-                mov     ebp, esp
-                sub     esp, 40h
+                push    ebp             ; int64_t insn_size(int32_t segment, int64_t offset, int bits, insn *instruction)
+                mov     ebp, esp        ; const struct itemplate *temp;
+                sub     esp, 64         ; enum match_result m;
                 nop
-                mov     eax, [ebp+arg_10]
-                add     eax, 20h
+                mov     eax, [ebp+instruction] ; if (instruction->opcode == I_none)
+                add     eax, 32         ; instruction->opcode = instruction + 32
                 mov     ecx, [eax]
-                cmp     ecx, 0FFFFFFFFh
+                cmp     ecx, 0FFFFFFFFh ; I_none = -1
                 jnz     insnz_1
                 mov     eax, 0
                 mov     edx, 0
-                jmp     insnz_17
+                jmp     insnz_17        ; return 0;
 ; ---------------------------------------------------------------------------
 
 insnz_1:                                ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 20h
-                mov     ecx, [eax]
+                mov     eax, [ebp+instruction] ; if (opcode_is_db(instruction->opcode)) {
+                add     eax, 32         ; extop *e;
+                mov     ecx, [eax]      ; int32_t isize, osize, wsize;
                 push    ecx
                 call    opcode_is_db
                 add     esp, 4
                 cmp     eax, 0
                 jz      insnz_11
                 mov     eax, 0
-                mov     [ebp+var_10], eax
-                mov     eax, [ebp+arg_10]
-                add     eax, 20h
+                mov     [ebp+isize], eax ; isize = 0;
+                mov     eax, [ebp+instruction]
+                add     eax, 32
                 mov     ecx, [eax]
                 push    ecx
                 call    db_bytes
                 add     esp, 4
-                mov     [ebp+var_18], eax
-                mov     eax, [ebp+var_18]
-                cmp     eax, 0
+                mov     [ebp+wsize], eax ; wsize = db_bytes(instruction->opcode);
+                mov     eax, [ebp+wsize]
+                cmp     eax, 0          ; asm_assert(wsize > 0);
                 jg      insnz_2
                 mov     eax, offset L_62 ; "wsize > 0"
                 push    eax
-                mov     eax, 33Dh
+                mov     eax, 829        ; ('assemble.c' line 829)
                 push    eax
                 mov     eax, offset L_61 ; "assemble.c"
                 push    eax
                 call    nasm_assert_failed
-                add     esp, 0Ch
+                add     esp, 12
 
 insnz_2:                                ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 170h
+                mov     eax, [ebp+instruction] ; list_for_each(e, instruction->eops) {
+                add     eax, 368        ; #define list_for_each(pos, head)  \
+                                        ;  for (pos = head; pos; pos = pos->next)
                 mov     ecx, [eax]
-                mov     [ebp+var_C], ecx
+                mov     [ebp+e], ecx
 
 insnz_3:                                ; ...
-                mov     eax, [ebp+var_C]
+                mov     eax, [ebp+e]    ; if (pos)
                 cmp     eax, 0
-                jz      insnz_10
+                jz      insnz_10        ; return isize;
                 jmp     insnz_5
 ; ---------------------------------------------------------------------------
 
 insnz_4:                                ; ...
-                mov     eax, [ebp+var_C]
-                mov     ecx, [eax]
-                mov     [ebp+var_C], ecx
+                mov     eax, [ebp+e]
+                mov     ecx, [eax]      ; pos->next
+                mov     [ebp+e], ecx
                 jmp     short insnz_3
 ; ---------------------------------------------------------------------------
 
 insnz_5:                                ; ...
                 mov     eax, 0
-                mov     [ebp+var_14], eax
-                mov     eax, [ebp+var_C]
-                add     eax, 24h
-                mov     ecx, [eax]
-                cmp     ecx, 3
+                mov     [ebp+osize], eax ; osize = 0;
+                mov     eax, [ebp+e]    ; if (e->type == EOT_DB_NUMBER) {
+                add     eax, 36
+                mov     ecx, [eax]      ; e->type
+                cmp     ecx, 3          ; EOT_DB_NUMBER
                 jnz     insnz_6
                 mov     eax, 1
-                mov     [ebp+var_14], eax
-                mov     eax, [ebp+var_C]
-                add     eax, 10h
-                mov     ecx, [ebp+var_18]
+                mov     [ebp+osize], eax ; osize = 1;
+                mov     eax, [ebp+e]    ; warn_overflow_const(e->offset, wsize);
+                add     eax, 16         ; e->offset
+                mov     ecx, [ebp+wsize]
                 push    ecx
                 mov     ecx, [eax]
                 add     eax, 4
@@ -4694,240 +4695,241 @@ insnz_5:                                ; ...
                 push    edx
                 push    ecx
                 call    warn_overflow_const
-                add     esp, 0Ch
+                add     esp, 12
                 jmp     insnz_8
 ; ---------------------------------------------------------------------------
 
 insnz_6:                                ; ...
-                mov     eax, [ebp+var_C]
-                add     eax, 24h
+                mov     eax, [ebp+e]    ; } else if (e->type == EOT_DB_STRING ||
+                add     eax, 36         ;            e->type == EOT_DB_STRING_FREE)
                 mov     ecx, [eax]
-                cmp     ecx, 1
+                cmp     ecx, 1          ; EOT_DB_STRING
                 jz      insnz_7
-                mov     eax, [ebp+var_C]
-                add     eax, 24h
+                mov     eax, [ebp+e]
+                add     eax, 36
                 mov     ecx, [eax]
-                cmp     ecx, 2
+                cmp     ecx, 2          ; EOT_DB_STRING_FREE
                 jz      insnz_7
                 jmp     insnz_8
 ; ---------------------------------------------------------------------------
 
 insnz_7:                                ; ...
-                mov     eax, [ebp+var_C]
+                mov     eax, [ebp+e]
                 add     eax, 8
                 mov     ecx, [eax]
-                mov     [ebp+var_14], ecx
+                mov     [ebp+osize], ecx ; osize = e->stringlen;
 
 insnz_8:                                ; ...
-                mov     eax, 0
-                mov     ecx, [ebp+var_14]
-                sub     eax, ecx
-                mov     ecx, [ebp+var_18]
+                mov     eax, 0          ; align = (-osize) % wsize;
+                mov     ecx, [ebp+osize]
+                sub     eax, ecx        ; -osize
+                mov     ecx, [ebp+wsize]
                 cdq
                 idiv    ecx
-                mov     [ebp+var_1C], edx
-                mov     eax, [ebp+var_1C]
+                mov     [ebp+_align], edx
+                mov     eax, [ebp+_align] ; if (align < 0)
                 cmp     eax, 0
                 jge     insnz_9
-                mov     eax, [ebp+var_1C]
-                mov     ecx, [ebp+var_18]
+                mov     eax, [ebp+_align]
+                mov     ecx, [ebp+wsize]
                 add     eax, ecx
-                mov     [ebp+var_1C], eax
+                mov     [ebp+_align], eax ; align += wsize;
 
 insnz_9:                                ; ...
-                mov     eax, [ebp+var_14]
-                mov     ecx, [ebp+var_1C]
+                mov     eax, [ebp+osize]
+                mov     ecx, [ebp+_align]
                 add     eax, ecx
-                mov     ecx, [ebp+var_10]
+                mov     ecx, [ebp+isize]
                 add     ecx, eax
-                mov     [ebp+var_10], ecx
-                jmp     insnz_4
+                mov     [ebp+isize], ecx ; isize += osize + align;
+                jmp     insnz_4         ; (for next)
 ; ---------------------------------------------------------------------------
 
 insnz_10:                               ; ...
-                mov     eax, [ebp+var_10]
+                mov     eax, [ebp+isize] ; return isize;
                 mov     ecx, eax
-                sar     ecx, 1Fh
-                mov     [ebp+var_28], eax
-                mov     [ebp+var_24], ecx
-                mov     eax, [ebp+var_28]
-                mov     edx, [ebp+var_24]
+                sar     ecx, 31
+                mov     [ebp+tmp1], eax
+                mov     [ebp+tmp1_h], ecx
+                mov     eax, [ebp+tmp1]
+                mov     edx, [ebp+tmp1_h]
                 jmp     insnz_17
 ; ---------------------------------------------------------------------------
 
 insnz_11:                               ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 20h
+                mov     eax, [ebp+instruction] ; if (instruction->opcode == I_INCBIN) {
+                add     eax, 32         ; (instruction->opcode = instruction + 32)
                 mov     ecx, [eax]
-                cmp     ecx, 10h
+                cmp     ecx, 16         ; I_INCBIN = 16
                 jnz     insnz_15
-                mov     eax, [ebp+arg_10]
-                add     eax, 170h
+                mov     eax, [ebp+instruction] ; const char *fname = instruction->eops->stringval;
+                add     eax, 368        ; instruction->eops
                 mov     ecx, [eax]
-                add     ecx, 4
+                add     ecx, 4          ; eops->stringval
                 mov     eax, [ecx]
-                mov     [ebp+var_2C], eax
-                mov     eax, [ebp+var_2C]
+                mov     [ebp+fname], eax
+                mov     eax, [ebp+fname] ; off_t len;
                 push    eax
-                call    nasm_file_size_by_path
+                call    nasm_file_size_by_path ; len = nasm_file_size_by_path(fname);
                 add     esp, 4
-                mov     [ebp+var_30], eax
-                mov     eax, [ebp+var_30]
-                cmp     eax, 0FFFFFFFFh
+                mov     [ebp+len], eax
+                mov     eax, [ebp+len]  ; if (len == (off_t)-1) {
+                cmp     eax, -1
                 jnz     insnz_12
-                mov     eax, [ebp+var_2C]
+                mov     eax, [ebp+fname]
                 push    eax
                 mov     eax, offset L_63 ; "`incbin': unable to get length of file "...
                 push    eax
                 mov     eax, 3
                 push    eax
-                call    nasm_error
-                add     esp, 0Ch
+                call    nasm_error      ; nasm_error(ERR_NONFATAL, "`incbin': unable to get length of file `%s'",
+                                        ;            fname);
+                add     esp, 12
                 mov     eax, 0
                 mov     edx, 0
-                jmp     insnz_17
+                jmp     insnz_17        ; return 0;
 ; ---------------------------------------------------------------------------
 
 insnz_12:                               ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 170h
-                mov     ecx, [eax]
-                mov     eax, [ecx]
+                mov     eax, [ebp+instruction] ; if (instruction->eops->next) {
+                add     eax, 368
+                mov     ecx, [eax]      ; instruction->eops
+                mov     eax, [ecx]      ; eops->next
                 cmp     eax, 0
                 jz      insnz_14
-                mov     eax, [ebp+arg_10]
-                add     eax, 170h
+                mov     eax, [ebp+instruction] ; if (len <= (off_t)instruction->eops->next->offset) {
+                add     eax, 368
                 mov     ecx, [eax]
                 mov     eax, [ecx]
-                add     eax, 10h
+                add     eax, 16
                 mov     ecx, [eax]
                 add     eax, 4
-                mov     edx, [eax]
-                mov     eax, [ebp+var_30]
+                mov     edx, [eax]      ; eops->next->offset
+                mov     eax, [ebp+len]
                 cmp     eax, ecx
                 jg      insnz_13
                 mov     eax, 0
-                mov     [ebp+var_30], eax
+                mov     [ebp+len], eax  ; len = 0;
                 jmp     insnz_14
 ; ---------------------------------------------------------------------------
 
 insnz_13:                               ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 170h
+                mov     eax, [ebp+instruction] ; } else {
+                add     eax, 368
                 mov     ecx, [eax]
                 mov     eax, [ecx]
-                add     eax, 10h
-                mov     ecx, [ebp+var_30]
+                add     eax, 16
+                mov     ecx, [ebp+len]  ; len -= instruction->eops->next->offset;
                 mov     edx, ecx
-                sar     edx, 1Fh
-                mov     [ebp+var_34], ecx
+                sar     edx, 31
+                mov     [ebp+tmp2], ecx
                 mov     ecx, [eax]
                 add     eax, 4
-                mov     [ebp+var_38], edx
+                mov     [ebp+tmp2_h], edx
                 mov     edx, [eax]
-                mov     eax, [ebp+var_34]
+                mov     eax, [ebp+tmp2]
                 sub     eax, ecx
-                mov     ecx, [ebp+var_38]
+                mov     ecx, [ebp+tmp2_h]
                 sbb     ecx, edx
-                mov     [ebp+var_30], eax
-                mov     eax, [ebp+arg_10]
-                add     eax, 170h
+                mov     [ebp+len], eax
+                mov     eax, [ebp+instruction] ; if (instruction->eops->next->next &&
+                add     eax, 368
                 mov     ecx, [eax]
                 mov     eax, [ecx]
                 mov     ecx, [eax]
                 cmp     ecx, 0
                 jz      insnz_14
-                mov     eax, [ebp+arg_10]
-                add     eax, 170h
+                mov     eax, [ebp+instruction] ; len > (off_t)instruction->eops->next->next->offset) {
+                add     eax, 368
                 mov     ecx, [eax]
                 mov     eax, [ecx]
                 mov     ecx, [eax]
-                add     ecx, 10h
+                add     ecx, 16
                 mov     eax, [ecx]
                 add     ecx, 4
                 mov     edx, [ecx]
-                mov     ecx, [ebp+var_30]
+                mov     ecx, [ebp+len]
                 cmp     ecx, eax
                 jle     insnz_14
-                mov     eax, [ebp+arg_10]
-                add     eax, 170h
-                mov     ecx, [eax]
+                mov     eax, [ebp+instruction]
+                add     eax, 368
+                mov     ecx, [eax]      ; len = (off_t)instruction->eops->next->next->offset;
                 mov     eax, [ecx]
                 mov     ecx, [eax]
-                add     ecx, 10h
+                add     ecx, 16
                 mov     eax, [ecx]
                 add     ecx, 4
                 mov     edx, [ecx]
-                mov     [ebp+var_30], eax
+                mov     [ebp+len], eax  ;  }
 
 insnz_14:                               ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 178h
-                mov     ecx, [ebp+var_30]
+                mov     eax, [ebp+instruction] ; len *= instruction->times;
+                add     eax, 376        ; instruction->times = instruction + 376
+                mov     ecx, [ebp+len]
                 mov     edx, [eax]
                 imul    ecx, edx
-                mov     [ebp+var_30], ecx
-                mov     eax, [ebp+arg_10]
-                add     eax, 178h
+                mov     [ebp+len], ecx
+                mov     eax, [ebp+instruction] ; /* Tell the upper layer to not iterate */
+                add     eax, 376        ; instruction->times = 1;
                 mov     ecx, 1
                 mov     [eax], ecx
-                mov     eax, [ebp+var_30]
+                mov     eax, [ebp+len]  ; return len;
                 mov     ecx, eax
-                sar     ecx, 1Fh
-                mov     [ebp+var_40], eax
-                mov     [ebp+var_3C], ecx
-                mov     eax, [ebp+var_40]
-                mov     edx, [ebp+var_3C]
+                sar     ecx, 31
+                mov     [ebp+tmp3], eax
+                mov     [ebp+tmp3_h], ecx
+                mov     eax, [ebp+tmp3]
+                mov     edx, [ebp+tmp3_h]
                 jmp     insnz_17
 ; ---------------------------------------------------------------------------
 
 insnz_15:                               ; ...
-                mov     eax, [ebp+arg_C]
-                push    eax
-                mov     eax, [ebp+arg_10]
+                mov     eax, [ebp+_bits] ; /* Check to see if we need an address-size prefix */
+                push    eax             ; add_asp(instruction, bits);
+                mov     eax, [ebp+instruction]
                 push    eax
                 call    add_asp
                 add     esp, 8
-                mov     eax, [ebp+arg_C]
+                mov     eax, [ebp+_bits] ; m = find_match(&temp, instruction, segment, offset, bits);
                 push    eax
-                mov     eax, [ebp+arg_4]
-                mov     ecx, [ebp+arg_8]
+                mov     eax, [ebp+_offset]
+                mov     ecx, [ebp+_offset_h]
                 push    ecx
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_segment]
                 push    eax
-                mov     eax, [ebp+arg_10]
+                mov     eax, [ebp+instruction]
                 push    eax
-                lea     eax, [ebp+var_4]
+                lea     eax, [ebp+temp]
                 push    eax
                 call    find_match
-                add     esp, 18h
-                mov     [ebp+var_8], eax
-                mov     eax, [ebp+var_8]
-                cmp     eax, 10h
+                add     esp, 24
+                mov     [ebp+m], eax
+                mov     eax, [ebp+m]    ; if (m == MOK_GOOD) {
+                cmp     eax, 16         ; MOK_GOOD = 16
                 jnz     insnz_16
-                mov     eax, [ebp+var_4]
+                mov     eax, [ebp+temp] ; /* we've matched an instruction. */
+                push    eax             ; return calcsize(segment, offset, bits, instruction, temp);
+                mov     eax, [ebp+instruction]
                 push    eax
-                mov     eax, [ebp+arg_10]
+                mov     eax, [ebp+_bits]
                 push    eax
-                mov     eax, [ebp+arg_C]
-                push    eax
-                mov     eax, [ebp+arg_4]
-                mov     ecx, [ebp+arg_8]
+                mov     eax, [ebp+_offset]
+                mov     ecx, [ebp+_offset_h]
                 push    ecx
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_segment]
                 push    eax
                 call    calcsize
-                add     esp, 18h
+                add     esp, 24
                 jmp     insnz_17
 ; ---------------------------------------------------------------------------
                 jmp     insnz_17
 ; ---------------------------------------------------------------------------
 
 insnz_16:                               ; ...
-                mov     eax, 0FFFFFFFFh
-                mov     edx, 0FFFFFFFFh
+                mov     eax, 0FFFFFFFFh ; } else {
+                mov     edx, 0FFFFFFFFh ; return -1;  /* didn't match any instruction */
                 jmp     $+5
 ; ---------------------------------------------------------------------------
 
@@ -4943,120 +4945,128 @@ endp            insn_size
 
 proc            bad_hle_warn near       ; ...
 
-var_C           = dword ptr -0Ch
-var_8           = dword ptr -8
-var_4           = dword ptr -4
-arg_0           = dword ptr  8
-arg_4           = byte ptr  0Ch
+n               = dword ptr -0Ch
+ww              = dword ptr -8
+rep_pfx         = dword ptr -4
+ins             = dword ptr  8
+hleok           = byte ptr  0Ch
 
-                push    ebp
+                push    ebp             ; static void bad_hle_warn(const insn * ins, uint8_t hleok)
                 mov     ebp, esp
-                sub     esp, 0Ch
+                sub     esp, 12
                 nop
-                mov     eax, [ebp+arg_0]
-                add     eax, 4
-                add     eax, 4
-                mov     ecx, [eax]
-                mov     [ebp+var_4], ecx
-                mov     eax, [ebp+var_4]
-                sub     eax, 101h
-                mov     [ebp+var_C], eax
-                mov     eax, [ebp+var_C]
+                mov     eax, [ebp+ins]  ; enum prefixes rep_pfx = ins->prefixes[PPS_REP];
+                add     eax, 4          ; ins->prefixes = ins + 4
+                add     eax, 4          ; PPS_REP = 4
+                mov     ecx, [eax]      ; enum whatwarn { w_none, w_lock, w_inval } ww;
+                                        ; static const enum whatwarn warn[2][4] =
+                                        ;     {
+                                        ;         { w_inval, w_inval, w_none, w_lock }, /* XACQUIRE */
+                                        ;         { w_inval, w_none,  w_none, w_lock }, /* XRELEASE */
+                                        ;     };
+                mov     [ebp+rep_pfx], ecx ; unsigned int n;
+                mov     eax, [ebp+rep_pfx]
+                sub     eax, 257        ; P_XACQUIRE = 257
+                mov     [ebp+n], eax    ; n = (unsigned int)rep_pfx - P_XACQUIRE;
+                mov     eax, [ebp+n]    ; if (n > 1)
                 cmp     eax, 1
-                jbe     loc_8002877
-                jmp     locret_800294F
+                jbe     bhw_1
+                jmp     bhw_9           ; return;  /* Not XACQUIRE/XRELEASE */
 ; ---------------------------------------------------------------------------
 
-loc_8002877:                            ; ...
-                mov     eax, [ebp+var_C]
+bhw_1:                                  ; ...
+                mov     eax, [ebp+n]    ; ww = warn[n][hleok];
                 shl     eax, 4
                 mov     ecx, offset warn
                 add     ecx, eax
-                movzx   eax, [ebp+arg_4]
+                movzx   eax, [ebp+hleok]
                 shl     eax, 2
                 add     ecx, eax
                 mov     eax, [ecx]
-                mov     [ebp+var_8], eax
-                mov     eax, [ebp+arg_0]
-                add     eax, 30h
+                mov     [ebp+ww], eax
+                mov     eax, [ebp+ins]  ; if (!is_class(MEMORY, ins->oprs[0].type))
+                add     eax, 48         ; ins->oprs[0]
                 mov     ecx, [eax]
                 add     eax, 4
-                mov     edx, [eax]
+                mov     edx, [eax]      ; ins->oprs[0].type
                 push    edx
                 push    ecx
-                mov     eax, 0Ch
+                mov     eax, 12         ; MEMORY
                 mov     ecx, 0
                 push    ecx
                 push    eax
                 call    is_class
-                add     esp, 10h
+                add     esp, 16
                 cmp     eax, 0
-                jz      loc_80028C3
-                jmp     loc_80028CB
+                jz      bhw_2
+                jmp     bhw_3
 ; ---------------------------------------------------------------------------
 
-loc_80028C3:                            ; ...
-                mov     eax, 2
-                mov     [ebp+var_8], eax
+bhw_2:                                  ; ...
+                mov     eax, 2          ; w_none = 0, w_lock = 1, w_inval = 2
+                mov     [ebp+ww], eax   ; ww = w_inval;  /* HLE requires operand 0 to be memory */
 
-loc_80028CB:                            ; ...
-                jmp     loc_800293D
+bhw_3:                                  ; ...
+                jmp     bhw_8           ; switch (ww) {
 ; ---------------------------------------------------------------------------
 
-loc_80028D0:                            ; ...
-                jmp     locret_800294F
+bhw_4:                                  ; ...
+                jmp     bhw_9           ; case w_none:
+                                        ; break;
 ; ---------------------------------------------------------------------------
 
-loc_80028D5:                            ; ...
-                mov     eax, [ebp+arg_0]
-                add     eax, 4
-                add     eax, 8
+bhw_5:                                  ; ...
+                mov     eax, [ebp+ins]  ; case w_lock:
+                add     eax, 4          ; if (ins->prefixes[PPS_LOCK] != P_LOCK) {
+                add     eax, 8          ; PPS_LOCK
                 mov     ecx, [eax]
-                cmp     ecx, 0F5h
-                jz      loc_800290D
-                mov     eax, [ebp+var_4]
+                cmp     ecx, 245        ; P_LOCK = 245
+                jz      bhw_6
+                mov     eax, [ebp+rep_pfx] ; nasm_error(ERR_WARNING | WARN_HLE | ERR_PASS2,
+                                        ;  "%s with this instruction requires lock", prefix_name(rep_pfx));
                 push    eax
                 call    prefix_name
                 add     esp, 4
                 push    eax
                 mov     eax, offset L_64 ; "%s with this instruction requires lock"
                 push    eax
-                mov     eax, 0D102h
+                mov     eax, 0D102h     ; ERR_WARNING | WARN_HLE | ERR_PASS2
                 push    eax
                 call    nasm_error
-                add     esp, 0Ch
+                add     esp, 12
 
-loc_800290D:                            ; ...
-                jmp     locret_800294F
+bhw_6:                                  ; ...
+                jmp     bhw_9           ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8002912:                            ; ...
-                mov     eax, [ebp+var_4]
-                push    eax
+bhw_7:                                  ; ...
+                mov     eax, [ebp+rep_pfx] ; case w_inval:
+                push    eax             ; nasm_error(ERR_WARNING | WARN_HLE | ERR_PASS2,
+                                        ;  "%s invalid with this instruction", prefix_name(rep_pfx));
                 call    prefix_name
                 add     esp, 4
                 push    eax
                 mov     eax, offset L_65 ; "%s invalid with this instruction"
                 push    eax
-                mov     eax, 0D102h
+                mov     eax, 0D102h     ; ERR_WARNING | WARN_HLE | ERR_PASS2
                 push    eax
                 call    nasm_error
-                add     esp, 0Ch
-                jmp     locret_800294F
+                add     esp, 12
+                jmp     bhw_9           ; break;
 ; ---------------------------------------------------------------------------
-                jmp     locret_800294F
+                jmp     bhw_9
 ; ---------------------------------------------------------------------------
 
-loc_800293D:                            ; ...
-                mov     eax, [ebp+var_8]
+bhw_8:                                  ; ...
+                mov     eax, [ebp+ww]   ; switch (ww) {
                 cmp     eax, 0
-                jz      short loc_80028D0
+                jz      short bhw_4     ; case w_none:
                 cmp     eax, 1
-                jz      short loc_80028D5
+                jz      short bhw_5     ; case w_lock:
                 cmp     eax, 2
-                jz      short loc_8002912
+                jz      short bhw_7     ; case w_inval:
 
-locret_800294F:                         ; ...
+bhw_9:                                  ; ...
                 leave
                 retn
 endp            bad_hle_warn
@@ -5195,18 +5205,18 @@ arg_14          = dword ptr  1Ch
                 add     eax, 10h
                 mov     ecx, [eax]
                 cmp     ecx, 0F8h
-                jnz     loc_80029FB
+                jnz     csz_1
                 mov     eax, [ebp+arg_10]
                 add     eax, 184h
                 mov     ecx, [eax]
                 or      ecx, 8
                 mov     [eax], ecx
 
-loc_80029FB:                            ; ...
+csz_1:                                  ; ...
                 mov     eax, [ebp+var_4]
                 movzx   ecx, [byte ptr eax]
                 cmp     ecx, 0
-                jz      loc_8004321
+                jz      csz_170
                 mov     eax, [ebp+var_4]
                 mov     ecx, eax
                 inc     eax
@@ -5236,10 +5246,10 @@ loc_80029FB:                            ; ...
                 mov     [ebp+var_24], eax
                 mov     eax, 0
                 mov     [ebp+var_25], al
-                jmp     loc_8003896
+                jmp     csz_117
 ; ---------------------------------------------------------------------------
 
-loc_8002A66:                            ; ...
+csz_2:                                  ; ...
                 movzx   eax, [ebp+var_11]
                 mov     ecx, [ebp+var_4]
                 add     ecx, eax
@@ -5253,16 +5263,16 @@ loc_8002A66:                            ; ...
                 adc     eax, ecx
                 mov     [ebp+var_10], edx
                 mov     [ebp+var_C], eax
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8002A90:                            ; ...
+csz_3:                                  ; ...
                 movzx   eax, [ebp+var_11]
                 mov     [ebp+var_25], al
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8002A9C:                            ; ...
+csz_4:                                  ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 184h
                 mov     ecx, 0C9h
@@ -5295,18 +5305,18 @@ loc_8002A9C:                            ; ...
                 adc     eax, 0
                 mov     [ebp+var_10], edx
                 mov     [ebp+var_C], eax
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8002AFC:                            ; ...
+csz_5:                                  ; ...
                 mov     eax, [ebp+var_24]
                 add     eax, 0Ch
                 mov     ecx, [eax]
                 mov     [ebp+var_38], ecx
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8002B0C:                            ; ...
+csz_6:                                  ; ...
                 mov     eax, [ebp+var_C]
                 mov     ecx, eax
                 mov     edx, [ebp+var_10]
@@ -5321,20 +5331,20 @@ loc_8002B0C:                            ; ...
                 adc     eax, 0
                 mov     [ebp+var_10], edx
                 mov     [ebp+var_C], eax
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8002B39:                            ; ...
+csz_7:                                  ; ...
                 mov     eax, [ebp+var_10]
                 add     eax, 2
                 mov     ecx, [ebp+var_C]
                 adc     ecx, 0
                 mov     [ebp+var_10], eax
                 mov     [ebp+var_C], ecx
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8002B50:                            ; ...
+csz_8:                                  ; ...
                 mov     eax, [ebp+var_24]
                 mov     ecx, [eax]
                 add     eax, 4
@@ -5342,11 +5352,11 @@ loc_8002B50:                            ; ...
                 and     edx, 0Eh
                 mov     eax, 0
                 cmp     edx, 0
-                jnz     loc_8002B74
+                jnz     csz_9
                 cmp     eax, 0
-                jz      loc_8002BC6
+                jz      csz_14
 
-loc_8002B74:                            ; ...
+csz_9:                                  ; ...
                 mov     eax, [ebp+var_24]
                 mov     ecx, [eax]
                 add     eax, 4
@@ -5354,23 +5364,23 @@ loc_8002B74:                            ; ...
                 and     edx, 2
                 mov     eax, 0
                 cmp     edx, 0
-                jnz     loc_8002B98
+                jnz     csz_10
                 cmp     eax, 0
-                jz      loc_8002B9D
+                jz      csz_11
 
-loc_8002B98:                            ; ...
-                jmp     loc_8002BA7
+csz_10:                                 ; ...
+                jmp     csz_12
 ; ---------------------------------------------------------------------------
 
-loc_8002B9D:                            ; ...
+csz_11:                                 ; ...
                 mov     eax, 4
-                jmp     loc_8002BAC
+                jmp     csz_13
 ; ---------------------------------------------------------------------------
 
-loc_8002BA7:                            ; ...
+csz_12:                                 ; ...
                 mov     eax, 2
 
-loc_8002BAC:                            ; ...
+csz_13:                                 ; ...
                 mov     ecx, eax
                 sar     ecx, 1Fh
                 mov     edx, [ebp+var_10]
@@ -5379,28 +5389,28 @@ loc_8002BAC:                            ; ...
                 adc     eax, ecx
                 mov     [ebp+var_10], edx
                 mov     [ebp+var_C], eax
-                jmp     loc_8002C06
+                jmp     csz_18
 ; ---------------------------------------------------------------------------
 
-loc_8002BC6:                            ; ...
+csz_14:                                 ; ...
                 mov     eax, [ebp+arg_C]
                 cmp     eax, 10h
                 mov     eax, 0
                 setz    al
                 cmp     eax, 0
-                jz      loc_8002BE2
-                jmp     loc_8002BEC
+                jz      csz_15
+                jmp     csz_16
 ; ---------------------------------------------------------------------------
 
-loc_8002BE2:                            ; ...
+csz_15:                                 ; ...
                 mov     eax, 4
-                jmp     loc_8002BF1
+                jmp     csz_17
 ; ---------------------------------------------------------------------------
 
-loc_8002BEC:                            ; ...
+csz_16:                                 ; ...
                 mov     eax, 2
 
-loc_8002BF1:                            ; ...
+csz_17:                                 ; ...
                 mov     ecx, eax
                 sar     ecx, 1Fh
                 mov     edx, [ebp+var_10]
@@ -5410,21 +5420,21 @@ loc_8002BF1:                            ; ...
                 mov     [ebp+var_10], edx
                 mov     [ebp+var_C], eax
 
-loc_8002C06:                            ; ...
-                jmp     loc_800431C
+csz_18:                                 ; ...
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8002C0B:                            ; ...
+csz_19:                                 ; ...
                 mov     eax, [ebp+var_10]
                 add     eax, 4
                 mov     ecx, [ebp+var_C]
                 adc     ecx, 0
                 mov     [ebp+var_10], eax
                 mov     [ebp+var_C], ecx
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8002C22:                            ; ...
+csz_20:                                 ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 2Ch
                 mov     ecx, [eax]
@@ -5437,10 +5447,10 @@ loc_8002C22:                            ; ...
                 adc     ecx, eax
                 mov     [ebp+var_10], edx
                 mov     [ebp+var_C], ecx
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8002C47:                            ; ...
+csz_21:                                 ; ...
                 mov     eax, [ebp+var_C]
                 mov     ecx, eax
                 mov     edx, [ebp+var_10]
@@ -5455,30 +5465,30 @@ loc_8002C47:                            ; ...
                 adc     eax, 0
                 mov     [ebp+var_10], edx
                 mov     [ebp+var_C], eax
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8002C74:                            ; ...
+csz_22:                                 ; ...
                 mov     eax, [ebp+var_10]
                 add     eax, 8
                 mov     ecx, [ebp+var_C]
                 adc     ecx, 0
                 mov     [ebp+var_10], eax
                 mov     [ebp+var_C], ecx
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8002C8B:                            ; ...
+csz_23:                                 ; ...
                 mov     eax, [ebp+var_10]
                 add     eax, 2
                 mov     ecx, [ebp+var_C]
                 adc     ecx, 0
                 mov     [ebp+var_10], eax
                 mov     [ebp+var_C], ecx
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8002CA2:                            ; ...
+csz_24:                                 ; ...
                 mov     eax, [ebp+var_24]
                 mov     ecx, [eax]
                 add     eax, 4
@@ -5486,11 +5496,11 @@ loc_8002CA2:                            ; ...
                 and     edx, 0Eh
                 mov     eax, 0
                 cmp     edx, 0
-                jnz     loc_8002CC6
+                jnz     csz_25
                 cmp     eax, 0
-                jz      loc_8002D18
+                jz      csz_30
 
-loc_8002CC6:                            ; ...
+csz_25:                                 ; ...
                 mov     eax, [ebp+var_24]
                 mov     ecx, [eax]
                 add     eax, 4
@@ -5498,23 +5508,23 @@ loc_8002CC6:                            ; ...
                 and     edx, 2
                 mov     eax, 0
                 cmp     edx, 0
-                jnz     loc_8002CEA
+                jnz     csz_26
                 cmp     eax, 0
-                jz      loc_8002CEF
+                jz      csz_27
 
-loc_8002CEA:                            ; ...
-                jmp     loc_8002CF9
+csz_26:                                 ; ...
+                jmp     csz_28
 ; ---------------------------------------------------------------------------
 
-loc_8002CEF:                            ; ...
+csz_27:                                 ; ...
                 mov     eax, 4
-                jmp     loc_8002CFE
+                jmp     csz_29
 ; ---------------------------------------------------------------------------
 
-loc_8002CF9:                            ; ...
+csz_28:                                 ; ...
                 mov     eax, 2
 
-loc_8002CFE:                            ; ...
+csz_29:                                 ; ...
                 mov     ecx, eax
                 sar     ecx, 1Fh
                 mov     edx, [ebp+var_10]
@@ -5523,28 +5533,28 @@ loc_8002CFE:                            ; ...
                 adc     eax, ecx
                 mov     [ebp+var_10], edx
                 mov     [ebp+var_C], eax
-                jmp     loc_8002D58
+                jmp     csz_34
 ; ---------------------------------------------------------------------------
 
-loc_8002D18:                            ; ...
+csz_30:                                 ; ...
                 mov     eax, [ebp+arg_C]
                 cmp     eax, 10h
                 mov     eax, 0
                 setz    al
                 cmp     eax, 0
-                jz      loc_8002D34
-                jmp     loc_8002D3E
+                jz      csz_31
+                jmp     csz_32
 ; ---------------------------------------------------------------------------
 
-loc_8002D34:                            ; ...
+csz_31:                                 ; ...
                 mov     eax, 4
-                jmp     loc_8002D43
+                jmp     csz_33
 ; ---------------------------------------------------------------------------
 
-loc_8002D3E:                            ; ...
+csz_32:                                 ; ...
                 mov     eax, 2
 
-loc_8002D43:                            ; ...
+csz_33:                                 ; ...
                 mov     ecx, eax
                 sar     ecx, 1Fh
                 mov     edx, [ebp+var_10]
@@ -5554,31 +5564,31 @@ loc_8002D43:                            ; ...
                 mov     [ebp+var_10], edx
                 mov     [ebp+var_C], eax
 
-loc_8002D58:                            ; ...
-                jmp     loc_800431C
+csz_34:                                 ; ...
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8002D5D:                            ; ...
+csz_35:                                 ; ...
                 mov     eax, [ebp+var_10]
                 add     eax, 4
                 mov     ecx, [ebp+var_C]
                 adc     ecx, 0
                 mov     [ebp+var_10], eax
                 mov     [ebp+var_C], ecx
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8002D74:                            ; ...
+csz_36:                                 ; ...
                 mov     eax, [ebp+var_10]
                 add     eax, 2
                 mov     ecx, [ebp+var_C]
                 adc     ecx, 0
                 mov     [ebp+var_10], eax
                 mov     [ebp+var_C], ecx
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8002D8B:                            ; ...
+csz_37:                                 ; ...
                 mov     eax, [ebp+var_4]
                 mov     ecx, eax
                 inc     eax
@@ -5597,10 +5607,10 @@ loc_8002D8B:                            ; ...
                 adc     eax, 0
                 mov     [ebp+var_10], edx
                 mov     [ebp+var_C], eax
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8002DC1:                            ; ...
+csz_38:                                 ; ...
                 mov     eax, [ebp+var_C]
                 mov     ecx, eax
                 mov     edx, [ebp+var_10]
@@ -5615,10 +5625,10 @@ loc_8002DC1:                            ; ...
                 adc     eax, 0
                 mov     [ebp+var_10], edx
                 mov     [ebp+var_C], eax
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8002E00:                            ; ...
+csz_39:                                 ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 184h
                 mov     ecx, [eax]
@@ -5675,10 +5685,10 @@ loc_8002E00:                            ; ...
                 movzx   ecx, [byte ptr edx]
                 sub     ecx, 0C0h
                 mov     [eax], ecx
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8002EC3:                            ; ...
+csz_40:                                 ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 184h
                 mov     ecx, [eax]
@@ -5713,20 +5723,20 @@ loc_8002EC3:                            ; ...
                 movzx   ecx, [byte ptr edx]
                 sub     ecx, 0C0h
                 mov     [eax], ecx
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8002F36:                            ; ...
+csz_41:                                 ; ...
                 mov     eax, [ebp+var_10]
                 add     eax, 4
                 mov     ecx, [ebp+var_C]
                 adc     ecx, 0
                 mov     [ebp+var_10], eax
                 mov     [ebp+var_C], ecx
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8002F4D:                            ; ...
+csz_42:                                 ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 184h
                 mov     ecx, [eax]
@@ -5757,10 +5767,10 @@ loc_8002F4D:                            ; ...
                 mov     [ebp+var_4], ecx
                 movzx   ecx, [byte ptr edx]
                 mov     [eax], ecx
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8002FB6:                            ; ...
+csz_43:                                 ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 184h
                 mov     ecx, [eax]
@@ -5786,17 +5796,17 @@ loc_8002FB6:                            ; ...
                 mov     [ebp+var_4], ecx
                 movzx   ecx, [byte ptr edx]
                 mov     [eax], ecx
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_800300C:                            ; ...
+csz_44:                                 ; ...
                 movzx   eax, [ebp+var_11]
                 and     eax, 3
                 mov     [ebp+var_2D], al
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_800301B:                            ; ...
+csz_45:                                 ; ...
                 mov     eax, [ebp+var_C]
                 mov     ecx, eax
                 mov     edx, [ebp+var_10]
@@ -5811,26 +5821,26 @@ loc_800301B:                            ; ...
                 adc     eax, 0
                 mov     [ebp+var_10], edx
                 mov     [ebp+var_C], eax
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_800305A:                            ; ...
-                jmp     loc_800431C
+csz_46:                                 ; ...
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_800305F:                            ; ...
+csz_47:                                 ; ...
                 mov     eax, [ebp+arg_C]
                 cmp     eax, 40h
-                jnz     loc_800307A
+                jnz     csz_48
                 mov     eax, 0FFFFFFFFh
                 mov     edx, 0FFFFFFFFh
-                jmp     locret_8004924
+                jmp     csz_207
 ; ---------------------------------------------------------------------------
 
-loc_800307A:                            ; ...
+csz_48:                                 ; ...
                 mov     eax, [ebp+arg_C]
                 cmp     eax, 10h
-                jz      loc_80030B3
+                jz      csz_50
                 mov     eax, 0F1h
                 push    eax
                 mov     eax, 5
@@ -5840,19 +5850,19 @@ loc_800307A:                            ; ...
                 call    has_prefix
                 add     esp, 0Ch
                 cmp     eax, 0
-                jz      loc_80030AC
-                jmp     loc_80030B3
+                jz      csz_49
+                jmp     csz_50
 ; ---------------------------------------------------------------------------
 
-loc_80030AC:                            ; ...
+csz_49:                                 ; ...
                 mov     eax, 1
-                jmp     short loc_80030B8
+                jmp     short csz_51
 ; ---------------------------------------------------------------------------
 
-loc_80030B3:                            ; ...
+csz_50:                                 ; ...
                 mov     eax, 0
 
-loc_80030B8:                            ; ...
+csz_51:                                 ; ...
                 mov     ecx, eax
                 sar     ecx, 1Fh
                 mov     edx, [ebp+var_10]
@@ -5861,13 +5871,13 @@ loc_80030B8:                            ; ...
                 adc     eax, ecx
                 mov     [ebp+var_10], edx
                 mov     [ebp+var_C], eax
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_80030D2:                            ; ...
+csz_52:                                 ; ...
                 mov     eax, [ebp+arg_C]
                 cmp     eax, 20h
-                jz      loc_800310B
+                jz      csz_54
                 mov     eax, 0F2h
                 push    eax
                 mov     eax, 5
@@ -5877,19 +5887,19 @@ loc_80030D2:                            ; ...
                 call    has_prefix
                 add     esp, 0Ch
                 cmp     eax, 0
-                jz      loc_8003104
-                jmp     loc_800310B
+                jz      csz_53
+                jmp     csz_54
 ; ---------------------------------------------------------------------------
 
-loc_8003104:                            ; ...
+csz_53:                                 ; ...
                 mov     eax, 1
-                jmp     short loc_8003110
+                jmp     short csz_55
 ; ---------------------------------------------------------------------------
 
-loc_800310B:                            ; ...
+csz_54:                                 ; ...
                 mov     eax, 0
 
-loc_8003110:                            ; ...
+csz_55:                                 ; ...
                 mov     ecx, eax
                 sar     ecx, 1Fh
                 mov     edx, [ebp+var_10]
@@ -5898,17 +5908,17 @@ loc_8003110:                            ; ...
                 adc     eax, ecx
                 mov     [ebp+var_10], edx
                 mov     [ebp+var_C], eax
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_800312A:                            ; ...
-                jmp     loc_800431C
+csz_56:                                 ; ...
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_800312F:                            ; ...
-                mov     eax, [ebp+arg_C]
+csz_57:                                 ; ...
+                mov     eax, [ebp-0FFFFFFECh]
                 cmp     eax, 40h
-                jnz     loc_8003182
+                jnz     csz_58
                 mov     eax, 0F1h
                 push    eax
                 mov     eax, 5
@@ -5918,7 +5928,7 @@ loc_800312F:                            ; ...
                 call    has_prefix
                 add     esp, 0Ch
                 cmp     eax, 0
-                jnz     loc_8003182
+                jnz     csz_58
                 mov     eax, 0F2h
                 push    eax
                 mov     eax, 5
@@ -5928,25 +5938,25 @@ loc_800312F:                            ; ...
                 call    has_prefix
                 add     esp, 0Ch
                 cmp     eax, 0
-                jnz     loc_8003182
-                jmp     loc_8003191
+                jnz     csz_58
+                jmp     csz_59
 ; ---------------------------------------------------------------------------
 
-loc_8003182:                            ; ...
+csz_58:                                 ; ...
                 mov     eax, 0FFFFFFFFh
                 mov     edx, 0FFFFFFFFh
-                jmp     locret_8004924
+                jmp     csz_207
 ; ---------------------------------------------------------------------------
 
-loc_8003191:                            ; ...
-                jmp     loc_800431C
+csz_59:                                 ; ...
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8003196:                            ; ...
-                jmp     loc_800431C
+csz_60:                                 ; ...
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_800319B:                            ; ...
+csz_61:                                 ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 4
                 add     eax, 10h
@@ -5954,35 +5964,35 @@ loc_800319B:                            ; ...
                 mov     [ebp+var_B4], ecx
                 mov     eax, [ebp+var_B4]
                 cmp     eax, 0F6h
-                jnz     loc_80031C3
-                jmp     loc_800431C
+                jnz     csz_62
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_80031C3:                            ; ...
+csz_62:                                 ; ...
                 mov     eax, [ebp+var_B4]
                 cmp     eax, 0
-                jz      loc_80031EB
+                jz      csz_63
                 mov     eax, offset L_66 ; "invalid operand size prefix"
                 push    eax
                 mov     eax, 102h
                 push    eax
                 call    nasm_error
                 add     esp, 8
-                jmp     loc_80031FB
+                jmp     csz_64
 ; ---------------------------------------------------------------------------
 
-loc_80031EB:                            ; ...
+csz_63:                                 ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 4
                 add     eax, 10h
                 mov     ecx, 0F6h
                 mov     [eax], ecx
 
-loc_80031FB:                            ; ...
-                jmp     loc_800431C
+csz_64:                                 ; ...
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8003200:                            ; ...
+csz_65:                                 ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 4
                 add     eax, 10h
@@ -5990,68 +6000,68 @@ loc_8003200:                            ; ...
                 mov     [ebp+var_B8], ecx
                 mov     eax, [ebp+var_B8]
                 cmp     eax, 0F7h
-                jnz     loc_8003228
-                jmp     loc_800431C
+                jnz     csz_66
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8003228:                            ; ...
+csz_66:                                 ; ...
                 mov     eax, [ebp+var_B8]
                 cmp     eax, 0
-                jz      loc_8003250
+                jz      csz_67
                 mov     eax, offset L_67 ; "invalid operand size prefix"
                 push    eax
                 mov     eax, 102h
                 push    eax
                 call    nasm_error
                 add     esp, 8
-                jmp     loc_8003260
+                jmp     csz_68
 ; ---------------------------------------------------------------------------
 
-loc_8003250:                            ; ...
+csz_67:                                 ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 4
                 add     eax, 10h
                 mov     ecx, 0F7h
                 mov     [eax], ecx
 
-loc_8003260:                            ; ...
-                jmp     loc_800431C
+csz_68:                                 ; ...
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8003265:                            ; ...
-                jmp     loc_800431C
+csz_69:                                 ; ...
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_800326A:                            ; ...
+csz_70:                                 ; ...
                 mov     eax, [ebp+var_18]
                 and     eax, 0FFFFFFF7h
                 mov     [ebp+var_18], eax
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8003278:                            ; ...
+csz_71:                                 ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 184h
                 mov     ecx, [eax]
                 or      ecx, 8
                 mov     [eax], ecx
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_800328D:                            ; ...
+csz_72:                                 ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 184h
                 mov     ecx, [eax]
                 or      ecx, 200h
                 mov     [eax], ecx
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_80032A5:                            ; ...
-                jmp     loc_800431C
+csz_73:                                 ; ...
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_80032AA:                            ; ...
+csz_74:                                 ; ...
                 mov     eax, [ebp+var_4]
                 mov     ecx, eax
                 inc     eax
@@ -6070,14 +6080,14 @@ loc_80032AA:                            ; ...
                 adc     eax, 0
                 mov     [ebp+var_10], edx
                 mov     [ebp+var_C], eax
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_80032F2:                            ; ...
-                jmp     loc_800431C
+csz_75:                                 ; ...
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_80032F7:                            ; ...
+csz_76:                                 ; ...
                 mov     eax, [ebp+var_C]
                 mov     ecx, eax
                 mov     edx, [ebp+var_10]
@@ -6092,103 +6102,103 @@ loc_80032F7:                            ; ...
                 adc     eax, 0
                 mov     [ebp+var_10], edx
                 mov     [ebp+var_C], eax
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8003336:                            ; ...
+csz_77:                                 ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 184h
                 mov     ecx, [eax]
                 or      ecx, 20h
                 mov     [eax], ecx
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_800334B:                            ; ...
-                jmp     loc_800431C
+csz_78:                                 ; ...
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8003350:                            ; ...
+csz_79:                                 ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 4
                 add     eax, 4
                 mov     ecx, [eax]
                 cmp     ecx, 0
-                jz      loc_8003369
-                jmp     loc_8003379
+                jz      csz_80
+                jmp     csz_81
 ; ---------------------------------------------------------------------------
 
-loc_8003369:                            ; ...
+csz_80:                                 ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 4
                 add     eax, 4
                 mov     ecx, 0FAh
                 mov     [eax], ecx
 
-loc_8003379:                            ; ...
-                jmp     loc_800431C
+csz_81:                                 ; ...
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_800337E:                            ; ...
+csz_82:                                 ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 4
                 add     eax, 4
                 mov     ecx, [eax]
                 cmp     ecx, 0
-                jz      loc_8003397
-                jmp     loc_80033A7
+                jz      csz_83
+                jmp     csz_84
 ; ---------------------------------------------------------------------------
 
-loc_8003397:                            ; ...
+csz_83:                                 ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 4
                 add     eax, 4
                 mov     ecx, 0FCh
                 mov     [eax], ecx
 
-loc_80033A7:                            ; ...
-                jmp     loc_800431C
+csz_84:                                 ; ...
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_80033AC:                            ; ...
+csz_85:                                 ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 30h
                 push    eax
                 call    absolute_op
                 add     esp, 4
                 cmp     eax, 0
-                jz      loc_80033C9
-                jmp     loc_80033E2
+                jz      csz_86
+                jmp     csz_87
 ; ---------------------------------------------------------------------------
 
-loc_80033C9:                            ; ...
+csz_86:                                 ; ...
                 mov     eax, offset L_68 ; "attempt to reserve non-constant quantit"...
                 push    eax
                 mov     eax, 3
                 push    eax
                 call    nasm_error
                 add     esp, 8
-                jmp     loc_8003432
+                jmp     csz_89
 ; ---------------------------------------------------------------------------
 
-loc_80033E2:                            ; ...
+csz_87:                                 ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 30h
                 add     eax, 38h
                 mov     ecx, [eax]
                 and     ecx, 1
                 cmp     ecx, 0
-                jz      loc_8003412
+                jz      csz_88
                 mov     eax, offset L_69 ; "forward reference in RESx can have unpr"...
                 push    eax
                 mov     eax, 82h
                 push    eax
                 call    nasm_error
                 add     esp, 8
-                jmp     loc_8003432
+                jmp     csz_89
 ; ---------------------------------------------------------------------------
 
-loc_8003412:                            ; ...
+csz_88:                                 ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 30h
                 add     eax, 28h
@@ -6202,34 +6212,34 @@ loc_8003412:                            ; ...
                 mov     [ebp+var_10], eax
                 mov     [ebp+var_C], ecx
 
-loc_8003432:                            ; ...
-                jmp     loc_800431C
+csz_89:                                 ; ...
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8003437:                            ; ...
+csz_90:                                 ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 4
                 mov     ecx, [eax]
                 cmp     ecx, 0
-                jz      loc_800344D
-                jmp     loc_800345A
+                jz      csz_91
+                jmp     csz_92
 ; ---------------------------------------------------------------------------
 
-loc_800344D:                            ; ...
+csz_91:                                 ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 4
                 mov     ecx, 100h
                 mov     [eax], ecx
 
-loc_800345A:                            ; ...
-                jmp     loc_800431C
+csz_92:                                 ; ...
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_800345F:                            ; ...
-                jmp     loc_800431C
+csz_93:                                 ; ...
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8003464:                            ; ...
+csz_94:                                 ; ...
                 mov     eax, [ebp+var_C]
                 mov     ecx, eax
                 mov     edx, [ebp+var_10]
@@ -6244,14 +6254,14 @@ loc_8003464:                            ; ...
                 adc     eax, 0
                 mov     [ebp+var_10], edx
                 mov     [ebp+var_C], eax
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_80034A3:                            ; ...
-                jmp     loc_800431C
+csz_95:                                 ; ...
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_80034A8:                            ; ...
+csz_96:                                 ; ...
                 mov     eax, [ebp+var_C]
                 mov     ecx, eax
                 mov     edx, [ebp+var_10]
@@ -6266,14 +6276,14 @@ loc_80034A8:                            ; ...
                 adc     eax, 0
                 mov     [ebp+var_10], edx
                 mov     [ebp+var_C], eax
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_80034E7:                            ; ...
-                jmp     loc_800431C
+csz_97:                                 ; ...
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_80034EC:                            ; ...
+csz_98:                                 ; ...
                 mov     eax, [ebp+var_C]
                 mov     ecx, eax
                 mov     edx, [ebp+var_10]
@@ -6288,28 +6298,28 @@ loc_80034EC:                            ; ...
                 adc     eax, 0
                 mov     [ebp+var_10], edx
                 mov     [ebp+var_C], eax
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_800352B:                            ; ...
+csz_99:                                 ; ...
                 mov     eax, 2
                 mov     [ebp+var_2C], eax
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8003538:                            ; ...
+csz_100:                                ; ...
                 mov     eax, 3
                 mov     [ebp+var_2C], eax
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8003545:                            ; ...
+csz_101:                                ; ...
                 mov     eax, 4
                 mov     [ebp+var_2C], eax
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8003552:                            ; ...
+csz_102:                                ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 30h
                 mov     ecx, [ebp+var_20]
@@ -6320,7 +6330,7 @@ loc_8003552:                            ; ...
                 mov     [ebp+var_10E], al
                 movzx   eax, [ebp+var_11]
                 cmp     eax, 7Fh
-                jg      loc_80035B5
+                jg      csz_103
                 mov     eax, [ebp+var_24]
                 push    eax
                 call    regflag
@@ -6335,10 +6345,10 @@ loc_8003552:                            ; ...
                 add     eax, ecx
                 mov     ecx, [eax]
                 mov     [ebp+var_124], ecx
-                jmp     loc_80035D8
+                jmp     csz_104
 ; ---------------------------------------------------------------------------
 
-loc_80035B5:                            ; ...
+csz_103:                                ; ...
                 mov     eax, 0
                 mov     ecx, 0
                 mov     [ebp+var_130], eax
@@ -6347,7 +6357,7 @@ loc_80035B5:                            ; ...
                 and     eax, 7
                 mov     [ebp+var_124], eax
 
-loc_80035D8:                            ; ...
+csz_104:                                ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 1A0h
                 movsx   ecx, [byte ptr eax]
@@ -6355,7 +6365,7 @@ loc_80035D8:                            ; ...
                 mov     eax, 0
                 setnl   al
                 cmp     eax, 0
-                jz      loc_8003614
+                jz      csz_105
                 mov     eax, [ebp+arg_10]
                 add     eax, 30h
                 mov     ecx, [ebp+arg_10]
@@ -6363,19 +6373,19 @@ loc_80035D8:                            ; ...
                 movsx   edx, [byte ptr ecx]
                 shl     edx, 6
                 add     eax, edx
-                jmp     loc_800361E
+                jmp     csz_106
 ; ---------------------------------------------------------------------------
 
-loc_8003614:                            ; ...
+csz_105:                                ; ...
                 mov     eax, 0
                 jmp     $+5
 ; ---------------------------------------------------------------------------
 
-loc_800361E:                            ; ...
+csz_106:                                ; ...
                 mov     [ebp+var_138], eax
                 mov     eax, [ebp+var_138]
                 cmp     eax, 0
-                jz      loc_80036CF
+                jz      csz_110
                 mov     eax, [ebp+var_138]
                 add     eax, 3Ch
                 movzx   ecx, [word ptr eax]
@@ -6384,11 +6394,11 @@ loc_800361E:                            ; ...
                 and     ecx, 0C0h
                 mov     eax, 0
                 cmp     eax, 0
-                jnz     loc_8003661
+                jnz     csz_107
                 cmp     ecx, 0
-                jz      loc_80036CF
+                jz      csz_110
 
-loc_8003661:                            ; ...
+csz_107:                                ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 194h
                 add     eax, 2
@@ -6403,11 +6413,11 @@ loc_8003661:                            ; ...
                 and     ecx, 40h
                 mov     eax, 0
                 cmp     eax, 0
-                jnz     loc_80036A0
+                jnz     csz_108
                 cmp     ecx, 0
-                jz      loc_80036CA
+                jz      csz_109
 
-loc_80036A0:                            ; ...
+csz_108:                                ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 194h
                 add     eax, 2
@@ -6421,11 +6431,11 @@ loc_80036A0:                            ; ...
                 or      ecx, edx
                 mov     [eax], cl
 
-loc_80036CA:                            ; ...
-                jmp     loc_8003757
+csz_109:                                ; ...
+                jmp     csz_112
 ; ---------------------------------------------------------------------------
 
-loc_80036CF:                            ; ...
+csz_110:                                ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 194h
                 add     eax, 2
@@ -6456,11 +6466,11 @@ loc_80036CF:                            ; ...
                 and     ecx, 20h
                 mov     eax, 0
                 cmp     eax, 0
-                jnz     loc_8003743
+                jnz     csz_111
                 cmp     ecx, 0
-                jz      loc_8003757
+                jz      csz_112
 
-loc_8003743:                            ; ...
+csz_111:                                ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 194h
                 add     eax, 2
@@ -6468,7 +6478,7 @@ loc_8003743:                            ; ...
                 or      ecx, 10h
                 mov     [eax], cl
 
-loc_8003757:                            ; ...
+csz_112:                                ; ...
                 mov     eax, 27h
                 push    eax
                 mov     eax, [ebp+arg_14]
@@ -6476,7 +6486,7 @@ loc_8003757:                            ; ...
                 call    itemp_has
                 add     esp, 8
                 cmp     eax, 0
-                jz      loc_80037CA
+                jz      csz_113
                 mov     eax, [ebp+var_134]
                 add     eax, 34h
                 mov     ecx, [eax]
@@ -6484,7 +6494,7 @@ loc_8003757:                            ; ...
                 mov     [eax], ecx
                 mov     eax, [ebp+var_38]
                 cmp     eax, 0FFFFFFFFh
-                jz      loc_80037CA
+                jz      csz_113
                 mov     eax, [ebp+var_134]
                 add     eax, 10h
                 mov     ecx, [ebp+var_38]
@@ -6502,7 +6512,7 @@ loc_8003757:                            ; ...
                 mov     ecx, 2
                 mov     [eax], ecx
 
-loc_80037CA:                            ; ...
+csz_113:                                ; ...
                 lea     eax, [ebp+var_3C]
                 push    eax
                 mov     eax, [ebp+arg_10]
@@ -6523,7 +6533,7 @@ loc_80037CA:                            ; ...
                 add     esp, 20h
                 mov     ecx, [ebp+var_2C]
                 cmp     eax, ecx
-                jz      loc_8003838
+                jz      csz_114
                 mov     eax, [ebp+var_3C]
                 push    eax
                 mov     eax, offset L_70 ; "%s"
@@ -6534,12 +6544,12 @@ loc_80037CA:                            ; ...
                 add     esp, 0Ch
                 mov     eax, 0FFFFFFFFh
                 mov     edx, 0FFFFFFFFh
-                jmp     locret_8004924
+                jmp     csz_207
 ; ---------------------------------------------------------------------------
-                jmp     loc_8003869
+                jmp     csz_115
 ; ---------------------------------------------------------------------------
 
-loc_8003838:                            ; ...
+csz_114:                                ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 184h
                 mov     ecx, [eax]
@@ -6556,11 +6566,11 @@ loc_8003838:                            ; ...
                 mov     [ebp+var_10], edx
                 mov     [ebp+var_C], eax
 
-loc_8003869:                            ; ...
-                jmp     loc_800431C
+csz_115:                                ; ...
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_800386E:                            ; ...
+csz_116:                                ; ...
                 movzx   eax, [ebp+var_11]
                 push    eax
                 movzx   eax, [ebp+var_11]
@@ -6571,685 +6581,685 @@ loc_800386E:                            ; ...
                 push    eax
                 call    nasm_panic
                 add     esp, 10h
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
-                jmp     loc_800431C
+                jmp     csz_169
 ; ---------------------------------------------------------------------------
 
-loc_8003896:                            ; ...
+csz_117:                                ; ...
                 movzx   eax, [ebp+var_11]
                 cmp     eax, 84h
-                jg      loc_8003D42
+                jg      csz_143
                 cmp     eax, 84h
-                jge     loc_8003552
+                jge     csz_102
                 cmp     eax, 2Dh
-                jg      loc_8003AFD
+                jg      csz_130
                 cmp     eax, 2Dh
-                jge     loc_8002C74
+                jge     csz_22
                 cmp     eax, 17h
-                jg      loc_80039F5
+                jg      csz_124
                 cmp     eax, 17h
-                jge     loc_8002B0C
+                jge     csz_6
                 cmp     eax, 0Ch
-                jg      loc_800397A
+                jg      csz_121
                 cmp     eax, 0Ch
-                jge     loc_8002AFC
+                jge     csz_5
                 cmp     eax, 6
-                jg      loc_800393A
+                jg      csz_119
                 cmp     eax, 6
-                jge     loc_8002A90
+                jge     csz_3
                 cmp     eax, 3
-                jg      loc_8003923
+                jg      csz_118
                 cmp     eax, 3
-                jge     loc_8002A66
+                jge     csz_2
                 cmp     eax, 1
-                jz      loc_8002A66
+                jz      csz_2
                 cmp     eax, 2
-                jz      loc_8002A66
-                jmp     loc_800386E
+                jz      csz_2
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003923:                            ; ...
+csz_118:                                ; ...
                 cmp     eax, 4
-                jz      loc_8002A66
+                jz      csz_2
                 cmp     eax, 5
-                jz      loc_8002A90
-                jmp     loc_800386E
+                jz      csz_3
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_800393A:                            ; ...
+csz_119:                                ; ...
                 cmp     eax, 9
-                jg      loc_8003963
+                jg      csz_120
                 cmp     eax, 9
-                jge     loc_8002A9C
+                jge     csz_4
                 cmp     eax, 7
-                jz      loc_8002A90
+                jz      csz_3
                 cmp     eax, 8
-                jz      loc_8002A9C
-                jmp     loc_800386E
+                jz      csz_4
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003963:                            ; ...
+csz_120:                                ; ...
                 cmp     eax, 0Ah
-                jz      loc_8002A9C
+                jz      csz_4
                 cmp     eax, 0Bh
-                jz      loc_8002A9C
-                jmp     loc_800386E
+                jz      csz_4
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_800397A:                            ; ...
+csz_121:                                ; ...
                 cmp     eax, 12h
-                jg      loc_80039CC
+                jg      csz_123
                 cmp     eax, 12h
-                jge     loc_8002B0C
+                jge     csz_6
                 cmp     eax, 0Fh
-                jg      loc_80039B5
+                jg      csz_122
                 cmp     eax, 0Fh
-                jge     loc_8002AFC
+                jge     csz_5
                 cmp     eax, 0Dh
-                jz      loc_8002AFC
+                jz      csz_5
                 cmp     eax, 0Eh
-                jz      loc_8002AFC
-                jmp     loc_800386E
+                jz      csz_5
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_80039B5:                            ; ...
+csz_122:                                ; ...
                 cmp     eax, 10h
-                jz      loc_8002B0C
+                jz      csz_6
                 cmp     eax, 11h
-                jz      loc_8002B0C
-                jmp     loc_800386E
+                jz      csz_6
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_80039CC:                            ; ...
+csz_123:                                ; ...
                 cmp     eax, 13h
-                jz      loc_8002B0C
+                jz      csz_6
                 cmp     eax, 14h
-                jz      loc_8002B0C
+                jz      csz_6
                 cmp     eax, 15h
-                jz      loc_8002B0C
+                jz      csz_6
                 cmp     eax, 16h
-                jz      loc_8002B0C
-                jmp     loc_800386E
+                jz      csz_6
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_80039F5:                            ; ...
+csz_124:                                ; ...
                 cmp     eax, 22h
-                jg      loc_8003A82
+                jg      csz_127
                 cmp     eax, 22h
-                jge     loc_8002C0B
+                jge     csz_19
                 cmp     eax, 1Dh
-                jg      loc_8003A59
+                jg      csz_126
                 cmp     eax, 1Dh
-                jge     loc_8002B50
+                jge     csz_8
                 cmp     eax, 1Ah
-                jg      loc_8003A42
+                jg      csz_125
                 cmp     eax, 1Ah
-                jge     loc_8002B39
+                jge     csz_7
                 cmp     eax, 18h
-                jz      loc_8002B39
+                jz      csz_7
                 cmp     eax, 19h
-                jz      loc_8002B39
-                jmp     loc_800386E
+                jz      csz_7
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003A42:                            ; ...
+csz_125:                                ; ...
                 cmp     eax, 1Bh
-                jz      loc_8002B39
+                jz      csz_7
                 cmp     eax, 1Ch
-                jz      loc_8002B50
-                jmp     loc_800386E
+                jz      csz_8
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003A59:                            ; ...
+csz_126:                                ; ...
                 cmp     eax, 1Eh
-                jz      loc_8002B50
+                jz      csz_8
                 cmp     eax, 1Fh
-                jz      loc_8002B50
+                jz      csz_8
                 cmp     eax, 20h
-                jz      loc_8002C0B
+                jz      csz_19
                 cmp     eax, 21h
-                jz      loc_8002C0B
-                jmp     loc_800386E
+                jz      csz_19
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003A82:                            ; ...
+csz_127:                                ; ...
                 cmp     eax, 28h
-                jg      loc_8003AD4
+                jg      csz_129
                 cmp     eax, 28h
-                jge     loc_8002C47
+                jge     csz_21
                 cmp     eax, 25h
-                jg      loc_8003ABD
+                jg      csz_128
                 cmp     eax, 25h
-                jge     loc_8002C22
+                jge     csz_20
                 cmp     eax, 23h
-                jz      loc_8002C0B
+                jz      csz_19
                 cmp     eax, 24h
-                jz      loc_8002C22
-                jmp     loc_800386E
+                jz      csz_20
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003ABD:                            ; ...
+csz_128:                                ; ...
                 cmp     eax, 26h
-                jz      loc_8002C22
+                jz      csz_20
                 cmp     eax, 27h
-                jz      loc_8002C22
-                jmp     loc_800386E
+                jz      csz_20
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003AD4:                            ; ...
+csz_129:                                ; ...
                 cmp     eax, 29h
-                jz      loc_8002C47
+                jz      csz_21
                 cmp     eax, 2Ah
-                jz      loc_8002C47
+                jz      csz_21
                 cmp     eax, 2Bh
-                jz      loc_8002C47
+                jz      csz_21
                 cmp     eax, 2Ch
-                jz      loc_8002C74
-                jmp     loc_800386E
+                jz      csz_22
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003AFD:                            ; ...
+csz_130:                                ; ...
                 cmp     eax, 48h
-                jg      loc_8003C2E
+                jg      csz_137
                 cmp     eax, 48h
-                jge     loc_8003552
+                jge     csz_102
                 cmp     eax, 39h
-                jg      loc_8003BB3
+                jg      csz_134
                 cmp     eax, 39h
-                jge     loc_8002D5D
+                jge     csz_35
                 cmp     eax, 33h
-                jg      loc_8003B73
+                jg      csz_132
                 cmp     eax, 33h
-                jge     loc_8002C8B
+                jge     csz_23
                 cmp     eax, 30h
-                jg      loc_8003B5C
+                jg      csz_131
                 cmp     eax, 30h
-                jge     loc_8002C8B
+                jge     csz_23
                 cmp     eax, 2Eh
-                jz      loc_8002C74
+                jz      csz_22
                 cmp     eax, 2Fh
-                jz      loc_8002C74
-                jmp     loc_800386E
+                jz      csz_22
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003B5C:                            ; ...
+csz_131:                                ; ...
                 cmp     eax, 31h
-                jz      loc_8002C8B
+                jz      csz_23
                 cmp     eax, 32h
-                jz      loc_8002C8B
-                jmp     loc_800386E
+                jz      csz_23
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003B73:                            ; ...
+csz_132:                                ; ...
                 cmp     eax, 36h
-                jg      loc_8003B9C
+                jg      csz_133
                 cmp     eax, 36h
-                jge     loc_8002CA2
+                jge     csz_24
                 cmp     eax, 34h
-                jz      loc_8002CA2
+                jz      csz_24
                 cmp     eax, 35h
-                jz      loc_8002CA2
-                jmp     loc_800386E
+                jz      csz_24
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003B9C:                            ; ...
+csz_133:                                ; ...
                 cmp     eax, 37h
-                jz      loc_8002CA2
+                jz      csz_24
                 cmp     eax, 38h
-                jz      loc_8002D5D
-                jmp     loc_800386E
+                jz      csz_35
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003BB3:                            ; ...
+csz_134:                                ; ...
                 cmp     eax, 3Fh
-                jg      loc_8003C05
+                jg      csz_136
                 cmp     eax, 3Fh
-                jge     loc_8002D74
+                jge     csz_36
                 cmp     eax, 3Ch
-                jg      loc_8003BEE
+                jg      csz_135
                 cmp     eax, 3Ch
-                jge     loc_8002D74
+                jge     csz_36
                 cmp     eax, 3Ah
-                jz      loc_8002D5D
+                jz      csz_35
                 cmp     eax, 3Bh
-                jz      loc_8002D5D
-                jmp     loc_800386E
+                jz      csz_35
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003BEE:                            ; ...
+csz_135:                                ; ...
                 cmp     eax, 3Dh
-                jz      loc_8002D74
+                jz      csz_36
                 cmp     eax, 3Eh
-                jz      loc_8002D74
-                jmp     loc_800386E
+                jz      csz_36
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003C05:                            ; ...
+csz_136:                                ; ...
                 cmp     eax, 40h
-                jz      loc_8003552
+                jz      csz_102
                 cmp     eax, 41h
-                jz      loc_8003552
+                jz      csz_102
                 cmp     eax, 42h
-                jz      loc_8003552
+                jz      csz_102
                 cmp     eax, 43h
-                jz      loc_8003552
-                jmp     loc_800386E
+                jz      csz_102
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003C2E:                            ; ...
+csz_137:                                ; ...
                 cmp     eax, 5Bh
-                jg      loc_8003CBB
+                jg      csz_140
                 cmp     eax, 5Bh
-                jge     loc_8003552
+                jge     csz_102
                 cmp     eax, 52h
-                jg      loc_8003C92
+                jg      csz_139
                 cmp     eax, 52h
-                jge     loc_8003552
+                jge     csz_102
                 cmp     eax, 4Bh
-                jg      loc_8003C7B
+                jg      csz_138
                 cmp     eax, 4Bh
-                jge     loc_8003552
+                jge     csz_102
                 cmp     eax, 49h
-                jz      loc_8003552
+                jz      csz_102
                 cmp     eax, 4Ah
-                jz      loc_8003552
-                jmp     loc_800386E
+                jz      csz_102
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003C7B:                            ; ...
+csz_138:                                ; ...
                 cmp     eax, 50h
-                jz      loc_8003552
+                jz      csz_102
                 cmp     eax, 51h
-                jz      loc_8003552
-                jmp     loc_800386E
+                jz      csz_102
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003C92:                            ; ...
+csz_139:                                ; ...
                 cmp     eax, 53h
-                jz      loc_8003552
+                jz      csz_102
                 cmp     eax, 58h
-                jz      loc_8003552
+                jz      csz_102
                 cmp     eax, 59h
-                jz      loc_8003552
+                jz      csz_102
                 cmp     eax, 5Ah
-                jz      loc_8003552
-                jmp     loc_800386E
+                jz      csz_102
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003CBB:                            ; ...
+csz_140:                                ; ...
                 cmp     eax, 7Fh
-                jg      loc_8003D0D
+                jg      csz_142
                 cmp     eax, 7Fh
-                jge     loc_8002DC1
+                jge     csz_38
                 cmp     eax, 7Ch
-                jg      loc_8003CF6
+                jg      csz_141
                 cmp     eax, 7Ch
-                jge     loc_8002DC1
+                jge     csz_38
                 cmp     eax, 7Ah
-                jz      loc_8002D8B
+                jz      csz_37
                 cmp     eax, 7Bh
-                jz      loc_8002D8B
-                jmp     loc_800386E
+                jz      csz_37
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003CF6:                            ; ...
+csz_141:                                ; ...
                 cmp     eax, 7Dh
-                jz      loc_8002DC1
+                jz      csz_38
                 cmp     eax, 7Eh
-                jz      loc_8002DC1
-                jmp     loc_800386E
+                jz      csz_38
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003D0D:                            ; ...
+csz_142:                                ; ...
                 cmp     eax, 80h
-                jz      loc_8003552
+                jz      csz_102
                 cmp     eax, 81h
-                jz      loc_8003552
+                jz      csz_102
                 cmp     eax, 82h
-                jz      loc_8003552
+                jz      csz_102
                 cmp     eax, 83h
-                jz      loc_8003552
-                jmp     loc_800386E
+                jz      csz_102
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003D42:                            ; ...
+csz_143:                                ; ...
                 cmp     eax, 0BCh
-                jg      loc_800403B
+                jg      csz_156
                 cmp     eax, 0BCh
-                jge     loc_800301B
+                jge     csz_45
                 cmp     eax, 9Bh
-                jg      loc_8003EE5
+                jg      csz_150
                 cmp     eax, 9Bh
-                jge     loc_8003552
+                jge     csz_102
                 cmp     eax, 90h
-                jg      loc_8003E46
+                jg      csz_147
                 cmp     eax, 90h
-                jge     loc_8003552
+                jge     csz_102
                 cmp     eax, 8Ah
-                jg      loc_8003DF4
+                jg      csz_145
                 cmp     eax, 8Ah
-                jge     loc_8003552
+                jge     csz_102
                 cmp     eax, 87h
-                jg      loc_8003DD7
+                jg      csz_144
                 cmp     eax, 87h
-                jge     loc_8003552
+                jge     csz_102
                 cmp     eax, 85h
-                jz      loc_8003552
+                jz      csz_102
                 cmp     eax, 86h
-                jz      loc_8003552
-                jmp     loc_800386E
+                jz      csz_102
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003DD7:                            ; ...
+csz_144:                                ; ...
                 cmp     eax, 88h
-                jz      loc_8003552
+                jz      csz_102
                 cmp     eax, 89h
-                jz      loc_8003552
-                jmp     loc_800386E
+                jz      csz_102
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003DF4:                            ; ...
+csz_145:                                ; ...
                 cmp     eax, 8Dh
-                jg      loc_8003E29
+                jg      csz_146
                 cmp     eax, 8Dh
-                jge     loc_8003552
+                jge     csz_102
                 cmp     eax, 8Bh
-                jz      loc_8003552
+                jz      csz_102
                 cmp     eax, 8Ch
-                jz      loc_8003552
-                jmp     loc_800386E
+                jz      csz_102
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003E29:                            ; ...
+csz_146:                                ; ...
                 cmp     eax, 8Eh
-                jz      loc_8003552
+                jz      csz_102
                 cmp     eax, 8Fh
-                jz      loc_8003552
-                jmp     loc_800386E
+                jz      csz_102
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003E46:                            ; ...
+csz_147:                                ; ...
                 cmp     eax, 96h
-                jg      loc_8003EB0
+                jg      csz_149
                 cmp     eax, 96h
-                jge     loc_8003552
+                jge     csz_102
                 cmp     eax, 93h
-                jg      loc_8003E93
+                jg      csz_148
                 cmp     eax, 93h
-                jge     loc_8003552
+                jge     csz_102
                 cmp     eax, 91h
-                jz      loc_8003552
+                jz      csz_102
                 cmp     eax, 92h
-                jz      loc_8003552
-                jmp     loc_800386E
+                jz      csz_102
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003E93:                            ; ...
+csz_148:                                ; ...
                 cmp     eax, 94h
-                jz      loc_8003552
+                jz      csz_102
                 cmp     eax, 95h
-                jz      loc_8003552
-                jmp     loc_800386E
+                jz      csz_102
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003EB0:                            ; ...
+csz_149:                                ; ...
                 cmp     eax, 97h
-                jz      loc_8003552
+                jz      csz_102
                 cmp     eax, 98h
-                jz      loc_8003552
+                jz      csz_102
                 cmp     eax, 99h
-                jz      loc_8003552
+                jz      csz_102
                 cmp     eax, 9Ah
-                jz      loc_8003552
-                jmp     loc_800386E
+                jz      csz_102
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003EE5:                            ; ...
+csz_150:                                ; ...
                 cmp     eax, 0ADh
-                jg      loc_8003F9C
+                jg      csz_153
                 cmp     eax, 0ADh
-                jge     loc_8002F36
+                jge     csz_41
                 cmp     eax, 0A1h
-                jg      loc_8003F67
+                jg      csz_152
                 cmp     eax, 0A1h
-                jge     loc_8002E00
+                jge     csz_39
                 cmp     eax, 9Eh
-                jg      loc_8003F4A
+                jg      csz_151
                 cmp     eax, 9Eh
-                jge     loc_8003552
+                jge     csz_102
                 cmp     eax, 9Ch
-                jz      loc_8003552
+                jz      csz_102
                 cmp     eax, 9Dh
-                jz      loc_8003552
-                jmp     loc_800386E
+                jz      csz_102
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003F4A:                            ; ...
+csz_151:                                ; ...
                 cmp     eax, 9Fh
-                jz      loc_8003552
+                jz      csz_102
                 cmp     eax, 0A0h
-                jz      loc_8002E00
-                jmp     loc_800386E
+                jz      csz_39
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003F67:                            ; ...
+csz_152:                                ; ...
                 cmp     eax, 0A2h
-                jz      loc_8002E00
+                jz      csz_39
                 cmp     eax, 0A3h
-                jz      loc_8002E00
+                jz      csz_39
                 cmp     eax, 0A8h
-                jz      loc_8002EC3
+                jz      csz_40
                 cmp     eax, 0ACh
-                jz      loc_8002F36
-                jmp     loc_800386E
+                jz      csz_41
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003F9C:                            ; ...
+csz_153:                                ; ...
                 cmp     eax, 0B3h
-                jg      loc_8004006
+                jg      csz_155
                 cmp     eax, 0B3h
-                jge     loc_8002F4D
+                jge     csz_42
                 cmp     eax, 0B0h
-                jg      loc_8003FE9
+                jg      csz_154
                 cmp     eax, 0B0h
-                jge     loc_8002F4D
+                jge     csz_42
                 cmp     eax, 0AEh
-                jz      loc_8002F36
+                jz      csz_41
                 cmp     eax, 0AFh
-                jz      loc_8002F36
-                jmp     loc_800386E
+                jz      csz_41
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8003FE9:                            ; ...
+csz_154:                                ; ...
                 cmp     eax, 0B1h
-                jz      loc_8002F4D
+                jz      csz_42
                 cmp     eax, 0B2h
-                jz      loc_8002F4D
-                jmp     loc_800386E
+                jz      csz_42
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8004006:                            ; ...
+csz_155:                                ; ...
                 cmp     eax, 0B8h
-                jz      loc_8002FB6
+                jz      csz_43
                 cmp     eax, 0B9h
-                jz      loc_800300C
+                jz      csz_44
                 cmp     eax, 0BAh
-                jz      loc_800300C
+                jz      csz_44
                 cmp     eax, 0BBh
-                jz      loc_800300C
-                jmp     loc_800386E
+                jz      csz_44
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_800403B:                            ; ...
+csz_156:                                ; ...
                 cmp     eax, 0D8h
-                jg      loc_80041C6
+                jg      csz_163
                 cmp     eax, 0D8h
-                jge     loc_80032AA
+                jge     csz_74
                 cmp     eax, 0CCh
-                jg      loc_8004127
+                jg      csz_160
                 cmp     eax, 0CCh
-                jge     loc_8003196
+                jge     csz_60
                 cmp     eax, 0C2h
-                jg      loc_80040D5
+                jg      csz_158
                 cmp     eax, 0C2h
-                jge     loc_800305A
+                jge     csz_46
                 cmp     eax, 0BFh
-                jg      loc_80040B8
+                jg      csz_157
                 cmp     eax, 0BFh
-                jge     loc_800301B
+                jge     csz_45
                 cmp     eax, 0BDh
-                jz      loc_800301B
+                jz      csz_45
                 cmp     eax, 0BEh
-                jz      loc_800301B
-                jmp     loc_800386E
+                jz      csz_45
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_80040B8:                            ; ...
+csz_157:                                ; ...
                 cmp     eax, 0C0h
-                jz      loc_800305A
+                jz      csz_46
                 cmp     eax, 0C1h
-                jz      loc_800305A
-                jmp     loc_800386E
+                jz      csz_46
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_80040D5:                            ; ...
+csz_158:                                ; ...
                 cmp     eax, 0C9h
-                jg      loc_800410A
+                jg      csz_159
                 cmp     eax, 0C9h
-                jge     loc_80030D2
+                jge     csz_52
                 cmp     eax, 0C3h
-                jz      loc_800305A
+                jz      csz_46
                 cmp     eax, 0C8h
-                jz      loc_800305F
-                jmp     loc_800386E
+                jz      csz_47
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_800410A:                            ; ...
+csz_159:                                ; ...
                 cmp     eax, 0CAh
-                jz      loc_800312A
+                jz      csz_56
                 cmp     eax, 0CBh
-                jz      loc_800312F
-                jmp     loc_800386E
+                jz      csz_57
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8004127:                            ; ...
+csz_160:                                ; ...
                 cmp     eax, 0D2h
-                jg      loc_8004191
+                jg      csz_162
                 cmp     eax, 0D2h
-                jge     loc_8003265
+                jge     csz_69
                 cmp     eax, 0CFh
-                jg      loc_8004174
+                jg      csz_161
                 cmp     eax, 0CFh
-                jge     loc_8003196
+                jge     csz_60
                 cmp     eax, 0CDh
-                jz      loc_8003196
+                jz      csz_60
                 cmp     eax, 0CEh
-                jz      loc_8003196
-                jmp     loc_800386E
+                jz      csz_60
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8004174:                            ; ...
+csz_161:                                ; ...
                 cmp     eax, 0D0h
-                jz      loc_800319B
+                jz      csz_61
                 cmp     eax, 0D1h
-                jz      loc_8003200
-                jmp     loc_800386E
+                jz      csz_65
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8004191:                            ; ...
+csz_162:                                ; ...
                 cmp     eax, 0D3h
-                jz      loc_800326A
+                jz      csz_70
                 cmp     eax, 0D4h
-                jz      loc_8003278
+                jz      csz_71
                 cmp     eax, 0D5h
-                jz      loc_800328D
+                jz      csz_72
                 cmp     eax, 0D6h
-                jz      loc_80032A5
-                jmp     loc_800386E
+                jz      csz_73
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_80041C6:                            ; ...
+csz_163:                                ; ...
                 cmp     eax, 0F1h
-                jg      loc_800427D
+                jg      csz_166
                 cmp     eax, 0F1h
-                jge     loc_8003464
+                jge     csz_94
                 cmp     eax, 0DEh
-                jg      loc_8004248
+                jg      csz_165
                 cmp     eax, 0DEh
-                jge     loc_8003350
+                jge     csz_79
                 cmp     eax, 0DBh
-                jg      loc_800422B
+                jg      csz_164
                 cmp     eax, 0DBh
-                jge     loc_80032F7
+                jge     csz_76
                 cmp     eax, 0D9h
-                jz      loc_80032F2
+                jz      csz_75
                 cmp     eax, 0DAh
-                jz      loc_80032F7
-                jmp     loc_800386E
+                jz      csz_76
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_800422B:                            ; ...
+csz_164:                                ; ...
                 cmp     eax, 0DCh
-                jz      loc_8003336
+                jz      csz_77
                 cmp     eax, 0DDh
-                jz      loc_800334B
-                jmp     loc_800386E
+                jz      csz_78
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_8004248:                            ; ...
+csz_165:                                ; ...
                 cmp     eax, 0DFh
-                jz      loc_800337E
+                jz      csz_82
                 cmp     eax, 0E0h
-                jz      loc_80033AC
+                jz      csz_85
                 cmp     eax, 0E1h
-                jz      loc_8003437
+                jz      csz_90
                 cmp     eax, 0F0h
-                jz      loc_800345F
-                jmp     loc_800386E
+                jz      csz_93
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_800427D:                            ; ...
+csz_166:                                ; ...
                 cmp     eax, 0F9h
-                jg      loc_80042E7
+                jg      csz_168
                 cmp     eax, 0F9h
-                jge     loc_80034E7
+                jge     csz_97
                 cmp     eax, 0F6h
-                jg      loc_80042CA
+                jg      csz_167
                 cmp     eax, 0F6h
-                jge     loc_80034A8
+                jge     csz_96
                 cmp     eax, 0F4h
-                jz      loc_80034A3
+                jz      csz_95
                 cmp     eax, 0F5h
-                jz      loc_80034A3
-                jmp     loc_800386E
+                jz      csz_95
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_80042CA:                            ; ...
+csz_167:                                ; ...
                 cmp     eax, 0F7h
-                jz      loc_80034A8
+                jz      csz_96
                 cmp     eax, 0F8h
-                jz      loc_80034E7
-                jmp     loc_800386E
+                jz      csz_97
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_80042E7:                            ; ...
+csz_168:                                ; ...
                 cmp     eax, 0FBh
-                jz      loc_80034EC
+                jz      csz_98
                 cmp     eax, 0FCh
-                jz      loc_800352B
+                jz      csz_99
                 cmp     eax, 0FDh
-                jz      loc_8003538
+                jz      csz_100
                 cmp     eax, 0FEh
-                jz      loc_8003545
-                jmp     loc_800386E
+                jz      csz_101
+                jmp     csz_116
 ; ---------------------------------------------------------------------------
 
-loc_800431C:                            ; ...
-                jmp     loc_80029FB
+csz_169:                                ; ...
+                jmp     csz_1
 ; ---------------------------------------------------------------------------
 
-loc_8004321:                            ; ...
+csz_170:                                ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 184h
                 mov     ecx, [eax]
@@ -7261,13 +7271,13 @@ loc_8004321:                            ; ...
                 mov     ecx, [eax]
                 and     ecx, 200h
                 cmp     ecx, 0
-                jz      loc_800439A
+                jz      csz_172
                 mov     eax, [ebp+arg_10]
                 add     eax, 184h
                 mov     ecx, [eax]
                 and     ecx, 80h
                 cmp     ecx, 0
-                jz      loc_800438A
+                jz      csz_171
                 mov     eax, offset L_72 ; "instruction cannot use high registers"
                 push    eax
                 mov     eax, 3
@@ -7276,87 +7286,87 @@ loc_8004321:                            ; ...
                 add     esp, 8
                 mov     eax, 0FFFFFFFFh
                 mov     edx, 0FFFFFFFFh
-                jmp     locret_8004924
+                jmp     csz_207
 ; ---------------------------------------------------------------------------
 
-loc_800438A:                            ; ...
+csz_171:                                ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 184h
                 mov     ecx, [eax]
                 and     ecx, 0FFFFFFBFh
                 mov     [eax], ecx
 
-loc_800439A:                            ; ...
+csz_172:                                ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 4
                 add     eax, 18h
-                jmp     loc_8004418
+                jmp     csz_180
 ; ---------------------------------------------------------------------------
 
-loc_80043A8:                            ; ...
+csz_173:                                ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 184h
                 mov     ecx, [eax]
                 and     ecx, 400h
                 cmp     ecx, 0
-                jz      loc_80043C7
-                jmp     loc_80043D6
+                jz      csz_174
+                jmp     csz_175
 ; ---------------------------------------------------------------------------
 
-loc_80043C7:                            ; ...
+csz_174:                                ; ...
                 mov     eax, 0FFFFFFFFh
                 mov     edx, 0FFFFFFFFh
-                jmp     locret_8004924
+                jmp     csz_207
 ; ---------------------------------------------------------------------------
 
-loc_80043D6:                            ; ...
-                jmp     loc_8004434
+csz_175:                                ; ...
+                jmp     csz_181
 ; ---------------------------------------------------------------------------
 
-loc_80043DB:                            ; ...
+csz_176:                                ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 184h
                 mov     ecx, [eax]
                 and     ecx, 100h
                 cmp     ecx, 0
-                jz      loc_80043FA
-                jmp     loc_8004409
+                jz      csz_177
+                jmp     csz_178
 ; ---------------------------------------------------------------------------
 
-loc_80043FA:                            ; ...
+csz_177:                                ; ...
                 mov     eax, 0FFFFFFFFh
                 mov     edx, 0FFFFFFFFh
-                jmp     locret_8004924
+                jmp     csz_207
 ; ---------------------------------------------------------------------------
 
-loc_8004409:                            ; ...
-                jmp     loc_8004434
+csz_178:                                ; ...
+                jmp     csz_181
 ; ---------------------------------------------------------------------------
 
-loc_800440E:                            ; ...
-                jmp     loc_8004434
+csz_179:                                ; ...
+                jmp     csz_181
 ; ---------------------------------------------------------------------------
-                jmp     loc_8004434
+                jmp     csz_181
 ; ---------------------------------------------------------------------------
 
-loc_8004418:                            ; ...
+csz_180:                                ; ...
                 mov     ecx, [eax]
                 cmp     ecx, 105h
-                jz      short loc_80043A8
+                jz      short csz_173
                 cmp     ecx, 106h
-                jz      short loc_80043DB
+                jz      short csz_176
                 cmp     ecx, 107h
-                jz      short loc_80043DB
-                jmp     short loc_800440E
+                jz      short csz_176
+                jmp     short csz_179
 ; ---------------------------------------------------------------------------
 
-loc_8004434:                            ; ...
+csz_181:                                ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 184h
                 mov     ecx, [eax]
                 and     ecx, 500h
                 cmp     ecx, 0
-                jz      loc_8004685
+                jz      csz_197
                 mov     eax, 0Fh
                 mov     [ebp+var_13C], eax
                 mov     eax, [ebp+arg_10]
@@ -7364,7 +7374,7 @@ loc_8004434:                            ; ...
                 mov     ecx, [eax]
                 and     ecx, 80h
                 cmp     ecx, 0
-                jz      loc_8004496
+                jz      csz_182
                 mov     eax, offset L_73 ; "cannot use high register in AVX instruc"...
                 push    eax
                 mov     eax, 3
@@ -7373,27 +7383,27 @@ loc_8004434:                            ; ...
                 add     esp, 8
                 mov     eax, 0FFFFFFFFh
                 mov     edx, 0FFFFFFFFh
-                jmp     locret_8004924
+                jmp     csz_207
 ; ---------------------------------------------------------------------------
 
-loc_8004496:                            ; ...
+csz_182:                                ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 190h
                 mov     ecx, [eax]
                 and     ecx, 30h
-                jmp     loc_80044EC
+                jmp     csz_186
 ; ---------------------------------------------------------------------------
 
-loc_80044A9:                            ; ...
+csz_183:                                ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 184h
                 mov     ecx, [eax]
                 and     ecx, 0FFFFFFF7h
                 mov     [eax], ecx
-                jmp     loc_8004500
+                jmp     csz_187
 ; ---------------------------------------------------------------------------
 
-loc_80044BE:                            ; ...
+csz_184:                                ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 184h
                 mov     ecx, [eax]
@@ -7402,45 +7412,45 @@ loc_80044BE:                            ; ...
                 mov     eax, [ebp+var_13C]
                 and     eax, 0FFFFFFF7h
                 mov     [ebp+var_13C], eax
-                jmp     loc_8004500
+                jmp     csz_187
 ; ---------------------------------------------------------------------------
 
-loc_80044E2:                            ; ...
-                jmp     loc_8004500
+csz_185:                                ; ...
+                jmp     csz_187
 ; ---------------------------------------------------------------------------
-                jmp     loc_8004500
+                jmp     csz_187
 ; ---------------------------------------------------------------------------
 
-loc_80044EC:                            ; ...
+csz_186:                                ; ...
                 cmp     ecx, 0
-                jz      short loc_80044A9
+                jz      short csz_183
                 cmp     ecx, 10h
-                jz      short loc_80044BE
+                jz      short csz_184
                 cmp     ecx, 20h
-                jz      short loc_80044A9
+                jz      short csz_183
                 cmp     ecx, 30h
-                jz      short loc_80044E2
+                jz      short csz_185
 
-loc_8004500:                            ; ...
+csz_187:                                ; ...
                 mov     eax, [ebp+arg_C]
                 cmp     eax, 40h
-                jz      loc_8004569
+                jz      csz_189
                 mov     eax, [ebp+arg_10]
                 add     eax, 184h
                 mov     ecx, [eax]
                 mov     eax, [ebp+var_13C]
                 and     ecx, eax
                 cmp     ecx, 0
-                jnz     loc_8004541
+                jnz     csz_188
                 mov     eax, [ebp+arg_10]
                 add     eax, 188h
                 mov     ecx, [eax]
                 cmp     ecx, 7
-                jg      loc_8004541
-                jmp     loc_8004569
+                jg      csz_188
+                jmp     csz_189
 ; ---------------------------------------------------------------------------
 
-loc_8004541:                            ; ...
+csz_188:                                ; ...
                 mov     eax, offset L_74 ; "invalid operands in non-64-bit mode"
                 push    eax
                 mov     eax, 3
@@ -7449,37 +7459,37 @@ loc_8004541:                            ; ...
                 add     esp, 8
                 mov     eax, 0FFFFFFFFh
                 mov     edx, 0FFFFFFFFh
-                jmp     locret_8004924
+                jmp     csz_207
 ; ---------------------------------------------------------------------------
-                jmp     loc_80045DF
+                jmp     csz_192
 ; ---------------------------------------------------------------------------
 
-loc_8004569:                            ; ...
+csz_189:                                ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 184h
                 mov     ecx, [eax]
                 and     ecx, 400h
                 cmp     ecx, 0
-                jz      loc_8004588
-                jmp     loc_80045DF
+                jz      csz_190
+                jmp     csz_192
 ; ---------------------------------------------------------------------------
 
-loc_8004588:                            ; ...
+csz_190:                                ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 188h
                 mov     ecx, [eax]
                 cmp     ecx, 0Fh
-                jg      loc_80045BC
+                jg      csz_191
                 mov     eax, [ebp+arg_10]
                 add     eax, 194h
                 movzx   ecx, [byte ptr eax]
                 and     ecx, 0F0h
                 cmp     ecx, 0
-                jnz     loc_80045BC
-                jmp     loc_80045DF
+                jnz     csz_191
+                jmp     csz_192
 ; ---------------------------------------------------------------------------
 
-loc_80045BC:                            ; ...
+csz_191:                                ; ...
                 mov     eax, offset L_75 ; "invalid high-16 register in non-AVX-512"
                 push    eax
                 mov     eax, 3
@@ -7488,57 +7498,57 @@ loc_80045BC:                            ; ...
                 add     esp, 8
                 mov     eax, 0FFFFFFFFh
                 mov     edx, 0FFFFFFFFh
-                jmp     locret_8004924
+                jmp     csz_207
 ; ---------------------------------------------------------------------------
 
-loc_80045DF:                            ; ...
+csz_192:                                ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 184h
                 mov     ecx, [eax]
                 and     ecx, 400h
                 cmp     ecx, 0
-                jz      loc_8004610
+                jz      csz_193
                 mov     eax, [ebp+var_10]
                 add     eax, 4
                 mov     ecx, [ebp+var_C]
                 adc     ecx, 0
                 mov     [ebp+var_10], eax
                 mov     [ebp+var_C], ecx
-                jmp     loc_8004680
+                jmp     csz_196
 ; ---------------------------------------------------------------------------
 
-loc_8004610:                            ; ...
+csz_193:                                ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 18Ch
                 mov     ecx, [eax]
                 cmp     ecx, 1
-                jnz     loc_8004657
+                jnz     csz_194
                 mov     eax, [ebp+arg_10]
                 add     eax, 184h
                 mov     ecx, [eax]
                 and     ecx, 0Bh
                 cmp     ecx, 0
-                jnz     loc_8004657
+                jnz     csz_194
                 mov     eax, [ebp+arg_10]
                 add     eax, 4
                 add     eax, 18h
                 mov     ecx, [eax]
                 cmp     ecx, 106h
-                jz      loc_8004657
-                jmp     loc_800466E
+                jz      csz_194
+                jmp     csz_195
 ; ---------------------------------------------------------------------------
 
-loc_8004657:                            ; ...
+csz_194:                                ; ...
                 mov     eax, [ebp+var_10]
                 add     eax, 3
                 mov     ecx, [ebp+var_C]
                 adc     ecx, 0
                 mov     [ebp+var_10], eax
                 mov     [ebp+var_C], ecx
-                jmp     loc_8004680
+                jmp     csz_196
 ; ---------------------------------------------------------------------------
 
-loc_800466E:                            ; ...
+csz_195:                                ; ...
                 mov     eax, [ebp+var_10]
                 add     eax, 2
                 mov     ecx, [ebp+var_C]
@@ -7546,23 +7556,23 @@ loc_800466E:                            ; ...
                 mov     [ebp+var_10], eax
                 mov     [ebp+var_C], ecx
 
-loc_8004680:                            ; ...
-                jmp     loc_80047F5
+csz_196:                                ; ...
+                jmp     csz_202
 ; ---------------------------------------------------------------------------
 
-loc_8004685:                            ; ...
+csz_197:                                ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 184h
                 mov     ecx, [eax]
                 and     ecx, 4Fh
                 cmp     ecx, 0
-                jz      loc_80047F5
+                jz      csz_202
                 mov     eax, [ebp+arg_10]
                 add     eax, 184h
                 mov     ecx, [eax]
                 and     ecx, 80h
                 cmp     ecx, 0
-                jz      loc_80046DE
+                jz      csz_198
                 mov     eax, offset L_76 ; "cannot use high register in rex instruc"...
                 push    eax
                 mov     eax, 3
@@ -7571,15 +7581,15 @@ loc_8004685:                            ; ...
                 add     esp, 8
                 mov     eax, 0FFFFFFFFh
                 mov     edx, 0FFFFFFFFh
-                jmp     locret_8004924
+                jmp     csz_207
 ; ---------------------------------------------------------------------------
-                jmp     loc_80047F5
+                jmp     csz_202
 ; ---------------------------------------------------------------------------
 
-loc_80046DE:                            ; ...
+csz_198:                                ; ...
                 mov     eax, [ebp+arg_C]
                 cmp     eax, 40h
-                jnz     loc_8004729
+                jnz     csz_199
                 mov     eax, [ebp+var_C]
                 mov     ecx, eax
                 mov     edx, [ebp+var_10]
@@ -7594,26 +7604,26 @@ loc_80046DE:                            ; ...
                 adc     eax, 0
                 mov     [ebp+var_10], edx
                 mov     [ebp+var_C], eax
-                jmp     loc_80047F5
+                jmp     csz_202
 ; ---------------------------------------------------------------------------
 
-loc_8004729:                            ; ...
+csz_199:                                ; ...
                 mov     eax, [ebp+arg_10]
                 add     eax, 184h
                 mov     ecx, [eax]
                 and     ecx, 20h
                 cmp     ecx, 0
-                jz      loc_80047D2
+                jz      csz_201
                 mov     eax, [ebp+arg_10]
                 add     eax, 184h
                 mov     ecx, [eax]
                 and     ecx, 4Bh
                 cmp     ecx, 0
-                jz      loc_800475C
-                jmp     loc_80047D2
+                jz      csz_200
+                jmp     csz_201
 ; ---------------------------------------------------------------------------
 
-loc_800475C:                            ; ...
+csz_200:                                ; ...
                 mov     eax, 6Ah
                 push    eax
                 mov     eax, offset cpu
@@ -7621,7 +7631,7 @@ loc_800475C:                            ; ...
                 call    iflag_cpu_level_ok
                 add     esp, 8
                 cmp     eax, 0
-                jz      loc_80047D2
+                jz      csz_201
                 mov     eax, 2
                 push    eax
                 mov     eax, [ebp+arg_10]
@@ -7644,10 +7654,10 @@ loc_800475C:                            ; ...
                 adc     eax, 0
                 mov     [ebp+var_10], edx
                 mov     [ebp+var_C], eax
-                jmp     loc_80047F5
+                jmp     csz_202
 ; ---------------------------------------------------------------------------
 
-loc_80047D2:                            ; ...
+csz_201:                                ; ...
                 mov     eax, offset L_77 ; "invalid operands in non-64-bit mode"
                 push    eax
                 mov     eax, 3
@@ -7656,10 +7666,10 @@ loc_80047D2:                            ; ...
                 add     esp, 8
                 mov     eax, 0FFFFFFFFh
                 mov     edx, 0FFFFFFFFh
-                jmp     locret_8004924
+                jmp     csz_207
 ; ---------------------------------------------------------------------------
 
-loc_80047F5:                            ; ...
+csz_202:                                ; ...
                 mov     eax, 0F5h
                 push    eax
                 mov     eax, 2
@@ -7669,10 +7679,10 @@ loc_80047F5:                            ; ...
                 call    has_prefix
                 add     esp, 0Ch
                 cmp     eax, 0
-                jz      loc_8004882
+                jz      csz_204
                 mov     eax, [ebp+var_34]
                 cmp     eax, 0
-                jz      loc_8004882
+                jz      csz_204
                 mov     eax, 23h
                 push    eax
                 mov     eax, [ebp+arg_14]
@@ -7680,7 +7690,7 @@ loc_80047F5:                            ; ...
                 call    itemp_has
                 add     esp, 8
                 cmp     eax, 0
-                jz      loc_800486E
+                jz      csz_203
                 mov     eax, [ebp+arg_10]
                 add     eax, 30h
                 mov     ecx, [eax]
@@ -7695,11 +7705,11 @@ loc_80047F5:                            ; ...
                 call    is_class
                 add     esp, 10h
                 cmp     eax, 0
-                jz      loc_800486E
-                jmp     loc_8004882
+                jz      csz_203
+                jmp     csz_204
 ; ---------------------------------------------------------------------------
 
-loc_800486E:                            ; ...
+csz_203:                                ; ...
                 mov     eax, offset L_78 ; "instruction is not lockable"
                 push    eax
                 mov     eax, 0C102h
@@ -7707,7 +7717,7 @@ loc_800486E:                            ; ...
                 call    nasm_error
                 add     esp, 8
 
-loc_8004882:                            ; ...
+csz_204:                                ; ...
                 movzx   eax, [ebp+var_2D]
                 push    eax
                 mov     eax, [ebp+arg_10]
@@ -7716,7 +7726,7 @@ loc_8004882:                            ; ...
                 add     esp, 8
                 mov     eax, [ds:globalbnd]
                 cmp     eax, 0
-                jz      loc_80048F3
+                jz      csz_206
                 mov     eax, 28h
                 push    eax
                 mov     eax, [ebp+arg_14]
@@ -7724,7 +7734,7 @@ loc_8004882:                            ; ...
                 call    itemp_has
                 add     esp, 8
                 cmp     eax, 0
-                jz      loc_80048F3
+                jz      csz_206
                 mov     eax, 104h
                 push    eax
                 mov     eax, 1
@@ -7734,18 +7744,18 @@ loc_8004882:                            ; ...
                 call    has_prefix
                 add     esp, 0Ch
                 cmp     eax, 0
-                jz      loc_80048E3
-                jmp     loc_80048F3
+                jz      csz_205
+                jmp     csz_206
 ; ---------------------------------------------------------------------------
 
-loc_80048E3:                            ; ...
-                mov     eax, [ebp+arg_10]
+csz_205:                                ; ...
+                mov     eax, [ebp-0FFFFFFE8h]
                 add     eax, 4
                 add     eax, 4
                 mov     ecx, 103h
                 mov     [eax], ecx
 
-loc_80048F3:                            ; ...
+csz_206:                                ; ...
                 mov     eax, [ebp+arg_10]
                 push    eax
                 mov     eax, [ebp+arg_C]
@@ -7765,7 +7775,7 @@ loc_80048F3:                            ; ...
                 mov     eax, [ebp+var_10]
                 mov     edx, [ebp+var_C]
 
-locret_8004924:                         ; ...
+csz_207:                                ; ...
                 leave
                 retn
 endp            calcsize
@@ -7789,32 +7799,32 @@ arg_4           = dword ptr  0Ch
                 add     eax, 1Ch
                 mov     ecx, [eax]
                 cmp     ecx, 40h
-                jnz     locret_80049C5
+                jnz     erx_3
                 mov     eax, [ebp+arg_4]
                 add     eax, 184h
                 mov     ecx, [eax]
                 and     ecx, 4Fh
                 cmp     ecx, 0
-                jz      locret_80049C5
+                jz      erx_3
                 mov     eax, [ebp+arg_4]
                 add     eax, 184h
                 mov     ecx, [eax]
                 and     ecx, 500h
                 cmp     ecx, 0
-                jz      loc_8004977
-                jmp     locret_80049C5
+                jz      erx_1
+                jmp     erx_3
 ; ---------------------------------------------------------------------------
 
-loc_8004977:                            ; ...
+erx_1:                                  ; ...
                 mov     eax, [ebp+arg_4]
                 add     eax, 180h
                 mov     ecx, [eax]
                 cmp     ecx, 0
-                jz      loc_8004990
-                jmp     locret_80049C5
+                jz      erx_2
+                jmp     erx_3
 ; ---------------------------------------------------------------------------
 
-loc_8004990:                            ; ...
+erx_2:                                  ; ...
                 mov     eax, [ebp+arg_4]
                 add     eax, 184h
                 mov     ecx, [eax]
@@ -7832,7 +7842,7 @@ loc_8004990:                            ; ...
                 mov     ecx, 1
                 mov     [eax], ecx
 
-locret_80049C5:                         ; ...
+erx_3:                                  ; ...
                 leave
                 retn
 endp            emit_rex
