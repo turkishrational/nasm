@@ -5078,290 +5078,309 @@ endp            bad_hle_warn
 
 proc            calcsize near           ; ...
 
-var_160         = dword ptr -160h
-var_15C         = dword ptr -15Ch
-var_158         = dword ptr -158h
-var_154         = dword ptr -154h
-var_150         = dword ptr -150h
-var_14C         = dword ptr -14Ch
-var_144         = dword ptr -144h
-var_140         = dword ptr -140h
-var_13C         = dword ptr -13Ch
-var_138         = dword ptr -138h
-var_134         = dword ptr -134h
-var_130         = dword ptr -130h
-var_12C         = dword ptr -12Ch
-var_124         = dword ptr -124h
-var_120         = byte ptr -120h
-var_114         = dword ptr -114h
-var_10E         = byte ptr -10Eh
-var_108         = dword ptr -108h
-var_104         = dword ptr -104h
-var_100         = dword ptr -100h
-var_FC          = dword ptr -0FCh
-var_F8          = dword ptr -0F8h
-var_F4          = dword ptr -0F4h
-var_F0          = dword ptr -0F0h
-var_EC          = dword ptr -0ECh
-var_E8          = dword ptr -0E8h
-var_E4          = dword ptr -0E4h
-var_E0          = dword ptr -0E0h
-var_DC          = dword ptr -0DCh
-var_D8          = dword ptr -0D8h
-var_D4          = dword ptr -0D4h
-var_D0          = dword ptr -0D0h
-var_CC          = dword ptr -0CCh
-var_C8          = dword ptr -0C8h
-var_C4          = dword ptr -0C4h
-var_C0          = dword ptr -0C0h
-var_BC          = dword ptr -0BCh
-var_B8          = dword ptr -0B8h
-var_B4          = dword ptr -0B4h
-var_B0          = dword ptr -0B0h
-var_AC          = dword ptr -0ACh
-var_A4          = dword ptr -0A4h
-var_A0          = dword ptr -0A0h
-var_9C          = dword ptr -9Ch
-var_98          = dword ptr -98h
-var_94          = dword ptr -94h
-var_90          = dword ptr -90h
-var_8C          = dword ptr -8Ch
-var_88          = dword ptr -88h
-var_84          = dword ptr -84h
-var_80          = dword ptr -80h
-var_7C          = dword ptr -7Ch
-var_78          = dword ptr -78h
-var_74          = dword ptr -74h
-var_70          = dword ptr -70h
-var_6C          = dword ptr -6Ch
-var_68          = dword ptr -68h
-var_64          = dword ptr -64h
-var_60          = dword ptr -60h
-var_5C          = dword ptr -5Ch
-var_58          = dword ptr -58h
-var_54          = dword ptr -54h
-var_50          = dword ptr -50h
-var_4C          = dword ptr -4Ch
-var_48          = dword ptr -48h
-var_44          = dword ptr -44h
-var_40          = dword ptr -40h
-var_3C          = dword ptr -3Ch
-var_38          = dword ptr -38h
-var_34          = dword ptr -34h
-var_2D          = byte ptr -2Dh
-var_2C          = dword ptr -2Ch
-var_25          = byte ptr -25h
-var_24          = dword ptr -24h
-var_20          = dword ptr -20h
-var_1C          = dword ptr -1Ch
-var_18          = dword ptr -18h
-var_11          = byte ptr -11h
-var_10          = dword ptr -10h
-var_C           = dword ptr -0Ch
-var_4           = dword ptr -4
-arg_C           = dword ptr  14h
-arg_10          = dword ptr  18h
-arg_14          = dword ptr  1Ch
+tmp35           = dword ptr -160h
+tmp37_h         = dword ptr -15Ch
+tmp36_h         = dword ptr -158h
+tmp35_h         = dword ptr -154h
+tmp32           = dword ptr -150h
+tmp34_h         = dword ptr -14Ch
+tmp33_h         = dword ptr -144h
+tmp32_h         = dword ptr -140h
+bad32           = dword ptr -13Ch
+op_er_sae       = dword ptr -138h
+opy             = dword ptr -134h
+rflags          = dword ptr -130h
+rflags_h        = dword ptr -12Ch
+rfield          = dword ptr -124h
+ea_data         = byte ptr -120h
+ea_data_size    = dword ptr -114h
+ea_data_rex     = byte ptr -10Eh
+tmp29           = dword ptr -108h
+tmp31_h         = dword ptr -104h
+tmp30_h         = dword ptr -100h
+tmp29_h         = dword ptr -0FCh
+tmp26           = dword ptr -0F8h
+tmp28_h         = dword ptr -0F4h
+tmp27_h         = dword ptr -0F0h
+tmp26_h         = dword ptr -0ECh
+tmp23           = dword ptr -0E8h
+tmp25_h         = dword ptr -0E4h
+tmp24_h         = dword ptr -0E0h
+tmp23_h         = dword ptr -0DCh
+tmp20           = dword ptr -0D8h
+tmp22_h         = dword ptr -0D4h
+tmp21_h         = dword ptr -0D0h
+tmp20_h         = dword ptr -0CCh
+tmp17           = dword ptr -0C8h
+tmp19_h         = dword ptr -0C4h
+tmp18_h         = dword ptr -0C0h
+tmp17_h         = dword ptr -0BCh
+_pfx            = dword ptr -0B8h
+pfx             = dword ptr -0B4h
+tmp14           = dword ptr -0B0h
+tmp16_h         = dword ptr -0ACh
+tmp15_h         = dword ptr -0A4h
+tmp14_h         = dword ptr -0A0h
+tmp_ins_vexreg2 = dword ptr -9Ch
+tmp_ins_evexp2  = dword ptr -98h
+tmp_ins_vexreg  = dword ptr -94h
+tmp11           = dword ptr -90h
+tmp13_h         = dword ptr -8Ch
+tmp12_h         = dword ptr -88h
+tmp11_h         = dword ptr -84h
+tmp8            = dword ptr -80h
+tmp10_h         = dword ptr -7Ch
+tmp9_h          = dword ptr -78h
+tmp8_h          = dword ptr -74h
+tmp7            = dword ptr -70h
+tmp7_h          = dword ptr -6Ch
+tmp6            = dword ptr -68h
+tmp6_h          = dword ptr -64h
+tmp5            = dword ptr -60h
+tmp5_h          = dword ptr -5Ch
+tmp4            = dword ptr -58h
+tmp4_h          = dword ptr -54h
+tmp1            = dword ptr -50h
+tmp3_h          = dword ptr -4Ch
+tmp2_h          = dword ptr -48h
+tmp1_h          = dword ptr -44h
+tmp_ins_rex     = dword ptr -40h
+errmsg          = dword ptr -3Ch
+mib_index       = dword ptr -38h
+lockcheck       = dword ptr -34h
+hleok           = byte ptr -2Dh
+eat             = dword ptr -2Ch
+opex            = byte ptr -25h
+opx             = dword ptr -24h
+op2             = dword ptr -20h
+op1             = dword ptr -1Ch
+rex_mask        = dword ptr -18h
+c               = byte ptr -11h
+length          = dword ptr -10h
+length_h        = dword ptr -0Ch
+codes           = dword ptr -4
+bits            = dword ptr  14h
+ins             = dword ptr  18h
+temp            = dword ptr  1Ch
 
-                push    ebp
+                push    ebp             ; static int64_t calcsize(int32_t segment, int64_t offset, int bits,
+                                        ;                         insn * ins, const struct itemplate *temp)
                 mov     ebp, esp
-                sub     esp, 160h
+                sub     esp, 352
                 nop
-                mov     eax, [ebp+arg_14]
-                add     eax, 3Ch
+                mov     eax, [ebp+temp]
+                add     eax, 60         ; temp->code = temp + 60
                 mov     ecx, [eax]
-                mov     [ebp+var_4], ecx
+                mov     [ebp+codes], ecx ; const uint8_t *codes = temp->code;
                 mov     eax, 0
                 mov     ecx, 0
-                mov     [ebp+var_10], eax
-                mov     [ebp+var_C], ecx
+                mov     [ebp+length], eax ; int64_t length = 0;
+                mov     [ebp+length_h], ecx ; uint8_t c;
                 mov     eax, 0FFFFFFFFh
-                mov     [ebp+var_18], eax
-                mov     eax, 0
-                mov     [ebp+var_25], al
-                mov     eax, 0
-                mov     [ebp+var_2D], al
+                mov     [ebp+rex_mask], eax ; int rex_mask = ~0;
+                mov     eax, 0          ; int op1, op2; struct operand *opx;
+                mov     [ebp+opex], al  ; uint8_t opex = 0;
+                mov     eax, 0          ; enum ea_type eat;
+                mov     [ebp+hleok], al ; uint8_t hleok = 0;
                 mov     eax, 1
-                mov     [ebp+var_34], eax
-                mov     eax, 0FFFFFFFFh
-                mov     [ebp+var_38], eax
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     [ebp+lockcheck], eax ; bool lockcheck = true;
+                mov     eax, 0FFFFFFFFh ; R_none = -1
+                mov     [ebp+mib_index], eax ; enum reg_enum mib_index = R_none;
+                                        ; /* For a separate index MIB reg form */
+                mov     eax, [ebp+ins]  ; const char *errmsg;
+                add     eax, 388        ; ins->rex = ins + 388
                 mov     ecx, 0
-                mov     [eax], ecx
-                mov     eax, 1
-                mov     [ebp+var_2C], eax
-                mov     eax, [ebp+arg_10]
-                add     eax, 194h
+                mov     [eax], ecx      ; ins->rex = 0; /* Ensure REX is reset */
+                mov     eax, 1          ; EA_SCALAR = 1
+                mov     [ebp+eat], eax  ; eat = EA_SCALAR; /* Expect a scalar EA */
+                                        ; enum ea_type {
+                                        ;     EA_INVALID,     /* Not a valid EA at all */
+                                        ;     EA_SCALAR,      /* Scalar EA */
+                                        ;     EA_XMMVSIB,     /* XMM vector EA */
+                                        ;     EA_YMMVSIB,     /* YMM vector EA */
+                                        ;     EA_ZMMVSIB      /* ZMM vector EA */
+                                        ; };
+                mov     eax, [ebp+ins]
+                add     eax, 404        ; ins->evex_p = ins + 404
                 mov     ecx, 3
                 push    ecx
                 mov     ecx, 0
                 push    ecx
                 push    eax
-                call    memset
-                add     esp, 0Ch
-                mov     eax, [ebp+arg_10]
-                add     eax, 4
-                add     eax, 10h
+                call    memset          ; memset(ins->evex_p, 0, 3);  /* Ensure EVEX is reset */
+                add     esp, 12
+                mov     eax, [ebp+ins]  ; if (ins->prefixes[PPS_OSIZE] == P_O64)
+                add     eax, 4          ; ins->prefixes = ins + 4
+                add     eax, 16         ; PPS_OSIZE = 4  (4*int_size = 16)
                 mov     ecx, [eax]
-                cmp     ecx, 0F8h
+                cmp     ecx, 248        ; P_O64 = 248
                 jnz     csz_1
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, [ebp+ins]  ; ins->rex |= REX_W;
+                add     eax, 388
                 mov     ecx, [eax]
-                or      ecx, 8
+                or      ecx, 8          ; REX_W = 8
                 mov     [eax], ecx
 
 csz_1:                                  ; ...
-                mov     eax, [ebp+var_4]
+                mov     eax, [ebp+codes] ; (void)segment; /* Don't warn that this parameter is unused */
+                                        ; (void)offset; /* Don't warn that this parameter is unused */
                 movzx   ecx, [byte ptr eax]
-                cmp     ecx, 0
+                cmp     ecx, 0          ; while (*codes) {
                 jz      csz_170
-                mov     eax, [ebp+var_4]
+                mov     eax, [ebp+codes]
                 mov     ecx, eax
                 inc     eax
-                mov     [ebp+var_4], eax
+                mov     [ebp+codes], eax ; codes++
                 movzx   eax, [byte ptr ecx]
-                mov     [ebp+var_11], al
-                movzx   eax, [ebp+var_11]
+                mov     [ebp+c], al     ; c = *codes++;
+                movzx   eax, [ebp+c]    ; op1 = (c & 3) + ((opex & 1) << 2);
                 and     eax, 3
-                movzx   ecx, [ebp+var_25]
+                movzx   ecx, [ebp+opex]
                 and     ecx, 1
                 shl     ecx, 2
                 add     eax, ecx
-                mov     [ebp+var_1C], eax
-                movzx   eax, [ebp+var_11]
+                mov     [ebp+op1], eax
+                movzx   eax, [ebp+c]    ; op2 = ((c >> 3) & 3) + ((opex & 2) << 1);
                 sar     eax, 3
                 and     eax, 3
-                movzx   ecx, [ebp+var_25]
+                movzx   ecx, [ebp+opex]
                 and     ecx, 2
                 shl     ecx, 1
                 add     eax, ecx
-                mov     [ebp+var_20], eax
-                mov     eax, [ebp+arg_10]
-                add     eax, 30h
-                mov     ecx, [ebp+var_1C]
-                shl     ecx, 6
+                mov     [ebp+op2], eax
+                mov     eax, [ebp+ins]  ; opx = &ins->oprs[op1];
+                add     eax, 48         ; &ins->oprs = ins + 48
+                mov     ecx, [ebp+op1]
+                shl     ecx, 6          ; * 64 bytes
                 add     eax, ecx
-                mov     [ebp+var_24], eax
+                mov     [ebp+opx], eax
                 mov     eax, 0
-                mov     [ebp+var_25], al
-                jmp     csz_117
+                mov     [ebp+opex], al  ; opex = 0; /* For the next iteration */
+                jmp     csz_117         ; switch (c) {
 ; ---------------------------------------------------------------------------
 
 csz_2:                                  ; ...
-                movzx   eax, [ebp+var_11]
-                mov     ecx, [ebp+var_4]
+                movzx   eax, [ebp+c]    ; case4(01):
+                                        ; case 3: case 1: case 2: case 4:
+                mov     ecx, [ebp+codes] ; codes += c, length += c;
                 add     ecx, eax
-                mov     [ebp+var_4], ecx
-                movzx   eax, [ebp+var_11]
+                mov     [ebp+codes], ecx
+                movzx   eax, [ebp+c]
                 mov     ecx, eax
-                sar     ecx, 1Fh
-                mov     edx, [ebp+var_10]
+                sar     ecx, 31
+                mov     edx, [ebp+length]
                 add     edx, eax
-                mov     eax, [ebp+var_C]
+                mov     eax, [ebp+length_h]
                 adc     eax, ecx
-                mov     [ebp+var_10], edx
-                mov     [ebp+var_C], eax
-                jmp     csz_169
+                mov     [ebp+length], edx
+                mov     [ebp+length_h], eax
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_3:                                  ; ...
-                movzx   eax, [ebp+var_11]
-                mov     [ebp+var_25], al
+                movzx   eax, [ebp+c]    ; case3(05):
+                                        ; case 6: case 5: case 7:
+                mov     [ebp+opex], al  ; opex = c;
                 jmp     csz_169
 ; ---------------------------------------------------------------------------
 
 csz_4:                                  ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
-                mov     ecx, 0C9h
+                mov     eax, [ebp+ins]  ; case4(010):
+                                        ; case 9: case 8: case 10: case 11:
+                add     eax, 388        ; ins->rex |=
+                mov     ecx, 201        ; op_rexflags(opx, REX_B|REX_H|REX_P|REX_W);
                 push    ecx
-                mov     ecx, [ebp+var_24]
+                mov     ecx, [ebp+opx]
                 push    ecx
-                mov     [ebp+var_40], eax
+                mov     [ebp+tmp_ins_rex], eax ; ins->rex (address)
                 call    op_rexflags
                 add     esp, 8
-                mov     ecx, [ebp+var_40]
+                mov     ecx, [ebp+tmp_ins_rex]
                 mov     ecx, [ecx]
                 or      ecx, eax
-                mov     eax, [ebp+var_40]
-                mov     [eax], ecx
-                mov     eax, [ebp+var_4]
+                mov     eax, [ebp+tmp_ins_rex]
+                mov     [eax], ecx      ; ins->rex
+                mov     eax, [ebp+codes]
                 mov     ecx, eax
                 inc     eax
-                mov     [ebp+var_4], eax
-                mov     eax, [ebp+var_C]
+                mov     [ebp+codes], eax ; (codes++)
+                mov     eax, [ebp+length_h]
                 mov     ecx, eax
-                mov     edx, [ebp+var_10]
-                mov     [ebp+var_44], ecx
+                mov     edx, [ebp+length]
+                mov     [ebp+tmp1_h], ecx
                 mov     ecx, edx
-                mov     [ebp+var_48], eax
-                mov     eax, [ebp+var_44]
-                mov     [ebp+var_50], ecx
-                mov     [ebp+var_4C], eax
-                mov     eax, [ebp+var_48]
+                mov     [ebp+tmp2_h], eax
+                mov     eax, [ebp+tmp1_h]
+                mov     [ebp+tmp1], ecx
+                mov     [ebp+tmp3_h], eax
+                mov     eax, [ebp+tmp2_h]
                 add     edx, 1
                 adc     eax, 0
-                mov     [ebp+var_10], edx
-                mov     [ebp+var_C], eax
+                mov     [ebp+length], edx ; codes++, length++;
+                mov     [ebp+length_h], eax
                 jmp     csz_169
 ; ---------------------------------------------------------------------------
 
 csz_5:                                  ; ...
-                mov     eax, [ebp+var_24]
-                add     eax, 0Ch
+                mov     eax, [ebp+opx]  ; case4(014):
+                                        ; case 12: case 15: case 13: case 14:
+                add     eax, 12         ; opx->basereg = opz + 12
                 mov     ecx, [eax]
-                mov     [ebp+var_38], ecx
+                mov     [ebp+mib_index], ecx ;  /* this is an index reg of MIB operand */
+                                        ; mib_index = opx->basereg;
                 jmp     csz_169
 ; ---------------------------------------------------------------------------
 
 csz_6:                                  ; ...
-                mov     eax, [ebp+var_C]
+                mov     eax, [ebp+length_h] ; case4(020):
+                                        ; case4(024):
+                                        ; case 18: case 16: case 17: case 19:
+                                        ; case 23: case 20: case 21: case 22:
                 mov     ecx, eax
-                mov     edx, [ebp+var_10]
-                mov     [ebp+var_54], ecx
+                mov     edx, [ebp+length]
+                mov     [ebp+tmp4_h], ecx
                 mov     ecx, edx
-                mov     [ebp+var_58], eax
-                mov     eax, [ebp+var_54]
-                mov     [ebp+var_60], ecx
-                mov     [ebp+var_5C], eax
-                mov     eax, [ebp+var_58]
+                mov     [ebp+tmp4], eax
+                mov     eax, [ebp+tmp4_h]
+                mov     [ebp+tmp5], ecx
+                mov     [ebp+tmp5_h], eax
+                mov     eax, [ebp+tmp4]
                 add     edx, 1
                 adc     eax, 0
-                mov     [ebp+var_10], edx
-                mov     [ebp+var_C], eax
-                jmp     csz_169
+                mov     [ebp+length], edx ; length++;
+                mov     [ebp+length_h], eax
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_7:                                  ; ...
-                mov     eax, [ebp+var_10]
+                mov     eax, [ebp+length] ; case4(030):
+                                        ; case 26: case 24: case 25: case 27
                 add     eax, 2
-                mov     ecx, [ebp+var_C]
+                mov     ecx, [ebp+length_h]
                 adc     ecx, 0
-                mov     [ebp+var_10], eax
-                mov     [ebp+var_C], ecx
-                jmp     csz_169
+                mov     [ebp+length], eax ; length += 2;
+                mov     [ebp+length_h], ecx
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_8:                                  ; ...
-                mov     eax, [ebp+var_24]
-                mov     ecx, [eax]
-                add     eax, 4
+                mov     eax, [ebp+opx]  ; case4(034):
+                mov     ecx, [eax]      ; if (opx->type & (BITS16 | BITS32 | BITS64))
+                add     eax, 4          ; opx->type = opx + 4
                 mov     edx, [eax]
-                and     edx, 0Eh
+                and     edx, 14         ; & (BITS16 | BITS32 | BITS64)
                 mov     eax, 0
                 cmp     edx, 0
                 jnz     csz_9
                 cmp     eax, 0
-                jz      csz_14
+                jz      csz_14          ; else
 
 csz_9:                                  ; ...
-                mov     eax, [ebp+var_24]
+                mov     eax, [ebp+opx]  ; length += (opx->type & BITS16) ? 2 : 4;
                 mov     ecx, [eax]
                 add     eax, 4
                 mov     edx, [eax]
-                and     edx, 2
+                and     edx, 2          ; & BITS16
                 mov     eax, 0
                 cmp     edx, 0
                 jnz     csz_10
@@ -5382,19 +5401,20 @@ csz_12:                                 ; ...
 
 csz_13:                                 ; ...
                 mov     ecx, eax
-                sar     ecx, 1Fh
-                mov     edx, [ebp+var_10]
+                sar     ecx, 31
+                mov     edx, [ebp+length]
                 add     edx, eax
-                mov     eax, [ebp+var_C]
+                mov     eax, [ebp+length_h]
                 adc     eax, ecx
-                mov     [ebp+var_10], edx
-                mov     [ebp+var_C], eax
+                mov     [ebp+length], edx
+                mov     [ebp+length_h], eax
                 jmp     csz_18
 ; ---------------------------------------------------------------------------
 
 csz_14:                                 ; ...
-                mov     eax, [ebp+arg_C]
-                cmp     eax, 10h
+                mov     eax, [ebp+bits] ; else
+                                        ; length += (bits == 16) ? 2 : 4;
+                cmp     eax, 16
                 mov     eax, 0
                 setz    al
                 cmp     eax, 0
@@ -5412,100 +5432,104 @@ csz_16:                                 ; ...
 
 csz_17:                                 ; ...
                 mov     ecx, eax
-                sar     ecx, 1Fh
-                mov     edx, [ebp+var_10]
+                sar     ecx, 31
+                mov     edx, [ebp+length]
                 add     edx, eax
-                mov     eax, [ebp+var_C]
+                mov     eax, [ebp+length_h]
                 adc     eax, ecx
-                mov     [ebp+var_10], edx
-                mov     [ebp+var_C], eax
+                mov     [ebp+length], edx
+                mov     [ebp+length_h], eax
 
 csz_18:                                 ; ...
-                jmp     csz_169
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_19:                                 ; ...
-                mov     eax, [ebp+var_10]
+                mov     eax, [ebp+length] ; case4(040):
+                                        ; case 34: case 32: case 33: case 35:
                 add     eax, 4
-                mov     ecx, [ebp+var_C]
+                mov     ecx, [ebp+length_h]
                 adc     ecx, 0
-                mov     [ebp+var_10], eax
-                mov     [ebp+var_C], ecx
-                jmp     csz_169
+                mov     [ebp+length], eax ; length += 4;
+                mov     [ebp+length_h], ecx
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_20:                                 ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 2Ch
-                mov     ecx, [eax]
+                mov     eax, [ebp+ins]  ; case4(044):
+                                        ; case 37: case 36: case 38: case 39:
+                add     eax, 44         ; (ins->addr_size = ins + 44)
+                mov     ecx, [eax]      ; length += ins->addr_size >> 3;
                 sar     ecx, 3
                 mov     eax, ecx
-                sar     eax, 1Fh
-                mov     edx, [ebp+var_10]
+                sar     eax, 31
+                mov     edx, [ebp+length]
                 add     edx, ecx
-                mov     ecx, [ebp+var_C]
+                mov     ecx, [ebp+length_h]
                 adc     ecx, eax
-                mov     [ebp+var_10], edx
-                mov     [ebp+var_C], ecx
-                jmp     csz_169
+                mov     [ebp+length], edx
+                mov     [ebp+length_h], ecx
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_21:                                 ; ...
-                mov     eax, [ebp+var_C]
+                mov     eax, [ebp+length_h] ; case4(050):
+                                        ; case 40: case 41: case 42: case 43:
                 mov     ecx, eax
-                mov     edx, [ebp+var_10]
-                mov     [ebp+var_64], ecx
+                mov     edx, [ebp+length]
+                mov     [ebp+tmp6_h], ecx
                 mov     ecx, edx
-                mov     [ebp+var_68], eax
-                mov     eax, [ebp+var_64]
-                mov     [ebp+var_70], ecx
-                mov     [ebp+var_6C], eax
-                mov     eax, [ebp+var_68]
+                mov     [ebp+tmp6], eax
+                mov     eax, [ebp+tmp6_h]
+                mov     [ebp+tmp7], ecx
+                mov     [ebp+tmp7_h], eax
+                mov     eax, [ebp+tmp6]
                 add     edx, 1
                 adc     eax, 0
-                mov     [ebp+var_10], edx
-                mov     [ebp+var_C], eax
-                jmp     csz_169
+                mov     [ebp+length], edx ; length++;
+                mov     [ebp+length_h], eax
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_22:                                 ; ...
-                mov     eax, [ebp+var_10]
-                add     eax, 8
-                mov     ecx, [ebp+var_C]
+                mov     eax, [ebp+length] ; case4(054):
+                add     eax, 8          ; case 44: case 45: case 46: case 47:
+                mov     ecx, [ebp+length_h]
                 adc     ecx, 0
-                mov     [ebp+var_10], eax
-                mov     [ebp+var_C], ecx
-                jmp     csz_169
+                mov     [ebp+length], eax ; length += 8; /* MOV reg64/imm */
+                mov     [ebp+length_h], ecx
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_23:                                 ; ...
-                mov     eax, [ebp+var_10]
-                add     eax, 2
-                mov     ecx, [ebp+var_C]
+                mov     eax, [ebp+length] ; case4(060):
+                add     eax, 2          ; case 48: case 49: case 50: case 51:
+                mov     ecx, [ebp+length_h]
                 adc     ecx, 0
-                mov     [ebp+var_10], eax
-                mov     [ebp+var_C], ecx
-                jmp     csz_169
+                mov     [ebp+length], eax ; length += 2;
+                mov     [ebp+length_h], ecx
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_24:                                 ; ...
-                mov     eax, [ebp+var_24]
-                mov     ecx, [eax]
+                mov     eax, [ebp+opx]  ; case4(064):
+                                        ; case 52: case 53: case 54: case 55:
+                mov     ecx, [eax]      ; if (opx->type & (BITS16 | BITS32 | BITS64))
                 add     eax, 4
                 mov     edx, [eax]
-                and     edx, 0Eh
+                and     edx, 14         ; & (BITS16 | BITS32 | BITS64)
                 mov     eax, 0
                 cmp     edx, 0
                 jnz     csz_25
                 cmp     eax, 0
-                jz      csz_30
+                jz      csz_30          ; else
 
 csz_25:                                 ; ...
-                mov     eax, [ebp+var_24]
-                mov     ecx, [eax]
+                mov     eax, [ebp+opx]  ; length += (opx->type & BITS16) ? 2 : 4;
+                mov     ecx, [eax]      ; opx->type = dword [opx+4]
                 add     eax, 4
                 mov     edx, [eax]
-                and     edx, 2
+                and     edx, 2          ; & BITS16
                 mov     eax, 0
                 cmp     edx, 0
                 jnz     csz_26
@@ -5526,19 +5550,19 @@ csz_28:                                 ; ...
 
 csz_29:                                 ; ...
                 mov     ecx, eax
-                sar     ecx, 1Fh
-                mov     edx, [ebp+var_10]
+                sar     ecx, 31
+                mov     edx, [ebp+length]
                 add     edx, eax
-                mov     eax, [ebp+var_C]
+                mov     eax, [ebp+length_h]
                 adc     eax, ecx
-                mov     [ebp+var_10], edx
-                mov     [ebp+var_C], eax
+                mov     [ebp+length], edx
+                mov     [ebp+length_h], eax
                 jmp     csz_34
 ; ---------------------------------------------------------------------------
 
 csz_30:                                 ; ...
-                mov     eax, [ebp+arg_C]
-                cmp     eax, 10h
+                mov     eax, [ebp+bits] ; else
+                cmp     eax, 16         ; length += (bits == 16) ? 2 : 4;
                 mov     eax, 0
                 setz    al
                 cmp     eax, 0
@@ -5556,299 +5580,312 @@ csz_32:                                 ; ...
 
 csz_33:                                 ; ...
                 mov     ecx, eax
-                sar     ecx, 1Fh
-                mov     edx, [ebp+var_10]
+                sar     ecx, 31
+                mov     edx, [ebp+length]
                 add     edx, eax
-                mov     eax, [ebp+var_C]
+                mov     eax, [ebp+length_h]
                 adc     eax, ecx
-                mov     [ebp+var_10], edx
-                mov     [ebp+var_C], eax
+                mov     [ebp+length], edx
+                mov     [ebp+length_h], eax
 
 csz_34:                                 ; ...
-                jmp     csz_169
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_35:                                 ; ...
-                mov     eax, [ebp+var_10]
+                mov     eax, [ebp+length] ; case4(070):
+                                        ; case 56: case 57: case 58: case 59:
                 add     eax, 4
-                mov     ecx, [ebp+var_C]
+                mov     ecx, [ebp+length_h]
                 adc     ecx, 0
-                mov     [ebp+var_10], eax
-                mov     [ebp+var_C], ecx
+                mov     [ebp+length], eax ; length += 4;
+                mov     [ebp+length_h], ecx
                 jmp     csz_169
 ; ---------------------------------------------------------------------------
 
 csz_36:                                 ; ...
-                mov     eax, [ebp+var_10]
+                mov     eax, [ebp+length] ; case4(074):
+                                        ; case 60: case 61: case 62: case 63:
                 add     eax, 2
-                mov     ecx, [ebp+var_C]
+                mov     ecx, [ebp+length_h]
                 adc     ecx, 0
-                mov     [ebp+var_10], eax
-                mov     [ebp+var_C], ecx
-                jmp     csz_169
+                mov     [ebp+length], eax ; length += 2;
+                mov     [ebp+length_h], ecx
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_37:                                 ; ...
-                mov     eax, [ebp+var_4]
+                mov     eax, [ebp+codes] ; case 0172: (7Ah)
+                                        ; case 0173: (7Bh)
                 mov     ecx, eax
                 inc     eax
-                mov     [ebp+var_4], eax
-                mov     eax, [ebp+var_C]
+                mov     [ebp+codes], eax ; codes++;
+                                        ; length++;
+                mov     eax, [ebp+length_h]
                 mov     ecx, eax
-                mov     edx, [ebp+var_10]
-                mov     [ebp+var_74], ecx
+                mov     edx, [ebp+length]
+                mov     [ebp+tmp8_h], ecx
                 mov     ecx, edx
-                mov     [ebp+var_78], eax
-                mov     eax, [ebp+var_74]
-                mov     [ebp+var_80], ecx
-                mov     [ebp+var_7C], eax
-                mov     eax, [ebp+var_78]
+                mov     [ebp+tmp9_h], eax
+                mov     eax, [ebp+tmp8_h]
+                mov     [ebp+tmp8], ecx
+                mov     [ebp+tmp10_h], eax
+                mov     eax, [ebp+tmp9_h]
                 add     edx, 1
                 adc     eax, 0
-                mov     [ebp+var_10], edx
-                mov     [ebp+var_C], eax
-                jmp     csz_169
+                mov     [ebp+length], edx
+                mov     [ebp+length_h], eax
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_38:                                 ; ...
-                mov     eax, [ebp+var_C]
+                mov     eax, [ebp+length_h] ; case4(0174):
+                                        ; case 7Ch: case 7Dh: case 7Eh: case 7Fh:
                 mov     ecx, eax
-                mov     edx, [ebp+var_10]
-                mov     [ebp+var_84], ecx
+                mov     edx, [ebp+length]
+                mov     [ebp+tmp11_h], ecx
                 mov     ecx, edx
-                mov     [ebp+var_88], eax
-                mov     eax, [ebp+var_84]
-                mov     [ebp+var_90], ecx
-                mov     [ebp+var_8C], eax
-                mov     eax, [ebp+var_88]
+                mov     [ebp+tmp12_h], eax
+                mov     eax, [ebp+tmp11_h]
+                mov     [ebp+tmp11], ecx
+                mov     [ebp+tmp13_h], eax
+                mov     eax, [ebp+tmp12_h]
                 add     edx, 1
                 adc     eax, 0
-                mov     [ebp+var_10], edx
-                mov     [ebp+var_C], eax
-                jmp     csz_169
+                mov     [ebp+length], edx ; length++;
+                mov     [ebp+length_h], eax
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_39:                                 ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, [ebp+ins]  ; case4(0240):
+                                        ; case A0h: case A1h: case A2h: case A3h:
+                add     eax, 388
                 mov     ecx, [eax]
-                or      ecx, 400h
-                mov     [eax], ecx
-                mov     eax, [ebp+arg_10]
-                add     eax, 188h
-                mov     ecx, [ebp+var_24]
+                or      ecx, 400h       ; REX_EV = 400h
+                mov     [eax], ecx      ; ins->rex |= REX_EV;
+                mov     eax, [ebp+ins]
+                add     eax, 392        ; ins->vexreg = ins + 392
+                mov     ecx, [ebp+opx]
                 push    ecx
-                mov     [ebp+var_94], eax
+                mov     [ebp+tmp_ins_vexreg], eax
                 call    regval
                 add     esp, 4
-                mov     ecx, [ebp+var_94]
-                mov     [ecx], eax
-                mov     eax, [ebp+arg_10]
-                add     eax, 194h
-                add     eax, 2
+                mov     ecx, [ebp+tmp_ins_vexreg]
+                mov     [ecx], eax      ; ins->vexreg = regval(opx);
+                mov     eax, [ebp+ins]  ; ins->evex_p[2] |= op_evexflags(opx, EVEX_P2VP, 2)
+                                        ; ; /* High-16 NDS */
+                add     eax, 404        ; ins->evex_p = ins + 404
+                add     eax, 2          ; ins->evex_p[2]
                 mov     ecx, 2
                 push    ecx
-                mov     ecx, 8
+                mov     ecx, 8          ; EVEX_P2VP
                 push    ecx
-                mov     ecx, [ebp+var_24]
+                mov     ecx, [ebp+opx]
                 push    ecx
-                mov     [ebp+var_98], eax
-                call    op_evexflags
-                add     esp, 0Ch
-                mov     ecx, [ebp+var_98]
+                mov     [ebp+tmp_ins_evexp2], eax
+                call    op_evexflags    ; op_evexflags(opx, EVEX_P2VP, 2)
+                add     esp, 12
+                mov     ecx, [ebp+tmp_ins_evexp2]
                 movzx   ecx, [byte ptr ecx]
                 or      ecx, eax
-                mov     eax, [ebp+var_98]
+                mov     eax, [ebp+tmp_ins_evexp2]
                 mov     [eax], cl
-                mov     eax, [ebp+arg_10]
-                add     eax, 18Ch
-                mov     ecx, [ebp+var_4]
+                mov     eax, [ebp+ins]  ; ins->vex_cm = *codes++;
+                add     eax, 396        ; ins->vex_cm = ins + 396
+                mov     ecx, [ebp+codes]
                 mov     edx, ecx
                 inc     ecx
-                mov     [ebp+var_4], ecx
+                mov     [ebp+codes], ecx ; codes++
                 movzx   ecx, [byte ptr edx]
                 mov     [eax], ecx
-                mov     eax, [ebp+arg_10]
-                add     eax, 190h
-                mov     ecx, [ebp+var_4]
+                mov     eax, [ebp+ins]  ; ins->vex_wlp = *codes++;
+                add     eax, 400        ; ins->vex_wlp = ins + 400
+                mov     ecx, [ebp+codes]
                 mov     edx, ecx
                 inc     ecx
-                mov     [ebp+var_4], ecx
+                mov     [ebp+codes], ecx ; codes++
                 movzx   ecx, [byte ptr edx]
                 mov     [eax], ecx
-                mov     eax, [ebp+arg_10]
-                add     eax, 198h
-                mov     ecx, [ebp+var_4]
+                mov     eax, [ebp+ins]  ; ins->evex_tuple = (*codes++ - 0300);
+                add     eax, 408        ; ins->evex_tuple = ins + 408
+                mov     ecx, [ebp+codes]
                 mov     edx, ecx
                 inc     ecx
-                mov     [ebp+var_4], ecx
+                mov     [ebp+codes], ecx ; codes++
                 movzx   ecx, [byte ptr edx]
-                sub     ecx, 0C0h
+                sub     ecx, 192        ; - 0300o
                 mov     [eax], ecx
-                jmp     csz_169
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_40:                                 ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, [ebp+ins]  ; case 0250:
+                                        ; case A8h: (case 168:)
+                add     eax, 388        ; ins->rex |= REX_EV;
                 mov     ecx, [eax]
                 or      ecx, 400h
                 mov     [eax], ecx
-                mov     eax, [ebp+arg_10]
-                add     eax, 188h
+                mov     eax, [ebp+ins]  ; ins->vexreg = 0;
+                add     eax, 392
                 mov     ecx, 0
                 mov     [eax], ecx
-                mov     eax, [ebp+arg_10]
-                add     eax, 18Ch
-                mov     ecx, [ebp+var_4]
+                mov     eax, [ebp+ins]  ; ins->vex_cm = *codes++;
+                add     eax, 396
+                mov     ecx, [ebp+codes]
                 mov     edx, ecx
                 inc     ecx
-                mov     [ebp+var_4], ecx
+                mov     [ebp+codes], ecx
                 movzx   ecx, [byte ptr edx]
                 mov     [eax], ecx
-                mov     eax, [ebp+arg_10]
-                add     eax, 190h
-                mov     ecx, [ebp+var_4]
+                mov     eax, [ebp+ins]  ; ins->vex_wlp = *codes++;
+                add     eax, 400
+                mov     ecx, [ebp+codes]
                 mov     edx, ecx
                 inc     ecx
-                mov     [ebp+var_4], ecx
+                mov     [ebp+codes], ecx
                 movzx   ecx, [byte ptr edx]
                 mov     [eax], ecx
-                mov     eax, [ebp+arg_10]
-                add     eax, 198h
-                mov     ecx, [ebp+var_4]
+                mov     eax, [ebp+ins]  ; ins->evex_tuple = (*codes++ - 0300);
+                add     eax, 408
+                mov     ecx, [ebp+codes]
                 mov     edx, ecx
                 inc     ecx
-                mov     [ebp+var_4], ecx
+                mov     [ebp+codes], ecx
                 movzx   ecx, [byte ptr edx]
-                sub     ecx, 0C0h
+                sub     ecx, 192
                 mov     [eax], ecx
-                jmp     csz_169
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_41:                                 ; ...
-                mov     eax, [ebp+var_10]
+                mov     eax, [ebp+length] ; case4(0254):
+                                        ; case ACh: case ADh: case AEh: case AFh:
                 add     eax, 4
-                mov     ecx, [ebp+var_C]
+                mov     ecx, [ebp+length_h]
                 adc     ecx, 0
-                mov     [ebp+var_10], eax
-                mov     [ebp+var_C], ecx
+                mov     [ebp+length], eax ; length += 4;
+                mov     [ebp+length_h], ecx
                 jmp     csz_169
 ; ---------------------------------------------------------------------------
 
 csz_42:                                 ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, [ebp+ins]  ; case4(0260):
+                add     eax, 388        ; case B0h: case B1h: case B2h: case B3h:
                 mov     ecx, [eax]
-                or      ecx, 100h
-                mov     [eax], ecx
-                mov     eax, [ebp+arg_10]
-                add     eax, 188h
-                mov     ecx, [ebp+var_24]
+                or      ecx, 100h       ; REX_V = 100h
+                mov     [eax], ecx      ; ins->rex |= REX_V;
+                mov     eax, [ebp+ins]
+                add     eax, 392        ; ins->vexreg = ins + 392
+                mov     ecx, [ebp+opx]
                 push    ecx
-                mov     [ebp+var_9C], eax
+                mov     [ebp+tmp_ins_vexreg2], eax
                 call    regval
                 add     esp, 4
-                mov     ecx, [ebp+var_9C]
-                mov     [ecx], eax
-                mov     eax, [ebp+arg_10]
-                add     eax, 18Ch
-                mov     ecx, [ebp+var_4]
+                mov     ecx, [ebp+tmp_ins_vexreg2]
+                mov     [ecx], eax      ; ins->vexreg = regval(opx);
+                mov     eax, [ebp+ins]
+                add     eax, 396        ; ins->vex_cm = ins + 396
+                mov     ecx, [ebp+codes]
                 mov     edx, ecx
                 inc     ecx
-                mov     [ebp+var_4], ecx
+                mov     [ebp+codes], ecx
                 movzx   ecx, [byte ptr edx]
-                mov     [eax], ecx
-                mov     eax, [ebp+arg_10]
-                add     eax, 190h
-                mov     ecx, [ebp+var_4]
+                mov     [eax], ecx      ; ins->vex_cm = *codes++;
+                mov     eax, [ebp+ins]
+                add     eax, 400        ; ins->vex_wlp = ins + 400
+                mov     ecx, [ebp+codes]
                 mov     edx, ecx
                 inc     ecx
-                mov     [ebp+var_4], ecx
+                mov     [ebp+codes], ecx
                 movzx   ecx, [byte ptr edx]
-                mov     [eax], ecx
-                jmp     csz_169
+                mov     [eax], ecx      ; ins->vex_wlp = *codes++;
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_43:                                 ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, [ebp+ins]  ; case 0270:
+                                        ; case 184: (case B8h)
+                add     eax, 388
                 mov     ecx, [eax]
                 or      ecx, 100h
-                mov     [eax], ecx
-                mov     eax, [ebp+arg_10]
-                add     eax, 188h
+                mov     [eax], ecx      ; ins->rex |= REX_V;
+                mov     eax, [ebp+ins]
+                add     eax, 392        ; ins->vexreg = ins + 392 (address)
                 mov     ecx, 0
-                mov     [eax], ecx
-                mov     eax, [ebp+arg_10]
-                add     eax, 18Ch
-                mov     ecx, [ebp+var_4]
+                mov     [eax], ecx      ; ins->vexreg = 0;
+                mov     eax, [ebp+ins]
+                add     eax, 396
+                mov     ecx, [ebp+codes]
                 mov     edx, ecx
                 inc     ecx
-                mov     [ebp+var_4], ecx
+                mov     [ebp+codes], ecx
                 movzx   ecx, [byte ptr edx]
-                mov     [eax], ecx
-                mov     eax, [ebp+arg_10]
-                add     eax, 190h
-                mov     ecx, [ebp+var_4]
+                mov     [eax], ecx      ; ins->vex_cm = *codes++;
+                mov     eax, [ebp+ins]
+                add     eax, 400
+                mov     ecx, [ebp+codes]
                 mov     edx, ecx
                 inc     ecx
-                mov     [ebp+var_4], ecx
+                mov     [ebp+codes], ecx
                 movzx   ecx, [byte ptr edx]
-                mov     [eax], ecx
+                mov     [eax], ecx      ; ins->vex_wlp = *codes++;
                 jmp     csz_169
 ; ---------------------------------------------------------------------------
 
 csz_44:                                 ; ...
-                movzx   eax, [ebp+var_11]
+                movzx   eax, [ebp+c]    ; case3(0271):
+                                        ; case B9h: case BAh: case BBh:
                 and     eax, 3
-                mov     [ebp+var_2D], al
-                jmp     csz_169
+                mov     [ebp+hleok], al ; hleok = c & 3;
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_45:                                 ; ...
-                mov     eax, [ebp+var_C]
-                mov     ecx, eax
-                mov     edx, [ebp+var_10]
-                mov     [ebp+var_A0], ecx
+                mov     eax, [ebp+length_h] ; case4(0274):
+                mov     ecx, eax        ; case BCh: case BDh: case BEh: case BFh:
+                mov     edx, [ebp+length]
+                mov     [ebp+tmp14_h], ecx
                 mov     ecx, edx
-                mov     [ebp+var_A4], eax
-                mov     eax, [ebp+var_A0]
-                mov     [ebp+var_B0], ecx
-                mov     [ebp+var_AC], eax
-                mov     eax, [ebp+var_A4]
+                mov     [ebp+tmp15_h], eax
+                mov     eax, [ebp+tmp14_h]
+                mov     [ebp+tmp14], ecx
+                mov     [ebp+tmp16_h], eax
+                mov     eax, [ebp+tmp15_h]
                 add     edx, 1
                 adc     eax, 0
-                mov     [ebp+var_10], edx
-                mov     [ebp+var_C], eax
-                jmp     csz_169
+                mov     [ebp+length], edx ; length++;
+                mov     [ebp+length_h], eax
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_46:                                 ; ...
-                jmp     csz_169
+                jmp     csz_169         ; case4(0300):
+                                        ; case C0h: case C1h: case C2h: case C3h:
 ; ---------------------------------------------------------------------------
 
 csz_47:                                 ; ...
-                mov     eax, [ebp+arg_C]
-                cmp     eax, 40h
+                mov     eax, [ebp+bits] ; case 0310:
+                                        ; case 200: (case C8h:)
+                cmp     eax, 64         ; if (bits == 64)
                 jnz     csz_48
-                mov     eax, 0FFFFFFFFh
-                mov     edx, 0FFFFFFFFh
-                jmp     csz_207
+                mov     eax, -1
+                mov     edx, -1
+                jmp     csz_207         ; return -1;
 ; ---------------------------------------------------------------------------
 
 csz_48:                                 ; ...
-                mov     eax, [ebp+arg_C]
-                cmp     eax, 10h
+                mov     eax, [ebp+bits] ; length += (bits != 16) &&
+                cmp     eax, 16
                 jz      csz_50
-                mov     eax, 0F1h
+                mov     eax, 241        ; && !has_prefix(ins, PPS_ASIZE, P_A16);
+                push    eax             ; P_A16 = 241
+                mov     eax, 5          ; PPS_ASIZE = 5
                 push    eax
-                mov     eax, 5
-                push    eax
-                mov     eax, [ebp+arg_10]
+                mov     eax, [ebp+ins]
                 push    eax
                 call    has_prefix
-                add     esp, 0Ch
+                add     esp, 12
                 cmp     eax, 0
                 jz      csz_49
                 jmp     csz_50
@@ -5864,28 +5901,29 @@ csz_50:                                 ; ...
 
 csz_51:                                 ; ...
                 mov     ecx, eax
-                sar     ecx, 1Fh
-                mov     edx, [ebp+var_10]
+                sar     ecx, 31
+                mov     edx, [ebp+length]
                 add     edx, eax
-                mov     eax, [ebp+var_C]
+                mov     eax, [ebp+length_h]
                 adc     eax, ecx
-                mov     [ebp+var_10], edx
-                mov     [ebp+var_C], eax
+                mov     [ebp+length], edx
+                mov     [ebp+length_h], eax
                 jmp     csz_169
 ; ---------------------------------------------------------------------------
 
 csz_52:                                 ; ...
-                mov     eax, [ebp+arg_C]
-                cmp     eax, 20h
+                mov     eax, [ebp+bits] ; case 0311:
+                                        ; case 201:
+                cmp     eax, 32         ; length += (bits != 32) &&
                 jz      csz_54
-                mov     eax, 0F2h
+                mov     eax, 242        ; && !has_prefix(ins, PPS_ASIZE, P_A32);
+                push    eax             ; P_A32 = 242
+                mov     eax, 5          ; PPS_ASIZE = 5
                 push    eax
-                mov     eax, 5
-                push    eax
-                mov     eax, [ebp+arg_10]
+                mov     eax, [ebp+ins]
                 push    eax
                 call    has_prefix
-                add     esp, 0Ch
+                add     esp, 12
                 cmp     eax, 0
                 jz      csz_53
                 jmp     csz_54
@@ -5901,226 +5939,245 @@ csz_54:                                 ; ...
 
 csz_55:                                 ; ...
                 mov     ecx, eax
-                sar     ecx, 1Fh
-                mov     edx, [ebp+var_10]
+                sar     ecx, 31
+                mov     edx, [ebp+length]
                 add     edx, eax
-                mov     eax, [ebp+var_C]
+                mov     eax, [ebp+length_h]
                 adc     eax, ecx
-                mov     [ebp+var_10], edx
-                mov     [ebp+var_C], eax
-                jmp     csz_169
+                mov     [ebp+length], edx
+                mov     [ebp+length_h], eax
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_56:                                 ; ...
-                jmp     csz_169
+                jmp     csz_169         ; case 0312:
+                                        ; case 202:
+                                        ; break;
 ; ---------------------------------------------------------------------------
 
 csz_57:                                 ; ...
-                mov     eax, [ebp-0FFFFFFECh]
-                cmp     eax, 40h
+                mov     eax, [ebp+bits] ; case 0313:
+                                        ; case 203: (case CBh)
+                cmp     eax, 64         ; if (bits != 64 || has_prefix(ins, PPS_ASIZE, P_A16) ||
                 jnz     csz_58
-                mov     eax, 0F1h
+                mov     eax, 241
                 push    eax
                 mov     eax, 5
                 push    eax
-                mov     eax, [ebp+arg_10]
+                mov     eax, [ebp+ins]
                 push    eax
                 call    has_prefix
-                add     esp, 0Ch
+                add     esp, 12
                 cmp     eax, 0
                 jnz     csz_58
-                mov     eax, 0F2h
+                mov     eax, 242        ; has_prefix(ins, PPS_ASIZE, P_A32))
                 push    eax
                 mov     eax, 5
                 push    eax
-                mov     eax, [ebp+arg_10]
+                mov     eax, [ebp+ins]
                 push    eax
                 call    has_prefix
-                add     esp, 0Ch
+                add     esp, 12
                 cmp     eax, 0
                 jnz     csz_58
-                jmp     csz_59
+                jmp     csz_59          ; break;
 ; ---------------------------------------------------------------------------
 
 csz_58:                                 ; ...
                 mov     eax, 0FFFFFFFFh
                 mov     edx, 0FFFFFFFFh
-                jmp     csz_207
+                jmp     csz_207         ; return -1;
 ; ---------------------------------------------------------------------------
 
 csz_59:                                 ; ...
-                jmp     csz_169
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_60:                                 ; ...
-                jmp     csz_169
+                jmp     csz_169         ; case4(0314):
+                                        ; case CCh: case CDh: case CEh: case CFh:
+                                        ; break;
 ; ---------------------------------------------------------------------------
 
 csz_61:                                 ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 4
-                add     eax, 10h
+                mov     eax, [ebp+ins]  ; case 0320:
+                                        ; case 208: (case D0h)
+                add     eax, 4          ; ins->prefixes = ins + 4 (address)
+                add     eax, 16         ; PPS_OSIZE = 4 (index) /// 4*int_size = 16
                 mov     ecx, [eax]
-                mov     [ebp+var_B4], ecx
-                mov     eax, [ebp+var_B4]
-                cmp     eax, 0F6h
+                mov     [ebp+pfx], ecx  ; enum prefixes pfx = ins->prefixes[PPS_OSIZE];
+                mov     eax, [ebp+pfx]  ; if (pfx == P_O16)
+                cmp     eax, 246        ; P_O16 = 246
                 jnz     csz_62
-                jmp     csz_169
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_62:                                 ; ...
-                mov     eax, [ebp+var_B4]
-                cmp     eax, 0
+                mov     eax, [ebp+pfx]  ; if (pfx != P_none)
+                cmp     eax, 0          ; P_none = 0
                 jz      csz_63
                 mov     eax, offset L_66 ; "invalid operand size prefix"
                 push    eax
-                mov     eax, 102h
+                mov     eax, 102h       ; ERR_WARNING | ERR_PASS2
                 push    eax
-                call    nasm_error
+                call    nasm_error      ; nasm_error(ERR_WARNING | ERR_PASS2, "invalid operand size prefix");
                 add     esp, 8
                 jmp     csz_64
 ; ---------------------------------------------------------------------------
 
 csz_63:                                 ; ...
-                mov     eax, [ebp+arg_10]
+                mov     eax, [ebp+ins]  ; else
+                                        ; ins->prefixes[PPS_OSIZE] = P_O16;
                 add     eax, 4
-                add     eax, 10h
-                mov     ecx, 0F6h
+                add     eax, 16
+                mov     ecx, 246        ; P_O16
                 mov     [eax], ecx
 
 csz_64:                                 ; ...
-                jmp     csz_169
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_65:                                 ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 4
-                add     eax, 10h
+                mov     eax, [ebp+ins]  ; case 0321:
+                                        ; case 209: (case D1h)
+                add     eax, 4          ; ins->prefixes = ins + 4 (address)
+                add     eax, 16         ; PPS_OSIZE = 4 /// 4*int_size = 16
                 mov     ecx, [eax]
-                mov     [ebp+var_B8], ecx
-                mov     eax, [ebp+var_B8]
-                cmp     eax, 0F7h
+                mov     [ebp+_pfx], ecx ; enum prefixes pfx = ins->prefixes[PPS_OSIZE];
+                mov     eax, [ebp+_pfx] ; if (pfx == P_O32)
+                cmp     eax, 247        ; P_O32 = 247
                 jnz     csz_66
                 jmp     csz_169
 ; ---------------------------------------------------------------------------
 
 csz_66:                                 ; ...
-                mov     eax, [ebp+var_B8]
-                cmp     eax, 0
+                mov     eax, [ebp+_pfx] ; if (pfx != P_none)
+                cmp     eax, 0          ; P_none = 0
                 jz      csz_67
                 mov     eax, offset L_67 ; "invalid operand size prefix"
                 push    eax
-                mov     eax, 102h
+                mov     eax, 102h       ; ERR_WARNING | ERR_PASS2
                 push    eax
-                call    nasm_error
+                call    nasm_error      ; nasm_error(ERR_WARNING | ERR_PASS2, "invalid operand size prefix");
                 add     esp, 8
                 jmp     csz_68
 ; ---------------------------------------------------------------------------
 
 csz_67:                                 ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 4
-                add     eax, 10h
-                mov     ecx, 0F7h
+                mov     eax, [ebp+ins]  ; else
+                add     eax, 4          ; ins->prefixes[PPS_OSIZE] = P_O32;
+                add     eax, 16
+                mov     ecx, 247
                 mov     [eax], ecx
 
 csz_68:                                 ; ...
-                jmp     csz_169
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_69:                                 ; ...
-                jmp     csz_169
+                jmp     csz_169         ; case 0322:
+                                        ; case 210:
+                                        ; break;
 ; ---------------------------------------------------------------------------
 
 csz_70:                                 ; ...
-                mov     eax, [ebp+var_18]
-                and     eax, 0FFFFFFF7h
-                mov     [ebp+var_18], eax
+                mov     eax, [ebp+rex_mask] ; case 0323:
+                                        ; case 211:
+                and     eax, 0FFFFFFF7h ; ~8
+                mov     [ebp+rex_mask], eax ; rex_mask &= ~REX_W;
                 jmp     csz_169
 ; ---------------------------------------------------------------------------
 
 csz_71:                                 ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, [ebp+ins]  ; case 0324:
+                                        ; case 212:
+                add     eax, 388        ; ins->rex = ins + 388 (address)
                 mov     ecx, [eax]
-                or      ecx, 8
-                mov     [eax], ecx
+                or      ecx, 8          ; REX_W = 8
+                mov     [eax], ecx      ; ins->rex |= REX_W;
                 jmp     csz_169
 ; ---------------------------------------------------------------------------
 
 csz_72:                                 ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, [ebp+ins]  ; case 0325:
+                                        ; case 213:
+                add     eax, 388
                 mov     ecx, [eax]
-                or      ecx, 200h
-                mov     [eax], ecx
-                jmp     csz_169
+                or      ecx, 200h       ; REX_NH = 200h (512)
+                mov     [eax], ecx      ; ins->rex |= REX_NH;
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_73:                                 ; ...
-                jmp     csz_169
+                jmp     csz_169         ; case 0326:
+                                        ; case 214:
+                                        ; break;
 ; ---------------------------------------------------------------------------
 
 csz_74:                                 ; ...
-                mov     eax, [ebp+var_4]
+                mov     eax, [ebp+codes] ; case 0330:
+                                        ; case 216:
                 mov     ecx, eax
                 inc     eax
-                mov     [ebp+var_4], eax
-                mov     eax, [ebp+var_C]
+                mov     [ebp+codes], eax ; codes++, length++;
+                mov     eax, [ebp+length_h]
                 mov     ecx, eax
-                mov     edx, [ebp+var_10]
-                mov     [ebp+var_BC], ecx
+                mov     edx, [ebp+length]
+                mov     [ebp+tmp17_h], ecx
                 mov     ecx, edx
-                mov     [ebp+var_C0], eax
-                mov     eax, [ebp+var_BC]
-                mov     [ebp+var_C8], ecx
-                mov     [ebp+var_C4], eax
-                mov     eax, [ebp+var_C0]
+                mov     [ebp+tmp18_h], eax
+                mov     eax, [ebp+tmp17_h]
+                mov     [ebp+tmp17], ecx
+                mov     [ebp+tmp19_h], eax
+                mov     eax, [ebp+tmp18_h]
                 add     edx, 1
                 adc     eax, 0
-                mov     [ebp+var_10], edx
-                mov     [ebp+var_C], eax
-                jmp     csz_169
+                mov     [ebp+length], edx
+                mov     [ebp+length_h], eax
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_75:                                 ; ...
-                jmp     csz_169
+                jmp     csz_169         ; case 0331: (case D9h:)
+                                        ; break;
 ; ---------------------------------------------------------------------------
 
 csz_76:                                 ; ...
-                mov     eax, [ebp+var_C]
+                mov     eax, [ebp+length_h] ; case 0332: (case DAh:)
+                                        ; case 0333: (case DBh:)
                 mov     ecx, eax
-                mov     edx, [ebp+var_10]
-                mov     [ebp+var_CC], ecx
+                mov     edx, [ebp+length]
+                mov     [ebp+tmp20_h], ecx
                 mov     ecx, edx
-                mov     [ebp+var_D0], eax
-                mov     eax, [ebp+var_CC]
-                mov     [ebp+var_D8], ecx
-                mov     [ebp+var_D4], eax
-                mov     eax, [ebp+var_D0]
-                add     edx, 1
+                mov     [ebp+tmp21_h], eax
+                mov     eax, [ebp+tmp20_h]
+                mov     [ebp+tmp20], ecx
+                mov     [ebp+tmp22_h], eax
+                mov     eax, [ebp+tmp21_h]
+                add     edx, 1          ; length++;
                 adc     eax, 0
-                mov     [ebp+var_10], edx
-                mov     [ebp+var_C], eax
-                jmp     csz_169
+                mov     [ebp+length], edx
+                mov     [ebp+length_h], eax
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_77:                                 ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, [ebp+ins]  ; case 0334: (case DCh:)
+                add     eax, 388        ; ins->rex |= REX_L;
                 mov     ecx, [eax]
-                or      ecx, 20h
+                or      ecx, 32         ; REX_L = 32
                 mov     [eax], ecx
                 jmp     csz_169
 ; ---------------------------------------------------------------------------
 
 csz_78:                                 ; ...
-                jmp     csz_169
+                jmp     csz_169         ; case 0335: (case DDh:)
+                                        ; break;
 ; ---------------------------------------------------------------------------
 
 csz_79:                                 ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 4
+                mov     eax, [ebp+ins]  ; case 0336: (case DEh:)
+                add     eax, 4          ; if (!ins->prefixes[PPS_REP])
                 add     eax, 4
                 mov     ecx, [eax]
                 cmp     ecx, 0
@@ -6129,10 +6186,10 @@ csz_79:                                 ; ...
 ; ---------------------------------------------------------------------------
 
 csz_80:                                 ; ...
-                mov     eax, [ebp+arg_10]
+                mov     eax, [ebp+ins]  ; ins->prefixes[PPS_REP] = P_REP;
                 add     eax, 4
                 add     eax, 4
-                mov     ecx, 0FAh
+                mov     ecx, 250        ; P_REP = 250
                 mov     [eax], ecx
 
 csz_81:                                 ; ...
@@ -6140,9 +6197,9 @@ csz_81:                                 ; ...
 ; ---------------------------------------------------------------------------
 
 csz_82:                                 ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 4
-                add     eax, 4
+                mov     eax, [ebp+ins]  ; case 0337: (case DFh:)
+                add     eax, 4          ; if (!ins->prefixes[PPS_REP])
+                add     eax, 4          ; PPS_REP = 1 /// 1*int_size = 4
                 mov     ecx, [eax]
                 cmp     ecx, 0
                 jz      csz_83
@@ -6150,10 +6207,10 @@ csz_82:                                 ; ...
 ; ---------------------------------------------------------------------------
 
 csz_83:                                 ; ...
-                mov     eax, [ebp+arg_10]
+                mov     eax, [ebp+ins]  ; ins->prefixes[PPS_REP] = P_REPNE;
+                add     eax, 4          ; ins->prefixes[0]
                 add     eax, 4
-                add     eax, 4
-                mov     ecx, 0FCh
+                mov     ecx, 252        ; P_REPNE = 252
                 mov     [eax], ecx
 
 csz_84:                                 ; ...
@@ -6161,9 +6218,9 @@ csz_84:                                 ; ...
 ; ---------------------------------------------------------------------------
 
 csz_85:                                 ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 30h
-                push    eax
+                mov     eax, [ebp+ins]  ; case 0340: (case E0h:)
+                add     eax, 48         ;  if (!absolute_op(&ins->oprs[0]))
+                push    eax             ; &ins->oprs[0] = ins + 48
                 call    absolute_op
                 add     esp, 4
                 cmp     eax, 0
@@ -6176,222 +6233,250 @@ csz_86:                                 ; ...
                 push    eax
                 mov     eax, 3
                 push    eax
-                call    nasm_error
+                call    nasm_error      ; nasm_error(ERR_NONFATAL, "attempt to reserve non-constant"
+                                        ;                         " quantity of BSS space");
                 add     esp, 8
                 jmp     csz_89
 ; ---------------------------------------------------------------------------
 
 csz_87:                                 ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 30h
-                add     eax, 38h
+                mov     eax, [ebp+ins]  ; else if (ins->oprs[0].opflags & OPFLAG_FORWARD)
+                add     eax, 48
+                add     eax, 56         ; ins->oprs[0].opflags
                 mov     ecx, [eax]
-                and     ecx, 1
+                and     ecx, 1          ; OPFLAG_FORWARD
                 cmp     ecx, 0
                 jz      csz_88
                 mov     eax, offset L_69 ; "forward reference in RESx can have unpr"...
                 push    eax
-                mov     eax, 82h
+                mov     eax, 82h        ; ERR_WARNING | ERR_PASS1
                 push    eax
-                call    nasm_error
+                call    nasm_error      ; nasm_error(ERR_WARNING | ERR_PASS1,
+                                        ;   "forward reference in RESx can have unpredictable results");
                 add     esp, 8
                 jmp     csz_89
 ; ---------------------------------------------------------------------------
 
 csz_88:                                 ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 30h
-                add     eax, 28h
+                mov     eax, [ebp+ins]  ; else
+                                        ; length += ins->oprs[0].offset;
+                add     eax, 48
+                add     eax, 40
                 mov     ecx, [eax]
                 add     eax, 4
                 mov     edx, [eax]
-                mov     eax, [ebp+var_10]
+                mov     eax, [ebp+length]
                 add     eax, ecx
-                mov     ecx, [ebp+var_C]
+                mov     ecx, [ebp+length_h]
                 adc     ecx, edx
-                mov     [ebp+var_10], eax
-                mov     [ebp+var_C], ecx
+                mov     [ebp+length], eax
+                mov     [ebp+length_h], ecx
 
 csz_89:                                 ; ...
-                jmp     csz_169
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_90:                                 ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 4
-                mov     ecx, [eax]
+                mov     eax, [ebp+ins]  ; case 0341: (case E1h:)
+                add     eax, 4          ; if (!ins->prefixes[PPS_WAIT])
+                mov     ecx, [eax]      ; PPS_WAIT = 0
                 cmp     ecx, 0
                 jz      csz_91
                 jmp     csz_92
 ; ---------------------------------------------------------------------------
 
 csz_91:                                 ; ...
-                mov     eax, [ebp+arg_10]
+                mov     eax, [ebp+ins]  ; ins->prefixes[PPS_WAIT] = P_WAIT;
                 add     eax, 4
-                mov     ecx, 100h
+                mov     ecx, 256        ; P_WAIT = 256
                 mov     [eax], ecx
 
 csz_92:                                 ; ...
-                jmp     csz_169
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_93:                                 ; ...
-                jmp     csz_169
+                jmp     csz_169         ; case 0360: (case F0h:)
+                                        ; break;
 ; ---------------------------------------------------------------------------
 
 csz_94:                                 ; ...
-                mov     eax, [ebp+var_C]
+                mov     eax, [ebp+length_h] ; case 0361: (case F1h:)
+                                        ; length++;
                 mov     ecx, eax
-                mov     edx, [ebp+var_10]
-                mov     [ebp+var_DC], ecx
+                mov     edx, [ebp+length]
+                mov     [ebp+tmp23_h], ecx
                 mov     ecx, edx
-                mov     [ebp+var_E0], eax
-                mov     eax, [ebp+var_DC]
-                mov     [ebp+var_E8], ecx
-                mov     [ebp+var_E4], eax
-                mov     eax, [ebp+var_E0]
+                mov     [ebp+tmp24_h], eax
+                mov     eax, [ebp+tmp23_h]
+                mov     [ebp+tmp23], ecx
+                mov     [ebp+tmp25_h], eax
+                mov     eax, [ebp+tmp24_h]
                 add     edx, 1
                 adc     eax, 0
-                mov     [ebp+var_10], edx
-                mov     [ebp+var_C], eax
+                mov     [ebp+length], edx
+                mov     [ebp+length_h], eax
                 jmp     csz_169
 ; ---------------------------------------------------------------------------
 
 csz_95:                                 ; ...
-                jmp     csz_169
+                jmp     csz_169         ; case 0364: (case F4h:)
+                                        ; case 0365: (case F5h:)
+                                        ; break;
 ; ---------------------------------------------------------------------------
 
 csz_96:                                 ; ...
-                mov     eax, [ebp+var_C]
+                mov     eax, [ebp+length_h] ; case 0366: (case F6h:)
+                                        ; case 0367: (case F7h:)
                 mov     ecx, eax
-                mov     edx, [ebp+var_10]
-                mov     [ebp+var_EC], ecx
+                mov     edx, [ebp+length]
+                mov     [ebp+tmp26_h], ecx
                 mov     ecx, edx
-                mov     [ebp+var_F0], eax
-                mov     eax, [ebp+var_EC]
-                mov     [ebp+var_F8], ecx
-                mov     [ebp+var_F4], eax
-                mov     eax, [ebp+var_F0]
+                mov     [ebp+tmp27_h], eax
+                mov     eax, [ebp+tmp26_h]
+                mov     [ebp+tmp26], ecx
+                mov     [ebp+tmp28_h], eax
+                mov     eax, [ebp+tmp27_h]
                 add     edx, 1
                 adc     eax, 0
-                mov     [ebp+var_10], edx
-                mov     [ebp+var_C], eax
+                mov     [ebp+length], edx ; length++;
+                mov     [ebp+length_h], eax
                 jmp     csz_169
 ; ---------------------------------------------------------------------------
 
 csz_97:                                 ; ...
-                jmp     csz_169
+                jmp     csz_169         ; case 0370: (case F8h:)
+                                        ; case 0371: (case F9h:)
+                                        ; break;
 ; ---------------------------------------------------------------------------
 
 csz_98:                                 ; ...
-                mov     eax, [ebp+var_C]
+                mov     eax, [ebp+length_h] ; case 0373: (case FBh:)
                 mov     ecx, eax
-                mov     edx, [ebp+var_10]
-                mov     [ebp+var_FC], ecx
+                mov     edx, [ebp+length]
+                mov     [ebp+tmp29_h], ecx
                 mov     ecx, edx
-                mov     [ebp+var_100], eax
-                mov     eax, [ebp+var_FC]
-                mov     [ebp+var_108], ecx
-                mov     [ebp+var_104], eax
-                mov     eax, [ebp+var_100]
-                add     edx, 1
+                mov     [ebp+tmp30_h], eax
+                mov     eax, [ebp+tmp29_h]
+                mov     [ebp+tmp29], ecx
+                mov     [ebp+tmp31_h], eax
+                mov     eax, [ebp+tmp30_h]
+                add     edx, 1          ; length++;
                 adc     eax, 0
-                mov     [ebp+var_10], edx
-                mov     [ebp+var_C], eax
-                jmp     csz_169
+                mov     [ebp+length], edx
+                mov     [ebp+length_h], eax
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_99:                                 ; ...
-                mov     eax, 2
-                mov     [ebp+var_2C], eax
+                mov     eax, 2          ; case 0374: (case FCh:)
+                mov     [ebp+eat], eax  ; eat = EA_XMMVSIB;
                 jmp     csz_169
 ; ---------------------------------------------------------------------------
 
 csz_100:                                ; ...
-                mov     eax, 3
-                mov     [ebp+var_2C], eax
-                jmp     csz_169
+                mov     eax, 3          ; case 0375: (case FDh:)
+                mov     [ebp+eat], eax  ; eat = EA_YMMVSIB;
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_101:                                ; ...
-                mov     eax, 4
-                mov     [ebp+var_2C], eax
+                mov     eax, 4          ; case 0376: (case FEh:)
+                mov     [ebp+eat], eax  ; eat = EA_ZMMVSIB;
                 jmp     csz_169
 ; ---------------------------------------------------------------------------
 
 csz_102:                                ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 30h
-                mov     ecx, [ebp+var_20]
+                mov     eax, [ebp+ins]  ; case4(0100): (case 40h: case 41h: case 42h: case 43h:)
+                                        ; case4(0110):
+                                        ; case4(0120):
+                                        ; case4(0130):
+                                        ; case4(0200): (case 80h: case 81h: case 82h: case 83h:)
+                                        ; case4(0204):
+                                        ; case4(0210):
+                                        ; case4(0214):
+                                        ; case4(0220):
+                                        ; case4(0224):
+                                        ; case4(0230):
+                                        ; case4(0234): (case 9Ch: case 9Dh: case 9Eh: case 9Fh:)
+                                        ;
+                                        ; ea ea_data;
+                                        ; int rfield;
+                add     eax, 48         ; &ins->oprs[0]
+                mov     ecx, [ebp+op2]
                 shl     ecx, 6
-                add     eax, ecx
-                mov     [ebp+var_134], eax
-                mov     eax, 0
-                mov     [ebp+var_10E], al
-                movzx   eax, [ebp+var_11]
-                cmp     eax, 7Fh
+                add     eax, ecx        ; &ins->oprs[op2]
+                mov     [ebp+opy], eax  ; struct operand *opy = &ins->oprs[op2];
+                                        ; struct operand *op_er_sae;
+                mov     eax, 0          ; /* Ensure ea.REX is initially 0 */
+                mov     [ebp+ea_data_rex], al ; ea_data.rex = 0;
+                movzx   eax, [ebp+c]
+                cmp     eax, 127        ; if (c <= 0177) {
                 jg      csz_103
-                mov     eax, [ebp+var_24]
+                mov     eax, [ebp+opx]
                 push    eax
-                call    regflag
+                call    regflag         ; /* pick rfield from operand b (opx) */
+                                        ; rflags = regflag(opx);
                 add     esp, 4
-                mov     [ebp+var_130], eax
-                mov     [ebp+var_12C], edx
-                mov     eax, [ebp+var_24]
-                add     eax, 0Ch
+                mov     [ebp+rflags], eax
+                mov     [ebp+rflags_h], edx
+                mov     eax, [ebp+opx]
+                add     eax, 12         ; opx->basereg address
                 mov     ecx, [eax]
-                shl     ecx, 2
+                shl     ecx, 2          ; * 4 (index * int_size)
                 mov     eax, offset nasm_regvals
                 add     eax, ecx
                 mov     ecx, [eax]
-                mov     [ebp+var_124], ecx
+                mov     [ebp+rfield], ecx ; rfield = nasm_regvals[opx->basereg];
                 jmp     csz_104
 ; ---------------------------------------------------------------------------
 
 csz_103:                                ; ...
-                mov     eax, 0
+                mov     eax, 0          ; } else {
                 mov     ecx, 0
-                mov     [ebp+var_130], eax
-                mov     [ebp+var_12C], ecx
-                movzx   eax, [ebp+var_11]
+                mov     [ebp+rflags], eax ; rflags = 0;
+                mov     [ebp+rflags_h], ecx
+                movzx   eax, [ebp+c]
                 and     eax, 7
-                mov     [ebp+var_124], eax
+                mov     [ebp+rfield], eax ; rfield = c & 7;
 
 csz_104:                                ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 1A0h
-                movsx   ecx, [byte ptr eax]
+                mov     eax, [ebp+ins]  ; /* EVEX.b1 : evex_brerop contains the operand position */
+                add     eax, 416        ; op_er_sae = (ins->evex_brerop >= 0 ?
+                movsx   ecx, [byte ptr eax] ; &ins->oprs[ins->evex_brerop] : NULL);
                 cmp     ecx, 0
                 mov     eax, 0
                 setnl   al
                 cmp     eax, 0
                 jz      csz_105
-                mov     eax, [ebp+arg_10]
-                add     eax, 30h
-                mov     ecx, [ebp+arg_10]
-                add     ecx, 1A0h
+                mov     eax, [ebp+ins]
+                add     eax, 48         ; &ins->oprs = ins + 48
+                mov     ecx, [ebp+ins]
+                add     ecx, 416        ; ins->evex_brerop = ins + 416 (address)
                 movsx   edx, [byte ptr ecx]
-                shl     edx, 6
+                shl     edx, 6          ; (oprs size = 64) ((index*64))
                 add     eax, edx
                 jmp     csz_106
 ; ---------------------------------------------------------------------------
 
 csz_105:                                ; ...
-                mov     eax, 0
+                mov     eax, 0          ; NULL
                 jmp     $+5
 ; ---------------------------------------------------------------------------
 
 csz_106:                                ; ...
-                mov     [ebp+var_138], eax
-                mov     eax, [ebp+var_138]
+                mov     [ebp+op_er_sae], eax
+                mov     eax, [ebp+op_er_sae] ; if (op_er_sae && (op_er_sae->decoflags & (ER | SAE))) {
                 cmp     eax, 0
                 jz      csz_110
-                mov     eax, [ebp+var_138]
-                add     eax, 3Ch
+                mov     eax, [ebp+op_er_sae]
+                add     eax, 60         ; (operand->decoflags = operand + 60)
                 movzx   ecx, [word ptr eax]
                 mov     eax, ecx
-                sar     eax, 1Fh
-                and     ecx, 0C0h
+                sar     eax, 31
+                and     ecx, 0C0h       ; & (ER | SAE)
+                                        ; #define ER STATICRND_MASK (= 64)
+                                        ; #define SAE SAE_MASK (= 128)
                 mov     eax, 0
                 cmp     eax, 0
                 jnz     csz_107
@@ -6399,18 +6484,19 @@ csz_106:                                ; ...
                 jz      csz_110
 
 csz_107:                                ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 194h
+                mov     eax, [ebp+ins]  ; /* set EVEX.b */
+                                        ; ins->evex_p[2] |= EVEX_P2B;
+                add     eax, 404
                 add     eax, 2
                 movzx   ecx, [byte ptr eax]
-                or      ecx, 10h
+                or      ecx, 16         ; EVEX_P2B = 10h
                 mov     [eax], cl
-                mov     eax, [ebp+var_138]
-                add     eax, 3Ch
+                mov     eax, [ebp+op_er_sae] ; if (op_er_sae->decoflags & ER) {
+                add     eax, 60         ; (op_er_sae->decoflags address)
                 movzx   ecx, [word ptr eax]
                 mov     eax, ecx
-                sar     eax, 1Fh
-                and     ecx, 40h
+                sar     eax, 31
+                and     ecx, 64         ; & ER
                 mov     eax, 0
                 cmp     eax, 0
                 jnz     csz_108
@@ -6418,15 +6504,17 @@ csz_107:                                ; ...
                 jz      csz_109
 
 csz_108:                                ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 194h
+                mov     eax, [ebp+ins]  ; /* set EVEX.RC (rounding control) */
+                                        ; ins->evex_p[2] |= ((ins->evex_rm - BRC_RN) << 5)
+                                        ;     & EVEX_P2RC;
+                add     eax, 404        ; ins->evex_p[0]
                 add     eax, 2
-                mov     ecx, [ebp+arg_10]
-                add     ecx, 19Ch
+                mov     ecx, [ebp+ins]
+                add     ecx, 412        ; ins->evex_rm (address)
                 mov     edx, [ecx]
-                sub     edx, 11Dh
-                shl     edx, 5
-                and     edx, 60h
+                sub     edx, 285        ; BRC_RN = 285
+                shl     edx, 5          ; << 5
+                and     edx, 96         ; & EVEX_P2RC
                 movzx   ecx, [byte ptr eax]
                 or      ecx, edx
                 mov     [eax], cl
@@ -6436,34 +6524,35 @@ csz_109:                                ; ...
 ; ---------------------------------------------------------------------------
 
 csz_110:                                ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 194h
+                mov     eax, [ebp+ins]  ; } else {
+                add     eax, 404        ; /* set EVEX.L'L (vector length) */
+                                        ; ins->evex_p[2] |= ((ins->vex_wlp << (5 - 2)) & EVEX_P2LL);
                 add     eax, 2
-                mov     ecx, [ebp+arg_10]
-                add     ecx, 190h
+                mov     ecx, [ebp+ins]
+                add     ecx, 400        ; ins->vex_wlp (address)
                 mov     edx, [ecx]
-                shl     edx, 3
-                and     edx, 60h
+                shl     edx, 3          ; << (5-2)
+                and     edx, 96         ; EVEX_P2LL = EVEX_P2RC = 60h
                 movzx   ecx, [byte ptr eax]
                 or      ecx, edx
                 mov     [eax], cl
-                mov     eax, [ebp+arg_10]
-                add     eax, 194h
+                mov     eax, [ebp+ins]  ; ins->evex_p[1] |= ((ins->vex_wlp << (7 - 4)) & EVEX_P1W);
+                add     eax, 404
                 inc     eax
-                mov     ecx, [ebp+arg_10]
-                add     ecx, 190h
+                mov     ecx, [ebp+ins]
+                add     ecx, 400
                 mov     edx, [ecx]
                 shl     edx, 3
-                and     edx, 80h
+                and     edx, 128        ; EVEX_P1W = 80h
                 movzx   ecx, [byte ptr eax]
                 or      ecx, edx
                 mov     [eax], cl
-                mov     eax, [ebp+var_134]
-                add     eax, 3Ch
+                mov     eax, [ebp+opy]  ; if (opy->decoflags & BRDCAST_MASK) {
+                add     eax, 60
                 movzx   ecx, [word ptr eax]
                 mov     eax, ecx
-                sar     eax, 1Fh
-                and     ecx, 20h
+                sar     eax, 31
+                and     ecx, 32         ; BRDCAST_MASK = 32
                 mov     eax, 0
                 cmp     eax, 0
                 jnz     csz_111
@@ -6471,152 +6560,159 @@ csz_110:                                ; ...
                 jz      csz_112
 
 csz_111:                                ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 194h
+                mov     eax, [ebp+ins]  ; /* set EVEX.b */
+                                        ; ins->evex_p[2] |= EVEX_P2B;
+                add     eax, 404
                 add     eax, 2
                 movzx   ecx, [byte ptr eax]
-                or      ecx, 10h
+                or      ecx, 16         ; EVEX_P2B = 16 (10h)
                 mov     [eax], cl
 
 csz_112:                                ; ...
-                mov     eax, 27h
-                push    eax
-                mov     eax, [ebp+arg_14]
+                mov     eax, 39         ; if (itemp_has(temp, IF_MIB)) {
+                push    eax             ; IF_MIB = 39
+                mov     eax, [ebp+temp]
                 push    eax
                 call    itemp_has
                 add     esp, 8
                 cmp     eax, 0
                 jz      csz_113
-                mov     eax, [ebp+var_134]
-                add     eax, 34h
+                mov     eax, [ebp+opy]  ; opy->eaflags |= EAF_MIB;
+                add     eax, 52         ; operand->eaflags = operand + 52
                 mov     ecx, [eax]
-                or      ecx, 40h
-                mov     [eax], ecx
-                mov     eax, [ebp+var_38]
-                cmp     eax, 0FFFFFFFFh
+                or      ecx, 64         ; EAF_MIB = 64
+                mov     [eax], ecx      ; /* if a separate form of MIB (ICC style) is used,
+                                        ; the index reg info is merged into mem operand */
+                mov     eax, [ebp+mib_index] ; if (mib_index != R_none) {
+                cmp     eax, -1         ; R_none = -1
                 jz      csz_113
-                mov     eax, [ebp+var_134]
-                add     eax, 10h
-                mov     ecx, [ebp+var_38]
-                mov     [eax], ecx
-                mov     eax, [ebp+var_134]
-                add     eax, 14h
+                mov     eax, [ebp+opy]
+                add     eax, 16         ; operand->indexreg = operand + 16
+                mov     ecx, [ebp+mib_index]
+                mov     [eax], ecx      ; opy->indexreg = mib_index;
+                mov     eax, [ebp+opy]
+                add     eax, 20
                 mov     ecx, 1
-                mov     [eax], ecx
-                mov     eax, [ebp+var_134]
-                add     eax, 18h
-                mov     ecx, [ebp+var_38]
-                mov     [eax], ecx
-                mov     eax, [ebp+var_134]
-                add     eax, 1Ch
-                mov     ecx, 2
-                mov     [eax], ecx
+                mov     [eax], ecx      ; opy->scale = 1;
+                mov     eax, [ebp+opy]
+                add     eax, 24
+                mov     ecx, [ebp+mib_index]
+                mov     [eax], ecx      ; opy->hintbase = mib_index;
+                mov     eax, [ebp+opy]
+                add     eax, 28
+                mov     ecx, 2          ; EAH_NOTBASE = 2
+                mov     [eax], ecx      ; opy->hinttype = EAH_NOTBASE;
 
 csz_113:                                ; ...
-                lea     eax, [ebp+var_3C]
+                lea     eax, [ebp+errmsg] ; if (process_ea(opy, &ea_data, bits,
+                push    eax             ;       rfield, rflags, ins, &errmsg) != eat) {
+                mov     eax, [ebp+ins]
                 push    eax
-                mov     eax, [ebp+arg_10]
-                push    eax
-                mov     eax, [ebp+var_130]
-                mov     ecx, [ebp+var_12C]
+                mov     eax, [ebp+rflags]
+                mov     ecx, [ebp+rflags_h]
                 push    ecx
                 push    eax
-                mov     eax, [ebp+var_124]
+                mov     eax, [ebp+rfield]
                 push    eax
-                mov     eax, [ebp+arg_C]
+                mov     eax, [ebp+bits]
                 push    eax
-                lea     eax, [ebp+var_120]
+                lea     eax, [ebp+ea_data]
                 push    eax
-                mov     eax, [ebp+var_134]
+                mov     eax, [ebp+opy]
                 push    eax
                 call    process_ea
-                add     esp, 20h
-                mov     ecx, [ebp+var_2C]
+                add     esp, 32
+                mov     ecx, [ebp+eat]
                 cmp     eax, ecx
                 jz      csz_114
-                mov     eax, [ebp+var_3C]
+                mov     eax, [ebp+errmsg]
                 push    eax
                 mov     eax, offset L_70 ; "%s"
                 push    eax
                 mov     eax, 3
                 push    eax
-                call    nasm_error
-                add     esp, 0Ch
+                call    nasm_error      ; nasm_error(ERR_NONFATAL, "%s", errmsg);
+                add     esp, 12
                 mov     eax, 0FFFFFFFFh
                 mov     edx, 0FFFFFFFFh
-                jmp     csz_207
+                jmp     csz_207         ; return -1;
 ; ---------------------------------------------------------------------------
                 jmp     csz_115
 ; ---------------------------------------------------------------------------
 
 csz_114:                                ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, [ebp+ins]  ; } else {
+                add     eax, 388
                 mov     ecx, [eax]
-                movzx   edx, [ebp+var_10E]
+                movzx   edx, [ebp+ea_data_rex]
                 or      ecx, edx
-                mov     [eax], ecx
-                mov     eax, [ebp+var_114]
+                mov     [eax], ecx      ; ins->rex |= ea_data.rex;
+                mov     eax, [ebp+ea_data_size]
                 mov     ecx, eax
-                sar     ecx, 1Fh
-                mov     edx, [ebp+var_10]
+                sar     ecx, 31
+                mov     edx, [ebp+length]
                 add     edx, eax
-                mov     eax, [ebp+var_C]
+                mov     eax, [ebp+length_h]
                 adc     eax, ecx
-                mov     [ebp+var_10], edx
-                mov     [ebp+var_C], eax
+                mov     [ebp+length], edx ; length += ea_data.size;
+                mov     [ebp+length_h], eax
 
 csz_115:                                ; ...
-                jmp     csz_169
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_116:                                ; ...
-                movzx   eax, [ebp+var_11]
+                movzx   eax, [ebp+c]    ; case default:
                 push    eax
-                movzx   eax, [ebp+var_11]
+                movzx   eax, [ebp+c]
                 push    eax
                 mov     eax, offset L_71 ; "internal instruction table corrupt: ins"...
                 push    eax
                 mov     eax, 0
                 push    eax
-                call    nasm_panic
-                add     esp, 10h
-                jmp     csz_169
+                call    nasm_panic      ; nasm_panic(0, "internal instruction table corrupt"
+                                        ;           ": instruction code \\%o (0x%02X) given", c, c);
+                add     esp, 16
+                jmp     csz_169         ; break;
 ; ---------------------------------------------------------------------------
                 jmp     csz_169
 ; ---------------------------------------------------------------------------
 
 csz_117:                                ; ...
-                movzx   eax, [ebp+var_11]
-                cmp     eax, 84h
+                movzx   eax, [ebp+c]    ; switch (c) {
+                                        ;
+                                        ; /* Common construct */
+                                        ; #define case3(x) case (x): case (x)+1: case (x)+2
+                                        ; #define case4(x) case3(x): case (x)+3
+                cmp     eax, 132
                 jg      csz_143
-                cmp     eax, 84h
-                jge     csz_102
-                cmp     eax, 2Dh
+                cmp     eax, 132
+                jge     csz_102         ; case 84h: case 85h: case 86h: case 87h:
+                cmp     eax, 45
                 jg      csz_130
-                cmp     eax, 2Dh
+                cmp     eax, 45
                 jge     csz_22
-                cmp     eax, 17h
+                cmp     eax, 23
                 jg      csz_124
-                cmp     eax, 17h
-                jge     csz_6
-                cmp     eax, 0Ch
+                cmp     eax, 23
+                jge     csz_6           ; case 23: case 20: case 21: case 22:
+                cmp     eax, 12
                 jg      csz_121
-                cmp     eax, 0Ch
-                jge     csz_5
+                cmp     eax, 12
+                jge     csz_5           ; case 12: case 15: case 13: case 14:
                 cmp     eax, 6
                 jg      csz_119
                 cmp     eax, 6
-                jge     csz_3
+                jge     csz_3           ; case 6: case 5: case 7:
                 cmp     eax, 3
                 jg      csz_118
                 cmp     eax, 3
-                jge     csz_2
+                jge     csz_2           ; case 3: case 1: case 2: case 4:
                 cmp     eax, 1
                 jz      csz_2
                 cmp     eax, 2
                 jz      csz_2
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_118:                                ; ...
@@ -6624,227 +6720,227 @@ csz_118:                                ; ...
                 jz      csz_2
                 cmp     eax, 5
                 jz      csz_3
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_119:                                ; ...
                 cmp     eax, 9
                 jg      csz_120
                 cmp     eax, 9
-                jge     csz_4
+                jge     csz_4           ; case 9: case 8: case 10: case 11:
                 cmp     eax, 7
                 jz      csz_3
                 cmp     eax, 8
                 jz      csz_4
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_120:                                ; ...
-                cmp     eax, 0Ah
+                cmp     eax, 10
                 jz      csz_4
-                cmp     eax, 0Bh
+                cmp     eax, 11
                 jz      csz_4
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_121:                                ; ...
-                cmp     eax, 12h
+                cmp     eax, 18
                 jg      csz_123
-                cmp     eax, 12h
+                cmp     eax, 18
                 jge     csz_6
-                cmp     eax, 0Fh
+                cmp     eax, 15
                 jg      csz_122
-                cmp     eax, 0Fh
+                cmp     eax, 15
                 jge     csz_5
-                cmp     eax, 0Dh
+                cmp     eax, 13
                 jz      csz_5
-                cmp     eax, 0Eh
+                cmp     eax, 14
                 jz      csz_5
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_122:                                ; ...
-                cmp     eax, 10h
+                cmp     eax, 16         ; case 18: case 16: case 17: case 19:
                 jz      csz_6
-                cmp     eax, 11h
+                cmp     eax, 17
                 jz      csz_6
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_123:                                ; ...
-                cmp     eax, 13h
+                cmp     eax, 19
                 jz      csz_6
-                cmp     eax, 14h
+                cmp     eax, 20
                 jz      csz_6
-                cmp     eax, 15h
+                cmp     eax, 21
                 jz      csz_6
-                cmp     eax, 16h
+                cmp     eax, 22
                 jz      csz_6
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_124:                                ; ...
-                cmp     eax, 22h
+                cmp     eax, 34
                 jg      csz_127
-                cmp     eax, 22h
-                jge     csz_19
-                cmp     eax, 1Dh
+                cmp     eax, 34
+                jge     csz_19          ; case 34: case 32: case 33: case 35:
+                cmp     eax, 29
                 jg      csz_126
-                cmp     eax, 1Dh
-                jge     csz_8
-                cmp     eax, 1Ah
+                cmp     eax, 29
+                jge     csz_8           ; case 29: case 28: case 30: case 31:
+                cmp     eax, 26
                 jg      csz_125
-                cmp     eax, 1Ah
-                jge     csz_7
-                cmp     eax, 18h
+                cmp     eax, 26
+                jge     csz_7           ; case 26: case 24: case 25: case 27
+                cmp     eax, 24
                 jz      csz_7
-                cmp     eax, 19h
+                cmp     eax, 25
                 jz      csz_7
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_125:                                ; ...
-                cmp     eax, 1Bh
+                cmp     eax, 27
                 jz      csz_7
-                cmp     eax, 1Ch
+                cmp     eax, 28
                 jz      csz_8
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_126:                                ; ...
-                cmp     eax, 1Eh
+                cmp     eax, 30
                 jz      csz_8
-                cmp     eax, 1Fh
+                cmp     eax, 31
                 jz      csz_8
-                cmp     eax, 20h
+                cmp     eax, 32
                 jz      csz_19
-                cmp     eax, 21h
+                cmp     eax, 33
                 jz      csz_19
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_127:                                ; ...
-                cmp     eax, 28h
+                cmp     eax, 40
                 jg      csz_129
-                cmp     eax, 28h
-                jge     csz_21
-                cmp     eax, 25h
+                cmp     eax, 40
+                jge     csz_21          ; case 40: case 41: case 42: case 43:
+                cmp     eax, 37
                 jg      csz_128
-                cmp     eax, 25h
-                jge     csz_20
-                cmp     eax, 23h
+                cmp     eax, 37
+                jge     csz_20          ; case 37: case 36: case 38: case 39:
+                cmp     eax, 35
                 jz      csz_19
-                cmp     eax, 24h
+                cmp     eax, 36
                 jz      csz_20
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_128:                                ; ...
-                cmp     eax, 26h
+                cmp     eax, 38
                 jz      csz_20
-                cmp     eax, 27h
+                cmp     eax, 39
                 jz      csz_20
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_129:                                ; ...
-                cmp     eax, 29h
+                cmp     eax, 41
                 jz      csz_21
-                cmp     eax, 2Ah
+                cmp     eax, 42
                 jz      csz_21
-                cmp     eax, 2Bh
+                cmp     eax, 43
                 jz      csz_21
-                cmp     eax, 2Ch
-                jz      csz_22
-                jmp     csz_116
+                cmp     eax, 44
+                jz      csz_22          ; case 44: case 45: case 46: case 47:
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_130:                                ; ...
-                cmp     eax, 48h
+                cmp     eax, 72
                 jg      csz_137
-                cmp     eax, 48h
-                jge     csz_102
-                cmp     eax, 39h
+                cmp     eax, 72
+                jge     csz_102         ; case 48h: case 49h: case 4Ah: case 4Bh:
+                cmp     eax, 57
                 jg      csz_134
-                cmp     eax, 39h
+                cmp     eax, 57
                 jge     csz_35
-                cmp     eax, 33h
+                cmp     eax, 51
                 jg      csz_132
-                cmp     eax, 33h
+                cmp     eax, 51
                 jge     csz_23
-                cmp     eax, 30h
+                cmp     eax, 48
                 jg      csz_131
-                cmp     eax, 30h
-                jge     csz_23
-                cmp     eax, 2Eh
+                cmp     eax, 48
+                jge     csz_23          ; case 48: case 49: case 50: case 51:
+                cmp     eax, 46
                 jz      csz_22
-                cmp     eax, 2Fh
+                cmp     eax, 47
                 jz      csz_22
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_131:                                ; ...
-                cmp     eax, 31h
+                cmp     eax, 49
                 jz      csz_23
-                cmp     eax, 32h
+                cmp     eax, 50
                 jz      csz_23
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_132:                                ; ...
-                cmp     eax, 36h
+                cmp     eax, 54
                 jg      csz_133
-                cmp     eax, 36h
-                jge     csz_24
-                cmp     eax, 34h
+                cmp     eax, 54
+                jge     csz_24          ; case 52: case 53: case 54: case 55:
+                cmp     eax, 52
                 jz      csz_24
-                cmp     eax, 35h
+                cmp     eax, 53
                 jz      csz_24
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_133:                                ; ...
-                cmp     eax, 37h
+                cmp     eax, 55
                 jz      csz_24
-                cmp     eax, 38h
-                jz      csz_35
-                jmp     csz_116
+                cmp     eax, 56
+                jz      csz_35          ; case 56: case 57: case 58: case 59:
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_134:                                ; ...
-                cmp     eax, 3Fh
+                cmp     eax, 63
                 jg      csz_136
-                cmp     eax, 3Fh
+                cmp     eax, 63
                 jge     csz_36
-                cmp     eax, 3Ch
+                cmp     eax, 60
                 jg      csz_135
-                cmp     eax, 3Ch
-                jge     csz_36
-                cmp     eax, 3Ah
+                cmp     eax, 60
+                jge     csz_36          ; case 60: case 61: case 62: case 63:
+                cmp     eax, 58
                 jz      csz_35
-                cmp     eax, 3Bh
+                cmp     eax, 59
                 jz      csz_35
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_135:                                ; ...
-                cmp     eax, 3Dh
+                cmp     eax, 61
                 jz      csz_36
-                cmp     eax, 3Eh
+                cmp     eax, 62
                 jz      csz_36
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_136:                                ; ...
                 cmp     eax, 40h
-                jz      csz_102
+                jz      csz_102         ; case 40h: case 41h: case 42h: case 43h:
                 cmp     eax, 41h
                 jz      csz_102
                 cmp     eax, 42h
                 jz      csz_102
                 cmp     eax, 43h
                 jz      csz_102
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_137:                                ; ...
@@ -6864,27 +6960,27 @@ csz_137:                                ; ...
                 jz      csz_102
                 cmp     eax, 4Ah
                 jz      csz_102
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_138:                                ; ...
-                cmp     eax, 50h
+                cmp     eax, 50h        ; case 50h: case 51h: case 52h: case 53h:
                 jz      csz_102
                 cmp     eax, 51h
                 jz      csz_102
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_139:                                ; ...
                 cmp     eax, 53h
                 jz      csz_102
                 cmp     eax, 58h
-                jz      csz_102
+                jz      csz_102         ; case 58h: case 59h: case 5Ah: case 5Bh:
                 cmp     eax, 59h
                 jz      csz_102
                 cmp     eax, 5Ah
                 jz      csz_102
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_140:                                ; ...
@@ -6895,12 +6991,12 @@ csz_140:                                ; ...
                 cmp     eax, 7Ch
                 jg      csz_141
                 cmp     eax, 7Ch
-                jge     csz_38
+                jge     csz_38          ; case 7Ch: case 7Dh: case 7Eh: case 7Fh:
                 cmp     eax, 7Ah
-                jz      csz_37
+                jz      csz_37          ; case 122: case 123:
                 cmp     eax, 7Bh
                 jz      csz_37
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_141:                                ; ...
@@ -6908,19 +7004,19 @@ csz_141:                                ; ...
                 jz      csz_38
                 cmp     eax, 7Eh
                 jz      csz_38
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_142:                                ; ...
                 cmp     eax, 80h
-                jz      csz_102
+                jz      csz_102         ; case 80h: case 81h: case 82h: case 83h:
                 cmp     eax, 81h
                 jz      csz_102
                 cmp     eax, 82h
                 jz      csz_102
                 cmp     eax, 83h
                 jz      csz_102
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_143:                                ; ...
@@ -6935,7 +7031,7 @@ csz_143:                                ; ...
                 cmp     eax, 90h
                 jg      csz_147
                 cmp     eax, 90h
-                jge     csz_102
+                jge     csz_102         ; case 90h: case 91h: case 92h: case 93h:
                 cmp     eax, 8Ah
                 jg      csz_145
                 cmp     eax, 8Ah
@@ -6948,11 +7044,11 @@ csz_143:                                ; ...
                 jz      csz_102
                 cmp     eax, 86h
                 jz      csz_102
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_144:                                ; ...
-                cmp     eax, 88h
+                cmp     eax, 88h        ; case 88h: case 89h: case 8Ah: case 8Bh:
                 jz      csz_102
                 cmp     eax, 89h
                 jz      csz_102
@@ -6963,12 +7059,12 @@ csz_145:                                ; ...
                 cmp     eax, 8Dh
                 jg      csz_146
                 cmp     eax, 8Dh
-                jge     csz_102
+                jge     csz_102         ; case 8Ch: case 8Dh: case 8Eh: case 8Fh:
                 cmp     eax, 8Bh
                 jz      csz_102
                 cmp     eax, 8Ch
                 jz      csz_102
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_146:                                ; ...
@@ -6976,7 +7072,7 @@ csz_146:                                ; ...
                 jz      csz_102
                 cmp     eax, 8Fh
                 jz      csz_102
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_147:                                ; ...
@@ -6992,27 +7088,27 @@ csz_147:                                ; ...
                 jz      csz_102
                 cmp     eax, 92h
                 jz      csz_102
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_148:                                ; ...
                 cmp     eax, 94h
-                jz      csz_102
+                jz      csz_102         ; case 94h: case 95h: case 96h: case 97h:
                 cmp     eax, 95h
                 jz      csz_102
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_149:                                ; ...
                 cmp     eax, 97h
                 jz      csz_102
                 cmp     eax, 98h
-                jz      csz_102
+                jz      csz_102         ; case 98h: case 99h: case 9Ah: case 9Bh:
                 cmp     eax, 99h
                 jz      csz_102
                 cmp     eax, 9Ah
                 jz      csz_102
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_150:                                ; ...
@@ -7029,10 +7125,10 @@ csz_150:                                ; ...
                 cmp     eax, 9Eh
                 jge     csz_102
                 cmp     eax, 9Ch
-                jz      csz_102
+                jz      csz_102         ; case 9Ch: case 9Dh: case 9Eh: case 9Fh:
                 cmp     eax, 9Dh
                 jz      csz_102
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_151:                                ; ...
@@ -7040,19 +7136,19 @@ csz_151:                                ; ...
                 jz      csz_102
                 cmp     eax, 0A0h
                 jz      csz_39
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_152:                                ; ...
                 cmp     eax, 0A2h
-                jz      csz_39
+                jz      csz_39          ; case A0h: case A1h: case A2h: case A3h:
                 cmp     eax, 0A3h
                 jz      csz_39
                 cmp     eax, 0A8h
-                jz      csz_40
+                jz      csz_40          ; case 168:
                 cmp     eax, 0ACh
-                jz      csz_41
-                jmp     csz_116
+                jz      csz_41          ; case ACh: case ADh: case AEh: case AFh:
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_153:                                ; ...
@@ -7063,12 +7159,12 @@ csz_153:                                ; ...
                 cmp     eax, 0B0h
                 jg      csz_154
                 cmp     eax, 0B0h
-                jge     csz_42
+                jge     csz_42          ; case B0h: case B1h: case B2h: case B3h:
                 cmp     eax, 0AEh
                 jz      csz_41
                 cmp     eax, 0AFh
                 jz      csz_41
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_154:                                ; ...
@@ -7076,26 +7172,26 @@ csz_154:                                ; ...
                 jz      csz_42
                 cmp     eax, 0B2h
                 jz      csz_42
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_155:                                ; ...
                 cmp     eax, 0B8h
-                jz      csz_43
+                jz      csz_43          ; case 184: (case B8h)
                 cmp     eax, 0B9h
                 jz      csz_44
                 cmp     eax, 0BAh
-                jz      csz_44
+                jz      csz_44          ; case B9h: case BAh: case BBh:
                 cmp     eax, 0BBh
                 jz      csz_44
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_156:                                ; ...
                 cmp     eax, 0D8h
                 jg      csz_163
                 cmp     eax, 0D8h
-                jge     csz_74
+                jge     csz_74          ; case 216:
                 cmp     eax, 0CCh
                 jg      csz_160
                 cmp     eax, 0CCh
@@ -7107,207 +7203,209 @@ csz_156:                                ; ...
                 cmp     eax, 0BFh
                 jg      csz_157
                 cmp     eax, 0BFh
-                jge     csz_45
+                jge     csz_45          ; case BCh: case BDh: case BEh: case BFh:
                 cmp     eax, 0BDh
                 jz      csz_45
                 cmp     eax, 0BEh
                 jz      csz_45
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_157:                                ; ...
                 cmp     eax, 0C0h
-                jz      csz_46
+                jz      csz_46          ; case C0h: case C1h: case C2h: case C3h:
                 cmp     eax, 0C1h
                 jz      csz_46
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_158:                                ; ...
                 cmp     eax, 0C9h
                 jg      csz_159
                 cmp     eax, 0C9h
-                jge     csz_52
+                jge     csz_52          ; case 201:
                 cmp     eax, 0C3h
                 jz      csz_46
                 cmp     eax, 0C8h
-                jz      csz_47
-                jmp     csz_116
+                jz      csz_47          ; case 200:
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_159:                                ; ...
                 cmp     eax, 0CAh
-                jz      csz_56
+                jz      csz_56          ; case 202:
                 cmp     eax, 0CBh
-                jz      csz_57
-                jmp     csz_116
+                jz      csz_57          ; case 203:
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_160:                                ; ...
                 cmp     eax, 0D2h
                 jg      csz_162
                 cmp     eax, 0D2h
-                jge     csz_69
+                jge     csz_69          ; case 210: (case D2h)
                 cmp     eax, 0CFh
                 jg      csz_161
                 cmp     eax, 0CFh
-                jge     csz_60
+                jge     csz_60          ; case CCh: case CDh: case CEh: case CFh:
                 cmp     eax, 0CDh
                 jz      csz_60
                 cmp     eax, 0CEh
                 jz      csz_60
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_161:                                ; ...
                 cmp     eax, 0D0h
-                jz      csz_61
+                jz      csz_61          ; case 208: (case D0h)
                 cmp     eax, 0D1h
-                jz      csz_65
-                jmp     csz_116
+                jz      csz_65          ; case 209:
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_162:                                ; ...
                 cmp     eax, 0D3h
-                jz      csz_70
+                jz      csz_70          ; case 211:
                 cmp     eax, 0D4h
-                jz      csz_71
+                jz      csz_71          ; case 212:
                 cmp     eax, 0D5h
-                jz      csz_72
+                jz      csz_72          ; case 213:
                 cmp     eax, 0D6h
-                jz      csz_73
-                jmp     csz_116
+                jz      csz_73          ; case 214:
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_163:                                ; ...
                 cmp     eax, 0F1h
                 jg      csz_166
                 cmp     eax, 0F1h
-                jge     csz_94
+                jge     csz_94          ; case 0361:
                 cmp     eax, 0DEh
                 jg      csz_165
                 cmp     eax, 0DEh
-                jge     csz_79
+                jge     csz_79          ; case 0336:
                 cmp     eax, 0DBh
                 jg      csz_164
                 cmp     eax, 0DBh
-                jge     csz_76
+                jge     csz_76          ; case 0333:
                 cmp     eax, 0D9h
-                jz      csz_75
+                jz      csz_75          ; case 0331:
                 cmp     eax, 0DAh
-                jz      csz_76
-                jmp     csz_116
+                jz      csz_76          ; case 0332:
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_164:                                ; ...
                 cmp     eax, 0DCh
-                jz      csz_77
+                jz      csz_77          ; case 0334:
                 cmp     eax, 0DDh
-                jz      csz_78
-                jmp     csz_116
+                jz      csz_78          ; case 0335:
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_165:                                ; ...
                 cmp     eax, 0DFh
-                jz      csz_82
+                jz      csz_82          ; case 0337:
                 cmp     eax, 0E0h
-                jz      csz_85
+                jz      csz_85          ; case 0340:
                 cmp     eax, 0E1h
-                jz      csz_90
+                jz      csz_90          ; case 0341:
                 cmp     eax, 0F0h
-                jz      csz_93
-                jmp     csz_116
+                jz      csz_93          ; case 0360:
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_166:                                ; ...
                 cmp     eax, 0F9h
                 jg      csz_168
                 cmp     eax, 0F9h
-                jge     csz_97
+                jge     csz_97          ; case 0371:
                 cmp     eax, 0F6h
                 jg      csz_167
                 cmp     eax, 0F6h
-                jge     csz_96
+                jge     csz_96          ; case 0366:
                 cmp     eax, 0F4h
                 jz      csz_95
                 cmp     eax, 0F5h
                 jz      csz_95
-                jmp     csz_116
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_167:                                ; ...
                 cmp     eax, 0F7h
-                jz      csz_96
+                jz      csz_96          ; case 0367:
                 cmp     eax, 0F8h
-                jz      csz_97
-                jmp     csz_116
+                jz      csz_97          ; case 0370:
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_168:                                ; ...
                 cmp     eax, 0FBh
-                jz      csz_98
+                jz      csz_98          ; case 0373:
                 cmp     eax, 0FCh
-                jz      csz_99
+                jz      csz_99          ; case 0374:
                 cmp     eax, 0FDh
-                jz      csz_100
+                jz      csz_100         ; case 0375:
                 cmp     eax, 0FEh
-                jz      csz_101
-                jmp     csz_116
+                jz      csz_101         ; case 0376:
+                jmp     csz_116         ; case default:
 ; ---------------------------------------------------------------------------
 
 csz_169:                                ; ...
-                jmp     csz_1
+                jmp     csz_1           ; break;
+                                        ; while (*codes)
 ; ---------------------------------------------------------------------------
 
 csz_170:                                ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, [ebp+ins]  ; ins->rex &= rex_mask;
+                add     eax, 388
                 mov     ecx, [eax]
-                mov     edx, [ebp+var_18]
+                mov     edx, [ebp+rex_mask]
                 and     ecx, edx
                 mov     [eax], ecx
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, [ebp+ins]  ; if (ins->rex & REX_NH) {
+                add     eax, 388
                 mov     ecx, [eax]
-                and     ecx, 200h
+                and     ecx, 512        ; REX_NH = 200h
                 cmp     ecx, 0
                 jz      csz_172
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, [ebp+ins]  ; if (ins->rex & REX_H) {
+                add     eax, 388
                 mov     ecx, [eax]
-                and     ecx, 80h
+                and     ecx, 128        ; REX_H = 80h
                 cmp     ecx, 0
                 jz      csz_171
                 mov     eax, offset L_72 ; "instruction cannot use high registers"
                 push    eax
                 mov     eax, 3
                 push    eax
-                call    nasm_error
+                call    nasm_error      ; nasm_error(ERR_NONFATAL, "instruction cannot use high registers");
                 add     esp, 8
                 mov     eax, 0FFFFFFFFh
                 mov     edx, 0FFFFFFFFh
-                jmp     csz_207
+                jmp     csz_207         ; return -1;
 ; ---------------------------------------------------------------------------
 
 csz_171:                                ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, [ebp+ins]  ; ins->rex &= ~REX_P;
+                                        ; /* Don't force REX prefix due to high reg */
+                add     eax, 388
                 mov     ecx, [eax]
-                and     ecx, 0FFFFFFBFh
+                and     ecx, 0FFFFFFBFh ; ~REX_P (REX_P = 40h)
                 mov     [eax], ecx
 
 csz_172:                                ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 4
-                add     eax, 18h
+                mov     eax, [ebp+ins]  ; switch (ins->prefixes[PPS_VEX]) {
+                add     eax, 4          ; ins->prefixes
+                add     eax, 24         ; PPS_VEX = 6 /// 6*int_size = 24
                 jmp     csz_180
 ; ---------------------------------------------------------------------------
 
 csz_173:                                ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, [ebp+ins]  ; case P_EVEX: (case 261:)
+                add     eax, 388
                 mov     ecx, [eax]
-                and     ecx, 400h
+                and     ecx, 1024       ; if (!(ins->rex & REX_EV))
                 cmp     ecx, 0
                 jz      csz_174
                 jmp     csz_175
@@ -7316,7 +7414,7 @@ csz_173:                                ; ...
 csz_174:                                ; ...
                 mov     eax, 0FFFFFFFFh
                 mov     edx, 0FFFFFFFFh
-                jmp     csz_207
+                jmp     csz_207         ; return -1;
 ; ---------------------------------------------------------------------------
 
 csz_175:                                ; ...
@@ -7324,10 +7422,12 @@ csz_175:                                ; ...
 ; ---------------------------------------------------------------------------
 
 csz_176:                                ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, [ebp+ins]  ; case P_VEX3: (case 262:)
+                                        ; case P_VEX2: (case 263:)
+                                        ; if (!(ins->rex & REX_V))
+                add     eax, 388
                 mov     ecx, [eax]
-                and     ecx, 100h
+                and     ecx, 256        ; REX_V = 256 (100h)
                 cmp     ecx, 0
                 jz      csz_177
                 jmp     csz_178
@@ -7336,7 +7436,7 @@ csz_176:                                ; ...
 csz_177:                                ; ...
                 mov     eax, 0FFFFFFFFh
                 mov     edx, 0FFFFFFFFh
-                jmp     csz_207
+                jmp     csz_207         ; return -1;
 ; ---------------------------------------------------------------------------
 
 csz_178:                                ; ...
@@ -7351,99 +7451,106 @@ csz_179:                                ; ...
 
 csz_180:                                ; ...
                 mov     ecx, [eax]
-                cmp     ecx, 105h
-                jz      short csz_173
-                cmp     ecx, 106h
-                jz      short csz_176
-                cmp     ecx, 107h
-                jz      short csz_176
+                cmp     ecx, 261
+                jz      short csz_173   ; case P_EVEX:
+                cmp     ecx, 262
+                jz      short csz_176   ; case P_VEX3:
+                cmp     ecx, 263
+                jz      short csz_176   ; case P_VEX2:
                 jmp     short csz_179
 ; ---------------------------------------------------------------------------
 
 csz_181:                                ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, [ebp+ins]  ; if (ins->rex & (REX_V | REX_EV)) {
+                add     eax, 388
                 mov     ecx, [eax]
-                and     ecx, 500h
+                and     ecx, 1280       ; REX_V | REX_EV
+                                        ;  256     1024
                 cmp     ecx, 0
                 jz      csz_197
-                mov     eax, 0Fh
-                mov     [ebp+var_13C], eax
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, 15         ; REX_R|REX_W|REX_X|REX_B;
+                                        ;   4     8     2     1
+                mov     [ebp+bad32], eax ; int bad32 = REX_R|REX_W|REX_X|REX_B;
+                mov     eax, [ebp+ins]  ; if (ins->rex & REX_H) {
+                add     eax, 388
                 mov     ecx, [eax]
-                and     ecx, 80h
+                and     ecx, 128        ; REX_H = 128
                 cmp     ecx, 0
                 jz      csz_182
                 mov     eax, offset L_73 ; "cannot use high register in AVX instruc"...
                 push    eax
                 mov     eax, 3
                 push    eax
-                call    nasm_error
+                call    nasm_error      ; nasm_error(ERR_NONFATAL, "cannot use high register in AVX instruction");
                 add     esp, 8
                 mov     eax, 0FFFFFFFFh
                 mov     edx, 0FFFFFFFFh
-                jmp     csz_207
+                jmp     csz_207         ; return -1;
 ; ---------------------------------------------------------------------------
 
 csz_182:                                ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 190h
+                mov     eax, [ebp+ins]  ; switch (ins->vex_wlp & 060) {
+                add     eax, 400        ; ins->vex_wlp address
                 mov     ecx, [eax]
-                and     ecx, 30h
+                and     ecx, 48         ; & 30h
                 jmp     csz_186
 ; ---------------------------------------------------------------------------
 
 csz_183:                                ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, [ebp+ins]  ; case 000:
+                                        ; case 040:
+                                        ; case 0: case 32: (case 20h:)
+                add     eax, 388
                 mov     ecx, [eax]
-                and     ecx, 0FFFFFFF7h
-                mov     [eax], ecx
-                jmp     csz_187
+                and     ecx, 0FFFFFFF7h ; ~REX_W;
+                mov     [eax], ecx      ; ins->rex &= ~REX_W;
+                jmp     csz_187         ; break;
 ; ---------------------------------------------------------------------------
 
 csz_184:                                ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, [ebp+ins]  ; case 020:
+                                        ; case 16: (case 10h:)
+                add     eax, 388        ; ins->rex = ins + 388 (address)
                 mov     ecx, [eax]
-                or      ecx, 8
-                mov     [eax], ecx
-                mov     eax, [ebp+var_13C]
-                and     eax, 0FFFFFFF7h
-                mov     [ebp+var_13C], eax
+                or      ecx, 8          ; REX_W = 8
+                mov     [eax], ecx      ; ins->rex |= REX_W;
+                mov     eax, [ebp+bad32]
+                and     eax, 0FFFFFFF7h ; ~REX_W
+                mov     [ebp+bad32], eax ; bad32 &= ~REX_W;
                 jmp     csz_187
 ; ---------------------------------------------------------------------------
 
 csz_185:                                ; ...
-                jmp     csz_187
+                jmp     csz_187         ; case 060:
+                                        ; case 48: (case 30h:) /* Follow REX_W */
+                                        ; break;
 ; ---------------------------------------------------------------------------
                 jmp     csz_187
 ; ---------------------------------------------------------------------------
 
 csz_186:                                ; ...
-                cmp     ecx, 0
-                jz      short csz_183
-                cmp     ecx, 10h
-                jz      short csz_184
-                cmp     ecx, 20h
-                jz      short csz_183
-                cmp     ecx, 30h
-                jz      short csz_185
+                cmp     ecx, 0          ; switch (ins->vex_wlp & 060) {
+                jz      short csz_183   ; case 000:
+                cmp     ecx, 16
+                jz      short csz_184   ; case 020:
+                cmp     ecx, 32
+                jz      short csz_183   ; case 040:
+                cmp     ecx, 48
+                jz      short csz_185   ; case 060:
 
 csz_187:                                ; ...
-                mov     eax, [ebp+arg_C]
-                cmp     eax, 40h
+                mov     eax, [ebp+bits] ;  if (bits != 64 && ((ins->rex & bad32)
+                cmp     eax, 64
                 jz      csz_189
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, [ebp+ins]
+                add     eax, 388
                 mov     ecx, [eax]
-                mov     eax, [ebp+var_13C]
+                mov     eax, [ebp+bad32]
                 and     ecx, eax
                 cmp     ecx, 0
                 jnz     csz_188
-                mov     eax, [ebp+arg_10]
-                add     eax, 188h
+                mov     eax, [ebp+ins]  ; || ins->vexreg > 7)) {
+                add     eax, 392
                 mov     ecx, [eax]
                 cmp     ecx, 7
                 jg      csz_188
@@ -7455,35 +7562,35 @@ csz_188:                                ; ...
                 push    eax
                 mov     eax, 3
                 push    eax
-                call    nasm_error
+                call    nasm_error      ; nasm_error(ERR_NONFATAL, "invalid operands in non-64-bit mode");
                 add     esp, 8
                 mov     eax, 0FFFFFFFFh
                 mov     edx, 0FFFFFFFFh
-                jmp     csz_207
+                jmp     csz_207         ; return -1;
 ; ---------------------------------------------------------------------------
                 jmp     csz_192
 ; ---------------------------------------------------------------------------
 
 csz_189:                                ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, [ebp+ins]  ; } else if (!(ins->rex & REX_EV) &&
+                add     eax, 388
                 mov     ecx, [eax]
-                and     ecx, 400h
+                and     ecx, 1024
                 cmp     ecx, 0
                 jz      csz_190
                 jmp     csz_192
 ; ---------------------------------------------------------------------------
 
 csz_190:                                ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 188h
+                mov     eax, [ebp+ins]  ; ((ins->vexreg > 15) || (ins->evex_p[0] & 0xf0))) {
+                add     eax, 392        ; ins->vexreg = int + 392 (address)
                 mov     ecx, [eax]
-                cmp     ecx, 0Fh
+                cmp     ecx, 15
                 jg      csz_191
-                mov     eax, [ebp+arg_10]
-                add     eax, 194h
+                mov     eax, [ebp+ins]
+                add     eax, 404        ; ins->evex_p[0] address
                 movzx   ecx, [byte ptr eax]
-                and     ecx, 0F0h
+                and     ecx, 240        ; 0F0h
                 cmp     ecx, 0
                 jnz     csz_191
                 jmp     csz_192
@@ -7494,166 +7601,169 @@ csz_191:                                ; ...
                 push    eax
                 mov     eax, 3
                 push    eax
-                call    nasm_error
+                call    nasm_error      ; nasm_error(ERR_NONFATAL, "invalid high-16 register in non-AVX-512");
                 add     esp, 8
                 mov     eax, 0FFFFFFFFh
                 mov     edx, 0FFFFFFFFh
-                jmp     csz_207
+                jmp     csz_207         ; return -1;
 ; ---------------------------------------------------------------------------
 
 csz_192:                                ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, [ebp+ins]  ; if (ins->rex & REX_EV)
+                add     eax, 388
                 mov     ecx, [eax]
-                and     ecx, 400h
+                and     ecx, 1024       ; REX_EV = 1024 (400h)
                 cmp     ecx, 0
                 jz      csz_193
-                mov     eax, [ebp+var_10]
+                mov     eax, [ebp+length] ; length += 4;
                 add     eax, 4
-                mov     ecx, [ebp+var_C]
+                mov     ecx, [ebp+length_h]
                 adc     ecx, 0
-                mov     [ebp+var_10], eax
-                mov     [ebp+var_C], ecx
+                mov     [ebp+length], eax
+                mov     [ebp+length_h], ecx
                 jmp     csz_196
 ; ---------------------------------------------------------------------------
 
 csz_193:                                ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 18Ch
+                mov     eax, [ebp+ins]  ; else if (ins->vex_cm != 1 ||
+                add     eax, 396        ; ins->vex_cm = ins + 396 (address)
                 mov     ecx, [eax]
                 cmp     ecx, 1
                 jnz     csz_194
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, [ebp+ins]  ; (ins->rex & (REX_W|REX_X|REX_B)) ||
+                add     eax, 388        ; ins->rex = int + 388 (address)
                 mov     ecx, [eax]
-                and     ecx, 0Bh
+                and     ecx, 11         ; REX_W|REX_X|REX_B
+                                        ;   8     2     1
                 cmp     ecx, 0
                 jnz     csz_194
-                mov     eax, [ebp+arg_10]
-                add     eax, 4
-                add     eax, 18h
+                mov     eax, [ebp+ins]  ; ins->prefixes[PPS_VEX] == P_VEX3)
+                add     eax, 4          ; ins->prefixes[0] address
+                add     eax, 24         ; PPS_VEX = 6 /// 6*int_size = 24
                 mov     ecx, [eax]
-                cmp     ecx, 106h
+                cmp     ecx, 262        ; P_VEX3 = 262
                 jz      csz_194
-                jmp     csz_195
+                jmp     csz_195         ; else
 ; ---------------------------------------------------------------------------
 
 csz_194:                                ; ...
-                mov     eax, [ebp+var_10]
+                mov     eax, [ebp+length] ; length += 3;
                 add     eax, 3
-                mov     ecx, [ebp+var_C]
+                mov     ecx, [ebp+length_h]
                 adc     ecx, 0
-                mov     [ebp+var_10], eax
-                mov     [ebp+var_C], ecx
+                mov     [ebp+length], eax
+                mov     [ebp+length_h], ecx
                 jmp     csz_196
 ; ---------------------------------------------------------------------------
 
 csz_195:                                ; ...
-                mov     eax, [ebp+var_10]
+                mov     eax, [ebp+length] ; length += 2;
                 add     eax, 2
-                mov     ecx, [ebp+var_C]
+                mov     ecx, [ebp+length_h]
                 adc     ecx, 0
-                mov     [ebp+var_10], eax
-                mov     [ebp+var_C], ecx
+                mov     [ebp+length], eax
+                mov     [ebp+length_h], ecx
 
 csz_196:                                ; ...
                 jmp     csz_202
 ; ---------------------------------------------------------------------------
 
 csz_197:                                ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, [ebp+ins]  ; } else if (ins->rex & REX_MASK) {
+                add     eax, 388        ; ins->rex = ins + 388 (address)
                 mov     ecx, [eax]
-                and     ecx, 4Fh
+                and     ecx, 79         ; REX_MASK = 79 (4Fh)
                 cmp     ecx, 0
                 jz      csz_202
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, [ebp+ins]  ; if (ins->rex & REX_H) {
+                add     eax, 388
                 mov     ecx, [eax]
-                and     ecx, 80h
+                and     ecx, 128        ; REX_H = 128
                 cmp     ecx, 0
                 jz      csz_198
                 mov     eax, offset L_76 ; "cannot use high register in rex instruc"...
                 push    eax
                 mov     eax, 3
                 push    eax
-                call    nasm_error
+                call    nasm_error      ; nasm_error(ERR_NONFATAL, "cannot use high register in rex instruction");
                 add     esp, 8
                 mov     eax, 0FFFFFFFFh
                 mov     edx, 0FFFFFFFFh
-                jmp     csz_207
+                jmp     csz_207         ; return -1;
 ; ---------------------------------------------------------------------------
                 jmp     csz_202
 ; ---------------------------------------------------------------------------
 
 csz_198:                                ; ...
-                mov     eax, [ebp+arg_C]
-                cmp     eax, 40h
+                mov     eax, [ebp+bits] ; } else if (bits == 64) {
+                cmp     eax, 64
                 jnz     csz_199
-                mov     eax, [ebp+var_C]
+                mov     eax, [ebp+length_h]
                 mov     ecx, eax
-                mov     edx, [ebp+var_10]
-                mov     [ebp+var_140], ecx
+                mov     edx, [ebp+length]
+                mov     [ebp+tmp32_h], ecx
                 mov     ecx, edx
-                mov     [ebp+var_144], eax
-                mov     eax, [ebp+var_140]
-                mov     [ebp+var_150], ecx
-                mov     [ebp+var_14C], eax
-                mov     eax, [ebp+var_144]
-                add     edx, 1
+                mov     [ebp+tmp33_h], eax
+                mov     eax, [ebp+tmp32_h]
+                mov     [ebp+tmp32], ecx
+                mov     [ebp+tmp34_h], eax
+                mov     eax, [ebp+tmp33_h]
+                add     edx, 1          ; length++;
                 adc     eax, 0
-                mov     [ebp+var_10], edx
-                mov     [ebp+var_C], eax
+                mov     [ebp+length], edx
+                mov     [ebp+length_h], eax
                 jmp     csz_202
 ; ---------------------------------------------------------------------------
 
 csz_199:                                ; ...
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, [ebp+ins]  ; } else if ((ins->rex & REX_L) &&
+                add     eax, 388
                 mov     ecx, [eax]
-                and     ecx, 20h
+                and     ecx, 32         ; REX_L = 32
                 cmp     ecx, 0
                 jz      csz_201
-                mov     eax, [ebp+arg_10]
-                add     eax, 184h
+                mov     eax, [ebp+ins]  ; !(ins->rex & (REX_P|REX_W|REX_X|REX_B)) &&
+                add     eax, 388
                 mov     ecx, [eax]
-                and     ecx, 4Bh
+                and     ecx, 75         ; REX_P|REX_W|REX_X|REX_B
+                                        ;  64     8     2     1
                 cmp     ecx, 0
                 jz      csz_200
                 jmp     csz_201
 ; ---------------------------------------------------------------------------
 
 csz_200:                                ; ...
-                mov     eax, 6Ah
-                push    eax
+                mov     eax, 106        ; iflag_cpu_level_ok(&cpu, IF_X86_64)) {
+                push    eax             ; IF_X86_64 = 106
                 mov     eax, offset cpu
                 push    eax
                 call    iflag_cpu_level_ok
                 add     esp, 8
                 cmp     eax, 0
                 jz      csz_201
-                mov     eax, 2
+                mov     eax, 2          ; PPS_LOCK  /* LOCK-as-REX.R */
                 push    eax
-                mov     eax, [ebp+arg_10]
+                mov     eax, [ebp+ins]
                 push    eax
-                call    assert_no_prefix
+                call    assert_no_prefix ; assert_no_prefix(ins, PPS_LOCK);
                 add     esp, 8
                 mov     eax, 0
-                mov     [ebp+var_34], eax
-                mov     eax, [ebp+var_C]
+                mov     [ebp+lockcheck], eax ; lockcheck = false;
+                                        ; /* Already errored, no need for warning */
+                mov     eax, [ebp+length_h]
                 mov     ecx, eax
-                mov     edx, [ebp+var_10]
-                mov     [ebp+var_154], ecx
+                mov     edx, [ebp+length]
+                mov     [ebp+tmp35_h], ecx
                 mov     ecx, edx
-                mov     [ebp+var_158], eax
-                mov     eax, [ebp+var_154]
-                mov     [ebp+var_160], ecx
-                mov     [ebp+var_15C], eax
-                mov     eax, [ebp+var_158]
-                add     edx, 1
+                mov     [ebp+tmp36_h], eax
+                mov     eax, [ebp+tmp35_h]
+                mov     [ebp+tmp35], ecx
+                mov     [ebp+tmp37_h], eax
+                mov     eax, [ebp+tmp36_h]
+                add     edx, 1          ; length++;
                 adc     eax, 0
-                mov     [ebp+var_10], edx
-                mov     [ebp+var_C], eax
+                mov     [ebp+length], edx
+                mov     [ebp+length_h], eax
                 jmp     csz_202
 ; ---------------------------------------------------------------------------
 
@@ -7662,48 +7772,48 @@ csz_201:                                ; ...
                 push    eax
                 mov     eax, 3
                 push    eax
-                call    nasm_error
+                call    nasm_error      ; nasm_error(ERR_NONFATAL, "invalid operands in non-64-bit mode");
                 add     esp, 8
                 mov     eax, 0FFFFFFFFh
                 mov     edx, 0FFFFFFFFh
-                jmp     csz_207
+                jmp     csz_207         ; return -1;
 ; ---------------------------------------------------------------------------
 
 csz_202:                                ; ...
-                mov     eax, 0F5h
+                mov     eax, 245        ; if (has_prefix(ins, PPS_LOCK, P_LOCK) && lockcheck &&
+                push    eax             ; P_LOCK
+                mov     eax, 2          ; PPS_LOCK
                 push    eax
-                mov     eax, 2
-                push    eax
-                mov     eax, [ebp+arg_10]
+                mov     eax, [ebp+ins]
                 push    eax
                 call    has_prefix
-                add     esp, 0Ch
+                add     esp, 12
                 cmp     eax, 0
                 jz      csz_204
-                mov     eax, [ebp+var_34]
+                mov     eax, [ebp+lockcheck] ; (!itemp_has(temp,IF_LOCK) ||
                 cmp     eax, 0
                 jz      csz_204
-                mov     eax, 23h
+                mov     eax, 35         ; IF_LOCK
                 push    eax
-                mov     eax, [ebp+arg_14]
+                mov     eax, [ebp+temp]
                 push    eax
                 call    itemp_has
                 add     esp, 8
                 cmp     eax, 0
                 jz      csz_203
-                mov     eax, [ebp+arg_10]
-                add     eax, 30h
-                mov     ecx, [eax]
+                mov     eax, [ebp+ins]  ; || !is_class(MEMORY, ins->oprs[0].type))) {
+                add     eax, 48         ; ins->oprs (address)
+                mov     ecx, [eax]      ; ins->oprs[0].type
                 add     eax, 4
-                mov     edx, [eax]
+                mov     edx, [eax]      ; high 32-bit of the 'ins->oprs[0].type'
                 push    edx
                 push    ecx
-                mov     eax, 0Ch
-                mov     ecx, 0
+                mov     eax, 12         ; MEMORY
+                mov     ecx, 0          ; MEMORY class = 12 (64 bit vale)
                 push    ecx
                 push    eax
                 call    is_class
-                add     esp, 10h
+                add     esp, 16
                 cmp     eax, 0
                 jz      csz_203
                 jmp     csz_204
@@ -7712,68 +7822,72 @@ csz_202:                                ; ...
 csz_203:                                ; ...
                 mov     eax, offset L_78 ; "instruction is not lockable"
                 push    eax
-                mov     eax, 0C102h
+                mov     eax, 0C102h     ; ERR_WARNING | WARN_LOCK | ERR_PASS2
                 push    eax
-                call    nasm_error
+                call    nasm_error      ; nasm_error(ERR_WARNING | WARN_LOCK | ERR_PASS2 ,
+                                        ;  "instruction is not lockable");
                 add     esp, 8
 
 csz_204:                                ; ...
-                movzx   eax, [ebp+var_2D]
+                movzx   eax, [ebp+hleok] ; bad_hle_warn(ins, hleok);
                 push    eax
-                mov     eax, [ebp+arg_10]
+                mov     eax, [ebp+ins]
                 push    eax
                 call    bad_hle_warn
-                add     esp, 8
-                mov     eax, [ds:globalbnd]
+                add     esp, 8          ; /* when BND prefix is set by DEFAULT directive,
+                                        ;  * BND prefix is added to every appropriate instruction line
+                                        ;  * unless it is overridden by NOBND prefix.
+                                        ;  */
+                mov     eax, [ds:globalbnd] ; if (globalbnd &&
                 cmp     eax, 0
                 jz      csz_206
-                mov     eax, 28h
-                push    eax
-                mov     eax, [ebp+arg_14]
+                mov     eax, 40         ; (itemp_has(temp, IF_BND) &&
+                push    eax             ; IF_BND = 40
+                mov     eax, [ebp+temp]
                 push    eax
                 call    itemp_has
                 add     esp, 8
                 cmp     eax, 0
                 jz      csz_206
-                mov     eax, 104h
+                mov     eax, 260        ; && !has_prefix(ins, PPS_REP, P_NOBND)))
+                push    eax             ; P_NOBND = 260
+                mov     eax, 1          ; PPS_REP = 1
                 push    eax
-                mov     eax, 1
-                push    eax
-                mov     eax, [ebp+arg_10]
+                mov     eax, [ebp+ins]
                 push    eax
                 call    has_prefix
-                add     esp, 0Ch
+                add     esp, 12
                 cmp     eax, 0
                 jz      csz_205
                 jmp     csz_206
 ; ---------------------------------------------------------------------------
 
 csz_205:                                ; ...
-                mov     eax, [ebp-0FFFFFFE8h]
-                add     eax, 4
-                add     eax, 4
-                mov     ecx, 103h
+                mov     eax, [ebp+ins]  ; ins->prefixes[PPS_REP] = P_BND;
+                add     eax, 4          ; ins->prefixes = ins + 4 (address)
+                add     eax, 4          ; PPS_REP = 1 /// 1*int_size = 4
+                mov     ecx, 259        ; P_BND = 259
                 mov     [eax], ecx
 
 csz_206:                                ; ...
-                mov     eax, [ebp+arg_10]
+                mov     eax, [ebp+ins]  ; /* Add length of legacy prefixes */
+                push    eax             ; length += emit_prefix(NULL, bits, ins);
+                mov     eax, [ebp+bits]
                 push    eax
-                mov     eax, [ebp+arg_C]
-                push    eax
-                mov     eax, 0
+                mov     eax, 0          ; NULL
                 push    eax
                 call    emit_prefix
-                add     esp, 0Ch
+                add     esp, 12
                 mov     ecx, eax
-                sar     ecx, 1Fh
-                mov     edx, [ebp+var_10]
+                sar     ecx, 31
+                mov     edx, [ebp+length]
                 add     edx, eax
-                mov     eax, [ebp+var_C]
+                mov     eax, [ebp+length_h]
                 adc     eax, ecx
-                mov     [ebp+var_10], edx
-                mov     [ebp+var_C], eax
-                mov     eax, [ebp+var_10]
-                mov     edx, [ebp+var_C]
+                mov     [ebp+length], edx
+                mov     [ebp+length_h], eax
+                mov     eax, [ebp+length] ; return length;
+                mov     edx, [ebp+length_h]
 
 csz_207:                                ; ...
                 leave
