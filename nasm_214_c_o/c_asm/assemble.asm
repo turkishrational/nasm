@@ -2,7 +2,7 @@
 ; NASM v2.14.02 - NETWIDE ASSEMBLER FOR TRDOS 386 - Erdogan Tan - 18/09/2026 
 ; Disassembled from "assemble.c" (Dissassembler: IDA)
 ; NASM Syntax: Erdogan Tan
-; Last Update: 16/11/2026
+; Last Update: 19/11/2026
 ; ===========================================================================
 ; assemble.asm
 ; ------------
@@ -7088,2153 +7088,2646 @@ csz_207:                                ; ...
 
 ; =============== S U B R O U T I N E =======================================
 
-; Attributes: bp-based frame
+; ---------------------------------------------------------------------------
+; Function: emit_rex
+;
+; Description:
+;
+; C Declaration:
+;          static inline void emit_rex(struct out_data *data, insn *ins)
+;
+; Input (Stack): [EBP+8]  = *data
+;                [EBP+12] = *ins
+;
+; Output: none
+;
+; Modified Registers: EAX, ECX, (EDX)
+; ---------------------------------------------------------------------------
 
-proc            emit_rex near           ; ...
+%assign _rex   -1
+%assign _data   8
+%assign ins     0Ch
 
-var_1           = byte ptr -1
-arg_0           8
-arg_4           0Ch
-
+emit_rex:
                 push    ebp
                 mov     ebp, esp
                 sub     esp, 4
-                nop
-                mov     eax, [ebp+arg_0]
-                add     eax, 1Ch
+                ;nop
+                mov     eax, [ebp+_data] ; if (data->bits == 64) {
+                add     eax, 28
                 mov     ecx, [eax]
-                cmp     ecx, 40h
-                jnz     locret_80049C5
-                mov     eax, [ebp+arg_4]
-                add     eax, 184h
+                cmp     ecx, 64
+                jnz     erx_3
+                mov     eax, [ebp+ins]  ; if ((ins->rex & REX_MASK) &&
+                add     eax, 388
                 mov     ecx, [eax]
-                and     ecx, 4Fh
-                cmp     ecx, 0
-                jz      locret_80049C5
-                mov     eax, [ebp+arg_4]
-                add     eax, 184h
-                mov     ecx, [eax]
-                and     ecx, 500h
-                cmp     ecx, 0
-                jz      loc_8004977
-                jmp     locret_80049C5
+                ;and    ecx, 79         ; REX_MASK = 79
+                test    cl, 79
+                ;cmp    ecx, 0
+                jz      erx_3
+                ;mov    eax, [ebp+ins]  ; !(ins->rex & (REX_V | REX_EV)) &&
+                ;add    eax, 388
+                ;mov    ecx, [eax]
+                and     ecx, 500h       ; REX_V | REX_EV
+                ;cmp    ecx, 0
+                ;jz     erx_1
+                ;jmp    erx_3   
+                jnz     erx_3
 ; ---------------------------------------------------------------------------
 
-loc_8004977:                            ; ...
-                mov     eax, [ebp+arg_4]
-                add     eax, 180h
+erx_1:                                  ; ...
+                mov     eax, [ebp+ins]  ; !ins->rex_done) {
+                add     eax, 384
                 mov     ecx, [eax]
-                cmp     ecx, 0
-                jz      loc_8004990
-                jmp     locret_80049C5
+                ;cmp    ecx, 0
+                ;jz     erx_2
+                jecxz   erx_2
+                jmp     erx_3
 ; ---------------------------------------------------------------------------
 
-loc_8004990:                            ; ...
-                mov     eax, [ebp+arg_4]
-                add     eax, 184h
+erx_2:                                  ; ...
+                mov     eax, [ebp+ins]
+                add     eax, 388
                 mov     ecx, [eax]
-                and     ecx, 4Fh
-                or      ecx, 40h
-                mov     [ebp+var_1], cl
-                movzx   eax, [ebp+var_1]
+                and     ecx, 79         ; REX_MASK
+                ;or     ecx, 64         ; REX_P = 64
+                or      cl, 74
+                mov     [ebp+_rex], cl  ; uint8_t rex = (ins->rex & REX_MASK) | REX_P;
+                ;movzx  eax, byte [ebp+_rex]
+                ;push   eax
+                push    ecx
+                mov     eax, [ebp+_data]
                 push    eax
-                mov     eax, [ebp+arg_0]
-                push    eax
-                call    out_rawbyte
+                call    out_rawbyte     ; out_rawbyte(data, rex);
                 add     esp, 8
-                mov     eax, [ebp+arg_4]
-                add     eax, 180h
+                mov     eax, [ebp+ins]
+                add     eax, 384
                 mov     ecx, 1
-                mov     [eax], ecx
+                mov     [eax], ecx      ; ins->rex_done = true;
 
-locret_80049C5:                         ; ...
+erx_3:                                  ; ...
                 leave
                 retn
-endp            emit_rex
 
 
 ; =============== S U B R O U T I N E =======================================
 
-; Attributes: bp-based frame
+; ---------------------------------------------------------------------------
+; Function: emit_prefix
+;
+; Description:
+;
+; C Declaration:
+;   static int emit_prefix(struct out_data *data, const int bits, insn *ins)
+;
+; Input (Stack): [EBP+8]  = *data
+;                [EBP+12] = bits
+;                [EBP+16] = *ins
+;
+; Output [EAX]: bytes
+;
+; Modified Registers: EAX, ECX, (EDX)
+; ---------------------------------------------------------------------------
 
-proc            emit_prefix near        ; ...
+%assign c      -9
+%assign j      -8
+%assign _bytes -4
+%assign _data   8
+%assign _bits   0Ch
+%assign ins     10h
 
-var_9           = byte ptr -9
-var_8           = dword ptr -8
-var_4           = dword ptr -4
-arg_0           8
-arg_4           0Ch
-arg_8           10h
-
+emit_prefix:
                 push    ebp
                 mov     ebp, esp
-                sub     esp, 0Ch
-                nop
+                sub     esp, 12
+                ;nop
                 mov     eax, 0
-                mov     [ebp+var_4], eax
-                mov     eax, 0
-                mov     [ebp+var_8], eax
+                mov     [ebp+_bytes], eax ; int bytes = 0;
+                ;mov    eax, 0          ; int j;
+                mov     [ebp+j], eax    ; for (j = 0; j < MAXPREFIX; j++) {
 
-loc_80049E1:                            ; ...
-                mov     eax, [ebp+var_8]
-                cmp     eax, 7
-                jge     loc_8004E1F
-                jmp     loc_80049FD
+epx_1:                                  ; ...
+                ;mov    eax, [ebp+j]
+                ;cmp    eax, 7          ; MAXPREFIX = 7
+                cmp     byte [ebp+j], 7 
+                jge     epx_46
+                jmp     epx_3
 ; ---------------------------------------------------------------------------
 
-loc_80049F2:                            ; ...
-                mov     eax, [ebp+var_8]
-                mov     ecx, eax
-                inc     eax
-                mov     [ebp+var_8], eax
-                jmp     short loc_80049E1
+epx_2:                                  ; ...
+                ;mov    eax, [ebp+j]
+                ;;mov   ecx, eax
+                ;inc    eax
+                ;mov    [ebp+j], eax    ; j++
+                inc     byte [ebp+j]
+                jmp     short epx_1
 ; ---------------------------------------------------------------------------
 
-loc_80049FD:                            ; ...
-                mov     eax, 0
-                mov     [ebp+var_9], al
-                mov     eax, [ebp+arg_8]
-                add     eax, 4
-                mov     ecx, [ebp+var_8]
-                shl     ecx, 2
+epx_3:                                  ; ...
+                ;mov    eax, 0
+                ;mov    [ebp+c], al     ; uint8_t c = 0;
+                mov     byte [ebp+c], 0
+                mov     eax, [ebp+ins]
+                add     eax, 4          ; (ins->prefixes[0] address)
+                mov     ecx, [ebp+j]
+                shl     ecx, 2          ; (4 * j)
                 add     eax, ecx
-                jmp     loc_8004C1E
+                jmp     epx_35          ; switch (ins->prefixes[j]) {
 ; ---------------------------------------------------------------------------
 
-loc_8004A18:                            ; ...
-                mov     eax, 9Bh
-                mov     [ebp+var_9], al
-                jmp     loc_8004DE7
+epx_4:                                  ; ...
+                ;mov    eax, 9Bh        ; case P_WAIT: (PWAIT = 256)
+                mov     al, 9Bh
+                ;mov    [ebp+c], al     ; c = 0x9B;
+                ;jmp    epx_43          ; break;
+                jmp     epx_21
 ; ---------------------------------------------------------------------------
 
-loc_8004A25:                            ; ...
-                mov     eax, 0F0h
-                mov     [ebp+var_9], al
-                jmp     loc_8004DE7
+epx_5:                                  ; ...
+                ;mov    eax, 0F0h       ; case P_LOCK: (PLOCK = 245)
+                mov     al, 0F0h
+                ;mov    [ebp+c], al     ; c = 0xF0;
+                ;jmp    epx_43
+                jmp     epx_21
 ; ---------------------------------------------------------------------------
 
-loc_8004A32:                            ; ...
-                mov     eax, 0F2h
-                mov     [ebp+var_9], al
-                jmp     loc_8004DE7
+epx_6:                                  ; ...
+                ;mov    eax, 0F2h       ; case P_REPNE: (P_REPNE = 252)
+                                        ; case P_REPNZ: (P_REPNZ = 253)
+                                        ; case P_XACQUIRE: (P_XACQUIRE = 257)
+                                        ; case P_BND: (P_BND = 259)
+                mov     al, 0F2h
+                ;mov    [ebp+c], al     ; c = 0xF2;
+                ;jmp    epx_43          ; break;
+                jmp     epx_21
 ; ---------------------------------------------------------------------------
 
-loc_8004A3F:                            ; ...
-                mov     eax, 0F3h
-                mov     [ebp+var_9], al
-                jmp     loc_8004DE7
+epx_7:                                  ; ...
+                ;mov    eax, 0F3h       ; case P_REPE: (251)
+                                        ; case P_REPZ: (254)
+                                        ; case P_REP:  (250)
+                                        ; case P_XRELEASE: (258)
+                mov     al, 0F3h
+                ;mov    [ebp+c], al     ; c = 0xF3;
+                ;jmp    epx_43
+                jmp     epx_21
 ; ---------------------------------------------------------------------------
 
-loc_8004A4C:                            ; ...
-                mov     eax, [ebp+arg_4]
-                cmp     eax, 40h
-                jnz     loc_8004A6C
-                mov     eax, offset A_79 ; "cs segment base generated, but will be "...
+epx_8:                                  ; ...
+                mov     eax, [ebp+_bits] ; case R_CS: (R_CS = 31)
+                cmp     eax, 64         ; if (bits == 64) {
+                jnz     epx_9
+                mov     eax, L_79       ; "cs segment base generated, but will be "...
+                push    eax
+                mov     eax, 102h       ; ERR_WARNING | ERR_PASS2
+                push    eax
+                call    nasm_error      ; nasm_error(ERR_WARNING | ERR_PASS2,
+                                        ;  "cs segment base generated, but will be ignored in 64-bit mode");
+                add     esp, 8
+
+epx_9:                                  ; ...
+                ;mov    eax, 2Eh
+                mov     al, 2Eh
+                ;mov    [ebp+c], al     ; c = 0x2E;
+                ;jmp    epx_43          ; break;
+                jmp     epx_21
+; ---------------------------------------------------------------------------
+
+epx_10:                                 ; ...
+                mov     eax, [ebp+_bits] ; case R_DS: (R_DS = 53)
+                cmp     eax, 64         ; if (bits == 64) {
+                jnz     epx_11
+                mov     eax, L_80       ; "ds segment base generated, but will be "...
                 push    eax
                 mov     eax, 102h
                 push    eax
-                call    nasm_error
+                call    nasm_error      ; nasm_error(ERR_WARNING | ERR_PASS2,
+                                        ;  "ds segment base generated, but will be ignored in 64-bit mode");
                 add     esp, 8
 
-loc_8004A6C:                            ; ...
-                mov     eax, 2Eh
-                mov     [ebp+var_9], al
-                jmp     loc_8004DE7
+epx_11:                                 ; ...
+                ;mov    eax, 3Eh
+                mov     al, 3Eh
+                ;mov    [ebp+c], al     ; c = 0x3E;
+                ;jmp    epx_43
+                jmp     epx_21
 ; ---------------------------------------------------------------------------
 
-loc_8004A79:                            ; ...
-                mov     eax, [ebp+arg_4]
-                cmp     eax, 40h
-                jnz     loc_8004A99
-                mov     eax, offset A_80 ; "ds segment base generated, but will be "...
+epx_12:                                 ; ...
+                mov     eax, [ebp+_bits] ; case R_ES: (R_ES = 61)
+                cmp     eax, 64         ; if (bits == 64) {
+                jnz     epx_13
+                mov     eax, L_81       ; "es segment base generated, but will be "...
                 push    eax
                 mov     eax, 102h
                 push    eax
-                call    nasm_error
+                call    nasm_error      ; nasm_error(ERR_WARNING | ERR_PASS2,
+                                        ;  "es segment base generated, but will be ignored in 64-bit mode");
                 add     esp, 8
 
-loc_8004A99:                            ; ...
-                mov     eax, 3Eh
-                mov     [ebp+var_9], al
-                jmp     loc_8004DE7
+epx_13:                                 ; ...
+                ;mov    eax, 26h
+                mov     al, 26h
+                ;mov    [ebp+c], al     ; c = 0x26;
+                ;jmp    epx_43
+                jmp     epx_21
 ; ---------------------------------------------------------------------------
 
-loc_8004AA6:                            ; ...
-                mov     eax, [ebp+arg_4]
-                cmp     eax, 40h
-                jnz     loc_8004AC6
-                mov     eax, offset A_81 ; "es segment base generated, but will be "...
+epx_14:                                 ; ...
+                ;mov    eax, 64h        ; case R_FS: (R_FS = 64)
+                mov     al, 64h
+                ;mov    [ebp+c], al     ; c = 0x64;
+                ;jmp    epx_43
+                jmp     epx_21
+; ---------------------------------------------------------------------------
+
+epx_15:                                 ; ...
+                ;mov    eax, 65h        ; case R_GS: (R_GS = 65)
+                mov     al, 65h
+                ;mov    [ebp+c], al     ; c = 0x65;
+                ;jmp    epx_43          ; break;
+                jmp     epx_21
+; ---------------------------------------------------------------------------
+
+epx_16:                                 ; ...
+                mov     eax, [ebp+_bits] ; case R_SS: (R_SS = 128)
+                cmp     eax, 64         ; if (bits == 64) {
+                jnz     epx_17
+                mov     eax, L_82       ; "ss segment base generated, but will be "...
                 push    eax
                 mov     eax, 102h
                 push    eax
-                call    nasm_error
+                call    nasm_error      ; nasm_error(ERR_WARNING | ERR_PASS2,
+                                        ;  "ss segment base generated, but will be ignored in 64-bit mode");
                 add     esp, 8
 
-loc_8004AC6:                            ; ...
-                mov     eax, 26h
-                mov     [ebp+var_9], al
-                jmp     loc_8004DE7
+epx_17:                                 ; ...
+                ;mov    eax, 36h
+                mov     al, 36h
+                ;mov    [ebp+c], al     ; c = 0x36;
+                ;jmp    epx_43
+                jmp     epx_21
 ; ---------------------------------------------------------------------------
 
-loc_8004AD3:                            ; ...
-                mov     eax, 64h
-                mov     [ebp+var_9], al
-                jmp     loc_8004DE7
-; ---------------------------------------------------------------------------
-
-loc_8004AE0:                            ; ...
-                mov     eax, 65h
-                mov     [ebp+var_9], al
-                jmp     loc_8004DE7
-; ---------------------------------------------------------------------------
-
-loc_8004AED:                            ; ...
-                mov     eax, [ebp+arg_4]
-                cmp     eax, 40h
-                jnz     loc_8004B0D
-                mov     eax, offset A_82 ; "ss segment base generated, but will be "...
+epx_18:                                 ; ...
+                mov     eax, L_83       ; "segr6 and segr7 cannot be used as prefi"...
+                push    eax             ; case R_SEGR6: (R_SEGR6 = 122)
+                                        ; case R_SEGR7: (R_SEGR7 = 123)
+                mov     eax, 3          ; ERR_NONFATAL = 3
                 push    eax
-                mov     eax, 102h
-                push    eax
-                call    nasm_error
+                call    nasm_error      ; nasm_error(ERR_NONFATAL,
+                                        ;  "segr6 and segr7 cannot be used as prefixes");
                 add     esp, 8
-
-loc_8004B0D:                            ; ...
-                mov     eax, 36h
-                mov     [ebp+var_9], al
-                jmp     loc_8004DE7
+                jmp     epx_43          ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8004B1A:                            ; ...
-                mov     eax, offset A_83 ; "segr6 and segr7 cannot be used as prefi"...
+epx_19:                                 ; ...
+                mov     eax, [ebp+_bits] ; case P_A16: (P_A16 = 241)
+                cmp     eax, 64         ; if (bits == 64) {
+                jnz     epx_20
+                mov     eax, L_84       ; "16-bit addressing is not supported in 6"...
                 push    eax
                 mov     eax, 3
                 push    eax
-                call    nasm_error
+                call    nasm_error      ; nasm_error(ERR_NONFATAL,
+                                        ;  "16-bit addressing is not supported in 64-bit mode");
                 add     esp, 8
-                jmp     loc_8004DE7
+                ;jmp    epx_21
+                jmp     epx_43
 ; ---------------------------------------------------------------------------
 
-loc_8004B33:                            ; ...
-                mov     eax, [ebp+arg_4]
-                cmp     eax, 40h
-                jnz     loc_8004B58
-                mov     eax, offset A_84 ; "16-bit addressing is not supported in 6"...
-                push    eax
-                mov     eax, 3
-                push    eax
-                call    nasm_error
-                add     esp, 8
-                jmp     loc_8004B6C
+epx_20:                                 ; ...
+                mov     eax, [ebp+_bits]
+                cmp     eax, 16
+                ;jz     epx_21
+                je      epx_23
+                ;mov    eax, 67h
+                mov     al, 67h 
+epx_21:
+                mov     [ebp+c], al
+
+;epx_21:                                ; ...
+                jmp     epx_43
 ; ---------------------------------------------------------------------------
 
-loc_8004B58:                            ; ...
-                mov     eax, [ebp+arg_4]
-                cmp     eax, 10h
-                jz      loc_8004B6C
-                mov     eax, 67h
-                mov     [ebp+var_9], al
+epx_22:                                 ; ...
+                mov     eax, [ebp+_bits] ; case P_A32: (P_A32 = 242)
+                cmp     eax, 32         ; if (bits != 32)
+                jz      epx_23
+                ;;mov   eax, 67h
+                ;mov    al, 67h
+                ;mov    [ebp+c], al     ; c = 0x67;
+                jmp     short epx_26
 
-loc_8004B6C:                            ; ...
-                jmp     loc_8004DE7
+;epx_23:                                ; ...
+                ;jmp    epx_43          ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8004B71:                            ; ...
-                mov     eax, [ebp+arg_4]
-                cmp     eax, 20h
-                jz      loc_8004B85
-                mov     eax, 67h
-                mov     [ebp+var_9], al
-
-loc_8004B85:                            ; ...
-                jmp     loc_8004DE7
-; ---------------------------------------------------------------------------
-
-loc_8004B8A:                            ; ...
-                mov     eax, [ebp+arg_4]
-                cmp     eax, 40h
-                jz      loc_8004BAA
-                mov     eax, offset A_85 ; "64-bit addressing is only supported in "...
+epx_24:                                 ; ...
+                mov     eax, [ebp+_bits] ; case P_A64: (P_A64 = 243)
+                cmp     eax, 64         ; if (bits != 64) {
+                jz      epx_25
+                mov     eax, L_85       ; "64-bit addressing is only supported in "...
                 push    eax
-                mov     eax, 3
+                mov     eax, 3          ; ERR_NONFATAL
                 push    eax
-                call    nasm_error
+                call    nasm_error      ; nasm_error(ERR_NONFATAL,
+                                        ;  "64-bit addressing is only supported in 64-bit mode");
                 add     esp, 8
 
-loc_8004BAA:                            ; ...
-                jmp     loc_8004DE7
+epx_25:                                 ; ...
+                jmp     epx_43
 ; ---------------------------------------------------------------------------
 
-loc_8004BAF:                            ; ...
-                mov     eax, 67h
-                mov     [ebp+var_9], al
-                jmp     loc_8004DE7
+epx_26:                                 ; ...
+                ;mov    eax, 67h        ; case P_ASP: (244)
+                mov     al, 67h
+                mov     [ebp+c], al     ; c = 0x67;
+epx_23:
+                jmp     epx_43          ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8004BBC:                            ; ...
-                mov     eax, [ebp+arg_4]
-                cmp     eax, 10h
-                jz      loc_8004BD0
-                mov     eax, 66h
-                mov     [ebp+var_9], al
+epx_27:                                 ; ...
+                mov     eax, [ebp+_bits] ; case P_O16: (246)
+                cmp     eax, 16         ; if (bits != 16)
+                jz      epx_28
+                ;;mov   eax, 66h
+                ;mov    al, 66h
+                ;mov    [ebp+c], al     ; c = 0x66;
+                jmp     short epx_32
 
-loc_8004BD0:                            ; ...
-                jmp     loc_8004DE7
+;epx_28:                                ; ...
+                ;jmp    epx_43
 ; ---------------------------------------------------------------------------
 
-loc_8004BD5:                            ; ...
-                mov     eax, [ebp+arg_4]
-                cmp     eax, 10h
-                jnz     loc_8004BE9
-                mov     eax, 66h
-                mov     [ebp+var_9], al
+epx_29:                                 ; ...
+                mov     eax, [ebp+_bits] ; case P_O32: (247)
+                cmp     eax, 16         ; if (bits == 16)
+                jnz     epx_30
+                ;mov    eax, 66h
+                ;mov    [ebp+c], al     ; c = 0x66;
+                ;jmp    short epx_32
 
-loc_8004BE9:                            ; ...
-                jmp     loc_8004DE7
+;epx_30:                                ; ...
+                ;jmp    epx_43          ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8004BEE:                            ; ...
-                jmp     loc_8004DE7
+;epx_31:                                ; ...
+                ;jmp    epx_43          ; case P_O64: (248)
+                                        ; break;  /* REX.W */
 ; ---------------------------------------------------------------------------
 
-loc_8004BF3:                            ; ...
-                mov     eax, 66h
-                mov     [ebp+var_9], al
-                jmp     loc_8004DE7
+epx_32:                                 ; ...
+                ;mov    eax, 66h        ; case P_OSP: (249)
+                mov     al, 66h
+                mov     [ebp+c], al     ; c = 0x66;
+epx_28:
+epx_30:
+epx_31:
+epx_33:
+                jmp     epx_43          ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8004C00:                            ; ...
-                jmp     loc_8004DE7
+;epx_33:                                ; ...
+                ;jmp    epx_43          ; case P_EVEX: (261)
+                                        ; case P_VEX3: (262)
+                                        ; case P_VEX2: (263)
+                                        ; case P_NOBND: (260)
+                                        ; case P_none: (P_NONE = 0)
+                                        ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8004C05:                            ; ...
-                mov     eax, offset A_86 ; "invalid instruction prefix"
-                push    eax
+epx_34:                                 ; ...
+                mov     eax, L_86       ; "invalid instruction prefix"
+                push    eax             ; case default:
                 mov     eax, 0
                 push    eax
-                call    nasm_panic
+                call    nasm_panic      ; nasm_panic(0, "invalid instruction prefix");
                 add     esp, 8
-                jmp     loc_8004DE7
+                jmp     epx_43
 ; ---------------------------------------------------------------------------
 
-loc_8004C1E:                            ; ...
-                mov     ecx, [eax]
+epx_35:                                 ; ...
+                mov     ecx, [eax]      ; switch (ins->prefixes[j]) {
                 cmp     ecx, 0F7h
-                jg      loc_8004CFB
-                cmp     ecx, 0F7h
-                jge     short loc_8004BD5
-                cmp     ecx, 7Bh
-                jg      loc_8004C91
-                cmp     ecx, 7Bh
-                jge     loc_8004B1A
-                cmp     ecx, 3Dh
-                jg      loc_8004C71
-                cmp     ecx, 3Dh
-                jge     loc_8004AA6
-                cmp     ecx, 0
-                jz      short loc_8004C00
-                cmp     ecx, 1Fh
-                jz      loc_8004A4C
-                cmp     ecx, 35h
-                jz      loc_8004A79
-                jmp     short loc_8004C05
+                jg      epx_39
+                ;cmp    ecx, 0F7h
+                ;jge    short epx_29    ; case P_O32:
+                je      epx_29
+                ;cmp    ecx, 7Bh
+                cmp     cl, 7Bh
+                jg      epx_37
+                ;cmp    ecx, 7Bh
+                ;jge    epx_18          ; case R_SEGR7:
+                je      epx_18
+                ;cmp    ecx, 3Dh
+                cmp     cl, 3Dh
+                jg      epx_36
+                ;cmp    ecx, 3Dh
+                ;jge    epx_12          ; case R_ES:
+                je      epx_12
+                ;cmp    ecx, 0
+                ;jz     short epx_33    ; case P_none:
+                jecxz   epx_33
+                ;cmp    ecx, 1Fh
+                cmp     cl, 1Fh
+                jz      epx_8           ; case R_CS:
+                ;cmp    ecx, 35h
+                cmp     cl, 35h
+                jz      epx_10          ; case R_DS:
+                jmp     short epx_34
 ; ---------------------------------------------------------------------------
 
-loc_8004C71:                            ; ...
-                cmp     ecx, 40h
-                jz      loc_8004AD3
-                cmp     ecx, 41h
-                jz      loc_8004AE0
-                cmp     ecx, 7Ah
-                jz      loc_8004B1A
-                jmp     loc_8004C05
+epx_36:                                 ; ...
+                ;cmp    ecx, 40h
+                cmp     cl, 40h
+                jz      epx_14          ; case R_FS:
+                ;cmp    ecx, 41h
+                cmp     cl, 41h
+                jz      epx_15          ; case R_GS:
+                ;cmp    ecx, 7Ah
+                cmp     cl, 7Ah
+                jz      epx_18          ; case R_SEGR6:
+                jmp     epx_34          ; case default:
 ; ---------------------------------------------------------------------------
 
-loc_8004C91:                            ; ...
-                cmp     ecx, 0F3h
-                jg      loc_8004CD2
-                cmp     ecx, 0F3h
-                jge     loc_8004B8A
-                cmp     ecx, 80h
-                jz      loc_8004AED
-                cmp     ecx, 0F1h
-                jz      loc_8004B33
-                cmp     ecx, 0F2h
-                jz      loc_8004B71
-                jmp     loc_8004C05
+epx_37:                                 ; ...
+                ;cmp    ecx, 0F3h
+                cmp     cl, 0F3h
+                jg      epx_38
+                ;cmp    ecx, 0F3h
+                ;jge    epx_24          ; case P_A64:
+                je      epx_24
+                ;cmp    ecx, 80h
+                cmp     cl, 80h
+                jz      epx_16          ; case R_SS:
+                ;cmp    ecx, 0F1h
+                cmp     cl, 0F1h
+                jz      epx_19          ; case P_A16:
+                ;cmp    ecx, 0F2h
+                cmp     cl, 0F2h
+                jz      epx_22          ; case P_A32:
+                jmp     epx_34          ; case default:
 ; ---------------------------------------------------------------------------
 
-loc_8004CD2:                            ; ...
-                cmp     ecx, 0F4h
-                jz      loc_8004BAF
-                cmp     ecx, 0F5h
-                jz      loc_8004A25
-                cmp     ecx, 0F6h
-                jz      loc_8004BBC
-                jmp     loc_8004C05
+epx_38:                                 ; ...
+                ;cmp    ecx, 0F4h
+                cmp     cl, 0F4h
+                jz      epx_26          ; case P_ASP:
+                ;cmp    ecx, 0F5h
+                cmp     cl, 0F5h
+                jz      epx_5           ; case P_LOCK:
+                ;cmp    ecx, 0F6h
+                cmp     cl, 0F6h
+                jz      epx_27          ; case P_O16:
+                jmp     epx_34
 ; ---------------------------------------------------------------------------
 
-loc_8004CFB:                            ; ...
+epx_39:                                 ; ...
                 cmp     ecx, 100h
-                jg      loc_8004D7D
-                cmp     ecx, 100h
-                jge     loc_8004A18
-                cmp     ecx, 0FBh
-                jg      loc_8004D54
-                cmp     ecx, 0FBh
-                jge     loc_8004A3F
-                cmp     ecx, 0F8h
-                jz      loc_8004BEE
-                cmp     ecx, 0F9h
-                jz      loc_8004BF3
-                cmp     ecx, 0FAh
-                jz      loc_8004A3F
-                jmp     loc_8004C05
+                jg      epx_41
+                ;cmp    ecx, 100h
+                ;jge    epx_4           ; case P_WAIT:
+                je      epx_4 
+                ;cmp    ecx, 0FBh
+                cmp     cl, 0FBh
+                jg      epx_40
+                ;cmp    ecx, 0FBh
+                ;jge    epx_7           ; case P_REPE:
+                je      epx_7
+                ;cmp    ecx, 0F8h
+                cmp     cl, 0F8h
+                jz      epx_31          ; case P_O64:
+                ;cmp    ecx, 0F9h
+                cmp     cl, 0F9h
+                jz      epx_32          ; case P_OSP:
+                ;cmp    ecx, 0FAh
+                cmp     cl, 0FAh
+                jz      epx_7           ; case P_REP:
+                jmp     epx_34          ; case default:
 ; ---------------------------------------------------------------------------
 
-loc_8004D54:                            ; ...
-                cmp     ecx, 0FCh
-                jz      loc_8004A32
-                cmp     ecx, 0FDh
-                jz      loc_8004A32
-                cmp     ecx, 0FEh
-                jz      loc_8004A3F
-                jmp     loc_8004C05
+epx_40:                                 ; ...
+                ;cmp    ecx, 0FCh
+                cmp     cl, 0FCh
+                jz      epx_6           ; case P_REPNE:
+                ;cmp    ecx, 0FDh
+                cmp     cl, 0FDh
+                jz      epx_6           ; case P_REPNZ:
+                ;cmp    ecx, 0FEh
+                cmp     cl, 0FEh
+                jz      epx_7           ; case P_REPZ:
+                jmp     epx_34
 ; ---------------------------------------------------------------------------
 
-loc_8004D7D:                            ; ...
+epx_41:                                 ; ...
                 cmp     ecx, 104h
-                jg      loc_8004DBE
-                cmp     ecx, 104h
-                jge     loc_8004C00
+                jg      epx_42
+                ;cmp    ecx, 104h
+                ;jge    epx_33          ; case P_NOBND:
+                je      epx_33
                 cmp     ecx, 101h
-                jz      loc_8004A32
+                jz      epx_6           ; case P_XACQUIRE:
                 cmp     ecx, 102h
-                jz      loc_8004A3F
+                jz      epx_7           ; case P_XRELEASE:
                 cmp     ecx, 103h
-                jz      loc_8004A32
-                jmp     loc_8004C05
+                jz      epx_6           ; case P_BND:
+                jmp     epx_34
 ; ---------------------------------------------------------------------------
 
-loc_8004DBE:                            ; ...
+epx_42:                                 ; ...
                 cmp     ecx, 105h
-                jz      loc_8004C00
+                jz      epx_33          ; case P_EVEX:
                 cmp     ecx, 106h
-                jz      loc_8004C00
+                jz      epx_33          ; case P_VEX3:
                 cmp     ecx, 107h
-                jz      loc_8004C00
-                jmp     loc_8004C05
+                jz      epx_33          ; case P_VEX2:
+                jmp     epx_34          ; case default:
 ; ---------------------------------------------------------------------------
 
-loc_8004DE7:                            ; ...
-                movzx   eax, [ebp+var_9]
-                cmp     eax, 0
-                jz      loc_8004E1A
-                mov     eax, [ebp+arg_0]
-                cmp     eax, 0
-                jz      loc_8004E11
-                movzx   eax, [ebp+var_9]
+epx_43:                                 ; ...
+                ;movzx  eax, byte [ebp+c] ; if (c) {
+                ;cmp    eax, 0
+                cmp     byte [ebp+c], 0
+                jz      epx_45
+                mov     eax, [ebp+_data] ; if (data)
+                ;cmp    eax, 0
+                and     eax, eax
+                jz      epx_44
+                ;movzx  eax, byte [ebp+c]
+                ;push   eax
+                movzx   ecx, byte [ebp+c]
+                push    ecx
+                ;mov    eax, [ebp+_data]
                 push    eax
-                mov     eax, [ebp+arg_0]
-                push    eax
-                call    out_rawbyte
+                call    out_rawbyte     ; out_rawbyte(data, c);
                 add     esp, 8
 
-loc_8004E11:                            ; ...
-                mov     eax, [ebp+var_4]
-                mov     ecx, eax
+epx_44:                                 ; ...
+                mov     eax, [ebp+_bytes]
+                ;mov    ecx, eax
                 inc     eax
-                mov     [ebp+var_4], eax
+                mov     [ebp+_bytes], eax ; bytes++;
 
-loc_8004E1A:                            ; ...
-                jmp     loc_80049F2
+epx_45:                                 ; ...
+                jmp     epx_2
 ; ---------------------------------------------------------------------------
 
-loc_8004E1F:                            ; ...
-                mov     eax, [ebp+var_4]
+epx_46:                                 ; ...
+                mov     eax, [ebp+_bytes]
                 leave
                 retn
-endp            emit_prefix
 
 
 ; =============== S U B R O U T I N E =======================================
 
-; Attributes: bp-based frame
+; ---------------------------------------------------------------------------
+; Function: gencode
+;
+; Description:
+;
+; C Declaration: static void gencode(struct out_data *data, insn *ins)
+;
+; Input (Stack): [EBP+8]  = *data
+;                [EBP+12] = *ins
+;
+; Output: none
+;
+; Modified Registers: EAX, ECX, EDX
+; ---------------------------------------------------------------------------
 
-proc            gencode near            ; ...
+%assign asize          -84h
+%assign p              -80h
+%assign rflags         -7Ch
+%assign rflags_h       -78h
+%assign rfield         -74h
+%assign ea_data        -70h
+%assign ea_data_sib_pr -6Ch
+%assign ea_data_bytes  -68h
+%assign ea_data_size   -64h
+%assign ea_data_modrm  -60h
+%assign ea_data_sib    -5Fh
+%assign ea_data_rex    -5Eh
+%assign ea_data_rip    -5Dh
+%assign ea_data_disp8  -5Ch
+%assign s              -58h
+%assign um             -54h
+%assign um_h           -50h
+%assign uv             -4Ch
+%assign uv_h           -48h
+%assign _opy           -44h
+%assign opy            -44h
+%assign mask           -40h
+%assign delta          -3Ch
+%assign delta_h        -38h
 
-var_D8          = dword ptr -0D8h
-var_D4          = dword ptr -0D4h
-var_CC          = dword ptr -0CCh
-var_C8          = dword ptr -0C8h
-var_C4          = dword ptr -0C4h
-var_C0          = dword ptr -0C0h
-var_BC          = dword ptr -0BCh
-var_B4          = dword ptr -0B4h
-var_B0          = byte ptr -0B0h
-var_AC          = dword ptr -0ACh
-var_A8          = dword ptr -0A8h
-var_A0          = byte ptr -0A0h
-var_9F          = byte ptr -9Fh
-var_9D          = byte ptr -9Dh
-var_9C          = byte ptr -9Ch
-var_98          = dword ptr -98h
-var_94          = dword ptr -94h
-var_90          = dword ptr -90h
-var_8C          = dword ptr -8Ch
-var_88          = dword ptr -88h
-var_84          = dword ptr -84h
-var_7C          = dword ptr -7Ch
-var_78          = dword ptr -78h
-var_74          = dword ptr -74h
-var_70          = dword ptr -70h
-var_6C          = dword ptr -6Ch
-var_68          = dword ptr -68h
-var_64          = dword ptr -64h
-var_60          = dword ptr -60h
-var_5C          = dword ptr -5Ch
-var_58          = dword ptr -58h
-var_54          = dword ptr -54h
-var_4C          = dword ptr -4Ch
-var_48          = dword ptr -48h
-var_44          = dword ptr -44h
-var_40          = dword ptr -40h
-var_3C          = dword ptr -3Ch
-var_38          = dword ptr -38h
-var_34          = dword ptr -34h
-var_30          = dword ptr -30h
-var_2C          = dword ptr -2Ch
-var_28          = dword ptr -28h
-var_21          = byte ptr -21h
-var_20          = dword ptr -20h
-var_1C          = dword ptr -1Ch
-var_18          = dword ptr -18h
-var_14          = dword ptr -14h
-var_10          = dword ptr -10h
-var_C           = dword ptr -0Ch
-var_5           = byte ptr -5
-var_4           = byte ptr -4
-var_3           = byte ptr -3
-var_2           = byte ptr -2
-var_1           = byte ptr -1
-arg_0           8
-arg_4           0Ch
+;%assign tmp_sig_bits   -0D8h
+;%assign tmp_sig_bits_h -0D4h
+;%assign asize          -0CCh
+;%assign _opy           -0C8h
+;%assign p              -0C4h
+;%assign rflags         -0C0h
+;%assign rflags_h       -0BCh
+;%assign rfield         -0B4h
+;%assign ea_data        -0B0h
+;%assign ea_data_sib_pr -0ACh
+;%assign ea_data_bytes  -0A8h
+;%assign ea_data_size   -0A4h
+;%assign ea_data_modrm  -0A0h
+;%assign ea_data_sib    -9Fh
+;%assign ea_data_rex    -9Eh
+;%assign ea_data_rip    -9Dh
+;%assign ea_data_disp8  -9Ch
+;%assign tmp9           -98h
+;%assign s              -94h
+;%assign um             -90h
+;%assign um_h           -8Ch
+;%assign uv             -88h
+;%assign uv_h           -84h
+;%assign tmp8           -7Ch
+;%assign tmp7_h         -78h
+;%assign tmp7           -74h
+;%assign tmp6           -70h
+;%assign tmp6_h         -6Ch
+;%assign tmp5           -68h
+;%assign tmp5_h         -64h
+;%assign opy            -60h
+;%assign mask           -5Ch
+;%assign tmp4           -58h
+;%assign tmp4_h         -54h
+;%assign tmp3_h         -4Ch
+;%assign tmp3           -48h
+;%assign tmp2           -44h
+;%assign delta          -40h
+;%assign delta_h        -3Ch
+;%assign tmp1           -38h
 
+%assign errmsg         -34h
+%assign _bits          -30h
+%assign r              -2Ch
+%assign eat            -28h
+%assign opex           -21h
+%assign codes          -20h
+%assign opx            -1Ch
+%assign op2            -18h
+%assign op1            -14h
+%assign size           -10h
+%assign size_h         -0Ch
+%assign bytes_0        -5
+%assign bytes_1        -4
+%assign bytes_2        -3
+%assign bytes_3        -2
+%assign c              -1
+%assign _data           8
+%assign ins             0Ch
+
+gencode:
                 push    ebp
                 mov     ebp, esp
-                sub     esp, 0D8h
-                nop
-                mov     eax, [ebp+arg_0]
-                add     eax, 28h
+                ;sub    esp, 216
+                ;nop                    ; uint8_t c;
+                                        ; uint8_t bytes[4];
+                                        ; int64_t size;
+                                        ; int op1, op2;
+                                        ; struct operand *opx;
+                sub     esp, 132 ; 84h 
+                mov     eax, [ebp+_data]
+                add     eax, 40         ; data->itemp
                 mov     ecx, [eax]
-                add     ecx, 3Ch
+                add     ecx, 60         ; data->itemp->code
                 mov     eax, [ecx]
-                mov     [ebp+var_20], eax
-                mov     eax, 0
-                mov     [ebp+var_21], al
-                mov     eax, 1
-                mov     [ebp+var_28], eax
-                mov     eax, [ebp+arg_0]
-                add     eax, 1Ch
+                mov     [ebp+codes], eax ; const uint8_t *codes = data->itemp->code;
+                ;mov    eax, 0
+                xor	eax, eax ; 0
+                mov     [ebp+opex], al  ; uint8_t opex = 0;
+                ;mov    eax, 1          ; EA_SCALAR = 1
+                inc     eax ; 1
+                mov     [ebp+eat], eax  ; enum ea_type eat = EA_SCALAR;
+                                        ; int r;
+                mov     eax, [ebp+_data]
+                mov     edx, eax ; ***   
+                add     eax, 28
                 mov     ecx, [eax]
-                mov     [ebp+var_30], ecx
-                mov     eax, [ebp+arg_4]
-                add     eax, 180h
-                mov     ecx, 0
-                mov     [eax], ecx
-                mov     eax, [ebp+arg_4]
-                push    eax
-                mov     eax, [ebp+var_30]
-                push    eax
-                mov     eax, [ebp+arg_0]
-                push    eax
-                call    emit_prefix
-                add     esp, 0Ch
+                mov     [ebp+_bits], ecx ; const int bits = data->bits;
+                                        ; const char *errmsg;
+                mov     eax, [ebp+ins]
+                push	eax ; *
+                push    ecx ; **
+                push    edx ; ***
+                add     eax, 384
+                ;mov    ecx, 0
+                xor	ecx, ecx ; 0
+                mov     [eax], ecx      ; ins->rex_done = false;
+                ;mov    eax, [ebp+ins]
+                ;push   eax ; *
+                ;mov    eax, [ebp+_bits]
+                ;push   eax ; **
+                ;mov    eax, [ebp+_data]
+                ;push   eax ; ***
+                call    emit_prefix     ; emit_prefix(data, bits, ins);
+                add     esp, 12
 
-loc_8004E7D:                            ; ...
-                mov     eax, [ebp+var_20]
-                movzx   ecx, [byte ptr eax]
-                cmp     ecx, 0
-                jz      locret_8006A6C
-                mov     eax, [ebp+var_20]
-                mov     ecx, eax
+genco_5:
+genco_200:
+genco_1:                                ; ...
+                mov     eax, [ebp+codes]
+                movzx   ecx, byte [eax] ; while (*codes) {
+                ;cmp    ecx, 0
+                ;jz     genco_201
+                jecxz   genco_201
+                ;mov    eax, [ebp+codes]
+                ;mov    ecx, eax
                 inc     eax
-                mov     [ebp+var_20], eax
-                movzx   eax, [byte ptr ecx]
-                mov     [ebp+var_1], al
-                movzx   eax, [ebp+var_1]
-                and     eax, 3
-                movzx   ecx, [ebp+var_21]
-                and     ecx, 1
-                shl     ecx, 2
+                mov     [ebp+codes], eax
+                ;movzx  eax, byte [ecx]
+                ;mov    [ebp+c], al     ; c = *codes++;
+                mov     [ebp+c], cl
+                ;movzx  eax, byte [ebp+c]
+                ;and    eax, 3
+                and     cl, 3
+                ;movzx  ecx, byte [ebp+opex]
+                ;and    ecx, 1
+                ;shl    ecx, 2
+                movzx   eax, byte [ebp+opex]
+                push	eax
+                ;and    eax, 1
+                and     al, 1
+                shl     eax, 2
                 add     eax, ecx
-                mov     [ebp+var_14], eax
-                movzx   eax, [ebp+var_1]
+                mov     [ebp+op1], eax  ; op1 = (c & 3) + ((opex & 1) << 2);
+                ;movzx  eax, byte [ebp+c]
+                mov     al, [ebp+c]
                 sar     eax, 3
                 and     eax, 3
-                movzx   ecx, [ebp+var_21]
-                and     ecx, 2
+                ;movzx  ecx, byte [ebp+opex]
+                ;and    ecx, 2
+                pop     ecx
+                and	cl, 2
                 shl     ecx, 1
                 add     eax, ecx
-                mov     [ebp+var_18], eax
-                mov     eax, [ebp+arg_4]
-                add     eax, 30h
-                mov     ecx, [ebp+var_14]
+                mov     [ebp+op2], eax  ; op2 = ((c >> 3) & 3) + ((opex & 2) << 1);
+                mov     eax, [ebp+ins]
+                add     eax, 48
+                mov     ecx, [ebp+op1]
                 shl     ecx, 6
                 add     eax, ecx
-                mov     [ebp+var_1C], eax
-                mov     eax, 0
-                mov     [ebp+var_21], al
-                jmp     loc_8005FC4
+                mov     [ebp+opx], eax  ; opx = &ins->oprs[op1];
+                ;mov    eax, 0
+                ;mov    [ebp+opex], al  ; opex = 0;  /* For the next iteration */
+                mov     byte [ebp+opex], 0
+                jmp     genco_146       ; switch (c) {
 ; ---------------------------------------------------------------------------
 
-loc_8004EE8:                            ; ...
-                mov     eax, [ebp+arg_4]
+genco_2:                                ; ...
+                mov     eax, [ebp+ins]  ; case 01:
+                                        ; case 02:
+                                        ; case 03:
+                                        ; case 04:
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
-                call    emit_rex
+                call    emit_rex        ; emit_rex(data, ins);
                 add     esp, 8
-                movzx   eax, [ebp+var_1]
+                movzx   eax, byte [ebp+c]
                 push    eax
-                mov     eax, [ebp+var_20]
+                mov     eax, [ebp+codes]
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
-                call    out_rawdata
-                add     esp, 0Ch
-                movzx   eax, [ebp+var_1]
-                mov     ecx, [ebp+var_20]
+                call    out_rawdata     ; out_rawdata(data, codes, c);
+                add     esp, 12
+                movzx   eax, byte [ebp+c]
+                mov     ecx, [ebp+codes]
                 add     ecx, eax
-                mov     [ebp+var_20], ecx
-                jmp     loc_8006A67
+                mov     [ebp+codes], ecx ; codes += c;
+                jmp     genco_200       ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8004F1E:                            ; ...
-                movzx   eax, [ebp+var_1]
-                mov     [ebp+var_21], al
-                jmp     loc_8006A67
+genco_3:                                ; ...
+                ;movzx  eax, [ebp+c]    ; case 05:
+                                        ; case 06:
+                                        ; case 07:
+                mov     al, [ebp+c]
+                mov     [ebp+opex], al  ; opex = c;
+                jmp     genco_200       ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8004F2A:                            ; ...
-                mov     eax, [ebp+arg_4]
+genco_4:                                ; ...
+                mov     eax, [ebp+ins]  ; case4(010):
+                                        ; case 08h: case 09h: case 0Ah: case 0Bh:
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
-                call    emit_rex
+                call    emit_rex        ; emit_rex(data, ins);
                 add     esp, 8
-                mov     eax, [ebp+var_20]
-                mov     ecx, eax
+                mov     eax, [ebp+codes]
+                ;mov    ecx, eax
+                push    eax ; *
                 inc     eax
-                mov     [ebp+var_20], eax
-                mov     eax, [ebp+var_1C]
+                mov     [ebp+codes], eax ; *codes++
+                mov     eax, [ebp+opx]
                 push    eax
-                mov     [ebp+var_38], ecx
-                call    regval
-                add     esp, 4
+                ;mov    [ebp+tmp1], ecx ; (*codes)
+                call    regval          ; regval(opx)
+                ;add    esp, 4
+                pop     ecx
+                pop     ecx ; *
                 and     eax, 7
-                mov     ecx, [ebp+var_38]
-                movzx   ecx, [byte ptr ecx]
-                add     ecx, eax
-                and     ecx, 0FFh
-                push    ecx
-                mov     eax, [ebp+arg_0]
+                ;mov    ecx, [ebp+tmp1] ; (*codes)
+                ;movzx  ecx, byte [ecx]
+                ;add    ecx, eax        ; + (regval(opx) & 7)
+                ;and    ecx, 0FFh
+                ;push   ecx ; **
+                add     al, [ecx]
+                push    eax ; **
+                mov     eax, [ebp+_data]
                 push    eax
-                call    out_rawbyte
+                call    out_rawbyte     ; out_rawbyte(data, *codes++ + (regval(opx) & 7));
                 add     esp, 8
-                jmp     loc_8006A67
+                jmp     genco_200       ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8004F75:                            ; ...
-                jmp     loc_8006A67
+;genco_5:                               ; ...
+                ;jmp    genco_200       ; case4(014):
+                                        ; case 0Ch: case 0Dh: case 0Eh: case 0Fh:
+                                        ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8004F7A:                            ; ...
-                mov     eax, 0
+genco_6:                                ; ...
+                ;mov    eax, 0          ; case4(020):
+                                        ; case 10h: case 11h: case 12h: case 13h:
+                sub     eax, eax ; 0
                 push    eax
-                mov     eax, 1
+                ;mov    eax, 1          ; OUT_WRAP = 1
+                inc     eax ; 1
+genco_11:
                 push    eax
-                mov     eax, [ebp+var_1C]
+                mov     eax, [ebp+opx]
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
-                call    out_imm
-                add     esp, 10h
-                jmp     loc_8006A67
+                call    out_imm         ; out_imm(data, opx, 1, OUT_WRAP);
+                add     esp, 16
+                jmp     genco_200       ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8004F9B:                            ; ...
-                mov     eax, 2
-                push    eax
-                mov     eax, 1
-                push    eax
-                mov     eax, [ebp+var_1C]
-                push    eax
-                mov     eax, [ebp+arg_0]
-                push    eax
-                call    out_imm
-                add     esp, 10h
-                jmp     loc_8006A67
+genco_7:                                ; ...
+                mov     eax, 2          ; case4(024):
+                                        ; case 14h: case 15h: case 16h: case 17h:
+                push    eax             ; OUT_UNSIGNED = 2
+                ;mov    eax, 1
+                dec	eax ; 1
+                ;push   eax
+                ;mov    eax, [ebp+opx]
+                ;push   eax
+                ;mov    eax, [ebp+_data]
+                ;push   eax
+                ;call   out_imm         ; out_imm(data, opx, 1, OUT_UNSIGNED);
+                ;add    esp, 16
+                ;jmp    genco_200       ; break;
+                jmp     genco_11
 ; ---------------------------------------------------------------------------
 
-loc_8004FBC:                            ; ...
-                mov     eax, 0
-                push    eax
-                mov     eax, 2
-                push    eax
-                mov     eax, [ebp+var_1C]
-                push    eax
-                mov     eax, [ebp+arg_0]
-                push    eax
-                call    out_imm
-                add     esp, 10h
-                jmp     loc_8006A67
+genco_8:                                ; ...
+                ;mov    eax, 0          ; case4(030):
+                                        ; case 18h: case 19h: case 1Ah: case 1Bh:
+                sub     eax, eax ; 0
+                push    eax             ; OUT_WRAP = 0
+                ;mov    eax, 2
+                mov     al, 2
+                ;push   eax
+                ;mov    eax, [ebp+opx]
+                ;push   eax
+                ;mov    eax, [ebp+_data]
+                ;push   eax
+                ;call   out_imm         ; out_imm(data, opx, 2, OUT_WRAP);
+                ;add    esp, 16
+                ;jmp    genco_200       ; break;
+                jmp     genco_11
 ; ---------------------------------------------------------------------------
 
-loc_8004FDD:                            ; ...
-                mov     eax, [ebp+var_1C]
-                mov     ecx, [eax]
+genco_9:                                ; ...
+                mov     eax, [ebp+opx]  ; case4(034):
+                                        ; case 1Ch: case 1Dh: case 1Eh: case 1Fh:
+                mov     ecx, [eax]      ; if (opx->type & (BITS16 | BITS32))
                 add     eax, 4
                 mov     edx, [eax]
-                and     edx, 6
-                mov     eax, 0
-                cmp     edx, 0
-                jnz     loc_8005001
-                cmp     eax, 0
-                jz      loc_8005049
+                and     edx, 6          ; & (BITS16 | BITS32)
+                ;mov    eax, 0
+                ;cmp    edx, 0
+                ;jnz    genco_10
+                ;cmp    eax, 0
+                ;jz     genco_15        ; else
+                jz      genco_15
 
-loc_8005001:                            ; ...
-                mov     eax, [ebp+var_1C]
+genco_10:                               ; ...
+                mov     eax, [ebp+opx]  ; size = (opx->type & BITS16) ? 2 : 4;
                 mov     ecx, [eax]
                 add     eax, 4
-                mov     edx, [eax]
-                and     edx, 2
-                mov     eax, 0
-                cmp     edx, 0
-                jnz     loc_8005025
-                cmp     eax, 0
-                jz      loc_800502A
+                mov     edx, [eax]      ; opx->type
+                and     edx, 2          ; BITS16 = 2  (BITS32 = 4)
+                ;mov    eax, 0
+                ;cmp    edx, 0
+                ;jnz    genco_11
+                ;cmp    eax, 0
+                ;jz     genco_12
+                jnz     genco_13
 
-loc_8005025:                            ; ...
-                jmp     loc_8005034
+;genco_11:                              ; ...
+                ;jmp    genco_13
 ; ---------------------------------------------------------------------------
 
-loc_800502A:                            ; ...
+genco_12:                               ; ...
                 mov     eax, 4
-                jmp     loc_8005039
+                jmp     genco_14
 ; ---------------------------------------------------------------------------
 
-loc_8005034:                            ; ...
+genco_13:                               ; ...
                 mov     eax, 2
 
-loc_8005039:                            ; ...
-                mov     ecx, eax
-                sar     ecx, 1Fh
-                mov     [ebp+var_10], eax
-                mov     [ebp+var_C], ecx
-                jmp     loc_800507F
+genco_14:                               ; ...
+                ;mov    ecx, eax
+                ;sar    ecx, 31
+                mov     [ebp+size], eax
+                ;mov    [ebp+size_h], ecx ; (not used)
+                jmp     genco_19
 ; ---------------------------------------------------------------------------
 
-loc_8005049:                            ; ...
-                mov     eax, [ebp+var_30]
-                cmp     eax, 10h
-                mov     eax, 0
-                setz    al
-                cmp     eax, 0
-                jz      loc_8005065
-                jmp     loc_800506F
+genco_15:                               ; ...
+                mov     eax, [ebp+_bits] ; else
+                                        ; size = (bits == 16) ? 2 : 4;
+                cmp     eax, 16
+                ;mov    eax, 0
+                ;setz   al
+                ;cmp    eax, 0
+                ;jz     genco_16
+                ;jmp    genco_17
+                je      genco_17
 ; ---------------------------------------------------------------------------
 
-loc_8005065:                            ; ...
+genco_16:                               ; ...
                 mov     eax, 4
-                jmp     loc_8005074
+                jmp     genco_18
 ; ---------------------------------------------------------------------------
 
-loc_800506F:                            ; ...
+genco_17:                               ; ...
                 mov     eax, 2
 
-loc_8005074:                            ; ...
-                mov     ecx, eax
-                sar     ecx, 1Fh
-                mov     [ebp+var_10], eax
-                mov     [ebp+var_C], ecx
+genco_18:                               ; ...
+                ;mov    ecx, eax
+                ;sar    ecx, 31
+                mov     [ebp+size], eax
+                ;mov    [ebp+size_h], ecx ; (not used)
 
-loc_800507F:                            ; ...
-                mov     eax, 0
+genco_19:                               ; ...
+                ;mov    eax, 0          ; OUT_WRAP
+                sub     eax, eax ; 0
                 push    eax
-                mov     eax, [ebp+var_10]
-                push    eax
-                mov     eax, [ebp+var_1C]
-                push    eax
-                mov     eax, [ebp+arg_0]
-                push    eax
-                call    out_imm
-                add     esp, 10h
-                jmp     loc_8006A67
+                mov     eax, [ebp+size]
+                ;push   eax
+                ;mov    eax, [ebp+opx]
+                ;push   eax
+                ;mov    eax, [ebp+_data]
+                ;push   eax
+                ;call   out_imm         ; out_imm(data, opx, size, OUT_WRAP);
+                ;add    esp, 16
+                ;jmp    genco_200       ; break;
+                jmp     genco_11
 ; ---------------------------------------------------------------------------
 
-loc_800509E:                            ; ...
-                mov     eax, 0
+genco_20:                               ; ...
+                ;mov    eax, 0          ; case4(040):
+                                        ; case 20h: case 21h: case 22h: case 23h:
+                sub     eax, eax ; 0
                 push    eax
-                mov     eax, 4
-                push    eax
-                mov     eax, [ebp+var_1C]
-                push    eax
-                mov     eax, [ebp+arg_0]
-                push    eax
-                call    out_imm
-                add     esp, 10h
-                jmp     loc_8006A67
+                ;mov    eax, 4
+                mov     al, 4
+                ;push   eax
+                ;mov    eax, [ebp+opx]
+                ;push   eax
+                ;mov    eax, [ebp+_data]
+                ;push   eax
+                ;call   out_imm         ; out_imm(data, opx, 4, OUT_WRAP);
+                ;add    esp, 16
+                ;jmp    genco_200       ; break;
+                jmp     genco_11
 ; ---------------------------------------------------------------------------
 
-loc_80050BF:                            ; ...
-                mov     eax, [ebp+arg_4]
-                add     eax, 2Ch
+genco_21:                               ; ...
+                mov     eax, [ebp+ins]  ; case4(044):
+                                        ; case 24h: case 25h: case 26h: case 27h:
+                add     eax, 44         ; ins->addr_size
                 mov     ecx, [eax]
                 sar     ecx, 3
-                mov     eax, ecx
-                sar     eax, 1Fh
-                mov     [ebp+var_10], ecx
-                mov     [ebp+var_C], eax
-                mov     eax, 0
+                ;mov    eax, ecx
+                ;sar    eax, 31
+                mov     [ebp+size], ecx ; size = ins->addr_size >> 3;
+                ;mov    [ebp+size_h], eax ; (not used)
+                ;mov    eax, 0
+                sub     eax, eax ; 0 
                 push    eax
-                mov     eax, [ebp+var_10]
-                push    eax
-                mov     eax, [ebp+var_1C]
-                push    eax
-                mov     eax, [ebp+arg_0]
-                push    eax
-                call    out_imm
-                add     esp, 10h
-                jmp     loc_8006A67
+                mov     eax, [ebp+size]
+                ;push   eax
+                ;mov    eax, [ebp+opx]
+                ;push   eax
+                ;mov    eax, [ebp+_data]
+                ;push   eax
+                ;call   out_imm         ; out_imm(data, opx, size, OUT_WRAP);
+                ;add    esp, 16
+                ;jmp    genco_200
+                jmp     genco_11 
 ; ---------------------------------------------------------------------------
 
-loc_80050F4:                            ; ...
-                mov     eax, [ebp+var_1C]
-                add     eax, 20h
-                mov     ecx, [ebp+arg_0]
+genco_22:                               ; ...
+                mov     eax, [ebp+opx]  ; case4(050):
+                                        ; case 28h: case 29h: case 2Ah: case 2Bh:
+                add     eax, 32
+                mov     ecx, [ebp+_data] ; if (opx->segment == data->segment) {
                 add     ecx, 8
                 mov     edx, [eax]
                 mov     eax, [ecx]
                 cmp     edx, eax
-                jnz     loc_80051C8
-                mov     eax, [ebp+var_1C]
-                add     eax, 28h
-                mov     ecx, [ebp+arg_0]
+                jnz     genco_28
+                mov     eax, [ebp+opx]  ; int64_t delta = opx->offset - data->offset
+                add     eax, 40
+                mov     ecx, [ebp+_data]
+                push    ecx ; ***** 
                 mov     edx, [eax]
                 add     eax, 4
-                mov     [ebp+var_44], ecx
-                mov     ecx, [eax]
-                mov     eax, [ebp+var_44]
+                ;mov    [ebp+tmp2], ecx ; data->offset (low dword)
+                mov     ecx, [eax]      ; opx->offset (high dword)
+                pop     eax ; ***** 
+                push	ecx ; **
+                ;mov    eax, [ebp+tmp2]
                 mov     eax, [eax]
-                mov     [ebp+var_48], edx
-                mov     edx, [ebp+var_44]
+                ;mov    [ebp+tmp3], edx ; opx->offset (low dword)
+                push    ecx ; *  
+                mov     edx, [ebp+tmp2]
                 add     edx, 4
-                mov     [ebp+var_4C], ecx
-                mov     ecx, [edx]
-                mov     edx, [ebp+var_48]
-                sub     edx, eax
-                mov     eax, [ebp+var_4C]
-                sbb     eax, ecx
-                mov     ecx, [ebp+arg_0]
-                add     ecx, 14h
-                mov     [ebp+var_58], edx
-                mov     [ebp+var_54], eax
-                mov     eax, [ebp+arg_0]
-                add     eax, 18h
+                ;mov    [ebp+tmp3_h], ecx ; opx->offset (high dword)
+                mov     ecx, [edx]      ; data->offset (high dword)
+                ;mov    edx, [ebp+tmp3]
+                pop     edx ; *
+                sub     edx, eax        ; opx->offset - data->offset (low 32bit)
+                ;mov    eax, [ebp+tmp3_h]
+                pop     eax ; **
+                sbb     eax, ecx        ; opx->offset - data->offset (low 32bit) (- carry)
+                mov     ecx, [ebp+_data]
+                add     ecx, 20         ; data->inslen (address)
+                ;mov    [ebp+tmp4], edx
+                push    edx ; ****
+                ;mov    [ebp+tmp4_h], eax
+                push    eax ; ***
+                mov     eax, [ebp+_data]
+                add     eax, 24         ; data->insoffs (address)
                 mov     edx, [ecx]
                 mov     ecx, [eax]
-                sub     edx, ecx
+                sub     edx, ecx        ; data->inslen - data->insoffs
                 mov     eax, edx
-                sar     eax, 1Fh
-                mov     ecx, [ebp+var_58]
-                sub     ecx, edx
-                mov     edx, [ebp+var_54]
+                sar     eax, 31         ; (extend 32bit signed value to 64bit)
+                ;mov    ecx, [ebp+tmp4]
+                pop     ecx ; ***
+                sub     ecx, edx        ; - (data->inslen - data->insoffs);
+                ;mov    edx, [ebp+tmp4_h]
+                pop     edx ; ****
                 sbb     edx, eax
-                mov     [ebp+var_40], ecx
-                mov     [ebp+var_3C], edx
-                mov     eax, [ebp+var_3C]
-                cmp     eax, 0
-                jl      loc_800518C
-                jnz     loc_8005187
-                mov     eax, [ebp+var_40]
-                cmp     eax, 7Fh
-                jbe     loc_800518C
-
-loc_8005187:                            ; ...
-                jmp     loc_80051B4
+                mov     [ebp+delta], ecx
+                mov     [ebp+delta_h], edx
+                ;mov    eax, [ebp+delta_h] ; if (delta > 127 || delta < -128)
+                ;cmp    eax, 0
+                cmp     edx, 0 
+                jl      genco_24
+                jnz     genco_23
+                mov     eax, [ebp+delta]
+                cmp     eax, 127
+                ;jbe    genco_24
+                ja      genco_27
+;genco_23:                              ; ...
+                ;jmp    genco_27
 ; ---------------------------------------------------------------------------
 
-loc_800518C:                            ; ...
-                mov     eax, [ebp+var_3C]
-                cmp     eax, 0FFFFFFFFh
-                jg      loc_80051AF
-                jnz     loc_80051AA
-                mov     eax, [ebp+var_40]
-                cmp     eax, 0FFFFFF80h
-                jnb     loc_80051AF
+genco_24:                               ; ...
+                mov     eax, [ebp+delta_h]
+                cmp     eax, 0FFFFFFFFh ; - 128 (high dword check)
+                jg      genco_26
+                jnz     genco_25
+                mov     eax, [ebp+delta]
+                cmp     eax, 0FFFFFF80h ; -128
+                jnb     genco_26
 
-loc_80051AA:                            ; ...
-                jmp     loc_80051B4
+;genco_25:                              ; ...
+                ;jmp    genco_27
 ; ---------------------------------------------------------------------------
 
-loc_80051AF:                            ; ...
-                jmp     loc_80051C8
+;genco_26:                              ; ...
+                ;jmp    genco_28
 ; ---------------------------------------------------------------------------
 
-loc_80051B4:                            ; ...
-                mov     eax, offset A_87 ; "short jump is out of range"
+genco_23:
+genco_25:
+genco_27:                               ; ...
+                mov     eax, L_87       ; "short jump is out of range"
                 push    eax
                 mov     eax, 3
                 push    eax
-                call    nasm_error
+                call    nasm_error      ; nasm_error(ERR_NONFATAL, "short jump is out of range");
                 add     esp, 8
 
-loc_80051C8:                            ; ...
+genco_26:
+genco_28:                               ; ...
                 mov     eax, 1
                 push    eax
-                mov     eax, [ebp+var_1C]
+                mov     eax, [ebp+opx]
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
-                call    out_reladdr
-                add     esp, 0Ch
-                jmp     loc_8006A67
+                call    out_reladdr     ; out_reladdr(data, opx, 1);
+                add     esp, 12
+                jmp     genco_200       ; break;
 ; ---------------------------------------------------------------------------
 
-loc_80051E3:                            ; ...
-                mov     eax, 0
+genco_29:                               ; ...
+                mov     eax, 0          ; case4(054):
+                                        ; case 2Ch: case 2Dh: case 2Eh: case 2Fh:
                 push    eax
-                mov     eax, 8
+                ;mov    eax, 8
+                mov     al, 8
                 push    eax
-                mov     eax, [ebp+var_1C]
+                mov     eax, [ebp+opx]
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
-                call    out_imm
-                add     esp, 10h
-                jmp     loc_8006A67
+                call    out_imm         ; out_imm(data, opx, 8, OUT_WRAP);
+                add     esp, 16
+                jmp     genco_200
 ; ---------------------------------------------------------------------------
 
-loc_8005204:                            ; ...
-                mov     eax, 2
+genco_30:                               ; ...
+                mov     eax, 2          ; case4(060):
+                                        ; case 30h: case 31h: case 32h: case 33h:
                 push    eax
-                mov     eax, [ebp+var_1C]
+                mov     eax, [ebp+opx]
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
-                call    out_reladdr
-                add     esp, 0Ch
-                jmp     loc_8006A67
+                call    out_reladdr     ; out_reladdr(data, opx, 2);
+                add     esp, 12
+                jmp     genco_200       ; break;
 ; ---------------------------------------------------------------------------
 
-loc_800521F:                            ; ...
-                mov     eax, [ebp+var_1C]
-                mov     ecx, [eax]
+genco_31:                               ; ...
+                mov     eax, [ebp+opx]  ; case4(064):
+                                        ; case 34h: case 35h: case 36h: case 37h:
+                mov     ecx, [eax]      ; if (opx->type & (BITS16 | BITS32 | BITS64))
                 add     eax, 4
                 mov     edx, [eax]
-                and     edx, 0Eh
-                mov     eax, 0
-                cmp     edx, 0
-                jnz     loc_8005243
-                cmp     eax, 0
-                jz      loc_800528B
+                and     edx, 14         ; & (BITS16 | BITS32 | BITS64) /// 2 | 4 | 8
+                ;mov    eax, 0
+                ;cmp    edx, 0
+                ;jnz    genco_32
+                ;cmp    eax, 0
+                jz      genco_37
 
-loc_8005243:                            ; ...
-                mov     eax, [ebp+var_1C]
+genco_32:                               ; ...
+                mov     eax, [ebp+opx]  ; size = (opx->type & BITS16) ? 2 : 4;
                 mov     ecx, [eax]
                 add     eax, 4
                 mov     edx, [eax]
                 and     edx, 2
-                mov     eax, 0
-                cmp     edx, 0
-                jnz     loc_8005267
-                cmp     eax, 0
-                jz      loc_800526C
+                ;mov    eax, 0
+                ;cmp    edx, 0
+                ;jnz    genco_33
+                ;cmp    eax, 0
+                ;jz     genco_34
+                jnz     genco_35
 
-loc_8005267:                            ; ...
-                jmp     loc_8005276
+;genco_33:                              ; ...
+                ;jmp    genco_35
 ; ---------------------------------------------------------------------------
 
-loc_800526C:                            ; ...
+genco_34:                               ; ...
                 mov     eax, 4
-                jmp     loc_800527B
+                jmp     genco_36
 ; ---------------------------------------------------------------------------
 
-loc_8005276:                            ; ...
+genco_35:                               ; ...
                 mov     eax, 2
 
-loc_800527B:                            ; ...
-                mov     ecx, eax
-                sar     ecx, 1Fh
-                mov     [ebp+var_10], eax
-                mov     [ebp+var_C], ecx
-                jmp     loc_80052C1
+genco_36:                               ; ...
+                ;mov    ecx, eax
+                ;sar    ecx, 31
+                mov     [ebp+size], eax
+                ;mov    [ebp+size_h], ecx ; (not used)
+                jmp     genco_41
 ; ---------------------------------------------------------------------------
 
-loc_800528B:                            ; ...
-                mov     eax, [ebp+var_30]
-                cmp     eax, 10h
-                mov     eax, 0
-                setz    al
-                cmp     eax, 0
-                jz      loc_80052A7
-                jmp     loc_80052B1
+genco_37:                               ; ...
+                mov     eax, [ebp+_bits] ; else
+                                        ; size = (bits == 16) ? 2 : 4;
+                cmp     eax, 16
+                ;mov    eax, 0
+                ;setz   al
+                ;cmp    eax, 0
+                ;jz     genco_38
+                ;jmp    genco_39
+                je      genco_39
 ; ---------------------------------------------------------------------------
 
-loc_80052A7:                            ; ...
+genco_38:                               ; ...
                 mov     eax, 4
-                jmp     loc_80052B6
+                jmp     genco_40
 ; ---------------------------------------------------------------------------
 
-loc_80052B1:                            ; ...
-                mov     eax, 2
+genco_39:                               ; ...
+                ;mov    eax, 2
+                mov     al, 2
 
-loc_80052B6:                            ; ...
-                mov     ecx, eax
-                sar     ecx, 1Fh
-                mov     [ebp+var_10], eax
-                mov     [ebp+var_C], ecx
+genco_40:                               ; ...
+                ;mov    ecx, eax
+                ;sar    ecx, 31
+                mov     [ebp+size], eax
+                ;mov    [ebp+size_h], ecx ; (not used)
 
-loc_80052C1:                            ; ...
-                mov     eax, [ebp+var_10]
+genco_41:                               ; ...
+                mov     eax, [ebp+size]
+genco_33:
                 push    eax
-                mov     eax, [ebp+var_1C]
+                mov     eax, [ebp+opx]
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
-                call    out_reladdr
-                add     esp, 0Ch
-                jmp     loc_8006A67
+                call    out_reladdr     ; out_reladdr(data, opx, size);
+                add     esp, 12
+                jmp     genco_200       ; break
 ; ---------------------------------------------------------------------------
 
-loc_80052DA:                            ; ...
-                mov     eax, 4
-                push    eax
-                mov     eax, [ebp+var_1C]
-                push    eax
-                mov     eax, [ebp+arg_0]
-                push    eax
-                call    out_reladdr
-                add     esp, 0Ch
-                jmp     loc_8006A67
+genco_42:                               ; ...
+                mov     eax, 4          ; case4(070):
+                                        ; case 38h: case 39h: case 3Ah: case 3Bh:
+                ;push   eax
+                ;mov    eax, [ebp+opx]
+                ;push   eax
+                ;mov    eax, [ebp+_data]
+                ;push   eax
+                ;call   out_reladdr     ; out_reladdr(data, opx, 4);
+                ;add    esp, 12
+                ;jmp    genco_200
+                jmp     genco_33
 ; ---------------------------------------------------------------------------
 
-loc_80052F5:                            ; ...
-                mov     eax, [ebp+var_1C]
-                add     eax, 20h
-                mov     ecx, [eax]
-                cmp     ecx, 0FFFFFFFFh
-                jnz     loc_800531A
-                mov     eax, offset A_88 ; "value referenced by FAR is not relocata"...
+genco_43:                               ; ...
+                mov     eax, [ebp+opx]  ; case4(074):
+                                        ; case 3Ch: case 3Dh: case 3Eh: case 3Fh:
+                add     eax, 32         ; if (opx->segment == NO_SEG)
+                mov     ecx, [eax]      ; opx->segment
+                cmp     ecx, 0FFFFFFFFh ; NO_SEG = -1
+                jnz     genco_44
+                mov     eax, L_88       ; "value referenced by FAR is not relocata"...
                 push    eax
-                mov     eax, 3
+                mov     eax, 3          ; ERR_NONFATAL = 3
                 push    eax
-                call    nasm_error
+                call    nasm_error      ; nasm_error(ERR_NONFATAL,
+                                        ;  "value referenced by FAR is not relocatable");
                 add     esp, 8
 
-loc_800531A:                            ; ...
-                mov     eax, [ebp+var_1C]
+genco_44:                               ; ...
+                mov     eax, [ebp+opx]
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
-                call    out_segment
+                call    out_segment     ; out_segment(data, opx);
                 add     esp, 8
-                jmp     loc_8006A67
+                jmp     genco_200
 ; ---------------------------------------------------------------------------
 
-loc_800532F:                            ; ...
-                mov     eax, [ebp+arg_4]
-                add     eax, 4
-                add     eax, 18h
+genco_45:                               ; ...
+                mov     eax, [ebp+ins]  ; case 0172: (case 7Ah: case 122:)
+                ;add    eax, 4          ; ins->prefixes
+                ;add    eax, 24         ; PPS_VEX = 6 /// 6*int_size = 24
+                add     eax, 28
                 mov     ecx, [eax]
-                cmp     ecx, 105h
-                mov     eax, 0
-                setz    al
-                cmp     eax, 0
-                jz      loc_8005356
-                jmp     loc_8005360
+                cmp     ecx, 261        ; P_EVEX = 261
+                ;mov    eax, 0          ; == P_EVEX ? 7 : 15;
+                ;setz   al
+                ;cmp    eax, 0
+                ;jz     genco_46
+                ;jmp    genco_47
+                je      genco_47
 ; ---------------------------------------------------------------------------
 
-loc_8005356:                            ; ...
-                mov     eax, 0Fh
-                jmp     loc_8005365
+genco_46:                               ; ...
+                mov     eax, 15
+                jmp     genco_48
 ; ---------------------------------------------------------------------------
 
-loc_8005360:                            ; ...
+genco_47:                               ; ...
                 mov     eax, 7
 
-loc_8005365:                            ; ...
-                mov     [ebp+var_5C], eax
-                mov     eax, [ebp+var_20]
+genco_48:                               ; ...
+                mov     [ebp+mask], eax ; int mask = ins->prefixes[PPS_VEX] == P_EVEX ? 7 : 15;
+                mov     eax, [ebp+codes] ; const struct operand *opy;
                 mov     ecx, eax
                 inc     eax
-                mov     [ebp+var_20], eax
-                movzx   eax, [byte ptr ecx]
-                mov     [ebp+var_1], al
-                mov     eax, [ebp+arg_4]
-                add     eax, 30h
-                movzx   ecx, [ebp+var_1]
-                sar     ecx, 3
-                shl     ecx, 6
+                mov     [ebp+codes], eax
+                movzx   eax, byte [ecx]
+                mov     [ebp+c], al     ; c = *codes++;
+                ;mov    eax, [ebp+ins]
+                ;add    eax, 48         ; &ins->oprs[0]
+                ;movzx  ecx, byte [ebp+c]
+                ;sar    ecx, 3          ; c >> 3
+                ;shl    ecx, 6          ; * 64 (operand structure size = 64)
+                mov     ecx, [ebp+ins]
+                add     ecx, 48
+                push    eax ; *
+                sar     eax, 3
+                shl     eax, 6
                 add     eax, ecx
-                mov     [ebp+var_1C], eax
-                mov     eax, [ebp+arg_4]
-                add     eax, 30h
-                movzx   ecx, [ebp+var_1]
-                and     ecx, 7
-                shl     ecx, 6
+                mov     [ebp+opx], eax  ; opx = &ins->oprs[c >> 3];
+                ;mov    eax, [ebp+ins]
+                ;add    eax, 48
+                ;movzx  ecx, byte [ebp+c]
+                ;and    ecx, 7
+                ;shl    ecx, 6
+                pop     eax ; *
+                and     eax, 7
+                shl     eax, 6   
                 add     eax, ecx
-                mov     [ebp+var_60], eax
-                mov     eax, [ebp+var_60]
+                mov     [ebp+opy], eax  ; opy = &ins->oprs[c & 7];
+                ;mov    eax, [ebp+opy]
                 push    eax
                 call    absolute_op
                 add     esp, 4
-                cmp     eax, 0
-                jz      loc_80053BB
-                jmp     loc_80053DC
+                ;cmp    eax, 0          ; if (!absolute_op(opy)) {
+                ;jz     genco_49
+                ;jmp    genco_50
+                 and	eax, eax
+                 jnz    short genco_50
 ; ---------------------------------------------------------------------------
 
-loc_80053BB:                            ; ...
-                movzx   eax, [ebp+var_1]
-                and     eax, 7
+genco_49:                               ; ...
+                ;movzx  eax, byte [ebp+c]
+                mov     al, [ebp+c]
+                ;and    eax, 7
+                and	al, 7
                 push    eax
-                mov     eax, offset A_89 ; "non-absolute expression not permitted a"...
+                mov     eax, L_89       ; "non-absolute expression not permitted a"...
                 push    eax
                 mov     eax, 3
                 push    eax
-                call    nasm_error
-                add     esp, 0Ch
-                jmp     loc_800542A
+                call    nasm_error      ; nasm_error(ERR_NONFATAL,
+                                        ;  "non-absolute expression not permitted as argument %d",
+                                        ;   c & 7);
+                add     esp, 12
+                jmp     genco_52
 ; ---------------------------------------------------------------------------
 
-loc_80053DC:                            ; ...
-                mov     eax, [ebp+var_60]
-                add     eax, 28h
-                mov     ecx, [ebp+var_5C]
-                xor     ecx, 0FFFFFFFFh
+genco_50:                               ; ...
+                mov     eax, [ebp+opy]  ; } else if (opy->offset & ~mask) {
+                add     eax, 40         ; opy->offset (address)
+                mov     ecx, [ebp+mask]
+                xor     ecx, 0FFFFFFFFh ; ~mask
                 mov     edx, ecx
-                sar     edx, 1Fh
-                mov     [ebp+var_68], ecx
-                mov     [ebp+var_64], edx
-                mov     edx, [eax]
+                sar     edx, 31         ; (extend 32bit signed value to 64bit)
+                ;mov    [ebp+tmp5], ecx
+                ;mov    [ebp+tmp5_h], edx
+                push    edx ; **
+                push    ecx ; *
+                mov     edx, [eax]      ; opy->offset (low 32bit)
                 add     eax, 4
-                mov     ecx, [eax]
-                mov     eax, [ebp+var_68]
+                mov     ecx, [eax]      ; opy->offset (high 32bit)
+                ;mov    eax, [ebp+tmp5]
+                pop     eax ; *
                 and     edx, eax
-                mov     eax, [ebp+var_64]
+                ;mov    eax, [ebp+tmp5_h]
+                pop     eax ; **
                 and     ecx, eax
-                cmp     ecx, 0
-                jnz     loc_8005416
-                cmp     edx, 0
-                jz      loc_800542A
+                ;cmp    ecx, 0
+                jnz     genco_51
+                ;cmp    edx, 0
+                or	edx, edx
+                jz      genco_52
 
-loc_8005416:                            ; ...
-                mov     eax, offset A_90 ; "is4 argument exceeds bounds"
+genco_51:                               ; ...
+                mov     eax, L_90       ; "is4 argument exceeds bounds"
                 push    eax
-                mov     eax, 5102h
+                mov     eax, 5102h      ; ERR_WARNING | ERR_PASS2 | WARN_NOV
                 push    eax
-                call    nasm_error
+                call    nasm_error      ; nasm_error(ERR_WARNING | ERR_PASS2 | WARN_NOV,
+                                        ;      "is4 argument exceeds bounds");
                 add     esp, 8
 
-loc_800542A:                            ; ...
-                mov     eax, [ebp+var_60]
-                add     eax, 28h
-                mov     ecx, [ebp+var_5C]
-                mov     edx, ecx
-                sar     edx, 1Fh
-                mov     [ebp+var_70], ecx
-                mov     [ebp+var_6C], edx
+genco_52:                               ; ...
+                mov     eax, [ebp+opy]  ; c = opy->offset & mask;
+                add     eax, 40
+                mov     ecx, [ebp+mask]
+                ;mov    edx, ecx
+                ;sar    edx, 31
+                ;mov    [ebp+tmp6], ecx
+                ;mov    [ebp+tmp6_h], edx
                 mov     edx, [eax]
-                add     eax, 4
-                mov     ecx, [eax]
-                mov     eax, [ebp+var_70]
-                and     edx, eax
-                mov     eax, [ebp+var_6C]
-                and     ecx, eax
-                and     edx, 0FFh
-                mov     eax, 0
-                mov     [ebp+var_1], dl
-                jmp     loc_800549D
+                ;add    eax, 4
+                ;mov    ecx, [eax]
+                ;mov    eax, [ebp+tmp6]
+                ;and    edx, eax
+                and	edx, ecx
+                ;mov    eax, [ebp+tmp6_h]
+                ;and    ecx, eax
+                ;and    edx, 0FFh       ; (char)
+                ;mov    eax, 0
+                mov     [ebp+c], dl
+                jmp     genco_55        ; goto emit_is4;
 ; ---------------------------------------------------------------------------
 
-loc_8005462:                            ; ...
-                mov     eax, [ebp+var_20]
+genco_53:                               ; ...
+                mov     eax, [ebp+codes] ; case 0173: (case 7Bh: case 123:)
                 mov     ecx, eax
                 inc     eax
-                mov     [ebp+var_20], eax
-                movzx   eax, [byte ptr ecx]
-                mov     [ebp+var_1], al
-                mov     eax, [ebp+arg_4]
-                add     eax, 30h
-                movzx   ecx, [ebp+var_1]
-                sar     ecx, 4
-                shl     ecx, 6
+                mov     [ebp+codes], eax
+                ;movzx  eax, byte [ecx]
+                mov     al, [ecx] 
+                mov     [ebp+c], al     ; c = *codes++;
+                mov     eax, [ebp+ins]
+                add     eax, 48         ; &ins->oprs[0]
+                movzx   ecx, byte [ebp+c]
+                sar     ecx, 4          ; c >> 4
+                shl     ecx, 6          ; * 64 (operand structure size)
                 add     eax, ecx
-                mov     [ebp+var_1C], eax
-                movzx   eax, [ebp+var_1]
-                and     eax, 0Fh
-                mov     [ebp+var_1], al
-                jmp     loc_800549D
+                mov     [ebp+opx], eax  ; opx = &ins->oprs[c >> 4];
+                ;movzx  eax, byte [ebp+c]
+                mov     al, [ebp+c]
+                ;and    eax, 0Fh        ; c &= 15;
+                and     al, 0Fh 
+                mov     [ebp+c], al
+                jmp     genco_55        ; goto emit_is4;
 ; ---------------------------------------------------------------------------
 
-loc_8005495:                            ; ...
-                mov     eax, 0
-                mov     [ebp+var_1], al
+genco_54:                               ; ...
+                ;mov    eax, 0          ; case 4(0174):
+                                        ; case 7Ch: case 7Dh: case 7Eh: case 7Fh:
+                ;mov    [ebp+c], al     ; c = 0;
+                mov     byte [ebp+c], 0 
 
-loc_800549D:                            ; ...
-                mov     eax, [ebp+var_1C]
-                add     eax, 0Ch
-                mov     ecx, [eax]
-                shl     ecx, 2
-                mov     eax, offset nasm_regvals
+genco_55:                               ; ...
+                mov     eax, [ebp+opx]  ; emit_is4:
+                add     eax, 12         ; opx->basereg (address)
+                mov     ecx, [eax]      ; opx->basereg (value)
+                shl     ecx, 2          ; * 4 (index to offset)
+                mov     eax, nasm_regvals
                 add     eax, ecx
                 mov     ecx, [eax]
-                mov     [ebp+var_2C], ecx
-                mov     eax, [ebp+var_2C]
-                shl     eax, 4
-                mov     ecx, [ebp+var_2C]
-                and     ecx, 10h
-                sar     ecx, 1
-                or      eax, ecx
-                movzx   ecx, [ebp+var_1]
-                or      eax, ecx
-                and     eax, 0FFh
+                mov     [ebp+r], ecx    ; r = nasm_regvals[opx->basereg];
+                ;mov    eax, [ebp+r]
+                mov     eax, ecx  
+                shl     eax, 4          ; r << 4
+                ;mov    ecx, [ebp+r]
+                and     ecx, 10h        ; r & 0x10
+                sar     ecx, 1          ; (r & 0x10) >> 1
+                or      eax, ecx        ; (r << 4) | ((r & 0x10) >> 1)
+                ;movzx  ecx, byte [ebp+c]
+                mov     cl, [ebp+c]
+                or      eax, ecx        ; | c
+                and     eax, 0FFh       ; (char)
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
-                call    out_rawbyte
+                call    out_rawbyte     ; out_rawbyte(data, (r << 4) | ((r & 0x10) >> 1) | c);
                 add     esp, 8
-                jmp     loc_8006A67
+                jmp     genco_200       ; break;
 ; ---------------------------------------------------------------------------
 
-loc_80054E3:                            ; ...
-                mov     eax, [ebp+var_1C]
+genco_56:                               ; ...
+                mov     eax, [ebp+opx]  ; case 4(0254):
+                                        ; case ACh: case ADh: case AEh: case AFh:
                 push    eax
                 call    absolute_op
                 add     esp, 4
-                cmp     eax, 0
-                jz      loc_8005547
-                mov     eax, [ebp+var_1C]
-                add     eax, 28h
-                mov     ecx, [eax]
+                cmp     eax, 0          ; if (absolute_op(opx) &&
+                jz      genco_58
+                mov     eax, [ebp+opx]  ; (int32_t)opx->offset != (int64_t)opx->offset) {
+                add     eax, 40
+                mov     ecx, [eax]      ; (int64_t)opx->offset  /// low 32bit
                 add     eax, 4
+                ;mov    edx, [eax]      ; (int64_t)opx->offset  /// high 32bit
+                ;mov    eax, [ebp+opx]
+                ;add    eax, 40
+                ;mov    edx, ecx
+                ;sar    edx, 31         ; (extend 32bit signed value to 64bit signed value)
+                ;mov    [ebp+tmp7], ecx ; ((note: only the high 32-bit values ​​would be compared))
+                ;mov    ecx, [eax]
+                ;add    eax, 4
+                ;mov    [ebp+tmp7_h], edx
+                sar     ecx, 31
                 mov     edx, [eax]
-                mov     eax, [ebp+var_1C]
-                add     eax, 28h
-                mov     edx, ecx
-                sar     edx, 1Fh
-                mov     [ebp+var_74], ecx
-                mov     ecx, [eax]
-                add     eax, 4
-                mov     [ebp+var_78], edx
-                mov     edx, [eax]
-                mov     eax, [ebp+var_78]
-                cmp     eax, edx
-                jnz     loc_8005533
-                mov     eax, [ebp+var_74]
-                cmp     eax, ecx
-                jz      loc_8005547
+                ;mov    eax, [ebp+tmp7_h] ; (int32_t)opx->offset /// sign extented to 64bit (0 or -1)
+                ;cmp    eax, edx
+                ;jnz    genco_57
+                ;mov    eax, [ebp+tmp7]
+                ;cmp    eax, ecx
+                ;jz     genco_58
+                ; There is no need for a low 32-bit comparison here (it’s the same).
+                cmp     ecx, edx	; (high 32-bit comparison)
+                jz      genco_58
 
-loc_8005533:                            ; ...
-                mov     eax, offset A_91 ; "signed dword immediate exceeds bounds"
+genco_57:                               ; ...
+                mov     eax, L_91       ; "signed dword immediate exceeds bounds"
                 push    eax
-                mov     eax, 5102h
+                mov     eax, 5102h      ; ERR_WARNING | ERR_PASS2 | WARN_NOV
                 push    eax
-                call    nasm_error
+                call    nasm_error      ; nasm_error(ERR_WARNING | ERR_PASS2 | WARN_NOV,
+                                        ;  "signed dword immediate exceeds bounds");
                 add     esp, 8
 
-loc_8005547:                            ; ...
-                mov     eax, 1
+genco_58:                               ; ...
+                mov     eax, 1          ; OUT_SIGNED = 1
                 push    eax
-                mov     eax, 4
-                push    eax
-                mov     eax, [ebp+var_1C]
-                push    eax
-                mov     eax, [ebp+arg_0]
-                push    eax
-                call    out_imm
-                add     esp, 10h
-                jmp     loc_8006A67
+                ;mov    eax, 4
+                mov     al, 4
+                ;push   eax
+                ;mov    eax, [ebp+opx]
+                ;push   eax
+                ;mov    eax, [ebp+_data]
+                ;push   eax
+                ;call   out_imm         ; out_imm(data, opx, 4, OUT_SIGNED);
+                ;add    esp, 16
+                ;jmp    genco_200
+                jmp     genco_11   
 ; ---------------------------------------------------------------------------
 
-loc_8005568:                            ; ...
-                mov     eax, [ebp+var_20]
-                add     eax, 3
-                mov     [ebp+var_20], eax
-                mov     eax, [ebp+arg_4]
-                add     eax, 194h
-                add     eax, 2
-                mov     ecx, [ebp+arg_4]
-                add     ecx, 30h
+genco_59:                               ; ...
+                ;mov    eax, [ebp+codes] ; case4(0240):
+                                        ; case A0h: case A1h: case A2h: case A3h:
+                                        ; case 0250: (case A8h: case 168:)
+                ;add    eax, 3
+                ;mov    [ebp+codes], eax ; codes += 3;
+                add     dword [ebp+codes], 3 
+                ;mov    eax, [ebp+ins]  ; ins->evex_p[2] |= op_evexflags(&ins->oprs[0],
+                                        ;  EVEX_P2Z | EVEX_P2AAA, 2);
+                ;;add   eax, 404        ; ins->evex_p[0] (address)
+                ;;add   eax, 2          ; ins->evex_p[2] (address)
+                ;add    eax, 406
+                mov     ecx, [ebp+ins]
+                add     ecx, 48         ; &ins->oprs[0]
                 mov     edx, 2
                 push    edx
-                mov     edx, 87h
+                ;mov    edx, 135        ; EVEX_P2Z | EVEX_P2AAA /// 80h | 07h
+                mov     dl, 135
                 push    edx
                 push    ecx
-                mov     [ebp+var_7C], eax
-                call    op_evexflags
-                add     esp, 0Ch
-                mov     ecx, [ebp+var_7C]
-                movzx   ecx, [byte ptr ecx]
-                or      ecx, eax
-                mov     eax, [ebp+var_7C]
-                mov     [eax], cl
-                mov     eax, [ebp+arg_4]
-                add     eax, 194h
-                add     eax, 2
-                movzx   ecx, [byte ptr eax]
-                xor     ecx, 8
-                mov     [eax], cl
-                mov     eax, 62h
-                mov     [ebp+var_5], al
-                mov     eax, [ebp+arg_4]
-                add     eax, 184h
-                mov     ecx, [eax]
-                and     ecx, 7
+                ;mov    [ebp+tmp8], eax
+                call    op_evexflags    ; op_evexflags(&ins->oprs[0], EVEX_P2Z | EVEX_P2AAA, 2);
+                add     esp, 12
+                ;mov    ecx, [ebp+tmp8] ; ins->evex_p[2] |=
+                ;movzx  ecx, byte [ecx]
+                ;or     ecx, eax        ; |
+                ;mov    eax, [ebp+tmp8]
+                ;mov    [eax], cl       ; =
+                mov     ecx, [ebp+ins]  ; ins->evex_p[2] |= op_evexflags(&ins->oprs[0],
+                                        ;  EVEX_P2Z | EVEX_P2AAA, 2);
+                ;add    ecx, 404        ; ins->evex_p[0] (address)
+                ;add    ecx, 2          ; ins->evex_p[2] (address)
+                add     ecx, 406
+                mov     dl, [ecx]
+                or      dl, al
+                ;mov    eax, [ebp+ins]  ; ins->evex_p[2] ^= EVEX_P2VP; /* 1's complement */
+                ;add    eax, 404
+                ;add    eax, 2
+                ;movzx  ecx, byte [eax]
+                ;xor    ecx, 8          ; ^ EVEX_P2VP /// EVEX_P2VP = 8
+                ;mov    [eax], cl
+                xor	dl, 8
+                mov     [ecx], dl
+                ;mov    eax, 98         ; 62h
+                ;mov    [ebp+bytes_0], al ; bytes[0] = 0x62;
+                mov     byte [ebp+bytes_0], 62h
+                mov     eax, [ebp+ins]  ; /* EVEX.X can be set by either REX or EVEX for different reasons */
+                add     eax, 388        ; bytes[1] = ((((ins->rex & 7) << 5) |
+                ;mov    ecx, [eax]      ; (ins->evex_p[0] & (EVEX_P0X | EVEX_P0RP))) ^ 0xf0) |
+                mov     cl, [eax]
+                and     ecx, 7          ; (ins->vex_cm & EVEX_P0MM);
                 shl     ecx, 5
-                mov     eax, [ebp+arg_4]
-                add     eax, 194h
-                movzx   edx, [byte ptr eax]
-                and     edx, 50h
-                or      ecx, edx
-                xor     ecx, 0F0h
-                mov     eax, [ebp+arg_4]
-                add     eax, 18Ch
-                mov     edx, [eax]
-                and     edx, 0Fh
-                or      ecx, edx
-                mov     [ebp+var_4], cl
-                mov     eax, [ebp+arg_4]
-                add     eax, 184h
-                mov     ecx, [eax]
-                and     ecx, 8
-                shl     ecx, 4
-                mov     eax, [ebp+arg_4]
-                add     eax, 188h
-                mov     edx, [eax]
-                xor     edx, 0FFFFFFFFh
-                and     edx, 0Fh
-                shl     edx, 3
-                or      ecx, edx
-                or      ecx, 4
-                mov     eax, [ebp+arg_4]
-                add     eax, 190h
-                mov     edx, [eax]
-                and     edx, 3
-                or      ecx, edx
-                mov     [ebp+var_3], cl
-                mov     eax, [ebp+arg_4]
-                add     eax, 194h
-                add     eax, 2
-                movzx   ecx, [byte ptr eax]
-                mov     [ebp+var_2], cl
-                mov     eax, 4
+                ;mov    eax, [ebp+ins]
+                ;add    eax, 404
+                add     eax, 404-388
+                ;movzx  edx, byte [eax]
+                mov     dl, [eax]
+                and     edx, 50h        ; EVEX_P0X | EVEX_P0RP /// 40h | 10h
+                or      ecx, edx        ; a | b
+                xor     ecx, 0F0h       ; ^ 0xf0  /// ( a | b) ^ c
+                ;mov    eax, [ebp+ins]
+                ;add    eax, 396        ; ins->vex_cm (addres)
+                add     eax, 396-404
+                ;mov    edx, [eax]      ; (ins->vex_cm & EVEX_P0MM)
+                mov     dl, [eax]
+                ;and    edx, 0Fh        ; EVEX_P0MM = 0Fh
+                and     dl, 0Fh
+                or      ecx, edx        ; ((a | b) ^ c) | d
+                mov     [ebp+bytes_1], cl
+                ;mov    eax, [ebp+ins]  ; bytes[2] = ((ins->rex & REX_W) << (7 - 3)) |
+                ;add    eax, 388        ; ((~ins->vexreg & 15) << 3) |
+                add     eax, 388-396
+                ;mov    ecx, [eax]      ; (1 << 2) | (ins->vex_wlp & 3);
+                mov     cl, [eax]
+                and     ecx, 8          ; REX_W = 8
+                shl     ecx, 4          ; << (7 - 3)
+                ;mov    eax, [ebp+ins]
+                ;add    eax, 392
+                add     eax, 392-388
+                ;mov    edx, [eax]      ; ins->vexreg
+                ;xor    edx, 0FFFFFFFFh ; ~ins->vexreg
+                mov     dl, [eax]
+                xor     dl, 0FFh
+                and     edx, 0Fh        ; & 15
+                shl     edx, 3          ; << 3
+                or      dl, 4
+                or      ecx, edx        ; |
+                ;or     ecx, 4          ; (1 << 2) /// = 4
+                ;mov    eax, [ebp+ins]
+                ;add    eax, 400
+                add     eax, 400-392
+                ;mov    edx, [eax]      ; ins->vex_wlp
+                ;and    edx, 3          ; & 3
+                mov     dl, [eax]
+                and     dl, 3 
+                or      ecx, edx        ; |
+                mov     [ebp+bytes_2], cl
+                ;mov    eax, [ebp+ins]
+                ;add    eax, 404        ; ins->evex_p[0] (address)
+                ;add    eax, 2          ; ins->evex_p[2] (address)
+                add     eax, 406-400
+                ;movzx  ecx, byte [eax]
+                mov     cl, [eax] 
+                mov     [ebp+bytes_3], cl ; bytes[3] = ins->evex_p[2];
+                mov     eax, 4          ; bytes[0], bytes[1], bytes[2], bytes[3]
                 push    eax
-                lea     eax, [ebp+var_5]
+                lea     eax, [ebp+bytes_0] ; bytes (bytes[0]) address
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
-                call    out_rawdata
-                add     esp, 0Ch
-                jmp     loc_8006A67
+                call    out_rawdata     ; out_rawdata(data, bytes, 4);
+                add     esp, 12
+                jmp     genco_200       ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8005669:                            ; ...
-                mov     eax, [ebp+var_20]
+genco_60:                               ; ...
+                mov     eax, [ebp+codes] ; case4(0260):
+                                        ; case B0h: case B1h: case B2h: case B3h:
+                                        ; case 0270: (case B8h: case 184:)
                 add     eax, 2
-                mov     [ebp+var_20], eax
-                mov     eax, [ebp+arg_4]
-                add     eax, 18Ch
-                mov     ecx, [eax]
+                mov     [ebp+codes], eax ; codes += 2;
+                mov     eax, [ebp+ins]  ; if (ins->vex_cm != 1 || (ins->rex & (REX_W|REX_X|REX_B)) ||
+                                        ;     ins->prefixes[PPS_VEX] == P_VEX3) {
+                add     eax, 396
+                mov     ecx, [eax]      ; ins->vex_cm
                 cmp     ecx, 1
-                jnz     loc_80056B9
-                mov     eax, [ebp+arg_4]
-                add     eax, 184h
+                jnz     genco_61
+                ;mov    eax, [ebp+ins]
+                ;add    eax, 388
+                add     eax, 388-396
+                ;mov    ecx, [eax]      ; ins->rex
+                mov     cl, [eax]
+                ;and    ecx, 11         ; REX_W|REX_X|REX_B /// 8 | 2 | 1
+                and     cl, 11 
+                ;cmp    ecx, 0
+                jnz     genco_61
+                mov     eax, [ebp+ins]  ; ins->prefixes[PPS_VEX] == P_VEX3) {
+                ;add    eax, 4          ; ins->prefixes[0] address
+                ;add    eax, 24         ; PPS_VEX = 6 /// 6*int_size = 24
+                add     eax, 28-388
                 mov     ecx, [eax]
-                and     ecx, 0Bh
-                cmp     ecx, 0
-                jnz     loc_80056B9
-                mov     eax, [ebp+arg_4]
-                add     eax, 4
-                add     eax, 18h
-                mov     ecx, [eax]
-                cmp     ecx, 106h
-                jz      loc_80056B9
-                jmp     loc_8005763
+                cmp     ecx, 262        ; P_VEX3 = 262
+                ;jz     genco_61
+                ;jmp    genco_65
+                jnz     genco_65
 ; ---------------------------------------------------------------------------
 
-loc_80056B9:                            ; ...
-                mov     eax, [ebp+arg_4]
-                add     eax, 18Ch
+genco_61:                               ; ...
+                mov     eax, [ebp+ins]  ; bytes[0] = (ins->vex_cm >> 6) ? 0x8f : 0xc4;
+                add     eax, 396        ; ins->vex_cm (address)
                 mov     ecx, [eax]
                 sar     ecx, 6
-                cmp     ecx, 0
-                jz      loc_80056D5
-                jmp     loc_80056DF
+                ;cmp    ecx, 0
+                ;jz     genco_62
+                jecxz   genco_62  
+                ;jmp    genco_63
 ; ---------------------------------------------------------------------------
 
-loc_80056D5:                            ; ...
-                mov     eax, 0C4h
-                jmp     loc_80056E4
+;genco_62:                               ; ...
+                ;mov    eax, 0C4h       ; 196
+genco_63:
+                mov     cl, 8Fh 
+                jmp     genco_64
 ; ---------------------------------------------------------------------------
 
-loc_80056DF:                            ; ...
-                mov     eax, 8Fh
+;genco_63:                              ; ...
+                ;mov    eax, 8Fh        ; 143
+genco_62:
+                mov     cl, 0C4h  
 
-loc_80056E4:                            ; ...
-                mov     [ebp+var_5], al
-                mov     eax, [ebp+arg_4]
-                add     eax, 18Ch
+genco_64:                               ; ...
+                ;mov    [ebp+bytes_0], al
+                mov     [ebp+bytes_0], cl
+                ;mov    eax, [ebp+ins]  ; bytes[1] = (ins->vex_cm & 31) | ((~ins->rex & 7) << 5);
+                ;add    eax, 396
                 mov     ecx, [eax]
-                and     ecx, 1Fh
-                mov     eax, [ebp+arg_4]
-                add     eax, 184h
-                mov     edx, [eax]
-                xor     edx, 0FFFFFFFFh
+                and     ecx, 31
+                ;mov    eax, [ebp+ins]
+                ;add    eax, 388
+                add     eax, 388-396 
+                ;mov    edx, [eax]      ; ins->rex
+                mov     dl, [eax]  
+                ;xor    edx, 0FFFFFFFFh ; ~ins->rex
+                xor     dl, 0FFh
                 and     edx, 7
                 shl     edx, 5
                 or      ecx, edx
-                mov     [ebp+var_4], cl
-                mov     eax, [ebp+arg_4]
-                add     eax, 184h
-                mov     ecx, [eax]
-                and     ecx, 8
-                shl     ecx, 4
-                mov     eax, [ebp+arg_4]
-                add     eax, 188h
-                mov     edx, [eax]
-                xor     edx, 0FFFFFFFFh
-                and     edx, 0Fh
-                shl     edx, 3
-                or      ecx, edx
-                mov     eax, [ebp+arg_4]
-                add     eax, 190h
-                mov     edx, [eax]
-                and     edx, 7
-                or      ecx, edx
-                mov     [ebp+var_3], cl
-                mov     eax, 3
+                mov     [ebp+bytes_1], cl
+                ;mov    eax, [ebp+ins]  ; bytes[2] = ((ins->rex & REX_W) << (7-3)) |
+                ;add    eax, 388
+                ;mov    ecx, [eax]      ; ins->rex
+                mov     cl, [eax]  
+                and     ecx, 8          ; & REX_W
+                shl     ecx, 4          ; << (7-3)
+                ;mov    eax, [ebp+ins]  ; ((~ins->vexreg & 15)<< 3) | (ins->vex_wlp & 07);
+                ;add    eax, 392
+                add     eax, 392-388
+                ;mov    edx, [eax]      ; ins->vexreg
+                mov     dl, [eax]
+                ;xor    edx, 0FFFFFFFFh ; ~ins->vexreg
+                xor     dl, 0FFh 
+                and     edx, 0Fh        ; & 15
+                shl     edx, 3          ; << 3
+                or      ecx, edx        ; |
+                ;mov    eax, [ebp+ins]
+                ;add    eax, 400
+                add     eax, 400-392
+                ;mov    edx, [eax]      ; ins->vex_wlp
+                mov     dl, [eax] 
+                and     edx, 7          ; & 7
+                or      ecx, edx        ; |
+                mov     [ebp+bytes_2], cl
+                mov     eax, 3          ; bytes[0], bytes [1], bytes [2]
                 push    eax
-                lea     eax, [ebp+var_5]
+                lea     eax, [ebp+bytes_0] ; bytes[0] address /// bytes
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
-                call    out_rawdata
-                add     esp, 0Ch
-                jmp     loc_80057BE
+                call    out_rawdata     ; out_rawdata(data, bytes, 3);
+                add     esp, 12
+                jmp     genco_66
 ; ---------------------------------------------------------------------------
 
-loc_8005763:                            ; ...
-                mov     eax, 0C5h
-                mov     [ebp+var_5], al
-                mov     eax, [ebp+arg_4]
-                add     eax, 184h
-                mov     ecx, [eax]
-                xor     ecx, 0FFFFFFFFh
-                and     ecx, 4
-                shl     ecx, 5
-                mov     eax, [ebp+arg_4]
-                add     eax, 188h
-                mov     edx, [eax]
-                xor     edx, 0FFFFFFFFh
-                and     edx, 0Fh
-                shl     edx, 3
-                or      ecx, edx
-                mov     eax, [ebp+arg_4]
-                add     eax, 190h
-                mov     edx, [eax]
-                and     edx, 7
-                or      ecx, edx
-                mov     [ebp+var_4], cl
-                mov     eax, 2
+genco_65:                               ; ...
+                ;mov    eax, 0C5h       ; } else {
+                                        ; bytes[0] = 0xc5;
+                ;mov    [ebp+bytes_0], al
+                mov     byte [ebp+bytes_0], 0C5h
+                mov     eax, [ebp+ins]  ; bytes[1] = ((~ins->rex & REX_R) << (7-2)) |
+                add     eax, 388
+                ;mov    ecx, [eax]
+                mov     cl, [eax]
+                ;xor    ecx, 0FFFFFFFFh ; ~ins->rex
+                xor     cl, 0FFh 
+                and     ecx, 4          ; REX_R = 4
+                shl     ecx, 5          ; << (7-2)
+                ;mov    eax, [ebp+ins]  ; ((~ins->vexreg & 15) << 3) | (ins->vex_wlp & 07);
+                ;add    eax, 392
+                add     eax, 392-388 
+                ;mov    edx, [eax]
+                mov     cl, [eax] 
+                ;xor    edx, 0FFFFFFFFh ; ~ins->vexreg
+                xor     dl, 0FFh
+                and     edx, 0Fh        ; & 15
+                shl     edx, 3          ; << 3
+                or      ecx, edx        ; |
+                ;mov    eax, [ebp+ins]
+                ;add    eax, 400
+                add     eax, 400-392 
+                ;mov    edx, [eax]      ; ins->vex_wlp
+                mov     dl, [eax] 
+                and     edx, 7          ; & 7
+                or      ecx, edx        ; |
+                mov     [ebp+bytes_1], cl
+                mov     eax, 2          ; bytes [0], bytes [1]
                 push    eax
-                lea     eax, [ebp+var_5]
+                lea     eax, [ebp+bytes_0] ; bytes[0] address /// bytes
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
-                call    out_rawdata
-                add     esp, 0Ch
+                call    out_rawdata     ; out_rawdata(data, bytes, 2);
+                add     esp, 12
 
-loc_80057BE:                            ; ...
-                jmp     loc_8006A67
+genco_66:                               ; ...
+                ;jmp    genco_200
 ; ---------------------------------------------------------------------------
 
-loc_80057C3:                            ; ...
-                jmp     loc_8006A67
+genco_67:                               ; ...
+                jmp     genco_200       ; case 0271: (case B9h:)
+                                        ; case 0272: (case BAh:)
+                                        ; case 0273: (case BBh:)
+                                        ; break;
 ; ---------------------------------------------------------------------------
 
-loc_80057C8:                            ; ...
-                mov     eax, [ebp+var_1C]
-                push    eax
-                call    absolute_op
+genco_68:                               ; ...
+                mov     eax, [ebp+opx]  ; case4(0274):
+                                        ; case BCh: case BDh: case BEh: case BFh:
+                push    eax             ; uint64_t uv, um;
+                                        ; int s;
+                call    absolute_op     ; if (absolute_op(opx)) {
                 add     esp, 4
-                cmp     eax, 0
-                jz      loc_8005A20
-                mov     eax, [ebp+arg_4]
-                add     eax, 184h
-                mov     ecx, [eax]
-                and     ecx, 8
-                cmp     ecx, 0
-                jz      loc_8005804
-                mov     eax, 40h
-                mov     [ebp+var_94], eax
-                jmp     loc_800585B
+                ;cmp    eax, 0
+                and	eax, eax
+                jz      genco_91        ; } else {
+                mov     eax, [ebp+ins]  ; if (ins->rex & REX_W)
+                add     eax, 388        ; ins->rex
+                ;mov    ecx, [eax]
+                mov     cl, [eax]  
+                ;and    ecx, 8          ; REX_W
+                and     cl, 8 
+                ;cmp    ecx, 0
+                jz      genco_69
+                mov     eax, 64
+                ;mov    [ebp+s], eax    ; s = 64;
+                jmp     genco_72
 ; ---------------------------------------------------------------------------
 
-loc_8005804:                            ; ...
-                mov     eax, [ebp+arg_4]
-                add     eax, 4
-                add     eax, 10h
+genco_69:                               ; ...
+                mov     eax, [ebp+ins]  ; else if (ins->prefixes[PPS_OSIZE] == P_O16)
+                ;add    eax, 4          ; ins->prefixes[0]
+                ;add    eax, 16         ; PPS_OSIZE = 4 /// 4*int_size = 16
+                add     eax, 20
                 mov     ecx, [eax]
-                cmp     ecx, 0F6h
-                jnz     loc_800582B
-                mov     eax, 10h
-                mov     [ebp+var_94], eax
-                jmp     loc_800585B
+                cmp     ecx, 246        ; P_O16 = 246
+                jnz     genco_70
+                mov     eax, 16
+                ;mov    [ebp+s], eax    ; s = 16;
+                jmp     genco_72
 ; ---------------------------------------------------------------------------
 
-loc_800582B:                            ; ...
-                mov     eax, [ebp+arg_4]
-                add     eax, 4
-                add     eax, 10h
+genco_70:                               ; ...
+                mov     eax, [ebp+ins]  ; else if (ins->prefixes[PPS_OSIZE] == P_O32)
+                ;add    eax, 4
+                ;add    eax, 16
+                add     eax, 20
                 mov     ecx, [eax]
-                cmp     ecx, 0F7h
-                jnz     loc_8005852
-                mov     eax, 20h
-                mov     [ebp+var_94], eax
-                jmp     loc_800585B
+                cmp     ecx, 247        ; P_O32 = 247
+                jnz     genco_71
+                mov     eax, 32
+                ;mov    [ebp+s], eax    ; s = 32;
+                jmp     genco_72
 ; ---------------------------------------------------------------------------
 
-loc_8005852:                            ; ...
-                mov     eax, [ebp+var_30]
-                mov     [ebp+var_94], eax
+genco_71:                               ; ...
+                mov     eax, [ebp+_bits] ; else
+genco_72:
+                mov     [ebp+s], eax    ; s = bits;
 
-loc_800585B:                            ; ...
-                mov     eax, [ebp+var_94]
+;genco_72:                              ; ...
+                ;mov    eax, [ebp+s]    ; um = (uint64_t)2 << (s-1);
                 dec     eax
                 push    eax
                 mov     eax, 2
-                mov     ecx, 0
+                ;mov    ecx, 0
+                sub     ecx, ecx ; 0
                 push    ecx
                 push    eax
-                call    __ashldi3
-                add     esp, 0Ch
-                mov     [ebp+var_90], eax
-                mov     [ebp+var_8C], edx
-                mov     eax, [ebp+var_1C]
-                add     eax, 28h
+                call    __ashldi3       ; __ashldi3:
+                                        ;     mov     ecx, [esp+12]
+                                        ;     mov     eax, [esp+4]
+                                        ;     mov     edx, [esp+8]
+                                        ;     test    ecx, 32
+                                        ;     jz      .less_than_32
+                                        ;
+                                        ;     mov     edx, eax
+                                        ;     xor     eax, eax
+                                        ;     sub     ecx, 32
+                                        ;
+                                        ; .less_than_32:
+                                        ;     shld    edx, eax, cl
+                                        ;     shl     eax, cl
+                                        ;     ret
+                add     esp, 12
+                mov     [ebp+um], eax
+                mov     [ebp+um_h], edx
+                mov     eax, [ebp+opx]
+                add     eax, 40
                 mov     ecx, [eax]
                 add     eax, 4
                 mov     edx, [eax]
-                mov     [ebp+var_88], ecx
-                mov     [ebp+var_84], edx
-                mov     eax, [ebp+var_84]
-                cmp     eax, 0
-                jb      loc_80059FD
-                jnz     loc_80058C0
-                mov     eax, [ebp+var_88]
-                cmp     eax, 7Fh
-                jbe     loc_80059FD
+                mov     [ebp+uv], ecx   ; uv = opx->offset;
+                mov     [ebp+uv_h], edx
+                mov     eax, [ebp+uv_h]
+                cmp     eax, 0          ; if (uv > 127 && uv < (uint64_t)-128 &&
+                jb      genco_90
+                jnz     genco_73
+                mov     eax, [ebp+uv]
+                cmp     eax, 127
+                jbe     genco_90
 
-loc_80058C0:                            ; ...
-                mov     eax, [ebp+var_84]
+genco_73:                               ; ...
+                mov     eax, [ebp+uv_h] ; (uint64_t)-128 = 0FFFFFFFFh:0FFFFFF80h (hi32:lo32)
                 cmp     eax, 0FFFFFFFFh
-                ja      loc_80059FD
-                jnz     loc_80058E4
-                mov     eax, [ebp+var_88]
+                ja      genco_90
+                jnz     genco_74
+                mov     eax, [ebp+uv]
                 cmp     eax, 0FFFFFF80h
-                jnb     loc_80059FD
+                jnb     genco_90
 
-loc_80058E4:                            ; ...
-                mov     eax, [ebp+var_90]
-                sub     eax, 80h
-                mov     ecx, [ebp+var_8C]
+genco_74:                               ; ...
+                mov     eax, [ebp+um]   ; (uv < um-128 || uv > um-1)) {
+                sub     eax, 128
+                mov     ecx, [ebp+um_h]
                 sbb     ecx, 0
-                mov     edx, [ebp+var_84]
+                mov     edx, [ebp+uv_h]
                 cmp     edx, ecx
-                ja      loc_8005920
-                jnz     loc_800591B
-                mov     ecx, [ebp+var_88]
+                ja      genco_76
+                jnz     genco_75
+                mov     ecx, [ebp+uv]
                 cmp     ecx, eax
-                jnb     loc_8005920
+                jnb     genco_76
 
-loc_800591B:                            ; ...
-                jmp     loc_800595E
+;genco_75:                              ; ...
+                jmp     genco_79        ; uv < um-128
 ; ---------------------------------------------------------------------------
 
-loc_8005920:                            ; ...
-                mov     eax, [ebp+var_90]
+genco_76:                               ; ...
+                mov     eax, [ebp+um]
                 sub     eax, 1
-                mov     ecx, [ebp+var_8C]
+                mov     ecx, [ebp+um_h]
                 sbb     ecx, 0
-                mov     edx, [ebp+var_84]
+                mov     edx, [ebp+uv_h]
                 cmp     edx, ecx
-                jb      loc_8005959
-                jnz     loc_8005954
-                mov     ecx, [ebp+var_88]
+                jb      genco_78
+                jnz     genco_77
+                mov     ecx, [ebp+uv]
                 cmp     ecx, eax
-                jbe     loc_8005959
-
-loc_8005954:                            ; ...
-                jmp     loc_800595E
+                ;jbe    genco_78
+                ja      genco_79
+;genco_77:                              ; ...
+                ;jmp    genco_79        ; uv > um-1
 ; ---------------------------------------------------------------------------
 
-loc_8005959:                            ; ...
-                jmp     loc_80059FD
+genco_78:                               ; ...
+                jmp     genco_90        ; (end if)
 ; ---------------------------------------------------------------------------
 
-loc_800595E:                            ; ...
-                mov     eax, [ebp+var_1C]
+genco_75:
+genco_77 
+genco_79:                               ; ...
+                mov     eax, [ebp+opx]  ; (opx->type & BITS8) ?
                 mov     ecx, [eax]
                 add     eax, 4
                 mov     edx, [eax]
                 and     edx, 1
-                mov     eax, 0
-                cmp     edx, 0
-                jnz     loc_8005982
-                cmp     eax, 0
-                jz      loc_8005987
-
-loc_8005982:                            ; ...
-                jmp     loc_80059E3
+                ;mov    eax, 0
+                ;cmp    edx, 0
+                ;jnz    genco_80
+                ;cmp    eax, 0
+                ;jz     genco_81
+;genco_80:                              ; ...
+                ;jmp    genco_88        ; (opx->type & BITS8) ? "signed byte" :
+                jnz     genco_80                  
 ; ---------------------------------------------------------------------------
 
-loc_8005987:                            ; ...
-                mov     eax, [ebp+var_94]
-                cmp     eax, 10h
-                mov     eax, 0
-                setz    al
-                cmp     eax, 0
-                jz      loc_80059A6
-                jmp     loc_80059D9
+genco_81:                               ; ...
+                mov     eax, [ebp+s]    ; s == 16 ? "word" :
+                cmp     eax, 16
+                ;mov    eax, 0
+                ;setz   al
+                ;cmp    eax, 0
+                ;jz     genco_82
+                ;jmp    genco_86
+                je      genco_86
 ; ---------------------------------------------------------------------------
 
-loc_80059A6:                            ; ...
-                mov     eax, [ebp+var_94]
-                cmp     eax, 20h
-                mov     eax, 0
-                setz    al
-                cmp     eax, 0
-                jz      loc_80059C5
-                jmp     loc_80059CF
+genco_82:                               ; ...
+                ;mov    eax, [ebp+s]    ; s == 32 ? "dword" :
+                cmp     eax, 32
+                ;mov    eax, 0
+                ;setz   al
+                ;cmp    eax, 0
+                ;jz     genco_83        ; "signed dword");
+                ;jmp    genco_84
+                je      genco_84  
 ; ---------------------------------------------------------------------------
 
-loc_80059C5:                            ; ...
-                mov     eax, offset A_96 ; "signed dword"
-                jmp     loc_80059D4
+genco_83:                               ; ...
+                mov     eax, L_96       ; "signed dword"
+                jmp     genco_85
 ; ---------------------------------------------------------------------------
 
-loc_80059CF:                            ; ...
-                mov     eax, offset A_95 ; "dword"
+genco_84:                               ; ...
+                mov     eax, L_95       ; "dword"
 
-loc_80059D4:                            ; ...
-                jmp     loc_80059DE
+;genco_85:                              ; ...
+                jmp     genco_87
 ; ---------------------------------------------------------------------------
 
-loc_80059D9:                            ; ...
-                mov     eax, offset A_94 ; "word"
+genco_86:                               ; ...
+                mov     eax, L_94       ; "word"
 
-loc_80059DE:                            ; ...
-                jmp     loc_80059E8
+;genco_87:                              ; ...
+                jmp     genco_89
 ; ---------------------------------------------------------------------------
 
-loc_80059E3:                            ; ...
-                mov     eax, offset A_93 ; "signed byte"
+genco_80:
+genco_88:                               ; ...
+                mov     eax, L_93       ; "signed byte"
 
-loc_80059E8:                            ; ...
+genco_85:
+genco_87:
+genco_89:                               ; ...
                 push    eax
-                mov     eax, offset A_92 ; "%s value exceeds bounds"
+                mov     eax, L_92       ; "%s value exceeds bounds"
                 push    eax
-                mov     eax, 5102h
+                mov     eax, 5102h      ; ERR_WARNING | ERR_PASS2 | WARN_NOV,
                 push    eax
-                call    nasm_error
-                add     esp, 0Ch
+                call    nasm_error      ; /* If this wasn't explicitly byte-sized, warn as though we
+                                        ;  * had fallen through to the imm16/32/64 case. */
+                                        ;
+                                        ; nasm_error(ERR_WARNING | ERR_PASS2 | WARN_NOV,
+                                        ;  "%s value exceeds bounds", (opx->type & BITS8) ? "signed byte" :
+                                        ;  s == 16 ? "word" : s == 32 ? "dword" : "signed dword");
+                add     esp, 12
 
-loc_80059FD:                            ; ...
-                mov     eax, [ebp+var_88]
-                and     eax, 0FFh
-                mov     ecx, 0
+genco_90:                               ; ...
+                ;mov    eax, [ebp+uv]   ; /* Output as a raw byte to avoid byte overflow check */
+                mov     al, [ebp+uv] 
+                and     eax, 0FFh       ; (uint8_t)uv
+                ;mov    ecx, 0
+                xor     ecx, ecx ; 0
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
-                call    out_rawbyte
+                call    out_rawbyte     ; out_rawbyte(data, (uint8_t)uv);
                 add     esp, 8
-                jmp     loc_8005A3C
+                jmp     genco_92
 ; ---------------------------------------------------------------------------
 
-loc_8005A20:                            ; ...
-                mov     eax, 0
+genco_91:                               ; ...
+                ;mov    eax, 0          ; } else {
+                xor     eax, eax ; 0
                 push    eax
-                mov     eax, 1
+                ;mov    eax, 1
+                mov     al, 1 
                 push    eax
-                mov     eax, [ebp+var_1C]
+                mov     eax, [ebp+opx]
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
-                call    out_imm
-                add     esp, 10h
+                call    out_imm         ; out_imm(data, opx, 1, OUT_WRAP); /* XXX: OUT_SIGNED? */
+                add     esp, 16         ; }
 
-loc_8005A3C:                            ; ...
-                jmp     loc_8006A67
+genco_92:                               ; ...
+                ;jmp    genco_200       ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8005A41:                            ; ...
-                jmp     loc_8006A67
+genco_93:                               ; ...
+                jmp     genco_200       ; case4(0300):
+                                        ; case C0h: case C1h: case C2h: case C3h:
 ; ---------------------------------------------------------------------------
 
-loc_8005A46:                            ; ...
-                mov     eax, [ebp+var_30]
-                cmp     eax, 20h
-                jnz     loc_8005A8A
-                mov     eax, 0F1h
+genco_94:                               ; ...
+                mov     eax, [ebp+_bits] ; case 0310: (case C8h:)
+                cmp     eax, 32         ; if (bits == 32 && !has_prefix(ins, PPS_ASIZE, P_A16))
+                jnz     genco_96
+                mov     eax, 241        ; P_A16 = 241
                 push    eax
-                mov     eax, 5
+                mov     eax, 5          ; PPS_ASIZE = 5  /* Address size prefix */
                 push    eax
-                mov     eax, [ebp+arg_4]
+                mov     eax, [ebp+ins]
                 push    eax
                 call    has_prefix
-                add     esp, 0Ch
-                cmp     eax, 0
-                jz      loc_8005A78
-                jmp     loc_8005A8A
+                add     esp, 12
+                ;cmp    eax, 0
+                or      eax, eax
+                jz      genco_95
+                ;jmp    genco_96
+                jmp     genco_200 
 ; ---------------------------------------------------------------------------
 
-loc_8005A78:                            ; ...
+genco_95:                               ; ...
                 mov     eax, 67h
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
-                call    out_rawbyte
+                call    out_rawbyte     ; out_rawbyte(data, 0x67);
                 add     esp, 8
 
-loc_8005A8A:                            ; ...
-                jmp     loc_8006A67
+genco_96:                               ; ...
+                jmp     genco_200       ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8005A8F:                            ; ...
-                mov     eax, [ebp+var_30]
-                cmp     eax, 20h
-                jz      loc_8005AD3
-                mov     eax, 0F2h
+genco_97:                               ; ...
+                mov     eax, [ebp+_bits] ; case 0311: (case C9h:)
+                cmp     eax, 32         ; if (bits != 32 && !has_prefix(ins, PPS_ASIZE, P_A32))
+                jz      genco_99
+                mov     eax, 242        ; P_A32 = 242
                 push    eax
-                mov     eax, 5
+                mov     eax, 5          ; PPS_ASIZE = 5
                 push    eax
-                mov     eax, [ebp+arg_4]
+                mov     eax, [ebp+ins]
                 push    eax
                 call    has_prefix
-                add     esp, 0Ch
-                cmp     eax, 0
-                jz      loc_8005AC1
-                jmp     loc_8005AD3
+                add     esp, 12
+                ;cmp    eax, 0
+                or      eax, eax    
+                jz      genco_98
+                ;jmp    genco_99
+                jmp     genco_200 
 ; ---------------------------------------------------------------------------
 
-loc_8005AC1:                            ; ...
+genco_98:                               ; ...
                 mov     eax, 67h
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
-                call    out_rawbyte
+                call    out_rawbyte     ; out_rawbyte(data, 0x67);
                 add     esp, 8
 
-loc_8005AD3:                            ; ...
-                jmp     loc_8006A67
+genco_99:                               ; ...
+                ;jmp    genco_200       ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8005AD8:                            ; ...
-                jmp     loc_8006A67
+genco_100:                              ; ...
+                jmp     genco_200       ; case 0312: (case CAh:)
 ; ---------------------------------------------------------------------------
 
-loc_8005ADD:                            ; ...
-                mov     eax, [ebp+arg_4]
-                add     eax, 184h
-                mov     ecx, 0
-                mov     [eax], ecx
-                jmp     loc_8006A67
+genco_101:                              ; ...
+                mov     eax, [ebp+ins]  ; case 0313: (case CBh:)
+                add     eax, 388
+                ;mov    ecx, 0
+                xor	ecx, ecx ; 0
+                mov     [eax], ecx      ;  ins->rex = 0;
+                ;jmp    genco_200
 ; ---------------------------------------------------------------------------
 
-loc_8005AF2:                            ; ...
-                jmp     loc_8006A67
+genco_102:                              ; ...
+                ;jmp    genco_200       ; case4(0314):
+                                        ; case CCh: case CDh: case CEh: case CFh:
+                                        ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8005AF7:                            ; ...
-                jmp     loc_8006A67
+genco_103:                              ; ...
+                ;jmp    genco_200       ; case 0320: (case D0h:)
+                                        ; case 0321: (case D1h:)
+                                        ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8005AFC:                            ; ...
-                jmp     loc_8006A67
+genco_104:                              ; ...
+                jmp     genco_200       ; case 0322: (case D2h:)
+                                        ; case 0323: (case D3h:)
+                                        ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8005B01:                            ; ...
-                mov     eax, [ebp+arg_4]
-                add     eax, 184h
-                mov     ecx, [eax]
-                or      ecx, 8
-                mov     [eax], ecx
-                jmp     loc_8006A67
+genco_105:                              ; ...
+                mov     eax, [ebp+ins]  ; case 0324: (case D4h:)
+                add     eax, 388
+                ;mov    ecx, [eax]      ; ins->rex
+                ;or     ecx, 8          ; REX_W = 8
+                ;mov    [eax], ecx      ; ins->rex |= REX_W;
+                or      byte [eax], 8  
+                ;jmp    genco_200
 ; ---------------------------------------------------------------------------
 
-loc_8005B16:                            ; ...
-                jmp     loc_8006A67
+genco_106:                              ; ...
+                ;jmp    genco_200       ; case 0325: (case D5h:)
+                                        ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8005B1B:                            ; ...
-                jmp     loc_8006A67
+genco_107:                              ; ...
+                jmp     genco_200       ; case 0326: (case D6h:)
+                                        ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8005B20:                            ; ...
-                mov     eax, [ebp+var_20]
-                mov     ecx, eax
+genco_108:                              ; ...
+                mov     eax, [ebp+codes] ; case 0330: (case D8h:)
+                ;mov    ecx, eax        ; out_rawbyte(data, *codes++
+                                        ;             ^ get_cond_opcode(ins->condition));
+                push	eax ; * 
                 inc     eax
-                mov     [ebp+var_20], eax
-                mov     eax, [ebp+arg_4]
-                add     eax, 24h
+                mov     [ebp+codes], eax ; *codes++
+                mov     eax, [ebp+ins]
+                add     eax, 36
                 mov     edx, [eax]
                 push    edx
-                mov     [ebp+var_98], ecx
-                call    get_cond_opcode
-                movzx   eax, al
+                ;mov    [ebp+tmp9], ecx ; *
+                call    get_cond_opcode ; get_cond_opcode(ins->condition)
+                ;movzx  eax, al
                 add     esp, 4
-                mov     ecx, [ebp+var_98]
-                movzx   ecx, [byte ptr ecx]
-                xor     ecx, eax
+                ;mov    ecx, [ebp+tmp9] ; *
+                pop     ecx ; *  
+                ;movzx  ecx, byte [ecx] ; (*codes)
+                mov     cl, [ecx]
+                xor     ecx, eax        ; ^
                 and     ecx, 0FFh
                 push    ecx
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
                 call    out_rawbyte
                 add     esp, 8
-                jmp     loc_8006A67
+                ;jmp    genco_200       ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8005B66:                            ; ...
-                jmp     loc_8006A67
+genco_109:                              ; ...
+                jmp     genco_200       ; case 0331: (case D9h:)
+                                        ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8005B6B:                            ; ...
-                movzx   eax, [ebp+var_1]
-                sub     eax, 0DAh
-                add     eax, 0F2h
+genco_110:                              ; ...
+                ;movzx  eax, byte [ebp+c] 
+                                        ; case 0332: (case DAh:)
+                                        ; case 0333: (case DBh:)
+                sub     eax, 218        ; 332o
+                add     eax, 0F2h       ; 242
                 and     eax, 0FFh
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
-                call    out_rawbyte
+                call    out_rawbyte     ; out_rawbyte(data, c - 0332 + 0xF2);
                 add     esp, 8
-                jmp     loc_8006A67
+                jmp     genco_200
 ; ---------------------------------------------------------------------------
 
-loc_8005B93:                            ; ...
-                mov     eax, [ebp+arg_4]
-                add     eax, 184h
-                mov     ecx, [eax]
-                and     ecx, 4
-                cmp     ecx, 0
-                jz      loc_8005BBC
+genco_111:                              ; ...
+                mov     eax, [ebp+ins]  ; case 0334: (case DCh:)
+                add     eax, 388
+                ;mov    ecx, [eax]      ; if (ins->rex & REX_R)
+                mov     clk, [eax]
+                and     ecx, 4          ; REX_R = 4
+                ;cmp    ecx, 0
+                jz      genco_112
                 mov     eax, 0F0h
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
-                call    out_rawbyte
+                call    out_rawbyte     ; out_rawbyte(data, 0xF0);
                 add     esp, 8
 
-loc_8005BBC:                            ; ...
-                mov     eax, [ebp+arg_4]
-                add     eax, 184h
+genco_112:                              ; ...
+                mov     eax, [ebp+ins]  ; ins->rex &= ~(REX_L|REX_R);
+                add     eax, 388
                 mov     ecx, [eax]
-                and     ecx, 0FFFFFFDBh
+                ;and    ecx, 0FFFFFFDBh ; & (~(REX_L|REX_R)) /// REX_L=32, REX_R=4 /// ~36=0DBh
+                and     cl, 0DBh  
                 mov     [eax], ecx
-                jmp     loc_8006A67
+                ;jmp    genco_200       ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8005BD1:                            ; ...
-                jmp     loc_8006A67
+genco_113:                              ; ...
+                ;jmp    genco_200       ; case 0335: (case DDh:)
+                                        ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8005BD6:                            ; ...
-                jmp     loc_8006A67
+genco_114:                              ; ...
+                jmp     genco_200       ; case 0336: (case DEh:)
+                                        ; case 0337: (case DFh:)
+                                        ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8005BDB:                            ; ...
-                mov     eax, [ebp+arg_4]
-                add     eax, 30h
-                add     eax, 20h
+genco_115:                              ; ...
+                mov     eax, [ebp+ins]  ; case 0340: (case E0h:)
+                ;add    eax, 48         ; if (ins->oprs[0].segment != NO_SEG)
+                ;add    eax, 32         ; ins->oprs + 32 = ins->oprs[0].segment (address)
+                add     eax, 80 
                 mov     ecx, [eax]
-                cmp     ecx, 0FFFFFFFFh
-                jz      loc_8005C03
-                mov     eax, offset A_97 ; "non-constant BSS size in pass two"
+                cmp     ecx, 0FFFFFFFFh ; NO_SEG = -1
+                jz      genco_116
+                mov     eax, L_97       ; "non-constant BSS size in pass two"
                 push    eax
-                mov     eax, 0
+                ;mov    eax, 0
+                sub     eax, eax ; 0
                 push    eax
-                call    nasm_panic
+                call    nasm_panic      ; nasm_panic(0, "non-constant BSS size in pass two");
                 add     esp, 8
 
-loc_8005C03:                            ; ...
-                mov     eax, [ebp+arg_4]
-                add     eax, 30h
-                add     eax, 28h
+genco_116:                              ; ...
+                mov     eax, [ebp+ins]
+                ;add    eax, 48         ; ins->oprs = ins->oprs[0] (address)
+                ;add    eax, 40         ; ins->oprs + 40 = ins->oprs[0].offset (address)
+                add     eax, 88
                 mov     ecx, [eax]
                 add     eax, 4
                 mov     edx, [eax]
                 push    edx
                 push    ecx
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
-                call    out_reserve
-                add     esp, 0Ch
-                jmp     loc_8006A67
+                call    out_reserve     ; out_reserve(data, ins->oprs[0].offset);
+                add     esp, 12
+                ;jmp    genco_200       ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8005C26:                            ; ...
-                jmp     loc_8006A67
+genco_117:                              ; ...
+                ;jmp    genco_200       ; case 0341: (case E1h:)
+                                        ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8005C2B:                            ; ...
-                jmp     loc_8006A67
+genco_118:                              ; ...
+                jmp     genco_200       ; case 0360: (case F0h:)
+                                        ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8005C30:                            ; ...
-                mov     eax, 66h
+genco_119:                              ; ...
+                ;mov    eax, 66h        ; case 0361: (case F1h:)
+                mov     al, 66h
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
-                call    out_rawbyte
+                call    out_rawbyte     ; out_rawbyte(data, 0x66);
                 add     esp, 8
-                jmp     loc_8006A67
+                ;jmp    genco_200
 ; ---------------------------------------------------------------------------
 
-loc_8005C47:                            ; ...
-                jmp     loc_8006A67
+genco_120:                              ; ...
+                jmp     genco_200       ; case 0364: (case F4h:)
+                                        ; case 0365: (case F5h:)
+                                        ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8005C4C:                            ; ...
-                movzx   eax, [ebp+var_1]
-                sub     eax, 0F6h
-                add     eax, 66h
+genco_121:                              ; ...
+                ;movzx  eax, byte [ebp+c] 
+                                        ; case 0366: (case F6h:)
+                                        ; case 0367: (case F7h:)
+                sub     eax, 246        ; 366o
+                add     eax, 66h        ; 102
                 and     eax, 0FFh
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
-                call    out_rawbyte
+                call    out_rawbyte     ; out_rawbyte(data, c - 0366 + 0x66);
                 add     esp, 8
-                jmp     loc_8006A67
+                ;jmp    genco_200
 ; ---------------------------------------------------------------------------
 
-loc_8005C71:                            ; ...
-                jmp     loc_8006A67
+genco_122:                              ; ...
+                jmp     genco_200       ; case3(0370):
+                                        ; case F8h: case F9h: case FAh:
 ; ---------------------------------------------------------------------------
 
-loc_8005C76:                            ; ...
-                mov     eax, [ebp+var_30]
-                cmp     eax, 10h
-                mov     eax, 0
-                setz    al
-                cmp     eax, 0
-                jz      loc_8005C92
-                jmp     loc_8005C9C
+genco_123:                              ; ...
+                mov     eax, [ebp+_bits] ; case 0373: (case FBh:)
+                cmp     eax, 16         ; out_rawbyte(data, bits == 16 ? 3 : 5);
+                ;mov    eax, 0
+                ;setz   al
+                ;cmp    eax, 0
+                ;jz     genco_124
+                ;jmp    genco_125
+                je      genco_125
 ; ---------------------------------------------------------------------------
 
-loc_8005C92:                            ; ...
+genco_124:                              ; ...
                 mov     eax, 5
-                jmp     loc_8005CA1
+                jmp     genco_126
 ; ---------------------------------------------------------------------------
 
-loc_8005C9C:                            ; ...
-                mov     eax, 3
+genco_125:                              ; ...
+                ;mov    eax, 3
+                mov     al, 3   
 
-loc_8005CA1:                            ; ...
-                and     eax, 0FFh
+genco_126:                              ; ...
+                ;and    eax, 0FFh
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
                 call    out_rawbyte
                 add     esp, 8
-                jmp     loc_8006A67
+                jmp     genco_200       ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8005CB9:                            ; ...
-                mov     eax, 2
-                mov     [ebp+var_28], eax
-                jmp     loc_8006A67
+genco_127:                              ; ...
+                ;mov    eax, 2          ; case 0374: (case FCh:)
+                mov     al, 2 
+                mov     [ebp+eat], eax  ; eat = EA_XMMVSIB;
+                jmp     genco_200
 ; ---------------------------------------------------------------------------
 
-loc_8005CC6:                            ; ...
-                mov     eax, 3
-                mov     [ebp+var_28], eax
-                jmp     loc_8006A67
+genco_128:                              ; ...
+                ;mov    eax, 3          ; case 0375: (case FDh:)
+                mov     al, 3
+                mov     [ebp+eat], eax  ; eat = EA_YMMVSIB;
+                jmp     genco_200       ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8005CD3:                            ; ...
-                mov     eax, 4
-                mov     [ebp+var_28], eax
-                jmp     loc_8006A67
+genco_129:                              ; ...
+                ;mov    eax, 4          ; case 0376: (case FEh:)
+                mov     al, 4  
+                mov     [ebp+eat], eax  ; eat = EA_ZMMVSIB;
+                jmp     genco_200
 ; ---------------------------------------------------------------------------
 
-loc_8005CE0:                            ; ...
-                mov     eax, [ebp+arg_4]
-                add     eax, 30h
-                mov     ecx, [ebp+var_18]
+genco_130:                              ; ...
+                mov     eax, [ebp+ins]  ; case4(0100):
+                                        ;     case 40h: case 41h: case 42h: case 43h:
+                                        ; case4(0110):
+                                        ;     case 48h: case 49h: case 4Ah: case 4Bh:
+                                        ; case4(0120):
+                                        ;     case 50h: case 51h: case 52h: case 53h:
+                                        ; case4(0130):
+                                        ;     case 58h: case 59h: case 5Ah: case 5Bh:
+                                        ; case4(0200):
+                                        ;     case 80h: case 81h: case 82h: case 83h:
+                                        ; case4(0204):
+                                        ;     case 84h: case 85h: case 86h: case 87h:
+                                        ; case4(0210):
+                                        ;     case 88h: case 89h: case 8Ah: case 8Bh:
+                                        ; case4(0214):
+                                        ;     case 8Ch: case 8Dh: case 8Eh: case 8Fh:
+                                        ; case4(0220):
+                                        ;     case 90h: case 91h: case 92h: case 93h:
+                                        ; case4(0224):
+                                        ;     case 94h: case 95h: case 96h: case 97h:
+                                        ; case4(0230):
+                                        ;     case 98h: case 99h: case 9Ah: case 9Bh:
+                                        ; case4(0234):
+                                        ;     case 9Ch: case 9Dh: case 9Eh: case 9Fh:
+                add     eax, 48
+                mov     ecx, [ebp+op2]  ; ea ea_data;
+                                        ; int rfield;
+                                        ; opflags_t rflags;
+                                        ; uint8_t *p;
                 shl     ecx, 6
                 add     eax, ecx
-                mov     [ebp+var_C8], eax
-                movzx   eax, [ebp+var_1]
-                cmp     eax, 7Fh
-                jg      loc_8005D38
-                mov     eax, [ebp+var_1C]
+                mov     [ebp+_opy], eax ; struct operand *opy = &ins->oprs[op2];
+                ;movzx  eax, byte [ebp+c]
+                mov     al, [ebp+c] 
+                ;cmp    eax, 127        ; if (c <= 0177) {
+                cmp     al, 127 
+                jg      genco_131
+                mov     eax, [ebp+opx]  ; /* pick rfield from operand b (opx) */
                 push    eax
-                call    regflag
+                call    regflag         ; rflags = regflag(opx);
                 add     esp, 4
-                mov     [ebp+var_C0], eax
-                mov     [ebp+var_BC], edx
-                mov     eax, [ebp+var_1C]
-                add     eax, 0Ch
+                mov     [ebp+rflags], eax
+                mov     [ebp+rflags_h], edx
+                mov     eax, [ebp+opx]
+                add     eax, 12         ; opx->basereg (address)
                 mov     ecx, [eax]
-                shl     ecx, 2
-                mov     eax, offset nasm_regvals
+                shl     ecx, 2          ; * 4
+                mov     eax, nasm_regvals
                 add     eax, ecx
                 mov     ecx, [eax]
-                mov     [ebp+var_B4], ecx
-                jmp     loc_8005D5B
+                mov     [ebp+rfield], ecx ; rfield = nasm_regvals[opx->basereg];
+                jmp     genco_132
 ; ---------------------------------------------------------------------------
 
-loc_8005D38:                            ; ...
-                mov     eax, 0
-                mov     ecx, 0
-                mov     [ebp+var_C0], eax
-                mov     [ebp+var_BC], ecx
-                movzx   eax, [ebp+var_1]
-                and     eax, 7
-                mov     [ebp+var_B4], eax
+genco_131:                              ; ...
+                ;mov    eax, 0          ; } else {
+                ;mov    ecx, 0          ; /* rfield is constant */
+                xor	eax, eax ; 0 
+                mov     [ebp+rflags], eax ; rflags = 0;
+                ;mov    [ebp+rflags_h], ecx
+                mov     [ebp+rflags_h], eax ; 0
+                ;movzx  eax, byte [ebp+c]
+                ;and    eax, 7
+                mov     al, [ebp+c]
+                and	al, 7  
+                mov     [ebp+rfield], eax ; rfield = c & 7;
 
-loc_8005D5B:                            ; ...
-                lea     eax, [ebp+var_34]
+genco_132:                              ; ...
+                lea     eax, [ebp+errmsg] ; if (process_ea(opy, &ea_data, bits,
+                                        ;       rfield, rflags, ins, &errmsg) != eat)
                 push    eax
-                mov     eax, [ebp+arg_4]
+                mov     eax, [ebp+ins]
                 push    eax
-                mov     eax, [ebp+var_C0]
-                mov     ecx, [ebp+var_BC]
+                mov     eax, [ebp+rflags]
+                mov     ecx, [ebp+rflags_h]
                 push    ecx
                 push    eax
-                mov     eax, [ebp+var_B4]
+                mov     eax, [ebp+rfield]
                 push    eax
-                mov     eax, [ebp+var_30]
+                mov     eax, [ebp+_bits]
                 push    eax
-                lea     eax, [ebp+var_B0]
+                lea     eax, [ebp+ea_data]
                 push    eax
-                mov     eax, [ebp+var_C8]
+                mov     eax, [ebp+_opy]
                 push    eax
                 call    process_ea
-                add     esp, 20h
-                mov     ecx, [ebp+var_28]
-                cmp     eax, ecx
-                jz      loc_8005DB5
-                mov     eax, [ebp+var_34]
+                add     esp, 32
+                mov     ecx, [ebp+eat]
+                cmp     eax, ecx        ; if (process_ea(...)) != eat
+                jz      genco_133
+                mov     eax, [ebp+errmsg]
                 push    eax
-                mov     eax, offset A_98 ; "%s"
+                mov     eax, L_98       ; "%s"
                 push    eax
                 mov     eax, 3
                 push    eax
-                call    nasm_error
-                add     esp, 0Ch
+                call    nasm_error      ; nasm_error(ERR_NONFATAL, "%s", errmsg);
+                add     esp, 12
 
-loc_8005DB5:                            ; ...
-                lea     eax, [ebp+var_5]
-                mov     [ebp+var_C4], eax
-                mov     eax, [ebp+var_C4]
+genco_133:                              ; ...
+                lea     eax, [ebp+bytes_0] ; bytes[0] /// bytes
+                ;mov    [ebp+p], eax    ; p = bytes;
+                ;mov    eax, [ebp+p]
                 mov     ecx, eax
                 inc     eax
-                mov     [ebp+var_C4], eax
-                movzx   eax, [ebp+var_A0]
-                mov     [ecx], al
-                mov     eax, [ebp+var_AC]
-                cmp     eax, 0
-                jz      loc_8005DFD
-                mov     eax, [ebp+var_C4]
+                mov     [ebp+p], eax    ; *p++
+                ;movzx  eax, byte [ebp+ea_data_modrm]
+                mov     al, [ebp+ea_data_modrm]
+                mov     [ecx], al       ; *p++ = ea_data.modrm;
+                mov     eax, [ebp+ea_data_sib_pr]
+                cmp     eax, 0          ; if (ea_data.sib_present)
+                jz      genco_134
+                mov     eax, [ebp+p]
                 mov     ecx, eax
                 inc     eax
-                mov     [ebp+var_C4], eax
-                movzx   eax, [ebp+var_9F]
-                mov     [ecx], al
+                mov     [ebp+p], eax    ; *p++
+                ;movzx  eax, byte [ebp+ea_data_sib]
+                mov     al, [ebp+ea_data_sib]
+                mov     [ecx], al       ; *p++ = ea_data.sib;
 
-loc_8005DFD:                            ; ...
-                mov     eax, [ebp+var_C4]
-                lea     ecx, [ebp+var_5]
+genco_134:                              ; ...
+                mov     eax, [ebp+p]
+                lea     ecx, [ebp+bytes_0]
                 sub     eax, ecx
                 push    eax
-                lea     eax, [ebp+var_5]
+                ;lea    eax, [ebp+bytes_0]
+                ;push   eax
+                push    ecx
+                mov     eax, [ebp+_data]
                 push    eax
-                mov     eax, [ebp+arg_0]
-                push    eax
-                call    out_rawdata
-                add     esp, 0Ch
-                mov     eax, [ebp+var_A8]
-                cmp     eax, 0
-                jz      loc_8005F97
-                movsx   eax, [ebp+var_9C]
-                cmp     eax, 0
-                jz      loc_8005E57
-                movsx   eax, [ebp+var_9C]
+                call    out_rawdata     ; out_rawdata(data, bytes, p - bytes);
+                add     esp, 12
+                ;mov    eax, [ebp+ea_data_bytes]
+                                        ; /* Make sure the address gets the right offset
+                                        ;  * in case the line breaks in the .lst file */
+                ;cmp    eax, 0          ; if (ea_data.bytes) {
+                cmp     dword [ebp+ea_data_bytes], 0
+                jz      genco_144
+                ;movsx  eax, byte [ebp+ea_data_disp8] 
+                                        ; /* use compressed displacement, if available */
+                mov     al, [ebp+ea_data_disp8] 
+                ;cmp    eax, 0          ; if (ea_data.disp8) {
+                cmp     al, 0
+                jz      genco_135
+                ;movsx  eax, byte [ebp+ea_data_disp8]
                 and     eax, 0FFh
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
-                call    out_rawbyte
+                call    out_rawbyte     ; out_rawbyte(data, ea_data.disp8);
                 add     esp, 8
-                jmp     loc_8005F97
+                jmp     genco_144
 ; ---------------------------------------------------------------------------
 
-loc_8005E57:                            ; ...
-                movzx   eax, [ebp+var_9D]
-                cmp     eax, 0
-                jz      loc_8005E86
-                mov     eax, [ebp+var_A8]
+genco_135:                              ; ...
+                ;movzx  eax, byte [ebp+ea_data_rip]
+                                        ; } else if (ea_data.rip) {
+                mov     al, [ebp+ea_data_rip]
+                ;cmp    eax, 0
+                cmp     al, 0 
+                jz      genco_136
+                mov     eax, [ebp+ea_data_bytes]
                 push    eax
-                mov     eax, [ebp+var_C8]
+                mov     eax, [ebp+_opy]
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
-                call    out_reladdr
-                add     esp, 0Ch
-                jmp     loc_8005F97
+                call    out_reladdr     ; out_reladdr(data, opy, ea_data.bytes);
+                add     esp, 12
+                jmp     genco_144
 ; ---------------------------------------------------------------------------
 
-loc_8005E86:                            ; ...
-                mov     eax, [ebp+arg_4]
-                add     eax, 2Ch
+genco_136:                              ; ...
+                mov     eax, [ebp+ins]  ; } else {
+                add     eax, 44
                 mov     ecx, [eax]
                 sar     ecx, 3
-                mov     [ebp+var_CC], ecx
-                mov     eax, [ebp+var_C8]
-                add     eax, 28h
-                mov     ecx, [ebp+var_CC]
+                mov     [ebp+asize], ecx ; int asize = ins->addr_size >> 3;
+                mov     eax, [ebp+_opy]
+                add     eax, 40
+                mov     ecx, [ebp+asize]
                 push    ecx
                 mov     ecx, [eax]
                 add     eax, 4
                 mov     edx, [eax]
                 push    edx
                 push    ecx
-                call    overflow_general
-                add     esp, 0Ch
-                cmp     eax, 0
-                jnz     loc_8005F3A
-                mov     eax, [ebp+var_C8]
-                add     eax, 28h
-                mov     ecx, [ebp+arg_4]
-                add     ecx, 2Ch
-                mov     edx, [ecx]
+                call    overflow_general ; if (overflow_general(opy->offset, asize) ||
+                add     esp, 12
+                ;cmp    eax, 0
+                and	eax, eax ; 0 
+                jnz     genco_139
+                mov     eax, [ebp+_opy]
+                add     eax, 40
+                mov     ecx, [ebp+ins]
+                add     ecx, 44
+                mov     edx, [ecx]      ; ins->addr_size
                 push    edx
-                mov     ecx, [eax]
+                mov     ecx, [eax]      ; opy->offset (low 32bit)
                 add     eax, 4
-                mov     edx, [eax]
+                mov     edx, [eax]      ; opy->offset (high 32bit)
                 push    edx
                 push    ecx
-                call    signed_bits
-                add     esp, 0Ch
-                mov     ecx, [ebp+var_C8]
-                add     ecx, 28h
-                mov     [ebp+var_D8], eax
-                mov     [ebp+var_D4], edx
-                mov     edx, [ebp+var_A8]
+                call    signed_bits     ; signed_bits(opy->offset, ins->addr_size) !=
+                add     esp, 12
+                mov     ecx, [ebp+_opy]
+                add     ecx, 40
+                ;mov    [ebp+tmp_sig_bits], eax
+                push    eax ; *   
+                ;mov    [ebp+tmp_sig_bits_h], edx
+                push	edx ; **
+                mov     edx, [ebp+ea_data_bytes]
                 shl     edx, 3
                 push    edx
                 mov     eax, [ecx]
@@ -9242,764 +9735,882 @@ loc_8005E86:                            ; ...
                 mov     edx, [ecx]
                 push    edx
                 push    eax
-                call    signed_bits
-                add     esp, 0Ch
-                mov     ecx, [ebp+var_D4]
+                call    signed_bits     ; signed_bits(opy->offset, ea_data.bytes << 3))
+                add     esp, 12
+                ;mov    ecx, [ebp+tmp_sig_bits_h]
+                pop     ecx ; **  
                 cmp     ecx, edx
-                jnz     loc_8005F30
-                mov     ecx, [ebp+var_D8]
+                pop     ecx ; *  
+                jnz     genco_137
+                ;mov    ecx, [ebp+tmp_sig_bits]
                 cmp     ecx, eax
-                jz      loc_8005F35
+                jz      genco_138
 
-loc_8005F30:                            ; ...
-                jmp     loc_8005F3A
+genco_137:                              ; ...
+                ;jmp    genco_139
 ; ---------------------------------------------------------------------------
 
-loc_8005F35:                            ; ...
-                jmp     loc_8005F49
+;genco_138:                             ; ...
+                ;jmp    genco_140
 ; ---------------------------------------------------------------------------
 
-loc_8005F3A:                            ; ...
-                mov     eax, [ebp+var_A8]
+genco_139:                              ; ...
+                mov     eax, [ebp+ea_data_bytes]
                 push    eax
-                call    warn_overflow
+                call    warn_overflow   ; warn_overflow(ea_data.bytes);
                 add     esp, 4
 
-loc_8005F49:                            ; ...
-                mov     eax, [ebp+var_CC]
-                mov     ecx, [ebp+var_A8]
+genco_138:
+genco_140:                              ; ...
+                mov     eax, [ebp+asize] ; out_imm(data, opy, ea_data.bytes,
+                                        ;  (asize > ea_data.bytes) ? OUT_SIGNED : OUT_WRAP);
+                mov     ecx, [ebp+ea_data_bytes]
                 cmp     eax, ecx
-                mov     eax, 0
-                setnle  al
-                cmp     eax, 0
-                jz      loc_8005F6D
-                jmp     loc_8005F77
+                ;mov    eax, 0
+                ;setnle  al
+                ;cmp    eax, 0
+                ;jz     genco_141
+                ;jmp    genco_142
+                jg      short genco_142      
 ; ---------------------------------------------------------------------------
 
-loc_8005F6D:                            ; ...
-                mov     eax, 0
-                jmp     loc_8005F7C
+genco_141:                              ; ...
+                mov     eax, 0          ; OUT_WRAP
+                jmp     genco_143
 ; ---------------------------------------------------------------------------
 
-loc_8005F77:                            ; ...
-                mov     eax, 1
+genco_142:                              ; ...
+                mov     eax, 1          ; OUT_SIGNED
 
-loc_8005F7C:                            ; ...
+genco_143:                              ; ...
                 push    eax
-                mov     eax, [ebp+var_A8]
+                mov     eax, [ebp+ea_data_bytes]
                 push    eax
-                mov     eax, [ebp+var_C8]
+                mov     eax, [ebp+_opy]
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+_data]
                 push    eax
-                call    out_imm
-                add     esp, 10h
+                call    out_imm         ; out_imm(data, opy, ea_data.bytes, ?);
+                add     esp, 16
 
-loc_8005F97:                            ; ...
-                jmp     loc_8006A67
+genco_144:                              ; ...
+                jmp     genco_200       ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8005F9C:                            ; ...
-                movzx   eax, [ebp+var_1]
+genco_145:                              ; ...
+                ;movzx  eax, byte [ebp+c] ; case default:
                 push    eax
-                movzx   eax, [ebp+var_1]
+                ;movzx  eax, byte [ebp+c]
                 push    eax
-                mov     eax, offset A_99 ; "internal instruction table corrupt: ins"...
+                mov     eax, L_99       ; "internal instruction table corrupt: ins"...
                 push    eax
-                mov     eax, 0
+                ;mov    eax, 0
+                xor	eax, eax ; 0
                 push    eax
-                call    nasm_panic
-                add     esp, 10h
-                jmp     loc_8006A67
+                call    nasm_panic      ; nasm_panic(0, "internal instruction table corrupt"
+                                        ;   ": instruction code \\%o (0x%02X) given", c, c);
+                add     esp, 16
+                jmp     genco_200       ; break;
 ; ---------------------------------------------------------------------------
-                jmp     loc_8006A67
-; ---------------------------------------------------------------------------
-
-loc_8005FC4:                            ; ...
-                movzx   eax, [ebp+var_1]
-                cmp     eax, 85h
-                jg      loc_800648D
-                cmp     eax, 85h
-                jge     loc_8005CE0
-                cmp     eax, 2Eh
-                jg      loc_8006242
-                cmp     eax, 2Eh
-                jge     loc_80051E3
-                cmp     eax, 17h
-                jg      loc_8006123
-                cmp     eax, 17h
-                jge     loc_8004F9B
-                cmp     eax, 0Ch
-                jg      loc_80060A8
-                cmp     eax, 0Ch
-                jge     loc_8004F75
-                cmp     eax, 6
-                jg      loc_8006068
-                cmp     eax, 6
-                jge     loc_8004F1E
-                cmp     eax, 3
-                jg      loc_8006051
-                cmp     eax, 3
-                jge     loc_8004EE8
-                cmp     eax, 1
-                jz      loc_8004EE8
-                cmp     eax, 2
-                jz      loc_8004EE8
-                jmp     loc_8005F9C
+                ;jmp    genco_200
 ; ---------------------------------------------------------------------------
 
-loc_8006051:                            ; ...
-                cmp     eax, 4
-                jz      loc_8004EE8
-                cmp     eax, 5
-                jz      loc_8004F1E
-                jmp     loc_8005F9C
+genco_146:                              ; ...
+                movzx   eax, byte [ebp+c] ; switch (c) {
+                ;cmp    eax, 85h  
+                cmp     al, 85h
+                jg      genco_174
+                ;cmp    al, 85h
+                ;jge    genco_130       ; case4(0204):
+                                        ; case 84h: case 85h: case 86h: case 87h:
+                je      genco_130  
+                cmp     al, 2Eh
+                jg      genco_161
+                ;cmp    al, 2Eh
+                ;jge    genco_29        ; case4(054):
+                                        ; case 2Ch: case 2Dh: case 2Eh: case 2Fh:
+                je      genco_29  
+                cmp     al, 17h
+                jg      genco_153
+                ;cmp    al, 17h
+                ;jge    genco_7
+                je      genco_7 
+                cmp     al, 0Ch
+                jg      genco_150
+                ;cmp    al, 0Ch
+                ;jge    genco_5         ; case4(014):
+                                        ; case 0Ch: case 0Dh: case 0Eh: case 0Fh:
+                je      genco_5 
+                cmp     al, 6
+                jg      genco_148
+                ;cmp    al, 6
+                ;jge    genco_3         ; case 06:
+                je      genco_3
+                cmp     al, 3
+                jg      genco_147
+                ;cmp    al, 3
+                ;jge    genco_2
+                je      genco_2 
+                cmp     al, 1
+                jz      genco_2         ; case 01:
+                                        ; case 02:
+                                        ; case 03:
+                                        ; case 04:
+                cmp     al, 2
+                jz      genco_2
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006068:                            ; ...
-                cmp     eax, 9
-                jg      loc_8006091
-                cmp     eax, 9
-                jge     loc_8004F2A
-                cmp     eax, 7
-                jz      loc_8004F1E
-                cmp     eax, 8
-                jz      loc_8004F2A
-                jmp     loc_8005F9C
+genco_147:                              ; ...
+                cmp     al, 4
+                jz      genco_2
+                cmp     al, 5
+                jz      genco_3         ; case 05:
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006091:                            ; ...
-                cmp     eax, 0Ah
-                jz      loc_8004F2A
-                cmp     eax, 0Bh
-                jz      loc_8004F2A
-                jmp     loc_8005F9C
+genco_148:                              ; ...
+                cmp     al, 9
+                jg      genco_149
+                ;cmp    al, 9
+                ;jge    genco_4         ; case4(010):
+                                        ; case 08h: case 09h: case 0Ah: case 0Bh:
+                je      genco_4  
+                cmp     al, 7
+                jz      genco_3         ; case 07:
+                cmp     al, 8
+                jz      genco_4
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_80060A8:                            ; ...
-                cmp     eax, 12h
-                jg      loc_80060FA
-                cmp     eax, 12h
-                jge     loc_8004F7A
-                cmp     eax, 0Fh
-                jg      loc_80060E3
-                cmp     eax, 0Fh
-                jge     loc_8004F75
-                cmp     eax, 0Dh
-                jz      loc_8004F75
-                cmp     eax, 0Eh
-                jz      loc_8004F75
-                jmp     loc_8005F9C
+genco_149:                              ; ...
+                cmp     al, 0Ah
+                jz      genco_4
+                cmp     al, 0Bh
+                jz      genco_4
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_80060E3:                            ; ...
-                cmp     eax, 10h
-                jz      loc_8004F7A
-                cmp     eax, 11h
-                jz      loc_8004F7A
-                jmp     loc_8005F9C
+genco_150:                              ; ...
+                ;cmp    eax, 12h
+                cmp     al, 12h
+                jg      genco_152
+                ;cmp    al, 12h
+                ;jge    genco_6         ; case4(020):
+                                        ; case 10h: case 11h: case 12h: case 13h:
+                je      genco_6  
+                cmp     al, 0Fh
+                jg      genco_151
+                ;cmp    al, 0Fh
+                ;jge    genco_5
+                je      genco_5  
+                cmp     al, 0Dh
+                jz      genco_5
+                cmp     al, 0Eh
+                jz      genco_5
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_80060FA:                            ; ...
-                cmp     eax, 13h
-                jz      loc_8004F7A
-                cmp     eax, 14h
-                jz      loc_8004F9B
-                cmp     eax, 15h
-                jz      loc_8004F9B
-                cmp     eax, 16h
-                jz      loc_8004F9B
-                jmp     loc_8005F9C
+genco_151:                              ; ...
+                cmp     al, 10h
+                jz      genco_6
+                cmp     al, 11h
+                jz      genco_6
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006123:                            ; ...
-                cmp     eax, 23h
-                jg      loc_80061C7
-                cmp     eax, 23h
-                jge     loc_800509E
-                cmp     eax, 1Dh
-                jg      loc_8006187
-                cmp     eax, 1Dh
-                jge     loc_8004FDD
-                cmp     eax, 1Ah
-                jg      loc_8006170
-                cmp     eax, 1Ah
-                jge     loc_8004FBC
-                cmp     eax, 18h
-                jz      loc_8004FBC
-                cmp     eax, 19h
-                jz      loc_8004FBC
-                jmp     loc_8005F9C
+genco_152:                              ; ...
+                cmp     al, 13h
+                jz      genco_6
+                cmp     al, 14h
+                jz      genco_7         ; case4(024):
+                                        ; case 14h: case 15h: case 16h: case 17h:
+                cmp     al, 15h
+                jz      genco_7
+                cmp     al, 16h
+                jz      genco_7
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006170:                            ; ...
-                cmp     eax, 1Bh
-                jz      loc_8004FBC
-                cmp     eax, 1Ch
-                jz      loc_8004FDD
-                jmp     loc_8005F9C
+genco_153:                              ; ...
+                ;cmp    eax, 23h
+                cmp     al, 23h
+                jg      genco_157
+                ;cmp    al, 23h
+                ;jge    genco_20
+                je      genco_20 
+                cmp     al, 1Dh
+                jg      genco_155
+                ;cmp    al, 1Dh
+                ;jge    genco_9
+                je      genco_9 
+                cmp     al, 1Ah
+                jg      genco_154
+                ;cmp    al, 1Ah
+                ;jge    genco_8
+                je      genco_8 
+                cmp     al, 18h
+                jz      genco_8         ; case4(030):
+                                        ; case 18h: case 19h: case 1Ah: case 1Bh:
+                cmp     al, 19h
+                jz      genco_8
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006187:                            ; ...
-                cmp     eax, 20h
-                jg      loc_80061B0
-                cmp     eax, 20h
-                jge     loc_800509E
-                cmp     eax, 1Eh
-                jz      loc_8004FDD
-                cmp     eax, 1Fh
-                jz      loc_8004FDD
-                jmp     loc_8005F9C
+genco_154:                              ; ...
+                cmp     al, 1Bh
+                jz      genco_8
+                cmp     al, 1Ch
+                jz      genco_9
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_80061B0:                            ; ...
-                cmp     eax, 21h
-                jz      loc_800509E
-                cmp     eax, 22h
-                jz      loc_800509E
-                jmp     loc_8005F9C
+genco_155:                              ; ...
+                ;cmp    eax, 20h
+                cmp     al, 20h
+                jg      genco_156
+                ;cmp    al, 20h
+                ;jge    genco_20
+                je      genco_20 
+                cmp     al, 1Eh
+                jz      genco_9         ; case4(034):
+                                        ; case 1Ch: case 1Dh: case 1Eh: case 1Fh:
+                cmp     al, 1Fh
+                jz      genco_9
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_80061C7:                            ; ...
-                cmp     eax, 29h
-                jg      loc_8006219
-                cmp     eax, 29h
-                jge     loc_80050F4
-                cmp     eax, 26h
-                jg      loc_8006202
-                cmp     eax, 26h
-                jge     loc_80050BF
-                cmp     eax, 24h
-                jz      loc_80050BF
-                cmp     eax, 25h
-                jz      loc_80050BF
-                jmp     loc_8005F9C
+genco_156:                              ; ...
+                cmp     al, 21h
+                jz      genco_20
+                cmp     al, 22h
+                jz      genco_20
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006202:                            ; ...
-                cmp     eax, 27h
-                jz      loc_80050BF
-                cmp     eax, 28h
-                jz      loc_80050F4
-                jmp     loc_8005F9C
+genco_157:                              ; ...
+                ;cmp    eax, 29h
+                cmp     al, 29h
+                jg      genco_160
+                ;cmp    al, 29h
+                ;jge    genco_22
+                je      genco_22  
+                cmp     al, 26h
+                jg      genco_158
+                ;cmp    al, 26h
+                ;jge    genco_21
+                je      genco_21
+                cmp     al, 24h
+                jz      genco_21
+                cmp     al, 25h
+                jz      genco_21
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006219:                            ; ...
-                cmp     eax, 2Ah
-                jz      loc_80050F4
-                cmp     eax, 2Bh
-                jz      loc_80050F4
-                cmp     eax, 2Ch
-                jz      loc_80051E3
-                cmp     eax, 2Dh
-                jz      loc_80051E3
-                jmp     loc_8005F9C
+genco_158:                              ; ...
+                cmp     al, 27h
+                jz      genco_21
+                cmp     al, 28h
+                jz      genco_22
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006242:                            ; ...
-                cmp     eax, 49h
-                jg      loc_8006373
-                cmp     eax, 49h
-                jge     loc_8005CE0
-                cmp     eax, 3Ah
-                jg      loc_80062F8
-                cmp     eax, 3Ah
-                jge     loc_80052DA
-                cmp     eax, 34h
-                jg      loc_80062B8
-                cmp     eax, 34h
-                jge     loc_800521F
-                cmp     eax, 31h
-                jg      loc_80062A1
-                cmp     eax, 31h
-                jge     loc_8005204
-                cmp     eax, 2Fh
-                jz      loc_80051E3
-                cmp     eax, 30h
-                jz      loc_8005204
-                jmp     loc_8005F9C
+genco_160:                              ; ...
+                cmp     al, 2Ah
+                jz      genco_22
+                cmp     al, 2Bh
+                jz      genco_22        ; case4(050):
+                                        ; case 28h: case 29h: case 2Ah: case 2Bh:
+                cmp     al, 2Ch
+                jz      genco_29
+                cmp     al, 2Dh
+                jz      genco_29        ; case4(054):
+                                        ; case 2Ch: case 2Dh: case 2Eh: case 2Fh:
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_80062A1:                            ; ...
-                cmp     eax, 32h
-                jz      loc_8005204
-                cmp     eax, 33h
-                jz      loc_8005204
-                jmp     loc_8005F9C
+genco_161:                              ; ...
+                ;cmp    eax, 49h 
+                cmp     al, 49h
+                jg      genco_168
+                ;cmp    al, 49h
+                ;jge    genco_130       ; case4(0110):
+                                        ; case 48h: case 49h: case 4Ah: case 4Bh:
+                je      genco_130
+                cmp     al, 3Ah
+                jg      genco_165
+                ;cmp    al, 3Ah
+                ;jge    genco_42
+                je      genco_42 
+                cmp     al, 34h
+                jg      genco_163
+                ;cmp    al, 34h
+                ;jge    genco_31        ; case4(064):
+                                        ; case 34h: case 35h: case 36h: case 37h:
+                je      genco_31 
+                cmp     al, 31h
+                jg      genco_162
+                ;cmp    al, 31h
+                ;jge    genco_30
+                je      genco_30 
+                cmp     al, 2Fh
+                jz      genco_29
+                cmp     al, 30h
+                jz      genco_30        ; case4(060):
+                                        ; case 30h: case 31h: case 32h: case 33h:
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_80062B8:                            ; ...
-                cmp     eax, 37h
-                jg      loc_80062E1
-                cmp     eax, 37h
-                jge     loc_800521F
-                cmp     eax, 35h
-                jz      loc_800521F
-                cmp     eax, 36h
-                jz      loc_800521F
-                jmp     loc_8005F9C
+genco_162:                              ; ...
+                cmp     al, 32h
+                jz      genco_30
+                cmp     al, 33h
+                jz      genco_30
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_80062E1:                            ; ...
-                cmp     eax, 38h
-                jz      loc_80052DA
-                cmp     eax, 39h
-                jz      loc_80052DA
-                jmp     loc_8005F9C
+genco_163:                              ; ...
+                ;cmp    eax, 37h
+                cmp     al, 37h
+                jg      genco_164
+                ;cmp    al, 37h
+                ;jge    genco_31
+                je      genco_31
+                cmp     al, 35h
+                jz      genco_31
+                cmp     al, 36h
+                jz      genco_31        ; case4(064):
+                                        ; case 34h: case 35h: case 36h: case 37h:
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_80062F8:                            ; ...
-                cmp     eax, 40h
-                jg      loc_800634A
-                cmp     eax, 40h
-                jge     loc_8005CE0
-                cmp     eax, 3Dh
-                jg      loc_8006333
-                cmp     eax, 3Dh
-                jge     loc_80052F5
-                cmp     eax, 3Bh
-                jz      loc_80052DA
-                cmp     eax, 3Ch
-                jz      loc_80052F5
-                jmp     loc_8005F9C
+genco_164:                              ; ...
+                cmp     al, 38h
+                jz      genco_42
+                cmp     al, 39h
+                jz      genco_42        ; case4(070):
+                                        ; case 38h: case 39h: case 3Ah: case 3Bh:
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006333:                            ; ...
-                cmp     eax, 3Eh
-                jz      loc_80052F5
-                cmp     eax, 3Fh
-                jz      loc_80052F5
-                jmp     loc_8005F9C
+genco_165:                              ; ...
+                ;cmp    eax, 40h 
+                cmp     al, 40h
+                jg      genco_167
+                ;cmp    al, 40h
+                ;jge    genco_130       ; case4(0100):
+                                        ; case 40h: case 41h: case 42h: case 43h:
+                je      genco_130 
+                cmp     al, 3Dh
+                jg      genco_166
+                ;cmp    al, 3Dh
+                ;jge    genco_43
+                je      genco_43 
+                cmp     al, 3Bh
+                jz      genco_42
+                cmp     al, 3Ch
+                jz      genco_43        ; case4(074):
+                                        ; case 3Ch: case 3Dh: case 3Eh: case 3Fh:
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_800634A:                            ; ...
-                cmp     eax, 41h
-                jz      loc_8005CE0
-                cmp     eax, 42h
-                jz      loc_8005CE0
-                cmp     eax, 43h
-                jz      loc_8005CE0
-                cmp     eax, 48h
-                jz      loc_8005CE0
-                jmp     loc_8005F9C
+genco_166:                              ; ...
+                cmp     al, 3Eh
+                jz      genco_43
+                cmp     al, 3Fh
+                jz      genco_43
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006373:                            ; ...
-                cmp     eax, 7Ah
-                jg      loc_8006400
-                cmp     eax, 7Ah
-                jge     loc_800532F
-                cmp     eax, 53h
-                jg      loc_80063D7
-                cmp     eax, 53h
-                jge     loc_8005CE0
-                cmp     eax, 50h
-                jg      loc_80063C0
-                cmp     eax, 50h
-                jge     loc_8005CE0
-                cmp     eax, 4Ah
-                jz      loc_8005CE0
-                cmp     eax, 4Bh
-                jz      loc_8005CE0
-                jmp     loc_8005F9C
+genco_167:                              ; ...
+                cmp     al, 41h
+                jz      genco_130
+                cmp     al, 42h
+                jz      genco_130
+                cmp     al, 43h
+                jz      genco_130
+                cmp     al, 48h
+                jz      genco_130       ; case4(0110):
+                                        ; case 48h: case 49h: case 4Ah: case 4Bh:
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_80063C0:                            ; ...
-                cmp     eax, 51h
-                jz      loc_8005CE0
-                cmp     eax, 52h
-                jz      loc_8005CE0
-                jmp     loc_8005F9C
+genco_168:                              ; ...
+                ;cmp    eax, 7Ah  
+                cmp     al, 7Ah
+                jg      genco_171
+                ;cmp    al, 7Ah
+                ;jge    genco_45        ; case 0172:
+                je      genco_45
+                cmp     al, 53h
+                jg      genco_170
+                ;cmp    al, 53h
+                ;jge    genco_130
+                je      genco_130
+                cmp     al, 50h
+                jg      genco_169
+                ;cmp    al, 50h
+                ;jge    genco_130       ; case4(0120):
+                                        ; case 50h: case 51h: case 52h: case 53h:
+                je      genco_130   
+                cmp     al, 4Ah
+                jz      genco_130
+                cmp     al, 4Bh
+                jz      genco_130
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_80063D7:                            ; ...
-                cmp     eax, 58h
-                jz      loc_8005CE0
-                cmp     eax, 59h
-                jz      loc_8005CE0
-                cmp     eax, 5Ah
-                jz      loc_8005CE0
-                cmp     eax, 5Bh
-                jz      loc_8005CE0
-                jmp     loc_8005F9C
+genco_169:                              ; ...
+                cmp     al, 51h
+                jz      genco_130
+                cmp     al, 52h
+                jz      genco_130
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006400:                            ; ...
-                cmp     eax, 80h
-                jg      loc_8006458
-                cmp     eax, 80h
-                jge     loc_8005CE0
-                cmp     eax, 7Dh
-                jg      loc_8006441
-                cmp     eax, 7Dh
-                jge     loc_8005495
-                cmp     eax, 7Bh
-                jz      loc_8005462
-                cmp     eax, 7Ch
-                jz      loc_8005495
-                jmp     loc_8005F9C
+genco_170:                              ; ...
+                cmp     al, 58h        ; case4(0130):
+                                        ; case 58h: case 59h: case 5Ah: case 5Bh:
+                jz      genco_130
+                cmp     al, 59h
+                jz      genco_130
+                cmp     al, 5Ah
+                jz      genco_130
+                cmp     al, 5Bh
+                jz      genco_130
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006441:                            ; ...
-                cmp     eax, 7Eh
-                jz      loc_8005495
-                cmp     eax, 7Fh
-                jz      loc_8005495
-                jmp     loc_8005F9C
+genco_171:                              ; ...
+                ;cmp    eax, 80h  
+                cmp     al, 80h
+                jg      genco_173
+                ;cmp    al, 80h
+                ;jge    genco_130       ; case4(0200):
+                                        ; case 80h: case 81h: case 82h: case 83h:
+                je      genco_130   
+                cmp     al, 7Dh
+                jg      genco_172
+                ;cmp    al, 7Dh
+                ;jge    genco_54
+                je      genco_54 
+                cmp     al, 7Bh
+                jz      genco_53        ; case 0173:
+                cmp     al, 7Ch
+                jz      genco_54
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006458:                            ; ...
-                cmp     eax, 81h
-                jz      loc_8005CE0
-                cmp     eax, 82h
-                jz      loc_8005CE0
-                cmp     eax, 83h
-                jz      loc_8005CE0
-                cmp     eax, 84h
-                jz      loc_8005CE0
-                jmp     loc_8005F9C
+genco_172:                              ; ...
+                ;cmp    eax, 7Eh 
+                cmp     al, 7Eh
+                jz      genco_54        ; case 4(0174):
+                                        ; case 7Ch: case 7Dh: case 7Eh: case 7Fh:
+                cmp     al, 7Fh
+                jz      genco_54
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_800648D:                            ; ...
-                cmp     eax, 0BDh
-                jg      loc_8006786
-                cmp     eax, 0BDh
-                jge     loc_80057C8
-                cmp     eax, 9Ch
-                jg      loc_8006630
-                cmp     eax, 9Ch
-                jge     loc_8005CE0
-                cmp     eax, 91h
-                jg      loc_8006591
-                cmp     eax, 91h
-                jge     loc_8005CE0
-                cmp     eax, 8Bh
-                jg      loc_800653F
-                cmp     eax, 8Bh
-                jge     loc_8005CE0
-                cmp     eax, 88h
-                jg      loc_8006522
-                cmp     eax, 88h
-                jge     loc_8005CE0
-                cmp     eax, 86h
-                jz      loc_8005CE0
-                cmp     eax, 87h
-                jz      loc_8005CE0
-                jmp     loc_8005F9C
+genco_173:                              ; ...
+                cmp     al, 81h
+                jz      genco_130
+                cmp     al, 82h
+                jz      genco_130
+                cmp     al, 83h
+                jz      genco_130
+                cmp     al, 84h
+                jz      genco_130
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006522:                            ; ...
-                cmp     eax, 89h
-                jz      loc_8005CE0
-                cmp     eax, 8Ah
-                jz      loc_8005CE0
-                jmp     loc_8005F9C
+genco_174:                              ; ...
+                ;cmp    eax, 0BDh 
+                cmp     al, 0BDh
+                jg      genco_187
+                ;cmp    al, 0BDh
+                ;jge    genco_68        ; case BCh: case BDh: case BEh: case BFh:
+                je      genco_68 
+                cmp     al, 9Ch
+                jg      genco_181
+                ;cmp    al, 9Ch
+                ;jge    genco_130
+                je      genco_130    
+                cmp     al, 91h
+                jg      genco_178
+                ;cmp    al, 91h
+                ;jge    genco_130
+                je      genco_130
+                cmp     al, 8Bh
+                jg      genco_176
+                ;cmp    al, 8Bh
+                ;jge    genco_130       ; case 88h: case 89h: case 8Ah: case 8Bh:
+                je      genco_130  
+                cmp     al, 88h
+                jg      genco_175
+                ;cmp    al, 88h
+                ;jge    genco_130
+                je      genco_130
+                cmp     al, 86h
+                jz      genco_130       ; case 84h: case 85h: case 86h: case 87h:
+                cmp     al, 87h
+                jz      genco_130
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_800653F:                            ; ...
-                cmp     eax, 8Eh
-                jg      loc_8006574
-                cmp     eax, 8Eh
-                jge     loc_8005CE0
-                cmp     eax, 8Ch
-                jz      loc_8005CE0
-                cmp     eax, 8Dh
-                jz      loc_8005CE0
-                jmp     loc_8005F9C
+genco_175:                              ; ...
+                cmp     al, 89h
+                jz      genco_130
+                cmp     al, 8Ah
+                jz      genco_130
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006574:                            ; ...
-                cmp     eax, 8Fh
-                jz      loc_8005CE0
-                cmp     eax, 90h
-                jz      loc_8005CE0
-                jmp     loc_8005F9C
+genco_176:                              ; ...
+                ;cmp    eax, 8Eh 
+                cmp     al, 8Eh
+                jg      genco_177
+                ;cmp    al, 8Eh
+                ;jge    genco_130
+                je      genco_130
+                cmp     al, 8Ch
+                jz      genco_130
+                cmp     al, 8Dh
+                jz      genco_130
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006591:                            ; ...
-                cmp     eax, 97h
-                jg      loc_80065FB
-                cmp     eax, 97h
-                jge     loc_8005CE0
-                cmp     eax, 94h
-                jg      loc_80065DE
-                cmp     eax, 94h
-                jge     loc_8005CE0
-                cmp     eax, 92h
-                jz      loc_8005CE0
-                cmp     eax, 93h
-                jz      loc_8005CE0
-                jmp     loc_8005F9C
+genco_177:                              ; ...
+                ;cmp    eax, 8Fh
+                cmp     al, 8Fh
+                jz      genco_130
+                cmp     al, 90h
+                jz      genco_130
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_80065DE:                            ; ...
-                cmp     eax, 95h
-                jz      loc_8005CE0
-                cmp     eax, 96h
-                jz      loc_8005CE0
-                jmp     loc_8005F9C
+genco_178:                              ; ...
+                ;cmp    eax, 97h 
+                cmp     al, 97h
+                jg      genco_180
+                ;cmp    al, 97h
+                ;jge    genco_130       ; case4(0224):
+                                        ; case 94h: case 95h: case 96h: case 97h:
+                je      genco_130  
+                cmp     al, 94h
+                jg      genco_179
+                ;cmp    al, 94h
+                ;jge    genco_130
+                je      genco_130  
+                cmp     al, 92h
+                jz      genco_130
+                cmp     al, 93h
+                jz      genco_130       ; case4(0220):
+                                        ; case 90h: case 91h: case 92h: case 93h:
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_80065FB:                            ; ...
-                cmp     eax, 98h
-                jz      loc_8005CE0
-                cmp     eax, 99h
-                jz      loc_8005CE0
-                cmp     eax, 9Ah
-                jz      loc_8005CE0
-                cmp     eax, 9Bh
-                jz      loc_8005CE0
-                jmp     loc_8005F9C
+genco_179:                              ; ...
+                cmp     al, 95h
+                jz      genco_130
+                cmp     al, 96h
+                jz      genco_130
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006630:                            ; ...
-                cmp     eax, 0AEh
-                jg      loc_80066E7
-                cmp     eax, 0AEh
-                jge     loc_80054E3
-                cmp     eax, 0A2h
-                jg      loc_80066B2
-                cmp     eax, 0A2h
-                jge     loc_8005568
-                cmp     eax, 9Fh
-                jg      loc_8006695
-                cmp     eax, 9Fh
-                jge     loc_8005CE0
-                cmp     eax, 9Dh
-                jz      loc_8005CE0
-                cmp     eax, 9Eh
-                jz      loc_8005CE0
-                jmp     loc_8005F9C
+genco_180:                              ; ...
+                cmp     al, 98h
+                jz      genco_130       ; case4(0230):
+                                        ; case 98h: case 99h: case 9Ah: case 9Bh:
+                cmp     al, 99h
+                jz      genco_130
+                cmp     al, 9Ah
+                jz      genco_130
+                cmp     al, 9Bh
+                jz      genco_130
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006695:                            ; ...
-                cmp     eax, 0A0h
-                jz      loc_8005568
-                cmp     eax, 0A1h
-                jz      loc_8005568
-                jmp     loc_8005F9C
+genco_181:                              ; ...
+                ;cmp    eax, 0AEh
+                cmp     al, 0AEh
+                jg      genco_184
+                ;cmp    al, 0AEh
+                ;jge    genco_56
+                je      genco_56 
+                cmp     al, 0A2h
+                jg      genco_183
+                ;cmp    al, 0A2h
+                ;jge    genco_59        ; case4(0240):
+                                        ; case A0h: case A1h: case A2h: case A3h:
+                je      genco_59  
+                cmp     al, 9Fh
+                jg      genco_182
+                ;cmp    al, 9Fh
+                ;jge    genco_130
+                je      genco_130 
+                cmp     al, 9Dh
+                jz      genco_130       ; case4(0234):
+                                        ; case 9Ch: case 9Dh: case 9Eh: case 9Fh:
+                cmp     al, 9Eh
+                jz      genco_130
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_80066B2:                            ; ...
-                cmp     eax, 0A3h
-                jz      loc_8005568
-                cmp     eax, 0A8h
-                jz      loc_8005568
-                cmp     eax, 0ACh
-                jz      loc_80054E3
-                cmp     eax, 0ADh
-                jz      loc_80054E3
-                jmp     loc_8005F9C
+genco_182:                              ; ...
+                cmp     al, 0A0h
+                jz      genco_59
+                cmp     al, 0A1h
+                jz      genco_59
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_80066E7:                            ; ...
-                cmp     eax, 0B8h
-                jg      loc_8006751
-                cmp     eax, 0B8h
-                jge     loc_8005669
-                cmp     eax, 0B1h
-                jg      loc_8006734
-                cmp     eax, 0B1h
-                jge     loc_8005669
-                cmp     eax, 0AFh
-                jz      loc_80054E3
-                cmp     eax, 0B0h
-                jz      loc_8005669
-                jmp     loc_8005F9C
+genco_183:                              ; ...
+                cmp     al, 0A3h
+                jz      genco_59
+                cmp     al, 0A8h
+                jz      genco_59        ; case 0250:
+                cmp     al, 0ACh
+                jz      genco_56        ; case 4(0254):
+                                        ; case ACh: case ADh: case AEh: case AFh:
+                cmp     al, 0ADh
+                jz      genco_56
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006734:                            ; ...
-                cmp     eax, 0B2h
-                jz      loc_8005669
-                cmp     eax, 0B3h
-                jz      loc_8005669
-                jmp     loc_8005F9C
+genco_184:                              ; ...
+                ;cmp    eax, 0B8h 
+                cmp     al, 0B8h
+                jg      genco_186
+                ;cmp    al, 0B8h
+                ;jge    genco_60        ; case 0270:
+                je      genco_60
+                cmp     al, 0B1h
+                jg      genco_185
+                ;cmp    al, 0B1h
+                ;jge    genco_60        ; case4(0260):
+                                        ; case B0h: case B1h: case B2h: case B3h:
+                je      genco_60 
+                cmp     al, 0AFh
+                jz      genco_56
+                cmp     al, 0B0h
+                jz      genco_60
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006751:                            ; ...
-                cmp     eax, 0B9h
-                jz      loc_80057C3
-                cmp     eax, 0BAh
-                jz      loc_80057C3
-                cmp     eax, 0BBh
-                jz      loc_80057C3
-                cmp     eax, 0BCh
-                jz      loc_80057C8
-                jmp     loc_8005F9C
+genco_185:                              ; ...
+                cmp     al, 0B2h
+                jz      genco_60
+                cmp     al, 0B3h
+                jz      genco_60
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006786:                            ; ...
-                cmp     eax, 0D9h
-                jg      loc_8006911
-                cmp     eax, 0D9h
-                jge     loc_8005B66
-                cmp     eax, 0CDh
-                jg      loc_8006872
-                cmp     eax, 0CDh
-                jge     loc_8005AF2
-                cmp     eax, 0C3h
-                jg      loc_8006820
-                cmp     eax, 0C3h
-                jge     loc_8005A41
-                cmp     eax, 0C0h
-                jg      loc_8006803
-                cmp     eax, 0C0h
-                jge     loc_8005A41
-                cmp     eax, 0BEh
-                jz      loc_80057C8
-                cmp     eax, 0BFh
-                jz      loc_80057C8
-                jmp     loc_8005F9C
+genco_186:                              ; ...
+                cmp     al, 0B9h
+                jz      genco_67        ; case 0271:
+                cmp     al, 0BAh
+                jz      genco_67        ; case 0272:
+                cmp     al, 0BBh
+                jz      genco_67        ; case 0273:
+                cmp     al, 0BCh
+                jz      genco_68        ; case 4(0274):
+                                        ; case BCh: case BDh: case BEh: case BFh:
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006803:                            ; ...
-                cmp     eax, 0C1h
-                jz      loc_8005A41
-                cmp     eax, 0C2h
-                jz      loc_8005A41
-                jmp     loc_8005F9C
+genco_187:                              ; ...
+                ;cmp    eax, 0D9h 
+                cmp     al, 0D9h
+                jg      genco_194
+                ;cmp    al, 0D9h
+                ;jge    genco_109       ; case 0331:
+                je      genco_109
+                cmp     al, 0CDh
+                jg      genco_191
+                ;cmp    al, 0CDh
+                ;jge    genco_102       ; case4(0314):
+                                        ; case CCh: case CDh: case CEh: case CFh:
+                je      genco_102
+                cmp     al, 0C3h
+                jg      genco_189
+                ;cmp    al, 0C3h
+                ;jge    genco_93        ; case4(0300):
+                                        ; case C0h: case C1h: case C2h: case C3h:
+                je      genco_93
+                cmp     al, 0C0h
+                jg      genco_188
+                ;cmp    al, 0C0h
+                ;jge    genco_93
+                je      genco_93 
+                cmp     al, 0BEh
+                jz      genco_68
+                cmp     al, 0BFh
+                jz      genco_68
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006820:                            ; ...
-                cmp     eax, 0CAh
-                jg      loc_8006855
-                cmp     eax, 0CAh
-                jge     loc_8005AD8
-                cmp     eax, 0C8h
-                jz      loc_8005A46
-                cmp     eax, 0C9h
-                jz      loc_8005A8F
-                jmp     loc_8005F9C
+genco_188:                              ; ...
+                cmp     al, 0C1h
+                jz      genco_93
+                cmp     al, 0C2h
+                jz      genco_93
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006855:                            ; ...
-                cmp     eax, 0CBh
-                jz      loc_8005ADD
-                cmp     eax, 0CCh
-                jz      loc_8005AF2
-                jmp     loc_8005F9C
+genco_189:                              ; ...
+                ;cmp    eax, 0CAh  
+                cmp     al, 0CAh
+                jg      genco_190
+                ;cmp    al, 0CAh
+                ;jge    genco_100       ; case 0312:
+                je      genco_100   
+                cmp     al, 0C8h
+                jz      genco_94        ; case 0310:
+                cmp     al, 0C9h
+                jz      genco_97        ; case 0311:
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006872:                            ; ...
-                cmp     eax, 0D3h
-                jg      loc_80068DC
-                cmp     eax, 0D3h
-                jge     loc_8005AFC
-                cmp     eax, 0D0h
-                jg      loc_80068BF
-                cmp     eax, 0D0h
-                jge     loc_8005AF7
-                cmp     eax, 0CEh
-                jz      loc_8005AF2
-                cmp     eax, 0CFh
-                jz      loc_8005AF2
-                jmp     loc_8005F9C
+genco_190:                              ; ...
+                cmp     al, 0CBh
+                jz      genco_101       ; case 0313:
+                cmp     al, 0CCh
+                jz      genco_102       ; case4(0314):
+                                        ; case CCh: case CDh: case CEh: case CFh:
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_80068BF:                            ; ...
-                cmp     eax, 0D1h
-                jz      loc_8005AF7
-                cmp     eax, 0D2h
-                jz      loc_8005AFC
-                jmp     loc_8005F9C
+genco_191:                              ; ...
+                ;cmp    eax, 0D3h  
+                cmp     al, 0D3h
+                jg      genco_193
+                ;cmp    al, 0D3h
+                ;jge    genco_104       ; case 0323:
+                je      genco_104  
+                cmp     al, 0D0h
+                jg      genco_192
+                ;cmp    al, 0D0h
+                ;jge    genco_103       ; case 0320:
+                je      genco_103
+                cmp     al, 0CEh
+                jz      genco_102
+                cmp     al, 0CFh
+                jz      genco_102
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_80068DC:                            ; ...
-                cmp     eax, 0D4h
-                jz      loc_8005B01
-                cmp     eax, 0D5h
-                jz      loc_8005B16
-                cmp     eax, 0D6h
-                jz      loc_8005B1B
-                cmp     eax, 0D8h
-                jz      loc_8005B20
-                jmp     loc_8005F9C
+genco_192:                              ; ...
+                cmp     al, 0D1h
+                jz      genco_103       ; case 0321:
+                cmp     al, 0D2h
+                jz      genco_104       ; case 0322:
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006911:                            ; ...
-                cmp     eax, 0F4h
-                jg      loc_80069C8
-                cmp     eax, 0F4h
-                jge     loc_8005C47
-                cmp     eax, 0DFh
-                jg      loc_8006993
-                cmp     eax, 0DFh
-                jge     loc_8005BD6
-                cmp     eax, 0DCh
-                jg      loc_8006976
-                cmp     eax, 0DCh
-                jge     loc_8005B93
-                cmp     eax, 0DAh
-                jz      loc_8005B6B
-                cmp     eax, 0DBh
-                jz      loc_8005B6B
-                jmp     loc_8005F9C
+genco_193:                              ; ...
+                cmp     al, 0D4h
+                jz      genco_105       ; case 0324:
+                cmp     al, 0D5h
+                jz      genco_106       ; case 0325:
+                cmp     al, 0D6h
+                jz      genco_107       ; case 0326:
+                cmp     al, 0D8h
+                jz      genco_108       ; case 0330:
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006976:                            ; ...
-                cmp     eax, 0DDh
-                jz      loc_8005BD1
-                cmp     eax, 0DEh
-                jz      loc_8005BD6
-                jmp     loc_8005F9C
+genco_194:                              ; ...
+                ;cmp    eax, 0F4h
+                cmp     al, 0F4h
+                jg      genco_197
+                ;cmp    al, 0F4h
+                ;jge    genco_120       ; case 0364:
+                je      genco_120
+                cmp     al, 0DFh
+                jg      genco_196
+                ;cmp    al, 0DFh
+                ;jge    genco_114       ; case 0337:
+                je      genco_114
+                cmp     al, 0DCh
+                jg      genco_195
+                ;cmp    al, 0DCh
+                ;jge    genco_111       ; case 0334:
+                je      genco_111
+                cmp     al, 0DAh
+                jz      genco_110       ; case 0332:
+                cmp     al, 0DBh
+                jz      genco_110       ; case 0333:
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006993:                            ; ...
-                cmp     eax, 0E0h
-                jz      loc_8005BDB
-                cmp     eax, 0E1h
-                jz      loc_8005C26
-                cmp     eax, 0F0h
-                jz      loc_8005C2B
-                cmp     eax, 0F1h
-                jz      loc_8005C30
-                jmp     loc_8005F9C
+genco_195:                              ; ...
+                cmp     al, 0DDh
+                jz      genco_113       ; case 0335:
+                cmp     al, 0DEh
+                jz      genco_114       ; case 0336:
+                                        ; case 0337:
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_80069C8:                            ; ...
-                cmp     eax, 0FAh
-                jg      loc_8006A32
-                cmp     eax, 0FAh
-                jge     loc_8005C71
-                cmp     eax, 0F7h
-                jg      loc_8006A15
-                cmp     eax, 0F7h
-                jge     loc_8005C4C
-                cmp     eax, 0F5h
-                jz      loc_8005C47
-                cmp     eax, 0F6h
-                jz      loc_8005C4C
-                jmp     loc_8005F9C
+genco_196:                              ; ...
+                cmp     al, 0E0h
+                jz      genco_115       ; case 0340: (case E0h:)
+                cmp     al, 0E1h
+                jz      genco_117       ; case 0341:
+                cmp     al, 0F0h
+                jz      genco_118       ; case 0360: (case F0h:)
+                cmp     al, 0F1h
+                jz      genco_119       ; case 0361:
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006A15:                            ; ...
-                cmp     eax, 0F8h
-                jz      loc_8005C71
-                cmp     eax, 0F9h
-                jz      loc_8005C71
-                jmp     loc_8005F9C
+genco_197:                              ; ...
+                ;cmp    eax, 0FAh
+                cmp     al, 0FAh
+                jg      genco_199
+                ;cmp    al, 0FAh
+                ;jge    genco_122       ; case3(0370):
+                                        ; case F8h: case F9h: case FAh:
+                je      genco_122
+                cmp     al, 0F7h
+                jg      genco_198
+                ;cmp    al, 0F7h
+                ;jge    genco_121
+                je      genco_121
+                cmp     al, 0F5h
+                jz      genco_120       ; case 0365:
+                cmp     al, 0F6h
+                jz      genco_121
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006A32:                            ; ...
-                cmp     eax, 0FBh
-                jz      loc_8005C76
-                cmp     eax, 0FCh
-                jz      loc_8005CB9
-                cmp     eax, 0FDh
-                jz      loc_8005CC6
-                cmp     eax, 0FEh
-                jz      loc_8005CD3
-                jmp     loc_8005F9C
+genco_198:                              ; ...
+                cmp     al, 0F8h
+                jz      genco_122
+                cmp     al, 0F9h
+                jz      genco_122
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-loc_8006A67:                            ; ...
-                jmp     loc_8004E7D
+genco_199:                              ; ...
+                cmp     al, 0FBh
+                jz      genco_123       ; case 0373: (case FBh:)
+                cmp     al, 0FCh
+                jz      genco_127       ; case 0374:
+                cmp     al, 0FDh
+                jz      genco_128       ; case 0375:
+                cmp     al, 0FEh
+                jz      genco_129       ; case 0376:
+                jmp     genco_145
 ; ---------------------------------------------------------------------------
 
-locret_8006A6C:                         ; ...
+;genco_200:                             ; ...
+                ;jmp    genco_1
+; ---------------------------------------------------------------------------
+
+genco_201:                              ; ...
                 leave
                 retn
-endp            gencode
 
 
 ; =============== S U B R O U T I N E =======================================
