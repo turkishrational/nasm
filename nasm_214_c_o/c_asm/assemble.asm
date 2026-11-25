@@ -2,7 +2,7 @@
 ; NASM v2.14.02 - NETWIDE ASSEMBLER FOR TRDOS 386 - Erdogan Tan - 18/09/2026 
 ; Disassembled from "assemble.c" (Dissassembler: IDA)
 ; NASM Syntax: Erdogan Tan
-; Last Update: 19/11/2026
+; Last Update: 25/11/2026
 ; ===========================================================================
 ; assemble.asm
 ; ------------
@@ -217,6 +217,28 @@
 ;   uint8_t modrm, sib, rex, rip; /* the bytes themselves */
 ;   int8_t disp8;        /* compressed displacement for EVEX */
 ; } ea;
+
+; enum match_result {
+;    /* Matching errors. */
+;    MERR_INVALOP,
+;    MERR_OPSIZEMISSING,
+;    MERR_OPSIZEMISMATCH,
+;    MERR_BRNOTHERE,
+;    MERR_BRNUMMISMATCH,
+;    MERR_MASKNOTHERE,
+;    MERR_DECONOTHERE,
+;    MERR_BADCPU,
+;    MERR_BADMODE,
+;    MERR_BADHLE,
+;    MERR_ENCMISMATCH,
+;    MERR_BADBND,
+;    MERR_BADREPNE,
+;    MERR_REGSETSIZE,
+;    MERR_REGSET,
+;    /* Matching success; the conditional ones first */
+;    MOK_JUMP,   /* Matching OK but needs jmp_match() */
+;    MOK_GOOD    /* Matching unconditionally OK */
+; };
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -3494,11 +3516,11 @@ insnz_1:                                ; ...
                 ;mov    eax, [ebp+wsize]
                 cmp     eax, 0          ; asm_assert(wsize > 0);
                 jg      insnz_2
-                mov     eax, L_62       ; "wsize > 0"
+                mov     eax, A_62       ; "wsize > 0"
                 push    eax
                 mov     eax, 829        ; ('assemble.c' line 829)
                 push    eax
-                mov     eax, L_61       ; "assemble.c"
+                mov     eax, A_61       ; "assemble.c"
                 push    eax
                 call    nasm_assert_failed
                 add     esp, 12
@@ -3635,7 +3657,7 @@ insnz_11:                               ; ...
                 jnz     insnz_12
                 mov     eax, [ebp+fname]
                 push    eax
-                mov     eax, L_63       ; "`incbin': unable to get length of file "...
+                mov     eax, A_63       ; "`incbin': unable to get length of file "...
                 push    eax
                 mov     eax, 3
                 push    eax
@@ -3910,7 +3932,7 @@ bhw_5:                                  ; ...
                 call    prefix_name
                 add     esp, 4
                 push    eax
-                mov     eax, L_64       ; "%s with this instruction requires lock"
+                mov     eax, A_64       ; "%s with this instruction requires lock"
                 ;push   eax
                 ;mov    eax, 0D102h     ; ERR_WARNING | WARN_HLE | ERR_PASS2
                 ;push   eax
@@ -3929,7 +3951,7 @@ bhw_7:                                  ; ...
                 call    prefix_name
                 add     esp, 4
                 push    eax
-                mov     eax, L_65       ; "%s invalid with this instruction"
+                mov     eax, A_65       ; "%s invalid with this instruction"
 bhw_10:
                 push    eax
                 mov     eax, 0D102h     ; ERR_WARNING | WARN_HLE | ERR_PASS2
@@ -5035,7 +5057,7 @@ csz_62:                                 ; ...
                 ;cmp    eax, 0          ; P_none = 0
                 ;jz     csz_63
                 jecxz   csz_63
-                mov     eax, L_66       ; "invalid operand size prefix"
+                mov     eax, A_66       ; "invalid operand size prefix"
                 push    eax
                 mov     eax, 102h       ; ERR_WARNING | ERR_PASS2
                 push    eax
@@ -5079,7 +5101,7 @@ csz_66:                                 ; ...
                 ;cmp    eax, 0          ; P_none = 0
                 ;jz     csz_67
                 jecxz   csz_67
-                mov     eax, L_67       ; "invalid operand size prefix"
+                mov     eax, A_67       ; "invalid operand size prefix"
                 push    eax
                 mov     eax, 102h       ; ERR_WARNING | ERR_PASS2
                 push    eax
@@ -5265,7 +5287,7 @@ csz_85:                                 ; ...
 ; ---------------------------------------------------------------------------
 
 csz_86:                                 ; ...
-                mov     eax, L_68       ; "attempt to reserve non-constant quantit"...
+                mov     eax, A_68       ; "attempt to reserve non-constant quantit"...
                 push    eax
                 mov     eax, 3
                 push    eax
@@ -5284,7 +5306,7 @@ csz_87:                                 ; ...
                 and     ecx, 1          ; OPFLAG_FORWARD
                 ;cmp    ecx, 0
                 jz      csz_88
-                mov     eax, L_69       ; "forward reference in RESx can have unpr"...
+                mov     eax, A_69       ; "forward reference in RESx can have unpr"...
                 push    eax
                 mov     eax, 82h        ; ERR_WARNING | ERR_PASS1
                 push    eax
@@ -5706,7 +5728,7 @@ csz_113:                                ; ...
                 jz      csz_114
                 mov     eax, [ebp+errmsg]
                 push    eax
-                mov     eax, L_70       ; "%s"
+                mov     eax, A_70       ; "%s"
                 push    eax
                 mov     eax, 3
                 push    eax
@@ -5748,7 +5770,7 @@ csz_116:                                ; ...
                 push    eax
                 ;movzx  eax, [ebp+c]
                 push    eax
-                mov     eax, L_71       ; "internal instruction table corrupt: ins"...
+                mov     eax, A_71       ; "internal instruction table corrupt: ins"...
                 push    eax
                 mov     eax, 0
                 push    eax
@@ -6517,7 +6539,7 @@ csz_170:                                ; ...
                 and     ecx, 128        ; REX_H = 80h
                 ;cmp    ecx, 0
                 jz      csz_171
-                mov     eax, L_72       ; "instruction cannot use high registers"
+                mov     eax, A_72       ; "instruction cannot use high registers"
                 push    eax
                 mov     eax, 3
                 push    eax
@@ -6632,7 +6654,7 @@ csz_181:                                ; ...
                 and	cl, 128
                 ;cmp    ecx, 0
                 jz      csz_182
-                mov     eax, L_73       ; "cannot use high register in AVX instruc"...
+                mov     eax, A_73       ; "cannot use high register in AVX instruc"...
                 push    eax
                 mov     eax, 3
                 push    eax
@@ -6723,7 +6745,7 @@ csz_187:                                ; ...
 ; ---------------------------------------------------------------------------
 
 csz_188:                                ; ...
-                mov     eax, L_74       ; "invalid operands in non-64-bit mode"
+                mov     eax, A_74       ; "invalid operands in non-64-bit mode"
                 push    eax
                 mov     eax, 3
                 push    eax
@@ -6767,7 +6789,7 @@ csz_190:                                ; ...
 ; ---------------------------------------------------------------------------
 
 csz_191:                                ; ...
-                mov     eax, L_75       ; "invalid high-16 register in non-AVX-512"
+                mov     eax, A_75       ; "invalid high-16 register in non-AVX-512"
                 push    eax
                 mov     eax, 3
                 push    eax
@@ -6857,7 +6879,7 @@ csz_197:                                ; ...
                 and     cl, 128
                 ;cmp    ecx, 0
                 jz      csz_198
-                mov     eax, L_76       ; "cannot use high register in rex instruc"...
+                mov     eax, A_76       ; "cannot use high register in rex instruc"...
                 push    eax
                 mov     eax, 3
                 push    eax
@@ -6949,7 +6971,7 @@ csz_200:                                ; ...
 ; ---------------------------------------------------------------------------
 
 csz_201:                                ; ...
-                mov     eax, L_77       ; "invalid operands in non-64-bit mode"
+                mov     eax, A_77       ; "invalid operands in non-64-bit mode"
                 push    eax
                 mov     eax, 3
                 push    eax
@@ -7003,7 +7025,7 @@ csz_202:                                ; ...
 ; ---------------------------------------------------------------------------
 
 csz_203:                                ; ...
-                mov     eax, L_78       ; "instruction is not lockable"
+                mov     eax, A_78       ; "instruction is not lockable"
                 push    eax
                 mov     eax, 0C102h     ; ERR_WARNING | WARN_LOCK | ERR_PASS2
                 push    eax
@@ -7277,7 +7299,7 @@ epx_8:                                  ; ...
                 mov     eax, [ebp+_bits] ; case R_CS: (R_CS = 31)
                 cmp     eax, 64         ; if (bits == 64) {
                 jnz     epx_9
-                mov     eax, L_79       ; "cs segment base generated, but will be "...
+                mov     eax, A_79       ; "cs segment base generated, but will be "...
                 push    eax
                 mov     eax, 102h       ; ERR_WARNING | ERR_PASS2
                 push    eax
@@ -7297,7 +7319,7 @@ epx_10:                                 ; ...
                 mov     eax, [ebp+_bits] ; case R_DS: (R_DS = 53)
                 cmp     eax, 64         ; if (bits == 64) {
                 jnz     epx_11
-                mov     eax, L_80       ; "ds segment base generated, but will be "...
+                mov     eax, A_80       ; "ds segment base generated, but will be "...
                 push    eax
                 mov     eax, 102h
                 push    eax
@@ -7317,7 +7339,7 @@ epx_12:                                 ; ...
                 mov     eax, [ebp+_bits] ; case R_ES: (R_ES = 61)
                 cmp     eax, 64         ; if (bits == 64) {
                 jnz     epx_13
-                mov     eax, L_81       ; "es segment base generated, but will be "...
+                mov     eax, A_81       ; "es segment base generated, but will be "...
                 push    eax
                 mov     eax, 102h
                 push    eax
@@ -7353,7 +7375,7 @@ epx_16:                                 ; ...
                 mov     eax, [ebp+_bits] ; case R_SS: (R_SS = 128)
                 cmp     eax, 64         ; if (bits == 64) {
                 jnz     epx_17
-                mov     eax, L_82       ; "ss segment base generated, but will be "...
+                mov     eax, A_82       ; "ss segment base generated, but will be "...
                 push    eax
                 mov     eax, 102h
                 push    eax
@@ -7370,7 +7392,7 @@ epx_17:                                 ; ...
 ; ---------------------------------------------------------------------------
 
 epx_18:                                 ; ...
-                mov     eax, L_83       ; "segr6 and segr7 cannot be used as prefi"...
+                mov     eax, A_83       ; "segr6 and segr7 cannot be used as prefi"...
                 push    eax             ; case R_SEGR6: (R_SEGR6 = 122)
                                         ; case R_SEGR7: (R_SEGR7 = 123)
                 mov     eax, 3          ; ERR_NONFATAL = 3
@@ -7385,7 +7407,7 @@ epx_19:                                 ; ...
                 mov     eax, [ebp+_bits] ; case P_A16: (P_A16 = 241)
                 cmp     eax, 64         ; if (bits == 64) {
                 jnz     epx_20
-                mov     eax, L_84       ; "16-bit addressing is not supported in 6"...
+                mov     eax, A_84       ; "16-bit addressing is not supported in 6"...
                 push    eax
                 mov     eax, 3
                 push    eax
@@ -7427,7 +7449,7 @@ epx_24:                                 ; ...
                 mov     eax, [ebp+_bits] ; case P_A64: (P_A64 = 243)
                 cmp     eax, 64         ; if (bits != 64) {
                 jz      epx_25
-                mov     eax, L_85       ; "64-bit addressing is only supported in "...
+                mov     eax, A_85       ; "64-bit addressing is only supported in "...
                 push    eax
                 mov     eax, 3          ; ERR_NONFATAL
                 push    eax
@@ -7498,7 +7520,7 @@ epx_33:
 ; ---------------------------------------------------------------------------
 
 epx_34:                                 ; ...
-                mov     eax, L_86       ; "invalid instruction prefix"
+                mov     eax, A_86       ; "invalid instruction prefix"
                 push    eax             ; case default:
                 mov     eax, 0
                 push    eax
@@ -8226,7 +8248,7 @@ genco_24:                               ; ...
 genco_23:
 genco_25:
 genco_27:                               ; ...
-                mov     eax, L_87       ; "short jump is out of range"
+                mov     eax, A_87       ; "short jump is out of range"
                 push    eax
                 mov     eax, 3
                 push    eax
@@ -8382,7 +8404,7 @@ genco_43:                               ; ...
                 mov     ecx, [eax]      ; opx->segment
                 cmp     ecx, 0FFFFFFFFh ; NO_SEG = -1
                 jnz     genco_44
-                mov     eax, L_88       ; "value referenced by FAR is not relocata"...
+                mov     eax, A_88       ; "value referenced by FAR is not relocata"...
                 push    eax
                 mov     eax, 3          ; ERR_NONFATAL = 3
                 push    eax
@@ -8470,7 +8492,7 @@ genco_49:                               ; ...
                 ;and    eax, 7
                 and	al, 7
                 push    eax
-                mov     eax, L_89       ; "non-absolute expression not permitted a"...
+                mov     eax, A_89       ; "non-absolute expression not permitted a"...
                 push    eax
                 mov     eax, 3
                 push    eax
@@ -8508,7 +8530,7 @@ genco_50:                               ; ...
                 jz      genco_52
 
 genco_51:                               ; ...
-                mov     eax, L_90       ; "is4 argument exceeds bounds"
+                mov     eax, A_90       ; "is4 argument exceeds bounds"
                 push    eax
                 mov     eax, 5102h      ; ERR_WARNING | ERR_PASS2 | WARN_NOV
                 push    eax
@@ -8629,7 +8651,7 @@ genco_56:                               ; ...
                 jz      genco_58
 
 genco_57:                               ; ...
-                mov     eax, L_91       ; "signed dword immediate exceeds bounds"
+                mov     eax, A_91       ; "signed dword immediate exceeds bounds"
                 push    eax
                 mov     eax, 5102h      ; ERR_WARNING | ERR_PASS2 | WARN_NOV
                 push    eax
@@ -9111,19 +9133,19 @@ genco_82:                               ; ...
 ; ---------------------------------------------------------------------------
 
 genco_83:                               ; ...
-                mov     eax, L_96       ; "signed dword"
+                mov     eax, A_96       ; "signed dword"
                 jmp     genco_85
 ; ---------------------------------------------------------------------------
 
 genco_84:                               ; ...
-                mov     eax, L_95       ; "dword"
+                mov     eax, A_95       ; "dword"
 
 ;genco_85:                              ; ...
                 jmp     genco_87
 ; ---------------------------------------------------------------------------
 
 genco_86:                               ; ...
-                mov     eax, L_94       ; "word"
+                mov     eax, A_94       ; "word"
 
 ;genco_87:                              ; ...
                 jmp     genco_89
@@ -9131,13 +9153,13 @@ genco_86:                               ; ...
 
 genco_80:
 genco_88:                               ; ...
-                mov     eax, L_93       ; "signed byte"
+                mov     eax, A_93       ; "signed byte"
 
 genco_85:
 genco_87:
 genco_89:                               ; ...
                 push    eax
-                mov     eax, L_92       ; "%s value exceeds bounds"
+                mov     eax, A_92       ; "%s value exceeds bounds"
                 push    eax
                 mov     eax, 5102h      ; ERR_WARNING | ERR_PASS2 | WARN_NOV,
                 push    eax
@@ -9392,7 +9414,7 @@ genco_115:                              ; ...
                 mov     ecx, [eax]
                 cmp     ecx, 0FFFFFFFFh ; NO_SEG = -1
                 jz      genco_116
-                mov     eax, L_97       ; "non-constant BSS size in pass two"
+                mov     eax, A_97       ; "non-constant BSS size in pass two"
                 push    eax
                 ;mov    eax, 0
                 sub     eax, eax ; 0
@@ -9608,7 +9630,7 @@ genco_132:                              ; ...
                 jz      genco_133
                 mov     eax, [ebp+errmsg]
                 push    eax
-                mov     eax, L_98       ; "%s"
+                mov     eax, A_98       ; "%s"
                 push    eax
                 mov     eax, 3
                 push    eax
@@ -9802,7 +9824,7 @@ genco_145:                              ; ...
                 push    eax
                 ;movzx  eax, byte [ebp+c]
                 push    eax
-                mov     eax, L_99       ; "internal instruction table corrupt: ins"...
+                mov     eax, A_99       ; "internal instruction table corrupt: ins"...
                 push    eax
                 ;mov    eax, 0
                 xor	eax, eax ; 0
@@ -10615,1048 +10637,1277 @@ genco_201:                              ; ...
 
 ; =============== S U B R O U T I N E =======================================
 
-; Attributes: bp-based frame
-
-proc            regflag near            ; ...
-
-var_4           = dword ptr -4
-arg_0           8
-
-                push    ebp
-                mov     ebp, esp
-                sub     esp, 4
-                nop
-                mov     eax, [ebp+arg_0]
-                add     eax, 0Ch
-                mov     ecx, [eax]
-                push    ecx
-                call    is_register
-                add     esp, 4
-                cmp     eax, 0
-                jz      loc_8006A97
-                jmp     loc_8006AAB
+; ---------------------------------------------------------------------------
+; Function: regflag
+;
+; Description:
+;
+; C Declaration: static opflags_t regflag(const operand * o)
+;
+; Input (Stack): [EBP+8] = *o
+;
+; Output [EDX:EAX]: register flags (64bit)
+;
+; Modified Registers: EAX, ECX, EDX
 ; ---------------------------------------------------------------------------
 
-loc_8006A97:                            ; ...
-                mov     eax, offset A_100 ; "invalid operand passed to regflag()"
+;%assign tmp   -4
+%assign o       8
+
+regflag:
+                push    ebp
+                mov     ebp, esp
+                ;sub    esp, 4
+                ;nop
+                mov     eax, [ebp+o]
+                add     eax, 12
+                mov     ecx, [eax]      ; o->basereg
+                push    ecx
+                call    is_register     ; if (!is_register(o->basereg))
+                add     esp, 4
+                ;cmp    eax, 0
+                ;jz     rf_1
+                ;jmp    rf_2
+                and	eax, eax
+                jnz     rf_2
+; ---------------------------------------------------------------------------
+
+rf_1:                                   ; ...
+                mov     eax, A_100      ; "invalid operand passed to regflag()"
                 push    eax
-                mov     eax, 0
+                ;mov    eax, 0
+                sub     eax, eax  
                 push    eax
-                call    nasm_panic
+                call    nasm_panic      ; nasm_panic(0, "invalid operand passed to regflag()");
                 add     esp, 8
 
-loc_8006AAB:                            ; ...
-                mov     eax, [ebp+arg_0]
-                add     eax, 0Ch
+rf_2:                                   ; ...
+                mov     eax, [ebp+o]
+                add     eax, 12
                 mov     ecx, [eax]
                 shl     ecx, 3
-                mov     eax, offset nasm_reg_flags
-                add     eax, ecx
-                mov     [ebp+var_4], eax
-                mov     eax, [ebp+var_4]
-                mov     eax, [eax]
-                mov     ecx, [ebp+var_4]
+                ;mov    eax, nasm_reg_flags
+                ;add    eax, ecx
+                ;mov    [ebp+tmp], eax
+                ;mov    eax, [ebp+tmp]
+                ;mov    eax, [eax]      ; return nasm_reg_flags[o->basereg];
+                ;mov    ecx, [ebp+tmp]
+                add     ecx, nasm_reg_flags
+                mov     eax, [ecx]   
                 add     ecx, 4
                 mov     edx, [ecx]
                 leave
                 retn
-endp            regflag
 
 
 ; =============== S U B R O U T I N E =======================================
 
-; Attributes: bp-based frame
-
-proc            regval near             ; ...
-
-var_4           = dword ptr -4
-arg_0           8
-
-                push    ebp
-                mov     ebp, esp
-                sub     esp, 4
-                nop
-                mov     eax, [ebp+arg_0]
-                add     eax, 0Ch
-                mov     ecx, [eax]
-                push    ecx
-                call    is_register
-                add     esp, 4
-                cmp     eax, 0
-                jz      loc_8006AF8
-                jmp     loc_8006B0C
+; ---------------------------------------------------------------------------
+; Function: regval
+;
+; Description:
+;
+; C Declaration: static int32_t regval(const operand * o)
+;
+; Input (Stack): [EBP+8] = *o
+;
+; Output [EAX]: register value
+;
+; Modified Registers: EAX, ECX, (EDX)
 ; ---------------------------------------------------------------------------
 
-loc_8006AF8:                            ; ...
-                mov     eax, offset A_101 ; "invalid operand passed to regval()"
+;%assign tmp   -4
+%assign o       8
+
+regval:
+                push    ebp
+                mov     ebp, esp
+                ;sub    esp, 4
+                ;nop
+                mov     eax, [ebp+o]
+                add     eax, 12         ; operand->basereg (address) = operand + 12
+                mov     ecx, [eax]
+                push    ecx
+                call    is_register     ; if (!is_register(o->basereg))
+                add     esp, 4
+                ;cmp    eax, 0
+                ;jz     rv_1
+                ;jmp    rv_2
+                and	eax, eax
+                jnz     rv_2
+; ---------------------------------------------------------------------------
+
+rv_1:                                   ; ...
+                mov     eax, A_101      ; "invalid operand passed to regval()"
                 push    eax
-                mov     eax, 0
+                ;mov    eax, 0
+                sub     eax, eax 
                 push    eax
-                call    nasm_panic
+                call    nasm_panic      ; nasm_panic(0, "invalid operand passed to regval()");
                 add     esp, 8
 
-loc_8006B0C:                            ; ...
-                mov     eax, [ebp+arg_0]
-                add     eax, 0Ch
+rv_2:                                   ; ...
+                mov     eax, [ebp+o]
+                add     eax, 12
                 mov     ecx, [eax]
                 shl     ecx, 2
-                mov     eax, offset nasm_regvals
-                add     eax, ecx
-                mov     [ebp+var_4], eax
-                mov     eax, [ebp+var_4]
-                mov     eax, [eax]
+                ;mov    eax, nasm_regvals ; return nasm_regvals[o->basereg];
+                ;add    eax, ecx
+                ;mov    [ebp+tmp], eax
+                ;mov    eax, [ebp+tmp]
+                ;mov    eax, [eax]
+                add     ecx, nasm_regvals
+                mov     eax, [ecx]
                 leave
                 retn
-endp            regval
 
 
 ; =============== S U B R O U T I N E =======================================
 
-; Attributes: bp-based frame
+; ---------------------------------------------------------------------------
+; Function: op_rexflags
+;
+; Description:
+;
+; C Declaration: static int op_rexflags(const operand * o, int mask)
+;
+; Input (Stack): [EBP+8] = *o
+;                [EBP+12] = mask
+;
+; Output [EAX]: rex flags
+;
+; Modified Registers: EAX, ECX, EDX
+; ---------------------------------------------------------------------------
 
-proc            op_rexflags near        ; ...
+;%assign val    -0Ch
+%assign flags   -8
+%assign flags_h -4
+%assign o        8
+%assign mask     0Ch
 
-var_C          -0Ch
-var_8          -8
-var_4          -4
-arg_0           8
-arg_4           0Ch
-
+op_rexflags:
                 push    ebp
-                mov     ebp, esp
-                sub     esp, 0Ch
-                nop
-                mov     eax, [ebp+arg_0]
-                add     eax, 0Ch
-                mov     ecx, [eax]
+                mov     ebp, esp        ; opflags_t flags;
+                ;sub    esp, 12         ; int val;
+                ;nop
+                sub     esp, 8 
+                mov     eax, [ebp+o]    ; if (!is_register(o->basereg))
+                add     eax, 12
+                mov     ecx, [eax]      ; operand->basereg = [operand+12]
                 push    ecx
                 call    is_register
                 add     esp, 4
-                cmp     eax, 0
-                jz      loc_8006B51
-                jmp     loc_8006B65
+                ;cmp    eax, 0
+                ;jz     orxf_1
+                ;jmp    orxf_2
+                or      eax, eax
+                jnz     orxf_2  
 ; ---------------------------------------------------------------------------
 
-loc_8006B51:                            ; ...
-                mov     eax, offset A_102 ; "invalid operand passed to op_rexflags()"
+orxf_1:                                 ; ...
+                mov     eax, L_102      ; "invalid operand passed to op_rexflags()"
                 push    eax
                 mov     eax, 0
                 push    eax
-                call    nasm_panic
+                call    nasm_panic      ; nasm_panic(0, "invalid operand passed to op_rexflags()");
                 add     esp, 8
 
-loc_8006B65:                            ; ...
-                mov     eax, [ebp+arg_0]
-                add     eax, 0Ch
+orxf_2:                                 ; ...
+                mov     eax, [ebp+o]
+                add     eax, 12
                 mov     ecx, [eax]
+                push    ecx ; *    
                 shl     ecx, 3
-                mov     eax, offset nasm_reg_flags
+                mov     eax, nasm_reg_flags
                 add     eax, ecx
                 mov     ecx, [eax]
                 add     eax, 4
                 mov     edx, [eax]
-                mov     [ebp+var_8], ecx
-                mov     [ebp+var_4], edx
-                mov     eax, [ebp+arg_0]
-                add     eax, 0Ch
-                mov     ecx, [eax]
+                mov     [ebp+flags], ecx ; flags = nasm_reg_flags[o->basereg];
+                mov     [ebp+flags_h], edx
+                ;mov    eax, [ebp+o]
+                ;add    eax, 12
+                ;mov    ecx, [eax]
+                pop     ecx ; *
                 shl     ecx, 2
-                mov     eax, offset nasm_regvals
+                mov     eax, nasm_regvals
                 add     eax, ecx
                 mov     ecx, [eax]
-                mov     [ebp+var_C], ecx
-                mov     eax, [ebp+arg_4]
+                ;mov    [ebp+val], ecx  ; val = nasm_regvals[o->basereg];
+                mov     eax, [ebp+mask]
                 push    eax
-                mov     eax, [ebp+var_8]
-                mov     ecx, [ebp+var_4]
-                push    ecx
+                mov     eax, [ebp+flags]
+                ;mov    ecx, [ebp+flags_h]
+                ;push   ecx
+                mov     edx, [ebp+flags_h]
+                push    edx 
                 push    eax
-                mov     eax, [ebp+var_C]
-                push    eax
-                call    rexflags
-                add     esp, 10h
+                ;mov    eax, [ebp+val]
+                ;push   eax
+                push    ecx ; [ebp+val]
+                call    rexflags        ; return rexflags(val, flags, mask);
+                add     esp, 16
                 leave
                 retn
-endp            op_rexflags
 
 
 ; =============== S U B R O U T I N E =======================================
 
-; Attributes: bp-based frame
+; ---------------------------------------------------------------------------
+; Function: rexflags
+;
+; Description:
+;
+; C Declaration: static int rexflags(int val, opflags_t flags, int mask)
+;
+; Input (Stack): [EBP+8]  = val
+;                [EBP+12] = flags (low 32-bit)
+;                [EBP+16] = flags (high 32-bit)
+;                [EBP+20] = mask
+;
+; Output [EAX]: rex flags
+;
+; Modified Registers: EAX, ECX
+; ---------------------------------------------------------------------------
 
-proc            rexflags near           ; ...
+%assign rex    -4
+%assign val     8
+%assign flags   0Ch
+%assign flags_h 10h
+%assign mask    14h
 
-var_4           = dword ptr -4
-arg_0           8
-arg_4           0Ch
-arg_8           10h
-arg_C           14h
-
+rexflags:
                 push    ebp
                 mov     ebp, esp
                 sub     esp, 4
-                nop
+                ;nop
                 mov     eax, 0
-                mov     [ebp+var_4], eax
-                mov     eax, [ebp+arg_0]
-                cmp     eax, 0
-                jl      loc_8006BEB
-                mov     eax, [ebp+arg_0]
+                mov     [ebp+rex], eax  ; int rex = 0;
+                mov     eax, [ebp+val]
+                cmp     eax, 0          ; if (val >= 0 && (val & 8))
+                jl      rxf_1
+                ;mov    eax, [ebp+val]
                 and     eax, 8
-                cmp     eax, 0
-                jz      loc_8006BEB
-                mov     eax, [ebp+var_4]
-                or      eax, 7
-                mov     [ebp+var_4], eax
+                ;cmp    eax, 0
+                jz      rxf_1
+                ;mov    eax, [ebp+rex] ; 0
+                ;or     eax, 7
+                mov     al, 7   ; mov eax, 7  
+                mov     [ebp+rex], eax  ; rex |= REX_B|REX_X|REX_R;
+                                        ;          1     2     4
 
-loc_8006BEB:                            ; ...
-                mov     eax, [ebp+arg_8]
-                and     eax, 8
-                mov     ecx, 0
-                cmp     eax, 0
-                jnz     loc_8006C08
-                cmp     ecx, 0
-                jz      loc_8006C11
+rxf_1:                                  ; ...
+                mov     eax, [ebp+flags_h] ; if (flags & BITS64)
+                and     eax, 8          ; opflags bit 35 = BITS64 (00000008h:0h)
+                ;mov    ecx, 0
+                ;cmp    eax, 0
+                ;jnz    rxf_2
+                ;cmp    ecx, 0
+                jz      rxf_3
 
-loc_8006C08:                            ; ...
-                mov     eax, [ebp+var_4]
-                or      eax, 8
-                mov     [ebp+var_4], eax
+rxf_2:                                  ; ...
+                mov     eax, [ebp+rex]
+                or      eax, 8          ; REX_W = 8
+                mov     [ebp+rex], eax  ; rex |= REX_W;
 
-loc_8006C11:                            ; ...
-                mov     eax, [ebp+arg_4]
-                xor     eax, 0FFFFFFFFh
-                mov     ecx, [ebp+arg_8]
-                xor     ecx, 0FFFFFFFFh
-                and     eax, 600105h
-                and     ecx, 1
-                cmp     ecx, 0
-                jnz     loc_8006C38
-                cmp     eax, 0
-                jz      loc_8006C3D
-
-loc_8006C38:                            ; ...
-                jmp     loc_8006C4E
+rxf_3:                                  ; ...
+                mov     eax, [ebp+flags] ; if (!(REG_HIGH & ~flags)) /* AH, CH, DH, BH */
+                xor     eax, 0FFFFFFFFh ; ~flags
+                mov     ecx, [ebp+flags_h]
+                xor     ecx, 0FFFFFFFFh ; #define REG_HIGH
+                             ;  (GEN_SUBCLASS(5)|GEN_SUBCLASS(4)|REG_CLASS_GPR| BITS8|REGMEM|REGISTER)
+                and     eax, 600105h    ; REG_HIGH = bit 22 | bit 21 | bit 8 | bit 32 | bit 2 | bit 0
+                                        ;            01-0000000001100000-0000000100000101b (01h:0060h:0105h)
+                jnz     rxf_4 ; *
+                and     ecx, 1          ; bit 32
+                ;cmp    ecx, 0
+                jnz     rxf_4
+                ;cmp    eax, 0 ; *
+                ;jz     rxf_5 ; *
+              
+;rxf_4:                                 ; ...
+                ;jmp    rxf_6           ; else if
 ; ---------------------------------------------------------------------------
 
-loc_8006C3D:                            ; ...
-                mov     eax, [ebp+var_4]
-                or      eax, 80h
-                mov     [ebp+var_4], eax
-                jmp     loc_8006C8F
+                ; if (REG_HIGH & ~flags = 0)
+rxf_5:                                  ; ...
+                mov     eax, [ebp+rex]
+                or      eax, 80h        ; REX_H = 80h
+                mov     [ebp+rex], eax  ; rex |= REX_H;
+                jmp     rxf_9
 ; ---------------------------------------------------------------------------
 
-loc_8006C4E:                            ; ...
-                mov     eax, [ebp+arg_4]
-                xor     eax, 0FFFFFFFFh
-                mov     ecx, [ebp+arg_8]
-                xor     ecx, 0FFFFFFFFh
-                and     eax, 105h
-                and     ecx, 1
-                cmp     ecx, 0
-                jnz     loc_8006C75
-                cmp     eax, 0
-                jz      loc_8006C7A
+rxf_4:
+rxf_6:                                  ; ...
+                mov     eax, [ebp+flags] ; else if (!(REG8 & ~flags) && val >= 4)
+                                        ; /* SPL, BPL, SIL, DIL */ 
+                xor     eax, 0FFFFFFFFh ; ~flags
+                mov     ecx, [ebp+flags_h]
+                xor     ecx, 0FFFFFFFFh ; #define REG8 (REG_CLASS_GPR|BITS8|REGMEM|REGISTER)
+                and     eax, 105h       ; REG8 = 0100000105h = bit 8 | bit 32 | bit 2 | bit 0
+                jnz     rxf_7 ; ** 
+                and     ecx, 1          ; bit 32
+                ;cmp    ecx, 0
+                jnz     rxf_7
+                ;cmp    eax, 0 ; **
+                ;jz     rxf_8 ; **
 
-loc_8006C75:                            ; ...
-                jmp     loc_8006C8F
+;rxf_7:                                 ; ...
+                ;jmp    rxf_9
 ; ---------------------------------------------------------------------------
 
-loc_8006C7A:                            ; ...
-                mov     eax, [ebp+arg_0]
+rxf_8:                                  ; ...
+                mov     eax, [ebp+val]
                 cmp     eax, 4
-                jl      loc_8006C8F
-                mov     eax, [ebp+var_4]
-                or      eax, 40h
-                mov     [ebp+var_4], eax
+                jl      rxf_9
+                ;mov    eax, [ebp+rex]
+                ;or     eax, 64         ; REX_P = 40h
+                ;mov    [ebp+rex], eax  ; rex |= REX_P;
+                or      byte [ebp+rex], 64 
 
-loc_8006C8F:                            ; ...
-                mov     eax, [ebp+var_4]
-                mov     ecx, [ebp+arg_C]
+rxf_7:
+rxf_9:                                  ; ...
+                mov     eax, [ebp+rex]  ; return rex & mask;
+                mov     ecx, [ebp+mask]
                 and     eax, ecx
                 leave
                 retn
-endp            rexflags
 
 
 ; =============== S U B R O U T I N E =======================================
 
-; Attributes: bp-based frame
+; ---------------------------------------------------------------------------
+; Function: evexflags
+;
+; Description:
+;
+; C Declaration:
+;   static int evexflags(int val, decoflags_t deco, int mask, uint8_t byte)
+;
+; Input (Stack): [EBP+8]  = val
+;                [EBP+12] = deco
+;                [EBP+16] = mask
+;                [EBP+20] = byte
+;
+; Output [EAX]: evex flags
+;
+; Modified Registers: EAX, ECX
+; ---------------------------------------------------------------------------
 
-proc            evexflags near          ; ...
+%assign evex   -4
+%assign val     8
+%assign deco    0Ch
+%assign mask    10h
+%assign _byte   14h
 
-var_4           = dword ptr -4
-arg_0           8
-arg_4           = word ptr  0Ch
-arg_8           10h
-arg_C           = byte ptr  14h
-
+evexflags:
                 push    ebp
                 mov     ebp, esp
                 sub     esp, 4
-                nop
+                ;nop
                 mov     eax, 0
-                mov     [ebp+var_4], eax
-                jmp     loc_8006D68
+                mov     [ebp+evex], eax ; int evex = 0;
+                jmp     exf_9           ; switch (byte) {
 ; ---------------------------------------------------------------------------
 
-loc_8006CB0:                            ; ...
-                mov     eax, [ebp+arg_0]
-                cmp     eax, 0
-                jl      loc_8006CD4
-                mov     eax, [ebp+arg_0]
-                and     eax, 10h
-                cmp     eax, 0
-                jz      loc_8006CD4
-                mov     eax, [ebp+var_4]
-                or      eax, 50h
-                mov     [ebp+var_4], eax
+exf_1:                                  ; ...
+                mov     eax, [ebp+val]  ; case 0:
+                cmp     eax, 0          ; if (val >= 0 && (val & 16))
+                jl      exf_2
+                ;mov    eax, [ebp+val]
+                and     eax, 16
+                ;cmp    eax, 0
+                jz      exf_2
+                ;mov    eax, [ebp+evex]
+                ;or     eax, 80         ; 10h | 40h
+                ;mov    [ebp+evex], eax ; evex |= (EVEX_P0RP | EVEX_P0X);
+                                        ;             10h         40h
+                or      byte [ebp+evex], 50h
 
-loc_8006CD4:                            ; ...
-                jmp     loc_8006D7E
+;exf_2:                                 ; ...
+                jmp     exf_10          ; break;
 ; ---------------------------------------------------------------------------
 
-loc_8006CD9:                            ; ...
-                mov     eax, [ebp+arg_0]
-                cmp     eax, 0
-                jl      loc_8006CFD
-                mov     eax, [ebp+arg_0]
-                and     eax, 10h
-                cmp     eax, 0
-                jz      loc_8006CFD
-                mov     eax, [ebp+var_4]
-                or      eax, 8
-                mov     [ebp+var_4], eax
+exf_3:                                  ; ...
+                mov     eax, [ebp+val]  ; case 2:
+                cmp     eax, 0          ; if (val >= 0 && (val & 16))
+                jl      exf_4
+                ;mov    eax, [ebp+val]
+                and     eax, 16
+                ;cmp    eax, 0
+                jz      exf_4
+                ;mov    eax, [ebp+evex]
+                ;or     eax, 8          ; EVEX_P2VP = 8
+                ;mov    [ebp+evex], eax ; evex |= EVEX_P2VP;
+                or      byte [ebp+evex], 8
 
-loc_8006CFD:                            ; ...
-                movzx   eax, [ebp+arg_4]
-                mov     ecx, eax
-                sar     ecx, 1Fh
-                and     eax, 10h
-                mov     ecx, 0
-                cmp     ecx, 0
-                jnz     loc_8006D20
-                cmp     eax, 0
-                jz      loc_8006D2C
+exf_4:                                  ; ...
+                ;movzx  eax, byte [ebp+deco] ; if (deco & Z)
+                mov     al, [ebp+deco]
+                ;mov    ecx, eax
+                ;sar    ecx, 31
+                ;and    eax, 16
+                test    al, 16
+                ;mov    ecx, 0
+                ;cmp    ecx, 0
+                ;jnz    exf_5
+                ;cmp    eax, 0
+                jz      exf_6
 
-loc_8006D20:                            ; ...
-                mov     eax, [ebp+var_4]
-                or      eax, 80h
-                mov     [ebp+var_4], eax
+exf_5:                                  ; ...
+                ;mov    eax, [ebp+evex]
+                ;or     eax, 128        ; EVEX_P2Z = 80h
+                ;mov    [ebp+evex], eax ; evex |= EVEX_P2Z;
+                or      byte [ebp+evex], 80h
 
-loc_8006D2C:                            ; ...
-                movzx   eax, [ebp+arg_4]
-                mov     ecx, eax
-                sar     ecx, 1Fh
-                and     eax, 0Fh
-                mov     ecx, 0
-                cmp     ecx, 0
-                jnz     loc_8006D4F
-                cmp     eax, 0
-                jz      loc_8006D5E
+exf_6:                                  ; ...
+                ;movzx  eax, byte [ebp+deco] ; if (deco & OPMASK_MASK)
+                ;mov    al, [ebp+deco]
+                ;mov    ecx, eax
+                ;sar    ecx, 31
+                ;and    eax, 15         ; OPMASK_MASK = 0Fh
+                test    al, 15
+                ;mov    ecx, 0
+                ;cmp    ecx, 0
+                ;jnz    exf_7
+                ;cmp    eax, 0
+                jz      exf_8
 
-loc_8006D4F:                            ; ...
-                movzx   eax, [ebp+arg_4]
-                and     eax, 7
-                mov     ecx, [ebp+var_4]
-                or      ecx, eax
-                mov     [ebp+var_4], ecx
+exf_7:                                  ; ...
+                ;movzx  eax, byte [ebp+deco]
+                ;mov    al, [ebp+deco]
+                ;and    eax, 7          ; EVEX_P2AAA = 7
+                and	al, 7
+                ;mov    ecx, [ebp+evex]
+                ;or     ecx, eax
+                ;mov    [ebp+evex], ecx ; evex |= deco & EVEX_P2AAA;
+                or      [ebp+evex], al 
 
-loc_8006D5E:                            ; ...
-                jmp     loc_8006D7E
+;exf_8:                                 ; ...
+                jmp     exf_10          ; break;
 ; ---------------------------------------------------------------------------
-                jmp     loc_8006D7E
+                ;jmp    exf_10
 ; ---------------------------------------------------------------------------
 
-loc_8006D68:                            ; ...
-                movzx   eax, [ebp+arg_C]
-                cmp     eax, 0
-                jz      loc_8006CB0
-                cmp     eax, 2
-                jz      loc_8006CD9
+exf_9:                                  ; ...
+                ;movzx  eax, byte [ebp+_byte] ; switch (byte) {
+                mov     al, [ebp+_byte]
+                ;cmp    eax, 0
+                cmp     al, 0
+                jz      exf_1           ; case 0:
+                ;cmp    eax, 2
+                cmp     al, 2
+                jz      exf_3           ; case 2:
 
-loc_8006D7E:                            ; ...
-                mov     eax, [ebp+var_4]
-                mov     ecx, [ebp+arg_8]
+exf_2:
+exf_8:
+exf_10:                                 ; ...
+                mov     eax, [ebp+evex] ; return evex & mask;
+                mov     ecx, [ebp+mask]
                 and     eax, ecx
                 leave
                 retn
-endp            evexflags
 
 
 ; =============== S U B R O U T I N E =======================================
 
-; Attributes: bp-based frame
+; ---------------------------------------------------------------------------
+; Function: op_evexflags
+;
+; Description:
+;
+; C Declaration:
+;     static int op_evexflags(const operand * o, int mask, uint8_t byte)
+;
+; Input (Stack): [EBP+8]  = o
+;                [EBP+12] = mask
+;                [EBP+16] = byte
+;
+; Output [EAX]: evex flags
+;
+; Modified Registers: EAX, ECX, ((EDX))
+; ---------------------------------------------------------------------------
 
-proc            op_evexflags near       ; ...
+%assign val    -4
+%assign o       8
+%assign mask    0Ch
+%assign _byte   10h
 
-var_4           = dword ptr -4
-arg_0           8
-arg_4           0Ch
-arg_8           = byte ptr  10h
-
+op_evexflags:
                 push    ebp
-                mov     ebp, esp
+                mov     ebp, esp        ; int val;
                 sub     esp, 4
-                nop
-                mov     eax, [ebp+arg_0]
-                add     eax, 0Ch
-                mov     ecx, [eax]
-                shl     ecx, 2
-                mov     eax, offset nasm_regvals
+                ;nop
+                mov     eax, [ebp+o]
+                add     eax, 12
+                mov     ecx, [eax]      ; o->basereg
+                shl     ecx, 2          ; * int_size (*4)
+                mov     eax, nasm_regvals
                 add     eax, ecx
                 mov     ecx, [eax]
-                mov     [ebp+var_4], ecx
-                mov     eax, [ebp+arg_0]
-                add     eax, 3Ch
-                movzx   ecx, [ebp+arg_8]
+                mov     [ebp+val], ecx  ; val = nasm_regvals[o->basereg];
+                mov     eax, [ebp+o]
+                add     eax, 60         ; o->decoflags (address)
+                movzx   ecx, byte [ebp+_byte]
                 push    ecx
-                mov     ecx, [ebp+arg_4]
+                mov     ecx, [ebp+mask]
                 push    ecx
-                movzx   ecx, [word ptr eax]
+                movzx   ecx, word [eax] ; o->decoflags
                 push    ecx
-                mov     eax, [ebp+var_4]
+                mov     eax, [ebp+val]
                 push    eax
-                call    evexflags
-                add     esp, 10h
+                call    evexflags ; return evexflags(val, o->decoflags, mask, byte);
+                add     esp, 16
                 leave
                 retn
-endp            op_evexflags
 
 
 ; =============== S U B R O U T I N E =======================================
 
-; Attributes: bp-based frame
+; ---------------------------------------------------------------------------
+; Function: find_match
+;
+; Description:
+;
+; C Declaration:
+;       static enum match_result find_match(const struct itemplate **tempp,
+;                                insn *instruction,
+;                                int32_t segment, int64_t offset, int bits)
+;
+; Input (Stack): [EBP+8]  = **tempp
+;                [EBP+12] = *instruction
+;                [EBP+16] = segment
+;                [EBP+20] = offset (low 32-bit)
+;                [EBP+24] = offset (high 32-bit)
+;                [EBP+28] = bits
+;
+; Output [EAX]: match_result (number)
+;
+; Modified Registers: EAX, ECX, EDX
+; ---------------------------------------------------------------------------
 
-proc            find_match near         ; ...
+;%assign tmp14_h      -0A0h
+;%assign tmp14        -9Ch
+;%assign tmp13        -98h
+;%assign tmp12        -94h
+;%assign tmp11        -90h
+;%assign tmp11_h      -8Ch
+;%assign tmp10        -88h
+;%assign tmp9_h       -84h
+;%assign tmp9         -80h
+;%assign tmp8         -7Ch
+;%assign tmp7         -78h
+;%assign tmp7_h       -74h
+;%assign tmp6         -6Ch
+;%assign tmp5         -68h
+;%assign tmp5_h       -64h
+;%assign tmp4         -5Ch
+;%assign tmp3         -58h
+;%assign tmp3_h       -54h
+;%assign tmp2         -4Ch
+;%assign tmp1         -48h
+%assign i             -44h
+%assign broadcast     -3Dh
+%assign opsizemissing -3Ch
+%assign xsizeflags    -38h
+%assign merr          -0Ch
+%assign m             -8
+%assign temp          -4
+%assign tempp          8
+%assign instruction    0Ch
+%assign _segment       10h
+%assign _offset        14h
+%assign _offset_h      18h
+%assign _bits          1Ch
 
-var_A0          = dword ptr -0A0h
-var_9C          = dword ptr -9Ch
-var_98          = dword ptr -98h
-var_94          = dword ptr -94h
-var_90          = dword ptr -90h
-var_8C          = dword ptr -8Ch
-var_88          = dword ptr -88h
-var_84          = dword ptr -84h
-var_80          = dword ptr -80h
-var_7C          = dword ptr -7Ch
-var_78          = dword ptr -78h
-var_74          = dword ptr -74h
-var_6C          = dword ptr -6Ch
-var_68          = dword ptr -68h
-var_64          = dword ptr -64h
-var_5C          = dword ptr -5Ch
-var_58          = dword ptr -58h
-var_54          = dword ptr -54h
-var_4C          = dword ptr -4Ch
-var_48          = dword ptr -48h
-var_44          = dword ptr -44h
-var_3D          = byte ptr -3Dh
-var_3C          = dword ptr -3Ch
-var_38          = byte ptr -38h
-var_C           = dword ptr -0Ch
-var_8           = dword ptr -8
-var_4           = dword ptr -4
-arg_0           8
-arg_4           0Ch
-arg_8           10h
-arg_C           14h
-arg_10          18h
-arg_14          1Ch
-
+find_match:
                 push    ebp
-                mov     ebp, esp
-                sub     esp, 0A0h
-                nop
+                mov     ebp, esp        ; const struct itemplate *temp;
+                ;sub    esp, 160        ; enum match_result m, merr;
+                sub     esp, 68
+                ;nop                    ; opflags_t xsizeflags[MAX_OPERANDS]; /// MAX_OPERANDS = 5
                 mov     eax, 0
-                mov     [ebp+var_3C], eax
-                mov     eax, [ebp+arg_4]
-                add     eax, 1A0h
-                movsx   ecx, [byte ptr eax]
-                mov     [ebp+var_3D], cl
-                mov     eax, 0
-                mov     [ebp+var_44], eax
+                mov     [ebp+opsizemissing], eax ; bool opsizemissing = false;
+                mov     [ebp+i], eax ; 0
+                mov     eax, [ebp+instruction]
+                add     eax, 416        ; instruction->evex_brerop (address)
+                ;movsx  ecx, byte [eax] ; instruction->evex_brerop
+                mov     cl, [eax]
+                mov     [ebp+broadcast], cl ; int8_t broadcast = instruction->evex_brerop;
+                ;mov    eax, 0          ; int i;
+                                        ; /* broadcasting uses a different data element size */
+                ;mov    [ebp+i], eax    ; for (i = 0; i < instruction->operands; i++)
 
-loc_8006DF3:                            ; ...
-                mov     eax, [ebp+arg_4]
-                add     eax, 28h
-                mov     ecx, [ebp+var_44]
-                mov     edx, [eax]
+fm_1:                                   ; ...
+                mov     eax, [ebp+instruction]
+                add     eax, 40
+                mov     ecx, [ebp+i]    ; (if) i < instruction->operands
+                mov     edx, [eax]      ; instruction->operands
                 cmp     ecx, edx
-                jge     loc_8006E9D
-                jmp     loc_8006E16
+                jge     fm_6
+                jmp     fm_3
 ; ---------------------------------------------------------------------------
 
-loc_8006E0B:                            ; ...
-                mov     eax, [ebp+var_44]
-                mov     ecx, eax
+fm_5:
+fm_2:                                   ; ...
+                mov     eax, [ebp+i]
+                ;mov    ecx, eax
                 inc     eax
-                mov     [ebp+var_44], eax
-                jmp     short loc_8006DF3
+                mov     [ebp+i], eax    ; i++
+                jmp     short fm_1      ; (next for)
 ; ---------------------------------------------------------------------------
 
-loc_8006E16:                            ; ...
-                mov     eax, [ebp+var_44]
-                movsx   ecx, [ebp+var_3D]
+fm_3:                                   ; ...
+                mov     eax, [ebp+i]    ; if (i == broadcast)
+                movsx   ecx, byte [ebp+broadcast]
                 cmp     eax, ecx
-                jnz     loc_8006E60
-                mov     eax, [ebp+var_44]
-                shl     eax, 3
-                lea     ecx, [ebp+var_38]
-                add     ecx, eax
-                mov     eax, [ebp+arg_4]
-                add     eax, 30h
-                mov     edx, [ebp+var_44]
-                shl     edx, 6
+                jnz     fm_4            ; else
+                ;mov    eax, [ebp+i]    ; xsizeflags[i] = instruction->oprs[i].decoflags & BRSIZE_MASK;
+                shl     eax, 3          ; * 8
+                lea     ecx, [ebp+xsizeflags]
+                add     ecx, eax        ; xsizeflags[i]
+                mov     eax, [ebp+instruction]
+                add     eax, 48         ; instruction->oprs[0] address
+                mov     edx, [ebp+i]
+                shl     edx, 6          ; * 64 /// operand structure size = 64
                 add     eax, edx
-                add     eax, 3Ch
-                movzx   edx, [word ptr eax]
-                mov     eax, edx
-                sar     eax, 1Fh
-                and     edx, 300h
+                add     eax, 60         ; operand + 60 = decoflags
+                ;movzx  edx, word [eax] ; instruction->oprs[i].decoflags
+                ;mov    eax, edx
+                ;sar    eax, 31
+                mov     edx, [eax]
+                and     edx, 768        ; BRSIZE_MASK = 300h ; 3*256 = 768
+                                        ;               03h:00h
                 mov     eax, 0
                 mov     [ecx], edx
                 add     ecx, 4
                 mov     [ecx], eax
-                jmp     loc_8006E98
+                jmp     fm_5
 ; ---------------------------------------------------------------------------
 
-loc_8006E60:                            ; ...
-                mov     eax, [ebp+var_44]
-                shl     eax, 3
-                lea     ecx, [ebp+var_38]
+fm_4:                                   ; ...
+                mov     eax, [ebp+i]    ; else
+                shl     eax, 3          ; xsizeflags[i] = instruction->oprs[i].type & SIZE_MASK;
+                lea     ecx, [ebp+xsizeflags]
                 add     ecx, eax
-                mov     eax, [ebp+arg_4]
-                add     eax, 30h
-                mov     edx, [ebp+var_44]
-                shl     edx, 6
+                push    ecx ; *
+                mov     eax, [ebp+instruction]
+                add     eax, 48         ; instruction->oprs[0]
+                mov     edx, [ebp+i]
+                shl     edx, 6          ; * 64 /// operand structure size = 64
                 add     eax, edx
                 mov     edx, [eax]
-                add     eax, 4
-                mov     [ebp+var_48], ecx
+                add     eax, 4          ; operand + 4 = type
+                ;mov    [ebp+tmp1], ecx
                 mov     ecx, [eax]
-                and     ecx, 7FFh
-                mov     eax, 0
-                mov     edx, [ebp+var_48]
+                and     ecx, 2047       ; shl ((shl (1), 11)-1), 32 = 7FFh:00000000h = 2047h:0
+                mov     eax, 0          ; (and ecx:edx, 7FFh:0) /// 64 bit 'and' operation
+                ;mov    edx, [ebp+tmp1]
+                pop     edx ; *
                 mov     [edx], eax
                 add     edx, 4
                 mov     [edx], ecx
 
-loc_8006E98:                            ; ...
-                jmp     loc_8006E0B
+;fm_5:                                  ; ...
+                jmp     fm_2            ; (next for)
 ; ---------------------------------------------------------------------------
 
-loc_8006E9D:                            ; ...
-                mov     eax, 0
-                mov     [ebp+var_C], eax
-                mov     eax, [ebp+arg_4]
-                add     eax, 20h
+fm_6:                                   ; ...
+                mov     eax, 0          ; MERR_INVALOP = 0
+                mov     [ebp+merr], eax ; merr = MERR_INVALOP;
+                mov     eax, [ebp+instruction] ; for (temp = nasm_instructions[instruction->opcode];
+                add     eax, 32         ; instruction->opcode (address)
                 mov     ecx, [eax]
-                shl     ecx, 2
-                mov     eax, offset nasm_instructions
+                shl     ecx, 2          ; * 4 /// * int_size
+                mov     eax, nasm_instructions
                 add     eax, ecx
                 mov     ecx, [eax]
-                mov     [ebp+var_4], ecx
+                mov     [ebp+temp], ecx
 
-loc_8006EBC:                            ; ...
-                mov     eax, [ebp+var_4]
-                mov     ecx, [eax]
-                cmp     ecx, 0FFFFFFFFh
-                jz      loc_800708F
-                jmp     loc_8006EDC
+fm_7:                                   ; ...
+                mov     eax, [ebp+temp] ; temp->opcode != I_none; temp++) {
+                mov     ecx, [eax]      ; itemplate + 0 = itemplate->opcode
+                cmp     ecx, 0FFFFFFFFh ; I_none = -1
+                jz      fm_23
+                jmp     fm_9
 ; ---------------------------------------------------------------------------
 
-loc_8006ECF:                            ; ...
-                mov     eax, [ebp+var_4]
-                mov     ecx, eax
-                add     eax, 48h
-                mov     [ebp+var_4], eax
-                jmp     short loc_8006EBC
+fm_22:
+fm_8:                                   ; ...
+                ;mov    eax, [ebp+temp]
+                ;mov    ecx, eax
+                ;add    eax, 72         ; itemplate structure size = 72
+                ;mov    [ebp+temp], eax ; temp++
+                add     dword [ebp+temp], 72
+                jmp     short fm_7      ; (next for)
 ; ---------------------------------------------------------------------------
 
-loc_8006EDC:                            ; ...
-                mov     eax, [ebp+arg_14]
+fm_9:                                   ; ...
+                mov     eax, [ebp+_bits]
                 push    eax
-                mov     eax, [ebp+arg_4]
+                mov     eax, [ebp+instruction]
                 push    eax
-                mov     eax, [ebp+var_4]
+                mov     eax, [ebp+temp]
                 push    eax
                 call    matches
-                add     esp, 0Ch
-                mov     [ebp+var_8], eax
-                mov     eax, [ebp+var_8]
-                cmp     eax, 0Fh
-                jnz     loc_8006F42
-                mov     eax, [ebp+var_4]
+                add     esp, 12
+                mov     [ebp+m], eax    ; m = matches(temp, instruction, bits);
+                ;mov    eax, [ebp+m]    ; if (m == MOK_JUMP) {
+                cmp     eax, 15         ; MOK_JUMP = 15
+                jnz     fm_12           ; } else if
+                mov     eax, [ebp+temp] ; if (jmp_match(segment, offset, bits, instruction, temp))
                 push    eax
-                mov     eax, [ebp+arg_4]
+                mov     eax, [ebp+instruction]
                 push    eax
-                mov     eax, [ebp+arg_14]
+                mov     eax, [ebp+_bits]
                 push    eax
-                mov     eax, [ebp+arg_C]
-                mov     ecx, [ebp+arg_10]
+                mov     eax, [ebp+_offset]
+                mov     ecx, [ebp+_offset_h]
                 push    ecx
                 push    eax
-                mov     eax, [ebp+arg_8]
+                mov     eax, [ebp+_segment]
                 push    eax
                 call    jmp_match
-                add     esp, 18h
-                cmp     eax, 0
-                jz      loc_8006F35
-                mov     eax, 10h
-                mov     [ebp+var_8], eax
-                jmp     loc_8006F3D
+                add     esp, 24
+                ;cmp    eax, 0
+                and     eax, eax
+                jz      fm_10           ; else
+                mov     eax, 16         ; MOK_GOOD = 16
+                ;mov    [ebp+m], eax    ; m = MOK_GOOD;
+                ;jmp    fm_11
 ; ---------------------------------------------------------------------------
 
-loc_8006F35:                            ; ...
-                mov     eax, 0
-                mov     [ebp+var_8], eax
+fm_10:                                  ; ...
+                ;mov    eax, 0          ; else
+;fm_11:
+                mov     [ebp+m], eax    ; m = MERR_INVALOP;
 
-loc_8006F3D:                            ; ...
-                jmp     loc_8007065
+;fm_11:                                 ; ...
+                ;jmp    fm_20
+                jmp     fm_11 ; *** 
 ; ---------------------------------------------------------------------------
 
-loc_8006F42:                            ; ...
-                mov     eax, [ebp+var_8]
-                cmp     eax, 1
-                jnz     loc_8007065
-                mov     eax, 0Ah
+fm_12:                                  ; ...
+                ;mov    eax, [ebp+m]    ; } else if
+                                        ; (m == MERR_OPSIZEMISSING &&
+                                        ;   !itemp_has(temp, IF_SX)) {
+                                        ; /* Missing operand size and
+                                        ;    a candidate for fuzzy matching... */
+                cmp     eax, 1          ; MERR_OPSIZEMISSING = 1
+                ;jnz    fm_20
+                jnz     fm_11 ; ***
+                ;mov    eax, 10         ; IF_SX = 10 /* Unsized operands not allowed */
+                and     al, 10
                 push    eax
-                mov     eax, [ebp+var_4]
+                mov     eax, [ebp+temp]
                 push    eax
-                call    itemp_has
+                call    itemp_has       ; itemp_has(temp, IF_SX)
                 add     esp, 8
-                cmp     eax, 0
-                jz      loc_8006F6E
-                jmp     loc_8007065
+                ;cmp    eax, 0
+                or      eax, eax
+                jz      fm_13
+                jmp     fm_20
 ; ---------------------------------------------------------------------------
 
-loc_8006F6E:                            ; ...
-                mov     eax, 0
-                mov     [ebp+var_44], eax
+fm_13:                                  ; ...
+                ;mov    eax, 0          ; for (i = 0; i < temp->operands; i++)
+fm_14:
+                mov     [ebp+i], eax
 
-loc_8006F76:                            ; ...
-                mov     eax, [ebp+var_4]
-                add     eax, 4
-                mov     ecx, [ebp+var_44]
-                mov     edx, [eax]
+;fm_14:                                 ; ...
+                mov     eax, [ebp+temp]
+                add     eax, 4          ; temp->operands (address)
+                mov     ecx, [ebp+i]
+                mov     edx, [eax]      ; temp->operands (value)
                 cmp     ecx, edx
-                jge     loc_800705D
-                jmp     loc_8006F99
+                jge     fm_19
+                jmp     fm_16
 ; ---------------------------------------------------------------------------
 
-loc_8006F8E:                            ; ...
-                mov     eax, [ebp+var_44]
-                mov     ecx, eax
+fm_18:
+fm_15:                                  ; ...
+                mov     eax, [ebp+i]
+                ;mov    ecx, eax
                 inc     eax
-                mov     [ebp+var_44], eax
-                jmp     short loc_8006F76
+                ;mov    [ebp+i], eax    ; i++
+                jmp     short fm_14
 ; ---------------------------------------------------------------------------
 
-loc_8006F99:                            ; ...
-                mov     eax, [ebp+var_44]
-                movsx   ecx, [ebp+var_3D]
+fm_16:                                  ; ...
+                mov     eax, [ebp+i]    ; if (i == broadcast)
+                movsx   ecx, byte [ebp+broadcast]
                 cmp     eax, ecx
-                jnz     loc_8007003
-                mov     eax, [ebp+var_44]
+                jnz     fm_17           ; else
+                mov     eax, [ebp+i]    ; xsizeflags[i] |= temp->deco[i] & BRSIZE_MASK;
                 shl     eax, 3
-                lea     ecx, [ebp+var_38]
+                lea     ecx, [ebp+xsizeflags]
                 add     ecx, eax
-                mov     eax, [ebp+var_4]
-                add     eax, 30h
-                mov     edx, [ebp+var_44]
-                shl     edx, 1
+                mov     eax, [ebp+temp]
+                add     eax, 48         ; temp->deco[i]
+                mov     edx, [ebp+i]
+                shl     edx, 1          ; * 2 (word size) /// typedef uint16_t decoflags_t;
                 add     eax, edx
-                movzx   edx, [word ptr eax]
-                mov     eax, edx
-                sar     eax, 1Fh
-                and     edx, 300h
-                mov     eax, 0
-                mov     [ebp+var_4C], ecx
-                mov     ecx, [ebp+var_4C]
-                mov     ecx, [ecx]
-                mov     [ebp+var_58], edx
-                mov     [ebp+var_54], eax
-                mov     eax, [ebp+var_4C]
+                ;movzx  edx, word [eax]
+                ;mov    eax, edx
+                ;sar    eax, 31
+                mov     edx, [eax]
+                and     edx, 300h       ; BRSIZE_MASK = 300h ; 3*256 = 768
+                push    ecx ; *****
+                push    edx ; ****
+                ;mov    eax, 0
+                ;mov    [ebp+tmp2], ecx
+                ;mov    ecx, [ebp+tmp2]
+                mov     eax, ecx
+                ;mov    ecx, [ecx]
+                mov     ecx, [eax]
+                ;mov    [ebp+tmp3], edx
+                ;mov    [ebp+tmp3_h], eax ; 0
+                ;mov    eax, [ebp+tmp2]
                 add     eax, 4
                 mov     edx, [eax]
-                mov     eax, [ebp+var_58]
+                ;mov    eax, [ebp+tmp3]
+                pop     eax ; **** 
                 or      ecx, eax
-                mov     eax, [ebp+var_54]
-                or      edx, eax
-                mov     eax, [ebp+var_4C]
+                ;mov    eax, [ebp+tmp3_h] ; 0
+                ;or     edx, eax
+                ;mov    eax, [ebp+tmp2]
+                pop     eax ; *****   
                 mov     [eax], ecx
                 add     eax, 4
                 mov     [eax], edx
-                jmp     loc_8007058
+                jmp     fm_18
 ; ---------------------------------------------------------------------------
 
-loc_8007003:                            ; ...
-                mov     eax, [ebp+var_44]
+fm_17:                                  ; ...
+                mov     eax, [ebp+i]    ; xsizeflags[i] |= temp->opd[i] & SIZE_MASK;
                 shl     eax, 3
-                lea     ecx, [ebp+var_38]
+                lea     ecx, [ebp+xsizeflags]
                 add     ecx, eax
-                mov     eax, [ebp+var_4]
+                mov     eax, [ebp+temp]
                 add     eax, 8
-                mov     edx, [ebp+var_44]
+                mov     edx, [ebp+i]
                 shl     edx, 3
                 add     eax, edx
-                mov     edx, [eax]
+                ;mov    edx, [eax]
                 add     eax, 4
-                mov     [ebp+var_5C], ecx
+                ;mov    [ebp+tmp4], ecx
+                mov     edx, ecx ; tmp4
                 mov     ecx, [eax]
-                and     ecx, 7FFh
-                mov     eax, 0
-                mov     edx, [ebp+var_5C]
-                mov     edx, [edx]
-                mov     [ebp+var_68], eax
-                mov     [ebp+var_64], ecx
-                mov     ecx, [ebp+var_5C]
+                and     ecx, 7FFh       ; SIZE_MASK = 2047 (high 32-bit) = 7FFh:0
+                ;mov    eax, 0
+                ;mov    edx, [ebp+tmp4]
+                mov     eax, [edx]
+                push    eax ; ******* ; [tmp4] /// xsizeflags[i] low 32-bit before 'or'
+                ;mov    [ebp+tmp5], eax ; 0
+                ;mov    [ebp+tmp5_h], ecx
+                push    ecx ; ****** ; temp->opd[i] & SIZE_MASK (high 32-bit)
+                ;mov    ecx, [ebp+tmp4]
+                mov     ecx, edx ; tmp4
                 add     ecx, 4
                 mov     eax, [ecx]
-                mov     ecx, [ebp+var_68]
-                or      edx, ecx
-                mov     ecx, [ebp+var_64]
-                or      eax, ecx
-                mov     ecx, [ebp+var_5C]
-                mov     [ecx], edx
+                ;mov    ecx, [ebp+tmp5] ; 0
+                ;or     edx, ecx        ; or (low 32-bit) -not necessary-
+                ;mov    ecx, [ebp+tmp5_h]
+                pop     ecx ; ******   
+                or      eax, ecx        ; or (high 32-bit)
+                ;mov    ecx, [ebp+tmp4]
+                mov     ecx, edx ; tmp4
+                pop     edx ; ******* ; [tmp4] /// xsizeflags[i] low 32-bit before 'or'
+                mov     [ecx], edx      ; xsizeflags[i] |=
                 add     ecx, 4
                 mov     [ecx], eax
 
-loc_8007058:                            ; ...
-                jmp     loc_8006F8E
+;fm_18:                                 ; ...
+                jmp     fm_15
 ; ---------------------------------------------------------------------------
 
-loc_800705D:                            ; ...
-                mov     eax, 1
-                mov     [ebp+var_3C], eax
+fm_19:                                  ; ...
+                mov     eax, 1          ; opsizemissing = true;
+                mov     [ebp+opsizemissing], eax
 
-loc_8007065:                            ; ...
-                mov     eax, [ebp+var_8]
-                mov     ecx, [ebp+var_C]
+fm_20:                                  ; ...
+                mov     eax, [ebp+m]    ; if (m > merr)
+fm_11:                                  ; ***
+                mov     ecx, [ebp+merr] ; **
                 cmp     eax, ecx
-                jbe     loc_8007079
-                mov     eax, [ebp+var_8]
-                mov     [ebp+var_C], eax
+                jbe     fm_21
+                ;mov    eax, [ebp+m]
+                mov     [ebp+merr], eax ; merr = m;
+                mov     ecx, eax ; **
 
-loc_8007079:                            ; ...
-                mov     eax, [ebp+var_C]
-                cmp     eax, 10h
-                jnz     loc_800708A
-                jmp     loc_80073A5
+fm_21:                                  ; ...
+                ;;mov   eax, [ebp+merr] ; if (merr == MOK_GOOD)
+                ;cmp    eax, 16         ; MOK_GOOD = 16
+                cmp     ecx, 16 ; **
+                jnz     fm_22
+                jmp     fm_47           ; goto done;
 ; ---------------------------------------------------------------------------
 
-loc_800708A:                            ; ...
-                jmp     loc_8006ECF
+;fm_22:                                 ; ...
+                ;jmp    fm_8
 ; ---------------------------------------------------------------------------
 
-loc_800708F:                            ; ...
-                mov     eax, [ebp+var_3C]
-                cmp     eax, 0
-                jz      loc_80070A0
-                jmp     loc_80070A5
+fm_23:                                  ; ...
+                mov     eax, [ebp+opsizemissing] ; /* No match,
+                                        ; but see if we can get a fuzzy operand size match... */
+                ;cmp    eax, 0          ; if (!opsizemissing)
+                or	eax, eax
+                jz      fm_24
+                ;jmp    fm_25
 ; ---------------------------------------------------------------------------
 
-loc_80070A0:                            ; ...
-                jmp     loc_80073A5
+;fm_24:                                 ; ...
+                ;jmp    fm_47           ; goto done;
 ; ---------------------------------------------------------------------------
 
-loc_80070A5:                            ; ...
-                mov     eax, 0
-                mov     [ebp+var_44], eax
+fm_25:                                  ; ...
+                ;mov    eax, 0          ; for (i = 0; i < instruction->operands; i++) {
+                xor	eax, eax
+                mov     [ebp+i], eax    ; /* We ignore extrinsic operand sizes on registers,
+                                        ; so we should never try to fuzzy-match on them. */
 
-loc_80070AD:                            ; ...
-                mov     eax, [ebp+arg_4]
-                add     eax, 28h
-                mov     ecx, [ebp+var_44]
-                mov     edx, [eax]
+fm_26:                                  ; ...
+                mov     eax, [ebp+instruction] ; if (is_class(REGISTER, instruction->oprs[i].type))
+                add     eax, 40
+                mov     ecx, [ebp+i]
+                mov     edx, [eax]      ; instruction->operands
                 cmp     ecx, edx
-                jge     loc_80072E3
-                jmp     loc_80070D0
+                jge     fm_39
+                jmp     fm_28
 ; ---------------------------------------------------------------------------
 
-loc_80070C5:                            ; ...
-                mov     eax, [ebp+var_44]
-                mov     ecx, eax
-                inc     eax
-                mov     [ebp+var_44], eax
-                jmp     short loc_80070AD
+fm_38:
+fm_27:                                  ; ...
+                ;mov    eax, [ebp+i]
+                ;;mov   ecx, eax
+                ;inc    eax
+                ;mov    [ebp+i], eax    ; i++
+                inc     dword [ebp+i]
+                jmp     short fm_26
 ; ---------------------------------------------------------------------------
 
-loc_80070D0:                            ; ...
-                mov     eax, [ebp+arg_4]
-                add     eax, 30h
-                mov     ecx, [ebp+var_44]
-                shl     ecx, 6
+fm_28:                                  ; ...
+                mov     eax, [ebp+instruction] ; instruction->oprs[i].type
+                add     eax, 48
+                mov     ecx, [ebp+i]
+                shl     ecx, 6          ; operand structure size = 64
                 add     eax, ecx
                 mov     ecx, [eax]
                 add     eax, 4
                 mov     edx, [eax]
                 push    edx
                 push    ecx
-                mov     eax, 1
-                mov     ecx, 0
-                push    ecx
-                push    eax
+                ;mov    eax, 1          ; REGISTER = 1
+                ;mov    ecx, 0          ; high 32-bit (of the class) is 0
+                sub     ecx, ecx ; 0
+                push    ecx 
+                ;push   eax
+                inc     ecx ; 1
+                push    ecx   
                 call    is_class
-                add     esp, 10h
-                cmp     eax, 0
-                jz      loc_8007109
-                jmp     loc_80070C5
+                add     esp, 16
+                ;cmp    eax, 0
+                ;jz     fm_29
+                ;jmp    fm_27
+                and     eax, eax
+                jnz     fm_27
 ; ---------------------------------------------------------------------------
 
-loc_8007109:                            ; ...
-                mov     eax, [ebp+var_44]
-                shl     eax, 3
-                lea     ecx, [ebp+var_38]
-                add     ecx, eax
-                mov     eax, [ebp+var_44]
-                shl     eax, 3
-                lea     edx, [ebp+var_38]
+fm_29:                                  ; ...
+                mov     eax, [ebp+i]    ; /* This tests if xsizeflags[i] has more than one bit set */
+                shl     eax, 3          ; * 8 (64 bit values)
+                ;lea    ecx, [ebp+xsizeflags] ; if ((xsizeflags[i] & (xsizeflags[i]-1)))
+                ;add    ecx, eax
+                ;mov    eax, [ebp+i]
+                ;shl    eax, 3
+                lea     edx, [ebp+xsizeflags]
                 add     edx, eax
                 mov     eax, [edx]
                 add     edx, 4
-                mov     [ebp+var_6C], ecx
+                ;mov    [ebp+tmp6], ecx
                 mov     ecx, [edx]
-                sub     eax, 1
+                push    ecx ; * xsizeflags[i] (high)
+                push    eax ; ** xsizeflags[i] (low)
+                sub     eax, 1 ; xsizeflags[i]-1
                 sbb     ecx, 0
-                mov     edx, [ebp+var_6C]
-                mov     edx, [edx]
-                mov     [ebp+var_78], eax
-                mov     [ebp+var_74], ecx
-                mov     ecx, [ebp+var_6C]
-                add     ecx, 4
-                mov     eax, [ecx]
-                mov     ecx, [ebp+var_78]
+                ;mov    edx, [ebp+tmp6]
+                ;mov    edx, [edx]
+                ;mov    [ebp+tmp7], eax
+                ;mov    [ebp+tmp7_h], ecx
+                ;mov    ecx, [ebp+tmp6]
+                ;add    ecx, 4
+                ;mov    eax, [ecx]
+                ;mov    ecx, [ebp+tmp7]
+                ;and    edx, ecx
+                ;mov    ecx, [ebp+tmp7_h]
+                ;and    eax, ecx
+                ;cmp    eax, 0
+                ;jnz    fm_30           ; goto done; /* No luck */
+                ;cmp    edx, 0
+                ;jz     fm_31
+                ; /* This tests if xsizeflags[i] has more than one bit set */
+                pop     edx ; ** xsizeflags[i] (low)
+                and     eax, edx
+                jnz     fm_30
+                pop     edx ; * xsizeflags[i] (high)
                 and     edx, ecx
-                mov     ecx, [ebp+var_74]
-                and     eax, ecx
-                cmp     eax, 0
-                jnz     loc_800715E
-                cmp     edx, 0
-                jz      loc_8007163
-
-loc_800715E:                            ; ...
-                jmp     loc_80073A5
+                jz      fm_31
+fm_30:                                  ; ...
+                jmp     fm_47           ; goto done;
 ; ---------------------------------------------------------------------------
 
-loc_8007163:                            ; ...
-                mov     eax, [ebp+var_44]
-                movsx   ecx, [ebp+var_3D]
+fm_31:                                  ; ...
+                mov     eax, [ebp+i]    ; if (i == broadcast) {
+                movsx   ecx, byte [ebp+broadcast]
                 cmp     eax, ecx
-                jnz     loc_8007276
-                mov     eax, [ebp+arg_4]
-                add     eax, 30h
-                mov     ecx, [ebp+var_44]
-                shl     ecx, 6
+                jnz     fm_37           ; } else {
+                mov     eax, [ebp+instruction] ; instruction->oprs[i].decoflags |= xsizeflags[i];
+                ;add    eax, 48         ; instruction->oprs[0] (address)
+                mov     ecx, [ebp+i]
+                shl     ecx, 6          ; * 64 /// operand structure size
                 add     eax, ecx
-                add     eax, 3Ch
-                mov     ecx, [ebp+var_44]
-                shl     ecx, 3
-                lea     edx, [ebp+var_38]
-                add     edx, ecx
-                movzx   ecx, [word ptr eax]
-                mov     [ebp+var_7C], eax
-                mov     eax, ecx
-                sar     eax, 1Fh
-                mov     [ebp+var_80], ecx
-                mov     ecx, [edx]
-                add     edx, 4
-                mov     [ebp+var_84], eax
+                ;add    eax, 60         ; instruction->oprs[i].decoflags (address)
+                add     eax, 48+60
+                mov     ecx, [ebp+i]
+                shl     ecx, 3          ; * 8 (64 bit values)
+                lea     edx, [ebp+xsizeflags]
+                add     edx, ecx        ; xsizeflags[i]
+                movzx   ecx, word [eax] ; instruction->oprs[i].decoflags (value)
+                ;mov    [ebp+tmp8], eax
+                push    eax ; ***
+                ;mov    eax, ecx
+                ;sar    eax, 31         ; (extend 32-bit signed value to 64bit signed)
+                ;mov    [ebp+tmp9], ecx ; instruction->oprs[i].decoflags (value)
+                ;mov    ecx, [edx]      ; xsizeflags[i] (low 32-bit)
                 mov     eax, [edx]
-                mov     edx, [ebp+var_80]
-                or      edx, ecx
-                mov     ecx, [ebp+var_84]
-                or      ecx, eax
-                and     edx, 0FFFFh
-                mov     eax, 0
-                mov     ecx, [ebp+var_7C]
-                mov     [ecx], dx
-                mov     eax, [ebp+arg_4]
-                add     eax, 30h
-                mov     ecx, [ebp+var_44]
-                shl     ecx, 6
-                add     eax, ecx
-                mov     ecx, [ebp+var_44]
+                ;add    edx, 4
+                ;mov    [ebp+tmp9_h], eax ; instruction->oprs[i].decoflags (value, high 32-bit)
+                ;mov    eax, [edx]      ; xsizeflags[i] (high 32-bit)
+                ;mov    edx, [ebp+tmp9]
+                ;or     edx, ecx
+                ;mov    ecx, [ebp+tmp9_h]
+                ;or     ecx, eax
+                ;and    edx, 0FFFFh     ; 16-bit flags
+                ;mov    eax, 0
+                ;mov    ecx, [ebp+tmp8] ; instruction->oprs[i].decoflags (address)
+                or      eax, ecx        ; eax = xsizeflags[i] or ecx = instruction->oprs[i].decoflags
+                pop     ecx ; ***
+                ;mov    [ecx], dx       ; instruction->oprs[i].decoflags |= low 16-bits of xsizeflags[i]
+                mov     [ecx], ax
+                mov     eax, [ebp+instruction] ; instruction->oprs[i].type |= (xsizeflags[i] == BR_BITS32 ?
+                                        ;                                          BITS32 : BITS64);
+                add     eax, 48         ; instruction->oprs[0] (address)
+                mov     ecx, [ebp+i]
+                shl     ecx, 6          ; * 64 (operand structure size)
+                add     eax, ecx        ; instruction->oprs[i] (address)
+                push    eax ; ****
+                mov     ecx, [ebp+i]
                 shl     ecx, 3
-                lea     edx, [ebp+var_38]
+                lea     edx, [ebp+xsizeflags]
                 add     edx, ecx
-                mov     ecx, [edx]
+                mov     ecx, [edx]      ; xsizeflags[i] (low 32-bit)
                 add     edx, 4
-                mov     [ebp+var_88], eax
-                mov     eax, [edx]
-                cmp     eax, 0
-                jnz     loc_8007209
-                cmp     ecx, 100h
-                jnz     loc_8007209
-                mov     eax, 1
-                jmp     short loc_800720E
+                ;mov    [ebp+tmp10], eax ; ****
+                mov     eax, [edx]      ; xsizeflags[i] (high 32-bit)
+                cmp     eax, 0          ; BR_BITS32 high 32 bits = 0
+                jnz     fm_32
+                cmp     ecx, 256        ; BR_BITS32 = 256
+                ;jnz    fm_32
+                jnz     fm_34
+                ;mov    eax, 1          ; (condition is true, 32-bit)
+                jmp     short fm_33
 ; ---------------------------------------------------------------------------
 
-loc_8007209:                            ; ...
-                mov     eax, 0
+fm_32:                                  ; ...
+                mov     eax, 0          ; (condition is false, 64-bit)
 
-loc_800720E:                            ; ...
-                cmp     eax, 0
-                jz      loc_800721C
-                jmp     loc_800722B
+;fm_33:                                 ; ...
+                ;cmp    eax, 0
+                ;jz     fm_34
+                ;jmp    fm_35
 ; ---------------------------------------------------------------------------
 
-loc_800721C:                            ; ...
-                mov     eax, 0
-                mov     edx, 8
-                jmp     loc_8007235
+fm_34:                                  ; ...
+                ;mov    eax, 0
+                mov     edx, 8          ; BITS64 = shl (1), 35 /// 08h:0
+                jmp     fm_36
 ; ---------------------------------------------------------------------------
 
-loc_800722B:                            ; ...
+fm_33:
+fm_35:                                  ; ...
                 mov     eax, 0
-                mov     edx, 4
+                mov     edx, 4          ; BITS32 = shl (1), 34 /// 04h:0
 
-loc_8007235:                            ; ...
-                mov     ecx, [ebp+var_88]
+fm_36:                                  ; ...
+                ;mov    ecx, [ebp+tmp10] ; instruction->oprs[i].type |=
+                mov     ecx, [esp] ; ****   
                 mov     ecx, [ecx]
-                mov     [ebp+var_90], eax
-                mov     [ebp+var_8C], edx
-                mov     edx, [ebp+var_88]
+                ;mov    [ebp+tmp11], eax ; xsizeflags[i] (low)
+                ;mov    [ebp+tmp11_h], edx ; xsizeflags[i] (high)
+                push    edx ; *****
+                ;mov    edx, [ebp+tmp10] ; ****
+                ;add    edx, 4
+                ;mov    eax, [edx]
+                ;mov    edx, [ebp+tmp11]
+                ;or     ecx, edx
+                or      ecx, eax   ; instruction->oprs[i].type or xsizeflags[i] (low)
+                mov     edx, [esp+4] ; ****
                 add     edx, 4
-                mov     eax, [edx]
-                mov     edx, [ebp+var_90]
-                or      ecx, edx
-                mov     edx, [ebp+var_8C]
-                or      eax, edx
-                mov     edx, [ebp+var_88]
+                mov     eax, [edx]     
+                ;mov    edx, [ebp+tmp11_h]
+                pop     edx ; *****    
+                or      eax, edx   ; instruction->oprs[i].type or xsizeflags[i] (high)
+                ;mov    edx, [ebp+tmp10] ; ****
+                pop     edx ; ****    
                 mov     [edx], ecx
                 add     edx, 4
                 mov     [edx], eax
-                jmp     loc_80072DE
+                jmp     fm_38
 ; ---------------------------------------------------------------------------
 
-loc_8007276:                            ; ...
-                mov     eax, [ebp+arg_4]
-                add     eax, 30h
-                mov     ecx, [ebp+var_44]
-                shl     ecx, 6
-                add     eax, ecx
-                mov     ecx, [ebp+var_44]
-                shl     ecx, 3
-                lea     edx, [ebp+var_38]
-                add     edx, ecx
-                mov     [ebp+var_94], eax
-                mov     ecx, [eax]
+fm_37:                                  ; ...
+                mov     eax, [ebp+instruction] ; } else {
+                add     eax, 48         ; instruction->oprs[i].type |= xsizeflags[i];
+                                        ; /* Set the size */
+                mov     ecx, [ebp+i]
+                shl     ecx, 6          ; * 64 (operand structure size)
+                add     eax, ecx        ; instruction->oprs[0] address
+                mov     ecx, [ebp+i]
+                shl     ecx, 3          ; * 8 (64 bit values)
+                lea     edx, [ebp+xsizeflags]
+                add     edx, ecx        ; xsizeflags[i] address
+                ;mov    [ebp+tmp12], eax
+                push    eax ; ******
+                mov     ecx, [eax]      ; instruction->oprs[i].type value (low 32 bit)
                 add     eax, 4
-                mov     [ebp+var_98], edx
-                mov     edx, [eax]
-                mov     eax, [ebp+var_98]
-                mov     eax, [eax]
-                mov     [ebp+var_9C], ecx
-                mov     ecx, [ebp+var_98]
+                ;mov    [ebp+tmp13], edx
+                ;mov    edx, [eax]
+                mov     eax, [eax]      ; instruction->oprs[i].type value (high 32 bit)
+                push    eax ; ******** tmp14_h
+                ;mov    eax, [ebp+tmp13] ; xsizeflags[i] address
+                ;mov    eax, [eax]      ; xsizeflags[i] value (low 32 bit)
+                mov     eax, [edx]
+                ;mov    [ebp+tmp14], ecx
+                push    ecx ; ******* tmp14
+                ;mov    ecx, [ebp+tmp13]
+                mov     ecx, edx ; tmp13 ; xsizeflags[i] address
                 add     ecx, 4
-                mov     [ebp+var_A0], edx
-                mov     edx, [ecx]
-                mov     ecx, [ebp+var_9C]
-                or      ecx, eax
-                mov     eax, [ebp+var_A0]
+                ;mov    [ebp+tmp14_h], edx
+                mov     edx, [ecx]      ; xsizeflags[i] value (high 32 bit)
+                ;mov    ecx, [ebp+tmp14]
+                pop     ecx ; ******* tmp14
+                or      ecx, eax        ; instruction->oprs[i].type |=
+                ;mov    eax, [ebp+tmp14_h]
+                pop     eax ; ******** tmp14_h
                 or      eax, edx
-                mov     edx, [ebp+var_94]
-                mov     [edx], ecx
+                ;mov    edx, [ebp+tmp12] ; instruction->oprs[i] address
+                pop     edx ; ******
+                mov     [edx], ecx      ; instruction->oprs[i] value (low 32 bit)
                 add     edx, 4
-                mov     [edx], eax
+                mov     [edx], eax      ; instruction->oprs[i] value (high 32 bit)
 
-loc_80072DE:                            ; ...
-                jmp     loc_80070C5
+;fm_38:                                 ; ...
+                jmp     fm_27
 ; ---------------------------------------------------------------------------
 
-loc_80072E3:                            ; ...
-                mov     eax, [ebp+arg_4]
-                add     eax, 20h
-                mov     ecx, [eax]
-                shl     ecx, 2
-                mov     eax, offset nasm_instructions
+fm_39:                                  ; ...
+                mov     eax, [ebp+instruction] ; /* Try matching again... */
+                add     eax, 32         ; for (temp = nasm_instructions[instruction->opcode];
+                mov     ecx, [eax]      ; instruction->opcode (address) = instruction + 32
+                shl     ecx, 2          ; opcode (= index number) * 4 (dword) = offset of the dword ptr
+                mov     eax, nasm_instructions
                 add     eax, ecx
                 mov     ecx, [eax]
-                mov     [ebp+var_4], ecx
+                mov     [ebp+temp], ecx ; instruction parameters address (of the opcode)
 
-loc_80072FA:                            ; ...
-                mov     eax, [ebp+var_4]
+fm_40:                                  ; ...
+                mov     eax, [ebp+temp] ; temp->opcode != I_none; temp++) {
                 mov     ecx, [eax]
-                cmp     ecx, 0FFFFFFFFh
-                jz      loc_80073A5
-                jmp     loc_800731A
+                cmp     ecx, 0FFFFFFFFh ; I_none = -1
+                jz      fm_47
+                jmp     fm_42
 ; ---------------------------------------------------------------------------
 
-loc_800730D:                            ; ...
-                mov     eax, [ebp+var_4]
-                mov     ecx, eax
-                add     eax, 48h
-                mov     [ebp+var_4], eax
-                jmp     short loc_80072FA
+fm_46:
+fm_41:                                  ; ...
+                ;mov    eax, [ebp+temp]
+                ;;mov   ecx, eax
+                ;add    eax, 72         ; itemplate structure size = 72
+                ;mov    [ebp+temp], eax ; temp++
+                add     dword [ebp+temp], 72
+                jmp     short fm_40
 ; ---------------------------------------------------------------------------
 
-loc_800731A:                            ; ...
-                mov     eax, [ebp+arg_14]
+fm_42:                                  ; ...
+                mov     eax, [ebp+_bits]
                 push    eax
-                mov     eax, [ebp+arg_4]
+                mov     eax, [ebp+instruction]
                 push    eax
-                mov     eax, [ebp+var_4]
+                mov     eax, [ebp+temp]
                 push    eax
                 call    matches
-                add     esp, 0Ch
-                mov     [ebp+var_8], eax
-                mov     eax, [ebp+var_8]
-                cmp     eax, 0Fh
-                jnz     loc_800737B
-                mov     eax, [ebp+var_4]
+                add     esp, 12
+                mov     [ebp+m], eax    ; m = matches(temp, instruction, bits);
+                ;mov    eax, [ebp+m]
+                cmp     eax, 15         ; if (m == MOK_JUMP) {
+                jnz     fm_44
+                mov     eax, [ebp+temp] ; if (jmp_match(segment, offset, bits, instruction, temp))
                 push    eax
-                mov     eax, [ebp+arg_4]
+                mov     eax, [ebp+instruction]
                 push    eax
-                mov     eax, [ebp+arg_14]
+                mov     eax, [ebp+_bits]
                 push    eax
-                mov     eax, [ebp+arg_C]
-                mov     ecx, [ebp+arg_10]
+                mov     eax, [ebp+_offset]
+                mov     ecx, [ebp+_offset_h]
                 push    ecx
                 push    eax
-                mov     eax, [ebp+arg_8]
+                mov     eax, [ebp+_segment]
                 push    eax
                 call    jmp_match
-                add     esp, 18h
-                cmp     eax, 0
-                jz      loc_8007373
-                mov     eax, 10h
-                mov     [ebp+var_8], eax
-                jmp     loc_800737B
+                add     esp, 24
+                ;cmp    eax, 0
+                or	eax, eax ; 0 ?
+                jz      fm_43    ; yes  ; else
+                mov     eax, 16
+                ;mov    [ebp+m], eax    ; m = MOK_GOOD;
+                ;jmp    fm_44
 ; ---------------------------------------------------------------------------
 
-loc_8007373:                            ; ...
-                mov     eax, 0
-                mov     [ebp+var_8], eax
+fm_43:                                  ; ...
+                ;mov    eax, 0          ; else
+                mov     [ebp+m], eax    ; m = MERR_INVALOP;
 
-loc_800737B:                            ; ...
-                mov     eax, [ebp+var_8]
-                mov     ecx, [ebp+var_C]
-                cmp     eax, ecx
-                jbe     loc_800738F
-                mov     eax, [ebp+var_8]
-                mov     [ebp+var_C], eax
+fm_44:                                  ; ...
+                ;mov    eax, [ebp+m]    ; if (m > merr)
+                ;mov    ecx, [ebp+merr]
+                ;cmp    eax, ecx
+                mov     ecx, [ebp+m]
+                mov     eax, [ebp+merr]
+                cmp     ecx, eax
+                jbe     fm_45
+                ;mov    eax, [ebp+m]
+                mov     eax, ecx
+                mov     [ebp+merr], eax ; merr = m;
 
-loc_800738F:                            ; ...
-                mov     eax, [ebp+var_C]
-                cmp     eax, 10h
-                jnz     loc_80073A0
-                jmp     loc_80073A5
+fm_45:                                  ; ...
+                ;mov    eax, [ebp+merr] ; if (merr == MOK_GOOD)
+                cmp     eax, 16
+                jnz     fm_46
+                ;jmp    fm_47           ; goto done;
 ; ---------------------------------------------------------------------------
 
-loc_80073A0:                            ; ...
-                jmp     loc_800730D
+;fm_46:                                 ; ...
+                ;jmp    fm_41           ; (next for)
 ; ---------------------------------------------------------------------------
 
-loc_80073A5:                            ; ...
-                mov     eax, [ebp+arg_0]
-                mov     ecx, [ebp+var_4]
-                mov     [eax], ecx
-                mov     eax, [ebp+var_C]
+fm_24:
+fm_47:                                  ; ...
+                mov     eax, [ebp+tempp] ; done:
+                mov     ecx, [ebp+temp]
+                mov     [eax], ecx      ; *tempp = temp;
+                mov     eax, [ebp+merr] ; return merr;
                 leave
                 retn
-endp            find_match
 
 
 ; =============== S U B R O U T I N E =======================================
