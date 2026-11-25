@@ -11001,43 +11001,43 @@
 .text:08006A6E
 .text:08006A6E proc            regflag near            ; ...
 .text:08006A6E
-.text:08006A6E var_4           = dword ptr -4
-.text:08006A6E arg_0           = dword ptr  8
+.text:08006A6E tmp             = dword ptr -4
+.text:08006A6E o               = dword ptr  8
 .text:08006A6E
-.text:08006A6E                 push    ebp
+.text:08006A6E                 push    ebp             ; static opflags_t regflag(const operand * o)
 .text:08006A6F                 mov     ebp, esp
 .text:08006A71                 sub     esp, 4
 .text:08006A77                 nop
-.text:08006A78                 mov     eax, [ebp+arg_0]
+.text:08006A78                 mov     eax, [ebp+o]
 .text:08006A7B                 add     eax, 12
-.text:08006A7E                 mov     ecx, [eax]
+.text:08006A7E                 mov     ecx, [eax]      ; o->basereg
 .text:08006A80                 push    ecx
-.text:08006A81                 call    is_register
+.text:08006A81                 call    is_register     ; if (!is_register(o->basereg))
 .text:08006A86                 add     esp, 4
 .text:08006A89                 cmp     eax, 0
-.text:08006A8C                 jz      loc_8006A97
-.text:08006A92                 jmp     loc_8006AAB
+.text:08006A8C                 jz      rf_1
+.text:08006A92                 jmp     rf_2
 .text:08006A97 ; ---------------------------------------------------------------------------
 .text:08006A97
-.text:08006A97 loc_8006A97:                            ; ...
+.text:08006A97 rf_1:                                   ; ...
 .text:08006A97                 mov     eax, offset L_100 ; "invalid operand passed to regflag()"
 .text:08006A9C                 push    eax
 .text:08006A9D                 mov     eax, 0
 .text:08006AA2                 push    eax
-.text:08006AA3                 call    nasm_panic
+.text:08006AA3                 call    nasm_panic      ; nasm_panic(0, "invalid operand passed to regflag()");
 .text:08006AA8                 add     esp, 8
 .text:08006AAB
-.text:08006AAB loc_8006AAB:                            ; ...
-.text:08006AAB                 mov     eax, [ebp+arg_0]
-.text:08006AAE                 add     eax, 0Ch
+.text:08006AAB rf_2:                                   ; ...
+.text:08006AAB                 mov     eax, [ebp+o]
+.text:08006AAE                 add     eax, 12
 .text:08006AB1                 mov     ecx, [eax]
 .text:08006AB3                 shl     ecx, 3
 .text:08006AB6                 mov     eax, offset nasm_reg_flags
 .text:08006ABB                 add     eax, ecx
-.text:08006ABD                 mov     [ebp+var_4], eax
-.text:08006AC0                 mov     eax, [ebp+var_4]
-.text:08006AC3                 mov     eax, [eax]
-.text:08006AC5                 mov     ecx, [ebp+var_4]
+.text:08006ABD                 mov     [ebp+tmp], eax
+.text:08006AC0                 mov     eax, [ebp+tmp]
+.text:08006AC3                 mov     eax, [eax]      ; return nasm_reg_flags[o->basereg];
+.text:08006AC5                 mov     ecx, [ebp+tmp]
 .text:08006AC8                 add     ecx, 4
 .text:08006ACB                 mov     edx, [ecx]
 .text:08006ACD                 leave
@@ -11051,41 +11051,41 @@
 .text:08006ACF
 .text:08006ACF proc            regval near             ; ...
 .text:08006ACF
-.text:08006ACF var_4           = dword ptr -4
-.text:08006ACF arg_0           = dword ptr  8
+.text:08006ACF tmp             = dword ptr -4
+.text:08006ACF o               = dword ptr  8
 .text:08006ACF
-.text:08006ACF                 push    ebp
+.text:08006ACF                 push    ebp             ; static int32_t regval(const operand * o)
 .text:08006AD0                 mov     ebp, esp
 .text:08006AD2                 sub     esp, 4
 .text:08006AD8                 nop
-.text:08006AD9                 mov     eax, [ebp+arg_0]
-.text:08006ADC                 add     eax, 0Ch
+.text:08006AD9                 mov     eax, [ebp+o]
+.text:08006ADC                 add     eax, 12         ; operand->basereg (address) = operand + 12
 .text:08006ADF                 mov     ecx, [eax]
 .text:08006AE1                 push    ecx
-.text:08006AE2                 call    is_register
+.text:08006AE2                 call    is_register     ; if (!is_register(o->basereg))
 .text:08006AE7                 add     esp, 4
 .text:08006AEA                 cmp     eax, 0
-.text:08006AED                 jz      loc_8006AF8
-.text:08006AF3                 jmp     loc_8006B0C
+.text:08006AED                 jz      rv_1
+.text:08006AF3                 jmp     rv_2
 .text:08006AF8 ; ---------------------------------------------------------------------------
 .text:08006AF8
-.text:08006AF8 loc_8006AF8:                            ; ...
+.text:08006AF8 rv_1:                                   ; ...
 .text:08006AF8                 mov     eax, offset L_101 ; "invalid operand passed to regval()"
 .text:08006AFD                 push    eax
 .text:08006AFE                 mov     eax, 0
 .text:08006B03                 push    eax
-.text:08006B04                 call    nasm_panic
+.text:08006B04                 call    nasm_panic      ; nasm_panic(0, "invalid operand passed to regval()");
 .text:08006B09                 add     esp, 8
 .text:08006B0C
-.text:08006B0C loc_8006B0C:                            ; ...
-.text:08006B0C                 mov     eax, [ebp+arg_0]
-.text:08006B0F                 add     eax, 0Ch
+.text:08006B0C rv_2:                                   ; ...
+.text:08006B0C                 mov     eax, [ebp+o]
+.text:08006B0F                 add     eax, 12
 .text:08006B12                 mov     ecx, [eax]
 .text:08006B14                 shl     ecx, 2
-.text:08006B17                 mov     eax, offset nasm_regvals
+.text:08006B17                 mov     eax, offset nasm_regvals ; return nasm_regvals[o->basereg];
 .text:08006B1C                 add     eax, ecx
-.text:08006B1E                 mov     [ebp+var_4], eax
-.text:08006B21                 mov     eax, [ebp+var_4]
+.text:08006B1E                 mov     [ebp+tmp], eax
+.text:08006B21                 mov     eax, [ebp+tmp]
 .text:08006B24                 mov     eax, [eax]
 .text:08006B26                 leave
 .text:08006B27                 retn
@@ -11098,38 +11098,38 @@
 .text:08006B28
 .text:08006B28 proc            op_rexflags near        ; ...
 .text:08006B28
-.text:08006B28 var_C           = dword ptr -0Ch
-.text:08006B28 var_8           = dword ptr -8
-.text:08006B28 var_4           = dword ptr -4
-.text:08006B28 arg_0           = dword ptr  8
-.text:08006B28 arg_4           = dword ptr  0Ch
+.text:08006B28 val             = dword ptr -0Ch
+.text:08006B28 flags           = dword ptr -8
+.text:08006B28 flags_h         = dword ptr -4
+.text:08006B28 o               = dword ptr  8
+.text:08006B28 mask            = dword ptr  0Ch
 .text:08006B28
-.text:08006B28                 push    ebp
-.text:08006B29                 mov     ebp, esp
-.text:08006B2B                 sub     esp, 0Ch
+.text:08006B28                 push    ebp             ; static int op_rexflags(const operand * o, int mask)
+.text:08006B29                 mov     ebp, esp        ; opflags_t flags;
+.text:08006B2B                 sub     esp, 12         ; int val;
 .text:08006B31                 nop
-.text:08006B32                 mov     eax, [ebp+arg_0]
-.text:08006B35                 add     eax, 0Ch
-.text:08006B38                 mov     ecx, [eax]
+.text:08006B32                 mov     eax, [ebp+o]    ; if (!is_register(o->basereg))
+.text:08006B35                 add     eax, 12
+.text:08006B38                 mov     ecx, [eax]      ; operand->basereg = [operand+12]
 .text:08006B3A                 push    ecx
 .text:08006B3B                 call    is_register
 .text:08006B40                 add     esp, 4
 .text:08006B43                 cmp     eax, 0
-.text:08006B46                 jz      loc_8006B51
-.text:08006B4C                 jmp     loc_8006B65
+.text:08006B46                 jz      orxf_1
+.text:08006B4C                 jmp     orxf_2
 .text:08006B51 ; ---------------------------------------------------------------------------
 .text:08006B51
-.text:08006B51 loc_8006B51:                            ; ...
+.text:08006B51 orxf_1:                                 ; ...
 .text:08006B51                 mov     eax, offset L_102 ; "invalid operand passed to op_rexflags()"
 .text:08006B56                 push    eax
 .text:08006B57                 mov     eax, 0
 .text:08006B5C                 push    eax
-.text:08006B5D                 call    nasm_panic
+.text:08006B5D                 call    nasm_panic      ; nasm_panic(0, "invalid operand passed to op_rexflags()");
 .text:08006B62                 add     esp, 8
 .text:08006B65
-.text:08006B65 loc_8006B65:                            ; ...
-.text:08006B65                 mov     eax, [ebp+arg_0]
-.text:08006B68                 add     eax, 0Ch
+.text:08006B65 orxf_2:                                 ; ...
+.text:08006B65                 mov     eax, [ebp+o]
+.text:08006B68                 add     eax, 12
 .text:08006B6B                 mov     ecx, [eax]
 .text:08006B6D                 shl     ecx, 3
 .text:08006B70                 mov     eax, offset nasm_reg_flags
@@ -11137,26 +11137,26 @@
 .text:08006B77                 mov     ecx, [eax]
 .text:08006B79                 add     eax, 4
 .text:08006B7C                 mov     edx, [eax]
-.text:08006B7E                 mov     [ebp+var_8], ecx
-.text:08006B81                 mov     [ebp+var_4], edx
-.text:08006B84                 mov     eax, [ebp+arg_0]
-.text:08006B87                 add     eax, 0Ch
+.text:08006B7E                 mov     [ebp+flags], ecx ; flags = nasm_reg_flags[o->basereg];
+.text:08006B81                 mov     [ebp+flags_h], edx
+.text:08006B84                 mov     eax, [ebp+o]
+.text:08006B87                 add     eax, 12
 .text:08006B8A                 mov     ecx, [eax]
 .text:08006B8C                 shl     ecx, 2
 .text:08006B8F                 mov     eax, offset nasm_regvals
 .text:08006B94                 add     eax, ecx
 .text:08006B96                 mov     ecx, [eax]
-.text:08006B98                 mov     [ebp+var_C], ecx
-.text:08006B9B                 mov     eax, [ebp+arg_4]
+.text:08006B98                 mov     [ebp+val], ecx  ; val = nasm_regvals[o->basereg];
+.text:08006B9B                 mov     eax, [ebp+mask]
 .text:08006B9E                 push    eax
-.text:08006B9F                 mov     eax, [ebp+var_8]
-.text:08006BA2                 mov     ecx, [ebp+var_4]
+.text:08006B9F                 mov     eax, [ebp+flags]
+.text:08006BA2                 mov     ecx, [ebp+flags_h]
 .text:08006BA5                 push    ecx
 .text:08006BA6                 push    eax
-.text:08006BA7                 mov     eax, [ebp+var_C]
+.text:08006BA7                 mov     eax, [ebp+val]
 .text:08006BAA                 push    eax
-.text:08006BAB                 call    rexflags
-.text:08006BB0                 add     esp, 10h
+.text:08006BAB                 call    rexflags        ; return rexflags(val, flags, mask);
+.text:08006BB0                 add     esp, 16
 .text:08006BB3                 leave
 .text:08006BB4                 retn
 .text:08006BB4 endp            op_rexflags
@@ -11168,93 +11168,96 @@
 .text:08006BB5
 .text:08006BB5 proc            rexflags near           ; ...
 .text:08006BB5
-.text:08006BB5 var_4           = dword ptr -4
-.text:08006BB5 arg_0           = dword ptr  8
-.text:08006BB5 arg_4           = dword ptr  0Ch
-.text:08006BB5 arg_8           = dword ptr  10h
-.text:08006BB5 arg_C           = dword ptr  14h
+.text:08006BB5 rex             = dword ptr -4
+.text:08006BB5 val             = dword ptr  8
+.text:08006BB5 flags           = dword ptr  0Ch
+.text:08006BB5 flags_h         = dword ptr  10h
+.text:08006BB5 mask            = dword ptr  14h
 .text:08006BB5
-.text:08006BB5                 push    ebp
+.text:08006BB5                 push    ebp             ; static int rexflags(int val, opflags_t flags, int mask)
 .text:08006BB6                 mov     ebp, esp
 .text:08006BB8                 sub     esp, 4
 .text:08006BBE                 nop
 .text:08006BBF                 mov     eax, 0
-.text:08006BC4                 mov     [ebp+var_4], eax
-.text:08006BC7                 mov     eax, [ebp+arg_0]
-.text:08006BCA                 cmp     eax, 0
-.text:08006BCD                 jl      loc_8006BEB
-.text:08006BD3                 mov     eax, [ebp+arg_0]
+.text:08006BC4                 mov     [ebp+rex], eax  ; int rex = 0;
+.text:08006BC7                 mov     eax, [ebp+val]
+.text:08006BCA                 cmp     eax, 0          ; if (val >= 0 && (val & 8))
+.text:08006BCD                 jl      rxf_1
+.text:08006BD3                 mov     eax, [ebp+val]
 .text:08006BD6                 and     eax, 8
 .text:08006BD9                 cmp     eax, 0
-.text:08006BDC                 jz      loc_8006BEB
-.text:08006BE2                 mov     eax, [ebp+var_4]
+.text:08006BDC                 jz      rxf_1
+.text:08006BE2                 mov     eax, [ebp+rex]
 .text:08006BE5                 or      eax, 7
-.text:08006BE8                 mov     [ebp+var_4], eax
+.text:08006BE8                 mov     [ebp+rex], eax  ; rex |= REX_B|REX_X|REX_R;
+.text:08006BE8                                         ;          1     2     4
 .text:08006BEB
-.text:08006BEB loc_8006BEB:                            ; ...
-.text:08006BEB                 mov     eax, [ebp+arg_8]
-.text:08006BEE                 and     eax, 8
+.text:08006BEB rxf_1:                                  ; ...
+.text:08006BEB                 mov     eax, [ebp+flags_h] ; if (flags & BITS64)
+.text:08006BEE                 and     eax, 8          ; opflags bit 35 = BITS64 (00000008h:0h)
 .text:08006BF1                 mov     ecx, 0
 .text:08006BF6                 cmp     eax, 0
-.text:08006BF9                 jnz     loc_8006C08
+.text:08006BF9                 jnz     rxf_2
 .text:08006BFF                 cmp     ecx, 0
-.text:08006C02                 jz      loc_8006C11
+.text:08006C02                 jz      rxf_3
 .text:08006C08
-.text:08006C08 loc_8006C08:                            ; ...
-.text:08006C08                 mov     eax, [ebp+var_4]
-.text:08006C0B                 or      eax, 8
-.text:08006C0E                 mov     [ebp+var_4], eax
+.text:08006C08 rxf_2:                                  ; ...
+.text:08006C08                 mov     eax, [ebp+rex]
+.text:08006C0B                 or      eax, 8          ; REX_W = 8
+.text:08006C0E                 mov     [ebp+rex], eax  ; rex |= REX_W;
 .text:08006C11
-.text:08006C11 loc_8006C11:                            ; ...
-.text:08006C11                 mov     eax, [ebp+arg_4]
-.text:08006C14                 xor     eax, 0FFFFFFFFh
-.text:08006C17                 mov     ecx, [ebp+arg_8]
-.text:08006C1A                 xor     ecx, 0FFFFFFFFh
-.text:08006C1D                 and     eax, 600105h
-.text:08006C23                 and     ecx, 1
+.text:08006C11 rxf_3:                                  ; ...
+.text:08006C11                 mov     eax, [ebp+flags] ; if (!(REG_HIGH & ~flags)) /* AH, CH, DH, BH */
+.text:08006C14                 xor     eax, 0FFFFFFFFh ; ~flags
+.text:08006C17                 mov     ecx, [ebp+flags_h]
+.text:08006C1A                 xor     ecx, 0FFFFFFFFh ; #define REG_HIGH
+.text:08006C1A                                         ;  (GEN_SUBCLASS(5)|GEN_SUBCLASS(4)|REG_CLASS_GPR| BITS8|REGMEM|REGISTER)
+.text:08006C1D                 and     eax, 600105h    ; REG_HIGH = bit 22 | bit 21 | bit 8 | bit 32 | bit 2 | bit 0
+.text:08006C1D                                         ;            01-0000000001100000-0000000100000101b (01h:0060h:0105h)
+.text:08006C23                 and     ecx, 1          ; bit 32
 .text:08006C26                 cmp     ecx, 0
-.text:08006C29                 jnz     loc_8006C38
+.text:08006C29                 jnz     rxf_4
 .text:08006C2F                 cmp     eax, 0
-.text:08006C32                 jz      loc_8006C3D
+.text:08006C32                 jz      rxf_5
 .text:08006C38
-.text:08006C38 loc_8006C38:                            ; ...
-.text:08006C38                 jmp     loc_8006C4E
+.text:08006C38 rxf_4:                                  ; ...
+.text:08006C38                 jmp     rxf_6           ; else if
 .text:08006C3D ; ---------------------------------------------------------------------------
 .text:08006C3D
-.text:08006C3D loc_8006C3D:                            ; ...
-.text:08006C3D                 mov     eax, [ebp+var_4]
-.text:08006C40                 or      eax, 80h
-.text:08006C46                 mov     [ebp+var_4], eax
-.text:08006C49                 jmp     loc_8006C8F
+.text:08006C3D rxf_5:                                  ; ...
+.text:08006C3D                 mov     eax, [ebp+rex]
+.text:08006C40                 or      eax, 80h        ; REX_H = 80h
+.text:08006C46                 mov     [ebp+rex], eax  ; rex |= REX_H;
+.text:08006C49                 jmp     rxf_9
 .text:08006C4E ; ---------------------------------------------------------------------------
 .text:08006C4E
-.text:08006C4E loc_8006C4E:                            ; ...
-.text:08006C4E                 mov     eax, [ebp+arg_4]
-.text:08006C51                 xor     eax, 0FFFFFFFFh
-.text:08006C54                 mov     ecx, [ebp+arg_8]
-.text:08006C57                 xor     ecx, 0FFFFFFFFh
-.text:08006C5A                 and     eax, 105h
-.text:08006C60                 and     ecx, 1
+.text:08006C4E rxf_6:                                  ; ...
+.text:08006C4E                 mov     eax, [ebp+flags] ; else if (!(REG8 & ~flags) && val >= 4) /* SPL, BPL, SIL, DIL */
+.text:08006C51                 xor     eax, 0FFFFFFFFh ; ~flags
+.text:08006C54                 mov     ecx, [ebp+flags_h]
+.text:08006C57                 xor     ecx, 0FFFFFFFFh ; #define REG8 (REG_CLASS_GPR|BITS8|REGMEM|REGISTER)
+.text:08006C5A                 and     eax, 105h       ; REG8 = 0100000105h = bit 8 | bit 32 | bit 2 | bit 0
+.text:08006C60                 and     ecx, 1          ; bit 32
 .text:08006C63                 cmp     ecx, 0
-.text:08006C66                 jnz     loc_8006C75
+.text:08006C66                 jnz     rxf_7
 .text:08006C6C                 cmp     eax, 0
-.text:08006C6F                 jz      loc_8006C7A
+.text:08006C6F                 jz      rxf_8
 .text:08006C75
-.text:08006C75 loc_8006C75:                            ; ...
-.text:08006C75                 jmp     loc_8006C8F
+.text:08006C75 rxf_7:                                  ; ...
+.text:08006C75                 jmp     rxf_9
 .text:08006C7A ; ---------------------------------------------------------------------------
 .text:08006C7A
-.text:08006C7A loc_8006C7A:                            ; ...
-.text:08006C7A                 mov     eax, [ebp+arg_0]
+.text:08006C7A rxf_8:                                  ; ...
+.text:08006C7A                 mov     eax, [ebp+val]
 .text:08006C7D                 cmp     eax, 4
-.text:08006C80                 jl      loc_8006C8F
-.text:08006C86                 mov     eax, [ebp+var_4]
-.text:08006C89                 or      eax, 40h
-.text:08006C8C                 mov     [ebp+var_4], eax
+.text:08006C80                 jl      rxf_9
+.text:08006C86                 mov     eax, [ebp+rex]
+.text:08006C89                 or      eax, 64         ; REX_P = 40h
+.text:08006C8C                 mov     [ebp+rex], eax  ; rex |= REX_P;
 .text:08006C8F
-.text:08006C8F loc_8006C8F:                            ; ...
-.text:08006C8F                 mov     eax, [ebp+var_4]
-.text:08006C92                 mov     ecx, [ebp+arg_C]
+.text:08006C8F rxf_9:                                  ; ...
+.text:08006C8F                 mov     eax, [ebp+rex]  ; return rex & mask;
+.text:08006C92                 mov     ecx, [ebp+mask]
 .text:08006C95                 and     eax, ecx
 .text:08006C97                 leave
 .text:08006C98                 retn
@@ -11267,99 +11270,101 @@
 .text:08006C99
 .text:08006C99 proc            evexflags near          ; ...
 .text:08006C99
-.text:08006C99 var_4           = dword ptr -4
-.text:08006C99 arg_0           = dword ptr  8
-.text:08006C99 arg_4           = word ptr  0Ch
-.text:08006C99 arg_8           = dword ptr  10h
-.text:08006C99 arg_C           = byte ptr  14h
+.text:08006C99 evex            = dword ptr -4
+.text:08006C99 val             = dword ptr  8
+.text:08006C99 deco            = word ptr  0Ch
+.text:08006C99 mask            = dword ptr  10h
+.text:08006C99 _byte           = byte ptr  14h
 .text:08006C99
-.text:08006C99                 push    ebp
+.text:08006C99                 push    ebp             ; static int evexflags(int val, decoflags_t deco,
+.text:08006C99                                         ;                      int mask, uint8_t byte)
 .text:08006C9A                 mov     ebp, esp
 .text:08006C9C                 sub     esp, 4
 .text:08006CA2                 nop
 .text:08006CA3                 mov     eax, 0
-.text:08006CA8                 mov     [ebp+var_4], eax
-.text:08006CAB                 jmp     loc_8006D68
+.text:08006CA8                 mov     [ebp+evex], eax ; int evex = 0;
+.text:08006CAB                 jmp     exf_9           ; switch (byte) {
 .text:08006CB0 ; ---------------------------------------------------------------------------
 .text:08006CB0
-.text:08006CB0 loc_8006CB0:                            ; ...
-.text:08006CB0                 mov     eax, [ebp+arg_0]
-.text:08006CB3                 cmp     eax, 0
-.text:08006CB6                 jl      loc_8006CD4
-.text:08006CBC                 mov     eax, [ebp+arg_0]
-.text:08006CBF                 and     eax, 10h
+.text:08006CB0 exf_1:                                  ; ...
+.text:08006CB0                 mov     eax, [ebp+val]  ; case 0:
+.text:08006CB3                 cmp     eax, 0          ; if (val >= 0 && (val & 16))
+.text:08006CB6                 jl      exf_2
+.text:08006CBC                 mov     eax, [ebp+val]
+.text:08006CBF                 and     eax, 16
 .text:08006CC2                 cmp     eax, 0
-.text:08006CC5                 jz      loc_8006CD4
-.text:08006CCB                 mov     eax, [ebp+var_4]
-.text:08006CCE                 or      eax, 50h
-.text:08006CD1                 mov     [ebp+var_4], eax
+.text:08006CC5                 jz      exf_2
+.text:08006CCB                 mov     eax, [ebp+evex]
+.text:08006CCE                 or      eax, 80         ; 10h | 40h
+.text:08006CD1                 mov     [ebp+evex], eax ; evex |= (EVEX_P0RP | EVEX_P0X);
+.text:08006CD1                                         ;             10h         40h
 .text:08006CD4
-.text:08006CD4 loc_8006CD4:                            ; ...
-.text:08006CD4                 jmp     loc_8006D7E
+.text:08006CD4 exf_2:                                  ; ...
+.text:08006CD4                 jmp     exf_10          ; break;
 .text:08006CD9 ; ---------------------------------------------------------------------------
 .text:08006CD9
-.text:08006CD9 loc_8006CD9:                            ; ...
-.text:08006CD9                 mov     eax, [ebp+arg_0]
-.text:08006CDC                 cmp     eax, 0
-.text:08006CDF                 jl      loc_8006CFD
-.text:08006CE5                 mov     eax, [ebp+arg_0]
-.text:08006CE8                 and     eax, 10h
+.text:08006CD9 exf_3:                                  ; ...
+.text:08006CD9                 mov     eax, [ebp+val]  ; case 2:
+.text:08006CDC                 cmp     eax, 0          ; if (val >= 0 && (val & 16))
+.text:08006CDF                 jl      exf_4
+.text:08006CE5                 mov     eax, [ebp+val]
+.text:08006CE8                 and     eax, 16
 .text:08006CEB                 cmp     eax, 0
-.text:08006CEE                 jz      loc_8006CFD
-.text:08006CF4                 mov     eax, [ebp+var_4]
-.text:08006CF7                 or      eax, 8
-.text:08006CFA                 mov     [ebp+var_4], eax
+.text:08006CEE                 jz      exf_4
+.text:08006CF4                 mov     eax, [ebp+evex]
+.text:08006CF7                 or      eax, 8          ; EVEX_P2VP = 8
+.text:08006CFA                 mov     [ebp+evex], eax ; evex |= EVEX_P2VP;
 .text:08006CFD
-.text:08006CFD loc_8006CFD:                            ; ...
-.text:08006CFD                 movzx   eax, [ebp+arg_4]
+.text:08006CFD exf_4:                                  ; ...
+.text:08006CFD                 movzx   eax, [ebp+deco] ; if (deco & Z)
 .text:08006D01                 mov     ecx, eax
-.text:08006D03                 sar     ecx, 1Fh
-.text:08006D06                 and     eax, 10h
+.text:08006D03                 sar     ecx, 31
+.text:08006D06                 and     eax, 16
 .text:08006D09                 mov     ecx, 0
 .text:08006D0E                 cmp     ecx, 0
-.text:08006D11                 jnz     loc_8006D20
+.text:08006D11                 jnz     exf_5
 .text:08006D17                 cmp     eax, 0
-.text:08006D1A                 jz      loc_8006D2C
+.text:08006D1A                 jz      exf_6
 .text:08006D20
-.text:08006D20 loc_8006D20:                            ; ...
-.text:08006D20                 mov     eax, [ebp+var_4]
-.text:08006D23                 or      eax, 80h
-.text:08006D29                 mov     [ebp+var_4], eax
+.text:08006D20 exf_5:                                  ; ...
+.text:08006D20                 mov     eax, [ebp+evex]
+.text:08006D23                 or      eax, 128        ; EVEX_P2Z = 80h
+.text:08006D29                 mov     [ebp+evex], eax ; evex |= EVEX_P2Z;
 .text:08006D2C
-.text:08006D2C loc_8006D2C:                            ; ...
-.text:08006D2C                 movzx   eax, [ebp+arg_4]
+.text:08006D2C exf_6:                                  ; ...
+.text:08006D2C                 movzx   eax, [ebp+deco] ; if (deco & OPMASK_MASK)
 .text:08006D30                 mov     ecx, eax
-.text:08006D32                 sar     ecx, 1Fh
-.text:08006D35                 and     eax, 0Fh
+.text:08006D32                 sar     ecx, 31
+.text:08006D35                 and     eax, 15         ; OPMASK_MASK = 0Fh
 .text:08006D38                 mov     ecx, 0
 .text:08006D3D                 cmp     ecx, 0
-.text:08006D40                 jnz     loc_8006D4F
+.text:08006D40                 jnz     exf_7
 .text:08006D46                 cmp     eax, 0
-.text:08006D49                 jz      loc_8006D5E
+.text:08006D49                 jz      exf_8
 .text:08006D4F
-.text:08006D4F loc_8006D4F:                            ; ...
-.text:08006D4F                 movzx   eax, [ebp+arg_4]
-.text:08006D53                 and     eax, 7
-.text:08006D56                 mov     ecx, [ebp+var_4]
+.text:08006D4F exf_7:                                  ; ...
+.text:08006D4F                 movzx   eax, [ebp+deco]
+.text:08006D53                 and     eax, 7          ; EVEX_P2AAA = 7
+.text:08006D56                 mov     ecx, [ebp+evex]
 .text:08006D59                 or      ecx, eax
-.text:08006D5B                 mov     [ebp+var_4], ecx
+.text:08006D5B                 mov     [ebp+evex], ecx ; evex |= deco & EVEX_P2AAA;
 .text:08006D5E
-.text:08006D5E loc_8006D5E:                            ; ...
-.text:08006D5E                 jmp     loc_8006D7E
+.text:08006D5E exf_8:                                  ; ...
+.text:08006D5E                 jmp     exf_10          ; break;
 .text:08006D63 ; ---------------------------------------------------------------------------
-.text:08006D63                 jmp     loc_8006D7E
+.text:08006D63                 jmp     exf_10
 .text:08006D68 ; ---------------------------------------------------------------------------
 .text:08006D68
-.text:08006D68 loc_8006D68:                            ; ...
-.text:08006D68                 movzx   eax, [ebp+arg_C]
+.text:08006D68 exf_9:                                  ; ...
+.text:08006D68                 movzx   eax, [ebp+_byte] ; switch (byte) {
 .text:08006D6C                 cmp     eax, 0
-.text:08006D6F                 jz      loc_8006CB0
+.text:08006D6F                 jz      exf_1           ; case 0:
 .text:08006D75                 cmp     eax, 2
-.text:08006D78                 jz      loc_8006CD9
+.text:08006D78                 jz      exf_3           ; case 2:
 .text:08006D7E
-.text:08006D7E loc_8006D7E:                            ; ...
-.text:08006D7E                 mov     eax, [ebp+var_4]
-.text:08006D81                 mov     ecx, [ebp+arg_8]
+.text:08006D7E exf_10:                                 ; ...
+.text:08006D7E                 mov     eax, [ebp+evex] ; return evex & mask;
+.text:08006D81                 mov     ecx, [ebp+mask]
 .text:08006D84                 and     eax, ecx
 .text:08006D86                 leave
 .text:08006D87                 retn
@@ -11372,35 +11377,35 @@
 .text:08006D88
 .text:08006D88 proc            op_evexflags near       ; ...
 .text:08006D88
-.text:08006D88 var_4           = dword ptr -4
-.text:08006D88 arg_0           = dword ptr  8
-.text:08006D88 arg_4           = dword ptr  0Ch
-.text:08006D88 arg_8           = byte ptr  10h
+.text:08006D88 val             = dword ptr -4
+.text:08006D88 o               = dword ptr  8
+.text:08006D88 mask            = dword ptr  0Ch
+.text:08006D88 _byte           = byte ptr  10h
 .text:08006D88
-.text:08006D88                 push    ebp
-.text:08006D89                 mov     ebp, esp
+.text:08006D88                 push    ebp             ; static int op_evexflags(const operand * o, int mask, uint8_t byte)
+.text:08006D89                 mov     ebp, esp        ; int val;
 .text:08006D8B                 sub     esp, 4
 .text:08006D91                 nop
-.text:08006D92                 mov     eax, [ebp+arg_0]
-.text:08006D95                 add     eax, 0Ch
-.text:08006D98                 mov     ecx, [eax]
-.text:08006D9A                 shl     ecx, 2
+.text:08006D92                 mov     eax, [ebp+o]
+.text:08006D95                 add     eax, 12
+.text:08006D98                 mov     ecx, [eax]      ; o->basereg
+.text:08006D9A                 shl     ecx, 2          ; * int_size (*4)
 .text:08006D9D                 mov     eax, offset nasm_regvals
 .text:08006DA2                 add     eax, ecx
 .text:08006DA4                 mov     ecx, [eax]
-.text:08006DA6                 mov     [ebp+var_4], ecx
-.text:08006DA9                 mov     eax, [ebp+arg_0]
-.text:08006DAC                 add     eax, 3Ch
-.text:08006DAF                 movzx   ecx, [ebp+arg_8]
+.text:08006DA6                 mov     [ebp+val], ecx  ; val = nasm_regvals[o->basereg];
+.text:08006DA9                 mov     eax, [ebp+o]
+.text:08006DAC                 add     eax, 60         ; o->decoflags (address)
+.text:08006DAF                 movzx   ecx, [ebp+_byte]
 .text:08006DB3                 push    ecx
-.text:08006DB4                 mov     ecx, [ebp+arg_4]
+.text:08006DB4                 mov     ecx, [ebp+mask]
 .text:08006DB7                 push    ecx
-.text:08006DB8                 movzx   ecx, [word ptr eax]
+.text:08006DB8                 movzx   ecx, [word ptr eax] ; o->decoflags
 .text:08006DBB                 push    ecx
-.text:08006DBC                 mov     eax, [ebp+var_4]
+.text:08006DBC                 mov     eax, [ebp+val]
 .text:08006DBF                 push    eax
-.text:08006DC0                 call    evexflags
-.text:08006DC5                 add     esp, 10h
+.text:08006DC0                 call    evexflags       ; return evexflags(val, o->decoflags, mask, byte);
+.text:08006DC5                 add     esp, 16
 .text:08006DC8                 leave
 .text:08006DC9                 retn
 .text:08006DC9 endp            op_evexflags
@@ -11412,630 +11417,641 @@
 .text:08006DCA
 .text:08006DCA proc            find_match near         ; ...
 .text:08006DCA
-.text:08006DCA var_A0          = dword ptr -0A0h
-.text:08006DCA var_9C          = dword ptr -9Ch
-.text:08006DCA var_98          = dword ptr -98h
-.text:08006DCA var_94          = dword ptr -94h
-.text:08006DCA var_90          = dword ptr -90h
-.text:08006DCA var_8C          = dword ptr -8Ch
-.text:08006DCA var_88          = dword ptr -88h
-.text:08006DCA var_84          = dword ptr -84h
-.text:08006DCA var_80          = dword ptr -80h
-.text:08006DCA var_7C          = dword ptr -7Ch
-.text:08006DCA var_78          = dword ptr -78h
-.text:08006DCA var_74          = dword ptr -74h
-.text:08006DCA var_6C          = dword ptr -6Ch
-.text:08006DCA var_68          = dword ptr -68h
-.text:08006DCA var_64          = dword ptr -64h
-.text:08006DCA var_5C          = dword ptr -5Ch
-.text:08006DCA var_58          = dword ptr -58h
-.text:08006DCA var_54          = dword ptr -54h
-.text:08006DCA var_4C          = dword ptr -4Ch
-.text:08006DCA var_48          = dword ptr -48h
-.text:08006DCA var_44          = dword ptr -44h
-.text:08006DCA var_3D          = byte ptr -3Dh
-.text:08006DCA var_3C          = dword ptr -3Ch
-.text:08006DCA var_38          = byte ptr -38h
-.text:08006DCA var_C           = dword ptr -0Ch
-.text:08006DCA var_8           = dword ptr -8
-.text:08006DCA var_4           = dword ptr -4
-.text:08006DCA arg_0           = dword ptr  8
-.text:08006DCA arg_4           = dword ptr  0Ch
-.text:08006DCA arg_8           = dword ptr  10h
-.text:08006DCA arg_C           = dword ptr  14h
-.text:08006DCA arg_10          = dword ptr  18h
-.text:08006DCA arg_14          = dword ptr  1Ch
+.text:08006DCA tmp14_h         = dword ptr -0A0h
+.text:08006DCA tmp14           = dword ptr -9Ch
+.text:08006DCA tmp13           = dword ptr -98h
+.text:08006DCA tmp12           = dword ptr -94h
+.text:08006DCA tmp11           = dword ptr -90h
+.text:08006DCA tmp11_h         = dword ptr -8Ch
+.text:08006DCA tmp10           = dword ptr -88h
+.text:08006DCA tmp9_h          = dword ptr -84h
+.text:08006DCA tmp9            = dword ptr -80h
+.text:08006DCA tmp8            = dword ptr -7Ch
+.text:08006DCA tmp7            = dword ptr -78h
+.text:08006DCA tmp7_h          = dword ptr -74h
+.text:08006DCA tmp6            = dword ptr -6Ch
+.text:08006DCA tmp5            = dword ptr -68h
+.text:08006DCA tmp5_h          = dword ptr -64h
+.text:08006DCA tmp4            = dword ptr -5Ch
+.text:08006DCA tmp3            = dword ptr -58h
+.text:08006DCA tmp3_h          = dword ptr -54h
+.text:08006DCA tmp2            = dword ptr -4Ch
+.text:08006DCA tmp1            = dword ptr -48h
+.text:08006DCA i               = dword ptr -44h
+.text:08006DCA broadcast       = byte ptr -3Dh
+.text:08006DCA opsizemissing   = dword ptr -3Ch
+.text:08006DCA xsizeflags      = byte ptr -38h
+.text:08006DCA merr            = dword ptr -0Ch
+.text:08006DCA m               = dword ptr -8
+.text:08006DCA temp            = dword ptr -4
+.text:08006DCA tempp           = dword ptr  8
+.text:08006DCA instruction     = dword ptr  0Ch
+.text:08006DCA _segment        = dword ptr  10h
+.text:08006DCA _offset         = dword ptr  14h
+.text:08006DCA _offset_h       = dword ptr  18h
+.text:08006DCA _bits           = dword ptr  1Ch
 .text:08006DCA
-.text:08006DCA                 push    ebp
-.text:08006DCB                 mov     ebp, esp
-.text:08006DCD                 sub     esp, 0A0h
-.text:08006DD3                 nop
+.text:08006DCA                 push    ebp             ; static enum match_result find_match(const struct itemplate **tempp,
+.text:08006DCA                                         ;  insn *instruction, int32_t segment, int64_t offset, int bits)
+.text:08006DCB                 mov     ebp, esp        ; const struct itemplate *temp;
+.text:08006DCD                 sub     esp, 160        ; enum match_result m, merr;
+.text:08006DD3                 nop                     ; opflags_t xsizeflags[MAX_OPERANDS]; /// MAX_OPERANDS = 5
 .text:08006DD4                 mov     eax, 0
-.text:08006DD9                 mov     [ebp+var_3C], eax
-.text:08006DDC                 mov     eax, [ebp+arg_4]
-.text:08006DDF                 add     eax, 1A0h
-.text:08006DE5                 movsx   ecx, [byte ptr eax]
-.text:08006DE8                 mov     [ebp+var_3D], cl
-.text:08006DEB                 mov     eax, 0
-.text:08006DF0                 mov     [ebp+var_44], eax
+.text:08006DD9                 mov     [ebp+opsizemissing], eax ; bool opsizemissing = false;
+.text:08006DDC                 mov     eax, [ebp+instruction]
+.text:08006DDF                 add     eax, 416        ; instruction->evex_brerop (address)
+.text:08006DE5                 movsx   ecx, [byte ptr eax] ; instruction->evex_brerop
+.text:08006DE8                 mov     [ebp+broadcast], cl ; int8_t broadcast = instruction->evex_brerop;
+.text:08006DEB                 mov     eax, 0          ; int i;
+.text:08006DEB                                         ; /* broadcasting uses a different data element size */
+.text:08006DF0                 mov     [ebp+i], eax    ; for (i = 0; i < instruction->operands; i++)
 .text:08006DF3
-.text:08006DF3 loc_8006DF3:                            ; ...
-.text:08006DF3                 mov     eax, [ebp+arg_4]
-.text:08006DF6                 add     eax, 28h
-.text:08006DF9                 mov     ecx, [ebp+var_44]
-.text:08006DFC                 mov     edx, [eax]
+.text:08006DF3 fm_1:                                   ; ...
+.text:08006DF3                 mov     eax, [ebp+instruction]
+.text:08006DF6                 add     eax, 40
+.text:08006DF9                 mov     ecx, [ebp+i]    ; (if) i < instruction->operands
+.text:08006DFC                 mov     edx, [eax]      ; instruction->operands
 .text:08006DFE                 cmp     ecx, edx
-.text:08006E00                 jge     loc_8006E9D
-.text:08006E06                 jmp     loc_8006E16
+.text:08006E00                 jge     fm_6
+.text:08006E06                 jmp     fm_3
 .text:08006E0B ; ---------------------------------------------------------------------------
 .text:08006E0B
-.text:08006E0B loc_8006E0B:                            ; ...
-.text:08006E0B                 mov     eax, [ebp+var_44]
+.text:08006E0B fm_2:                                   ; ...
+.text:08006E0B                 mov     eax, [ebp+i]
 .text:08006E0E                 mov     ecx, eax
 .text:08006E10                 inc     eax
-.text:08006E11                 mov     [ebp+var_44], eax
-.text:08006E14                 jmp     short loc_8006DF3
+.text:08006E11                 mov     [ebp+i], eax    ; i++
+.text:08006E14                 jmp     short fm_1      ; (next for)
 .text:08006E16 ; ---------------------------------------------------------------------------
 .text:08006E16
-.text:08006E16 loc_8006E16:                            ; ...
-.text:08006E16                 mov     eax, [ebp+var_44]
-.text:08006E19                 movsx   ecx, [ebp+var_3D]
+.text:08006E16 fm_3:                                   ; ...
+.text:08006E16                 mov     eax, [ebp+i]    ; if (i == broadcast)
+.text:08006E19                 movsx   ecx, [ebp+broadcast]
 .text:08006E1D                 cmp     eax, ecx
-.text:08006E1F                 jnz     loc_8006E60
-.text:08006E25                 mov     eax, [ebp+var_44]
-.text:08006E28                 shl     eax, 3
-.text:08006E2B                 lea     ecx, [ebp+var_38]
-.text:08006E2E                 add     ecx, eax
-.text:08006E30                 mov     eax, [ebp+arg_4]
-.text:08006E33                 add     eax, 30h
-.text:08006E36                 mov     edx, [ebp+var_44]
-.text:08006E39                 shl     edx, 6
+.text:08006E1F                 jnz     fm_4            ; else
+.text:08006E25                 mov     eax, [ebp+i]    ; xsizeflags[i] = instruction->oprs[i].decoflags & BRSIZE_MASK;
+.text:08006E28                 shl     eax, 3          ; * 8
+.text:08006E2B                 lea     ecx, [ebp+xsizeflags]
+.text:08006E2E                 add     ecx, eax        ; xsizeflags[i]
+.text:08006E30                 mov     eax, [ebp+instruction]
+.text:08006E33                 add     eax, 48         ; instruction->oprs[0] address
+.text:08006E36                 mov     edx, [ebp+i]
+.text:08006E39                 shl     edx, 6          ; * 64 /// operand structure size = 64
 .text:08006E3C                 add     eax, edx
-.text:08006E3E                 add     eax, 3Ch
-.text:08006E41                 movzx   edx, [word ptr eax]
+.text:08006E3E                 add     eax, 60         ; operand + 60 = decoflags
+.text:08006E41                 movzx   edx, [word ptr eax] ; instruction->oprs[i].decoflags
 .text:08006E44                 mov     eax, edx
-.text:08006E46                 sar     eax, 1Fh
-.text:08006E49                 and     edx, 300h
+.text:08006E46                 sar     eax, 31
+.text:08006E49                 and     edx, 768        ; BRSIZE_MASK = 300h ; 3*256 = 768
+.text:08006E49                                         ;               03h:00h
 .text:08006E4F                 mov     eax, 0
 .text:08006E54                 mov     [ecx], edx
 .text:08006E56                 add     ecx, 4
 .text:08006E59                 mov     [ecx], eax
-.text:08006E5B                 jmp     loc_8006E98
+.text:08006E5B                 jmp     fm_5
 .text:08006E60 ; ---------------------------------------------------------------------------
 .text:08006E60
-.text:08006E60 loc_8006E60:                            ; ...
-.text:08006E60                 mov     eax, [ebp+var_44]
-.text:08006E63                 shl     eax, 3
-.text:08006E66                 lea     ecx, [ebp+var_38]
+.text:08006E60 fm_4:                                   ; ...
+.text:08006E60                 mov     eax, [ebp+i]    ; else
+.text:08006E63                 shl     eax, 3          ; xsizeflags[i] = instruction->oprs[i].type & SIZE_MASK;
+.text:08006E66                 lea     ecx, [ebp+xsizeflags]
 .text:08006E69                 add     ecx, eax
-.text:08006E6B                 mov     eax, [ebp+arg_4]
-.text:08006E6E                 add     eax, 30h
-.text:08006E71                 mov     edx, [ebp+var_44]
-.text:08006E74                 shl     edx, 6
+.text:08006E6B                 mov     eax, [ebp+instruction]
+.text:08006E6E                 add     eax, 48         ; instruction->oprs[0]
+.text:08006E71                 mov     edx, [ebp+i]
+.text:08006E74                 shl     edx, 6          ; * 64 /// operand structure size = 64
 .text:08006E77                 add     eax, edx
 .text:08006E79                 mov     edx, [eax]
-.text:08006E7B                 add     eax, 4
-.text:08006E7E                 mov     [ebp+var_48], ecx
+.text:08006E7B                 add     eax, 4          ; operand + 4 = type
+.text:08006E7E                 mov     [ebp+tmp1], ecx
 .text:08006E81                 mov     ecx, [eax]
-.text:08006E83                 and     ecx, 7FFh
-.text:08006E89                 mov     eax, 0
-.text:08006E8E                 mov     edx, [ebp+var_48]
+.text:08006E83                 and     ecx, 2047       ; shl ((shl (1), 11)-1), 32 = 7FFh:00000000h = 2047h:0
+.text:08006E89                 mov     eax, 0          ; (and ecx:edx, 7FFh:0) /// 64 bit 'and' operation
+.text:08006E8E                 mov     edx, [ebp+tmp1]
 .text:08006E91                 mov     [edx], eax
 .text:08006E93                 add     edx, 4
 .text:08006E96                 mov     [edx], ecx
 .text:08006E98
-.text:08006E98 loc_8006E98:                            ; ...
-.text:08006E98                 jmp     loc_8006E0B
+.text:08006E98 fm_5:                                   ; ...
+.text:08006E98                 jmp     fm_2            ; (next for)
 .text:08006E9D ; ---------------------------------------------------------------------------
 .text:08006E9D
-.text:08006E9D loc_8006E9D:                            ; ...
-.text:08006E9D                 mov     eax, 0
-.text:08006EA2                 mov     [ebp+var_C], eax
-.text:08006EA5                 mov     eax, [ebp+arg_4]
-.text:08006EA8                 add     eax, 20h
+.text:08006E9D fm_6:                                   ; ...
+.text:08006E9D                 mov     eax, 0          ; MERR_INVALOP = 0
+.text:08006EA2                 mov     [ebp+merr], eax ; merr = MERR_INVALOP;
+.text:08006EA5                 mov     eax, [ebp+instruction] ; for (temp = nasm_instructions[instruction->opcode];
+.text:08006EA8                 add     eax, 32         ; instruction->opcode (address)
 .text:08006EAB                 mov     ecx, [eax]
-.text:08006EAD                 shl     ecx, 2
+.text:08006EAD                 shl     ecx, 2          ; * 4 /// * int_size
 .text:08006EB0                 mov     eax, offset nasm_instructions
 .text:08006EB5                 add     eax, ecx
 .text:08006EB7                 mov     ecx, [eax]
-.text:08006EB9                 mov     [ebp+var_4], ecx
+.text:08006EB9                 mov     [ebp+temp], ecx
 .text:08006EBC
-.text:08006EBC loc_8006EBC:                            ; ...
-.text:08006EBC                 mov     eax, [ebp+var_4]
-.text:08006EBF                 mov     ecx, [eax]
-.text:08006EC1                 cmp     ecx, 0FFFFFFFFh
-.text:08006EC4                 jz      loc_800708F
-.text:08006ECA                 jmp     loc_8006EDC
+.text:08006EBC fm_7:                                   ; ...
+.text:08006EBC                 mov     eax, [ebp+temp] ; temp->opcode != I_none; temp++) {
+.text:08006EBF                 mov     ecx, [eax]      ; itemplate + 0 = itemplate->opcode
+.text:08006EC1                 cmp     ecx, 0FFFFFFFFh ; I_none = -1
+.text:08006EC4                 jz      fm_23
+.text:08006ECA                 jmp     fm_9
 .text:08006ECF ; ---------------------------------------------------------------------------
 .text:08006ECF
-.text:08006ECF loc_8006ECF:                            ; ...
-.text:08006ECF                 mov     eax, [ebp+var_4]
+.text:08006ECF fm_8:                                   ; ...
+.text:08006ECF                 mov     eax, [ebp+temp]
 .text:08006ED2                 mov     ecx, eax
-.text:08006ED4                 add     eax, 48h
-.text:08006ED7                 mov     [ebp+var_4], eax
-.text:08006EDA                 jmp     short loc_8006EBC
+.text:08006ED4                 add     eax, 72         ; itemplate structure size = 72
+.text:08006ED7                 mov     [ebp+temp], eax ; temp++
+.text:08006EDA                 jmp     short fm_7      ; (next for)
 .text:08006EDC ; ---------------------------------------------------------------------------
 .text:08006EDC
-.text:08006EDC loc_8006EDC:                            ; ...
-.text:08006EDC                 mov     eax, [ebp+arg_14]
+.text:08006EDC fm_9:                                   ; ...
+.text:08006EDC                 mov     eax, [ebp+_bits]
 .text:08006EDF                 push    eax
-.text:08006EE0                 mov     eax, [ebp+arg_4]
+.text:08006EE0                 mov     eax, [ebp+instruction]
 .text:08006EE3                 push    eax
-.text:08006EE4                 mov     eax, [ebp+var_4]
+.text:08006EE4                 mov     eax, [ebp+temp]
 .text:08006EE7                 push    eax
 .text:08006EE8                 call    matches
-.text:08006EED                 add     esp, 0Ch
-.text:08006EF0                 mov     [ebp+var_8], eax
-.text:08006EF3                 mov     eax, [ebp+var_8]
-.text:08006EF6                 cmp     eax, 0Fh
-.text:08006EF9                 jnz     loc_8006F42
-.text:08006EFF                 mov     eax, [ebp+var_4]
+.text:08006EED                 add     esp, 12
+.text:08006EF0                 mov     [ebp+m], eax    ; m = matches(temp, instruction, bits);
+.text:08006EF3                 mov     eax, [ebp+m]    ; if (m == MOK_JUMP) {
+.text:08006EF6                 cmp     eax, 15         ; MOK_JUMP = 15
+.text:08006EF9                 jnz     fm_12           ; } else if
+.text:08006EFF                 mov     eax, [ebp+temp] ; if (jmp_match(segment, offset, bits, instruction, temp))
 .text:08006F02                 push    eax
-.text:08006F03                 mov     eax, [ebp+arg_4]
+.text:08006F03                 mov     eax, [ebp+instruction]
 .text:08006F06                 push    eax
-.text:08006F07                 mov     eax, [ebp+arg_14]
+.text:08006F07                 mov     eax, [ebp+_bits]
 .text:08006F0A                 push    eax
-.text:08006F0B                 mov     eax, [ebp+arg_C]
-.text:08006F0E                 mov     ecx, [ebp+arg_10]
+.text:08006F0B                 mov     eax, [ebp+_offset]
+.text:08006F0E                 mov     ecx, [ebp+_offset_h]
 .text:08006F11                 push    ecx
 .text:08006F12                 push    eax
-.text:08006F13                 mov     eax, [ebp+arg_8]
+.text:08006F13                 mov     eax, [ebp+_segment]
 .text:08006F16                 push    eax
 .text:08006F17                 call    jmp_match
-.text:08006F1C                 add     esp, 18h
+.text:08006F1C                 add     esp, 24
 .text:08006F1F                 cmp     eax, 0
-.text:08006F22                 jz      loc_8006F35
-.text:08006F28                 mov     eax, 10h
-.text:08006F2D                 mov     [ebp+var_8], eax
-.text:08006F30                 jmp     loc_8006F3D
+.text:08006F22                 jz      fm_10           ; else
+.text:08006F28                 mov     eax, 16         ; MOK_GOOD = 16
+.text:08006F2D                 mov     [ebp+m], eax    ; m = MOK_GOOD;
+.text:08006F30                 jmp     fm_11
 .text:08006F35 ; ---------------------------------------------------------------------------
 .text:08006F35
-.text:08006F35 loc_8006F35:                            ; ...
-.text:08006F35                 mov     eax, 0
-.text:08006F3A                 mov     [ebp+var_8], eax
+.text:08006F35 fm_10:                                  ; ...
+.text:08006F35                 mov     eax, 0          ; else
+.text:08006F3A                 mov     [ebp+m], eax    ;  m = MERR_INVALOP;
 .text:08006F3D
-.text:08006F3D loc_8006F3D:                            ; ...
-.text:08006F3D                 jmp     loc_8007065
+.text:08006F3D fm_11:                                  ; ...
+.text:08006F3D                 jmp     fm_20
 .text:08006F42 ; ---------------------------------------------------------------------------
 .text:08006F42
-.text:08006F42 loc_8006F42:                            ; ...
-.text:08006F42                 mov     eax, [ebp+var_8]
-.text:08006F45                 cmp     eax, 1
-.text:08006F48                 jnz     loc_8007065
-.text:08006F4E                 mov     eax, 0Ah
+.text:08006F42 fm_12:                                  ; ...
+.text:08006F42                 mov     eax, [ebp+m]    ; } else if
+.text:08006F42                                         ; (m == MERR_OPSIZEMISSING &&
+.text:08006F42                                         ;   !itemp_has(temp, IF_SX)) {
+.text:08006F42                                         ; /* Missing operand size and
+.text:08006F42                                         ;    a candidate for fuzzy matching... */
+.text:08006F45                 cmp     eax, 1          ; MERR_OPSIZEMISSING = 1
+.text:08006F48                 jnz     fm_20
+.text:08006F4E                 mov     eax, 10         ; IF_SX = 10  /* Unsized operands not allowed */
 .text:08006F53                 push    eax
-.text:08006F54                 mov     eax, [ebp+var_4]
+.text:08006F54                 mov     eax, [ebp+temp]
 .text:08006F57                 push    eax
-.text:08006F58                 call    itemp_has
+.text:08006F58                 call    itemp_has       ; itemp_has(temp, IF_SX)
 .text:08006F5D                 add     esp, 8
 .text:08006F60                 cmp     eax, 0
-.text:08006F63                 jz      loc_8006F6E
-.text:08006F69                 jmp     loc_8007065
+.text:08006F63                 jz      fm_13
+.text:08006F69                 jmp     fm_20
 .text:08006F6E ; ---------------------------------------------------------------------------
 .text:08006F6E
-.text:08006F6E loc_8006F6E:                            ; ...
-.text:08006F6E                 mov     eax, 0
-.text:08006F73                 mov     [ebp+var_44], eax
+.text:08006F6E fm_13:                                  ; ...
+.text:08006F6E                 mov     eax, 0          ; for (i = 0; i < temp->operands; i++)
+.text:08006F73                 mov     [ebp+i], eax
 .text:08006F76
-.text:08006F76 loc_8006F76:                            ; ...
-.text:08006F76                 mov     eax, [ebp+var_4]
-.text:08006F79                 add     eax, 4
-.text:08006F7C                 mov     ecx, [ebp+var_44]
-.text:08006F7F                 mov     edx, [eax]
+.text:08006F76 fm_14:                                  ; ...
+.text:08006F76                 mov     eax, [ebp+temp]
+.text:08006F79                 add     eax, 4          ; temp->operands (address)
+.text:08006F7C                 mov     ecx, [ebp+i]
+.text:08006F7F                 mov     edx, [eax]      ; temp->operands (value)
 .text:08006F81                 cmp     ecx, edx
-.text:08006F83                 jge     loc_800705D
-.text:08006F89                 jmp     loc_8006F99
+.text:08006F83                 jge     fm_19
+.text:08006F89                 jmp     fm_16
 .text:08006F8E ; ---------------------------------------------------------------------------
 .text:08006F8E
-.text:08006F8E loc_8006F8E:                            ; ...
-.text:08006F8E                 mov     eax, [ebp+var_44]
+.text:08006F8E fm_15:                                  ; ...
+.text:08006F8E                 mov     eax, [ebp+i]
 .text:08006F91                 mov     ecx, eax
 .text:08006F93                 inc     eax
-.text:08006F94                 mov     [ebp+var_44], eax
-.text:08006F97                 jmp     short loc_8006F76
+.text:08006F94                 mov     [ebp+i], eax    ; i++
+.text:08006F97                 jmp     short fm_14
 .text:08006F99 ; ---------------------------------------------------------------------------
 .text:08006F99
-.text:08006F99 loc_8006F99:                            ; ...
-.text:08006F99                 mov     eax, [ebp+var_44]
-.text:08006F9C                 movsx   ecx, [ebp+var_3D]
+.text:08006F99 fm_16:                                  ; ...
+.text:08006F99                 mov     eax, [ebp+i]    ; if (i == broadcast)
+.text:08006F9C                 movsx   ecx, [ebp+broadcast]
 .text:08006FA0                 cmp     eax, ecx
-.text:08006FA2                 jnz     loc_8007003
-.text:08006FA8                 mov     eax, [ebp+var_44]
+.text:08006FA2                 jnz     fm_17           ; else
+.text:08006FA8                 mov     eax, [ebp+i]    ; xsizeflags[i] |= temp->deco[i] & BRSIZE_MASK;
 .text:08006FAB                 shl     eax, 3
-.text:08006FAE                 lea     ecx, [ebp+var_38]
+.text:08006FAE                 lea     ecx, [ebp+xsizeflags]
 .text:08006FB1                 add     ecx, eax
-.text:08006FB3                 mov     eax, [ebp+var_4]
-.text:08006FB6                 add     eax, 30h
-.text:08006FB9                 mov     edx, [ebp+var_44]
-.text:08006FBC                 shl     edx, 1
+.text:08006FB3                 mov     eax, [ebp+temp]
+.text:08006FB6                 add     eax, 48         ; temp->deco[i]
+.text:08006FB9                 mov     edx, [ebp+i]
+.text:08006FBC                 shl     edx, 1          ; * 2 (word size) /// typedef uint16_t decoflags_t;
 .text:08006FBF                 add     eax, edx
 .text:08006FC1                 movzx   edx, [word ptr eax]
 .text:08006FC4                 mov     eax, edx
-.text:08006FC6                 sar     eax, 1Fh
-.text:08006FC9                 and     edx, 300h
+.text:08006FC6                 sar     eax, 31
+.text:08006FC9                 and     edx, 300h       ; BRSIZE_MASK = 300h ; 3*256 = 768
 .text:08006FCF                 mov     eax, 0
-.text:08006FD4                 mov     [ebp+var_4C], ecx
-.text:08006FD7                 mov     ecx, [ebp+var_4C]
+.text:08006FD4                 mov     [ebp+tmp2], ecx
+.text:08006FD7                 mov     ecx, [ebp+tmp2]
 .text:08006FDA                 mov     ecx, [ecx]
-.text:08006FDC                 mov     [ebp+var_58], edx
-.text:08006FDF                 mov     [ebp+var_54], eax
-.text:08006FE2                 mov     eax, [ebp+var_4C]
+.text:08006FDC                 mov     [ebp+tmp3], edx
+.text:08006FDF                 mov     [ebp+tmp3_h], eax
+.text:08006FE2                 mov     eax, [ebp+tmp2]
 .text:08006FE5                 add     eax, 4
 .text:08006FE8                 mov     edx, [eax]
-.text:08006FEA                 mov     eax, [ebp+var_58]
+.text:08006FEA                 mov     eax, [ebp+tmp3]
 .text:08006FED                 or      ecx, eax
-.text:08006FEF                 mov     eax, [ebp+var_54]
+.text:08006FEF                 mov     eax, [ebp+tmp3_h]
 .text:08006FF2                 or      edx, eax
-.text:08006FF4                 mov     eax, [ebp+var_4C]
+.text:08006FF4                 mov     eax, [ebp+tmp2]
 .text:08006FF7                 mov     [eax], ecx
 .text:08006FF9                 add     eax, 4
 .text:08006FFC                 mov     [eax], edx
-.text:08006FFE                 jmp     loc_8007058
+.text:08006FFE                 jmp     fm_18
 .text:08007003 ; ---------------------------------------------------------------------------
 .text:08007003
-.text:08007003 loc_8007003:                            ; ...
-.text:08007003                 mov     eax, [ebp+var_44]
+.text:08007003 fm_17:                                  ; ...
+.text:08007003                 mov     eax, [ebp+i]    ; xsizeflags[i] |= temp->opd[i] & SIZE_MASK;
 .text:08007006                 shl     eax, 3
-.text:08007009                 lea     ecx, [ebp+var_38]
+.text:08007009                 lea     ecx, [ebp+xsizeflags]
 .text:0800700C                 add     ecx, eax
-.text:0800700E                 mov     eax, [ebp+var_4]
+.text:0800700E                 mov     eax, [ebp+temp]
 .text:08007011                 add     eax, 8
-.text:08007014                 mov     edx, [ebp+var_44]
+.text:08007014                 mov     edx, [ebp+i]
 .text:08007017                 shl     edx, 3
 .text:0800701A                 add     eax, edx
 .text:0800701C                 mov     edx, [eax]
 .text:0800701E                 add     eax, 4
-.text:08007021                 mov     [ebp+var_5C], ecx
+.text:08007021                 mov     [ebp+tmp4], ecx
 .text:08007024                 mov     ecx, [eax]
-.text:08007026                 and     ecx, 7FFh
+.text:08007026                 and     ecx, 7FFh       ; SIZE_MASK = 2047 (high 32-bit) = 7FFh:0
 .text:0800702C                 mov     eax, 0
-.text:08007031                 mov     edx, [ebp+var_5C]
+.text:08007031                 mov     edx, [ebp+tmp4]
 .text:08007034                 mov     edx, [edx]
-.text:08007036                 mov     [ebp+var_68], eax
-.text:08007039                 mov     [ebp+var_64], ecx
-.text:0800703C                 mov     ecx, [ebp+var_5C]
+.text:08007036                 mov     [ebp+tmp5], eax
+.text:08007039                 mov     [ebp+tmp5_h], ecx
+.text:0800703C                 mov     ecx, [ebp+tmp4]
 .text:0800703F                 add     ecx, 4
 .text:08007042                 mov     eax, [ecx]
-.text:08007044                 mov     ecx, [ebp+var_68]
+.text:08007044                 mov     ecx, [ebp+tmp5]
 .text:08007047                 or      edx, ecx
-.text:08007049                 mov     ecx, [ebp+var_64]
+.text:08007049                 mov     ecx, [ebp+tmp5_h]
 .text:0800704C                 or      eax, ecx
-.text:0800704E                 mov     ecx, [ebp+var_5C]
+.text:0800704E                 mov     ecx, [ebp+tmp4]
 .text:08007051                 mov     [ecx], edx
 .text:08007053                 add     ecx, 4
 .text:08007056                 mov     [ecx], eax
 .text:08007058
-.text:08007058 loc_8007058:                            ; ...
-.text:08007058                 jmp     loc_8006F8E
+.text:08007058 fm_18:                                  ; ...
+.text:08007058                 jmp     fm_15
 .text:0800705D ; ---------------------------------------------------------------------------
 .text:0800705D
-.text:0800705D loc_800705D:                            ; ...
-.text:0800705D                 mov     eax, 1
-.text:08007062                 mov     [ebp+var_3C], eax
+.text:0800705D fm_19:                                  ; ...
+.text:0800705D                 mov     eax, 1          ; opsizemissing = true;
+.text:08007062                 mov     [ebp+opsizemissing], eax
 .text:08007065
-.text:08007065 loc_8007065:                            ; ...
-.text:08007065                 mov     eax, [ebp+var_8]
-.text:08007068                 mov     ecx, [ebp+var_C]
+.text:08007065 fm_20:                                  ; ...
+.text:08007065                 mov     eax, [ebp+m]    ; if (m > merr)
+.text:08007068                 mov     ecx, [ebp+merr]
 .text:0800706B                 cmp     eax, ecx
-.text:0800706D                 jbe     loc_8007079
-.text:08007073                 mov     eax, [ebp+var_8]
-.text:08007076                 mov     [ebp+var_C], eax
+.text:0800706D                 jbe     fm_21
+.text:08007073                 mov     eax, [ebp+m]
+.text:08007076                 mov     [ebp+merr], eax ; merr = m;
 .text:08007079
-.text:08007079 loc_8007079:                            ; ...
-.text:08007079                 mov     eax, [ebp+var_C]
-.text:0800707C                 cmp     eax, 10h
-.text:0800707F                 jnz     loc_800708A
-.text:08007085                 jmp     loc_80073A5
+.text:08007079 fm_21:                                  ; ...
+.text:08007079                 mov     eax, [ebp+merr] ; if (merr == MOK_GOOD)
+.text:0800707C                 cmp     eax, 16         ; MOK_GOOD = 16
+.text:0800707F                 jnz     fm_22
+.text:08007085                 jmp     fm_47           ; goto done;
 .text:0800708A ; ---------------------------------------------------------------------------
 .text:0800708A
-.text:0800708A loc_800708A:                            ; ...
-.text:0800708A                 jmp     loc_8006ECF
+.text:0800708A fm_22:                                  ; ...
+.text:0800708A                 jmp     fm_8
 .text:0800708F ; ---------------------------------------------------------------------------
 .text:0800708F
-.text:0800708F loc_800708F:                            ; ...
-.text:0800708F                 mov     eax, [ebp+var_3C]
-.text:08007092                 cmp     eax, 0
-.text:08007095                 jz      loc_80070A0
-.text:0800709B                 jmp     loc_80070A5
+.text:0800708F fm_23:                                  ; ...
+.text:0800708F                 mov     eax, [ebp+opsizemissing] ; /* No match,
+.text:0800708F                                         ; but see if we can get a fuzzy operand size match... */
+.text:08007092                 cmp     eax, 0          ; if (!opsizemissing)
+.text:08007095                 jz      fm_24
+.text:0800709B                 jmp     fm_25
 .text:080070A0 ; ---------------------------------------------------------------------------
 .text:080070A0
-.text:080070A0 loc_80070A0:                            ; ...
-.text:080070A0                 jmp     loc_80073A5
+.text:080070A0 fm_24:                                  ; ...
+.text:080070A0                 jmp     fm_47           ; goto done;
 .text:080070A5 ; ---------------------------------------------------------------------------
 .text:080070A5
-.text:080070A5 loc_80070A5:                            ; ...
-.text:080070A5                 mov     eax, 0
-.text:080070AA                 mov     [ebp+var_44], eax
+.text:080070A5 fm_25:                                  ; ...
+.text:080070A5                 mov     eax, 0          ; for (i = 0; i < instruction->operands; i++) {
+.text:080070AA                 mov     [ebp+i], eax    ; /* We ignore extrinsic operand sizes on registers,
+.text:080070AA                                         ; so we should never try to fuzzy-match on them. */
 .text:080070AD
-.text:080070AD loc_80070AD:                            ; ...
-.text:080070AD                 mov     eax, [ebp+arg_4]
-.text:080070B0                 add     eax, 28h
-.text:080070B3                 mov     ecx, [ebp+var_44]
-.text:080070B6                 mov     edx, [eax]
+.text:080070AD fm_26:                                  ; ...
+.text:080070AD                 mov     eax, [ebp+instruction] ; if (is_class(REGISTER, instruction->oprs[i].type))
+.text:080070B0                 add     eax, 40
+.text:080070B3                 mov     ecx, [ebp+i]
+.text:080070B6                 mov     edx, [eax]      ; instruction->operands
 .text:080070B8                 cmp     ecx, edx
-.text:080070BA                 jge     loc_80072E3
-.text:080070C0                 jmp     loc_80070D0
+.text:080070BA                 jge     fm_39
+.text:080070C0                 jmp     fm_28
 .text:080070C5 ; ---------------------------------------------------------------------------
 .text:080070C5
-.text:080070C5 loc_80070C5:                            ; ...
-.text:080070C5                 mov     eax, [ebp+var_44]
+.text:080070C5 fm_27:                                  ; ...
+.text:080070C5                 mov     eax, [ebp+i]
 .text:080070C8                 mov     ecx, eax
 .text:080070CA                 inc     eax
-.text:080070CB                 mov     [ebp+var_44], eax
-.text:080070CE                 jmp     short loc_80070AD
+.text:080070CB                 mov     [ebp+i], eax    ; i++
+.text:080070CE                 jmp     short fm_26
 .text:080070D0 ; ---------------------------------------------------------------------------
 .text:080070D0
-.text:080070D0 loc_80070D0:                            ; ...
-.text:080070D0                 mov     eax, [ebp+arg_4]
-.text:080070D3                 add     eax, 30h
-.text:080070D6                 mov     ecx, [ebp+var_44]
-.text:080070D9                 shl     ecx, 6
+.text:080070D0 fm_28:                                  ; ...
+.text:080070D0                 mov     eax, [ebp+instruction] ; instruction->oprs[i].type
+.text:080070D3                 add     eax, 48
+.text:080070D6                 mov     ecx, [ebp+i]
+.text:080070D9                 shl     ecx, 6          ; operand structure size = 64
 .text:080070DC                 add     eax, ecx
 .text:080070DE                 mov     ecx, [eax]
 .text:080070E0                 add     eax, 4
 .text:080070E3                 mov     edx, [eax]
 .text:080070E5                 push    edx
 .text:080070E6                 push    ecx
-.text:080070E7                 mov     eax, 1
-.text:080070EC                 mov     ecx, 0
+.text:080070E7                 mov     eax, 1          ; REGISTER = 1
+.text:080070EC                 mov     ecx, 0          ; high 32-bit (of the class) is 0
 .text:080070F1                 push    ecx
 .text:080070F2                 push    eax
 .text:080070F3                 call    is_class
-.text:080070F8                 add     esp, 10h
+.text:080070F8                 add     esp, 16
 .text:080070FB                 cmp     eax, 0
-.text:080070FE                 jz      loc_8007109
-.text:08007104                 jmp     loc_80070C5
+.text:080070FE                 jz      fm_29
+.text:08007104                 jmp     fm_27
 .text:08007109 ; ---------------------------------------------------------------------------
 .text:08007109
-.text:08007109 loc_8007109:                            ; ...
-.text:08007109                 mov     eax, [ebp+var_44]
-.text:0800710C                 shl     eax, 3
-.text:0800710F                 lea     ecx, [ebp+var_38]
+.text:08007109 fm_29:                                  ; ...
+.text:08007109                 mov     eax, [ebp+i]    ; /* This tests if xsizeflags[i] has more than one bit set */
+.text:0800710C                 shl     eax, 3          ; * 8 (64 bit values)
+.text:0800710F                 lea     ecx, [ebp+xsizeflags] ; if ((xsizeflags[i] & (xsizeflags[i]-1)))
 .text:08007112                 add     ecx, eax
-.text:08007114                 mov     eax, [ebp+var_44]
+.text:08007114                 mov     eax, [ebp+i]
 .text:08007117                 shl     eax, 3
-.text:0800711A                 lea     edx, [ebp+var_38]
+.text:0800711A                 lea     edx, [ebp+xsizeflags]
 .text:0800711D                 add     edx, eax
 .text:0800711F                 mov     eax, [edx]
 .text:08007121                 add     edx, 4
-.text:08007124                 mov     [ebp+var_6C], ecx
+.text:08007124                 mov     [ebp+tmp6], ecx
 .text:08007127                 mov     ecx, [edx]
 .text:08007129                 sub     eax, 1
 .text:0800712C                 sbb     ecx, 0
-.text:0800712F                 mov     edx, [ebp+var_6C]
+.text:0800712F                 mov     edx, [ebp+tmp6]
 .text:08007132                 mov     edx, [edx]
-.text:08007134                 mov     [ebp+var_78], eax
-.text:08007137                 mov     [ebp+var_74], ecx
-.text:0800713A                 mov     ecx, [ebp+var_6C]
+.text:08007134                 mov     [ebp+tmp7], eax
+.text:08007137                 mov     [ebp+tmp7_h], ecx
+.text:0800713A                 mov     ecx, [ebp+tmp6]
 .text:0800713D                 add     ecx, 4
 .text:08007140                 mov     eax, [ecx]
-.text:08007142                 mov     ecx, [ebp+var_78]
+.text:08007142                 mov     ecx, [ebp+tmp7]
 .text:08007145                 and     edx, ecx
-.text:08007147                 mov     ecx, [ebp+var_74]
+.text:08007147                 mov     ecx, [ebp+tmp7_h]
 .text:0800714A                 and     eax, ecx
 .text:0800714C                 cmp     eax, 0
-.text:0800714F                 jnz     loc_800715E
+.text:0800714F                 jnz     fm_30           ; goto done; /* No luck */
 .text:08007155                 cmp     edx, 0
-.text:08007158                 jz      loc_8007163
+.text:08007158                 jz      fm_31
 .text:0800715E
-.text:0800715E loc_800715E:                            ; ...
-.text:0800715E                 jmp     loc_80073A5
+.text:0800715E fm_30:                                  ; ...
+.text:0800715E                 jmp     fm_47           ; goto done;
 .text:08007163 ; ---------------------------------------------------------------------------
 .text:08007163
-.text:08007163 loc_8007163:                            ; ...
-.text:08007163                 mov     eax, [ebp+var_44]
-.text:08007166                 movsx   ecx, [ebp+var_3D]
+.text:08007163 fm_31:                                  ; ...
+.text:08007163                 mov     eax, [ebp+i]    ; if (i == broadcast) {
+.text:08007166                 movsx   ecx, [ebp+broadcast]
 .text:0800716A                 cmp     eax, ecx
-.text:0800716C                 jnz     loc_8007276
-.text:08007172                 mov     eax, [ebp+arg_4]
-.text:08007175                 add     eax, 30h
-.text:08007178                 mov     ecx, [ebp+var_44]
-.text:0800717B                 shl     ecx, 6
+.text:0800716C                 jnz     fm_37           ; } else {
+.text:08007172                 mov     eax, [ebp+instruction] ; instruction->oprs[i].decoflags |= xsizeflags[i];
+.text:08007175                 add     eax, 48         ; instruction->oprs[0] (address)
+.text:08007178                 mov     ecx, [ebp+i]
+.text:0800717B                 shl     ecx, 6          ; * 64 /// operand structure size
 .text:0800717E                 add     eax, ecx
-.text:08007180                 add     eax, 3Ch
-.text:08007183                 mov     ecx, [ebp+var_44]
-.text:08007186                 shl     ecx, 3
-.text:08007189                 lea     edx, [ebp+var_38]
-.text:0800718C                 add     edx, ecx
-.text:0800718E                 movzx   ecx, [word ptr eax]
-.text:08007191                 mov     [ebp+var_7C], eax
+.text:08007180                 add     eax, 60         ; instruction->oprs[i].decoflags (address)
+.text:08007183                 mov     ecx, [ebp+i]
+.text:08007186                 shl     ecx, 3          ; * 8 (64 bit values)
+.text:08007189                 lea     edx, [ebp+xsizeflags]
+.text:0800718C                 add     edx, ecx        ; xsizeflags[i]
+.text:0800718E                 movzx   ecx, [word ptr eax] ; instruction->oprs[i].decoflags (value)
+.text:08007191                 mov     [ebp+tmp8], eax
 .text:08007194                 mov     eax, ecx
-.text:08007196                 sar     eax, 1Fh
-.text:08007199                 mov     [ebp+var_80], ecx
-.text:0800719C                 mov     ecx, [edx]
+.text:08007196                 sar     eax, 31         ; (extend 32-bit signed value to 64bit signed)
+.text:08007199                 mov     [ebp+tmp9], ecx ; instruction->oprs[i].decoflags (value)
+.text:0800719C                 mov     ecx, [edx]      ; xsizeflags[i] (low 32-bit)
 .text:0800719E                 add     edx, 4
-.text:080071A1                 mov     [ebp+var_84], eax
-.text:080071A7                 mov     eax, [edx]
-.text:080071A9                 mov     edx, [ebp+var_80]
+.text:080071A1                 mov     [ebp+tmp9_h], eax ; instruction->oprs[i].decoflags (value, high 32-bit)
+.text:080071A7                 mov     eax, [edx]      ; xsizeflags[i] (high 32-bit)
+.text:080071A9                 mov     edx, [ebp+tmp9]
 .text:080071AC                 or      edx, ecx
-.text:080071AE                 mov     ecx, [ebp+var_84]
+.text:080071AE                 mov     ecx, [ebp+tmp9_h]
 .text:080071B4                 or      ecx, eax
-.text:080071B6                 and     edx, 0FFFFh
+.text:080071B6                 and     edx, 0FFFFh     ; 16-bit flags
 .text:080071BC                 mov     eax, 0
-.text:080071C1                 mov     ecx, [ebp+var_7C]
-.text:080071C4                 mov     [ecx], dx
-.text:080071C7                 mov     eax, [ebp+arg_4]
-.text:080071CA                 add     eax, 30h
-.text:080071CD                 mov     ecx, [ebp+var_44]
-.text:080071D0                 shl     ecx, 6
-.text:080071D3                 add     eax, ecx
-.text:080071D5                 mov     ecx, [ebp+var_44]
+.text:080071C1                 mov     ecx, [ebp+tmp8] ; instruction->oprs[i].decoflags (address)
+.text:080071C4                 mov     [ecx], dx       ; instruction->oprs[i].decoflags |= low 16-bits of xsizeflags[i]
+.text:080071C7                 mov     eax, [ebp+instruction] ; instruction->oprs[i].type |= (xsizeflags[i] == BR_BITS32 ?
+.text:080071C7                                         ;                                          BITS32 : BITS64);
+.text:080071CA                 add     eax, 48         ; instruction->oprs[0] (address)
+.text:080071CD                 mov     ecx, [ebp+i]
+.text:080071D0                 shl     ecx, 6          ; * 64 (operand structure size)
+.text:080071D3                 add     eax, ecx        ; instruction->oprs[i] (address)
+.text:080071D5                 mov     ecx, [ebp+i]
 .text:080071D8                 shl     ecx, 3
-.text:080071DB                 lea     edx, [ebp+var_38]
+.text:080071DB                 lea     edx, [ebp+xsizeflags]
 .text:080071DE                 add     edx, ecx
-.text:080071E0                 mov     ecx, [edx]
+.text:080071E0                 mov     ecx, [edx]      ; xsizeflags[i] (low 32-bit)
 .text:080071E2                 add     edx, 4
-.text:080071E5                 mov     [ebp+var_88], eax
-.text:080071EB                 mov     eax, [edx]
-.text:080071ED                 cmp     eax, 0
-.text:080071F0                 jnz     loc_8007209
-.text:080071F6                 cmp     ecx, 100h
-.text:080071FC                 jnz     loc_8007209
-.text:08007202                 mov     eax, 1
-.text:08007207                 jmp     short loc_800720E
+.text:080071E5                 mov     [ebp+tmp10], eax
+.text:080071EB                 mov     eax, [edx]      ; xsizeflags[i] (high 32-bit)
+.text:080071ED                 cmp     eax, 0          ; BR_BITS32 high 32 bits = 0
+.text:080071F0                 jnz     fm_32
+.text:080071F6                 cmp     ecx, 256        ; BR_BITS32 = 256
+.text:080071FC                 jnz     fm_32
+.text:08007202                 mov     eax, 1          ; (condition is true, 32-bit)
+.text:08007207                 jmp     short fm_33
 .text:08007209 ; ---------------------------------------------------------------------------
 .text:08007209
-.text:08007209 loc_8007209:                            ; ...
-.text:08007209                 mov     eax, 0
+.text:08007209 fm_32:                                  ; ...
+.text:08007209                 mov     eax, 0          ; (condition is false, 64-bit)
 .text:0800720E
-.text:0800720E loc_800720E:                            ; ...
+.text:0800720E fm_33:                                  ; ...
 .text:0800720E                 cmp     eax, 0
-.text:08007211                 jz      loc_800721C
-.text:08007217                 jmp     loc_800722B
+.text:08007211                 jz      fm_34
+.text:08007217                 jmp     fm_35
 .text:0800721C ; ---------------------------------------------------------------------------
 .text:0800721C
-.text:0800721C loc_800721C:                            ; ...
+.text:0800721C fm_34:                                  ; ...
 .text:0800721C                 mov     eax, 0
-.text:08007221                 mov     edx, 8
-.text:08007226                 jmp     loc_8007235
+.text:08007221                 mov     edx, 8          ; BITS64 = shl (1), 35 /// 08h:0
+.text:08007226                 jmp     fm_36
 .text:0800722B ; ---------------------------------------------------------------------------
 .text:0800722B
-.text:0800722B loc_800722B:                            ; ...
+.text:0800722B fm_35:                                  ; ...
 .text:0800722B                 mov     eax, 0
-.text:08007230                 mov     edx, 4
+.text:08007230                 mov     edx, 4          ; BITS32 = shl (1), 34 /// 04h:0
 .text:08007235
-.text:08007235 loc_8007235:                            ; ...
-.text:08007235                 mov     ecx, [ebp+var_88]
+.text:08007235 fm_36:                                  ; ...
+.text:08007235                 mov     ecx, [ebp+tmp10] ; instruction->oprs[i].type |=
 .text:0800723B                 mov     ecx, [ecx]
-.text:0800723D                 mov     [ebp+var_90], eax
-.text:08007243                 mov     [ebp+var_8C], edx
-.text:08007249                 mov     edx, [ebp+var_88]
+.text:0800723D                 mov     [ebp+tmp11], eax
+.text:08007243                 mov     [ebp+tmp11_h], edx
+.text:08007249                 mov     edx, [ebp+tmp10]
 .text:0800724F                 add     edx, 4
 .text:08007252                 mov     eax, [edx]
-.text:08007254                 mov     edx, [ebp+var_90]
+.text:08007254                 mov     edx, [ebp+tmp11]
 .text:0800725A                 or      ecx, edx
-.text:0800725C                 mov     edx, [ebp+var_8C]
+.text:0800725C                 mov     edx, [ebp+tmp11_h]
 .text:08007262                 or      eax, edx
-.text:08007264                 mov     edx, [ebp+var_88]
+.text:08007264                 mov     edx, [ebp+tmp10]
 .text:0800726A                 mov     [edx], ecx
 .text:0800726C                 add     edx, 4
 .text:0800726F                 mov     [edx], eax
-.text:08007271                 jmp     loc_80072DE
+.text:08007271                 jmp     fm_38
 .text:08007276 ; ---------------------------------------------------------------------------
 .text:08007276
-.text:08007276 loc_8007276:                            ; ...
-.text:08007276                 mov     eax, [ebp+arg_4]
-.text:08007279                 add     eax, 30h
-.text:0800727C                 mov     ecx, [ebp+var_44]
-.text:0800727F                 shl     ecx, 6
-.text:08007282                 add     eax, ecx
-.text:08007284                 mov     ecx, [ebp+var_44]
-.text:08007287                 shl     ecx, 3
-.text:0800728A                 lea     edx, [ebp+var_38]
-.text:0800728D                 add     edx, ecx
-.text:0800728F                 mov     [ebp+var_94], eax
-.text:08007295                 mov     ecx, [eax]
+.text:08007276 fm_37:                                  ; ...
+.text:08007276                 mov     eax, [ebp+instruction] ; } else {
+.text:08007279                 add     eax, 48         ; instruction->oprs[i].type |= xsizeflags[i];
+.text:08007279                                         ; /* Set the size */
+.text:0800727C                 mov     ecx, [ebp+i]
+.text:0800727F                 shl     ecx, 6          ; * 64 (operand structure size)
+.text:08007282                 add     eax, ecx        ; instruction->oprs[0] address
+.text:08007284                 mov     ecx, [ebp+i]
+.text:08007287                 shl     ecx, 3          ; * 8 (64 bit values)
+.text:0800728A                 lea     edx, [ebp+xsizeflags]
+.text:0800728D                 add     edx, ecx        ; xsizeflags[i] address
+.text:0800728F                 mov     [ebp+tmp12], eax
+.text:08007295                 mov     ecx, [eax]      ; instruction->oprs[i].type value (low 32 bit)
 .text:08007297                 add     eax, 4
-.text:0800729A                 mov     [ebp+var_98], edx
-.text:080072A0                 mov     edx, [eax]
-.text:080072A2                 mov     eax, [ebp+var_98]
-.text:080072A8                 mov     eax, [eax]
-.text:080072AA                 mov     [ebp+var_9C], ecx
-.text:080072B0                 mov     ecx, [ebp+var_98]
+.text:0800729A                 mov     [ebp+tmp13], edx
+.text:080072A0                 mov     edx, [eax]      ; instruction->oprs[i].type value (high 32 bit)
+.text:080072A2                 mov     eax, [ebp+tmp13] ; xsizeflags[i] address
+.text:080072A8                 mov     eax, [eax]      ; xsizeflags[i] value (low 32 bit)
+.text:080072AA                 mov     [ebp+tmp14], ecx
+.text:080072B0                 mov     ecx, [ebp+tmp13]
 .text:080072B6                 add     ecx, 4
-.text:080072B9                 mov     [ebp+var_A0], edx
-.text:080072BF                 mov     edx, [ecx]
-.text:080072C1                 mov     ecx, [ebp+var_9C]
-.text:080072C7                 or      ecx, eax
-.text:080072C9                 mov     eax, [ebp+var_A0]
+.text:080072B9                 mov     [ebp+tmp14_h], edx
+.text:080072BF                 mov     edx, [ecx]      ; xsizeflags[i] value (high 32 bit)
+.text:080072C1                 mov     ecx, [ebp+tmp14]
+.text:080072C7                 or      ecx, eax        ; instruction->oprs[i].type |=
+.text:080072C9                 mov     eax, [ebp+tmp14_h]
 .text:080072CF                 or      eax, edx
-.text:080072D1                 mov     edx, [ebp+var_94]
-.text:080072D7                 mov     [edx], ecx
+.text:080072D1                 mov     edx, [ebp+tmp12] ; instruction->oprs[i] address
+.text:080072D7                 mov     [edx], ecx      ; instruction->oprs[i] value (low 32 bit)
 .text:080072D9                 add     edx, 4
-.text:080072DC                 mov     [edx], eax
+.text:080072DC                 mov     [edx], eax      ; instruction->oprs[i] value (high 32 bit)
 .text:080072DE
-.text:080072DE loc_80072DE:                            ; ...
-.text:080072DE                 jmp     loc_80070C5
+.text:080072DE fm_38:                                  ; ...
+.text:080072DE                 jmp     fm_27
 .text:080072E3 ; ---------------------------------------------------------------------------
 .text:080072E3
-.text:080072E3 loc_80072E3:                            ; ...
-.text:080072E3                 mov     eax, [ebp+arg_4]
-.text:080072E6                 add     eax, 20h
-.text:080072E9                 mov     ecx, [eax]
-.text:080072EB                 shl     ecx, 2
+.text:080072E3 fm_39:                                  ; ...
+.text:080072E3                 mov     eax, [ebp+instruction] ; /* Try matching again... */
+.text:080072E6                 add     eax, 32         ; for (temp = nasm_instructions[instruction->opcode];
+.text:080072E9                 mov     ecx, [eax]      ; instruction->opcode (address) = instruction + 32
+.text:080072EB                 shl     ecx, 2          ; opcode (= index number) * 4 (dword) = offset of the dword ptr
 .text:080072EE                 mov     eax, offset nasm_instructions
 .text:080072F3                 add     eax, ecx
 .text:080072F5                 mov     ecx, [eax]
-.text:080072F7                 mov     [ebp+var_4], ecx
+.text:080072F7                 mov     [ebp+temp], ecx ; instruction parameters address (of the opcode)
 .text:080072FA
-.text:080072FA loc_80072FA:                            ; ...
-.text:080072FA                 mov     eax, [ebp+var_4]
+.text:080072FA fm_40:                                  ; ...
+.text:080072FA                 mov     eax, [ebp+temp] ; temp->opcode != I_none; temp++) {
 .text:080072FD                 mov     ecx, [eax]
-.text:080072FF                 cmp     ecx, 0FFFFFFFFh
-.text:08007302                 jz      loc_80073A5
-.text:08007308                 jmp     loc_800731A
+.text:080072FF                 cmp     ecx, 0FFFFFFFFh ; I_none = -1
+.text:08007302                 jz      fm_47
+.text:08007308                 jmp     fm_42
 .text:0800730D ; ---------------------------------------------------------------------------
 .text:0800730D
-.text:0800730D loc_800730D:                            ; ...
-.text:0800730D                 mov     eax, [ebp+var_4]
+.text:0800730D fm_41:                                  ; ...
+.text:0800730D                 mov     eax, [ebp+temp]
 .text:08007310                 mov     ecx, eax
-.text:08007312                 add     eax, 48h
-.text:08007315                 mov     [ebp+var_4], eax
-.text:08007318                 jmp     short loc_80072FA
+.text:08007312                 add     eax, 72         ; itemplate structure size = 72
+.text:08007315                 mov     [ebp+temp], eax ; temp++
+.text:08007318                 jmp     short fm_40
 .text:0800731A ; ---------------------------------------------------------------------------
 .text:0800731A
-.text:0800731A loc_800731A:                            ; ...
-.text:0800731A                 mov     eax, [ebp+arg_14]
+.text:0800731A fm_42:                                  ; ...
+.text:0800731A                 mov     eax, [ebp+_bits]
 .text:0800731D                 push    eax
-.text:0800731E                 mov     eax, [ebp+arg_4]
+.text:0800731E                 mov     eax, [ebp+instruction]
 .text:08007321                 push    eax
-.text:08007322                 mov     eax, [ebp+var_4]
+.text:08007322                 mov     eax, [ebp+temp]
 .text:08007325                 push    eax
 .text:08007326                 call    matches
-.text:0800732B                 add     esp, 0Ch
-.text:0800732E                 mov     [ebp+var_8], eax
-.text:08007331                 mov     eax, [ebp+var_8]
-.text:08007334                 cmp     eax, 0Fh
-.text:08007337                 jnz     loc_800737B
-.text:0800733D                 mov     eax, [ebp+var_4]
+.text:0800732B                 add     esp, 12
+.text:0800732E                 mov     [ebp+m], eax    ; m = matches(temp, instruction, bits);
+.text:08007331                 mov     eax, [ebp+m]
+.text:08007334                 cmp     eax, 15         ; if (m == MOK_JUMP) {
+.text:08007337                 jnz     fm_44
+.text:0800733D                 mov     eax, [ebp+temp] ; if (jmp_match(segment, offset, bits, instruction, temp))
 .text:08007340                 push    eax
-.text:08007341                 mov     eax, [ebp+arg_4]
+.text:08007341                 mov     eax, [ebp+instruction]
 .text:08007344                 push    eax
-.text:08007345                 mov     eax, [ebp+arg_14]
+.text:08007345                 mov     eax, [ebp+_bits]
 .text:08007348                 push    eax
-.text:08007349                 mov     eax, [ebp+arg_C]
-.text:0800734C                 mov     ecx, [ebp+arg_10]
+.text:08007349                 mov     eax, [ebp+_offset]
+.text:0800734C                 mov     ecx, [ebp+_offset_h]
 .text:0800734F                 push    ecx
 .text:08007350                 push    eax
-.text:08007351                 mov     eax, [ebp+arg_8]
+.text:08007351                 mov     eax, [ebp+_segment]
 .text:08007354                 push    eax
 .text:08007355                 call    jmp_match
-.text:0800735A                 add     esp, 18h
+.text:0800735A                 add     esp, 24
 .text:0800735D                 cmp     eax, 0
-.text:08007360                 jz      loc_8007373
-.text:08007366                 mov     eax, 10h
-.text:0800736B                 mov     [ebp+var_8], eax
-.text:0800736E                 jmp     loc_800737B
+.text:08007360                 jz      fm_43           ; else
+.text:08007366                 mov     eax, 16
+.text:0800736B                 mov     [ebp+m], eax    ; m = MOK_GOOD;
+.text:0800736E                 jmp     fm_44
 .text:08007373 ; ---------------------------------------------------------------------------
 .text:08007373
-.text:08007373 loc_8007373:                            ; ...
-.text:08007373                 mov     eax, 0
-.text:08007378                 mov     [ebp+var_8], eax
+.text:08007373 fm_43:                                  ; ...
+.text:08007373                 mov     eax, 0          ; else
+.text:08007378                 mov     [ebp+m], eax    ; m = MERR_INVALOP;
 .text:0800737B
-.text:0800737B loc_800737B:                            ; ...
-.text:0800737B                 mov     eax, [ebp+var_8]
-.text:0800737E                 mov     ecx, [ebp+var_C]
+.text:0800737B fm_44:                                  ; ...
+.text:0800737B                 mov     eax, [ebp+m]    ; if (m > merr)
+.text:0800737E                 mov     ecx, [ebp+merr]
 .text:08007381                 cmp     eax, ecx
-.text:08007383                 jbe     loc_800738F
-.text:08007389                 mov     eax, [ebp+var_8]
-.text:0800738C                 mov     [ebp+var_C], eax
+.text:08007383                 jbe     fm_45
+.text:08007389                 mov     eax, [ebp+m]
+.text:0800738C                 mov     [ebp+merr], eax ; merr = m;
 .text:0800738F
-.text:0800738F loc_800738F:                            ; ...
-.text:0800738F                 mov     eax, [ebp+var_C]
-.text:08007392                 cmp     eax, 10h
-.text:08007395                 jnz     loc_80073A0
-.text:0800739B                 jmp     loc_80073A5
+.text:0800738F fm_45:                                  ; ...
+.text:0800738F                 mov     eax, [ebp+merr] ; if (merr == MOK_GOOD)
+.text:08007392                 cmp     eax, 16
+.text:08007395                 jnz     fm_46
+.text:0800739B                 jmp     fm_47           ; goto done;
 .text:080073A0 ; ---------------------------------------------------------------------------
 .text:080073A0
-.text:080073A0 loc_80073A0:                            ; ...
-.text:080073A0                 jmp     loc_800730D
+.text:080073A0 fm_46:                                  ; ...
+.text:080073A0                 jmp     fm_41           ; (next for)
 .text:080073A5 ; ---------------------------------------------------------------------------
 .text:080073A5
-.text:080073A5 loc_80073A5:                            ; ...
-.text:080073A5                 mov     eax, [ebp+arg_0]
-.text:080073A8                 mov     ecx, [ebp+var_4]
-.text:080073AB                 mov     [eax], ecx
-.text:080073AD                 mov     eax, [ebp+var_C]
+.text:080073A5 fm_47:                                  ; ...
+.text:080073A5                 mov     eax, [ebp+tempp] ; done:
+.text:080073A8                 mov     ecx, [ebp+temp]
+.text:080073AB                 mov     [eax], ecx      ; *tempp = temp;
+.text:080073AD                 mov     eax, [ebp+merr] ; return merr;
 .text:080073B0                 leave
 .text:080073B1                 retn
 .text:080073B1 endp            find_match
@@ -12091,7 +12107,7 @@
 .text:08007407                 mov     ecx, 0
 .text:0800740C                 mov     edx, ecx
 .text:0800740E                 shr     edx, 3
-.text:08007411                 shl     ecx, 1Dh
+.text:08007411                 shl     ecx, 29
 .text:08007414                 shr     eax, 3
 .text:08007417                 or      ecx, eax
 .text:08007419                 mov     eax, [ebp+arg_8]
@@ -12105,7 +12121,7 @@
 .text:08007431                 push    ecx
 .text:08007432                 push    eax
 .text:08007433                 call    __udivdi3
-.text:08007438                 add     esp, 10h
+.text:08007438                 add     esp, 16
 .text:0800743B                 mov     [ebp+var_14], eax
 .text:0800743E                 mov     eax, [ebp+var_10]
 .text:08007441                 mov     ecx, [ebp+var_14]
@@ -12148,7 +12164,7 @@
 .text:080074A4                 push    ecx
 .text:080074A5                 push    eax
 .text:080074A6                 call    __lshrdi3
-.text:080074AB                 add     esp, 0Ch
+.text:080074AB                 add     esp, 12
 .text:080074AE                 and     eax, 0FFh
 .text:080074B4                 mov     ecx, 0
 .text:080074B9                 mov     [ebp+var_5], al
