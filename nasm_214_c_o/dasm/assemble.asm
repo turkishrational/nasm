@@ -12065,112 +12065,115 @@ endp            find_match
 
 proc            get_broadcast_num near  ; ...
 
-var_28          = dword ptr -28h
-var_24          = dword ptr -24h
-var_20          = dword ptr -20h
-var_1C          = dword ptr -1Ch
-var_18          = dword ptr -18h
-var_14          = dword ptr -14h
-var_10          = dword ptr -10h
-var_C           = dword ptr -0Ch
-var_5           = byte ptr -5
-var_4           = dword ptr -4
-arg_4           = dword ptr  0Ch
-arg_8           = dword ptr  10h
-arg_C           = dword ptr  14h
+tmp5            = dword ptr -28h
+tmp5_h          = dword ptr -24h
+tmp4            = dword ptr -20h
+tmp3            = dword ptr -1Ch
+tmp2_h          = dword ptr -18h
+tmp2            = dword ptr -14h
+tmp1            = dword ptr -10h
+tmp1_h          = dword ptr -0Ch
+brcast_num      = byte ptr -5
+opsize          = dword ptr -4
+opflags_h       = dword ptr  0Ch
+brsize          = dword ptr  10h
+brsize_h        = dword ptr  14h
 
-                push    ebp
-                mov     ebp, esp
-                sub     esp, 28h
+                push    ebp             ; static uint8_t get_broadcast_num(opflags_t opflags, opflags_t brsize)
+                mov     ebp, esp        ; unsigned int opsize = (opflags & SIZE_MASK) >> SIZE_SHIFT;
+                sub     esp, 40         ; uint8_t brcast_num;
                 nop
-                mov     eax, [ebp+arg_4]
-                and     eax, 7FFh
+                mov     eax, [ebp+opflags_h]
+                and     eax, 7FFh       ; SIZE_MASK = 2047 (high 32-bit) = 7FFh:0
+                mov     ecx, 0          ; SIZE_SHIFT = 32
                 mov     ecx, 0
-                mov     ecx, 0
-                mov     [ebp+var_4], eax
-                mov     eax, [ebp+arg_C]
-                cmp     eax, 8
-                jb      loc_8007404
-                jnz     loc_80073F0
-                mov     eax, [ebp+arg_8]
+                mov     [ebp+opsize], eax
+                mov     eax, [ebp+brsize_h] ; if (brsize > BITS64)
+                cmp     eax, 8          ; BITS64 = shl (1), 35 = 8h:0h
+                jb      gb_2
+                jnz     gb_1
+                mov     eax, [ebp+brsize]
                 cmp     eax, 0
-                jbe     loc_8007404
+                jbe     gb_2
 
-loc_80073F0:                            ; ...
+gb_1:                                   ; ...
                 mov     eax, offset L_103 ; "size of broadcasting element is greater"...
                 push    eax
                 mov     eax, 6
                 push    eax
-                call    nasm_error
+                call    nasm_error      ; nasm_error(ERR_FATAL,
+                                        ;   "size of broadcasting element is greater than 64 bits");
                 add     esp, 8
 
-loc_8007404:                            ; ...
-                mov     eax, [ebp+var_4]
-                mov     ecx, 0
-                mov     edx, ecx
+gb_2:                                   ; ...
+                mov     eax, [ebp+opsize] ;  /* The shift term is to take care of the extra BITS80
+                                        ;   * inserted between BITS64 and BITS128. */
+                mov     ecx, 0          ; brcast_num = ((opsize / (BITS64 >> SIZE_SHIFT)) * (BITS64 / brsize))
+                                        ;              >> (opsize > (BITS64 >> SIZE_SHIFT));
+                mov     edx, ecx        ; BITS64 >> SIZE_SHIFT = 8 /// opsize/8 = opsize >> 3
                 shr     edx, 3
                 shl     ecx, 29
                 shr     eax, 3
                 or      ecx, eax
-                mov     eax, [ebp+arg_8]
-                mov     [ebp+var_10], ecx
-                mov     [ebp+var_C], edx
-                mov     edx, [ebp+arg_C]
-                push    edx
-                push    eax
+                mov     eax, [ebp+brsize]
+                mov     [ebp+tmp1], ecx
+                mov     [ebp+tmp1_h], edx
+                mov     edx, [ebp+brsize_h]
+                push    edx             ; divisor high
+                push    eax             ; divisor low
                 mov     eax, 0
                 mov     ecx, 8
-                push    ecx
-                push    eax
-                call    __udivdi3
+                push    ecx             ; dividend high
+                push    eax             ; dividend low
+                call    __udivdi3       ; BITS64 / brsize
                 add     esp, 16
-                mov     [ebp+var_14], eax
-                mov     eax, [ebp+var_10]
-                mov     ecx, [ebp+var_14]
-                mov     [ebp+var_18], edx
+                mov     [ebp+tmp2], eax ; quotient low
+                mov     eax, [ebp+tmp1]
+                mov     ecx, [ebp+tmp2]
+                mov     [ebp+tmp2_h], edx ; quotient high
                 mul     ecx
-                mov     ecx, [ebp+var_10]
-                mov     [ebp+var_1C], eax
-                mov     eax, [ebp+var_18]
+                mov     ecx, [ebp+tmp1]
+                mov     [ebp+tmp3], eax
+                mov     eax, [ebp+tmp2_h]
                 imul    ecx, eax
-                mov     eax, [ebp+var_C]
-                mov     [ebp+var_20], edx
-                mov     edx, [ebp+var_14]
+                mov     eax, [ebp+tmp1_h]
+                mov     [ebp+tmp4], edx
+                mov     edx, [ebp+tmp2]
                 imul    eax, edx
                 add     ecx, eax
-                mov     eax, [ebp+var_20]
+                mov     eax, [ebp+tmp4]
                 add     eax, ecx
-                mov     ecx, [ebp+var_1C]
-                mov     edx, [ebp+var_4]
-                mov     [ebp+var_28], ecx
-                mov     [ebp+var_24], eax
+                mov     ecx, [ebp+tmp3]
+                mov     edx, [ebp+opsize]
+                mov     [ebp+tmp5], ecx
+                mov     [ebp+tmp5_h], eax
                 mov     eax, 0
                 cmp     eax, 0
-                jb      loc_8007498
-                jnz     loc_8007491
+                jb      gb_4
+                jnz     gb_3
                 cmp     edx, 8
-                jbe     loc_8007498
+                jbe     gb_4
 
-loc_8007491:                            ; ...
+gb_3:                                   ; ...
                 mov     eax, 1
-                jmp     short loc_800749D
+                jmp     short gb_5
 ; ---------------------------------------------------------------------------
 
-loc_8007498:                            ; ...
+gb_4:                                   ; ...
                 mov     eax, 0
 
-loc_800749D:                            ; ...
-                push    eax
-                mov     eax, [ebp+var_28]
-                mov     ecx, [ebp+var_24]
+gb_5:                                   ; ...
+                push    eax             ; shift bit count
+                mov     eax, [ebp+tmp5]
+                mov     ecx, [ebp+tmp5_h]
                 push    ecx
                 push    eax
                 call    __lshrdi3
                 add     esp, 12
                 and     eax, 0FFh
                 mov     ecx, 0
-                mov     [ebp+var_5], al
-                movzx   eax, [ebp+var_5]
+                mov     [ebp+brcast_num], al
+                movzx   eax, [ebp+brcast_num] ; return brcast_num;
                 leave
                 retn
 endp            get_broadcast_num
@@ -12206,151 +12209,152 @@ var_34          = dword ptr -34h
 var_30          = dword ptr -30h
 var_2C          = dword ptr -2Ch
 var_28          = byte ptr -28h
-arg_0           = dword ptr  8
-arg_4           = dword ptr  0Ch
-arg_8           = dword ptr  10h
+itemp           = dword ptr  8
+instruction     = dword ptr  0Ch
+_bits           = dword ptr  10h
 
-                push    ebp
+                push    ebp             ; static enum match_result matches(const struct itemplate *itemp,
+                                        ;                                  insn *instruction, int bits)
                 mov     ebp, esp
-                sub     esp, 88h
+                sub     esp, 136
                 nop
                 mov     eax, 0
                 mov     [ebp+var_34], eax
-                mov     eax, [ebp+arg_0]
-                mov     ecx, [ebp+arg_4]
-                add     ecx, 20h
+                mov     eax, [ebp+itemp]
+                mov     ecx, [ebp+instruction]
+                add     ecx, 32
                 mov     edx, [eax]
                 mov     eax, [ecx]
                 cmp     edx, eax
-                jz      loc_80074F3
+                jz      m_1
                 mov     eax, 0
-                jmp     locret_800812F
+                jmp     m_118
 ; ---------------------------------------------------------------------------
 
-loc_80074F3:                            ; ...
-                mov     eax, [ebp+arg_0]
+m_1:                                    ; ...
+                mov     eax, [ebp+itemp]
                 add     eax, 4
-                mov     ecx, [ebp+arg_4]
-                add     ecx, 28h
+                mov     ecx, [ebp+instruction]
+                add     ecx, 40
                 mov     edx, [eax]
                 mov     eax, [ecx]
                 cmp     edx, eax
-                jz      loc_8007515
+                jz      m_2
                 mov     eax, 0
-                jmp     locret_800812F
+                jmp     m_118
 ; ---------------------------------------------------------------------------
 
-loc_8007515:                            ; ...
+m_2:                                    ; ...
                 mov     eax, [ds:optimizing]
                 cmp     eax, 0
-                jg      loc_8007549
-                mov     eax, 10h
+                jg      m_3
+                mov     eax, 16
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+itemp]
                 push    eax
                 call    itemp_has
                 add     esp, 8
                 cmp     eax, 0
-                jz      loc_8007549
+                jz      m_3
                 mov     eax, 0
-                jmp     locret_800812F
+                jmp     m_118
 ; ---------------------------------------------------------------------------
 
-loc_8007549:                            ; ...
-                mov     eax, [ebp+arg_4]
+m_3:                                    ; ...
+                mov     eax, [ebp+instruction]
                 add     eax, 4
-                add     eax, 18h
-                jmp     loc_80075BF
+                add     eax, 24
+                jmp     m_11
 ; ---------------------------------------------------------------------------
 
-loc_8007557:                            ; ...
-                mov     eax, 58h
+m_4:                                    ; ...
+                mov     eax, 88
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+itemp]
                 push    eax
                 call    itemp_has
                 add     esp, 8
                 cmp     eax, 0
-                jz      loc_8007577
-                jmp     loc_8007581
+                jz      m_5
+                jmp     m_6
 ; ---------------------------------------------------------------------------
 
-loc_8007577:                            ; ...
-                mov     eax, 0Ah
-                jmp     locret_800812F
+m_5:                                    ; ...
+                mov     eax, 10
+                jmp     m_118
 ; ---------------------------------------------------------------------------
 
-loc_8007581:                            ; ...
-                jmp     loc_80075DB
+m_6:                                    ; ...
+                jmp     m_12
 ; ---------------------------------------------------------------------------
 
-loc_8007586:                            ; ...
+m_7:                                    ; ...
                 mov     eax, 57h
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+itemp]
                 push    eax
                 call    itemp_has
                 add     esp, 8
                 cmp     eax, 0
-                jz      loc_80075A6
-                jmp     loc_80075B0
+                jz      m_8
+                jmp     m_9
 ; ---------------------------------------------------------------------------
 
-loc_80075A6:                            ; ...
+m_8:                                    ; ...
                 mov     eax, 0Ah
-                jmp     locret_800812F
+                jmp     m_118
 ; ---------------------------------------------------------------------------
 
-loc_80075B0:                            ; ...
-                jmp     loc_80075DB
+m_9:                                    ; ...
+                jmp     m_12
 ; ---------------------------------------------------------------------------
 
-loc_80075B5:                            ; ...
-                jmp     loc_80075DB
+m_10:                                   ; ...
+                jmp     m_12
 ; ---------------------------------------------------------------------------
-                jmp     loc_80075DB
+                jmp     m_12
 ; ---------------------------------------------------------------------------
 
-loc_80075BF:                            ; ...
+m_11:                                   ; ...
                 mov     ecx, [eax]
                 cmp     ecx, 105h
-                jz      short loc_8007557
+                jz      short m_4
                 cmp     ecx, 106h
-                jz      short loc_8007586
+                jz      short m_7
                 cmp     ecx, 107h
-                jz      short loc_8007586
-                jmp     short loc_80075B5
+                jz      short m_7
+                jmp     short m_10
 ; ---------------------------------------------------------------------------
 
-loc_80075DB:                            ; ...
+m_12:                                   ; ...
                 mov     eax, 0
                 mov     [ebp+var_38], eax
 
-loc_80075E3:                            ; ...
-                mov     eax, [ebp+arg_0]
+m_13:                                   ; ...
+                mov     eax, [ebp+itemp]
                 add     eax, 4
                 mov     ecx, [ebp+var_38]
                 mov     edx, [eax]
                 cmp     ecx, edx
-                jge     loc_8007675
-                jmp     loc_8007606
+                jge     m_18
+                jmp     m_15
 ; ---------------------------------------------------------------------------
 
-loc_80075FB:                            ; ...
+m_14:                                   ; ...
                 mov     eax, [ebp+var_38]
                 mov     ecx, eax
                 inc     eax
                 mov     [ebp+var_38], eax
-                jmp     short loc_80075E3
+                jmp     short m_13
 ; ---------------------------------------------------------------------------
 
-loc_8007606:                            ; ...
-                mov     eax, [ebp+arg_4]
+m_15:                                   ; ...
+                mov     eax, [ebp+instruction]
                 add     eax, 30h
                 mov     ecx, [ebp+var_38]
                 shl     ecx, 6
                 add     eax, ecx
-                mov     ecx, [ebp+arg_0]
+                mov     ecx, [ebp+itemp]
                 add     ecx, 8
                 mov     edx, [ebp+var_38]
                 shl     edx, 3
@@ -12375,21 +12379,21 @@ loc_8007606:                            ; ...
                 and     ecx, 30h
                 mov     eax, 0
                 cmp     eax, 0
-                jnz     loc_8007669
+                jnz     m_16
                 cmp     ecx, 0
-                jz      loc_8007673
+                jz      m_17
 
-loc_8007669:                            ; ...
+m_16:                                   ; ...
                 mov     eax, 0
-                jmp     locret_800812F
+                jmp     m_118
 ; ---------------------------------------------------------------------------
 
-loc_8007673:                            ; ...
-                jmp     short loc_80075FB
+m_17:                                   ; ...
+                jmp     short m_14
 ; ---------------------------------------------------------------------------
 
-loc_8007675:                            ; ...
-                mov     eax, [ebp+arg_0]
+m_18:                                   ; ...
+                mov     eax, [ebp+itemp]
                 add     eax, 40h
                 mov     ecx, [eax]
                 shl     ecx, 4
@@ -12397,156 +12401,156 @@ loc_8007675:                            ; ...
                 add     eax, ecx
                 mov     ecx, [eax]
                 and     ecx, 3FCh
-                jmp     loc_80077B8
+                jmp     m_34
 ; ---------------------------------------------------------------------------
 
-loc_8007694:                            ; ...
+m_19:                                   ; ...
                 mov     eax, 0
                 mov     ecx, 1
                 mov     [ebp+var_30], eax
                 mov     [ebp+var_2C], ecx
-                jmp     loc_8007816
+                jmp     m_36
 ; ---------------------------------------------------------------------------
 
-loc_80076A9:                            ; ...
+m_20:                                   ; ...
                 mov     eax, 0
                 mov     ecx, 2
                 mov     [ebp+var_30], eax
                 mov     [ebp+var_2C], ecx
-                jmp     loc_8007816
+                jmp     m_36
 ; ---------------------------------------------------------------------------
 
-loc_80076BE:                            ; ...
+m_21:                                   ; ...
                 mov     eax, 0
                 mov     ecx, 4
                 mov     [ebp+var_30], eax
                 mov     [ebp+var_2C], ecx
-                jmp     loc_8007816
+                jmp     m_36
 ; ---------------------------------------------------------------------------
 
-loc_80076D3:                            ; ...
+m_22:                                   ; ...
                 mov     eax, 0
                 mov     ecx, 8
                 mov     [ebp+var_30], eax
                 mov     [ebp+var_2C], ecx
-                jmp     loc_8007816
+                jmp     m_36
 ; ---------------------------------------------------------------------------
 
-loc_80076E8:                            ; ...
+m_23:                                   ; ...
                 mov     eax, 0
                 mov     ecx, 20h
                 mov     [ebp+var_30], eax
                 mov     [ebp+var_2C], ecx
-                jmp     loc_8007816
+                jmp     m_36
 ; ---------------------------------------------------------------------------
 
-loc_80076FD:                            ; ...
+m_24:                                   ; ...
                 mov     eax, 0
                 mov     ecx, 40h
                 mov     [ebp+var_30], eax
                 mov     [ebp+var_2C], ecx
-                jmp     loc_8007816
+                jmp     m_36
 ; ---------------------------------------------------------------------------
 
-loc_8007712:                            ; ...
+m_25:                                   ; ...
                 mov     eax, 0
                 mov     ecx, 80h
                 mov     [ebp+var_30], eax
                 mov     [ebp+var_2C], ecx
-                jmp     loc_8007816
+                jmp     m_36
 ; ---------------------------------------------------------------------------
 
-loc_8007727:                            ; ...
-                jmp     loc_8007785
+m_26:                                   ; ...
+                jmp     m_31
 ; ---------------------------------------------------------------------------
 
-loc_800772C:                            ; ...
+m_27:                                   ; ...
                 mov     eax, 0
                 mov     ecx, 2
                 mov     [ebp+var_30], eax
                 mov     [ebp+var_2C], ecx
-                jmp     loc_8007799
+                jmp     m_32
 ; ---------------------------------------------------------------------------
 
-loc_8007741:                            ; ...
+m_28:                                   ; ...
                 mov     eax, 0
                 mov     ecx, 4
                 mov     [ebp+var_30], eax
                 mov     [ebp+var_2C], ecx
-                jmp     loc_8007799
+                jmp     m_32
 ; ---------------------------------------------------------------------------
 
-loc_8007756:                            ; ...
+m_29:                                   ; ...
                 mov     eax, 0
                 mov     ecx, 8
                 mov     [ebp+var_30], eax
                 mov     [ebp+var_2C], ecx
-                jmp     loc_8007799
+                jmp     m_32
 ; ---------------------------------------------------------------------------
 
-loc_800776B:                            ; ...
+m_30:                                   ; ...
                 mov     eax, 0
                 mov     ecx, 0
                 mov     [ebp+var_30], eax
                 mov     [ebp+var_2C], ecx
-                jmp     loc_8007799
+                jmp     m_32
 ; ---------------------------------------------------------------------------
-                jmp     loc_8007799
+                jmp     m_32
 ; ---------------------------------------------------------------------------
 
-loc_8007785:                            ; ...
-                mov     eax, [ebp+arg_8]
+m_31:                                   ; ...
+                mov     eax, [ebp+_bits]
                 cmp     eax, 10h
-                jz      short loc_800772C
+                jz      short m_27
                 cmp     eax, 20h
-                jz      short loc_8007741
+                jz      short m_28
                 cmp     eax, 40h
-                jz      short loc_8007756
-                jmp     short loc_800776B
+                jz      short m_29
+                jmp     short m_30
 ; ---------------------------------------------------------------------------
 
-loc_8007799:                            ; ...
-                jmp     loc_8007816
+m_32:                                   ; ...
+                jmp     m_36
 ; ---------------------------------------------------------------------------
 
-loc_800779E:                            ; ...
+m_33:                                   ; ...
                 mov     eax, 0
                 mov     ecx, 0
                 mov     [ebp+var_30], eax
                 mov     [ebp+var_2C], ecx
-                jmp     loc_8007816
+                jmp     m_36
 ; ---------------------------------------------------------------------------
-                jmp     loc_8007816
+                jmp     m_36
 ; ---------------------------------------------------------------------------
 
-loc_80077B8:                            ; ...
+m_34:                                   ; ...
                 cmp     ecx, 40h
-                ja      loc_80077F0
+                ja      m_35
                 cmp     ecx, 40h
-                jnb     loc_80076E8
+                jnb     m_23
                 cmp     ecx, 4
-                jz      loc_8007694
+                jz      m_19
                 cmp     ecx, 8
-                jz      loc_80076A9
+                jz      m_20
                 cmp     ecx, 10h
-                jz      loc_80076BE
+                jz      m_21
                 cmp     ecx, 20h
-                jz      loc_80076D3
-                jmp     short loc_800779E
+                jz      m_22
+                jmp     short m_33
 ; ---------------------------------------------------------------------------
 
-loc_80077F0:                            ; ...
+m_35:                                   ; ...
                 cmp     ecx, 80h
-                jz      loc_80076FD
+                jz      m_24
                 cmp     ecx, 100h
-                jz      loc_8007712
+                jz      m_25
                 cmp     ecx, 200h
-                jz      loc_8007727
-                jmp     short loc_800779E
+                jz      m_26
+                jmp     short m_33
 ; ---------------------------------------------------------------------------
 
-loc_8007816:                            ; ...
-                mov     eax, [ebp+arg_0]
+m_36:                                   ; ...
+                mov     eax, [ebp+itemp]
                 add     eax, 40h
                 mov     ecx, [eax]
                 shl     ecx, 4
@@ -12555,8 +12559,8 @@ loc_8007816:                            ; ...
                 mov     ecx, [eax]
                 and     ecx, 0F800h
                 cmp     ecx, 0
-                jz      loc_800788F
-                mov     eax, [ebp+arg_0]
+                jz      m_37
+                mov     eax, [ebp+itemp]
                 add     eax, 40h
                 mov     ecx, [eax]
                 shl     ecx, 4
@@ -12574,7 +12578,7 @@ loc_8007816:                            ; ...
                 lea     eax, [ebp+var_28]
                 push    eax
                 call    memset
-                add     esp, 0Ch
+                add     esp, 12
                 mov     eax, [ebp+var_38]
                 shl     eax, 3
                 lea     ecx, [ebp+var_28]
@@ -12584,29 +12588,29 @@ loc_8007816:                            ; ...
                 mov     [ecx], eax
                 add     ecx, 4
                 mov     [ecx], edx
-                jmp     loc_80078CD
+                jmp     m_41
 ; ---------------------------------------------------------------------------
 
-loc_800788F:                            ; ...
+m_37:                                   ; ...
                 mov     eax, 0
                 mov     [ebp+var_38], eax
 
-loc_8007897:                            ; ...
+m_38:                                   ; ...
                 mov     eax, [ebp+var_38]
                 cmp     eax, 5
-                jge     loc_80078CD
-                jmp     loc_80078B3
+                jge     m_41
+                jmp     m_40
 ; ---------------------------------------------------------------------------
 
-loc_80078A8:                            ; ...
+m_39:                                   ; ...
                 mov     eax, [ebp+var_38]
                 mov     ecx, eax
                 inc     eax
                 mov     [ebp+var_38], eax
-                jmp     short loc_8007897
+                jmp     short m_38
 ; ---------------------------------------------------------------------------
 
-loc_80078B3:                            ; ...
+m_40:                                   ; ...
                 mov     eax, [ebp+var_38]
                 shl     eax, 3
                 lea     ecx, [ebp+var_28]
@@ -12616,33 +12620,33 @@ loc_80078B3:                            ; ...
                 mov     [ecx], eax
                 add     ecx, 4
                 mov     [ecx], edx
-                jmp     short loc_80078A8
+                jmp     short m_39
 ; ---------------------------------------------------------------------------
 
-loc_80078CD:                            ; ...
+m_41:                                   ; ...
                 mov     eax, 0
                 mov     [ebp+var_38], eax
 
-loc_80078D5:                            ; ...
-                mov     eax, [ebp+arg_0]
+m_42:                                   ; ...
+                mov     eax, [ebp+itemp]
                 add     eax, 4
                 mov     ecx, [ebp+var_38]
                 mov     edx, [eax]
                 cmp     ecx, edx
-                jge     loc_8007D1C
-                jmp     loc_80078F8
+                jge     m_79
+                jmp     m_44
 ; ---------------------------------------------------------------------------
 
-loc_80078ED:                            ; ...
+m_43:                                   ; ...
                 mov     eax, [ebp+var_38]
                 mov     ecx, eax
                 inc     eax
                 mov     [ebp+var_38], eax
-                jmp     short loc_80078D5
+                jmp     short m_42
 ; ---------------------------------------------------------------------------
 
-loc_80078F8:                            ; ...
-                mov     eax, [ebp+arg_4]
+m_44:                                   ; ...
+                mov     eax, [ebp+instruction]
                 add     eax, 30h
                 mov     ecx, [ebp+var_38]
                 shl     ecx, 6
@@ -12652,7 +12656,7 @@ loc_80078F8:                            ; ...
                 mov     edx, [eax]
                 mov     [ebp+var_50], ecx
                 mov     [ebp+var_4C], edx
-                mov     eax, [ebp+arg_4]
+                mov     eax, [ebp+instruction]
                 add     eax, 30h
                 mov     ecx, [ebp+var_38]
                 shl     ecx, 6
@@ -12660,7 +12664,7 @@ loc_80078F8:                            ; ...
                 add     eax, 3Ch
                 movzx   ecx, [word ptr eax]
                 mov     [ebp+var_52], cx
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+itemp]
                 add     eax, 30h
                 mov     ecx, [ebp+var_38]
                 shl     ecx, 1
@@ -12679,15 +12683,15 @@ loc_80078F8:                            ; ...
                 and     eax, 7FFh
                 mov     ecx, 0
                 cmp     eax, 0
-                jnz     loc_800797C
+                jnz     m_45
                 cmp     ecx, 0
-                jz      loc_8007981
+                jz      m_46
 
-loc_800797C:                            ; ...
-                jmp     loc_80079A3
+m_45:                                   ; ...
+                jmp     m_47
 ; ---------------------------------------------------------------------------
 
-loc_8007981:                            ; ...
+m_46:                                   ; ...
                 mov     eax, [ebp+var_38]
                 shl     eax, 3
                 lea     ecx, [ebp+var_28]
@@ -12702,7 +12706,7 @@ loc_8007981:                            ; ...
                 mov     [ebp+var_50], ecx
                 mov     [ebp+var_4C], eax
 
-loc_80079A3:                            ; ...
+m_47:                                   ; ...
                 mov     eax, [ebp+var_4C]
                 and     eax, 7FFh
                 mov     ecx, 0
@@ -12710,12 +12714,12 @@ loc_80079A3:                            ; ...
                 mov     [ebp+var_6C], eax
                 mov     eax, [ebp+var_58]
                 cmp     eax, 0
-                jz      loc_80079C8
-                jmp     loc_80079F3
+                jz      m_48
+                jmp     m_49
 ; ---------------------------------------------------------------------------
 
-loc_80079C8:                            ; ...
-                mov     eax, [ebp+arg_0]
+m_48:                                   ; ...
+                mov     eax, [ebp+itemp]
                 add     eax, 8
                 mov     ecx, [ebp+var_38]
                 shl     ecx, 3
@@ -12727,10 +12731,10 @@ loc_80079C8:                            ; ...
                 mov     eax, 0
                 mov     [ebp+var_68], eax
                 mov     [ebp+var_64], edx
-                jmp     loc_8007AEC
+                jmp     m_58
 ; ---------------------------------------------------------------------------
 
-loc_80079F3:                            ; ...
+m_49:                                   ; ...
                 movzx   eax, [ebp+var_54]
                 mov     ecx, eax
                 sar     ecx, 1Fh
@@ -12746,53 +12750,53 @@ loc_80079F3:                            ; ...
                 and     eax, 20h
                 mov     ecx, 0
                 cmp     ecx, 0
-                jnz     loc_8007A3C
+                jnz     m_50
                 cmp     eax, 0
-                jz      loc_8007A46
+                jz      m_51
 
-loc_8007A3C:                            ; ...
+m_50:                                   ; ...
                 mov     eax, 3
-                jmp     locret_800812F
+                jmp     m_118
 ; ---------------------------------------------------------------------------
 
-loc_8007A46:                            ; ...
+m_51:                                   ; ...
                 movzx   eax, [ebp+var_72]
                 cmp     eax, 0
-                jz      loc_8007ADC
+                jz      m_57
                 movzx   eax, [ebp+var_72]
                 mov     ecx, eax
                 sar     ecx, 1Fh
                 cmp     ecx, 0
-                jnz     loc_8007A78
+                jnz     m_52
                 cmp     eax, 100h
-                jnz     loc_8007A78
+                jnz     m_52
                 mov     eax, 1
-                jmp     short loc_8007A7D
+                jmp     short m_53
 ; ---------------------------------------------------------------------------
 
-loc_8007A78:                            ; ...
+m_52:                                   ; ...
                 mov     eax, 0
 
-loc_8007A7D:                            ; ...
+m_53:                                   ; ...
                 cmp     eax, 0
-                jz      loc_8007A8B
-                jmp     loc_8007A9A
+                jz      m_54
+                jmp     m_55
 ; ---------------------------------------------------------------------------
 
-loc_8007A8B:                            ; ...
+m_54:                                   ; ...
                 mov     eax, 0
                 mov     edx, 8
-                jmp     loc_8007AA4
+                jmp     m_56
 ; ---------------------------------------------------------------------------
 
-loc_8007A9A:                            ; ...
+m_55:                                   ; ...
                 mov     eax, 0
                 mov     edx, 4
 
-loc_8007AA4:                            ; ...
+m_56:                                   ; ...
                 mov     [ebp+var_68], eax
                 mov     [ebp+var_64], edx
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+itemp]
                 add     eax, 8
                 mov     ecx, [ebp+var_38]
                 shl     ecx, 3
@@ -12810,16 +12814,16 @@ loc_8007AA4:                            ; ...
                 movzx   eax, al
                 add     esp, 10h
                 mov     [ebp+var_59], al
-                jmp     loc_8007AEC
+                jmp     m_58
 ; ---------------------------------------------------------------------------
 
-loc_8007ADC:                            ; ...
+m_57:                                   ; ...
                 mov     eax, 0
                 mov     ecx, 0
                 mov     [ebp+var_68], eax
                 mov     [ebp+var_64], ecx
 
-loc_8007AEC:                            ; ...
+m_58:                                   ; ...
                 movzx   eax, [ebp+var_54]
                 xor     eax, 0FFFFFFFFh
                 movzx   ecx, [ebp+var_52]
@@ -12829,16 +12833,16 @@ loc_8007AEC:                            ; ...
                 and     eax, 0Fh
                 mov     ecx, 0
                 cmp     ecx, 0
-                jnz     loc_8007B18
+                jnz     m_59
                 cmp     eax, 0
-                jz      loc_8007B22
+                jz      m_60
 
-loc_8007B18:                            ; ...
+m_59:                                   ; ...
                 mov     eax, 5
-                jmp     locret_800812F
+                jmp     m_118
 ; ---------------------------------------------------------------------------
 
-loc_8007B22:                            ; ...
+m_60:                                   ; ...
                 movzx   eax, [ebp+var_54]
                 xor     eax, 0FFFFFFFFh
                 movzx   ecx, [ebp+var_52]
@@ -12848,17 +12852,17 @@ loc_8007B22:                            ; ...
                 and     eax, 0D0h
                 mov     ecx, 0
                 cmp     ecx, 0
-                jnz     loc_8007B51
+                jnz     m_61
                 cmp     eax, 0
-                jz      loc_8007B5B
+                jz      m_62
 
-loc_8007B51:                            ; ...
+m_61:                                   ; ...
                 mov     eax, 6
-                jmp     locret_800812F
+                jmp     m_118
 ; ---------------------------------------------------------------------------
 
-loc_8007B5B:                            ; ...
-                mov     eax, [ebp+arg_0]
+m_62:                                   ; ...
+                mov     eax, [ebp+itemp]
                 add     eax, 8
                 mov     ecx, [ebp+var_38]
                 shl     ecx, 3
@@ -12878,17 +12882,17 @@ loc_8007B5B:                            ; ...
                 and     ecx, eax
                 and     ecx, 0FFFF0000h
                 cmp     ecx, 0
-                jnz     loc_8007BA4
+                jnz     m_63
                 cmp     edx, 0
-                jz      loc_8007BAE
+                jz      m_64
 
-loc_8007BA4:                            ; ...
+m_63:                                   ; ...
                 mov     eax, 0
-                jmp     locret_800812F
+                jmp     m_118
 ; ---------------------------------------------------------------------------
 
-loc_8007BAE:                            ; ...
-                mov     eax, [ebp+arg_0]
+m_64:                                   ; ...
+                mov     eax, [ebp+itemp]
                 add     eax, 8
                 mov     ecx, [ebp+var_38]
                 shl     ecx, 3
@@ -12905,12 +12909,12 @@ loc_8007BAE:                            ; ...
                 and     edx, 0F800h
                 mov     eax, 0
                 cmp     edx, 0
-                jnz     loc_8007BF0
+                jnz     m_65
                 cmp     eax, 0
-                jz      loc_8007C3B
+                jz      m_70
 
-loc_8007BF0:                            ; ...
-                mov     eax, [ebp+arg_0]
+m_65:                                   ; ...
+                mov     eax, [ebp+itemp]
                 add     eax, 8
                 mov     ecx, [ebp+var_38]
                 shl     ecx, 3
@@ -12921,60 +12925,60 @@ loc_8007BF0:                            ; ...
                 and     edx, 0F800h
                 mov     eax, 0
                 cmp     edx, 0
-                jnz     loc_8007C22
+                jnz     m_66
                 cmp     eax, 0
-                jz      loc_8007C27
+                jz      m_67
 
-loc_8007C22:                            ; ...
-                jmp     loc_8007C31
+m_66:                                   ; ...
+                jmp     m_68
 ; ---------------------------------------------------------------------------
 
-loc_8007C27:                            ; ...
+m_67:                                   ; ...
                 mov     eax, 0Eh
-                jmp     loc_8007C36
+                jmp     m_69
 ; ---------------------------------------------------------------------------
 
-loc_8007C31:                            ; ...
+m_68:                                   ; ...
                 mov     eax, 0Dh
 
-loc_8007C36:                            ; ...
-                jmp     locret_800812F
+m_69:                                   ; ...
+                jmp     m_118
 ; ---------------------------------------------------------------------------
 
-loc_8007C3B:                            ; ...
+m_70:                                   ; ...
                 mov     eax, [ebp+var_64]
                 cmp     eax, 0
-                jnz     loc_8007C53
+                jnz     m_71
                 mov     eax, [ebp+var_68]
                 cmp     eax, 0
-                jz      loc_8007D17
+                jz      m_78
 
-loc_8007C53:                            ; ...
+m_71:                                   ; ...
                 mov     eax, [ebp+var_64]
                 mov     ecx, [ebp+var_6C]
                 cmp     eax, ecx
-                jnz     loc_8007C6F
+                jnz     m_72
                 mov     eax, [ebp+var_68]
                 mov     ecx, [ebp+var_70]
                 cmp     eax, ecx
-                jz      loc_8007CCD
+                jz      m_77
 
-loc_8007C6F:                            ; ...
+m_72:                                   ; ...
                 mov     eax, [ebp+var_6C]
                 cmp     eax, 0
-                jnz     loc_8007C87
+                jnz     m_73
                 mov     eax, [ebp+var_70]
                 cmp     eax, 0
-                jz      loc_8007C96
+                jz      m_74
 
-loc_8007C87:                            ; ...
+m_73:                                   ; ...
                 mov     eax, 0
-                jmp     locret_800812F
+                jmp     m_118
 ; ---------------------------------------------------------------------------
-                jmp     loc_8007CC8
+                jmp     m_76
 ; ---------------------------------------------------------------------------
 
-loc_8007C96:                            ; ...
+m_74:                                   ; ...
                 mov     eax, [ebp+var_50]
                 mov     ecx, [ebp+var_4C]
                 push    ecx
@@ -12984,27 +12988,27 @@ loc_8007C96:                            ; ...
                 push    ecx
                 push    eax
                 call    is_class
-                add     esp, 10h
+                add     esp, 16
                 cmp     eax, 0
-                jz      loc_8007CC0
-                jmp     loc_8007CC8
+                jz      m_75
+                jmp     m_76
 ; ---------------------------------------------------------------------------
 
-loc_8007CC0:                            ; ...
+m_75:                                   ; ...
                 mov     eax, 1
                 mov     [ebp+var_34], eax
 
-loc_8007CC8:                            ; ...
-                jmp     loc_8007D17
+m_76:                                   ; ...
+                jmp     m_78
 ; ---------------------------------------------------------------------------
 
-loc_8007CCD:                            ; ...
+m_77:                                   ; ...
                 mov     eax, [ebp+var_58]
                 cmp     eax, 0
-                jz      loc_8007D17
+                jz      m_78
                 movzx   eax, [ebp+var_52]
                 mov     ecx, eax
-                sar     ecx, 1Fh
+                sar     ecx, 31
                 and     eax, 0C00h
                 mov     ecx, 0
                 mov     edx, ecx
@@ -13016,89 +13020,89 @@ loc_8007CCD:                            ; ...
                 shl     eax, cl
                 movzx   ecx, [ebp+var_59]
                 cmp     ecx, eax
-                jz      loc_8007D17
+                jz      m_78
                 mov     eax, 4
-                jmp     locret_800812F
+                jmp     m_118
 ; ---------------------------------------------------------------------------
 
-loc_8007D17:                            ; ...
-                jmp     loc_80078ED
+m_78:                                   ; ...
+                jmp     m_43
 ; ---------------------------------------------------------------------------
 
-loc_8007D1C:                            ; ...
+m_79:                                   ; ...
                 mov     eax, [ebp+var_34]
                 cmp     eax, 0
-                jz      loc_8007D32
+                jz      m_80
                 mov     eax, 1
-                jmp     locret_800812F
+                jmp     m_118
 ; ---------------------------------------------------------------------------
 
-loc_8007D32:                            ; ...
+m_80:                                   ; ...
                 mov     eax, 0
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+itemp]
                 push    eax
                 call    itemp_has
                 add     esp, 8
                 cmp     eax, 0
-                jnz     loc_8007D6D
+                jnz     m_81
                 mov     eax, 1
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+itemp]
                 push    eax
                 call    itemp_has
                 add     esp, 8
                 cmp     eax, 0
-                jnz     loc_8007D6D
-                jmp     loc_8007E57
+                jnz     m_81
+                jmp     m_95
 ; ---------------------------------------------------------------------------
 
-loc_8007D6D:                            ; ...
+m_81:                                   ; ...
                 mov     eax, 1
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+itemp]
                 push    eax
                 call    itemp_has
                 add     esp, 8
                 cmp     eax, 0
-                jz      loc_8007D8D
-                jmp     loc_8007D9A
+                jz      m_82
+                jmp     m_83
 ; ---------------------------------------------------------------------------
 
-loc_8007D8D:                            ; ...
-                mov     eax, [ebp+arg_0]
+m_82:                                   ; ...
+                mov     eax, [ebp+itemp]
                 add     eax, 4
                 mov     ecx, [eax]
-                jmp     loc_8007DA1
+                jmp     m_84
 ; ---------------------------------------------------------------------------
 
-loc_8007D9A:                            ; ...
+m_83:                                   ; ...
                 mov     eax, 2
                 mov     ecx, eax
 
-loc_8007DA1:                            ; ...
+m_84:                                   ; ...
                 mov     [ebp+var_3C], ecx
                 mov     eax, 0
                 mov     [ebp+var_38], eax
 
-loc_8007DAC:                            ; ...
+m_85:                                   ; ...
                 mov     eax, [ebp+var_38]
                 mov     ecx, [ebp+var_3C]
                 cmp     eax, ecx
-                jge     loc_8007E52
-                jmp     loc_8007DCA
+                jge     m_94
+                jmp     m_87
 ; ---------------------------------------------------------------------------
 
-loc_8007DBF:                            ; ...
+m_86:                                   ; ...
                 mov     eax, [ebp+var_38]
                 mov     ecx, eax
                 inc     eax
                 mov     [ebp+var_38], eax
-                jmp     short loc_8007DAC
+                jmp     short m_85
 ; ---------------------------------------------------------------------------
 
-loc_8007DCA:                            ; ...
-                mov     eax, [ebp+arg_0]
+m_87:                                   ; ...
+                mov     eax, [ebp+itemp]
                 add     eax, 8
                 mov     ecx, [ebp+var_38]
                 shl     ecx, 3
@@ -13112,32 +13116,32 @@ loc_8007DCA:                            ; ...
                 mov     [ebp+var_2C], edx
                 mov     eax, [ebp+var_2C]
                 cmp     eax, 0
-                jnz     loc_8007E08
+                jnz     m_88
                 mov     eax, [ebp+var_30]
                 cmp     eax, 0
-                jz      loc_8007E4D
+                jz      m_93
 
-loc_8007E08:                            ; ...
+m_88:                                   ; ...
                 mov     eax, 0
                 mov     [ebp+var_38], eax
 
-loc_8007E10:                            ; ...
+m_89:                                   ; ...
                 mov     eax, [ebp+var_38]
                 mov     ecx, [ebp+var_3C]
                 cmp     eax, ecx
-                jge     loc_8007E48
-                jmp     loc_8007E2E
+                jge     m_92
+                jmp     m_91
 ; ---------------------------------------------------------------------------
 
-loc_8007E23:                            ; ...
+m_90:                                   ; ...
                 mov     eax, [ebp+var_38]
                 mov     ecx, eax
                 inc     eax
                 mov     [ebp+var_38], eax
-                jmp     short loc_8007E10
+                jmp     short m_89
 ; ---------------------------------------------------------------------------
 
-loc_8007E2E:                            ; ...
+m_91:                                   ; ...
                 mov     eax, [ebp+var_38]
                 shl     eax, 3
                 lea     ecx, [ebp+var_28]
@@ -13147,51 +13151,51 @@ loc_8007E2E:                            ; ...
                 mov     [ecx], eax
                 add     ecx, 4
                 mov     [ecx], edx
-                jmp     short loc_8007E23
+                jmp     short m_90
 ; ---------------------------------------------------------------------------
 
-loc_8007E48:                            ; ...
-                jmp     loc_8007E52
+m_92:                                   ; ...
+                jmp     m_94
 ; ---------------------------------------------------------------------------
 
-loc_8007E4D:                            ; ...
-                jmp     loc_8007DBF
+m_93:                                   ; ...
+                jmp     m_86
 ; ---------------------------------------------------------------------------
 
-loc_8007E52:                            ; ...
-                jmp     loc_8007E62
+m_94:                                   ; ...
+                jmp     m_96
 ; ---------------------------------------------------------------------------
 
-loc_8007E57:                            ; ...
-                mov     eax, [ebp+arg_0]
+m_95:                                   ; ...
+                mov     eax, [ebp+itemp]
                 add     eax, 4
                 mov     ecx, [eax]
                 mov     [ebp+var_3C], ecx
 
-loc_8007E62:                            ; ...
+m_96:                                   ; ...
                 mov     eax, 0
                 mov     [ebp+var_38], eax
 
-loc_8007E6A:                            ; ...
-                mov     eax, [ebp+arg_0]
+m_97:                                   ; ...
+                mov     eax, [ebp+itemp]
                 add     eax, 4
                 mov     ecx, [ebp+var_38]
                 mov     edx, [eax]
                 cmp     ecx, edx
-                jge     loc_8007F39
-                jmp     loc_8007E8D
+                jge     m_104
+                jmp     m_99
 ; ---------------------------------------------------------------------------
 
-loc_8007E82:                            ; ...
+m_98:                                   ; ...
                 mov     eax, [ebp+var_38]
                 mov     ecx, eax
                 inc     eax
                 mov     [ebp+var_38], eax
-                jmp     short loc_8007E6A
+                jmp     short m_97
 ; ---------------------------------------------------------------------------
 
-loc_8007E8D:                            ; ...
-                mov     eax, [ebp+arg_0]
+m_99:                                   ; ...
+                mov     eax, [ebp+itemp]
                 add     eax, 8
                 mov     ecx, [ebp+var_38]
                 shl     ecx, 3
@@ -13202,16 +13206,16 @@ loc_8007E8D:                            ; ...
                 and     edx, 7FFh
                 mov     eax, 0
                 cmp     edx, 0
-                jnz     loc_8007EBF
+                jnz     m_100
                 cmp     eax, 0
-                jz      loc_8007EC4
+                jz      m_101
 
-loc_8007EBF:                            ; ...
-                jmp     loc_8007F34
+m_100:                                  ; ...
+                jmp     m_103
 ; ---------------------------------------------------------------------------
 
-loc_8007EC4:                            ; ...
-                mov     eax, [ebp+arg_4]
+m_101:                                  ; ...
+                mov     eax, [ebp+instruction]
                 add     eax, 30h
                 mov     ecx, [ebp+var_38]
                 shl     ecx, 6
@@ -13237,21 +13241,21 @@ loc_8007EC4:                            ; ...
                 mov     eax, [ebp+var_84]
                 and     eax, ecx
                 cmp     eax, 0
-                jnz     loc_8007F2A
+                jnz     m_102
                 cmp     edx, 0
-                jz      loc_8007F34
+                jz      m_103
 
-loc_8007F2A:                            ; ...
+m_102:                                  ; ...
                 mov     eax, 2
-                jmp     locret_800812F
+                jmp     m_118
 ; ---------------------------------------------------------------------------
 
-loc_8007F34:                            ; ...
-                jmp     loc_8007E82
+m_103:                                  ; ...
+                jmp     m_98
 ; ---------------------------------------------------------------------------
 
-loc_8007F39:                            ; ...
-                mov     eax, [ebp+arg_0]
+m_104:                                  ; ...
+                mov     eax, [ebp+itemp]
                 add     eax, 40h
                 mov     ecx, [eax]
                 shl     ecx, 4
@@ -13263,174 +13267,174 @@ loc_8007F39:                            ; ...
                 call    iflag_cmp_cpu_level
                 add     esp, 8
                 cmp     eax, 0
-                jle     loc_8007F6D
+                jle     m_105
                 mov     eax, 7
-                jmp     locret_800812F
+                jmp     m_118
 ; ---------------------------------------------------------------------------
 
-loc_8007F6D:                            ; ...
-                mov     eax, [ebp+arg_8]
+m_105:                                  ; ...
+                mov     eax, [ebp+_bits]
                 cmp     eax, 40h
                 mov     eax, 0
                 setz    al
                 cmp     eax, 0
-                jz      loc_8007F89
-                jmp     loc_8007F93
+                jz      m_106
+                jmp     m_107
 ; ---------------------------------------------------------------------------
 
-loc_8007F89:                            ; ...
+m_106:                                  ; ...
                 mov     eax, 25h
-                jmp     loc_8007F98
+                jmp     m_108
 ; ---------------------------------------------------------------------------
 
-loc_8007F93:                            ; ...
+m_107:                                  ; ...
                 mov     eax, 24h
 
-loc_8007F98:                            ; ...
+m_108:                                  ; ...
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+itemp]
                 push    eax
                 call    itemp_has
                 add     esp, 8
                 cmp     eax, 0
-                jz      loc_8007FB8
+                jz      m_109
                 mov     eax, 8
-                jmp     locret_800812F
+                jmp     m_118
 ; ---------------------------------------------------------------------------
 
-loc_8007FB8:                            ; ...
+m_109:                                  ; ...
                 mov     eax, 26h
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+itemp]
                 push    eax
                 call    itemp_has
                 add     esp, 8
                 cmp     eax, 0
-                jz      loc_8008024
+                jz      m_111
                 mov     eax, 101h
                 push    eax
                 mov     eax, 1
                 push    eax
-                mov     eax, [ebp+arg_4]
+                mov     eax, [ebp+instruction]
                 push    eax
                 call    has_prefix
-                add     esp, 0Ch
+                add     esp, 12
                 cmp     eax, 0
-                jnz     loc_800801A
+                jnz     m_110
                 mov     eax, 102h
                 push    eax
                 mov     eax, 1
                 push    eax
-                mov     eax, [ebp+arg_4]
+                mov     eax, [ebp+instruction]
                 push    eax
                 call    has_prefix
-                add     esp, 0Ch
+                add     esp, 12
                 cmp     eax, 0
-                jnz     loc_800801A
-                jmp     loc_8008024
+                jnz     m_110
+                jmp     m_111
 ; ---------------------------------------------------------------------------
 
-loc_800801A:                            ; ...
+m_110:                                  ; ...
                 mov     eax, 9
-                jmp     locret_800812F
+                jmp     m_118
 ; ---------------------------------------------------------------------------
 
-loc_8008024:                            ; ...
-                mov     eax, [ebp+arg_0]
+m_111:                                  ; ...
+                mov     eax, [ebp+itemp]
                 add     eax, 3Ch
                 mov     ecx, [eax]
                 movzx   eax, [byte ptr ecx]
                 and     eax, 0FFFFFFFEh
                 cmp     eax, 0F8h
-                jnz     loc_8008048
+                jnz     m_112
                 mov     eax, 0Fh
-                jmp     locret_800812F
+                jmp     m_118
 ; ---------------------------------------------------------------------------
 
-loc_8008048:                            ; ...
+m_112:                                  ; ...
                 mov     eax, 28h
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+itemp]
                 push    eax
                 call    itemp_has
                 add     esp, 8
                 cmp     eax, 0
-                jz      loc_8008068
-                jmp     loc_80080BE
+                jz      m_113
+                jmp     m_115
 ; ---------------------------------------------------------------------------
 
-loc_8008068:                            ; ...
+m_113:                                  ; ...
                 mov     eax, 103h
                 push    eax
                 mov     eax, 1
                 push    eax
-                mov     eax, [ebp+arg_4]
+                mov     eax, [ebp+instruction]
                 push    eax
                 call    has_prefix
-                add     esp, 0Ch
+                add     esp, 12
                 cmp     eax, 0
-                jnz     loc_80080AF
+                jnz     m_114
                 mov     eax, 104h
                 push    eax
                 mov     eax, 1
                 push    eax
-                mov     eax, [ebp+arg_4]
+                mov     eax, [ebp+instruction]
                 push    eax
                 call    has_prefix
-                add     esp, 0Ch
+                add     esp, 12
                 cmp     eax, 0
-                jnz     loc_80080AF
-                jmp     loc_80080BE
+                jnz     m_114
+                jmp     m_115
 ; ---------------------------------------------------------------------------
 
-loc_80080AF:                            ; ...
+m_114:                                  ; ...
                 mov     eax, 0Bh
-                jmp     locret_800812F
+                jmp     m_118
 ; ---------------------------------------------------------------------------
-                jmp     loc_800812A
+                jmp     m_117
 ; ---------------------------------------------------------------------------
 
-loc_80080BE:                            ; ...
+m_115:                                  ; ...
                 mov     eax, 28h
                 push    eax
-                mov     eax, [ebp+arg_0]
+                mov     eax, [ebp+itemp]
                 push    eax
                 call    itemp_has
                 add     esp, 8
                 cmp     eax, 0
-                jz      loc_800812A
+                jz      m_117
                 mov     eax, 0FCh
                 push    eax
                 mov     eax, 1
                 push    eax
-                mov     eax, [ebp+arg_4]
+                mov     eax, [ebp+instruction]
                 push    eax
                 call    has_prefix
-                add     esp, 0Ch
+                add     esp, 12
                 cmp     eax, 0
-                jnz     loc_8008120
+                jnz     m_116
                 mov     eax, 0FDh
                 push    eax
                 mov     eax, 1
                 push    eax
-                mov     eax, [ebp+arg_4]
+                mov     eax, [ebp+instruction]
                 push    eax
                 call    has_prefix
-                add     esp, 0Ch
+                add     esp, 12
                 cmp     eax, 0
-                jnz     loc_8008120
-                jmp     loc_800812A
+                jnz     m_116
+                jmp     m_117
 ; ---------------------------------------------------------------------------
 
-loc_8008120:                            ; ...
-                mov     eax, 0Ch
-                jmp     locret_800812F
+m_116:                                  ; ...
+                mov     eax, 12
+                jmp     m_118
 ; ---------------------------------------------------------------------------
 
-loc_800812A:                            ; ...
-                mov     eax, 10h
+m_117:                                  ; ...
+                mov     eax, 16
 
-locret_800812F:                         ; ...
+m_118:                                  ; ...
                 leave
                 retn
 endp            matches

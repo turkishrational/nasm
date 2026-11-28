@@ -12063,112 +12063,115 @@
 .text:080073B2
 .text:080073B2 proc            get_broadcast_num near  ; ...
 .text:080073B2
-.text:080073B2 var_28          = dword ptr -28h
-.text:080073B2 var_24          = dword ptr -24h
-.text:080073B2 var_20          = dword ptr -20h
-.text:080073B2 var_1C          = dword ptr -1Ch
-.text:080073B2 var_18          = dword ptr -18h
-.text:080073B2 var_14          = dword ptr -14h
-.text:080073B2 var_10          = dword ptr -10h
-.text:080073B2 var_C           = dword ptr -0Ch
-.text:080073B2 var_5           = byte ptr -5
-.text:080073B2 var_4           = dword ptr -4
-.text:080073B2 arg_4           = dword ptr  0Ch
-.text:080073B2 arg_8           = dword ptr  10h
-.text:080073B2 arg_C           = dword ptr  14h
+.text:080073B2 tmp5            = dword ptr -28h
+.text:080073B2 tmp5_h          = dword ptr -24h
+.text:080073B2 tmp4            = dword ptr -20h
+.text:080073B2 tmp3            = dword ptr -1Ch
+.text:080073B2 tmp2_h          = dword ptr -18h
+.text:080073B2 tmp2            = dword ptr -14h
+.text:080073B2 tmp1            = dword ptr -10h
+.text:080073B2 tmp1_h          = dword ptr -0Ch
+.text:080073B2 brcast_num      = byte ptr -5
+.text:080073B2 opsize          = dword ptr -4
+.text:080073B2 opflags_h       = dword ptr  0Ch
+.text:080073B2 brsize          = dword ptr  10h
+.text:080073B2 brsize_h        = dword ptr  14h
 .text:080073B2
-.text:080073B2                 push    ebp
-.text:080073B3                 mov     ebp, esp
-.text:080073B5                 sub     esp, 28h
+.text:080073B2                 push    ebp             ; static uint8_t get_broadcast_num(opflags_t opflags, opflags_t brsize)
+.text:080073B3                 mov     ebp, esp        ; unsigned int opsize = (opflags & SIZE_MASK) >> SIZE_SHIFT;
+.text:080073B5                 sub     esp, 40         ; uint8_t brcast_num;
 .text:080073BB                 nop
-.text:080073BC                 mov     eax, [ebp+arg_4]
-.text:080073BF                 and     eax, 7FFh
-.text:080073C5                 mov     ecx, 0
+.text:080073BC                 mov     eax, [ebp+opflags_h]
+.text:080073BF                 and     eax, 7FFh       ; SIZE_MASK = 2047 (high 32-bit) = 7FFh:0
+.text:080073C5                 mov     ecx, 0          ; SIZE_SHIFT = 32
 .text:080073CA                 mov     ecx, 0
-.text:080073CF                 mov     [ebp+var_4], eax
-.text:080073D2                 mov     eax, [ebp+arg_C]
-.text:080073D5                 cmp     eax, 8
-.text:080073D8                 jb      loc_8007404
-.text:080073DE                 jnz     loc_80073F0
-.text:080073E4                 mov     eax, [ebp+arg_8]
+.text:080073CF                 mov     [ebp+opsize], eax
+.text:080073D2                 mov     eax, [ebp+brsize_h] ; if (brsize > BITS64)
+.text:080073D5                 cmp     eax, 8          ; BITS64 = shl (1), 35 = 8h:0h
+.text:080073D8                 jb      gb_2
+.text:080073DE                 jnz     gb_1
+.text:080073E4                 mov     eax, [ebp+brsize]
 .text:080073E7                 cmp     eax, 0
-.text:080073EA                 jbe     loc_8007404
+.text:080073EA                 jbe     gb_2
 .text:080073F0
-.text:080073F0 loc_80073F0:                            ; ...
+.text:080073F0 gb_1:                                   ; ...
 .text:080073F0                 mov     eax, offset L_103 ; "size of broadcasting element is greater"...
 .text:080073F5                 push    eax
 .text:080073F6                 mov     eax, 6
 .text:080073FB                 push    eax
-.text:080073FC                 call    nasm_error
+.text:080073FC                 call    nasm_error      ; nasm_error(ERR_FATAL,
+.text:080073FC                                         ;   "size of broadcasting element is greater than 64 bits");
 .text:08007401                 add     esp, 8
 .text:08007404
-.text:08007404 loc_8007404:                            ; ...
-.text:08007404                 mov     eax, [ebp+var_4]
-.text:08007407                 mov     ecx, 0
-.text:0800740C                 mov     edx, ecx
+.text:08007404 gb_2:                                   ; ...
+.text:08007404                 mov     eax, [ebp+opsize] ;  /* The shift term is to take care of the extra BITS80
+.text:08007404                                         ;   * inserted between BITS64 and BITS128. */
+.text:08007407                 mov     ecx, 0          ; brcast_num = ((opsize / (BITS64 >> SIZE_SHIFT)) * (BITS64 / brsize))
+.text:08007407                                         ;              >> (opsize > (BITS64 >> SIZE_SHIFT));
+.text:0800740C                 mov     edx, ecx        ; BITS64 >> SIZE_SHIFT = 8 /// opsize/8 = opsize >> 3
 .text:0800740E                 shr     edx, 3
 .text:08007411                 shl     ecx, 29
 .text:08007414                 shr     eax, 3
 .text:08007417                 or      ecx, eax
-.text:08007419                 mov     eax, [ebp+arg_8]
-.text:0800741C                 mov     [ebp+var_10], ecx
-.text:0800741F                 mov     [ebp+var_C], edx
-.text:08007422                 mov     edx, [ebp+arg_C]
-.text:08007425                 push    edx
-.text:08007426                 push    eax
+.text:08007419                 mov     eax, [ebp+brsize]
+.text:0800741C                 mov     [ebp+tmp1], ecx
+.text:0800741F                 mov     [ebp+tmp1_h], edx
+.text:08007422                 mov     edx, [ebp+brsize_h]
+.text:08007425                 push    edx             ; divisor high
+.text:08007426                 push    eax             ; divisor low
 .text:08007427                 mov     eax, 0
 .text:0800742C                 mov     ecx, 8
-.text:08007431                 push    ecx
-.text:08007432                 push    eax
-.text:08007433                 call    __udivdi3
+.text:08007431                 push    ecx             ; dividend high
+.text:08007432                 push    eax             ; dividend low
+.text:08007433                 call    __udivdi3       ; BITS64 / brsize
 .text:08007438                 add     esp, 16
-.text:0800743B                 mov     [ebp+var_14], eax
-.text:0800743E                 mov     eax, [ebp+var_10]
-.text:08007441                 mov     ecx, [ebp+var_14]
-.text:08007444                 mov     [ebp+var_18], edx
+.text:0800743B                 mov     [ebp+tmp2], eax ; quotient low
+.text:0800743E                 mov     eax, [ebp+tmp1]
+.text:08007441                 mov     ecx, [ebp+tmp2]
+.text:08007444                 mov     [ebp+tmp2_h], edx ; quotient high
 .text:08007447                 mul     ecx
-.text:08007449                 mov     ecx, [ebp+var_10]
-.text:0800744C                 mov     [ebp+var_1C], eax
-.text:0800744F                 mov     eax, [ebp+var_18]
+.text:08007449                 mov     ecx, [ebp+tmp1]
+.text:0800744C                 mov     [ebp+tmp3], eax
+.text:0800744F                 mov     eax, [ebp+tmp2_h]
 .text:08007452                 imul    ecx, eax
-.text:08007455                 mov     eax, [ebp+var_C]
-.text:08007458                 mov     [ebp+var_20], edx
-.text:0800745B                 mov     edx, [ebp+var_14]
+.text:08007455                 mov     eax, [ebp+tmp1_h]
+.text:08007458                 mov     [ebp+tmp4], edx
+.text:0800745B                 mov     edx, [ebp+tmp2]
 .text:0800745E                 imul    eax, edx
 .text:08007461                 add     ecx, eax
-.text:08007463                 mov     eax, [ebp+var_20]
+.text:08007463                 mov     eax, [ebp+tmp4]
 .text:08007466                 add     eax, ecx
-.text:08007468                 mov     ecx, [ebp+var_1C]
-.text:0800746B                 mov     edx, [ebp+var_4]
-.text:0800746E                 mov     [ebp+var_28], ecx
-.text:08007471                 mov     [ebp+var_24], eax
+.text:08007468                 mov     ecx, [ebp+tmp3]
+.text:0800746B                 mov     edx, [ebp+opsize]
+.text:0800746E                 mov     [ebp+tmp5], ecx
+.text:08007471                 mov     [ebp+tmp5_h], eax
 .text:08007474                 mov     eax, 0
 .text:08007479                 cmp     eax, 0
-.text:0800747C                 jb      loc_8007498
-.text:08007482                 jnz     loc_8007491
+.text:0800747C                 jb      gb_4
+.text:08007482                 jnz     gb_3
 .text:08007488                 cmp     edx, 8
-.text:0800748B                 jbe     loc_8007498
+.text:0800748B                 jbe     gb_4
 .text:08007491
-.text:08007491 loc_8007491:                            ; ...
+.text:08007491 gb_3:                                   ; ...
 .text:08007491                 mov     eax, 1
-.text:08007496                 jmp     short loc_800749D
+.text:08007496                 jmp     short gb_5
 .text:08007498 ; ---------------------------------------------------------------------------
 .text:08007498
-.text:08007498 loc_8007498:                            ; ...
+.text:08007498 gb_4:                                   ; ...
 .text:08007498                 mov     eax, 0
 .text:0800749D
-.text:0800749D loc_800749D:                            ; ...
-.text:0800749D                 push    eax
-.text:0800749E                 mov     eax, [ebp+var_28]
-.text:080074A1                 mov     ecx, [ebp+var_24]
+.text:0800749D gb_5:                                   ; ...
+.text:0800749D                 push    eax             ; shift bit count
+.text:0800749E                 mov     eax, [ebp+tmp5]
+.text:080074A1                 mov     ecx, [ebp+tmp5_h]
 .text:080074A4                 push    ecx
 .text:080074A5                 push    eax
 .text:080074A6                 call    __lshrdi3
 .text:080074AB                 add     esp, 12
 .text:080074AE                 and     eax, 0FFh
 .text:080074B4                 mov     ecx, 0
-.text:080074B9                 mov     [ebp+var_5], al
-.text:080074BC                 movzx   eax, [ebp+var_5]
+.text:080074B9                 mov     [ebp+brcast_num], al
+.text:080074BC                 movzx   eax, [ebp+brcast_num] ; return brcast_num;
 .text:080074C0                 leave
 .text:080074C1                 retn
 .text:080074C1 endp            get_broadcast_num
@@ -12204,151 +12207,152 @@
 .text:080074C2 var_30          = dword ptr -30h
 .text:080074C2 var_2C          = dword ptr -2Ch
 .text:080074C2 var_28          = byte ptr -28h
-.text:080074C2 arg_0           = dword ptr  8
-.text:080074C2 arg_4           = dword ptr  0Ch
-.text:080074C2 arg_8           = dword ptr  10h
+.text:080074C2 itemp           = dword ptr  8
+.text:080074C2 instruction     = dword ptr  0Ch
+.text:080074C2 _bits           = dword ptr  10h
 .text:080074C2
-.text:080074C2                 push    ebp
+.text:080074C2                 push    ebp             ; static enum match_result matches(const struct itemplate *itemp,
+.text:080074C2                                         ;                                  insn *instruction, int bits)
 .text:080074C3                 mov     ebp, esp
-.text:080074C5                 sub     esp, 88h
+.text:080074C5                 sub     esp, 136
 .text:080074CB                 nop
 .text:080074CC                 mov     eax, 0
 .text:080074D1                 mov     [ebp+var_34], eax
-.text:080074D4                 mov     eax, [ebp+arg_0]
-.text:080074D7                 mov     ecx, [ebp+arg_4]
-.text:080074DA                 add     ecx, 20h
+.text:080074D4                 mov     eax, [ebp+itemp]
+.text:080074D7                 mov     ecx, [ebp+instruction]
+.text:080074DA                 add     ecx, 32
 .text:080074DD                 mov     edx, [eax]
 .text:080074DF                 mov     eax, [ecx]
 .text:080074E1                 cmp     edx, eax
-.text:080074E3                 jz      loc_80074F3
+.text:080074E3                 jz      m_1
 .text:080074E9                 mov     eax, 0
-.text:080074EE                 jmp     locret_800812F
+.text:080074EE                 jmp     m_118
 .text:080074F3 ; ---------------------------------------------------------------------------
 .text:080074F3
-.text:080074F3 loc_80074F3:                            ; ...
-.text:080074F3                 mov     eax, [ebp+arg_0]
+.text:080074F3 m_1:                                    ; ...
+.text:080074F3                 mov     eax, [ebp+itemp]
 .text:080074F6                 add     eax, 4
-.text:080074F9                 mov     ecx, [ebp+arg_4]
-.text:080074FC                 add     ecx, 28h
+.text:080074F9                 mov     ecx, [ebp+instruction]
+.text:080074FC                 add     ecx, 40
 .text:080074FF                 mov     edx, [eax]
 .text:08007501                 mov     eax, [ecx]
 .text:08007503                 cmp     edx, eax
-.text:08007505                 jz      loc_8007515
+.text:08007505                 jz      m_2
 .text:0800750B                 mov     eax, 0
-.text:08007510                 jmp     locret_800812F
+.text:08007510                 jmp     m_118
 .text:08007515 ; ---------------------------------------------------------------------------
 .text:08007515
-.text:08007515 loc_8007515:                            ; ...
+.text:08007515 m_2:                                    ; ...
 .text:08007515                 mov     eax, [ds:optimizing]
 .text:0800751B                 cmp     eax, 0
-.text:0800751E                 jg      loc_8007549
-.text:08007524                 mov     eax, 10h
+.text:0800751E                 jg      m_3
+.text:08007524                 mov     eax, 16
 .text:08007529                 push    eax
-.text:0800752A                 mov     eax, [ebp+arg_0]
+.text:0800752A                 mov     eax, [ebp+itemp]
 .text:0800752D                 push    eax
 .text:0800752E                 call    itemp_has
 .text:08007533                 add     esp, 8
 .text:08007536                 cmp     eax, 0
-.text:08007539                 jz      loc_8007549
+.text:08007539                 jz      m_3
 .text:0800753F                 mov     eax, 0
-.text:08007544                 jmp     locret_800812F
+.text:08007544                 jmp     m_118
 .text:08007549 ; ---------------------------------------------------------------------------
 .text:08007549
-.text:08007549 loc_8007549:                            ; ...
-.text:08007549                 mov     eax, [ebp+arg_4]
+.text:08007549 m_3:                                    ; ...
+.text:08007549                 mov     eax, [ebp+instruction]
 .text:0800754C                 add     eax, 4
-.text:0800754F                 add     eax, 18h
-.text:08007552                 jmp     loc_80075BF
+.text:0800754F                 add     eax, 24
+.text:08007552                 jmp     m_11
 .text:08007557 ; ---------------------------------------------------------------------------
 .text:08007557
-.text:08007557 loc_8007557:                            ; ...
-.text:08007557                 mov     eax, 58h
+.text:08007557 m_4:                                    ; ...
+.text:08007557                 mov     eax, 88
 .text:0800755C                 push    eax
-.text:0800755D                 mov     eax, [ebp+arg_0]
+.text:0800755D                 mov     eax, [ebp+itemp]
 .text:08007560                 push    eax
 .text:08007561                 call    itemp_has
 .text:08007566                 add     esp, 8
 .text:08007569                 cmp     eax, 0
-.text:0800756C                 jz      loc_8007577
-.text:08007572                 jmp     loc_8007581
+.text:0800756C                 jz      m_5
+.text:08007572                 jmp     m_6
 .text:08007577 ; ---------------------------------------------------------------------------
 .text:08007577
-.text:08007577 loc_8007577:                            ; ...
-.text:08007577                 mov     eax, 0Ah
-.text:0800757C                 jmp     locret_800812F
+.text:08007577 m_5:                                    ; ...
+.text:08007577                 mov     eax, 10
+.text:0800757C                 jmp     m_118
 .text:08007581 ; ---------------------------------------------------------------------------
 .text:08007581
-.text:08007581 loc_8007581:                            ; ...
-.text:08007581                 jmp     loc_80075DB
+.text:08007581 m_6:                                    ; ...
+.text:08007581                 jmp     m_12
 .text:08007586 ; ---------------------------------------------------------------------------
 .text:08007586
-.text:08007586 loc_8007586:                            ; ...
+.text:08007586 m_7:                                    ; ...
 .text:08007586                 mov     eax, 57h
 .text:0800758B                 push    eax
-.text:0800758C                 mov     eax, [ebp+arg_0]
+.text:0800758C                 mov     eax, [ebp+itemp]
 .text:0800758F                 push    eax
 .text:08007590                 call    itemp_has
 .text:08007595                 add     esp, 8
 .text:08007598                 cmp     eax, 0
-.text:0800759B                 jz      loc_80075A6
-.text:080075A1                 jmp     loc_80075B0
+.text:0800759B                 jz      m_8
+.text:080075A1                 jmp     m_9
 .text:080075A6 ; ---------------------------------------------------------------------------
 .text:080075A6
-.text:080075A6 loc_80075A6:                            ; ...
+.text:080075A6 m_8:                                    ; ...
 .text:080075A6                 mov     eax, 0Ah
-.text:080075AB                 jmp     locret_800812F
+.text:080075AB                 jmp     m_118
 .text:080075B0 ; ---------------------------------------------------------------------------
 .text:080075B0
-.text:080075B0 loc_80075B0:                            ; ...
-.text:080075B0                 jmp     loc_80075DB
+.text:080075B0 m_9:                                    ; ...
+.text:080075B0                 jmp     m_12
 .text:080075B5 ; ---------------------------------------------------------------------------
 .text:080075B5
-.text:080075B5 loc_80075B5:                            ; ...
-.text:080075B5                 jmp     loc_80075DB
+.text:080075B5 m_10:                                   ; ...
+.text:080075B5                 jmp     m_12
 .text:080075BA ; ---------------------------------------------------------------------------
-.text:080075BA                 jmp     loc_80075DB
+.text:080075BA                 jmp     m_12
 .text:080075BF ; ---------------------------------------------------------------------------
 .text:080075BF
-.text:080075BF loc_80075BF:                            ; ...
+.text:080075BF m_11:                                   ; ...
 .text:080075BF                 mov     ecx, [eax]
 .text:080075C1                 cmp     ecx, 105h
-.text:080075C7                 jz      short loc_8007557
+.text:080075C7                 jz      short m_4
 .text:080075C9                 cmp     ecx, 106h
-.text:080075CF                 jz      short loc_8007586
+.text:080075CF                 jz      short m_7
 .text:080075D1                 cmp     ecx, 107h
-.text:080075D7                 jz      short loc_8007586
-.text:080075D9                 jmp     short loc_80075B5
+.text:080075D7                 jz      short m_7
+.text:080075D9                 jmp     short m_10
 .text:080075DB ; ---------------------------------------------------------------------------
 .text:080075DB
-.text:080075DB loc_80075DB:                            ; ...
+.text:080075DB m_12:                                   ; ...
 .text:080075DB                 mov     eax, 0
 .text:080075E0                 mov     [ebp+var_38], eax
 .text:080075E3
-.text:080075E3 loc_80075E3:                            ; ...
-.text:080075E3                 mov     eax, [ebp+arg_0]
+.text:080075E3 m_13:                                   ; ...
+.text:080075E3                 mov     eax, [ebp+itemp]
 .text:080075E6                 add     eax, 4
 .text:080075E9                 mov     ecx, [ebp+var_38]
 .text:080075EC                 mov     edx, [eax]
 .text:080075EE                 cmp     ecx, edx
-.text:080075F0                 jge     loc_8007675
-.text:080075F6                 jmp     loc_8007606
+.text:080075F0                 jge     m_18
+.text:080075F6                 jmp     m_15
 .text:080075FB ; ---------------------------------------------------------------------------
 .text:080075FB
-.text:080075FB loc_80075FB:                            ; ...
+.text:080075FB m_14:                                   ; ...
 .text:080075FB                 mov     eax, [ebp+var_38]
 .text:080075FE                 mov     ecx, eax
 .text:08007600                 inc     eax
 .text:08007601                 mov     [ebp+var_38], eax
-.text:08007604                 jmp     short loc_80075E3
+.text:08007604                 jmp     short m_13
 .text:08007606 ; ---------------------------------------------------------------------------
 .text:08007606
-.text:08007606 loc_8007606:                            ; ...
-.text:08007606                 mov     eax, [ebp+arg_4]
+.text:08007606 m_15:                                   ; ...
+.text:08007606                 mov     eax, [ebp+instruction]
 .text:08007609                 add     eax, 30h
 .text:0800760C                 mov     ecx, [ebp+var_38]
 .text:0800760F                 shl     ecx, 6
 .text:08007612                 add     eax, ecx
-.text:08007614                 mov     ecx, [ebp+arg_0]
+.text:08007614                 mov     ecx, [ebp+itemp]
 .text:08007617                 add     ecx, 8
 .text:0800761A                 mov     edx, [ebp+var_38]
 .text:0800761D                 shl     edx, 3
@@ -12373,21 +12377,21 @@
 .text:0800764F                 and     ecx, 30h
 .text:08007652                 mov     eax, 0
 .text:08007657                 cmp     eax, 0
-.text:0800765A                 jnz     loc_8007669
+.text:0800765A                 jnz     m_16
 .text:08007660                 cmp     ecx, 0
-.text:08007663                 jz      loc_8007673
+.text:08007663                 jz      m_17
 .text:08007669
-.text:08007669 loc_8007669:                            ; ...
+.text:08007669 m_16:                                   ; ...
 .text:08007669                 mov     eax, 0
-.text:0800766E                 jmp     locret_800812F
+.text:0800766E                 jmp     m_118
 .text:08007673 ; ---------------------------------------------------------------------------
 .text:08007673
-.text:08007673 loc_8007673:                            ; ...
-.text:08007673                 jmp     short loc_80075FB
+.text:08007673 m_17:                                   ; ...
+.text:08007673                 jmp     short m_14
 .text:08007675 ; ---------------------------------------------------------------------------
 .text:08007675
-.text:08007675 loc_8007675:                            ; ...
-.text:08007675                 mov     eax, [ebp+arg_0]
+.text:08007675 m_18:                                   ; ...
+.text:08007675                 mov     eax, [ebp+itemp]
 .text:08007678                 add     eax, 40h
 .text:0800767B                 mov     ecx, [eax]
 .text:0800767D                 shl     ecx, 4
@@ -12395,156 +12399,156 @@
 .text:08007685                 add     eax, ecx
 .text:08007687                 mov     ecx, [eax]
 .text:08007689                 and     ecx, 3FCh
-.text:0800768F                 jmp     loc_80077B8
+.text:0800768F                 jmp     m_34
 .text:08007694 ; ---------------------------------------------------------------------------
 .text:08007694
-.text:08007694 loc_8007694:                            ; ...
+.text:08007694 m_19:                                   ; ...
 .text:08007694                 mov     eax, 0
 .text:08007699                 mov     ecx, 1
 .text:0800769E                 mov     [ebp+var_30], eax
 .text:080076A1                 mov     [ebp+var_2C], ecx
-.text:080076A4                 jmp     loc_8007816
+.text:080076A4                 jmp     m_36
 .text:080076A9 ; ---------------------------------------------------------------------------
 .text:080076A9
-.text:080076A9 loc_80076A9:                            ; ...
+.text:080076A9 m_20:                                   ; ...
 .text:080076A9                 mov     eax, 0
 .text:080076AE                 mov     ecx, 2
 .text:080076B3                 mov     [ebp+var_30], eax
 .text:080076B6                 mov     [ebp+var_2C], ecx
-.text:080076B9                 jmp     loc_8007816
+.text:080076B9                 jmp     m_36
 .text:080076BE ; ---------------------------------------------------------------------------
 .text:080076BE
-.text:080076BE loc_80076BE:                            ; ...
+.text:080076BE m_21:                                   ; ...
 .text:080076BE                 mov     eax, 0
 .text:080076C3                 mov     ecx, 4
 .text:080076C8                 mov     [ebp+var_30], eax
 .text:080076CB                 mov     [ebp+var_2C], ecx
-.text:080076CE                 jmp     loc_8007816
+.text:080076CE                 jmp     m_36
 .text:080076D3 ; ---------------------------------------------------------------------------
 .text:080076D3
-.text:080076D3 loc_80076D3:                            ; ...
+.text:080076D3 m_22:                                   ; ...
 .text:080076D3                 mov     eax, 0
 .text:080076D8                 mov     ecx, 8
 .text:080076DD                 mov     [ebp+var_30], eax
 .text:080076E0                 mov     [ebp+var_2C], ecx
-.text:080076E3                 jmp     loc_8007816
+.text:080076E3                 jmp     m_36
 .text:080076E8 ; ---------------------------------------------------------------------------
 .text:080076E8
-.text:080076E8 loc_80076E8:                            ; ...
+.text:080076E8 m_23:                                   ; ...
 .text:080076E8                 mov     eax, 0
 .text:080076ED                 mov     ecx, 20h
 .text:080076F2                 mov     [ebp+var_30], eax
 .text:080076F5                 mov     [ebp+var_2C], ecx
-.text:080076F8                 jmp     loc_8007816
+.text:080076F8                 jmp     m_36
 .text:080076FD ; ---------------------------------------------------------------------------
 .text:080076FD
-.text:080076FD loc_80076FD:                            ; ...
+.text:080076FD m_24:                                   ; ...
 .text:080076FD                 mov     eax, 0
 .text:08007702                 mov     ecx, 40h
 .text:08007707                 mov     [ebp+var_30], eax
 .text:0800770A                 mov     [ebp+var_2C], ecx
-.text:0800770D                 jmp     loc_8007816
+.text:0800770D                 jmp     m_36
 .text:08007712 ; ---------------------------------------------------------------------------
 .text:08007712
-.text:08007712 loc_8007712:                            ; ...
+.text:08007712 m_25:                                   ; ...
 .text:08007712                 mov     eax, 0
 .text:08007717                 mov     ecx, 80h
 .text:0800771C                 mov     [ebp+var_30], eax
 .text:0800771F                 mov     [ebp+var_2C], ecx
-.text:08007722                 jmp     loc_8007816
+.text:08007722                 jmp     m_36
 .text:08007727 ; ---------------------------------------------------------------------------
 .text:08007727
-.text:08007727 loc_8007727:                            ; ...
-.text:08007727                 jmp     loc_8007785
+.text:08007727 m_26:                                   ; ...
+.text:08007727                 jmp     m_31
 .text:0800772C ; ---------------------------------------------------------------------------
 .text:0800772C
-.text:0800772C loc_800772C:                            ; ...
+.text:0800772C m_27:                                   ; ...
 .text:0800772C                 mov     eax, 0
 .text:08007731                 mov     ecx, 2
 .text:08007736                 mov     [ebp+var_30], eax
 .text:08007739                 mov     [ebp+var_2C], ecx
-.text:0800773C                 jmp     loc_8007799
+.text:0800773C                 jmp     m_32
 .text:08007741 ; ---------------------------------------------------------------------------
 .text:08007741
-.text:08007741 loc_8007741:                            ; ...
+.text:08007741 m_28:                                   ; ...
 .text:08007741                 mov     eax, 0
 .text:08007746                 mov     ecx, 4
 .text:0800774B                 mov     [ebp+var_30], eax
 .text:0800774E                 mov     [ebp+var_2C], ecx
-.text:08007751                 jmp     loc_8007799
+.text:08007751                 jmp     m_32
 .text:08007756 ; ---------------------------------------------------------------------------
 .text:08007756
-.text:08007756 loc_8007756:                            ; ...
+.text:08007756 m_29:                                   ; ...
 .text:08007756                 mov     eax, 0
 .text:0800775B                 mov     ecx, 8
 .text:08007760                 mov     [ebp+var_30], eax
 .text:08007763                 mov     [ebp+var_2C], ecx
-.text:08007766                 jmp     loc_8007799
+.text:08007766                 jmp     m_32
 .text:0800776B ; ---------------------------------------------------------------------------
 .text:0800776B
-.text:0800776B loc_800776B:                            ; ...
+.text:0800776B m_30:                                   ; ...
 .text:0800776B                 mov     eax, 0
 .text:08007770                 mov     ecx, 0
 .text:08007775                 mov     [ebp+var_30], eax
 .text:08007778                 mov     [ebp+var_2C], ecx
-.text:0800777B                 jmp     loc_8007799
+.text:0800777B                 jmp     m_32
 .text:08007780 ; ---------------------------------------------------------------------------
-.text:08007780                 jmp     loc_8007799
+.text:08007780                 jmp     m_32
 .text:08007785 ; ---------------------------------------------------------------------------
 .text:08007785
-.text:08007785 loc_8007785:                            ; ...
-.text:08007785                 mov     eax, [ebp+arg_8]
+.text:08007785 m_31:                                   ; ...
+.text:08007785                 mov     eax, [ebp+_bits]
 .text:08007788                 cmp     eax, 10h
-.text:0800778B                 jz      short loc_800772C
+.text:0800778B                 jz      short m_27
 .text:0800778D                 cmp     eax, 20h
-.text:08007790                 jz      short loc_8007741
+.text:08007790                 jz      short m_28
 .text:08007792                 cmp     eax, 40h
-.text:08007795                 jz      short loc_8007756
-.text:08007797                 jmp     short loc_800776B
+.text:08007795                 jz      short m_29
+.text:08007797                 jmp     short m_30
 .text:08007799 ; ---------------------------------------------------------------------------
 .text:08007799
-.text:08007799 loc_8007799:                            ; ...
-.text:08007799                 jmp     loc_8007816
+.text:08007799 m_32:                                   ; ...
+.text:08007799                 jmp     m_36
 .text:0800779E ; ---------------------------------------------------------------------------
 .text:0800779E
-.text:0800779E loc_800779E:                            ; ...
+.text:0800779E m_33:                                   ; ...
 .text:0800779E                 mov     eax, 0
 .text:080077A3                 mov     ecx, 0
 .text:080077A8                 mov     [ebp+var_30], eax
 .text:080077AB                 mov     [ebp+var_2C], ecx
-.text:080077AE                 jmp     loc_8007816
+.text:080077AE                 jmp     m_36
 .text:080077B3 ; ---------------------------------------------------------------------------
-.text:080077B3                 jmp     loc_8007816
+.text:080077B3                 jmp     m_36
 .text:080077B8 ; ---------------------------------------------------------------------------
 .text:080077B8
-.text:080077B8 loc_80077B8:                            ; ...
+.text:080077B8 m_34:                                   ; ...
 .text:080077B8                 cmp     ecx, 40h
-.text:080077BB                 ja      loc_80077F0
+.text:080077BB                 ja      m_35
 .text:080077C1                 cmp     ecx, 40h
-.text:080077C4                 jnb     loc_80076E8
+.text:080077C4                 jnb     m_23
 .text:080077CA                 cmp     ecx, 4
-.text:080077CD                 jz      loc_8007694
+.text:080077CD                 jz      m_19
 .text:080077D3                 cmp     ecx, 8
-.text:080077D6                 jz      loc_80076A9
+.text:080077D6                 jz      m_20
 .text:080077DC                 cmp     ecx, 10h
-.text:080077DF                 jz      loc_80076BE
+.text:080077DF                 jz      m_21
 .text:080077E5                 cmp     ecx, 20h
-.text:080077E8                 jz      loc_80076D3
-.text:080077EE                 jmp     short loc_800779E
+.text:080077E8                 jz      m_22
+.text:080077EE                 jmp     short m_33
 .text:080077F0 ; ---------------------------------------------------------------------------
 .text:080077F0
-.text:080077F0 loc_80077F0:                            ; ...
+.text:080077F0 m_35:                                   ; ...
 .text:080077F0                 cmp     ecx, 80h
-.text:080077F6                 jz      loc_80076FD
+.text:080077F6                 jz      m_24
 .text:080077FC                 cmp     ecx, 100h
-.text:08007802                 jz      loc_8007712
+.text:08007802                 jz      m_25
 .text:08007808                 cmp     ecx, 200h
-.text:0800780E                 jz      loc_8007727
-.text:08007814                 jmp     short loc_800779E
+.text:0800780E                 jz      m_26
+.text:08007814                 jmp     short m_33
 .text:08007816 ; ---------------------------------------------------------------------------
 .text:08007816
-.text:08007816 loc_8007816:                            ; ...
-.text:08007816                 mov     eax, [ebp+arg_0]
+.text:08007816 m_36:                                   ; ...
+.text:08007816                 mov     eax, [ebp+itemp]
 .text:08007819                 add     eax, 40h
 .text:0800781C                 mov     ecx, [eax]
 .text:0800781E                 shl     ecx, 4
@@ -12553,8 +12557,8 @@
 .text:08007828                 mov     ecx, [eax]
 .text:0800782A                 and     ecx, 0F800h
 .text:08007830                 cmp     ecx, 0
-.text:08007833                 jz      loc_800788F
-.text:08007839                 mov     eax, [ebp+arg_0]
+.text:08007833                 jz      m_37
+.text:08007839                 mov     eax, [ebp+itemp]
 .text:0800783C                 add     eax, 40h
 .text:0800783F                 mov     ecx, [eax]
 .text:08007841                 shl     ecx, 4
@@ -12572,7 +12576,7 @@
 .text:08007866                 lea     eax, [ebp+var_28]
 .text:08007869                 push    eax
 .text:0800786A                 call    memset
-.text:0800786F                 add     esp, 0Ch
+.text:0800786F                 add     esp, 12
 .text:08007872                 mov     eax, [ebp+var_38]
 .text:08007875                 shl     eax, 3
 .text:08007878                 lea     ecx, [ebp+var_28]
@@ -12582,29 +12586,29 @@
 .text:08007883                 mov     [ecx], eax
 .text:08007885                 add     ecx, 4
 .text:08007888                 mov     [ecx], edx
-.text:0800788A                 jmp     loc_80078CD
+.text:0800788A                 jmp     m_41
 .text:0800788F ; ---------------------------------------------------------------------------
 .text:0800788F
-.text:0800788F loc_800788F:                            ; ...
+.text:0800788F m_37:                                   ; ...
 .text:0800788F                 mov     eax, 0
 .text:08007894                 mov     [ebp+var_38], eax
 .text:08007897
-.text:08007897 loc_8007897:                            ; ...
+.text:08007897 m_38:                                   ; ...
 .text:08007897                 mov     eax, [ebp+var_38]
 .text:0800789A                 cmp     eax, 5
-.text:0800789D                 jge     loc_80078CD
-.text:080078A3                 jmp     loc_80078B3
+.text:0800789D                 jge     m_41
+.text:080078A3                 jmp     m_40
 .text:080078A8 ; ---------------------------------------------------------------------------
 .text:080078A8
-.text:080078A8 loc_80078A8:                            ; ...
+.text:080078A8 m_39:                                   ; ...
 .text:080078A8                 mov     eax, [ebp+var_38]
 .text:080078AB                 mov     ecx, eax
 .text:080078AD                 inc     eax
 .text:080078AE                 mov     [ebp+var_38], eax
-.text:080078B1                 jmp     short loc_8007897
+.text:080078B1                 jmp     short m_38
 .text:080078B3 ; ---------------------------------------------------------------------------
 .text:080078B3
-.text:080078B3 loc_80078B3:                            ; ...
+.text:080078B3 m_40:                                   ; ...
 .text:080078B3                 mov     eax, [ebp+var_38]
 .text:080078B6                 shl     eax, 3
 .text:080078B9                 lea     ecx, [ebp+var_28]
@@ -12614,33 +12618,33 @@
 .text:080078C4                 mov     [ecx], eax
 .text:080078C6                 add     ecx, 4
 .text:080078C9                 mov     [ecx], edx
-.text:080078CB                 jmp     short loc_80078A8
+.text:080078CB                 jmp     short m_39
 .text:080078CD ; ---------------------------------------------------------------------------
 .text:080078CD
-.text:080078CD loc_80078CD:                            ; ...
+.text:080078CD m_41:                                   ; ...
 .text:080078CD                 mov     eax, 0
 .text:080078D2                 mov     [ebp+var_38], eax
 .text:080078D5
-.text:080078D5 loc_80078D5:                            ; ...
-.text:080078D5                 mov     eax, [ebp+arg_0]
+.text:080078D5 m_42:                                   ; ...
+.text:080078D5                 mov     eax, [ebp+itemp]
 .text:080078D8                 add     eax, 4
 .text:080078DB                 mov     ecx, [ebp+var_38]
 .text:080078DE                 mov     edx, [eax]
 .text:080078E0                 cmp     ecx, edx
-.text:080078E2                 jge     loc_8007D1C
-.text:080078E8                 jmp     loc_80078F8
+.text:080078E2                 jge     m_79
+.text:080078E8                 jmp     m_44
 .text:080078ED ; ---------------------------------------------------------------------------
 .text:080078ED
-.text:080078ED loc_80078ED:                            ; ...
+.text:080078ED m_43:                                   ; ...
 .text:080078ED                 mov     eax, [ebp+var_38]
 .text:080078F0                 mov     ecx, eax
 .text:080078F2                 inc     eax
 .text:080078F3                 mov     [ebp+var_38], eax
-.text:080078F6                 jmp     short loc_80078D5
+.text:080078F6                 jmp     short m_42
 .text:080078F8 ; ---------------------------------------------------------------------------
 .text:080078F8
-.text:080078F8 loc_80078F8:                            ; ...
-.text:080078F8                 mov     eax, [ebp+arg_4]
+.text:080078F8 m_44:                                   ; ...
+.text:080078F8                 mov     eax, [ebp+instruction]
 .text:080078FB                 add     eax, 30h
 .text:080078FE                 mov     ecx, [ebp+var_38]
 .text:08007901                 shl     ecx, 6
@@ -12650,7 +12654,7 @@
 .text:0800790B                 mov     edx, [eax]
 .text:0800790D                 mov     [ebp+var_50], ecx
 .text:08007910                 mov     [ebp+var_4C], edx
-.text:08007913                 mov     eax, [ebp+arg_4]
+.text:08007913                 mov     eax, [ebp+instruction]
 .text:08007916                 add     eax, 30h
 .text:08007919                 mov     ecx, [ebp+var_38]
 .text:0800791C                 shl     ecx, 6
@@ -12658,7 +12662,7 @@
 .text:08007921                 add     eax, 3Ch
 .text:08007924                 movzx   ecx, [word ptr eax]
 .text:08007927                 mov     [ebp+var_52], cx
-.text:0800792B                 mov     eax, [ebp+arg_0]
+.text:0800792B                 mov     eax, [ebp+itemp]
 .text:0800792E                 add     eax, 30h
 .text:08007931                 mov     ecx, [ebp+var_38]
 .text:08007934                 shl     ecx, 1
@@ -12677,15 +12681,15 @@
 .text:0800795F                 and     eax, 7FFh
 .text:08007965                 mov     ecx, 0
 .text:0800796A                 cmp     eax, 0
-.text:0800796D                 jnz     loc_800797C
+.text:0800796D                 jnz     m_45
 .text:08007973                 cmp     ecx, 0
-.text:08007976                 jz      loc_8007981
+.text:08007976                 jz      m_46
 .text:0800797C
-.text:0800797C loc_800797C:                            ; ...
-.text:0800797C                 jmp     loc_80079A3
+.text:0800797C m_45:                                   ; ...
+.text:0800797C                 jmp     m_47
 .text:08007981 ; ---------------------------------------------------------------------------
 .text:08007981
-.text:08007981 loc_8007981:                            ; ...
+.text:08007981 m_46:                                   ; ...
 .text:08007981                 mov     eax, [ebp+var_38]
 .text:08007984                 shl     eax, 3
 .text:08007987                 lea     ecx, [ebp+var_28]
@@ -12700,7 +12704,7 @@
 .text:0800799D                 mov     [ebp+var_50], ecx
 .text:080079A0                 mov     [ebp+var_4C], eax
 .text:080079A3
-.text:080079A3 loc_80079A3:                            ; ...
+.text:080079A3 m_47:                                   ; ...
 .text:080079A3                 mov     eax, [ebp+var_4C]
 .text:080079A6                 and     eax, 7FFh
 .text:080079AC                 mov     ecx, 0
@@ -12708,12 +12712,12 @@
 .text:080079B4                 mov     [ebp+var_6C], eax
 .text:080079B7                 mov     eax, [ebp+var_58]
 .text:080079BA                 cmp     eax, 0
-.text:080079BD                 jz      loc_80079C8
-.text:080079C3                 jmp     loc_80079F3
+.text:080079BD                 jz      m_48
+.text:080079C3                 jmp     m_49
 .text:080079C8 ; ---------------------------------------------------------------------------
 .text:080079C8
-.text:080079C8 loc_80079C8:                            ; ...
-.text:080079C8                 mov     eax, [ebp+arg_0]
+.text:080079C8 m_48:                                   ; ...
+.text:080079C8                 mov     eax, [ebp+itemp]
 .text:080079CB                 add     eax, 8
 .text:080079CE                 mov     ecx, [ebp+var_38]
 .text:080079D1                 shl     ecx, 3
@@ -12725,10 +12729,10 @@
 .text:080079E3                 mov     eax, 0
 .text:080079E8                 mov     [ebp+var_68], eax
 .text:080079EB                 mov     [ebp+var_64], edx
-.text:080079EE                 jmp     loc_8007AEC
+.text:080079EE                 jmp     m_58
 .text:080079F3 ; ---------------------------------------------------------------------------
 .text:080079F3
-.text:080079F3 loc_80079F3:                            ; ...
+.text:080079F3 m_49:                                   ; ...
 .text:080079F3                 movzx   eax, [ebp+var_54]
 .text:080079F7                 mov     ecx, eax
 .text:080079F9                 sar     ecx, 1Fh
@@ -12744,53 +12748,53 @@
 .text:08007A22                 and     eax, 20h
 .text:08007A25                 mov     ecx, 0
 .text:08007A2A                 cmp     ecx, 0
-.text:08007A2D                 jnz     loc_8007A3C
+.text:08007A2D                 jnz     m_50
 .text:08007A33                 cmp     eax, 0
-.text:08007A36                 jz      loc_8007A46
+.text:08007A36                 jz      m_51
 .text:08007A3C
-.text:08007A3C loc_8007A3C:                            ; ...
+.text:08007A3C m_50:                                   ; ...
 .text:08007A3C                 mov     eax, 3
-.text:08007A41                 jmp     locret_800812F
+.text:08007A41                 jmp     m_118
 .text:08007A46 ; ---------------------------------------------------------------------------
 .text:08007A46
-.text:08007A46 loc_8007A46:                            ; ...
+.text:08007A46 m_51:                                   ; ...
 .text:08007A46                 movzx   eax, [ebp+var_72]
 .text:08007A4A                 cmp     eax, 0
-.text:08007A4D                 jz      loc_8007ADC
+.text:08007A4D                 jz      m_57
 .text:08007A53                 movzx   eax, [ebp+var_72]
 .text:08007A57                 mov     ecx, eax
 .text:08007A59                 sar     ecx, 1Fh
 .text:08007A5C                 cmp     ecx, 0
-.text:08007A5F                 jnz     loc_8007A78
+.text:08007A5F                 jnz     m_52
 .text:08007A65                 cmp     eax, 100h
-.text:08007A6B                 jnz     loc_8007A78
+.text:08007A6B                 jnz     m_52
 .text:08007A71                 mov     eax, 1
-.text:08007A76                 jmp     short loc_8007A7D
+.text:08007A76                 jmp     short m_53
 .text:08007A78 ; ---------------------------------------------------------------------------
 .text:08007A78
-.text:08007A78 loc_8007A78:                            ; ...
+.text:08007A78 m_52:                                   ; ...
 .text:08007A78                 mov     eax, 0
 .text:08007A7D
-.text:08007A7D loc_8007A7D:                            ; ...
+.text:08007A7D m_53:                                   ; ...
 .text:08007A7D                 cmp     eax, 0
-.text:08007A80                 jz      loc_8007A8B
-.text:08007A86                 jmp     loc_8007A9A
+.text:08007A80                 jz      m_54
+.text:08007A86                 jmp     m_55
 .text:08007A8B ; ---------------------------------------------------------------------------
 .text:08007A8B
-.text:08007A8B loc_8007A8B:                            ; ...
+.text:08007A8B m_54:                                   ; ...
 .text:08007A8B                 mov     eax, 0
 .text:08007A90                 mov     edx, 8
-.text:08007A95                 jmp     loc_8007AA4
+.text:08007A95                 jmp     m_56
 .text:08007A9A ; ---------------------------------------------------------------------------
 .text:08007A9A
-.text:08007A9A loc_8007A9A:                            ; ...
+.text:08007A9A m_55:                                   ; ...
 .text:08007A9A                 mov     eax, 0
 .text:08007A9F                 mov     edx, 4
 .text:08007AA4
-.text:08007AA4 loc_8007AA4:                            ; ...
+.text:08007AA4 m_56:                                   ; ...
 .text:08007AA4                 mov     [ebp+var_68], eax
 .text:08007AA7                 mov     [ebp+var_64], edx
-.text:08007AAA                 mov     eax, [ebp+arg_0]
+.text:08007AAA                 mov     eax, [ebp+itemp]
 .text:08007AAD                 add     eax, 8
 .text:08007AB0                 mov     ecx, [ebp+var_38]
 .text:08007AB3                 shl     ecx, 3
@@ -12808,16 +12812,16 @@
 .text:08007ACE                 movzx   eax, al
 .text:08007AD1                 add     esp, 10h
 .text:08007AD4                 mov     [ebp+var_59], al
-.text:08007AD7                 jmp     loc_8007AEC
+.text:08007AD7                 jmp     m_58
 .text:08007ADC ; ---------------------------------------------------------------------------
 .text:08007ADC
-.text:08007ADC loc_8007ADC:                            ; ...
+.text:08007ADC m_57:                                   ; ...
 .text:08007ADC                 mov     eax, 0
 .text:08007AE1                 mov     ecx, 0
 .text:08007AE6                 mov     [ebp+var_68], eax
 .text:08007AE9                 mov     [ebp+var_64], ecx
 .text:08007AEC
-.text:08007AEC loc_8007AEC:                            ; ...
+.text:08007AEC m_58:                                   ; ...
 .text:08007AEC                 movzx   eax, [ebp+var_54]
 .text:08007AF0                 xor     eax, 0FFFFFFFFh
 .text:08007AF3                 movzx   ecx, [ebp+var_52]
@@ -12827,16 +12831,16 @@
 .text:08007AFE                 and     eax, 0Fh
 .text:08007B01                 mov     ecx, 0
 .text:08007B06                 cmp     ecx, 0
-.text:08007B09                 jnz     loc_8007B18
+.text:08007B09                 jnz     m_59
 .text:08007B0F                 cmp     eax, 0
-.text:08007B12                 jz      loc_8007B22
+.text:08007B12                 jz      m_60
 .text:08007B18
-.text:08007B18 loc_8007B18:                            ; ...
+.text:08007B18 m_59:                                   ; ...
 .text:08007B18                 mov     eax, 5
-.text:08007B1D                 jmp     locret_800812F
+.text:08007B1D                 jmp     m_118
 .text:08007B22 ; ---------------------------------------------------------------------------
 .text:08007B22
-.text:08007B22 loc_8007B22:                            ; ...
+.text:08007B22 m_60:                                   ; ...
 .text:08007B22                 movzx   eax, [ebp+var_54]
 .text:08007B26                 xor     eax, 0FFFFFFFFh
 .text:08007B29                 movzx   ecx, [ebp+var_52]
@@ -12846,17 +12850,17 @@
 .text:08007B34                 and     eax, 0D0h
 .text:08007B3A                 mov     ecx, 0
 .text:08007B3F                 cmp     ecx, 0
-.text:08007B42                 jnz     loc_8007B51
+.text:08007B42                 jnz     m_61
 .text:08007B48                 cmp     eax, 0
-.text:08007B4B                 jz      loc_8007B5B
+.text:08007B4B                 jz      m_62
 .text:08007B51
-.text:08007B51 loc_8007B51:                            ; ...
+.text:08007B51 m_61:                                   ; ...
 .text:08007B51                 mov     eax, 6
-.text:08007B56                 jmp     locret_800812F
+.text:08007B56                 jmp     m_118
 .text:08007B5B ; ---------------------------------------------------------------------------
 .text:08007B5B
-.text:08007B5B loc_8007B5B:                            ; ...
-.text:08007B5B                 mov     eax, [ebp+arg_0]
+.text:08007B5B m_62:                                   ; ...
+.text:08007B5B                 mov     eax, [ebp+itemp]
 .text:08007B5E                 add     eax, 8
 .text:08007B61                 mov     ecx, [ebp+var_38]
 .text:08007B64                 shl     ecx, 3
@@ -12876,17 +12880,17 @@
 .text:08007B8A                 and     ecx, eax
 .text:08007B8C                 and     ecx, 0FFFF0000h
 .text:08007B92                 cmp     ecx, 0
-.text:08007B95                 jnz     loc_8007BA4
+.text:08007B95                 jnz     m_63
 .text:08007B9B                 cmp     edx, 0
-.text:08007B9E                 jz      loc_8007BAE
+.text:08007B9E                 jz      m_64
 .text:08007BA4
-.text:08007BA4 loc_8007BA4:                            ; ...
+.text:08007BA4 m_63:                                   ; ...
 .text:08007BA4                 mov     eax, 0
-.text:08007BA9                 jmp     locret_800812F
+.text:08007BA9                 jmp     m_118
 .text:08007BAE ; ---------------------------------------------------------------------------
 .text:08007BAE
-.text:08007BAE loc_8007BAE:                            ; ...
-.text:08007BAE                 mov     eax, [ebp+arg_0]
+.text:08007BAE m_64:                                   ; ...
+.text:08007BAE                 mov     eax, [ebp+itemp]
 .text:08007BB1                 add     eax, 8
 .text:08007BB4                 mov     ecx, [ebp+var_38]
 .text:08007BB7                 shl     ecx, 3
@@ -12903,12 +12907,12 @@
 .text:08007BD3                 and     edx, 0F800h
 .text:08007BD9                 mov     eax, 0
 .text:08007BDE                 cmp     edx, 0
-.text:08007BE1                 jnz     loc_8007BF0
+.text:08007BE1                 jnz     m_65
 .text:08007BE7                 cmp     eax, 0
-.text:08007BEA                 jz      loc_8007C3B
+.text:08007BEA                 jz      m_70
 .text:08007BF0
-.text:08007BF0 loc_8007BF0:                            ; ...
-.text:08007BF0                 mov     eax, [ebp+arg_0]
+.text:08007BF0 m_65:                                   ; ...
+.text:08007BF0                 mov     eax, [ebp+itemp]
 .text:08007BF3                 add     eax, 8
 .text:08007BF6                 mov     ecx, [ebp+var_38]
 .text:08007BF9                 shl     ecx, 3
@@ -12919,60 +12923,60 @@
 .text:08007C05                 and     edx, 0F800h
 .text:08007C0B                 mov     eax, 0
 .text:08007C10                 cmp     edx, 0
-.text:08007C13                 jnz     loc_8007C22
+.text:08007C13                 jnz     m_66
 .text:08007C19                 cmp     eax, 0
-.text:08007C1C                 jz      loc_8007C27
+.text:08007C1C                 jz      m_67
 .text:08007C22
-.text:08007C22 loc_8007C22:                            ; ...
-.text:08007C22                 jmp     loc_8007C31
+.text:08007C22 m_66:                                   ; ...
+.text:08007C22                 jmp     m_68
 .text:08007C27 ; ---------------------------------------------------------------------------
 .text:08007C27
-.text:08007C27 loc_8007C27:                            ; ...
+.text:08007C27 m_67:                                   ; ...
 .text:08007C27                 mov     eax, 0Eh
-.text:08007C2C                 jmp     loc_8007C36
+.text:08007C2C                 jmp     m_69
 .text:08007C31 ; ---------------------------------------------------------------------------
 .text:08007C31
-.text:08007C31 loc_8007C31:                            ; ...
+.text:08007C31 m_68:                                   ; ...
 .text:08007C31                 mov     eax, 0Dh
 .text:08007C36
-.text:08007C36 loc_8007C36:                            ; ...
-.text:08007C36                 jmp     locret_800812F
+.text:08007C36 m_69:                                   ; ...
+.text:08007C36                 jmp     m_118
 .text:08007C3B ; ---------------------------------------------------------------------------
 .text:08007C3B
-.text:08007C3B loc_8007C3B:                            ; ...
+.text:08007C3B m_70:                                   ; ...
 .text:08007C3B                 mov     eax, [ebp+var_64]
 .text:08007C3E                 cmp     eax, 0
-.text:08007C41                 jnz     loc_8007C53
+.text:08007C41                 jnz     m_71
 .text:08007C47                 mov     eax, [ebp+var_68]
 .text:08007C4A                 cmp     eax, 0
-.text:08007C4D                 jz      loc_8007D17
+.text:08007C4D                 jz      m_78
 .text:08007C53
-.text:08007C53 loc_8007C53:                            ; ...
+.text:08007C53 m_71:                                   ; ...
 .text:08007C53                 mov     eax, [ebp+var_64]
 .text:08007C56                 mov     ecx, [ebp+var_6C]
 .text:08007C59                 cmp     eax, ecx
-.text:08007C5B                 jnz     loc_8007C6F
+.text:08007C5B                 jnz     m_72
 .text:08007C61                 mov     eax, [ebp+var_68]
 .text:08007C64                 mov     ecx, [ebp+var_70]
 .text:08007C67                 cmp     eax, ecx
-.text:08007C69                 jz      loc_8007CCD
+.text:08007C69                 jz      m_77
 .text:08007C6F
-.text:08007C6F loc_8007C6F:                            ; ...
+.text:08007C6F m_72:                                   ; ...
 .text:08007C6F                 mov     eax, [ebp+var_6C]
 .text:08007C72                 cmp     eax, 0
-.text:08007C75                 jnz     loc_8007C87
+.text:08007C75                 jnz     m_73
 .text:08007C7B                 mov     eax, [ebp+var_70]
 .text:08007C7E                 cmp     eax, 0
-.text:08007C81                 jz      loc_8007C96
+.text:08007C81                 jz      m_74
 .text:08007C87
-.text:08007C87 loc_8007C87:                            ; ...
+.text:08007C87 m_73:                                   ; ...
 .text:08007C87                 mov     eax, 0
-.text:08007C8C                 jmp     locret_800812F
+.text:08007C8C                 jmp     m_118
 .text:08007C91 ; ---------------------------------------------------------------------------
-.text:08007C91                 jmp     loc_8007CC8
+.text:08007C91                 jmp     m_76
 .text:08007C96 ; ---------------------------------------------------------------------------
 .text:08007C96
-.text:08007C96 loc_8007C96:                            ; ...
+.text:08007C96 m_74:                                   ; ...
 .text:08007C96                 mov     eax, [ebp+var_50]
 .text:08007C99                 mov     ecx, [ebp+var_4C]
 .text:08007C9C                 push    ecx
@@ -12982,27 +12986,27 @@
 .text:08007CA8                 push    ecx
 .text:08007CA9                 push    eax
 .text:08007CAA                 call    is_class
-.text:08007CAF                 add     esp, 10h
+.text:08007CAF                 add     esp, 16
 .text:08007CB2                 cmp     eax, 0
-.text:08007CB5                 jz      loc_8007CC0
-.text:08007CBB                 jmp     loc_8007CC8
+.text:08007CB5                 jz      m_75
+.text:08007CBB                 jmp     m_76
 .text:08007CC0 ; ---------------------------------------------------------------------------
 .text:08007CC0
-.text:08007CC0 loc_8007CC0:                            ; ...
+.text:08007CC0 m_75:                                   ; ...
 .text:08007CC0                 mov     eax, 1
 .text:08007CC5                 mov     [ebp+var_34], eax
 .text:08007CC8
-.text:08007CC8 loc_8007CC8:                            ; ...
-.text:08007CC8                 jmp     loc_8007D17
+.text:08007CC8 m_76:                                   ; ...
+.text:08007CC8                 jmp     m_78
 .text:08007CCD ; ---------------------------------------------------------------------------
 .text:08007CCD
-.text:08007CCD loc_8007CCD:                            ; ...
+.text:08007CCD m_77:                                   ; ...
 .text:08007CCD                 mov     eax, [ebp+var_58]
 .text:08007CD0                 cmp     eax, 0
-.text:08007CD3                 jz      loc_8007D17
+.text:08007CD3                 jz      m_78
 .text:08007CD9                 movzx   eax, [ebp+var_52]
 .text:08007CDD                 mov     ecx, eax
-.text:08007CDF                 sar     ecx, 1Fh
+.text:08007CDF                 sar     ecx, 31
 .text:08007CE2                 and     eax, 0C00h
 .text:08007CE8                 mov     ecx, 0
 .text:08007CED                 mov     edx, ecx
@@ -13014,89 +13018,89 @@
 .text:08007CFF                 shl     eax, cl
 .text:08007D01                 movzx   ecx, [ebp+var_59]
 .text:08007D05                 cmp     ecx, eax
-.text:08007D07                 jz      loc_8007D17
+.text:08007D07                 jz      m_78
 .text:08007D0D                 mov     eax, 4
-.text:08007D12                 jmp     locret_800812F
+.text:08007D12                 jmp     m_118
 .text:08007D17 ; ---------------------------------------------------------------------------
 .text:08007D17
-.text:08007D17 loc_8007D17:                            ; ...
-.text:08007D17                 jmp     loc_80078ED
+.text:08007D17 m_78:                                   ; ...
+.text:08007D17                 jmp     m_43
 .text:08007D1C ; ---------------------------------------------------------------------------
 .text:08007D1C
-.text:08007D1C loc_8007D1C:                            ; ...
+.text:08007D1C m_79:                                   ; ...
 .text:08007D1C                 mov     eax, [ebp+var_34]
 .text:08007D1F                 cmp     eax, 0
-.text:08007D22                 jz      loc_8007D32
+.text:08007D22                 jz      m_80
 .text:08007D28                 mov     eax, 1
-.text:08007D2D                 jmp     locret_800812F
+.text:08007D2D                 jmp     m_118
 .text:08007D32 ; ---------------------------------------------------------------------------
 .text:08007D32
-.text:08007D32 loc_8007D32:                            ; ...
+.text:08007D32 m_80:                                   ; ...
 .text:08007D32                 mov     eax, 0
 .text:08007D37                 push    eax
-.text:08007D38                 mov     eax, [ebp+arg_0]
+.text:08007D38                 mov     eax, [ebp+itemp]
 .text:08007D3B                 push    eax
 .text:08007D3C                 call    itemp_has
 .text:08007D41                 add     esp, 8
 .text:08007D44                 cmp     eax, 0
-.text:08007D47                 jnz     loc_8007D6D
+.text:08007D47                 jnz     m_81
 .text:08007D4D                 mov     eax, 1
 .text:08007D52                 push    eax
-.text:08007D53                 mov     eax, [ebp+arg_0]
+.text:08007D53                 mov     eax, [ebp+itemp]
 .text:08007D56                 push    eax
 .text:08007D57                 call    itemp_has
 .text:08007D5C                 add     esp, 8
 .text:08007D5F                 cmp     eax, 0
-.text:08007D62                 jnz     loc_8007D6D
-.text:08007D68                 jmp     loc_8007E57
+.text:08007D62                 jnz     m_81
+.text:08007D68                 jmp     m_95
 .text:08007D6D ; ---------------------------------------------------------------------------
 .text:08007D6D
-.text:08007D6D loc_8007D6D:                            ; ...
+.text:08007D6D m_81:                                   ; ...
 .text:08007D6D                 mov     eax, 1
 .text:08007D72                 push    eax
-.text:08007D73                 mov     eax, [ebp+arg_0]
+.text:08007D73                 mov     eax, [ebp+itemp]
 .text:08007D76                 push    eax
 .text:08007D77                 call    itemp_has
 .text:08007D7C                 add     esp, 8
 .text:08007D7F                 cmp     eax, 0
-.text:08007D82                 jz      loc_8007D8D
-.text:08007D88                 jmp     loc_8007D9A
+.text:08007D82                 jz      m_82
+.text:08007D88                 jmp     m_83
 .text:08007D8D ; ---------------------------------------------------------------------------
 .text:08007D8D
-.text:08007D8D loc_8007D8D:                            ; ...
-.text:08007D8D                 mov     eax, [ebp+arg_0]
+.text:08007D8D m_82:                                   ; ...
+.text:08007D8D                 mov     eax, [ebp+itemp]
 .text:08007D90                 add     eax, 4
 .text:08007D93                 mov     ecx, [eax]
-.text:08007D95                 jmp     loc_8007DA1
+.text:08007D95                 jmp     m_84
 .text:08007D9A ; ---------------------------------------------------------------------------
 .text:08007D9A
-.text:08007D9A loc_8007D9A:                            ; ...
+.text:08007D9A m_83:                                   ; ...
 .text:08007D9A                 mov     eax, 2
 .text:08007D9F                 mov     ecx, eax
 .text:08007DA1
-.text:08007DA1 loc_8007DA1:                            ; ...
+.text:08007DA1 m_84:                                   ; ...
 .text:08007DA1                 mov     [ebp+var_3C], ecx
 .text:08007DA4                 mov     eax, 0
 .text:08007DA9                 mov     [ebp+var_38], eax
 .text:08007DAC
-.text:08007DAC loc_8007DAC:                            ; ...
+.text:08007DAC m_85:                                   ; ...
 .text:08007DAC                 mov     eax, [ebp+var_38]
 .text:08007DAF                 mov     ecx, [ebp+var_3C]
 .text:08007DB2                 cmp     eax, ecx
-.text:08007DB4                 jge     loc_8007E52
-.text:08007DBA                 jmp     loc_8007DCA
+.text:08007DB4                 jge     m_94
+.text:08007DBA                 jmp     m_87
 .text:08007DBF ; ---------------------------------------------------------------------------
 .text:08007DBF
-.text:08007DBF loc_8007DBF:                            ; ...
+.text:08007DBF m_86:                                   ; ...
 .text:08007DBF                 mov     eax, [ebp+var_38]
 .text:08007DC2                 mov     ecx, eax
 .text:08007DC4                 inc     eax
 .text:08007DC5                 mov     [ebp+var_38], eax
-.text:08007DC8                 jmp     short loc_8007DAC
+.text:08007DC8                 jmp     short m_85
 .text:08007DCA ; ---------------------------------------------------------------------------
 .text:08007DCA
-.text:08007DCA loc_8007DCA:                            ; ...
-.text:08007DCA                 mov     eax, [ebp+arg_0]
+.text:08007DCA m_87:                                   ; ...
+.text:08007DCA                 mov     eax, [ebp+itemp]
 .text:08007DCD                 add     eax, 8
 .text:08007DD0                 mov     ecx, [ebp+var_38]
 .text:08007DD3                 shl     ecx, 3
@@ -13110,32 +13114,32 @@
 .text:08007DED                 mov     [ebp+var_2C], edx
 .text:08007DF0                 mov     eax, [ebp+var_2C]
 .text:08007DF3                 cmp     eax, 0
-.text:08007DF6                 jnz     loc_8007E08
+.text:08007DF6                 jnz     m_88
 .text:08007DFC                 mov     eax, [ebp+var_30]
 .text:08007DFF                 cmp     eax, 0
-.text:08007E02                 jz      loc_8007E4D
+.text:08007E02                 jz      m_93
 .text:08007E08
-.text:08007E08 loc_8007E08:                            ; ...
+.text:08007E08 m_88:                                   ; ...
 .text:08007E08                 mov     eax, 0
 .text:08007E0D                 mov     [ebp+var_38], eax
 .text:08007E10
-.text:08007E10 loc_8007E10:                            ; ...
+.text:08007E10 m_89:                                   ; ...
 .text:08007E10                 mov     eax, [ebp+var_38]
 .text:08007E13                 mov     ecx, [ebp+var_3C]
 .text:08007E16                 cmp     eax, ecx
-.text:08007E18                 jge     loc_8007E48
-.text:08007E1E                 jmp     loc_8007E2E
+.text:08007E18                 jge     m_92
+.text:08007E1E                 jmp     m_91
 .text:08007E23 ; ---------------------------------------------------------------------------
 .text:08007E23
-.text:08007E23 loc_8007E23:                            ; ...
+.text:08007E23 m_90:                                   ; ...
 .text:08007E23                 mov     eax, [ebp+var_38]
 .text:08007E26                 mov     ecx, eax
 .text:08007E28                 inc     eax
 .text:08007E29                 mov     [ebp+var_38], eax
-.text:08007E2C                 jmp     short loc_8007E10
+.text:08007E2C                 jmp     short m_89
 .text:08007E2E ; ---------------------------------------------------------------------------
 .text:08007E2E
-.text:08007E2E loc_8007E2E:                            ; ...
+.text:08007E2E m_91:                                   ; ...
 .text:08007E2E                 mov     eax, [ebp+var_38]
 .text:08007E31                 shl     eax, 3
 .text:08007E34                 lea     ecx, [ebp+var_28]
@@ -13145,51 +13149,51 @@
 .text:08007E3F                 mov     [ecx], eax
 .text:08007E41                 add     ecx, 4
 .text:08007E44                 mov     [ecx], edx
-.text:08007E46                 jmp     short loc_8007E23
+.text:08007E46                 jmp     short m_90
 .text:08007E48 ; ---------------------------------------------------------------------------
 .text:08007E48
-.text:08007E48 loc_8007E48:                            ; ...
-.text:08007E48                 jmp     loc_8007E52
+.text:08007E48 m_92:                                   ; ...
+.text:08007E48                 jmp     m_94
 .text:08007E4D ; ---------------------------------------------------------------------------
 .text:08007E4D
-.text:08007E4D loc_8007E4D:                            ; ...
-.text:08007E4D                 jmp     loc_8007DBF
+.text:08007E4D m_93:                                   ; ...
+.text:08007E4D                 jmp     m_86
 .text:08007E52 ; ---------------------------------------------------------------------------
 .text:08007E52
-.text:08007E52 loc_8007E52:                            ; ...
-.text:08007E52                 jmp     loc_8007E62
+.text:08007E52 m_94:                                   ; ...
+.text:08007E52                 jmp     m_96
 .text:08007E57 ; ---------------------------------------------------------------------------
 .text:08007E57
-.text:08007E57 loc_8007E57:                            ; ...
-.text:08007E57                 mov     eax, [ebp+arg_0]
+.text:08007E57 m_95:                                   ; ...
+.text:08007E57                 mov     eax, [ebp+itemp]
 .text:08007E5A                 add     eax, 4
 .text:08007E5D                 mov     ecx, [eax]
 .text:08007E5F                 mov     [ebp+var_3C], ecx
 .text:08007E62
-.text:08007E62 loc_8007E62:                            ; ...
+.text:08007E62 m_96:                                   ; ...
 .text:08007E62                 mov     eax, 0
 .text:08007E67                 mov     [ebp+var_38], eax
 .text:08007E6A
-.text:08007E6A loc_8007E6A:                            ; ...
-.text:08007E6A                 mov     eax, [ebp+arg_0]
+.text:08007E6A m_97:                                   ; ...
+.text:08007E6A                 mov     eax, [ebp+itemp]
 .text:08007E6D                 add     eax, 4
 .text:08007E70                 mov     ecx, [ebp+var_38]
 .text:08007E73                 mov     edx, [eax]
 .text:08007E75                 cmp     ecx, edx
-.text:08007E77                 jge     loc_8007F39
-.text:08007E7D                 jmp     loc_8007E8D
+.text:08007E77                 jge     m_104
+.text:08007E7D                 jmp     m_99
 .text:08007E82 ; ---------------------------------------------------------------------------
 .text:08007E82
-.text:08007E82 loc_8007E82:                            ; ...
+.text:08007E82 m_98:                                   ; ...
 .text:08007E82                 mov     eax, [ebp+var_38]
 .text:08007E85                 mov     ecx, eax
 .text:08007E87                 inc     eax
 .text:08007E88                 mov     [ebp+var_38], eax
-.text:08007E8B                 jmp     short loc_8007E6A
+.text:08007E8B                 jmp     short m_97
 .text:08007E8D ; ---------------------------------------------------------------------------
 .text:08007E8D
-.text:08007E8D loc_8007E8D:                            ; ...
-.text:08007E8D                 mov     eax, [ebp+arg_0]
+.text:08007E8D m_99:                                   ; ...
+.text:08007E8D                 mov     eax, [ebp+itemp]
 .text:08007E90                 add     eax, 8
 .text:08007E93                 mov     ecx, [ebp+var_38]
 .text:08007E96                 shl     ecx, 3
@@ -13200,16 +13204,16 @@
 .text:08007EA2                 and     edx, 7FFh
 .text:08007EA8                 mov     eax, 0
 .text:08007EAD                 cmp     edx, 0
-.text:08007EB0                 jnz     loc_8007EBF
+.text:08007EB0                 jnz     m_100
 .text:08007EB6                 cmp     eax, 0
-.text:08007EB9                 jz      loc_8007EC4
+.text:08007EB9                 jz      m_101
 .text:08007EBF
-.text:08007EBF loc_8007EBF:                            ; ...
-.text:08007EBF                 jmp     loc_8007F34
+.text:08007EBF m_100:                                  ; ...
+.text:08007EBF                 jmp     m_103
 .text:08007EC4 ; ---------------------------------------------------------------------------
 .text:08007EC4
-.text:08007EC4 loc_8007EC4:                            ; ...
-.text:08007EC4                 mov     eax, [ebp+arg_4]
+.text:08007EC4 m_101:                                  ; ...
+.text:08007EC4                 mov     eax, [ebp+instruction]
 .text:08007EC7                 add     eax, 30h
 .text:08007ECA                 mov     ecx, [ebp+var_38]
 .text:08007ECD                 shl     ecx, 6
@@ -13235,21 +13239,21 @@
 .text:08007F10                 mov     eax, [ebp+var_84]
 .text:08007F16                 and     eax, ecx
 .text:08007F18                 cmp     eax, 0
-.text:08007F1B                 jnz     loc_8007F2A
+.text:08007F1B                 jnz     m_102
 .text:08007F21                 cmp     edx, 0
-.text:08007F24                 jz      loc_8007F34
+.text:08007F24                 jz      m_103
 .text:08007F2A
-.text:08007F2A loc_8007F2A:                            ; ...
+.text:08007F2A m_102:                                  ; ...
 .text:08007F2A                 mov     eax, 2
-.text:08007F2F                 jmp     locret_800812F
+.text:08007F2F                 jmp     m_118
 .text:08007F34 ; ---------------------------------------------------------------------------
 .text:08007F34
-.text:08007F34 loc_8007F34:                            ; ...
-.text:08007F34                 jmp     loc_8007E82
+.text:08007F34 m_103:                                  ; ...
+.text:08007F34                 jmp     m_98
 .text:08007F39 ; ---------------------------------------------------------------------------
 .text:08007F39
-.text:08007F39 loc_8007F39:                            ; ...
-.text:08007F39                 mov     eax, [ebp+arg_0]
+.text:08007F39 m_104:                                  ; ...
+.text:08007F39                 mov     eax, [ebp+itemp]
 .text:08007F3C                 add     eax, 40h
 .text:08007F3F                 mov     ecx, [eax]
 .text:08007F41                 shl     ecx, 4
@@ -13261,174 +13265,174 @@
 .text:08007F52                 call    iflag_cmp_cpu_level
 .text:08007F57                 add     esp, 8
 .text:08007F5A                 cmp     eax, 0
-.text:08007F5D                 jle     loc_8007F6D
+.text:08007F5D                 jle     m_105
 .text:08007F63                 mov     eax, 7
-.text:08007F68                 jmp     locret_800812F
+.text:08007F68                 jmp     m_118
 .text:08007F6D ; ---------------------------------------------------------------------------
 .text:08007F6D
-.text:08007F6D loc_8007F6D:                            ; ...
-.text:08007F6D                 mov     eax, [ebp+arg_8]
+.text:08007F6D m_105:                                  ; ...
+.text:08007F6D                 mov     eax, [ebp+_bits]
 .text:08007F70                 cmp     eax, 40h
 .text:08007F73                 mov     eax, 0
 .text:08007F78                 setz    al
 .text:08007F7B                 cmp     eax, 0
-.text:08007F7E                 jz      loc_8007F89
-.text:08007F84                 jmp     loc_8007F93
+.text:08007F7E                 jz      m_106
+.text:08007F84                 jmp     m_107
 .text:08007F89 ; ---------------------------------------------------------------------------
 .text:08007F89
-.text:08007F89 loc_8007F89:                            ; ...
+.text:08007F89 m_106:                                  ; ...
 .text:08007F89                 mov     eax, 25h
-.text:08007F8E                 jmp     loc_8007F98
+.text:08007F8E                 jmp     m_108
 .text:08007F93 ; ---------------------------------------------------------------------------
 .text:08007F93
-.text:08007F93 loc_8007F93:                            ; ...
+.text:08007F93 m_107:                                  ; ...
 .text:08007F93                 mov     eax, 24h
 .text:08007F98
-.text:08007F98 loc_8007F98:                            ; ...
+.text:08007F98 m_108:                                  ; ...
 .text:08007F98                 push    eax
-.text:08007F99                 mov     eax, [ebp+arg_0]
+.text:08007F99                 mov     eax, [ebp+itemp]
 .text:08007F9C                 push    eax
 .text:08007F9D                 call    itemp_has
 .text:08007FA2                 add     esp, 8
 .text:08007FA5                 cmp     eax, 0
-.text:08007FA8                 jz      loc_8007FB8
+.text:08007FA8                 jz      m_109
 .text:08007FAE                 mov     eax, 8
-.text:08007FB3                 jmp     locret_800812F
+.text:08007FB3                 jmp     m_118
 .text:08007FB8 ; ---------------------------------------------------------------------------
 .text:08007FB8
-.text:08007FB8 loc_8007FB8:                            ; ...
+.text:08007FB8 m_109:                                  ; ...
 .text:08007FB8                 mov     eax, 26h
 .text:08007FBD                 push    eax
-.text:08007FBE                 mov     eax, [ebp+arg_0]
+.text:08007FBE                 mov     eax, [ebp+itemp]
 .text:08007FC1                 push    eax
 .text:08007FC2                 call    itemp_has
 .text:08007FC7                 add     esp, 8
 .text:08007FCA                 cmp     eax, 0
-.text:08007FCD                 jz      loc_8008024
+.text:08007FCD                 jz      m_111
 .text:08007FD3                 mov     eax, 101h
 .text:08007FD8                 push    eax
 .text:08007FD9                 mov     eax, 1
 .text:08007FDE                 push    eax
-.text:08007FDF                 mov     eax, [ebp+arg_4]
+.text:08007FDF                 mov     eax, [ebp+instruction]
 .text:08007FE2                 push    eax
 .text:08007FE3                 call    has_prefix
-.text:08007FE8                 add     esp, 0Ch
+.text:08007FE8                 add     esp, 12
 .text:08007FEB                 cmp     eax, 0
-.text:08007FEE                 jnz     loc_800801A
+.text:08007FEE                 jnz     m_110
 .text:08007FF4                 mov     eax, 102h
 .text:08007FF9                 push    eax
 .text:08007FFA                 mov     eax, 1
 .text:08007FFF                 push    eax
-.text:08008000                 mov     eax, [ebp+arg_4]
+.text:08008000                 mov     eax, [ebp+instruction]
 .text:08008003                 push    eax
 .text:08008004                 call    has_prefix
-.text:08008009                 add     esp, 0Ch
+.text:08008009                 add     esp, 12
 .text:0800800C                 cmp     eax, 0
-.text:0800800F                 jnz     loc_800801A
-.text:08008015                 jmp     loc_8008024
+.text:0800800F                 jnz     m_110
+.text:08008015                 jmp     m_111
 .text:0800801A ; ---------------------------------------------------------------------------
 .text:0800801A
-.text:0800801A loc_800801A:                            ; ...
+.text:0800801A m_110:                                  ; ...
 .text:0800801A                 mov     eax, 9
-.text:0800801F                 jmp     locret_800812F
+.text:0800801F                 jmp     m_118
 .text:08008024 ; ---------------------------------------------------------------------------
 .text:08008024
-.text:08008024 loc_8008024:                            ; ...
-.text:08008024                 mov     eax, [ebp+arg_0]
+.text:08008024 m_111:                                  ; ...
+.text:08008024                 mov     eax, [ebp+itemp]
 .text:08008027                 add     eax, 3Ch
 .text:0800802A                 mov     ecx, [eax]
 .text:0800802C                 movzx   eax, [byte ptr ecx]
 .text:0800802F                 and     eax, 0FFFFFFFEh
 .text:08008032                 cmp     eax, 0F8h
-.text:08008038                 jnz     loc_8008048
+.text:08008038                 jnz     m_112
 .text:0800803E                 mov     eax, 0Fh
-.text:08008043                 jmp     locret_800812F
+.text:08008043                 jmp     m_118
 .text:08008048 ; ---------------------------------------------------------------------------
 .text:08008048
-.text:08008048 loc_8008048:                            ; ...
+.text:08008048 m_112:                                  ; ...
 .text:08008048                 mov     eax, 28h
 .text:0800804D                 push    eax
-.text:0800804E                 mov     eax, [ebp+arg_0]
+.text:0800804E                 mov     eax, [ebp+itemp]
 .text:08008051                 push    eax
 .text:08008052                 call    itemp_has
 .text:08008057                 add     esp, 8
 .text:0800805A                 cmp     eax, 0
-.text:0800805D                 jz      loc_8008068
-.text:08008063                 jmp     loc_80080BE
+.text:0800805D                 jz      m_113
+.text:08008063                 jmp     m_115
 .text:08008068 ; ---------------------------------------------------------------------------
 .text:08008068
-.text:08008068 loc_8008068:                            ; ...
+.text:08008068 m_113:                                  ; ...
 .text:08008068                 mov     eax, 103h
 .text:0800806D                 push    eax
 .text:0800806E                 mov     eax, 1
 .text:08008073                 push    eax
-.text:08008074                 mov     eax, [ebp+arg_4]
+.text:08008074                 mov     eax, [ebp+instruction]
 .text:08008077                 push    eax
 .text:08008078                 call    has_prefix
-.text:0800807D                 add     esp, 0Ch
+.text:0800807D                 add     esp, 12
 .text:08008080                 cmp     eax, 0
-.text:08008083                 jnz     loc_80080AF
+.text:08008083                 jnz     m_114
 .text:08008089                 mov     eax, 104h
 .text:0800808E                 push    eax
 .text:0800808F                 mov     eax, 1
 .text:08008094                 push    eax
-.text:08008095                 mov     eax, [ebp+arg_4]
+.text:08008095                 mov     eax, [ebp+instruction]
 .text:08008098                 push    eax
 .text:08008099                 call    has_prefix
-.text:0800809E                 add     esp, 0Ch
+.text:0800809E                 add     esp, 12
 .text:080080A1                 cmp     eax, 0
-.text:080080A4                 jnz     loc_80080AF
-.text:080080AA                 jmp     loc_80080BE
+.text:080080A4                 jnz     m_114
+.text:080080AA                 jmp     m_115
 .text:080080AF ; ---------------------------------------------------------------------------
 .text:080080AF
-.text:080080AF loc_80080AF:                            ; ...
+.text:080080AF m_114:                                  ; ...
 .text:080080AF                 mov     eax, 0Bh
-.text:080080B4                 jmp     locret_800812F
+.text:080080B4                 jmp     m_118
 .text:080080B9 ; ---------------------------------------------------------------------------
-.text:080080B9                 jmp     loc_800812A
+.text:080080B9                 jmp     m_117
 .text:080080BE ; ---------------------------------------------------------------------------
 .text:080080BE
-.text:080080BE loc_80080BE:                            ; ...
+.text:080080BE m_115:                                  ; ...
 .text:080080BE                 mov     eax, 28h
 .text:080080C3                 push    eax
-.text:080080C4                 mov     eax, [ebp+arg_0]
+.text:080080C4                 mov     eax, [ebp+itemp]
 .text:080080C7                 push    eax
 .text:080080C8                 call    itemp_has
 .text:080080CD                 add     esp, 8
 .text:080080D0                 cmp     eax, 0
-.text:080080D3                 jz      loc_800812A
+.text:080080D3                 jz      m_117
 .text:080080D9                 mov     eax, 0FCh
 .text:080080DE                 push    eax
 .text:080080DF                 mov     eax, 1
 .text:080080E4                 push    eax
-.text:080080E5                 mov     eax, [ebp+arg_4]
+.text:080080E5                 mov     eax, [ebp+instruction]
 .text:080080E8                 push    eax
 .text:080080E9                 call    has_prefix
-.text:080080EE                 add     esp, 0Ch
+.text:080080EE                 add     esp, 12
 .text:080080F1                 cmp     eax, 0
-.text:080080F4                 jnz     loc_8008120
+.text:080080F4                 jnz     m_116
 .text:080080FA                 mov     eax, 0FDh
 .text:080080FF                 push    eax
 .text:08008100                 mov     eax, 1
 .text:08008105                 push    eax
-.text:08008106                 mov     eax, [ebp+arg_4]
+.text:08008106                 mov     eax, [ebp+instruction]
 .text:08008109                 push    eax
 .text:0800810A                 call    has_prefix
-.text:0800810F                 add     esp, 0Ch
+.text:0800810F                 add     esp, 12
 .text:08008112                 cmp     eax, 0
-.text:08008115                 jnz     loc_8008120
-.text:0800811B                 jmp     loc_800812A
+.text:08008115                 jnz     m_116
+.text:0800811B                 jmp     m_117
 .text:08008120 ; ---------------------------------------------------------------------------
 .text:08008120
-.text:08008120 loc_8008120:                            ; ...
-.text:08008120                 mov     eax, 0Ch
-.text:08008125                 jmp     locret_800812F
+.text:08008120 m_116:                                  ; ...
+.text:08008120                 mov     eax, 12
+.text:08008125                 jmp     m_118
 .text:0800812A ; ---------------------------------------------------------------------------
 .text:0800812A
-.text:0800812A loc_800812A:                            ; ...
-.text:0800812A                 mov     eax, 10h
+.text:0800812A m_117:                                  ; ...
+.text:0800812A                 mov     eax, 16
 .text:0800812F
-.text:0800812F locret_800812F:                         ; ...
+.text:0800812F m_118:                                  ; ...
 .text:0800812F                 leave
 .text:08008130                 retn
 .text:08008130 endp            matches
