@@ -2,7 +2,7 @@
 ; NASM v2.14.02 - NETWIDE ASSEMBLER FOR TRDOS 386 - Erdogan Tan - 18/09/2026 
 ; Disassembled from "assemble.c" (Dissassembler: IDA)
 ; NASM Syntax: Erdogan Tan
-; Last Update: 25/11/2026
+; Last Update: 28/11/2026
 ; ===========================================================================
 ; assemble.asm
 ; ------------
@@ -11912,119 +11912,158 @@ fm_47:                                  ; ...
 
 ; =============== S U B R O U T I N E =======================================
 
-; Attributes: bp-based frame
+; ---------------------------------------------------------------------------
+; Function: get_broadcast_num
+;
+; Description:
+;
+; C Declaration:
+;       static uint8_t get_broadcast_num(opflags_t opflags, opflags_t brsize)
+;
+; Input (Stack): [EBP+8]  = opflags (low 32-bit)
+;                [EBP+12] = opflags (high 32-bit)
+;                [EBP+16] = brsize (low 32-bit)
+;                [EBP+20] = brsize_h (low 32-bit)
+;
+; Output [EAX]: broadcast number (byte)
+;
+; Modified Registers: EAX, ECX, EDX
+; ---------------------------------------------------------------------------
 
-proc            get_broadcast_num near  ; ...
+%assign tmp2_h     -14h
+%assign tmp2       -12h
+%assign tmp1       -0Ch
+%assign tmp1_h     -8
 
-var_28          = dword ptr -28h
-var_24          = dword ptr -24h
-var_20          = dword ptr -20h
-var_1C          = dword ptr -1Ch
-var_18          = dword ptr -18h
-var_14          = dword ptr -14h
-var_10          = dword ptr -10h
-var_C           = dword ptr -0Ch
-var_5           = byte ptr -5
-var_4           = dword ptr -4
-arg_4           0Ch
-arg_8           10h
-arg_C           14h
+;%assign tmp5       -28h
+;%assign tmp5_h     -24h
+;%assign tmp4       -20h
+;%assign tmp3       -1Ch
+;%assign tmp2_h     -18h
+;%assign tmp2       -14h
+;%assign tmp1       -10h
+;%assign tmp1_h     -0Ch
+;%assign brcast_num -5
 
+%assign opsize     -4
+;%assign opflags    8
+%assign opflags_h   0Ch
+%assign brsize      10h
+%assign brsize_h    14h
+
+get_broadcast_num:
                 push    ebp
-                mov     ebp, esp
-                sub     esp, 28h
-                nop
-                mov     eax, [ebp+arg_4]
-                and     eax, 7FFh
+                mov     ebp, esp        ; unsigned int opsize = (opflags & SIZE_MASK) >> SIZE_SHIFT;
+                ;sub    esp, 40         ; uint8_t brcast_num;
+                ;nop
+                sub     esp, 20
+                mov     eax, [ebp+opflags_h]
+                and     eax, 7FFh       ; SIZE_MASK = 2047 (high 32-bit) = 7FFh:0
+                mov     ecx, 0          ; SIZE_SHIFT = 32
                 mov     ecx, 0
-                mov     ecx, 0
-                mov     [ebp+var_4], eax
-                mov     eax, [ebp+arg_C]
-                cmp     eax, 8
-                jb      loc_8007404
-                jnz     loc_80073F0
-                mov     eax, [ebp+arg_8]
+                mov     [ebp+opsize], eax
+                mov     eax, [ebp+brsize_h] ; if (brsize > BITS64)
+                cmp     eax, 8          ; BITS64 = shl (1), 35 = 8h:0h
+                jb      gb_2
+                jnz     gb_1
+                mov     eax, [ebp+brsize]
                 cmp     eax, 0
-                jbe     loc_8007404
+                jbe     gb_2
 
-loc_80073F0:                            ; ...
-                mov     eax, offset A_103 ; "size of broadcasting element is greater"...
+gb_1:                                   ; ...
+                mov     eax, L_103      ; "size of broadcasting element is greater"...
                 push    eax
                 mov     eax, 6
                 push    eax
-                call    nasm_error
+                call    nasm_error      ; nasm_error(ERR_FATAL,
+                                        ;   "size of broadcasting element is greater than 64 bits");
                 add     esp, 8
 
-loc_8007404:                            ; ...
-                mov     eax, [ebp+var_4]
-                mov     ecx, 0
-                mov     edx, ecx
+gb_2:                                   ; ...
+                mov     eax, [ebp+opsize] ; /* The shift term is to take care of the extra BITS80
+                                        ; * inserted between BITS64 and BITS128. */
+                mov     ecx, 0          ; brcast_num = ((opsize / (BITS64 >> SIZE_SHIFT)) * (BITS64 / brsize))
+                                        ;              >> (opsize > (BITS64 >> SIZE_SHIFT));
+                mov     edx, ecx        ; BITS64 >> SIZE_SHIFT = 8 /// opsize/8 = opsize >> 3
                 shr     edx, 3
-                shl     ecx, 1Dh
+                shl     ecx, 29
                 shr     eax, 3
                 or      ecx, eax
-                mov     eax, [ebp+arg_8]
-                mov     [ebp+var_10], ecx
-                mov     [ebp+var_C], edx
-                mov     edx, [ebp+arg_C]
-                push    edx
-                push    eax
+                mov     eax, [ebp+brsize]
+                mov     [ebp+tmp1], ecx
+                mov     [ebp+tmp1_h], edx
+                mov     edx, [ebp+brsize_h]
+                push    edx             ; divisor high
+                push    eax             ; divisor low
                 mov     eax, 0
                 mov     ecx, 8
-                push    ecx
-                push    eax
-                call    __udivdi3
-                add     esp, 10h
-                mov     [ebp+var_14], eax
-                mov     eax, [ebp+var_10]
-                mov     ecx, [ebp+var_14]
-                mov     [ebp+var_18], edx
+                push    ecx             ; dividend high
+                push    eax             ; dividend low
+                call    __udivdi3       ; BITS64 / brsize
+                add     esp, 16
+                mov     [ebp+tmp2], eax ; quotient low
+                mov     eax, [ebp+tmp1]
+                mov     ecx, [ebp+tmp2]
+                mov     [ebp+tmp2_h], edx ; quotient high
                 mul     ecx
-                mov     ecx, [ebp+var_10]
-                mov     [ebp+var_1C], eax
-                mov     eax, [ebp+var_18]
+                mov     ecx, [ebp+tmp1]
+                ;mov    [ebp+tmp3], eax
+                push    eax ; * [ebp+tmp3]
+                mov     eax, [ebp+tmp2_h]
                 imul    ecx, eax
-                mov     eax, [ebp+var_C]
-                mov     [ebp+var_20], edx
-                mov     edx, [ebp+var_14]
+                mov     eax, [ebp+tmp1_h]
+                ;mov    [ebp+tmp4], edx
+                push    edx ; ** [ebp+tmp4]
+                mov     edx, [ebp+tmp2]
                 imul    eax, edx
                 add     ecx, eax
-                mov     eax, [ebp+var_20]
-                add     eax, ecx
-                mov     ecx, [ebp+var_1C]
-                mov     edx, [ebp+var_4]
-                mov     [ebp+var_28], ecx
-                mov     [ebp+var_24], eax
-                mov     eax, 0
-                cmp     eax, 0
-                jb      loc_8007498
-                jnz     loc_8007491
-                cmp     edx, 8
-                jbe     loc_8007498
+                ;mov    eax, [ebp+tmp4_h]
+                ;add    eax, ecx
+                ;mov    edx, [ebp+tmp4]
+                pop     edx ; ** [ebp+tmp4]
+                add     edx, ecx ; **
+                ;mov    ecx, [ebp+tmp3]
+                pop     ecx ; * [ebp+tmp3]
+                ;mov    edx, [ebp+opsize]
+                mov     eax, [ebp+opsize]
+                ;mov     [ebp+tmp5], ecx  ; ***
+                ;;mov    [ebp+tmp5_h], eax
+                ;mov    [ebp+tmp5_h], edx ; ***
 
-loc_8007491:                            ; ...
+                ;mov    eax, 0
+                ;cmp    eax, 0
+                ;jb     gb_4
+                ;jnz    gb_3
+                ;cmp    edx, 8
+                ;jbe    gb_4
+                cmp     eax, 8
+                jbe     gb_4
+gb_3:                                   ; ...
                 mov     eax, 1
-                jmp     short loc_800749D
+                jmp     short gb_5
 ; ---------------------------------------------------------------------------
 
-loc_8007498:                            ; ...
-                mov     eax, 0
-
-loc_800749D:                            ; ...
-                push    eax
-                mov     eax, [ebp+var_28]
-                mov     ecx, [ebp+var_24]
-                push    ecx
-                push    eax
+gb_4:                                   ; ...
+                ;mov    eax, 0
+                mov     eax, ecx ; *** [ebp+tmp5]
+                jmp     short gb_6  
+gb_5:                                   ; ...
+                push    eax             ; shift bit count
+                ;mov    eax, [ebp+tmp5]
+                ;mov    ecx, [ebp+tmp5_h]
+                ;push   ecx
+                ;push   eax
+                push    edx ; *** [ebp+tmp5_h]
+                push    ecx ; *** [ebp+tmp5]
                 call    __lshrdi3
-                add     esp, 0Ch
+                add     esp, 12
+gb_6:
                 and     eax, 0FFh
-                mov     ecx, 0
-                mov     [ebp+var_5], al
-                movzx   eax, [ebp+var_5]
+                ;mov    ecx, 0
+                ;mov    [ebp+brcast_num], al
+                ;movzx  eax, byte [ebp+brcast_num] ; return brcast_num;
                 leave
                 retn
-endp            get_broadcast_num
 
 
 ; =============== S U B R O U T I N E =======================================
