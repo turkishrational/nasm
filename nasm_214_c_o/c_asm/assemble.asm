@@ -10805,7 +10805,7 @@ op_rexflags:
 ; ---------------------------------------------------------------------------
 
 orxf_1:                                 ; ...
-                mov     eax, L_102      ; "invalid operand passed to op_rexflags()"
+                mov     eax, A_102      ; "invalid operand passed to op_rexflags()"
                 push    eax
                 mov     eax, 0
                 push    eax
@@ -11971,7 +11971,7 @@ get_broadcast_num:
                 jbe     gb_2
 
 gb_1:                                   ; ...
-                mov     eax, L_103      ; "size of broadcasting element is greater"...
+                mov     eax, A_103      ; "size of broadcasting element is greater"...
                 push    eax
                 mov     eax, 6
                 push    eax
