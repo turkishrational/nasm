@@ -11921,9 +11921,9 @@ fm_47:                                  ; ...
 ;       static uint8_t get_broadcast_num(opflags_t opflags, opflags_t brsize)
 ;
 ; Input (Stack): [EBP+8]  = opflags (low 32-bit)
-;                [EBP+12] = opflags (high 32-bit)
+;                [EBP+12] = opflags_h (high 32-bit)
 ;                [EBP+16] = brsize (low 32-bit)
-;                [EBP+20] = brsize_h (low 32-bit)
+;                [EBP+20] = brsize_h (high 32-bit)
 ;
 ; Output [EAX]: broadcast number (byte)
 ;
